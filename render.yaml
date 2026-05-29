@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: siyu-factory-ai
+    env: node
+    plan: free
+    buildCommand: npm ci && node node_modules/next/dist/bin/next build
+    startCommand: node scripts/start.mjs
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: HELLOBABYGO_API_KEY
+        sync: false
+      - key: HELLOBABYGO_API_BASE_URL
+        value: https://api.hellobabygo.com

@@ -1,0 +1,13 @@
+.next
+node_modules
+.tools
+dist
+coverage
+.env
+.env*.local
+.npm-cache
+tsconfig.tsbuildinfo
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
