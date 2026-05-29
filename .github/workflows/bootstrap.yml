@@ -1,0 +1,28 @@
+name: Bootstrap repository
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download project package
+        run: |
+          curl -L -H "Bypass-Tunnel-Reminder: true" "https://siyu-factory-ai.loca.lt/siyu-factory-ai-render.zip" -o /tmp/siyu-factory-ai-render.zip
+          unzip -o /tmp/siyu-factory-ai-render.zip -d /tmp/siyu-factory-ai
+          rsync -a --delete --exclude ".git" /tmp/siyu-factory-ai/ ./
+          rm -f .github/workflows/bootstrap.yml
+      - name: Commit project files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add Render-ready Siyu Factory AI" || exit 0
+          git push
