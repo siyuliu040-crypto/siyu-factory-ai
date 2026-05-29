@@ -16,7 +16,11 @@ jobs:
       - name: Restore project package
         shell: bash
         run: |
-          cat > /tmp/siyu-factory-ai-render.zip.b64 <<'ZIP_B64'
+          python3 - <<'PY'
+          import base64, io, pathlib, shutil, zipfile
+
+          ROOT = pathlib.Path('.').resolve()
+          B64 = '''
           UEsDBBQAAAAIAMlOvVzIdlcv5gAAAGsBAAARAAAAc2NyaXB0c1xzdGFydC5tanNFj8FOwzAQRO/5
           ipFPqRSSSNxSlX4CFeKGUBXiDVnh2JbtQqQ2/45tIFys3dGbnTHP1riAK7ztvzRWjM7MENpI6oaJ
           lTxbZwbyXuyLYjDaB2TDAb96TfqzPj0+PeN2g7hv2zaSP2D2RzKfLjd+oeHUh6nCS445z0ZeFPlG
@@ -1319,12 +1323,31 @@ jobs:
           AAD0EwEAUkVBRE1FLm1kUEsBAhQAFAAAAAgA3U69XEQo0cH4AAAAkwEAAAsAAAAAAAAAAAAAAAAA
           GhgBAHJlbmRlci55YW1sUEsBAhQAFAAAAAgAaFq8XIV93xZGAQAA0gIAAA0AAAAAAAAAAAAAAAAA
           OxkBAHRzY29uZmlnLmpzb25QSwUGAAAAABsAGwASBwAArBoBAAAA
-          ZIP_B64
-          base64 -d /tmp/siyu-factory-ai-render.zip.b64 > /tmp/siyu-factory-ai-render.zip
-          unzip -q -o /tmp/siyu-factory-ai-render.zip -d /tmp/siyu-factory-ai
-          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          cp -a /tmp/siyu-factory-ai/. ./
-          rm -f .github/workflows/bootstrap.yml
+          '''
+
+          for item in list(ROOT.iterdir()):
+              if item.name == '.git':
+                  continue
+              if item.is_dir():
+                  shutil.rmtree(item)
+              else:
+                  item.unlink()
+
+          data = base64.b64decode(''.join(B64.split()))
+          with zipfile.ZipFile(io.BytesIO(data)) as archive:
+              for member in archive.infolist():
+                  name = member.filename.replace('\\\\', '/').replace('\\', '/')
+                  if not name or name.endswith('/'):
+                      continue
+                  target = ROOT / name
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  with archive.open(member) as src, target.open('wb') as dst:
+                      shutil.copyfileobj(src, dst)
+
+          workflow = ROOT / '.github' / 'workflows' / 'bootstrap.yml'
+          if workflow.exists():
+              workflow.unlink()
+          PY
       - name: Commit project files
         shell: bash
         run: |
