@@ -104,13 +104,17 @@ const stableImageModels = ["gpt-image-2"];
 
 const stableVideoModels = [
   "veo_3_1-fast-portrait",
-  "veo_3_1-fast-landscape"
+  "veo_3_1-fast-landscape",
+  "veo_3_1-fast-portrait-hd",
+  "veo_3_1-fast-landscape-hd"
 ];
 
 const modelCreditCosts: Record<string, number> = {
   "gpt-image-2": 40000,
   "veo_3_1-fast-portrait": 1200000,
-  "veo_3_1-fast-landscape": 1200000
+  "veo_3_1-fast-landscape": 1200000,
+  "veo_3_1-fast-portrait-hd": 1200000,
+  "veo_3_1-fast-landscape-hd": 1200000
 };
 
 const copy = {
@@ -355,8 +359,8 @@ function cleanErrorMessage(error: string, language: Language) {
 
 function getReferenceVideoModel(size: string) {
   return size.includes("1280x720")
-    ? "veo_3_1-fast-landscape"
-    : "veo_3_1-fast-portrait";
+    ? "veo_3_1-fast-landscape-hd"
+    : "veo_3_1-fast-portrait-hd";
 }
 
 function getFastVideoModel(size: string) {

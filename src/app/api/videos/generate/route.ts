@@ -1,9 +1,23 @@
 import { forwardJson, jsonError } from "@/lib/hellobabygo";
+import { randomUUID } from "crypto";
+import { mkdir, writeFile } from "fs/promises";
+import path from "path";
 
-async function fileToDataUrl(file: File) {
+const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
+const MIME_EXTENSIONS: Record<string, string> = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp"
+};
+
+async function fileToPublicUrl(request: Request, file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
   const mediaType = file.type || "image/jpeg";
-  return `data:${mediaType};base64,${buffer.toString("base64")}`;
+  const extension = MIME_EXTENSIONS[mediaType] || "jpg";
+  const id = `${randomUUID()}.${extension}`;
+  await mkdir(UPLOAD_DIR, { recursive: true });
+  await writeFile(path.join(UPLOAD_DIR, id), buffer);
+  return new URL(`/api/uploads/${id}`, request.url).toString();
 }
 
 export async function POST(request: Request) {
@@ -22,7 +36,7 @@ export async function POST(request: Request) {
     const references = incoming
       .getAll("input_reference")
       .filter((value): value is File => value instanceof File && value.size > 0);
-    const uploadedReferenceUrls = await Promise.all(references.map((reference) => fileToDataUrl(reference)));
+    const uploadedReferenceUrls = await Promise.all(references.map((reference) => fileToPublicUrl(request, reference)));
     const referenceUrls = [
       ...(imageUrl ? [String(imageUrl)] : []),
       ...uploadedReferenceUrls
@@ -36,7 +50,7 @@ export async function POST(request: Request) {
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          ...(imageUrl ? { image_url: String(imageUrl), image_input: [String(imageUrl)] } : {})
+          ...(imageUrl ? { image_url: String(imageUrl), image_input: [String(imageUrl)], input_reference: String(imageUrl) } : {})
         })
       });
     }
