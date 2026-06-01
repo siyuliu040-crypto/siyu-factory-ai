@@ -103,18 +103,14 @@ const VIDEO_MAX_TRANSIENT_ATTEMPTS = 36;
 const stableImageModels = ["gpt-image-2"];
 
 const stableVideoModels = [
-  "firefly-veo31-fast-8s-9x16-1080p",
-  "firefly-veo31-ref-8s-9x16-1080p",
-  "firefly-veo31-fast-8s-16x9-1080p",
-  "firefly-veo31-ref-8s-16x9-1080p"
+  "veo_3_1-fast-portrait",
+  "veo_3_1-fast-landscape"
 ];
 
 const modelCreditCosts: Record<string, number> = {
   "gpt-image-2": 40000,
-  "firefly-veo31-fast-8s-9x16-1080p": 1200000,
-  "firefly-veo31-ref-8s-9x16-1080p": 1200000,
-  "firefly-veo31-fast-8s-16x9-1080p": 1200000,
-  "firefly-veo31-ref-8s-16x9-1080p": 1200000
+  "veo_3_1-fast-portrait": 1200000,
+  "veo_3_1-fast-landscape": 1200000
 };
 
 const copy = {
@@ -359,14 +355,14 @@ function cleanErrorMessage(error: string, language: Language) {
 
 function getReferenceVideoModel(size: string) {
   return size.includes("1280x720")
-    ? "firefly-veo31-ref-8s-16x9-1080p"
-    : "firefly-veo31-ref-8s-9x16-1080p";
+    ? "veo_3_1-fast-landscape"
+    : "veo_3_1-fast-portrait";
 }
 
 function getFastVideoModel(size: string) {
   return size.includes("1280x720")
-    ? "firefly-veo31-fast-8s-16x9-1080p"
-    : "firefly-veo31-fast-8s-9x16-1080p";
+    ? "veo_3_1-fast-landscape"
+    : "veo_3_1-fast-portrait";
 }
 
 function getEffectiveVideoModel(size: string, hasReference: boolean) {
