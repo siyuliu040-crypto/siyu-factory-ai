@@ -1,0 +1,50 @@
+name: Update video models
+on: [push]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch source
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'src/components/studio.tsx';
+          let source = fs.readFileSync(path, 'utf8');
+
+          source = source.replace(
+            /const stableVideoModels = \[[\s\S]*?\];/,
+            'const stableVideoModels = [\n  "veo_3_1-fast-portrait",\n  "veo_3_1-fast-landscape"\n];'
+          );
+
+          source = source.replace(
+            /  "firefly-veo31-fast-8s-9x16-1080p": 1200000,\n  "firefly-veo31-ref-8s-9x16-1080p": 1200000,\n  "firefly-veo31-fast-8s-16x9-1080p": 1200000,\n  "firefly-veo31-ref-8s-16x9-1080p": 1200000/,
+            '  "veo_3_1-fast-portrait": 1200000,\n  "veo_3_1-fast-landscape": 1200000'
+          );
+
+          source = source.replace(
+            /function getReferenceVideoModel\(size: string\) \{[\s\S]*?\n\}\n\nfunction getFastVideoModel/,
+            'function getReferenceVideoModel(size: string) {\n  return size.includes("1280x720")\n    ? "veo_3_1-fast-landscape"\n    : "veo_3_1-fast-portrait";\n}\n\nfunction getFastVideoModel'
+          );
+
+          source = source.replace(
+            /function getFastVideoModel\(size: string\) \{[\s\S]*?\n\}\n\nfunction getEffectiveVideoModel/,
+            'function getFastVideoModel(size: string) {\n  return size.includes("1280x720")\n    ? "veo_3_1-fast-landscape"\n    : "veo_3_1-fast-portrait";\n}\n\nfunction getEffectiveVideoModel'
+          );
+
+          fs.writeFileSync(path, source);
+          NODE
+          rm -f .github/workflows/update-video-models.yml
+          npm ci
+          npm run typecheck
+          npm run lint
+          npm run build
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Use available reference video models" || exit 0
+          git push
