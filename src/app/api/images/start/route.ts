@@ -18,6 +18,7 @@ export async function POST(request: Request) {
       prompt,
       n: body.n ?? 1,
       size: body.size ?? "1024x1024",
+      aspect_ratio: body.aspect_ratio,
       response_format: body.response_format ?? "url"
     });
 

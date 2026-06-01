@@ -1,4 +1,10 @@
-import { forwardJson, forwardMultipart, jsonError } from "@/lib/hellobabygo";
+import { forwardJson, jsonError } from "@/lib/hellobabygo";
+
+async function fileToDataUrl(file: File) {
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const mediaType = file.type || "image/jpeg";
+  return `data:${mediaType};base64,${buffer.toString("base64")}`;
+}
 
 export async function POST(request: Request) {
   try {
@@ -16,6 +22,11 @@ export async function POST(request: Request) {
     const references = incoming
       .getAll("input_reference")
       .filter((value): value is File => value instanceof File && value.size > 0);
+    const uploadedReferenceUrls = await Promise.all(references.map((reference) => fileToDataUrl(reference)));
+    const referenceUrls = [
+      ...(imageUrl ? [String(imageUrl)] : []),
+      ...uploadedReferenceUrls
+    ].filter(Boolean);
 
     if (references.length === 0) {
       return await forwardJson("/v1/videos", {
@@ -25,23 +36,23 @@ export async function POST(request: Request) {
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          ...(imageUrl ? { image_url: String(imageUrl) } : {})
+          ...(imageUrl ? { image_url: String(imageUrl), image_input: [String(imageUrl)] } : {})
         })
       });
     }
 
-    const formData = new FormData();
-    formData.set("model", model);
-    formData.set("prompt", prompt);
-
-    if (seconds) formData.set("seconds", String(seconds));
-    if (size) formData.set("size", String(size));
-    if (imageUrl) formData.set("image_url", String(imageUrl));
-    for (const [index, reference] of references.entries()) {
-      formData.append("input_reference", reference, reference.name || `reference-${index + 1}.png`);
-    }
-
-    return await forwardMultipart("/v1/videos", formData);
+    return await forwardJson("/v1/videos", {
+      method: "POST",
+      body: JSON.stringify({
+        model,
+        prompt,
+        ...(seconds ? { seconds: String(seconds) } : {}),
+        ...(size ? { size: String(size) } : {}),
+        image_url: referenceUrls[0],
+        image_input: referenceUrls,
+        input_reference: referenceUrls
+      })
+    });
   } catch (error) {
     const detail = error instanceof Error ? error.message : error;
     return jsonError({

@@ -5,6 +5,7 @@ type ImageGeneratePayload = {
   prompt: string;
   n?: number;
   size?: string;
+  aspect_ratio?: string;
   response_format?: "url" | "b64_json";
 };
 
@@ -84,6 +85,7 @@ export async function POST(request: Request) {
         formData.set("prompt", prompt);
         formData.set("n", String(incoming.get("n") || "1"));
         formData.set("size", String(incoming.get("size") || "1024x1024"));
+        if (incoming.get("aspect_ratio")) formData.set("aspect_ratio", String(incoming.get("aspect_ratio")));
         formData.set("response_format", String(incoming.get("response_format") || "url"));
 
         for (const [index, reference] of references.entries()) {
@@ -108,6 +110,7 @@ export async function POST(request: Request) {
           prompt,
           n: Number(incoming.get("n") || 1),
           size: String(incoming.get("size") || "1024x1024"),
+          ...(incoming.get("aspect_ratio") ? { aspect_ratio: String(incoming.get("aspect_ratio")) } : {}),
           response_format: String(incoming.get("response_format") || "url")
         })
       });
@@ -130,6 +133,7 @@ export async function POST(request: Request) {
         prompt: body.prompt.trim(),
         n: body.n ?? 1,
         size: body.size ?? "1024x1024",
+        ...(body.aspect_ratio ? { aspect_ratio: body.aspect_ratio } : {}),
         response_format: body.response_format ?? "url"
       })
     });

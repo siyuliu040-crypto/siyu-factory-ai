@@ -5,6 +5,7 @@ export type ImageJobRequest = {
   prompt: string;
   n?: number;
   size?: string;
+  aspect_ratio?: string;
   response_format?: "url" | "b64_json";
 };
 
@@ -60,6 +61,7 @@ async function runImageJob(id: string) {
         prompt: record.request.prompt.trim(),
         n: record.request.n ?? 1,
         size: record.request.size ?? "1024x1024",
+        ...(record.request.aspect_ratio ? { aspect_ratio: record.request.aspect_ratio } : {}),
         response_format: record.request.response_format ?? "url"
       }),
       cache: "no-store"
