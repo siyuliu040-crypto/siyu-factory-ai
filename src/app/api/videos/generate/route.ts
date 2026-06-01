@@ -50,7 +50,7 @@ export async function POST(request: Request) {
         ...(size ? { size: String(size) } : {}),
         image_url: referenceUrls[0],
         image_input: referenceUrls,
-        input_reference: referenceUrls
+        input_reference: referenceUrls[0]
       })
     });
   } catch (error) {
