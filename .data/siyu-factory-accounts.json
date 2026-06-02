@@ -36,9 +36,9 @@
       "name": "Codex Test",
       "passwordHash": "d57f7bb0aa5308ecf9c07da0f560816e:92a182ead02961453dc378b51fdcaf18cf0f88d7d5a1c1861f046b0753973312c2576ee1c891d324f46efff54e2b34ab59674c7c8f5a8f1c7184d31df2081a9e",
       "role": "user",
-      "credits": 5000000,
+      "credits": 3800000,
       "createdAt": "2026-06-02T11:25:09.235Z",
-      "updatedAt": "2026-06-02T11:30:49.2536209Z"
+      "updatedAt": "2026-06-02T11:31:46.788Z"
     }
   ],
   "sessions": [
@@ -92,6 +92,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "f6052987-2eba-4284-b81c-d03c1d506c5e",
+      "userId": "75891967-0f17-4457-9d3f-026bbea31574",
+      "amount": -1200000,
+      "balanceAfter": 3800000,
+      "reason": "video generation",
+      "createdAt": "2026-06-02T11:31:46.788Z",
+      "metadata": {
+        "model": "firefly-veo31-fast-8s-9x16-1080p",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "12c6b799-6c40-4353-a9b8-fed206133aca",
       "userId": "75891967-0f17-4457-9d3f-026bbea31574",
