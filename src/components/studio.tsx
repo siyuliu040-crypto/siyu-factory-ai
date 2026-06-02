@@ -161,9 +161,7 @@ const stableImageModels = [
 const stableVideoModels = [
   "firefly-veo31-fast-8s-9x16-1080p",
   "firefly-veo31-ref-8s-9x16-1080p",
-  "veo_3_1-fast-portrait",
-  "veo_3_1-fast-portrait-hd",
-  "veo_3_1-fast-portrait-fl-hd"
+  "veo_3_1-fast-portrait"
 ];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
