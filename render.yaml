@@ -6,10 +6,6 @@ services:
     buildCommand: npm ci && node node_modules/next/dist/bin/next build
     startCommand: node scripts/start.mjs
     autoDeploy: true
-    disk:
-      name: siyu-factory-data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: NODE_VERSION
         value: 24
@@ -19,3 +15,11 @@ services:
         value: https://api.hellobabygo.com
       - key: SIYU_PUBLIC_BASE_URL
         value: https://siyu-factory-ai.onrender.com
+      - key: SIYU_GITHUB_STORAGE_REPO
+        value: siyuliu040-crypto/siyu-factory-ai
+      - key: SIYU_GITHUB_STORAGE_PATH
+        value: .data/siyu-factory-accounts.json
+      - key: SIYU_GITHUB_STORAGE_BRANCH
+        value: main
+      - key: SIYU_GITHUB_STORAGE_TOKEN
+        sync: false
