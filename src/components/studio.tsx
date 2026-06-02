@@ -142,25 +142,28 @@ const HISTORY_KEY = "siyu-factory-generation-history";
 const HISTORY_LIMIT = 40;
 const MAX_BATCH_VIDEOS = 10;
 const DISPLAY_CREDIT_SCALE = 10000;
-const MAX_VIDEO_ATTEMPTS = 3;
+const MAX_VIDEO_ATTEMPTS = 1;
 const VIDEO_RETRY_DELAY_MS = 30000;
 const VIDEO_POLL_INTERVAL_MS = 5000;
 const VIDEO_MAX_POLL_ATTEMPTS = 180;
 const VIDEO_MAX_TRANSIENT_ATTEMPTS = 36;
 
-const stableImageModels = ["gpt-image-2"];
+const stableImageModels = [
+  "gpt-image-2",
+  "nano_banana_2-1K-portrait",
+  "nano_banana_2-2K-portrait",
+  "nano_banana_2-4K-portrait",
+  "nano_banana_pro-1K-portrait",
+  "nano_banana_pro-2K-portrait",
+  "nano_banana_pro-4K-portrait"
+];
 
 const stableVideoModels = [
-  "ali-sora-video-portrait-official-8s",
-  "ali-sora-video-portrait-official-4s",
-  "ali-sora-video-portrait-official-12s",
-  "ali-sora-video-landscape-official-8s",
-  "ali-sora-video-landscape-official-4s",
-  "ali-sora-video-landscape-official-12s",
+  "firefly-veo31-fast-8s-9x16-1080p",
+  "firefly-veo31-ref-8s-9x16-1080p",
   "veo_3_1-fast-portrait",
-  "veo_3_1-fast-landscape",
   "veo_3_1-fast-portrait-hd",
-  "veo_3_1-fast-landscape-hd"
+  "veo_3_1-fast-portrait-fl-hd"
 ];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
@@ -190,7 +193,7 @@ const copy = {
     seconds15: "15 秒",
     aspect: "画幅",
     portrait: "9:16 竖屏",
-    landscape: "16:9 横屏",
+    landscape: "9:16 竖屏",
     referenceImages: "参考图",
     uploadReferences: "上传参考图",
     addReferences: "添加更多",
@@ -228,7 +231,6 @@ const copy = {
     batchEstimatedCost: "批量预计消耗",
     credits: "积分",
     costUnknown: "按上游实际扣费",
-    pricingNote: "站内积分只用于本网站分配和扣减，不会直接改变 HellobabyGo 上游余额。上游余额不足时仍需要到钱包充值。",
     batchCardPlaceholder: "填写这个作品的视频提示词",
     work: "作品",
     workReferences: "作品参考图",
@@ -267,7 +269,7 @@ const copy = {
     seconds15: "15 seconds",
     aspect: "Aspect",
     portrait: "9:16 portrait",
-    landscape: "16:9 landscape",
+    landscape: "9:16 portrait",
     referenceImages: "Reference images",
     uploadReferences: "Upload references",
     addReferences: "Add more",
@@ -305,7 +307,6 @@ const copy = {
     batchEstimatedCost: "Batch estimated cost",
     credits: "credits",
     costUnknown: "Billed by upstream",
-    pricingNote: "Site credits are only for this website's allocation and deduction. They do not change the HellobabyGo upstream balance.",
     batchCardPlaceholder: "Write this work's video prompt",
     work: "Work",
     workReferences: "Work references",
@@ -344,7 +345,7 @@ function getModelCreditCost(model: string) {
 
 function isVideoModel(model: string) {
   const lower = model.toLowerCase();
-  return lower.includes("video") || lower.includes("veo") || lower.includes("sora");
+  return lower.includes("video") || lower.includes("veo");
 }
 
 function getCreditCost(model: string, duration?: string) {
@@ -383,22 +384,22 @@ function formatQuotaText(value: string) {
 
 function getModelTitle(model: string, language: Language) {
   const lower = model.toLowerCase();
-  if (lower.includes("ali-sora")) return language === "zh" ? "Sora 官方" : "Sora official";
+  if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
   if (lower.includes("veo_3_1")) return language === "zh" ? "VEO 3.1 Fast" : "VEO 3.1 Fast";
+  if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro" : "Nano Banana Pro";
+  if (lower.includes("nano_banana")) return language === "zh" ? "Nano Banana" : "Nano Banana";
   return model;
 }
 
 function getModelDescription(model: string, language: Language) {
   const lower = model.toLowerCase();
-  const aspect = lower.includes("landscape") || lower.includes("16x9")
-    ? language === "zh" ? "16:9 横屏" : "16:9 landscape"
-    : language === "zh" ? "9:16 竖屏" : "9:16 portrait";
+  const aspect = language === "zh" ? "9:16 竖屏" : "9:16 portrait";
   const reference = lower.includes("hd") || lower.includes("ref") || lower.includes("veo")
     ? copy[language].modelCanReference
     : copy[language].modelTextOnly;
-  const duration = lower.match(/(\d+)s/)?.[1];
-  const durationText = duration
-    ? language === "zh" ? `${duration} 秒视频` : `${duration}s video`
+  const fixedDuration = lower.includes("firefly-veo31") ? "8" : lower.match(/(\d+)s/)?.[1];
+  const durationText = fixedDuration
+    ? language === "zh" ? `${fixedDuration} 秒视频` : `${fixedDuration}s video`
     : language === "zh" ? "4/8/12/15 秒可选" : "4/8/12/15s selectable";
   return `${aspect} · ${durationText} · ${reference}`;
 }
@@ -482,21 +483,16 @@ function cleanErrorMessage(error: string, language: Language) {
 }
 
 function getReferenceVideoModel(size: string) {
-  return size.includes("1280x720")
-    ? "veo_3_1-fast-landscape-hd"
-    : "veo_3_1-fast-portrait-hd";
+  void size;
+  return "firefly-veo31-ref-8s-9x16-1080p";
 }
 
 function getFastVideoModel(size: string, duration: string) {
+  void size;
   if (duration === "15") {
-    return size.includes("1280x720")
-      ? "veo_3_1-fast-landscape"
-      : "veo_3_1-fast-portrait";
+    return "veo_3_1-fast-portrait";
   }
-  const seconds = ["4", "8", "12"].includes(duration) ? duration : "8";
-  return size.includes("1280x720")
-    ? `ali-sora-video-landscape-official-${seconds}s`
-    : `ali-sora-video-portrait-official-${seconds}s`;
+  return "firefly-veo31-fast-8s-9x16-1080p";
 }
 
 function getEffectiveVideoModel(size: string, hasReference: boolean, duration: string) {
@@ -702,14 +698,15 @@ export default function Studio() {
   const activeModel = mode === "image" ? imageModel : videoModel;
   const activeModelCost = getCreditCost(activeModel, seconds);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
-  const canSubmit = prompt.trim().length > 0 && !isLoading && !isPolling && Boolean(currentUser) && canAffordActiveModel;
+  const canSubmit = prompt.trim().length > 0 && !isLoading && Boolean(currentUser) && canAffordActiveModel;
   const filledBatchSlots = batchPrompts.filter((item) => item.value.trim()).slice(0, MAX_BATCH_VIDEOS);
-  const batchPromptCount = filledBatchSlots.length;
   const batchCreditTotal = filledBatchSlots.length
     ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds), seconds), 0)
     : undefined;
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal);
   const showCreditWarning = Boolean(currentUser && activeModelCost && currentUser.credits < activeModelCost);
+  const imageHistory = history.filter((item) => item.mode === "image");
+  const videoHistory = history.filter((item) => item.mode === "video");
 
   async function refreshSession() {
     try {
@@ -1175,7 +1172,7 @@ export default function Studio() {
               tone: "running"
             });
             saveHistory({ mode: "video", model: effectiveModel, prompt, videoId: taskId, status: payload.status });
-            await pollVideo(taskId);
+            void pollVideo(taskId);
           }
           return;
         } catch (caught) {
@@ -1311,7 +1308,7 @@ export default function Studio() {
         <section className="auth-card">
           <div className="brand-mark"><Sparkles size={24} /></div>
           <h1>{tx("welcomeFactory", "欢迎来到思雨的工厂")}</h1>
-          <p>{tx("authIntro", "注册后才能进入主网站。第一个注册账号会自动成为主账号，可以给其他用户分配积分。")}</p>
+          <p>{tx("authIntro", "注册或登录后进入工作台。账号会长期保留，不需要重复注册。")}</p>
 
           <div className="segmented auth-tabs">
             <button className={`segment ${authMode === "login" ? "active" : ""}`} onClick={() => setAuthMode("login")} type="button">
@@ -1352,7 +1349,7 @@ export default function Studio() {
           </div>
 
           {authError ? <div className="status-alert">{authError}</div> : null}
-          <p className="auth-footnote">{tx("authFootnote", "提示：先用你的主账号注册一次，再邀请其他人注册普通账号。")}</p>
+          <p className="auth-footnote">{tx("authFootnote", "提示：注册过的账号会保存在服务端，下次可以直接登录。")}</p>
         </section>
       </main>
     );
@@ -1381,7 +1378,7 @@ export default function Studio() {
             <div>
               <span className="section-label compact">
                 {isAdmin ? <Shield size={14} /> : <User size={14} />}
-                {isAdmin ? tx("mainAccount", "主账号") : tx("memberAccount", "成员账号")}
+                {isAdmin ? tx("adminAccount", "管理员") : tx("memberAccount", "成员账号")}
               </span>
               <strong>{currentUser.name}</strong>
               <small>{currentUser.email}</small>
@@ -1569,13 +1566,12 @@ export default function Studio() {
                       value={videoSize}
                     >
                       <option value="720x1280">{t.portrait}</option>
-                      <option value="1280x720">{t.landscape}</option>
                     </select>
                   </div>
                   <div className="field">
                     <label>{t.estimatedCost}</label>
                     <button className="primary-button" disabled={!canSubmit} onClick={generateVideo} type="button">
-                      {isLoading || isPolling ? <Loader2 size={18} /> : <Play size={18} />}{t.generateVideo}
+                      {isLoading ? <Loader2 size={18} /> : <Play size={18} />}{t.generateVideo}
                       <small>{formatCreditCost(videoModel, language, seconds)}</small>
                     </button>
                   </div>
@@ -1722,7 +1718,6 @@ export default function Studio() {
               </button>
             ) : null}
           </div>
-          <div className="pricing-note">{t.pricingNote}</div>
         </section>
 
         <aside className="result-panel">
@@ -1812,23 +1807,46 @@ export default function Studio() {
               <button className="text-button" disabled={!history.length} onClick={clearHistory} type="button">{t.clearHistory}</button>
             </div>
             {history.length ? (
-              <div className="history-list">
-                {history.map((item) => (
-                  <button className="history-item" key={item.id} onClick={() => restoreHistory(item)} type="button">
-                    <div className="history-thumb">
-                      {item.previewUrl ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img alt={item.prompt} src={item.previewUrl} />
-                      ) : item.mode === "video" ? <Film size={22} /> : <ImageIcon size={22} />}
-                    </div>
-                    <div>
-                      <strong>{item.mode === "image" ? t.image : t.video}</strong>
-                      <span>{item.prompt}</span>
-                      <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
-                    </div>
-                  </button>
-                ))}
-              </div>
+              <>
+                <div className="history-section-title"><ImageIcon size={14} />{t.image}</div>
+                <div className="history-list">
+                  {imageHistory.map((item) => (
+                    <button className="history-item" key={item.id} onClick={() => restoreHistory(item)} type="button">
+                      <div className="history-thumb">
+                        {item.previewUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img alt={item.prompt} src={item.previewUrl} />
+                        ) : <ImageIcon size={22} />}
+                      </div>
+                      <div>
+                        <strong>{t.image}</strong>
+                        <span>{item.prompt}</span>
+                        <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
+                      </div>
+                    </button>
+                  ))}
+                  {!imageHistory.length ? <p className="history-empty">{t.historyEmpty}</p> : null}
+                </div>
+                <div className="history-section-title"><Film size={14} />{t.video}</div>
+                <div className="history-list">
+                  {videoHistory.map((item) => (
+                    <button className="history-item" key={item.id} onClick={() => restoreHistory(item)} type="button">
+                      <div className="history-thumb">
+                        {item.previewUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img alt={item.prompt} src={item.previewUrl} />
+                        ) : <Film size={22} />}
+                      </div>
+                      <div>
+                        <strong>{t.video}</strong>
+                        <span>{item.prompt}</span>
+                        <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
+                      </div>
+                    </button>
+                  ))}
+                  {!videoHistory.length ? <p className="history-empty">{t.historyEmpty}</p> : null}
+                </div>
+              </>
             ) : <p className="history-empty">{t.historyEmpty}</p>}
           </div>
         </aside>
