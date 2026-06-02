@@ -36,9 +36,9 @@
       "name": "Codex Test",
       "passwordHash": "d57f7bb0aa5308ecf9c07da0f560816e:92a182ead02961453dc378b51fdcaf18cf0f88d7d5a1c1861f046b0753973312c2576ee1c891d324f46efff54e2b34ab59674c7c8f5a8f1c7184d31df2081a9e",
       "role": "user",
-      "credits": 1000000,
+      "credits": 960000,
       "createdAt": "2026-06-02T11:25:09.235Z",
-      "updatedAt": "2026-06-02T11:25:44.7434060Z"
+      "updatedAt": "2026-06-02T11:29:25.909Z"
     }
   ],
   "sessions": [
@@ -74,6 +74,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "12c6b799-6c40-4353-a9b8-fed206133aca",
+      "userId": "75891967-0f17-4457-9d3f-026bbea31574",
+      "amount": -40000,
+      "balanceAfter": 960000,
+      "reason": "image generation",
+      "createdAt": "2026-06-02T11:29:25.910Z",
+      "metadata": {
+        "model": "nano_banana_2-1K-portrait",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "6c919f3d-a0f1-45b2-a8ff-a624347c0ed8",
       "userId": "13dc6065-2b61-406a-8ec8-8da41ee6ec16",
