@@ -6,6 +6,10 @@ services:
     buildCommand: npm ci && node node_modules/next/dist/bin/next build
     startCommand: node scripts/start.mjs
     autoDeploy: true
+    disk:
+      name: siyu-factory-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
       - key: NODE_VERSION
         value: 24
