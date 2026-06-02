@@ -133,10 +133,10 @@
       "type": "video",
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "amount": 1200000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-02T11:31:47.913Z",
-      "updatedAt": "2026-06-02T11:31:47.913Z"
+      "updatedAt": "2026-06-02T11:36:10.135Z"
     }
   ],
   "history": [
@@ -146,10 +146,11 @@
       "mode": "video",
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "prompt": "9:16 vertical ultra realistic product video, short curly pixie wig on mannequin head rotating slowly on clean studio table, soft light, detailed hair texture, no text, no logo",
+      "previewUrl": "https://file.bandianwa.com/adobe2/video/20260602/a09d5af6cc984d7191ff70e6718bf7e2.mp4",
       "taskId": "task_kLkIzRGep99KGs0mhSoFkfJzN4oqilsH",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-02T11:31:47.913Z",
-      "updatedAt": "2026-06-02T11:35:58.260Z"
+      "updatedAt": "2026-06-02T11:36:10.135Z"
     },
     {
       "id": "9d097a77-b2f2-4803-869f-4fd764749709",
