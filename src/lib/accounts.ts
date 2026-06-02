@@ -206,7 +206,9 @@ async function readGithubAccountState() {
   if (response.status === 404) return createEmptyAccountState();
   if (!response.ok) throw new Error(`GitHub account storage read failed: ${response.status}`);
   const payload = (await response.json()) as { content?: string };
-  const text = Buffer.from(String(payload.content || "").replace(/\s/g, ""), "base64").toString("utf8");
+  const text = Buffer.from(String(payload.content || "").replace(/\s/g, ""), "base64")
+    .toString("utf8")
+    .replace(/^\uFEFF/, "");
   return ensureShape(JSON.parse(text) as Partial<AccountState>);
 }
 
