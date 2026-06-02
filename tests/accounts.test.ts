@@ -81,7 +81,7 @@ test("generation history is stored per user and can be updated by task id", () =
   recordGenerationHistory(state, {
     userId: user.id,
     type: "video",
-    model: "ali-sora-video-portrait-official-4s",
+    model: "firefly-veo31-fast-8s-9x16-1080p",
     prompt: "short wig product video",
     taskId: "task_video",
     status: "queued"
