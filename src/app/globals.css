@@ -220,6 +220,12 @@ button:disabled {
     linear-gradient(135deg, rgba(15, 143, 130, 0.12), rgba(244, 188, 59, 0.13)),
     rgba(255, 255, 255, 0.72);
   padding: 14px;
+  min-width: 0;
+}
+
+.quota-card > div,
+.account-card > div {
+  min-width: 0;
 }
 
 .account-card {
@@ -278,8 +284,9 @@ button:disabled {
 
 .quota-card strong {
   display: block;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 .quota-card small {
@@ -398,6 +405,7 @@ button:disabled {
 .select,
 .textarea {
   width: 100%;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.8);
@@ -459,6 +467,7 @@ button:disabled {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  max-width: 100%;
   min-height: 34px;
   padding: 0 12px;
   border: 1px solid var(--line);
@@ -467,7 +476,8 @@ button:disabled {
   color: var(--accent-dark);
   font-size: 12px;
   font-weight: 700;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .link-pill {
@@ -512,6 +522,8 @@ button.status-pill {
   border-radius: 13px;
   padding: 0 16px;
   font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .primary-button small,
@@ -872,6 +884,7 @@ button.status-pill {
   padding: 8px 10px;
   color: var(--ink);
   text-align: left;
+  min-width: 0;
 }
 
 .model-chip.active {
@@ -880,13 +893,15 @@ button.status-pill {
 }
 
 .model-chip span {
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .model-chip small {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  max-width: 96px;
   border: 1px solid rgba(15, 143, 130, 0.2);
   border-radius: 999px;
   background: rgba(15, 143, 130, 0.08);
@@ -894,6 +909,8 @@ button.status-pill {
   padding: 3px 8px;
   font-size: 11px;
   font-weight: 800;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .cost-pill {
@@ -1061,8 +1078,8 @@ button.status-pill {
   gap: 12px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.48);
-  padding: 12px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 14px;
 }
 
 .pricing-note {
@@ -1074,7 +1091,51 @@ button.status-pill {
 }
 
 .batch-textarea {
-  min-height: 130px;
+  min-height: 112px;
+}
+
+.batch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.batch-card {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+  border: 1px solid rgba(215, 204, 185, 0.9);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 250, 240, 0.72));
+  padding: 10px;
+}
+
+.batch-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.batch-card-head strong {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.batch-card-head small {
+  flex: 0 0 auto;
+  border: 1px solid rgba(15, 143, 130, 0.18);
+  border-radius: 999px;
+  background: rgba(15, 143, 130, 0.08);
+  color: var(--accent-dark);
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .batch-results {
@@ -1169,5 +1230,17 @@ button.status-pill {
 
   .reference-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .batch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-head {
+    flex-direction: column;
+  }
+
+  .batch-job {
+    grid-template-columns: 1fr;
   }
 }
