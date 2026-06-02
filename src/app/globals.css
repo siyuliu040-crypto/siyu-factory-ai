@@ -501,6 +501,39 @@ button.status-pill {
   padding: 20px;
 }
 
+.credit-warning {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid rgba(232, 81, 47, 0.32);
+  border-radius: 14px;
+  background: rgba(232, 81, 47, 0.08);
+  color: var(--ink);
+  padding: 12px;
+}
+
+.credit-warning svg {
+  color: var(--signal);
+}
+
+.credit-warning strong,
+.credit-warning span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.credit-warning strong {
+  font-size: 13px;
+}
+
+.credit-warning span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 .prompt-toolbar,
 .param-grid {
   display: grid;
