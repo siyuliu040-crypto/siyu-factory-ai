@@ -22,7 +22,7 @@ import {
   X
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { MODEL_CREDIT_COSTS } from "@/lib/pricing";
+import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
@@ -97,6 +97,8 @@ type BatchJob = {
 type BatchPromptSlot = {
   id: string;
   value: string;
+  referenceFiles: File[];
+  referencePreviews: ReferencePreview[];
 };
 
 type AccountUser = {
@@ -185,6 +187,7 @@ const copy = {
     seconds4: "4 秒",
     seconds8: "8 秒",
     seconds12: "12 秒",
+    seconds15: "15 秒",
     aspect: "画幅",
     portrait: "9:16 竖屏",
     landscape: "16:9 横屏",
@@ -228,6 +231,9 @@ const copy = {
     pricingNote: "站内积分只用于本网站分配和扣减，不会直接改变 HellobabyGo 上游余额。上游余额不足时仍需要到钱包充值。",
     batchCardPlaceholder: "填写这个作品的视频提示词",
     work: "作品",
+    workReferences: "作品参考图",
+    modelCanReference: "可用参考图",
+    modelTextOnly: "纯提示词",
     noCreditsTitle: "站内积分不足",
     noCreditsBody: "当前账号积分不够生成，请联系主账号分配积分后再试。",
     grant: "分配",
@@ -258,6 +264,7 @@ const copy = {
     seconds4: "4 seconds",
     seconds8: "8 seconds",
     seconds12: "12 seconds",
+    seconds15: "15 seconds",
     aspect: "Aspect",
     portrait: "9:16 portrait",
     landscape: "16:9 landscape",
@@ -301,6 +308,9 @@ const copy = {
     pricingNote: "Site credits are only for this website's allocation and deduction. They do not change the HellobabyGo upstream balance.",
     batchCardPlaceholder: "Write this work's video prompt",
     work: "Work",
+    workReferences: "Work references",
+    modelCanReference: "Reference ready",
+    modelTextOnly: "Prompt only",
     noCreditsTitle: "Not enough site credits",
     noCreditsBody: "This account needs more site credits from the main account before generating.",
     grant: "Grant",
@@ -329,11 +339,21 @@ function getVideoUrl(result?: VideoResult | null) {
 }
 
 function getModelCreditCost(model: string) {
-  return modelCreditCosts[model];
+  return modelCreditCosts[model] || MODEL_CREDIT_COSTS[model];
 }
 
-function formatCreditCost(model: string, language: Language) {
-  const cost = getModelCreditCost(model);
+function isVideoModel(model: string) {
+  const lower = model.toLowerCase();
+  return lower.includes("video") || lower.includes("veo") || lower.includes("sora");
+}
+
+function getCreditCost(model: string, duration?: string) {
+  if (isVideoModel(model)) return getVideoGenerationCost(model, duration);
+  return getModelCreditCost(model);
+}
+
+function formatCreditCost(model: string, language: Language, duration?: string) {
+  const cost = getCreditCost(model, duration);
   if (!cost) return copy[language].costUnknown;
   return `${formatDisplayCredits(cost)} ${copy[language].credits}`;
 }
@@ -359,6 +379,28 @@ function parseDisplayCredits(value: string) {
 
 function formatQuotaText(value: string) {
   return value.replace(/\$/g, "").replace(/\s*USD\s*/gi, "").trim();
+}
+
+function getModelTitle(model: string, language: Language) {
+  const lower = model.toLowerCase();
+  if (lower.includes("ali-sora")) return language === "zh" ? "Sora 官方" : "Sora official";
+  if (lower.includes("veo_3_1")) return language === "zh" ? "VEO 3.1 Fast" : "VEO 3.1 Fast";
+  return model;
+}
+
+function getModelDescription(model: string, language: Language) {
+  const lower = model.toLowerCase();
+  const aspect = lower.includes("landscape") || lower.includes("16x9")
+    ? language === "zh" ? "16:9 横屏" : "16:9 landscape"
+    : language === "zh" ? "9:16 竖屏" : "9:16 portrait";
+  const reference = lower.includes("hd") || lower.includes("ref") || lower.includes("veo")
+    ? copy[language].modelCanReference
+    : copy[language].modelTextOnly;
+  const duration = lower.match(/(\d+)s/)?.[1];
+  const durationText = duration
+    ? language === "zh" ? `${duration} 秒视频` : `${duration}s video`
+    : language === "zh" ? "4/8/12/15 秒可选" : "4/8/12/15s selectable";
+  return `${aspect} · ${durationText} · ${reference}`;
 }
 function isVideoDone(status?: string, result?: VideoResult | null) {
   return (
@@ -446,6 +488,11 @@ function getReferenceVideoModel(size: string) {
 }
 
 function getFastVideoModel(size: string, duration: string) {
+  if (duration === "15") {
+    return size.includes("1280x720")
+      ? "veo_3_1-fast-landscape"
+      : "veo_3_1-fast-portrait";
+  }
   const seconds = ["4", "8", "12"].includes(duration) ? duration : "8";
   return size.includes("1280x720")
     ? `ali-sora-video-landscape-official-${seconds}s`
@@ -565,7 +612,9 @@ export default function Studio() {
           ? "9:16 vertical, ultra-realistic beauty commercial, woman slowly turns to show short curly pixie wig, warm studio light, no text"
           : index === 1
             ? "9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no text"
-            : ""
+            : "",
+      referenceFiles: [],
+      referencePreviews: []
     }))
   );
   const [imageSize, setImageSize] = useState("1024x1792");
@@ -649,13 +698,16 @@ export default function Studio() {
   const displayError = cleanErrorMessage(error, language);
   const needsTopUp = isInsufficientQuota(error);
   const referenceInputId = `reference-images-${mode}`;
+  const singleVideoHasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
   const activeModel = mode === "image" ? imageModel : videoModel;
-  const activeModelCost = getModelCreditCost(activeModel);
+  const activeModelCost = getCreditCost(activeModel, seconds);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
   const canSubmit = prompt.trim().length > 0 && !isLoading && !isPolling && Boolean(currentUser) && canAffordActiveModel;
-  const filledBatchPrompts = batchPrompts.map((item) => item.value.trim()).filter(Boolean).slice(0, MAX_BATCH_VIDEOS);
-  const batchPromptCount = filledBatchPrompts.length;
-  const batchCreditTotal = activeModelCost && batchPromptCount ? activeModelCost * batchPromptCount : undefined;
+  const filledBatchSlots = batchPrompts.filter((item) => item.value.trim()).slice(0, MAX_BATCH_VIDEOS);
+  const batchPromptCount = filledBatchSlots.length;
+  const batchCreditTotal = filledBatchSlots.length
+    ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds), seconds), 0)
+    : undefined;
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal);
   const showCreditWarning = Boolean(currentUser && activeModelCost && currentUser.credits < activeModelCost);
 
@@ -793,6 +845,56 @@ export default function Studio() {
 
   function updateBatchPrompt(id: string, value: string) {
     setBatchPrompts((current) => current.map((item) => (item.id === id ? { ...item, value } : item)));
+  }
+
+  async function addBatchReferenceFiles(id: string, files: FileList | null) {
+    if (!files?.length) return;
+    const slot = batchPrompts.find((item) => item.id === id);
+    if (!slot) return;
+    const incoming = Array.from(files).filter((file) => file.type.startsWith("image/"));
+    const selected = incoming.slice(0, Math.max(MAX_REFERENCE_IMAGES - slot.referenceFiles.length, 0));
+    if (!selected.length) return;
+
+    const optimized = await Promise.all(selected.map((file) => compressImage(file)));
+    setBatchPrompts((current) =>
+      current.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              referenceFiles: [...item.referenceFiles, ...optimized],
+              referencePreviews: [
+                ...item.referencePreviews,
+                ...optimized.map((file) => ({ name: file.name, url: URL.createObjectURL(file) }))
+              ]
+            }
+          : item
+      )
+    );
+  }
+
+  function removeBatchReference(id: string, index: number) {
+    setBatchPrompts((current) =>
+      current.map((item) => {
+        if (item.id !== id) return item;
+        const preview = item.referencePreviews[index];
+        if (preview) URL.revokeObjectURL(preview.url);
+        return {
+          ...item,
+          referenceFiles: item.referenceFiles.filter((_, itemIndex) => itemIndex !== index),
+          referencePreviews: item.referencePreviews.filter((_, itemIndex) => itemIndex !== index)
+        };
+      })
+    );
+  }
+
+  function clearBatchReferences(id: string) {
+    setBatchPrompts((current) =>
+      current.map((item) => {
+        if (item.id !== id) return item;
+        for (const preview of item.referencePreviews) URL.revokeObjectURL(preview.url);
+        return { ...item, referenceFiles: [], referencePreviews: [] };
+      })
+    );
   }
 
   function saveHistory(item: Omit<HistoryItem, "id" | "createdAt">) {
@@ -968,14 +1070,16 @@ export default function Studio() {
     }
   }
 
-  async function submitVideo(videoPrompt: string, model: string) {
+  async function submitVideo(videoPrompt: string, model: string, options?: { references?: File[]; referenceUrl?: string }) {
+    const references = options?.references ?? referenceFiles;
+    const referenceUrl = options?.referenceUrl ?? imageUrl;
     const formData = new FormData();
     formData.set("model", model);
     formData.set("prompt", videoPrompt);
     formData.set("seconds", seconds);
     formData.set("size", videoSize);
-    if (imageUrl) formData.set("image_url", imageUrl);
-    for (const reference of referenceFiles) formData.append("input_reference", reference, reference.name);
+    if (referenceUrl) formData.set("image_url", referenceUrl);
+    for (const reference of references) formData.append("input_reference", reference, reference.name);
 
     const response = await fetch("/api/videos/generate", { method: "POST", body: formData });
     const payload = (await response.json()) as VideoResult;
@@ -1055,8 +1159,7 @@ export default function Studio() {
       tone: "running"
     });
     try {
-      const hasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
-      const effectiveModel = getEffectiveVideoModel(videoSize, hasReference, seconds);
+      const effectiveModel = videoModel || getEffectiveVideoModel(videoSize, singleVideoHasReference, seconds);
       setVideoModel(effectiveModel);
 
       for (let attempt = 0; attempt < MAX_VIDEO_ATTEMPTS; attempt += 1) {
@@ -1101,8 +1204,8 @@ export default function Studio() {
 
   async function generateBatchVideos() {
     if (!currentUser) return;
-    const prompts = filledBatchPrompts;
-    if (!prompts.length) {
+    const slots = filledBatchSlots;
+    if (!slots.length) {
       setError(t.noBatchPrompt);
       return;
     }
@@ -1123,21 +1226,18 @@ export default function Studio() {
       tone: "running"
     });
 
-    const hasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
-    const effectiveModel = getEffectiveVideoModel(videoSize, hasReference, seconds);
-    setVideoModel(effectiveModel);
-
-    const initialJobs: BatchJob[] = prompts.map((item, index) => ({
+    const initialJobs: BatchJob[] = slots.map((slot, index) => ({
       id: `${Date.now()}-${index}`,
-      prompt: item,
-      model: effectiveModel,
+      prompt: slot.value.trim(),
+      model: getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds),
       status: "queued",
       progress: 0,
       attempts: 0
     }));
     setBatchJobs(initialJobs);
 
-    for (const job of initialJobs) {
+    for (const [index, job] of initialJobs.entries()) {
+      const slot = slots[index];
       const updateJob = (patch: Partial<BatchJob>) => {
         setBatchJobs((current) => current.map((item) => (item.id === job.id ? { ...item, ...patch } : item)));
       };
@@ -1147,11 +1247,11 @@ export default function Studio() {
         for (let attempt = 0; attempt < MAX_VIDEO_ATTEMPTS; attempt += 1) {
           try {
             updateJob({ status: "submitting", progress: 0, attempts: attempt + 1, error: "" });
-            const payload = await submitVideo(job.prompt, effectiveModel);
+            const payload = await submitVideo(job.prompt, job.model, { references: slot.referenceFiles, referenceUrl: "" });
             const taskId = getVideoTaskId(payload);
             updateJob({ taskId, status: payload.status || "queued", progress: payload.progress || 0 });
             if (!taskId) throw new Error(JSON.stringify(payload));
-            saveHistory({ mode: "video", model: effectiveModel, prompt: job.prompt, videoId: taskId, status: payload.status });
+            saveHistory({ mode: "video", model: job.model, prompt: job.prompt, videoId: taskId, status: payload.status });
             finalPayload = await pollVideo(taskId, (next) => {
               updateJob({
                 status: next.status || "queued",
@@ -1355,7 +1455,7 @@ export default function Studio() {
           <p className="section-label">{t.stableModels}</p>
           <div className="model-list">
             {(mode === "image" ? imageModels : videoModels).map((model) => {
-              const active = mode === "image" ? imageModel === model : videoModel === model;
+              const active = mode === "image" ? imageModel === model : activeModel === model || videoModel === model;
               return (
                 <button
                   className={`model-chip ${active ? "active" : ""}`}
@@ -1364,8 +1464,11 @@ export default function Studio() {
                   title={model}
                   type="button"
                 >
-                  <span>{model}</span>
-                  <small>{formatCreditCost(model, language)}</small>
+                  <div className="model-copy">
+                    <span>{getModelTitle(model, language)}</span>
+                    <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
+                  </div>
+                  <small>{formatCreditCost(model, language, seconds)}</small>
                   {active ? <Wand2 size={15} /> : null}
                 </button>
               );
@@ -1385,7 +1488,7 @@ export default function Studio() {
                 <Languages size={15} />{language === "zh" ? "简体中文" : "English"}
               </button>
               <div className="status-pill"><Clapperboard size={15} />{activeModel}</div>
-              <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language)}</div>
+              <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language, seconds)}</div>
             </div>
           </header>
 
@@ -1398,7 +1501,7 @@ export default function Studio() {
                   <span>
                     {tx("noCreditsBody", "当前账号积分不够生成，请联系主账号分配积分后再试。")}
                     {" "}
-                    {tx("estimatedCost", "预计消耗")}: {formatCreditCost(activeModel, language)}
+                    {tx("estimatedCost", "预计消耗")}: {formatCreditCost(activeModel, language, seconds)}
                   </span>
                 </div>
               </div>
@@ -1450,6 +1553,7 @@ export default function Studio() {
                       <option value="4">{t.seconds4}</option>
                       <option value="8">{t.seconds8}</option>
                       <option value="12">{t.seconds12}</option>
+                      <option value="15">{t.seconds15}</option>
                     </select>
                   </div>
                   <div className="field">
@@ -1472,7 +1576,7 @@ export default function Studio() {
                     <label>{t.estimatedCost}</label>
                     <button className="primary-button" disabled={!canSubmit} onClick={generateVideo} type="button">
                       {isLoading || isPolling ? <Loader2 size={18} /> : <Play size={18} />}{t.generateVideo}
-                      <small>{formatCreditCost(videoModel, language)}</small>
+                      <small>{formatCreditCost(videoModel, language, seconds)}</small>
                     </button>
                   </div>
                 </div>
@@ -1487,7 +1591,7 @@ export default function Studio() {
                       <div className="batch-card" key={slot.id}>
                         <div className="batch-card-head">
                           <strong>{tx("work", "作品")} {index + 1}</strong>
-                          <small>{formatCreditCost(videoModel, language)}</small>
+                          <small>{formatCreditCost(getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds), language, seconds)}</small>
                         </div>
                         <textarea
                           className="textarea batch-textarea"
@@ -1496,6 +1600,50 @@ export default function Studio() {
                           placeholder={index === 0 ? t.batchPlaceholder : tx("batchCardPlaceholder", "填写这个作品的视频提示词")}
                           value={slot.value}
                         />
+                        <div className="batch-reference-panel">
+                          <div className="field-head compact-head">
+                            <span>{tx("workReferences", "作品参考图")}</span>
+                            <small>{slot.referenceFiles.length}/{MAX_REFERENCE_IMAGES}</small>
+                          </div>
+                          <label className="batch-reference-drop" htmlFor={`batch-reference-${slot.id}`}>
+                            <ImagePlus size={16} />
+                            <span>{slot.referenceFiles.length ? t.addReferences : t.uploadReferences}</span>
+                          </label>
+                          <input
+                            accept="image/*"
+                            id={`batch-reference-${slot.id}`}
+                            multiple
+                            onChange={(event) => {
+                              void addBatchReferenceFiles(slot.id, event.target.files);
+                              event.target.value = "";
+                            }}
+                            type="file"
+                          />
+                          {slot.referencePreviews.length ? (
+                            <div className="batch-reference-grid">
+                              {slot.referencePreviews.map((preview, previewIndex) => (
+                                <div className="reference-thumb" key={`${slot.id}-${preview.name}-${preview.url}`}>
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                                  <img alt={preview.name} src={preview.url} />
+                                  <button
+                                    aria-label={t.removeReference}
+                                    className="thumb-remove"
+                                    onClick={() => removeBatchReference(slot.id, previewIndex)}
+                                    title={t.removeReference}
+                                    type="button"
+                                  >
+                                    <X size={14} />
+                                  </button>
+                                </div>
+                              ))}
+                            </div>
+                          ) : null}
+                          {slot.referenceFiles.length ? (
+                            <button className="text-button batch-clear" onClick={() => clearBatchReferences(slot.id)} type="button">
+                              {t.clearAll}
+                            </button>
+                          ) : null}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -1507,7 +1655,7 @@ export default function Studio() {
               </>
             )}
 
-            <div className="field">
+            <div className="field reference-field">
               <div className="field-head">
                 <label htmlFor={referenceInputId}>{t.referenceImages}</label>
                 <span>{t.referenceLimit}</span>
@@ -1635,7 +1783,7 @@ export default function Studio() {
                 <div className="batch-job" key={job.id}>
                   <div>
                     <strong>#{index + 1} {job.status}</strong>
-                    <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language)}</span>
+                    <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language, seconds)}</span>
                     <small>{job.prompt}</small>
                   </div>
                   {job.url ? <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer"><Download size={15} />{t.download}</a> : null}
