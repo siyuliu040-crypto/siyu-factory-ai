@@ -113,6 +113,9 @@ const SESSION_DAYS = 7;
 const LOCAL_DATA_FILE = path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "siyu-factory-accounts.json");
 const RENDER_DISK_DATA_FILE = "/var/data/siyu-factory-accounts.json";
 const INITIAL_ADMIN_CREDITS = Number(process.env.SIYU_INITIAL_ADMIN_CREDITS || 20000000);
+const GITHUB_STORAGE_REPO = process.env.SIYU_GITHUB_STORAGE_REPO || "siyuliu040-crypto/siyu-factory-ai";
+const GITHUB_STORAGE_PATH = process.env.SIYU_GITHUB_STORAGE_PATH || ".data/siyu-factory-accounts.json";
+const GITHUB_STORAGE_BRANCH = process.env.SIYU_GITHUB_STORAGE_BRANCH || "main";
 
 const globalForAccounts = globalThis as typeof globalThis & {
   siyuAccountState?: AccountState;
@@ -170,6 +173,69 @@ function dataFilePath() {
   if (process.env.SIYU_DATA_FILE) return process.env.SIYU_DATA_FILE;
   if (process.platform !== "win32" && existsSync("/var/data")) return RENDER_DISK_DATA_FILE;
   return LOCAL_DATA_FILE;
+}
+
+function githubStorageToken() {
+  return process.env.SIYU_GITHUB_STORAGE_TOKEN || process.env.GITHUB_TOKEN || "";
+}
+
+function hasGithubStorage() {
+  return Boolean(githubStorageToken() && GITHUB_STORAGE_REPO && GITHUB_STORAGE_PATH);
+}
+
+export function getAccountStorageInfo() {
+  if (hasGithubStorage()) return { persistent: true, label: "github" };
+  if (process.env.SIYU_DATA_FILE || (process.platform !== "win32" && existsSync("/var/data"))) {
+    return { persistent: true, label: "disk" };
+  }
+  return { persistent: false, label: "local" };
+}
+
+async function readGithubAccountState() {
+  if (!hasGithubStorage()) return null;
+  const token = githubStorageToken();
+  const url = `https://api.github.com/repos/${GITHUB_STORAGE_REPO}/contents/${encodeURIComponent(GITHUB_STORAGE_PATH).replace(/%2F/g, "/")}?ref=${encodeURIComponent(GITHUB_STORAGE_BRANCH)}`;
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    },
+    cache: "no-store"
+  });
+  if (response.status === 404) return createEmptyAccountState();
+  if (!response.ok) throw new Error(`GitHub account storage read failed: ${response.status}`);
+  const payload = (await response.json()) as { content?: string };
+  const text = Buffer.from(String(payload.content || "").replace(/\s/g, ""), "base64").toString("utf8");
+  return ensureShape(JSON.parse(text) as Partial<AccountState>);
+}
+
+async function writeGithubAccountState(state: AccountState) {
+  if (!hasGithubStorage()) return;
+  const token = githubStorageToken();
+  const apiPath = encodeURIComponent(GITHUB_STORAGE_PATH).replace(/%2F/g, "/");
+  const url = `https://api.github.com/repos/${GITHUB_STORAGE_REPO}/contents/${apiPath}`;
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+    "Content-Type": "application/json"
+  };
+  const current = await fetch(`${url}?ref=${encodeURIComponent(GITHUB_STORAGE_BRANCH)}`, { headers, cache: "no-store" });
+  const existing = current.ok ? ((await current.json()) as { sha?: string }) : null;
+  if (!current.ok && current.status !== 404) throw new Error(`GitHub account storage sha failed: ${current.status}`);
+
+  const response = await fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({
+      message: "Persist Siyu Factory account state",
+      content: Buffer.from(JSON.stringify(state, null, 2), "utf8").toString("base64"),
+      sha: existing?.sha,
+      branch: GITHUB_STORAGE_BRANCH
+    })
+  });
+  if (!response.ok) throw new Error(`GitHub account storage write failed: ${response.status}`);
 }
 
 function ensureShape(value: Partial<AccountState> | null | undefined): AccountState {
@@ -445,6 +511,12 @@ export function clearSessionCookieHeader() {
 export async function readAccountState() {
   if (globalForAccounts.siyuAccountState) return globalForAccounts.siyuAccountState;
 
+  const githubState = await readGithubAccountState();
+  if (githubState) {
+    globalForAccounts.siyuAccountState = githubState;
+    return globalForAccounts.siyuAccountState;
+  }
+
   try {
     const text = await readFile(dataFilePath(), "utf8");
     globalForAccounts.siyuAccountState = ensureShape(JSON.parse(text) as Partial<AccountState>);
@@ -458,6 +530,7 @@ async function writeAccountState(state: AccountState) {
   const file = dataFilePath();
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(state, null, 2));
+  await writeGithubAccountState(state);
 }
 
 export async function withAccountState<T>(mutator: (state: AccountState) => T | Promise<T>) {
