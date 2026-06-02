@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   Clapperboard,
@@ -22,7 +22,7 @@ import {
   X
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { MODEL_CREDIT_COSTS, getUpstreamPrechargeUsd } from "@/lib/pricing";
+import { MODEL_CREDIT_COSTS } from "@/lib/pricing";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
@@ -94,6 +94,11 @@ type BatchJob = {
   error?: string;
 };
 
+type BatchPromptSlot = {
+  id: string;
+  value: string;
+};
+
 type AccountUser = {
   id: string;
   email: string;
@@ -133,7 +138,8 @@ const MAX_REFERENCE_SIDE = 1280;
 const REFERENCE_IMAGE_QUALITY = 0.82;
 const HISTORY_KEY = "siyu-factory-generation-history";
 const HISTORY_LIMIT = 40;
-const MAX_BATCH_VIDEOS = 4;
+const MAX_BATCH_VIDEOS = 10;
+const DISPLAY_CREDIT_SCALE = 10000;
 const MAX_VIDEO_ATTEMPTS = 3;
 const VIDEO_RETRY_DELAY_MS = 30000;
 const VIDEO_POLL_INTERVAL_MS = 5000;
@@ -163,13 +169,13 @@ const copy = {
     image: "图片",
     video: "视频",
     stableModels: "稳定模型",
-    note: "只展示当前入口验证过的稳定模型。图片会在后台生成，通常约 2 分钟。API Key 保存在服务端，不会暴露给浏览器。",
+    note: "只展示当前验证过的稳定模型。API Key 保存在服务端，不会暴露给浏览器。",
     title: "思雨的工厂",
     subtitle: "图片、视频、批量视频统一生产台。",
     prompt: "提示词",
-    batchPrompt: "批量视频提示词",
+    batchPrompt: "批量视频作品",
     promptPlaceholder: "描述画面、产品、人物、动作、镜头和风格。",
-    batchPlaceholder: "每个视频一段提示词。用空行分隔；如果没有空行，则按每一行分隔。",
+    batchPlaceholder: "填写第 1 个作品的视频提示词。每张卡片可以生成一个不同作品。",
     imageSize: "图片尺寸",
     currentModel: "当前模型",
     generateImage: "生成图片",
@@ -213,26 +219,28 @@ const copy = {
     videoStillProcessing: "视频任务还在处理中，系统会继续查询。",
     videoStatusFailed: "视频状态查询失败",
     syncing: "上游任务状态还在同步，请稍等，系统会继续查询。",
-    batchLimit: `一次最多 ${MAX_BATCH_VIDEOS} 个视频，系统会逐个排队生成，避免上游拥堵。`,
+    batchLimit: `最多 ${MAX_BATCH_VIDEOS} 个作品，可以一次排队生成不同视频。`,
     noBatchPrompt: "请至少填写一个批量视频提示词。",
     estimatedCost: "预计消耗",
     batchEstimatedCost: "批量预计消耗",
     credits: "积分",
     costUnknown: "按上游实际扣费",
-    pricingNote: "积分为当前平台扣费口径的预估显示，最终以 HellobabyGo 账单为准。"
+    pricingNote: "站内积分只用于本网站分配和扣减，不会直接改变 HellobabyGo 上游余额。上游余额不足时仍需要到钱包充值。",
+    batchCardPlaceholder: "填写这个作品的视频提示词",
+    work: "作品"
   },
   en: {
     mediaType: "Media type",
     image: "Image",
     video: "Video",
     stableModels: "Stable models",
-    note: "Only verified models are shown. Images run as background jobs and usually take about 2 minutes. API keys stay on the server.",
+    note: "Only verified models are shown. API keys stay on the server.",
     title: "Siyu Factory",
     subtitle: "Image, video, and batch video production desk.",
     prompt: "Prompt",
-    batchPrompt: "Batch video prompts",
+    batchPrompt: "Batch video works",
     promptPlaceholder: "Describe the scene, product, subject, movement, camera, and style.",
-    batchPlaceholder: "One prompt per video. Separate with blank lines, or use one prompt per line.",
+    batchPlaceholder: "Write the prompt for work 1. Each card can become a different video.",
     imageSize: "Image size",
     currentModel: "Current model",
     generateImage: "Generate image",
@@ -276,13 +284,15 @@ const copy = {
     videoStillProcessing: "The video task is still processing. The system will keep checking.",
     videoStatusFailed: "Video status query failed",
     syncing: "The upstream task status is still syncing. The system will keep checking.",
-    batchLimit: `Up to ${MAX_BATCH_VIDEOS} videos per batch. They run one by one to avoid upstream congestion.`,
+    batchLimit: `Up to ${MAX_BATCH_VIDEOS} works can be queued as different videos.`,
     noBatchPrompt: "Add at least one batch video prompt.",
     estimatedCost: "Estimated cost",
     batchEstimatedCost: "Batch estimated cost",
     credits: "credits",
     costUnknown: "Billed by upstream",
-    pricingNote: "Credit costs are shown as current platform estimates. Final billing follows the HellobabyGo statement."
+    pricingNote: "Site credits are only for this website's allocation and deduction. They do not change the HellobabyGo upstream balance.",
+    batchCardPlaceholder: "Write this work's video prompt",
+    work: "Work"
   }
 } satisfies Record<Language, Record<string, string>>;
 
@@ -309,16 +319,31 @@ function getModelCreditCost(model: string) {
 function formatCreditCost(model: string, language: Language) {
   const cost = getModelCreditCost(model);
   if (!cost) return copy[language].costUnknown;
-  const upstream = getUpstreamPrechargeUsd(model);
-  const upstreamText = upstream ? ` · $${upstream.toFixed(3)}` : "";
-  return `${cost.toLocaleString()} ${copy[language].credits}${upstreamText}`;
+  return `${formatDisplayCredits(cost)} ${copy[language].credits}`;
 }
 
 function formatCreditTotal(cost: number | undefined, language: Language) {
   if (!cost) return copy[language].costUnknown;
-  return `${cost.toLocaleString()} ${copy[language].credits}`;
+  return `${formatDisplayCredits(cost)} ${copy[language].credits}`;
 }
 
+function formatDisplayCredits(value: number | undefined) {
+  if (!value || !Number.isFinite(value)) return "0";
+  const scaled = value / DISPLAY_CREDIT_SCALE;
+  return new Intl.NumberFormat("zh-CN", {
+    maximumFractionDigits: scaled < 10 ? 1 : 0
+  }).format(scaled);
+}
+
+function parseDisplayCredits(value: string) {
+  const numeric = Number(value.replace(/,/g, "").trim());
+  if (!Number.isFinite(numeric) || numeric <= 0) return 0;
+  return Math.round(numeric * DISPLAY_CREDIT_SCALE);
+}
+
+function formatQuotaText(value: string) {
+  return value.replace(/\$/g, "").replace(/\s*USD\s*/gi, "").trim();
+}
 function isVideoDone(status?: string, result?: VideoResult | null) {
   return (
     ["completed", "succeeded", "success", "done"].includes(String(status || "").toLowerCase()) ||
@@ -368,7 +393,6 @@ function getRetryMessage(language: Language, attempt: number) {
     ? `上游视频服务繁忙，${VIDEO_RETRY_DELAY_MS / 1000} 秒后自动重试（第 ${attempt + 1}/${MAX_VIDEO_ATTEMPTS} 次）。`
     : `The upstream video service is busy. Retrying in ${VIDEO_RETRY_DELAY_MS / 1000}s (${attempt + 1}/${MAX_VIDEO_ATTEMPTS}).`;
 }
-
 function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -416,15 +440,6 @@ function getEffectiveVideoModel(size: string, hasReference: boolean, duration: s
   return hasReference ? getReferenceVideoModel(size) : getFastVideoModel(size, duration);
 }
 
-function parseBatchPrompts(value: string) {
-  const byBlocks = value
-    .split(/\n\s*\n/g)
-    .map((item) => item.trim())
-    .filter(Boolean);
-  const prompts = byBlocks.length > 1 ? byBlocks : value.split("\n").map((item) => item.trim()).filter(Boolean);
-  return prompts.slice(0, MAX_BATCH_VIDEOS);
-}
-
 async function compressImage(file: File): Promise<File> {
   if (!file.type.startsWith("image/")) return file;
 
@@ -462,7 +477,7 @@ function findQuotaValue(data: unknown, language: Language): string {
     seen.add(value);
     const record = value as Record<string, unknown>;
     if (record.unlimited_quota === true || record.unlimitedQuota === true) {
-      return language === "zh" ? "无限额度" : "Unlimited quota";
+      return language === "zh" ? "鏃犻檺棰濆害" : "Unlimited quota";
     }
     for (const key of keys) {
       const candidate = record[key];
@@ -526,8 +541,16 @@ export default function Studio() {
   const [prompt, setPrompt] = useState(
     "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text"
   );
-  const [batchPrompt, setBatchPrompt] = useState(
-    "9:16 vertical, ultra-realistic beauty commercial, woman slowly turns to show short curly pixie wig, warm studio light, no text\n\n9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no text"
+  const [batchPrompts, setBatchPrompts] = useState<BatchPromptSlot[]>(() =>
+    Array.from({ length: MAX_BATCH_VIDEOS }, (_, index) => ({
+      id: `batch-${index + 1}`,
+      value:
+        index === 0
+          ? "9:16 vertical, ultra-realistic beauty commercial, woman slowly turns to show short curly pixie wig, warm studio light, no text"
+          : index === 1
+            ? "9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no text"
+            : ""
+    }))
   );
   const [imageSize, setImageSize] = useState("1024x1792");
   const [seconds, setSeconds] = useState("8");
@@ -551,7 +574,7 @@ export default function Studio() {
   const [authForm, setAuthForm] = useState({ email: "", name: "", password: "" });
   const [authError, setAuthError] = useState("");
   const [grantUserId, setGrantUserId] = useState("");
-  const [grantAmount, setGrantAmount] = useState("1200000");
+  const [grantAmount, setGrantAmount] = useState("120");
   const [grantMessage, setGrantMessage] = useState("");
   const [generationStatus, setGenerationStatus] = useState<GenerationStatus>({
     label: "等待生成",
@@ -606,7 +629,7 @@ export default function Studio() {
   const currentUser = session?.user || null;
   const isAdmin = currentUser?.role === "admin";
   const quotaValue = findQuotaValue(quota?.data, language);
-  const quotaText = quotaValue || (quota?.connected ? t.quotaUnavailable : t.quotaUnknown);
+  const quotaText = quotaValue ? formatQuotaText(quotaValue) : quota?.connected ? t.quotaUnavailable : t.quotaUnknown;
   const displayError = cleanErrorMessage(error, language);
   const needsTopUp = isInsufficientQuota(error);
   const referenceInputId = `reference-images-${mode}`;
@@ -614,7 +637,8 @@ export default function Studio() {
   const activeModelCost = getModelCreditCost(activeModel);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
   const canSubmit = prompt.trim().length > 0 && !isLoading && !isPolling && Boolean(currentUser) && canAffordActiveModel;
-  const batchPromptCount = parseBatchPrompts(batchPrompt).length;
+  const filledBatchPrompts = batchPrompts.map((item) => item.value.trim()).filter(Boolean).slice(0, MAX_BATCH_VIDEOS);
+  const batchPromptCount = filledBatchPrompts.length;
   const batchCreditTotal = activeModelCost && batchPromptCount ? activeModelCost * batchPromptCount : undefined;
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal);
 
@@ -681,7 +705,7 @@ export default function Studio() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userId: grantUserId,
-          amount: Number(grantAmount),
+          amount: parseDisplayCredits(grantAmount),
           reason: "main account allocation"
         })
       });
@@ -741,6 +765,10 @@ export default function Studio() {
     setReferencePreviews([]);
     setImageUrl("");
     setVideoModel(getEffectiveVideoModel(videoSize, false, seconds));
+  }
+
+  function updateBatchPrompt(id: string, value: string) {
+    setBatchPrompts((current) => current.map((item) => (item.id === id ? { ...item, value } : item)));
   }
 
   function saveHistory(item: Omit<HistoryItem, "id" | "createdAt">) {
@@ -866,7 +894,7 @@ export default function Studio() {
       const started = (await startResponse.json()) as ImageJobResult;
       if (!startResponse.ok || !started.id) throw new Error(JSON.stringify(started));
       setGenerationStatus({
-        label: tx("statusQueued", "任务已排队"),
+              label: tx("statusQueued", "任务已排队"),
         detail: started.id,
         progress: started.progress || 0,
         tone: "running"
@@ -886,8 +914,8 @@ export default function Studio() {
         if (status.status === "completed" && status.result) {
           setImageResult(status.result);
           setGenerationStatus({
-            label: tx("statusCompleted", "生成完成"),
-            detail: tx("statusImageReady", "图片已生成，可以预览和下载。"),
+          label: tx("statusCompleted", "生成完成"),
+          detail: tx("statusImageReady", "图片已生成，可以预览和下载。"),
             progress: 100,
             tone: "done"
           });
@@ -945,7 +973,7 @@ export default function Studio() {
           onUpdate?.(pending);
           if (syncMainResult) setVideoResult((current) => current ?? pending);
           setGenerationStatus({
-            label: tx("statusSyncing", "正在同步上游状态"),
+          label: tx("statusSyncing", "正在同步上游状态"),
             detail: id,
             progress: 0,
             tone: "running"
@@ -965,7 +993,7 @@ export default function Studio() {
         });
         if (isVideoDone(payload.status, payload)) {
           setGenerationStatus({
-            label: tx("statusCompleted", "生成完成"),
+          label: tx("statusCompleted", "生成完成"),
             detail: tx("statusVideoReady", "视频已生成，可以播放和下载。"),
             progress: 100,
             tone: "done"
@@ -1041,7 +1069,7 @@ export default function Studio() {
 
   async function generateBatchVideos() {
     if (!currentUser) return;
-    const prompts = parseBatchPrompts(batchPrompt);
+    const prompts = filledBatchPrompts;
     if (!prompts.length) {
       setError(t.noBatchPrompt);
       return;
@@ -1167,14 +1195,14 @@ export default function Studio() {
               <input
                 className="input"
                 onChange={(event) => setAuthForm((current) => ({ ...current, name: event.target.value }))}
-                placeholder={tx("name", "昵称")}
+                placeholder={tx("name", "鏄电О")}
                 value={authForm.name}
               />
             ) : null}
             <input
               className="input"
               onChange={(event) => setAuthForm((current) => ({ ...current, email: event.target.value }))}
-              placeholder={tx("email", "邮箱")}
+              placeholder={tx("email", "閭")}
               type="email"
               value={authForm.email}
             />
@@ -1203,7 +1231,7 @@ export default function Studio() {
       {showWelcome ? (
         <div className="welcome-screen" role="status">
           <div className="welcome-mark"><Sparkles size={30} /></div>
-          <h1>欢迎来到思雨的工厂！</h1>
+          <h1>娆㈣繋鏉ュ埌鎬濋洦鐨勫伐鍘傦紒</h1>
         </div>
       ) : null}
 
@@ -1234,10 +1262,10 @@ export default function Studio() {
           <div className="quota-card">
             <div>
               <span className="section-label compact"><Wallet size={14} />{tx("siteCredits", "站内剩余积分")}</span>
-              <strong>{currentUser.credits.toLocaleString()}</strong>
+              <strong>{formatDisplayCredits(currentUser.credits)}</strong>
               <small>{tx("siteCreditsHint", "生成会先扣这里的积分，不足时请联系主账号分配。")}</small>
             </div>
-            <button className="icon-button" onClick={() => void refreshSession()} title={tx("refreshAccount", "刷新账号")} type="button">
+            <button className="icon-button" onClick={() => void refreshSession()} title={tx("refreshAccount", "鍒锋柊璐﹀彿")} type="button">
               <RefreshCw size={16} />
             </button>
           </div>
@@ -1262,19 +1290,19 @@ export default function Studio() {
               </a>
 
               <div className="admin-panel">
-                <p className="section-label compact"><Users size={14} />{tx("memberCredits", "成员积分管理")}</p>
+                <p className="section-label compact"><Users size={14} />{tx("memberCredits", "鎴愬憳绉垎绠＄悊")}</p>
                 <select className="select" onChange={(event) => setGrantUserId(event.target.value)} value={grantUserId}>
-                  <option value="">{tx("selectMember", "选择用户")}</option>
+                  <option value="">{tx("selectMember", "閫夋嫨鐢ㄦ埛")}</option>
                   {(session?.users || []).map((user) => (
                     <option key={user.id} value={user.id}>
-                      {user.name} · {user.credits.toLocaleString()}
+                      {user.name} · {formatDisplayCredits(user.credits)}
                     </option>
                   ))}
                 </select>
                 <div className="grant-row">
                   <input className="input" onChange={(event) => setGrantAmount(event.target.value)} type="number" value={grantAmount} />
                   <button className="secondary-button" onClick={() => void grantUserCredits()} type="button">
-                    <Plus size={16} />{tx("grant", "分配")}
+              <Plus size={16} />{tx("register", "注册")}
                   </button>
                 </div>
                 {grantMessage ? <small className="admin-message">{grantMessage}</small> : null}
@@ -1322,7 +1350,7 @@ export default function Studio() {
             </div>
             <div className="topbar-actions">
               <button className="status-pill" onClick={() => setLanguage(language === "zh" ? "en" : "zh")} type="button">
-                <Languages size={15} />{language === "zh" ? "中文" : "English"}
+                <Languages size={15} />{language === "zh" ? "涓枃" : "English"}
               </button>
               <div className="status-pill"><Clapperboard size={15} />{activeModel}</div>
               <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language)}</div>
@@ -1408,7 +1436,23 @@ export default function Studio() {
                     <label htmlFor="batch-prompt">{t.batchPrompt}</label>
                     <span>{t.batchLimit} · {t.batchEstimatedCost}: {formatCreditTotal(batchCreditTotal, language)}</span>
                   </div>
-                  <textarea className="textarea batch-textarea" id="batch-prompt" onChange={(event) => setBatchPrompt(event.target.value)} placeholder={t.batchPlaceholder} value={batchPrompt} />
+                  <div className="batch-grid">
+                    {batchPrompts.map((slot, index) => (
+                      <div className="batch-card" key={slot.id}>
+                        <div className="batch-card-head">
+                          <strong>{tx("work", "作品")} {index + 1}</strong>
+                          <small>{formatCreditCost(videoModel, language)}</small>
+                        </div>
+                        <textarea
+                          className="textarea batch-textarea"
+                          id={index === 0 ? "batch-prompt" : undefined}
+                          onChange={(event) => updateBatchPrompt(slot.id, event.target.value)}
+                          placeholder={index === 0 ? t.batchPlaceholder : tx("batchCardPlaceholder", "填写这个作品的视频提示词")}
+                          value={slot.value}
+                        />
+                      </div>
+                    ))}
+                  </div>
                   <button className="secondary-button" disabled={isLoading || isPolling || !canAffordBatch} onClick={generateBatchVideos} type="button">
                     {isLoading ? <Loader2 size={18} /> : <Clapperboard size={18} />}{t.generateBatch}
                     <small>{formatCreditTotal(batchCreditTotal, language)}</small>
