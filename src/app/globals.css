@@ -47,6 +47,50 @@ button:disabled {
   padding: 20px;
 }
 
+.auth-shell {
+  display: grid;
+  place-items: center;
+}
+
+.auth-card {
+  display: grid;
+  width: min(480px, 100%);
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 250, 240, 0.94);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.auth-card h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
+  font-size: 34px;
+  letter-spacing: 0;
+}
+
+.auth-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.auth-tabs {
+  margin-top: 4px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-footnote {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  font-size: 12px;
+}
+
 .welcome-screen {
   position: fixed;
   inset: 0;
@@ -176,6 +220,60 @@ button:disabled {
     linear-gradient(135deg, rgba(15, 143, 130, 0.12), rgba(244, 188, 59, 0.13)),
     rgba(255, 255, 255, 0.72);
   padding: 14px;
+}
+
+.account-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 18px 0 6px;
+  border: 1px solid rgba(15, 143, 130, 0.32);
+  border-radius: 16px;
+  background: rgba(15, 143, 130, 0.08);
+  padding: 14px;
+}
+
+.account-card strong,
+.account-card small {
+  display: block;
+}
+
+.account-card strong {
+  font-size: 18px;
+}
+
+.account-card small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.upstream-card {
+  background:
+    linear-gradient(135deg, rgba(45, 95, 154, 0.12), rgba(244, 188, 59, 0.13)),
+    rgba(255, 255, 255, 0.72);
+}
+
+.admin-panel {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 12px;
+}
+
+.grant-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.admin-message {
+  color: var(--accent-dark);
+  font-weight: 800;
 }
 
 .quota-card strong {
@@ -486,6 +584,71 @@ button.status-pill {
     linear-gradient(45deg, rgba(15, 143, 130, 0.08), transparent),
     rgba(255, 255, 255, 0.58);
   overflow: hidden;
+}
+
+.generation-status {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.66);
+  padding: 12px;
+}
+
+.generation-status strong,
+.generation-status span {
+  display: block;
+}
+
+.generation-status strong {
+  font-size: 13px;
+}
+
+.generation-status span {
+  overflow: hidden;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.generation-status small {
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.generation-status.done {
+  border-color: rgba(15, 143, 130, 0.35);
+  background: rgba(15, 143, 130, 0.08);
+}
+
+.generation-status.error {
+  border-color: rgba(232, 81, 47, 0.35);
+  background: rgba(232, 81, 47, 0.08);
+}
+
+.status-track {
+  grid-column: 1 / -1;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7dece;
+}
+
+.status-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 240ms ease;
+}
+
+.generation-status.error .status-track span {
+  background: var(--signal);
 }
 
 .preview img,

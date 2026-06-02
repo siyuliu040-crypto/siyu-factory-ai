@@ -1,4 +1,15 @@
-import { forwardJson, jsonError } from "@/lib/hellobabygo";
+import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+import {
+  AccountError,
+  chargeUserCredits,
+  refundCreditsForUser,
+  recordGenerationHistory,
+  recordGenerationTask,
+  withAccountState
+} from "@/lib/accounts";
+import { accountErrorResponse } from "@/lib/account-api";
+import { getGenerationCost } from "@/lib/pricing";
+import { extractVideoUrl } from "@/lib/video-status";
 import { randomUUID } from "crypto";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
@@ -10,6 +21,17 @@ const MIME_EXTENSIONS: Record<string, string> = {
   "image/webp": "webp"
 };
 
+function getPublicBaseUrl(request: Request) {
+  if (process.env.SIYU_PUBLIC_BASE_URL) {
+    return process.env.SIYU_PUBLIC_BASE_URL.replace(/\/$/, "");
+  }
+
+  const forwardedHost = request.headers.get("x-forwarded-host") || request.headers.get("host");
+  const forwardedProto = request.headers.get("x-forwarded-proto") || new URL(request.url).protocol.replace(":", "");
+  if (forwardedHost) return `${forwardedProto}://${forwardedHost}`;
+  return new URL(request.url).origin;
+}
+
 async function fileToPublicUrl(request: Request, file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
   const mediaType = file.type || "image/jpeg";
@@ -17,7 +39,70 @@ async function fileToPublicUrl(request: Request, file: File) {
   const id = `${randomUUID()}.${extension}`;
   await mkdir(UPLOAD_DIR, { recursive: true });
   await writeFile(path.join(UPLOAD_DIR, id), buffer);
-  return new URL(`/api/uploads/${id}`, request.url).toString();
+  return `${getPublicBaseUrl(request)}/api/uploads/${id}`;
+}
+
+function getTaskId(payload: unknown) {
+  if (!payload || typeof payload !== "object") return "";
+  const record = payload as Record<string, unknown>;
+  return String(record.task_id || record.id || record.video_id || "");
+}
+
+function isImmediateFailure(payload: unknown) {
+  if (!payload || typeof payload !== "object") return false;
+  const record = payload as Record<string, unknown>;
+  const code = String(record.code || record.error || "");
+  return Boolean(code && !getTaskId(payload));
+}
+
+async function postVideoPayload(
+  payload: Record<string, unknown>,
+  billing: { userId: string; amount: number; model: string }
+) {
+  const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/videos`, {
+    method: "POST",
+    headers: authHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+    body: JSON.stringify(payload),
+    cache: "no-store"
+  });
+  const data = await parseUpstreamResponse(response);
+  const taskId = getTaskId(data);
+
+  if (!response.ok || isImmediateFailure(data)) {
+    await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
+      model: billing.model
+    });
+    return Response.json(data, { status: response.status });
+  }
+
+  if (taskId) {
+    await withAccountState((state) => {
+      recordGenerationTask(state, {
+        id: taskId,
+        userId: billing.userId,
+        type: "video",
+        model: billing.model,
+        amount: billing.amount
+      });
+      recordGenerationHistory(state, {
+        userId: billing.userId,
+        type: "video",
+        model: billing.model,
+        prompt: String(payload.prompt || ""),
+        taskId,
+        status: String((data as { status?: unknown })?.status || "queued"),
+        previewUrl: extractVideoUrl(data) || undefined
+      });
+    });
+  }
+
+  return Response.json(
+    {
+      ...(typeof data === "object" && data ? data : { data }),
+      charged: billing.amount
+    },
+    { status: response.status }
+  );
 }
 
 export async function POST(request: Request) {
@@ -41,23 +126,27 @@ export async function POST(request: Request) {
       ...(imageUrl ? [String(imageUrl)] : []),
       ...uploadedReferenceUrls
     ].filter(Boolean);
+    const amount = getGenerationCost(model);
+    const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
+    const billing = { userId: charge.user.id, amount, model };
 
     if (references.length === 0) {
-      return await forwardJson("/v1/videos", {
-        method: "POST",
-        body: JSON.stringify({
+      return await postVideoPayload(
+        {
           model,
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          ...(imageUrl ? { image_url: String(imageUrl), image_input: [String(imageUrl)], input_reference: String(imageUrl) } : {})
-        })
-      });
+          ...(imageUrl
+            ? { image_url: String(imageUrl), image_input: [String(imageUrl)], input_reference: String(imageUrl) }
+            : {})
+        },
+        billing
+      );
     }
 
-    return await forwardJson("/v1/videos", {
-      method: "POST",
-      body: JSON.stringify({
+    return await postVideoPayload(
+      {
         model,
         prompt,
         ...(seconds ? { seconds: String(seconds) } : {}),
@@ -65,9 +154,11 @@ export async function POST(request: Request) {
         image_url: referenceUrls[0],
         image_input: referenceUrls,
         input_reference: referenceUrls[0]
-      })
-    });
+      },
+      billing
+    );
   } catch (error) {
+    if (error instanceof AccountError) return accountErrorResponse(error);
     const detail = error instanceof Error ? error.message : error;
     return jsonError({
       error: "Video generation request failed",

@@ -1,4 +1,5 @@
 import { HELLOBABYGO_BASE_URL, authHeaders } from "@/lib/hellobabygo";
+import { recordGenerationHistory, refundCreditsForUser, withAccountState } from "@/lib/accounts";
 
 export type ImageJobRequest = {
   model: string;
@@ -19,6 +20,11 @@ export type ImageJobRecord = {
   result?: unknown;
   error?: unknown;
   upstream_status?: number;
+  billing?: {
+    userId: string;
+    amount: number;
+    refunded?: boolean;
+  };
 };
 
 type ImageJobStore = Map<string, ImageJobRecord>;
@@ -46,6 +52,37 @@ function save(record: ImageJobRecord) {
   jobs.set(record.id, { ...record, updated_at: new Date().toISOString() });
 }
 
+async function refundImageJob(record: ImageJobRecord, reason: string) {
+  if (!record.billing || record.billing.refunded) return;
+  await refundCreditsForUser(record.billing.userId, record.billing.amount, reason, { jobId: record.id });
+  record.billing.refunded = true;
+}
+
+async function saveImageHistory(record: ImageJobRecord, result: unknown) {
+  if (!record.billing) return;
+  const imageUrl = extractImageUrl(result);
+  await withAccountState((state) =>
+    recordGenerationHistory(state, {
+      userId: record.billing!.userId,
+      type: "image",
+      model: record.request.model,
+      prompt: record.request.prompt,
+      previewUrl: imageUrl || undefined,
+      status: "completed"
+    })
+  );
+}
+
+function extractImageUrl(result: unknown) {
+  if (!result || typeof result !== "object") return "";
+  const data = (result as { data?: unknown }).data;
+  if (!Array.isArray(data)) return "";
+  const item = data[0] as { url?: unknown; b64_json?: unknown } | undefined;
+  if (typeof item?.url === "string") return item.url;
+  if (typeof item?.b64_json === "string") return `data:image/png;base64,${item.b64_json}`;
+  return "";
+}
+
 async function runImageJob(id: string) {
   const record = jobs.get(id);
   if (!record) return;
@@ -69,6 +106,7 @@ async function runImageJob(id: string) {
 
     const payload = parsePayload(await response.text());
     if (!response.ok) {
+      await refundImageJob(record, "image generation failed refund");
       save({
         ...record,
         status: "failed",
@@ -79,8 +117,10 @@ async function runImageJob(id: string) {
       return;
     }
 
+    await saveImageHistory(record, payload);
     save({ ...record, status: "completed", progress: 100, result: payload });
   } catch (error) {
+    await refundImageJob(record, "image generation failed refund");
     save({
       ...record,
       status: "failed",
@@ -90,14 +130,18 @@ async function runImageJob(id: string) {
   }
 }
 
-export function startImageJob(request: ImageJobRequest) {
+export function startImageJob(
+  request: ImageJobRequest,
+  billing?: { userId: string; amount: number }
+) {
   const id = createJobId();
   const record: ImageJobRecord = {
     id,
     status: "queued",
     progress: 0,
     created_at: new Date().toISOString(),
-    request
+    request,
+    billing
   };
   jobs.set(id, record);
   void runImageJob(id);

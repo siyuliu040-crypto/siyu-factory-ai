@@ -1,6 +1,8 @@
 .next
 node_modules
 .tools
+.data
+.test-build
 dist
 coverage
 .env

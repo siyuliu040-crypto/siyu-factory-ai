@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "outDir": "../.test-build",
+    "rootDir": "..",
+    "types": ["node"],
+    "incremental": false
+  },
+  "include": [
+    "../src/lib/accounts.ts",
+    "../src/lib/video-status.ts",
+    "./accounts.test.ts",
+    "./video-status.test.ts"
+  ]
+}

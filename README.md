@@ -33,6 +33,8 @@ http://localhost:3000
 ```bash
 HELLOBABYGO_API_BASE_URL=https://api.hellobabygo.com
 HELLOBABYGO_API_KEY=你的服务端 API Key
+SIYU_PUBLIC_BASE_URL=https://siyu-factory-ai.onrender.com
+SIYU_INITIAL_ADMIN_CREDITS=20000000
 ```
 
 ## 部署到 Render
@@ -50,6 +52,8 @@ Render Web Service 配置：
 - Start Command: `node scripts/start.mjs`
 - Runtime: Node
 - Node Version: `24`
+
+账户、积分和历史记录默认写入 `.data/siyu-factory-accounts.json`。如果 Render 挂载了持久盘到 `/var/data`，系统会自动改用 `/var/data/siyu-factory-accounts.json`；也可以手动设置 `SIYU_DATA_FILE` 指定数据文件路径。
 
 ## 安全说明
 

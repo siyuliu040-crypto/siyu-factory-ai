@@ -9,14 +9,20 @@ import {
   ImagePlus,
   Languages,
   Loader2,
+  LogOut,
+  Plus,
   Play,
   RefreshCw,
+  Shield,
   Sparkles,
+  User,
+  Users,
   Wallet,
   Wand2,
   X
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { MODEL_CREDIT_COSTS, getUpstreamPrechargeUsd } from "@/lib/pricing";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
@@ -71,6 +77,7 @@ type HistoryItem = {
   prompt: string;
   createdAt: string;
   previewUrl?: string;
+  taskId?: string;
   videoId?: string;
   status?: string;
 };
@@ -85,6 +92,39 @@ type BatchJob = {
   taskId?: string;
   url?: string;
   error?: string;
+};
+
+type AccountUser = {
+  id: string;
+  email: string;
+  name: string;
+  role: "admin" | "user";
+  credits: number;
+};
+
+type LedgerEntry = {
+  id: string;
+  userId: string;
+  adminId?: string;
+  amount: number;
+  balanceAfter: number;
+  reason: string;
+  createdAt: string;
+};
+
+type AuthSession = {
+  authenticated: boolean;
+  user?: AccountUser | null;
+  users?: AccountUser[];
+  ledger?: LedgerEntry[];
+  storage?: { persistent?: boolean; label?: string };
+};
+
+type GenerationStatus = {
+  label: string;
+  detail?: string;
+  progress?: number;
+  tone?: "idle" | "running" | "done" | "error";
 };
 
 const TOPUP_URL = "https://api.hellobabygo.com/console/topup";
@@ -103,19 +143,19 @@ const VIDEO_MAX_TRANSIENT_ATTEMPTS = 36;
 const stableImageModels = ["gpt-image-2"];
 
 const stableVideoModels = [
+  "ali-sora-video-portrait-official-8s",
+  "ali-sora-video-portrait-official-4s",
+  "ali-sora-video-portrait-official-12s",
+  "ali-sora-video-landscape-official-8s",
+  "ali-sora-video-landscape-official-4s",
+  "ali-sora-video-landscape-official-12s",
   "veo_3_1-fast-portrait",
   "veo_3_1-fast-landscape",
   "veo_3_1-fast-portrait-hd",
   "veo_3_1-fast-landscape-hd"
 ];
 
-const modelCreditCosts: Record<string, number> = {
-  "gpt-image-2": 40000,
-  "veo_3_1-fast-portrait": 1200000,
-  "veo_3_1-fast-landscape": 1200000,
-  "veo_3_1-fast-portrait-hd": 1200000,
-  "veo_3_1-fast-landscape-hd": 1200000
-};
+const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
 
 const copy = {
   zh: {
@@ -269,7 +309,9 @@ function getModelCreditCost(model: string) {
 function formatCreditCost(model: string, language: Language) {
   const cost = getModelCreditCost(model);
   if (!cost) return copy[language].costUnknown;
-  return `${cost.toLocaleString()} ${copy[language].credits}`;
+  const upstream = getUpstreamPrechargeUsd(model);
+  const upstreamText = upstream ? ` · $${upstream.toFixed(3)}` : "";
+  return `${cost.toLocaleString()} ${copy[language].credits}${upstreamText}`;
 }
 
 function formatCreditTotal(cost: number | undefined, language: Language) {
@@ -363,14 +405,15 @@ function getReferenceVideoModel(size: string) {
     : "veo_3_1-fast-portrait-hd";
 }
 
-function getFastVideoModel(size: string) {
+function getFastVideoModel(size: string, duration: string) {
+  const seconds = ["4", "8", "12"].includes(duration) ? duration : "8";
   return size.includes("1280x720")
-    ? "veo_3_1-fast-landscape"
-    : "veo_3_1-fast-portrait";
+    ? `ali-sora-video-landscape-official-${seconds}s`
+    : `ali-sora-video-portrait-official-${seconds}s`;
 }
 
-function getEffectiveVideoModel(size: string, hasReference: boolean) {
-  return hasReference ? getReferenceVideoModel(size) : getFastVideoModel(size);
+function getEffectiveVideoModel(size: string, hasReference: boolean, duration: string) {
+  return hasReference ? getReferenceVideoModel(size) : getFastVideoModel(size, duration);
 }
 
 function parseBatchPrompts(value: string) {
@@ -453,6 +496,27 @@ function writeHistory(items: HistoryItem[]) {
   window.localStorage.setItem(HISTORY_KEY, JSON.stringify(items.slice(0, HISTORY_LIMIT)));
 }
 
+function normalizeHistoryItems(items: unknown): HistoryItem[] {
+  if (!Array.isArray(items)) return [];
+  return items
+    .filter((item): item is Record<string, unknown> => Boolean(item && typeof item === "object"))
+    .map((item) => {
+      const mode: Mode = item.mode === "video" ? "video" : "image";
+      return {
+        id: String(item.id || `${Date.now()}-${Math.random().toString(16).slice(2)}`),
+        mode,
+        model: String(item.model || ""),
+        prompt: String(item.prompt || ""),
+        createdAt: String(item.createdAt || new Date().toISOString()),
+        previewUrl: typeof item.previewUrl === "string" ? item.previewUrl : undefined,
+        taskId: typeof item.taskId === "string" ? item.taskId : undefined,
+        videoId: typeof item.videoId === "string" ? item.videoId : typeof item.taskId === "string" ? item.taskId : undefined,
+        status: typeof item.status === "string" ? item.status : undefined
+      };
+    })
+    .filter((item) => item.model && item.prompt);
+}
+
 export default function Studio() {
   const [language, setLanguage] = useState<Language>("zh");
   const [mode, setMode] = useState<Mode>("image");
@@ -481,8 +545,23 @@ export default function Studio() {
   const [history, setHistory] = useState<HistoryItem[]>(() => readHistory());
   const [isOptimizingReferences, setIsOptimizingReferences] = useState(false);
   const [error, setError] = useState("");
+  const [session, setSession] = useState<AuthSession | null>(null);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
+  const [authMode, setAuthMode] = useState<"login" | "register">("login");
+  const [authForm, setAuthForm] = useState({ email: "", name: "", password: "" });
+  const [authError, setAuthError] = useState("");
+  const [grantUserId, setGrantUserId] = useState("");
+  const [grantAmount, setGrantAmount] = useState("1200000");
+  const [grantMessage, setGrantMessage] = useState("");
+  const [generationStatus, setGenerationStatus] = useState<GenerationStatus>({
+    label: "等待生成",
+    detail: "提交任务后会显示上传、排队、处理和完成状态。",
+    progress: 0,
+    tone: "idle"
+  });
   const [showWelcome, setShowWelcome] = useState(true);
   const t = copy[language];
+  const tx = (key: string, fallback: string) => (t as Record<string, string>)[key] || fallback;
 
   useEffect(() => {
     fetch("/api/models")
@@ -497,7 +576,7 @@ export default function Studio() {
   }, []);
 
   useEffect(() => {
-    void refreshQuota();
+    void refreshSession();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -524,7 +603,8 @@ export default function Studio() {
   const videoSrc = isVideoDone(videoResult?.status, videoResult) ? getVideoUrl(videoResult) || (videoId ? `/api/videos/${videoId}/content` : "") : "";
   const downloadUrl = activeImageUrl || videoSrc;
   const downloadKind = activeImageUrl ? "image" : "video";
-  const canSubmit = prompt.trim().length > 0 && !isLoading && !isPolling;
+  const currentUser = session?.user || null;
+  const isAdmin = currentUser?.role === "admin";
   const quotaValue = findQuotaValue(quota?.data, language);
   const quotaText = quotaValue || (quota?.connected ? t.quotaUnavailable : t.quotaUnknown);
   const displayError = cleanErrorMessage(error, language);
@@ -532,8 +612,87 @@ export default function Studio() {
   const referenceInputId = `reference-images-${mode}`;
   const activeModel = mode === "image" ? imageModel : videoModel;
   const activeModelCost = getModelCreditCost(activeModel);
+  const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
+  const canSubmit = prompt.trim().length > 0 && !isLoading && !isPolling && Boolean(currentUser) && canAffordActiveModel;
   const batchPromptCount = parseBatchPrompts(batchPrompt).length;
   const batchCreditTotal = activeModelCost && batchPromptCount ? activeModelCost * batchPromptCount : undefined;
+  const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal);
+
+  async function refreshSession() {
+    try {
+      const response = await fetch("/api/auth/session", { cache: "no-store" });
+      const payload = (await response.json()) as AuthSession;
+      setSession(payload);
+      if (payload.authenticated) {
+        void refreshQuota(false);
+        void refreshHistory();
+      }
+    } catch {
+      setSession({ authenticated: false });
+    } finally {
+      setIsAuthLoading(false);
+    }
+  }
+
+  async function submitAuth() {
+    setAuthError("");
+    try {
+      const response = await fetch(`/api/auth/${authMode}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(authForm)
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.message || payload.error || "Auth failed");
+      await refreshSession();
+      setAuthForm((current) => ({ ...current, password: "" }));
+    } catch (caught) {
+      setAuthError(cleanErrorMessage(stringifyError(caught), language) || "登录失败，请检查账号信息。");
+    }
+  }
+
+  async function logout() {
+    await fetch("/api/auth/logout", { method: "POST" });
+    setSession({ authenticated: false });
+    setQuota(null);
+    setHistory([]);
+    writeHistory([]);
+  }
+
+  async function refreshHistory() {
+    try {
+      const response = await fetch("/api/history", { cache: "no-store" });
+      const payload = (await response.json()) as { history?: unknown };
+      if (!response.ok) return;
+      const next = normalizeHistoryItems(payload.history).slice(0, HISTORY_LIMIT);
+      setHistory(next);
+      writeHistory(next);
+    } catch {
+      // Local history remains available if the server-side history endpoint is unavailable.
+    }
+  }
+
+  async function grantUserCredits() {
+    if (!grantUserId || !grantAmount) return;
+    setGrantMessage("");
+    try {
+      const response = await fetch("/api/admin/credits", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: grantUserId,
+          amount: Number(grantAmount),
+          reason: "main account allocation"
+        })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.message || payload.error || "Credit allocation failed");
+      await refreshSession();
+      setGrantMessage(tx("grantSuccess", "积分已分配"));
+    } catch (caught) {
+      setGrantMessage(cleanErrorMessage(stringifyError(caught), language));
+    }
+  }
 
   async function refreshQuota(markLoading = true) {
     if (markLoading) setIsQuotaLoading(true);
@@ -561,7 +720,7 @@ export default function Studio() {
         ...current,
         ...optimized.map((file) => ({ name: file.name, url: URL.createObjectURL(file) }))
       ]);
-      setVideoModel(getEffectiveVideoModel(videoSize, true));
+      setVideoModel(getEffectiveVideoModel(videoSize, true, seconds));
     } finally {
       setIsOptimizingReferences(false);
     }
@@ -573,7 +732,7 @@ export default function Studio() {
     const nextFiles = referenceFiles.filter((_, itemIndex) => itemIndex !== index);
     setReferenceFiles(nextFiles);
     setReferencePreviews((current) => current.filter((_, itemIndex) => itemIndex !== index));
-    setVideoModel(getEffectiveVideoModel(videoSize, nextFiles.length > 0 || imageUrl.trim().length > 0));
+    setVideoModel(getEffectiveVideoModel(videoSize, nextFiles.length > 0 || imageUrl.trim().length > 0, seconds));
   }
 
   function clearReferences() {
@@ -581,7 +740,7 @@ export default function Studio() {
     setReferenceFiles([]);
     setReferencePreviews([]);
     setImageUrl("");
-    setVideoModel(getEffectiveVideoModel(videoSize, false));
+    setVideoModel(getEffectiveVideoModel(videoSize, false, seconds));
   }
 
   function saveHistory(item: Omit<HistoryItem, "id" | "createdAt">) {
@@ -590,6 +749,11 @@ export default function Studio() {
     const next = [nextItem, ...history].slice(0, HISTORY_LIMIT);
     setHistory(next);
     writeHistory(next);
+    void fetch("/api/history", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(nextItem)
+    }).catch(() => undefined);
   }
 
   function updateVideoHistory(taskId: string, result: VideoResult) {
@@ -606,6 +770,7 @@ export default function Studio() {
   function clearHistory() {
     setHistory([]);
     window.localStorage.removeItem(HISTORY_KEY);
+    void fetch("/api/history", { method: "DELETE" }).catch(() => undefined);
   }
 
   async function downloadGeneratedAsset() {
@@ -650,10 +815,17 @@ export default function Studio() {
   }
 
   async function generateImage() {
+    if (!currentUser) return;
     setError("");
     setImageResult(null);
     setVideoResult(null);
     setIsLoading(true);
+    setGenerationStatus({
+      label: tx("statusSubmitting", "正在提交任务"),
+      detail: tx("statusUploadingImage", "正在上传提示词和参考图。"),
+      progress: 5,
+      tone: "running"
+    });
     try {
       if (referenceFiles.length > 0) {
         const formData = new FormData();
@@ -669,6 +841,12 @@ export default function Studio() {
         const payload = (await response.json()) as ImageResult;
         if (!response.ok || !extractImageUrl(payload)) throw new Error(JSON.stringify(payload));
         setImageResult(payload);
+        setGenerationStatus({
+          label: tx("statusCompleted", "生成完成"),
+          detail: tx("statusImageReady", "图片已生成，可以预览和下载。"),
+          progress: 100,
+          tone: "done"
+        });
         saveHistory({ mode: "image", model: imageModel, prompt, previewUrl: extractImageUrl(payload) });
         return;
       }
@@ -687,14 +865,32 @@ export default function Studio() {
       });
       const started = (await startResponse.json()) as ImageJobResult;
       if (!startResponse.ok || !started.id) throw new Error(JSON.stringify(started));
+      setGenerationStatus({
+        label: tx("statusQueued", "任务已排队"),
+        detail: started.id,
+        progress: started.progress || 0,
+        tone: "running"
+      });
 
       for (let attempt = 0; attempt < 90; attempt += 1) {
         await new Promise((resolve) => setTimeout(resolve, 4000));
         const statusResponse = await fetch(`/api/images/status?id=${encodeURIComponent(started.id)}`);
         const status = (await statusResponse.json()) as ImageJobResult;
         if (!statusResponse.ok) throw new Error(JSON.stringify(status));
+        setGenerationStatus({
+          label: status.status || tx("statusProcessing", "生成中"),
+          detail: started.id,
+          progress: status.progress || 0,
+          tone: "running"
+        });
         if (status.status === "completed" && status.result) {
           setImageResult(status.result);
+          setGenerationStatus({
+            label: tx("statusCompleted", "生成完成"),
+            detail: tx("statusImageReady", "图片已生成，可以预览和下载。"),
+            progress: 100,
+            tone: "done"
+          });
           saveHistory({ mode: "image", model: imageModel, prompt, previewUrl: extractImageUrl(status.result) });
           return;
         }
@@ -704,7 +900,14 @@ export default function Studio() {
       throw new Error(language === "zh" ? "图片任务还在处理中，请稍后再试。" : "Image task is still processing. Try again later.");
     } catch (caught) {
       setError(stringifyError(caught) || t.imageFailed);
+      setGenerationStatus({
+        label: tx("statusFailed", "生成失败"),
+        detail: cleanErrorMessage(stringifyError(caught), language),
+        progress: 0,
+        tone: "error"
+      });
     } finally {
+      await refreshSession();
       setIsLoading(false);
     }
   }
@@ -741,6 +944,12 @@ export default function Studio() {
           const pending = { id, task_id: id, status: "queued", progress: 0, transient: true };
           onUpdate?.(pending);
           if (syncMainResult) setVideoResult((current) => current ?? pending);
+          setGenerationStatus({
+            label: tx("statusSyncing", "正在同步上游状态"),
+            detail: id,
+            progress: 0,
+            tone: "running"
+          });
           await new Promise((resolve) => setTimeout(resolve, VIDEO_POLL_INTERVAL_MS));
           continue;
         }
@@ -748,7 +957,19 @@ export default function Studio() {
         transientAttempts = 0;
         onUpdate?.(payload);
         if (syncMainResult) setVideoResult(payload);
+        setGenerationStatus({
+          label: payload.status || tx("statusProcessing", "生成中"),
+          detail: id,
+          progress: payload.progress || 0,
+          tone: "running"
+        });
         if (isVideoDone(payload.status, payload)) {
+          setGenerationStatus({
+            label: tx("statusCompleted", "生成完成"),
+            detail: tx("statusVideoReady", "视频已生成，可以播放和下载。"),
+            progress: 100,
+            tone: "done"
+          });
           updateVideoHistory(id, payload);
           return payload;
         }
@@ -762,13 +983,20 @@ export default function Studio() {
   }
 
   async function generateVideo() {
+    if (!currentUser) return;
     setError("");
     setImageResult(null);
     setVideoResult(null);
     setIsLoading(true);
+    setGenerationStatus({
+      label: tx("statusSubmitting", "正在提交任务"),
+      detail: tx("statusUploadingVideo", "正在上传提示词和参考图。"),
+      progress: 5,
+      tone: "running"
+    });
     try {
       const hasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
-      const effectiveModel = getEffectiveVideoModel(videoSize, hasReference);
+      const effectiveModel = getEffectiveVideoModel(videoSize, hasReference, seconds);
       setVideoModel(effectiveModel);
 
       for (let attempt = 0; attempt < MAX_VIDEO_ATTEMPTS; attempt += 1) {
@@ -777,6 +1005,12 @@ export default function Studio() {
           setVideoResult(payload);
           const taskId = getVideoTaskId(payload);
           if (taskId) {
+            setGenerationStatus({
+              label: tx("statusQueued", "任务已排队"),
+              detail: taskId,
+              progress: payload.progress || 0,
+              tone: "running"
+            });
             saveHistory({ mode: "video", model: effectiveModel, prompt, videoId: taskId, status: payload.status });
             await pollVideo(taskId);
           }
@@ -793,15 +1027,27 @@ export default function Studio() {
       }
     } catch (caught) {
       setError(cleanErrorMessage(stringifyError(caught), language) || t.videoFailed);
+      setGenerationStatus({
+        label: tx("statusFailed", "生成失败"),
+        detail: cleanErrorMessage(stringifyError(caught), language),
+        progress: 0,
+        tone: "error"
+      });
     } finally {
+      await refreshSession();
       setIsLoading(false);
     }
   }
 
   async function generateBatchVideos() {
+    if (!currentUser) return;
     const prompts = parseBatchPrompts(batchPrompt);
     if (!prompts.length) {
       setError(t.noBatchPrompt);
+      return;
+    }
+    if (!canAffordBatch) {
+      setError(tx("insufficientSiteCredits", "站内积分不足，请联系主账号分配积分。"));
       return;
     }
 
@@ -810,9 +1056,15 @@ export default function Studio() {
     setImageResult(null);
     setVideoResult(null);
     setIsLoading(true);
+    setGenerationStatus({
+      label: tx("statusSubmitting", "正在提交任务"),
+      detail: tx("statusBatchStart", "批量视频会逐个提交并显示状态。"),
+      progress: 5,
+      tone: "running"
+    });
 
     const hasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
-    const effectiveModel = getEffectiveVideoModel(videoSize, hasReference);
+    const effectiveModel = getEffectiveVideoModel(videoSize, hasReference, seconds);
     setVideoModel(effectiveModel);
 
     const initialJobs: BatchJob[] = prompts.map((item, index) => ({
@@ -870,7 +1122,80 @@ export default function Studio() {
       }
     }
 
+    await refreshSession();
+    setGenerationStatus({
+      label: tx("statusBatchDone", "批量任务已处理完"),
+      detail: tx("statusBatchDoneHint", "请在批量结果里查看每个视频的完成或失败状态。"),
+      progress: 100,
+      tone: "done"
+    });
     setIsLoading(false);
+  }
+
+  if (isAuthLoading) {
+    return (
+      <main className="app-shell auth-shell">
+        <section className="auth-card">
+          <div className="brand-mark"><Sparkles size={24} /></div>
+          <h1>{tx("authLoading", "正在进入思雨的工厂")}</h1>
+          <p>{tx("authLoadingHint", "正在检查登录状态和账户积分。")}</p>
+          <Loader2 className="spin" size={28} />
+        </section>
+      </main>
+    );
+  }
+
+  if (!currentUser) {
+    return (
+      <main className="app-shell auth-shell">
+        <section className="auth-card">
+          <div className="brand-mark"><Sparkles size={24} /></div>
+          <h1>{tx("welcomeFactory", "欢迎来到思雨的工厂")}</h1>
+          <p>{tx("authIntro", "注册后才能进入主网站。第一个注册账号会自动成为主账号，可以给其他用户分配积分。")}</p>
+
+          <div className="segmented auth-tabs">
+            <button className={`segment ${authMode === "login" ? "active" : ""}`} onClick={() => setAuthMode("login")} type="button">
+              <User size={16} />{tx("login", "登录")}
+            </button>
+            <button className={`segment ${authMode === "register" ? "active" : ""}`} onClick={() => setAuthMode("register")} type="button">
+              <Plus size={16} />{tx("register", "注册")}
+            </button>
+          </div>
+
+          <div className="auth-form">
+            {authMode === "register" ? (
+              <input
+                className="input"
+                onChange={(event) => setAuthForm((current) => ({ ...current, name: event.target.value }))}
+                placeholder={tx("name", "昵称")}
+                value={authForm.name}
+              />
+            ) : null}
+            <input
+              className="input"
+              onChange={(event) => setAuthForm((current) => ({ ...current, email: event.target.value }))}
+              placeholder={tx("email", "邮箱")}
+              type="email"
+              value={authForm.email}
+            />
+            <input
+              className="input"
+              onChange={(event) => setAuthForm((current) => ({ ...current, password: event.target.value }))}
+              placeholder={tx("password", "密码，至少 6 位")}
+              type="password"
+              value={authForm.password}
+            />
+            <button className="primary-button" onClick={() => void submitAuth()} type="button">
+              {authMode === "login" ? <User size={18} /> : <Plus size={18} />}
+              {authMode === "login" ? tx("login", "登录") : tx("register", "注册")}
+            </button>
+          </div>
+
+          {authError ? <div className="status-alert">{authError}</div> : null}
+          <p className="auth-footnote">{tx("authFootnote", "提示：先用你的主账号注册一次，再邀请其他人注册普通账号。")}</p>
+        </section>
+      </main>
+    );
   }
 
   return (
@@ -892,22 +1217,70 @@ export default function Studio() {
             </div>
           </div>
 
-          <div className="quota-card">
+          <div className="account-card">
             <div>
-              <span className="section-label compact"><Wallet size={14} />{t.quota}</span>
-              <strong>{quotaText}</strong>
-              <small>{quota?.connected ? t.quotaConnected : quota?.message || t.quotaUnknown}</small>
+              <span className="section-label compact">
+                {isAdmin ? <Shield size={14} /> : <User size={14} />}
+                {isAdmin ? tx("mainAccount", "主账号") : tx("memberAccount", "成员账号")}
+              </span>
+              <strong>{currentUser.name}</strong>
+              <small>{currentUser.email}</small>
             </div>
-            <button className="icon-button" onClick={() => refreshQuota()} title={t.refreshQuota} type="button">
-              {isQuotaLoading ? <Loader2 size={16} /> : <RefreshCw size={16} />}
+            <button className="icon-button" onClick={() => void logout()} title={tx("logout", "退出登录")} type="button">
+              <LogOut size={16} />
             </button>
           </div>
 
-          <a className="topup-button" href={TOPUP_URL} rel="noreferrer" target="_blank">
-            <CreditCard size={17} />
-            <span>{t.topUp}</span>
-            <small>{t.topUpHint}</small>
-          </a>
+          <div className="quota-card">
+            <div>
+              <span className="section-label compact"><Wallet size={14} />{tx("siteCredits", "站内剩余积分")}</span>
+              <strong>{currentUser.credits.toLocaleString()}</strong>
+              <small>{tx("siteCreditsHint", "生成会先扣这里的积分，不足时请联系主账号分配。")}</small>
+            </div>
+            <button className="icon-button" onClick={() => void refreshSession()} title={tx("refreshAccount", "刷新账号")} type="button">
+              <RefreshCw size={16} />
+            </button>
+          </div>
+
+          {isAdmin ? (
+            <>
+              <div className="quota-card upstream-card">
+                <div>
+                  <span className="section-label compact"><CreditCard size={14} />{tx("upstreamQuota", "主账号上游额度")}</span>
+                  <strong>{quotaText}</strong>
+                  <small>{quota?.connected ? t.quotaConnected : quota?.message || t.quotaUnknown}</small>
+                </div>
+                <button className="icon-button" onClick={() => refreshQuota()} title={t.refreshQuota} type="button">
+                  {isQuotaLoading ? <Loader2 size={16} /> : <RefreshCw size={16} />}
+                </button>
+              </div>
+
+              <a className="topup-button" href={TOPUP_URL} rel="noreferrer" target="_blank">
+                <CreditCard size={17} />
+                <span>{t.topUp}</span>
+                <small>{t.topUpHint}</small>
+              </a>
+
+              <div className="admin-panel">
+                <p className="section-label compact"><Users size={14} />{tx("memberCredits", "成员积分管理")}</p>
+                <select className="select" onChange={(event) => setGrantUserId(event.target.value)} value={grantUserId}>
+                  <option value="">{tx("selectMember", "选择用户")}</option>
+                  {(session?.users || []).map((user) => (
+                    <option key={user.id} value={user.id}>
+                      {user.name} · {user.credits.toLocaleString()}
+                    </option>
+                  ))}
+                </select>
+                <div className="grant-row">
+                  <input className="input" onChange={(event) => setGrantAmount(event.target.value)} type="number" value={grantAmount} />
+                  <button className="secondary-button" onClick={() => void grantUserCredits()} type="button">
+                    <Plus size={16} />{tx("grant", "分配")}
+                  </button>
+                </div>
+                {grantMessage ? <small className="admin-message">{grantMessage}</small> : null}
+              </div>
+            </>
+          ) : null}
 
           <p className="section-label">{t.mediaType}</p>
           <div className="segmented" aria-label="media type">
@@ -990,7 +1363,16 @@ export default function Studio() {
                 <div className="param-grid">
                   <div className="field">
                     <label htmlFor="seconds">{t.duration}</label>
-                    <select className="select" id="seconds" onChange={(event) => setSeconds(event.target.value)} value={seconds}>
+                    <select
+                      className="select"
+                      id="seconds"
+                      onChange={(event) => {
+                        const nextSeconds = event.target.value;
+                        setSeconds(nextSeconds);
+                        setVideoModel(getEffectiveVideoModel(videoSize, referenceFiles.length > 0 || imageUrl.trim().length > 0, nextSeconds));
+                      }}
+                      value={seconds}
+                    >
                       <option value="4">{t.seconds4}</option>
                       <option value="8">{t.seconds8}</option>
                       <option value="12">{t.seconds12}</option>
@@ -1004,7 +1386,7 @@ export default function Studio() {
                       onChange={(event) => {
                         const nextSize = event.target.value;
                         setVideoSize(nextSize);
-                        setVideoModel(getEffectiveVideoModel(nextSize, referenceFiles.length > 0 || imageUrl.trim().length > 0));
+                        setVideoModel(getEffectiveVideoModel(nextSize, referenceFiles.length > 0 || imageUrl.trim().length > 0, seconds));
                       }}
                       value={videoSize}
                     >
@@ -1027,7 +1409,7 @@ export default function Studio() {
                     <span>{t.batchLimit} · {t.batchEstimatedCost}: {formatCreditTotal(batchCreditTotal, language)}</span>
                   </div>
                   <textarea className="textarea batch-textarea" id="batch-prompt" onChange={(event) => setBatchPrompt(event.target.value)} placeholder={t.batchPlaceholder} value={batchPrompt} />
-                  <button className="secondary-button" disabled={isLoading || isPolling} onClick={generateBatchVideos} type="button">
+                  <button className="secondary-button" disabled={isLoading || isPolling || !canAffordBatch} onClick={generateBatchVideos} type="button">
                     {isLoading ? <Loader2 size={18} /> : <Clapperboard size={18} />}{t.generateBatch}
                     <small>{formatCreditTotal(batchCreditTotal, language)}</small>
                   </button>
@@ -1077,7 +1459,7 @@ export default function Studio() {
                       className="input"
                       onChange={(event) => {
                         setImageUrl(event.target.value);
-                        setVideoModel(getEffectiveVideoModel(videoSize, referenceFiles.length > 0 || event.target.value.trim().length > 0));
+                        setVideoModel(getEffectiveVideoModel(videoSize, referenceFiles.length > 0 || event.target.value.trim().length > 0, seconds));
                       }}
                       placeholder={t.optionalReferenceUrl}
                       value={imageUrl}
@@ -1114,6 +1496,17 @@ export default function Studio() {
             {downloadUrl ? (
               <button className="secondary-button" onClick={() => void downloadGeneratedAsset()} type="button"><Download size={16} />{t.download}</button>
             ) : null}
+          </div>
+
+          <div className={`generation-status ${generationStatus.tone || "idle"}`}>
+            <div>
+              <strong>{generationStatus.label}</strong>
+              <span>{generationStatus.detail}</span>
+            </div>
+            <small>{Math.max(0, Math.min(100, generationStatus.progress || 0))}%</small>
+            <div className="status-track">
+              <span style={{ width: `${Math.max(0, Math.min(100, generationStatus.progress || 0))}%` }} />
+            </div>
           </div>
 
           <div className="preview">

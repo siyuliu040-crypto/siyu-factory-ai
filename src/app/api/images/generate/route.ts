@@ -1,4 +1,13 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError } from "@/lib/hellobabygo";
+import {
+  AccountError,
+  chargeUserCredits,
+  recordGenerationHistory,
+  refundCreditsForUser,
+  withAccountState
+} from "@/lib/accounts";
+import { accountErrorResponse } from "@/lib/account-api";
+import { getGenerationCost } from "@/lib/pricing";
 
 type ImageGeneratePayload = {
   model: string;
@@ -9,16 +18,31 @@ type ImageGeneratePayload = {
   response_format?: "url" | "b64_json";
 };
 
-function normalizeUpstreamText(text: string, status: number) {
+function parseUpstreamText(text: string, status: number) {
   try {
     const parsed = JSON.parse(text) as Record<string, unknown>;
-    return JSON.stringify(status >= 200 && status < 300 ? parsed : { ...parsed, upstream_status: status });
+    return status >= 200 && status < 300 ? parsed : { ...parsed, upstream_status: status };
   } catch {
-    return JSON.stringify({ error: "Image upstream request failed", upstream_status: status, detail: text });
+    return { error: "Image upstream request failed", upstream_status: status, detail: text };
   }
 }
 
-function streamUpstream(path: string, init: RequestInit) {
+function extractImageUrl(result: unknown) {
+  if (!result || typeof result !== "object") return "";
+  const data = (result as { data?: unknown }).data;
+  if (!Array.isArray(data)) return "";
+  const item = data[0] as { url?: unknown; b64_json?: unknown } | undefined;
+  if (typeof item?.url === "string") return item.url;
+  if (typeof item?.b64_json === "string") return `data:image/png;base64,${item.b64_json}`;
+  return "";
+}
+
+function streamUpstream(
+  path: string,
+  init: RequestInit,
+  billing?: { userId: string; amount: number },
+  history?: { model: string; prompt: string }
+) {
   const encoder = new TextEncoder();
 
   const stream = new ReadableStream<Uint8Array>({
@@ -34,10 +58,29 @@ function streamUpstream(path: string, init: RequestInit) {
           cache: "no-store"
         });
         const text = await response.text();
+        const payload = parseUpstreamText(text, response.status);
         clearInterval(keepAlive);
-        controller.enqueue(encoder.encode(normalizeUpstreamText(text, response.status)));
+        if (!response.ok && billing) {
+          await refundCreditsForUser(billing.userId, billing.amount, "image generation failed refund", { path });
+        }
+        if (response.ok && billing && history) {
+          await withAccountState((state) =>
+            recordGenerationHistory(state, {
+              userId: billing.userId,
+              type: "image",
+              model: history.model,
+              prompt: history.prompt,
+              previewUrl: extractImageUrl(payload) || undefined,
+              status: "completed"
+            })
+          );
+        }
+        controller.enqueue(encoder.encode(JSON.stringify(payload)));
       } catch (error) {
         clearInterval(keepAlive);
+        if (billing) {
+          await refundCreditsForUser(billing.userId, billing.amount, "image generation failed refund", { path });
+        }
         controller.enqueue(
           encoder.encode(
             JSON.stringify({
@@ -74,6 +117,12 @@ export async function POST(request: Request) {
       if (!model || !prompt) {
         return jsonError({ error: "model and prompt are required" }, 400);
       }
+      const amount = getGenerationCost(model, Number(incoming.get("n") || 1));
+      const charge = await chargeUserCredits(request, amount, "image generation", {
+        model,
+        size: String(incoming.get("size") || "1024x1024")
+      });
+      const billing = { userId: charge.user.id, amount };
 
       const references = incoming
         .getAll("image")
@@ -96,7 +145,7 @@ export async function POST(request: Request) {
           method: "POST",
           headers: authHeaders({ Accept: "application/json" }),
           body: formData
-        });
+        }, billing, { model, prompt });
       }
 
       return streamUpstream("/v1/images/generations", {
@@ -113,7 +162,7 @@ export async function POST(request: Request) {
           ...(incoming.get("aspect_ratio") ? { aspect_ratio: String(incoming.get("aspect_ratio")) } : {}),
           response_format: String(incoming.get("response_format") || "url")
         })
-      });
+      }, billing, { model, prompt });
     }
 
     const body = (await request.json()) as ImageGeneratePayload;
@@ -121,6 +170,11 @@ export async function POST(request: Request) {
     if (!body.model || !body.prompt?.trim()) {
       return jsonError({ error: "model and prompt are required" }, 400);
     }
+    const amount = getGenerationCost(body.model, body.n ?? 1);
+    const charge = await chargeUserCredits(request, amount, "image generation", {
+      model: body.model,
+      size: body.size
+    });
 
     return streamUpstream("/v1/images/generations", {
       method: "POST",
@@ -136,8 +190,9 @@ export async function POST(request: Request) {
         ...(body.aspect_ratio ? { aspect_ratio: body.aspect_ratio } : {}),
         response_format: body.response_format ?? "url"
       })
-    });
+    }, { userId: charge.user.id, amount }, { model: body.model, prompt: body.prompt.trim() });
   } catch (error) {
+    if (error instanceof AccountError) return accountErrorResponse(error);
     return jsonError({
       error: "Image generation request failed",
       detail: error instanceof Error ? error.message : error
