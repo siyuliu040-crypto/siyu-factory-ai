@@ -227,7 +227,15 @@ const copy = {
     costUnknown: "按上游实际扣费",
     pricingNote: "站内积分只用于本网站分配和扣减，不会直接改变 HellobabyGo 上游余额。上游余额不足时仍需要到钱包充值。",
     batchCardPlaceholder: "填写这个作品的视频提示词",
-    work: "作品"
+    work: "作品",
+    noCreditsTitle: "站内积分不足",
+    noCreditsBody: "当前账号积分不够生成，请联系主账号分配积分后再试。",
+    grant: "分配",
+    memberCredits: "成员积分管理",
+    selectMember: "选择用户",
+    refreshAccount: "刷新账号",
+    name: "昵称",
+    email: "邮箱"
   },
   en: {
     mediaType: "Media type",
@@ -292,7 +300,15 @@ const copy = {
     costUnknown: "Billed by upstream",
     pricingNote: "Site credits are only for this website's allocation and deduction. They do not change the HellobabyGo upstream balance.",
     batchCardPlaceholder: "Write this work's video prompt",
-    work: "Work"
+    work: "Work",
+    noCreditsTitle: "Not enough site credits",
+    noCreditsBody: "This account needs more site credits from the main account before generating.",
+    grant: "Grant",
+    memberCredits: "Member credits",
+    selectMember: "Select user",
+    refreshAccount: "Refresh account",
+    name: "Name",
+    email: "Email"
   }
 } satisfies Record<Language, Record<string, string>>;
 
@@ -477,7 +493,7 @@ function findQuotaValue(data: unknown, language: Language): string {
     seen.add(value);
     const record = value as Record<string, unknown>;
     if (record.unlimited_quota === true || record.unlimitedQuota === true) {
-      return language === "zh" ? "鏃犻檺棰濆害" : "Unlimited quota";
+      return language === "zh" ? "无限额度" : "Unlimited quota";
     }
     for (const key of keys) {
       const candidate = record[key];
@@ -641,6 +657,7 @@ export default function Studio() {
   const batchPromptCount = filledBatchPrompts.length;
   const batchCreditTotal = activeModelCost && batchPromptCount ? activeModelCost * batchPromptCount : undefined;
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal);
+  const showCreditWarning = Boolean(currentUser && activeModelCost && currentUser.credits < activeModelCost);
 
   async function refreshSession() {
     try {
@@ -697,7 +714,14 @@ export default function Studio() {
   }
 
   async function grantUserCredits() {
-    if (!grantUserId || !grantAmount) return;
+    if (!grantUserId) {
+      setGrantMessage(tx("selectMember", "选择用户"));
+      return;
+    }
+    if (!parseDisplayCredits(grantAmount)) {
+      setGrantMessage(tx("invalidCreditAmount", "请输入大于 0 的积分"));
+      return;
+    }
     setGrantMessage("");
     try {
       const response = await fetch("/api/admin/credits", {
@@ -844,6 +868,10 @@ export default function Studio() {
 
   async function generateImage() {
     if (!currentUser) return;
+    if (!canAffordActiveModel) {
+      setError(tx("insufficientSiteCredits", "站内积分不足，请联系主账号分配积分。"));
+      return;
+    }
     setError("");
     setImageResult(null);
     setVideoResult(null);
@@ -1012,6 +1040,10 @@ export default function Studio() {
 
   async function generateVideo() {
     if (!currentUser) return;
+    if (!canAffordActiveModel) {
+      setError(tx("insufficientSiteCredits", "站内积分不足，请联系主账号分配积分。"));
+      return;
+    }
     setError("");
     setImageResult(null);
     setVideoResult(null);
@@ -1195,14 +1227,14 @@ export default function Studio() {
               <input
                 className="input"
                 onChange={(event) => setAuthForm((current) => ({ ...current, name: event.target.value }))}
-                placeholder={tx("name", "鏄电О")}
+                placeholder={tx("name", "昵称")}
                 value={authForm.name}
               />
             ) : null}
             <input
               className="input"
               onChange={(event) => setAuthForm((current) => ({ ...current, email: event.target.value }))}
-              placeholder={tx("email", "閭")}
+              placeholder={tx("email", "邮箱")}
               type="email"
               value={authForm.email}
             />
@@ -1231,7 +1263,7 @@ export default function Studio() {
       {showWelcome ? (
         <div className="welcome-screen" role="status">
           <div className="welcome-mark"><Sparkles size={30} /></div>
-          <h1>娆㈣繋鏉ュ埌鎬濋洦鐨勫伐鍘傦紒</h1>
+          <h1>欢迎来到思雨的工厂！</h1>
         </div>
       ) : null}
 
@@ -1265,7 +1297,7 @@ export default function Studio() {
               <strong>{formatDisplayCredits(currentUser.credits)}</strong>
               <small>{tx("siteCreditsHint", "生成会先扣这里的积分，不足时请联系主账号分配。")}</small>
             </div>
-            <button className="icon-button" onClick={() => void refreshSession()} title={tx("refreshAccount", "鍒锋柊璐﹀彿")} type="button">
+            <button className="icon-button" onClick={() => void refreshSession()} title={tx("refreshAccount", "刷新账号")} type="button">
               <RefreshCw size={16} />
             </button>
           </div>
@@ -1290,9 +1322,9 @@ export default function Studio() {
               </a>
 
               <div className="admin-panel">
-                <p className="section-label compact"><Users size={14} />{tx("memberCredits", "鎴愬憳绉垎绠＄悊")}</p>
+                <p className="section-label compact"><Users size={14} />{tx("memberCredits", "成员积分管理")}</p>
                 <select className="select" onChange={(event) => setGrantUserId(event.target.value)} value={grantUserId}>
-                  <option value="">{tx("selectMember", "閫夋嫨鐢ㄦ埛")}</option>
+                  <option value="">{tx("selectMember", "选择用户")}</option>
                   {(session?.users || []).map((user) => (
                     <option key={user.id} value={user.id}>
                       {user.name} · {formatDisplayCredits(user.credits)}
@@ -1302,7 +1334,7 @@ export default function Studio() {
                 <div className="grant-row">
                   <input className="input" onChange={(event) => setGrantAmount(event.target.value)} type="number" value={grantAmount} />
                   <button className="secondary-button" onClick={() => void grantUserCredits()} type="button">
-              <Plus size={16} />{tx("register", "注册")}
+                    <Plus size={16} />{tx("grant", "分配")}
                   </button>
                 </div>
                 {grantMessage ? <small className="admin-message">{grantMessage}</small> : null}
@@ -1350,7 +1382,7 @@ export default function Studio() {
             </div>
             <div className="topbar-actions">
               <button className="status-pill" onClick={() => setLanguage(language === "zh" ? "en" : "zh")} type="button">
-                <Languages size={15} />{language === "zh" ? "涓枃" : "English"}
+                <Languages size={15} />{language === "zh" ? "简体中文" : "English"}
               </button>
               <div className="status-pill"><Clapperboard size={15} />{activeModel}</div>
               <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language)}</div>
@@ -1358,6 +1390,20 @@ export default function Studio() {
           </header>
 
           <div className="compose-body">
+            {showCreditWarning ? (
+              <div className="credit-warning">
+                <Wallet size={18} />
+                <div>
+                  <strong>{tx("noCreditsTitle", "站内积分不足")}</strong>
+                  <span>
+                    {tx("noCreditsBody", "当前账号积分不够生成，请联系主账号分配积分后再试。")}
+                    {" "}
+                    {tx("estimatedCost", "预计消耗")}: {formatCreditCost(activeModel, language)}
+                  </span>
+                </div>
+              </div>
+            ) : null}
+
             <div className="field">
               <label htmlFor="prompt">{t.prompt}</label>
               <textarea className="textarea" id="prompt" onChange={(event) => setPrompt(event.target.value)} placeholder={t.promptPlaceholder} value={prompt} />
