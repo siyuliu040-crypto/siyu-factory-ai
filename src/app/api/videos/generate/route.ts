@@ -8,7 +8,7 @@ import {
   withAccountState
 } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
-import { getGenerationCost } from "@/lib/pricing";
+import { getVideoGenerationCost } from "@/lib/pricing";
 import { extractVideoUrl } from "@/lib/video-status";
 import { randomUUID } from "crypto";
 import { mkdir, writeFile } from "fs/promises";
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
       ...(imageUrl ? [String(imageUrl)] : []),
       ...uploadedReferenceUrls
     ].filter(Boolean);
-    const amount = getGenerationCost(model);
+    const amount = getVideoGenerationCost(model, String(seconds || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
     const billing = { userId: charge.user.id, amount, model };
 
