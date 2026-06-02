@@ -1,5 +1,6 @@
 import {
   getUserBySessionToken,
+  getAccountStorageInfo,
   parseSessionCookie,
   readAccountState,
   toPublicUser,
@@ -27,10 +28,7 @@ export async function GET(request: Request) {
         user,
         users,
         ledger,
-        storage: {
-          persistent: Boolean(process.env.SIYU_DATA_FILE),
-          label: process.env.SIYU_DATA_FILE ? "persistent" : "local"
-        }
+        storage: getAccountStorageInfo()
       },
       { headers: { "Cache-Control": "no-store" } }
     );
