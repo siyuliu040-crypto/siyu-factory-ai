@@ -147,9 +147,9 @@
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "prompt": "9:16 vertical ultra realistic product video, short curly pixie wig on mannequin head rotating slowly on clean studio table, soft light, detailed hair texture, no text, no logo",
       "taskId": "task_kLkIzRGep99KGs0mhSoFkfJzN4oqilsH",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-02T11:31:47.913Z",
-      "updatedAt": "2026-06-02T11:31:47.913Z"
+      "updatedAt": "2026-06-02T11:32:00.109Z"
     },
     {
       "id": "9d097a77-b2f2-4803-869f-4fd764749709",
