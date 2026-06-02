@@ -905,11 +905,11 @@ button.status-pill {
 }
 
 .model-chip {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
-  min-height: 50px;
+  min-height: 58px;
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -925,11 +925,26 @@ button.status-pill {
   background: rgba(15, 143, 130, 0.12);
 }
 
-.model-chip span {
+.model-copy {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.model-copy span {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-weight: 900;
+}
+
+.model-copy em {
+  color: var(--muted);
+  font-size: 11px;
+  font-style: normal;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .model-chip small {
@@ -1017,16 +1032,16 @@ button.status-pill {
 
 .reference-panel {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.48);
-  padding: 12px;
+  padding: 10px;
 }
 
 .reference-drop {
   display: grid;
-  min-height: 112px;
+  min-height: 78px;
   place-items: center;
   border: 1px dashed #a99c88;
   border-radius: 14px;
@@ -1063,7 +1078,11 @@ button.status-pill {
 .reference-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
+}
+
+.reference-field {
+  order: 4;
 }
 
 .reference-thumb {
@@ -1107,6 +1126,7 @@ button.status-pill {
 }
 
 .batch-panel {
+  order: 5;
   display: grid;
   gap: 12px;
   border: 1px solid var(--line);
@@ -1125,6 +1145,62 @@ button.status-pill {
 
 .batch-textarea {
   min-height: 112px;
+}
+
+.compact-head {
+  gap: 8px;
+}
+
+.compact-head span,
+.compact-head small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.batch-reference-panel {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid rgba(215, 204, 185, 0.8);
+  padding-top: 8px;
+}
+
+.batch-reference-panel input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.batch-reference-drop {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px dashed #a99c88;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.batch-reference-drop:hover {
+  border-color: var(--accent);
+  background: rgba(15, 143, 130, 0.08);
+}
+
+.batch-reference-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.batch-clear {
+  justify-self: end;
+  font-size: 11px;
 }
 
 .batch-grid {
@@ -1267,6 +1343,10 @@ button.status-pill {
 
   .batch-grid {
     grid-template-columns: 1fr;
+  }
+
+  .batch-reference-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .result-head {
