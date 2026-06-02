@@ -99,6 +99,17 @@
   "generationTasks": [],
   "history": [
     {
+      "id": "9d097a77-b2f2-4803-869f-4fd764749709",
+      "userId": "75891967-0f17-4457-9d3f-026bbea31574",
+      "mode": "image",
+      "model": "nano_banana_2-1K-portrait",
+      "prompt": "9:16 vertical commercial product photo, short curly pixie wig on mannequin head, clean studio lighting, realistic hair texture, no text, no logo",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/63f05508-c393-417d-89ff-d7628ef2bfd2.jpg",
+      "status": "completed",
+      "createdAt": "2026-06-02T11:30:09.105Z",
+      "updatedAt": "2026-06-02T11:30:09.105Z"
+    },
+    {
       "id": "b57ed9bb-6fed-40dd-84fb-dbcdf7f56291",
       "userId": "a7c2c324-6c83-49bf-ae7b-b785dece0edd",
       "mode": "video",
