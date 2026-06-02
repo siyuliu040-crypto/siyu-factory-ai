@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": "92e98b52-e17e-42e3-99ee-4de30edd0e9e",
+      "email": "owner-1780294445968@siyu.local",
+      "name": "Siyu Owner",
+      "passwordHash": "783a145be9680d0b048b2660f1920472:715bd575bbd21f8403a4be8059b7ff52712cb36d19d2424119830e15dac519feb22ffd89b36c05ec002a838e18426987ea7e2369d7c4aad97b3f009ad09a070f",
+      "role": "admin",
+      "credits": 20000000,
+      "createdAt": "2026-06-01T06:14:06.004Z",
+      "updatedAt": "2026-06-01T06:14:06.004Z"
+    },
+    {
+      "id": "13dc6065-2b61-406a-8ec8-8da41ee6ec16",
+      "email": "creator-1780294446044@siyu.local",
+      "name": "Creator",
+      "passwordHash": "13cbe82074a93a2a1570ebf00eda7c86:4bf46562f029b5af2d30af8abf42d62b46dfb84682e2d209b0f51484cc7ec313eeffb94b80d7bf56570f5145d2eabc3e9c4818d78bffc83c3aa0419d05c9dca0",
+      "role": "user",
+      "credits": 1200000,
+      "createdAt": "2026-06-01T06:14:06.046Z",
+      "updatedAt": "2026-06-01T06:14:06.106Z"
+    },
+    {
+      "id": "a7c2c324-6c83-49bf-ae7b-b785dece0edd",
+      "email": "smoke-1780299439004@example.com",
+      "name": "Smoke",
+      "passwordHash": "4089c395361892cc4ffb8204f1f25951:3004989bbc8a1a259c18b9f1644f7e31b7993045f70be43255bb4ee9777a417c4e95605d57ce052fd6f3440be01490670fa8dd4c7a4ec184bc238f33fe270ce5",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-01T07:37:19.041Z",
+      "updatedAt": "2026-06-01T07:37:19.041Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "cc725f5f946aa8bde5bd801c15ef740c4d4b4912de4f3365f94b3030be8faaeb",
+      "userId": "92e98b52-e17e-42e3-99ee-4de30edd0e9e",
+      "expiresAt": "2026-06-08T06:14:06.032Z",
+      "createdAt": "2026-06-01T06:14:06.032Z"
+    },
+    {
+      "token": "3cffb71ace742c390c7432525727a9973ea89d7bd1d8ecdb8bb84fe9a2f87604",
+      "userId": "13dc6065-2b61-406a-8ec8-8da41ee6ec16",
+      "expiresAt": "2026-06-08T06:14:06.074Z",
+      "createdAt": "2026-06-01T06:14:06.074Z"
+    },
+    {
+      "token": "880ed69ff01f3cae30416af4631e6a2bffaf78b3997f93b947dfb555c6ac8bff",
+      "userId": "a7c2c324-6c83-49bf-ae7b-b785dece0edd",
+      "expiresAt": "2026-06-08T07:37:19.068Z",
+      "createdAt": "2026-06-01T07:37:19.068Z"
+    }
+  ],
+  "ledger": [
+    {
+      "id": "6c919f3d-a0f1-45b2-a8ff-a624347c0ed8",
+      "userId": "13dc6065-2b61-406a-8ec8-8da41ee6ec16",
+      "adminId": "92e98b52-e17e-42e3-99ee-4de30edd0e9e",
+      "amount": 1200000,
+      "balanceAfter": 1200000,
+      "reason": "test allocation",
+      "createdAt": "2026-06-01T06:14:06.106Z"
+    }
+  ],
+  "generationTasks": [],
+  "history": [
+    {
+      "id": "b57ed9bb-6fed-40dd-84fb-dbcdf7f56291",
+      "userId": "a7c2c324-6c83-49bf-ae7b-b785dece0edd",
+      "mode": "video",
+      "model": "ali-sora-video-portrait-official-4s",
+      "prompt": "history smoke",
+      "taskId": "task_smoke",
+      "status": "queued",
+      "createdAt": "2026-06-01T07:37:19.079Z",
+      "updatedAt": "2026-06-01T07:37:19.079Z"
+    }
+  ]
+}
