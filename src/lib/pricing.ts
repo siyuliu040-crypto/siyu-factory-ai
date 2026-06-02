@@ -8,17 +8,13 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "nano_banana_pro-4K-portrait": 280000,
   "firefly-veo31-fast-8s-9x16-1080p": 1200000,
   "firefly-veo31-ref-8s-9x16-1080p": 1600000,
-  "veo_3_1-fast-portrait": 1600000,
-  "veo_3_1-fast-portrait-hd": 2000000,
-  "veo_3_1-fast-portrait-fl-hd": 2000000
+  "veo_3_1-fast-portrait": 1600000
 };
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
   "firefly-veo31-fast-8s-9x16-1080p": 1.152,
   "firefly-veo31-ref-8s-9x16-1080p": 1.152,
-  "veo_3_1-fast-portrait": 1.152,
-  "veo_3_1-fast-portrait-hd": 1.152,
-  "veo_3_1-fast-portrait-fl-hd": 1.152
+  "veo_3_1-fast-portrait": 1.152
 };
 
 export function getModelCreditCost(model: string) {
