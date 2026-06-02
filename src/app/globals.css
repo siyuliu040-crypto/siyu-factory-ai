@@ -1,16 +1,16 @@
 :root {
-  --ink: #15120e;
-  --muted: #6d675d;
-  --paper: #f7f3ea;
-  --panel: #fffaf0;
+  --ink: #101828;
+  --muted: #667085;
+  --paper: #f5f7fb;
+  --panel: #ffffff;
   --panel-strong: #ffffff;
-  --line: #d7ccb9;
-  --accent: #0f8f82;
-  --accent-dark: #06685f;
-  --signal: #e8512f;
-  --sun: #f4bc3b;
-  --blue: #2d5f9a;
-  --shadow: 0 22px 60px rgba(36, 25, 9, 0.12);
+  --line: #d6deea;
+  --accent: #5b57e8;
+  --accent-dark: #3530b8;
+  --signal: #f15b3d;
+  --sun: #21a0db;
+  --blue: #1d6fc4;
+  --shadow: 0 18px 44px rgba(16, 24, 40, 0.1);
 }
 
 * {
@@ -20,8 +20,8 @@
 body {
   margin: 0;
   background:
-    linear-gradient(135deg, rgba(15, 143, 130, 0.14), transparent 38%),
-    linear-gradient(315deg, rgba(232, 81, 47, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(91, 87, 232, 0.08), transparent 34%),
+    linear-gradient(315deg, rgba(33, 160, 219, 0.08), transparent 32%),
     var(--paper);
   color: var(--ink);
   font-family: "Aptos", "Segoe UI", "Microsoft YaHei", sans-serif;
@@ -152,7 +152,7 @@ button:disabled {
 .composer,
 .result-panel {
   border: 1px solid var(--line);
-  background: rgba(255, 250, 240, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow);
 }
 
@@ -217,7 +217,7 @@ button:disabled {
   border: 1px solid var(--line);
   border-radius: 16px;
   background:
-    linear-gradient(135deg, rgba(15, 143, 130, 0.12), rgba(244, 188, 59, 0.13)),
+    linear-gradient(135deg, rgba(91, 87, 232, 0.1), rgba(33, 160, 219, 0.1)),
     rgba(255, 255, 255, 0.72);
   padding: 14px;
   min-width: 0;
@@ -234,9 +234,9 @@ button:disabled {
   justify-content: space-between;
   gap: 14px;
   margin: 18px 0 6px;
-  border: 1px solid rgba(15, 143, 130, 0.32);
+  border: 1px solid rgba(91, 87, 232, 0.26);
   border-radius: 16px;
-  background: rgba(15, 143, 130, 0.08);
+  background: rgba(91, 87, 232, 0.08);
   padding: 14px;
 }
 
@@ -257,7 +257,7 @@ button:disabled {
 
 .upstream-card {
   background:
-    linear-gradient(135deg, rgba(45, 95, 154, 0.12), rgba(244, 188, 59, 0.13)),
+    linear-gradient(135deg, rgba(29, 111, 196, 0.1), rgba(91, 87, 232, 0.08)),
     rgba(255, 255, 255, 0.72);
 }
 
@@ -829,6 +829,16 @@ button.status-pill {
   padding-right: 4px;
 }
 
+.history-section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .history-item {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
@@ -1032,11 +1042,11 @@ button.status-pill {
 
 .reference-panel {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.48);
-  padding: 10px;
+  padding: 8px;
 }
 
 .reference-drop {
@@ -1128,11 +1138,11 @@ button.status-pill {
 .batch-panel {
   order: 5;
   display: grid;
-  gap: 12px;
+  gap: 10px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.58);
-  padding: 14px;
+  padding: 12px;
 }
 
 .pricing-note {
@@ -1160,9 +1170,9 @@ button.status-pill {
 
 .batch-reference-panel {
   display: grid;
-  gap: 8px;
+  gap: 6px;
   border-top: 1px solid rgba(215, 204, 185, 0.8);
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .batch-reference-panel input[type="file"] {
@@ -1175,7 +1185,7 @@ button.status-pill {
 
 .batch-reference-drop {
   display: inline-flex;
-  min-height: 34px;
+  min-height: 32px;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -1194,8 +1204,8 @@ button.status-pill {
 
 .batch-reference-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 5px;
 }
 
 .batch-clear {
