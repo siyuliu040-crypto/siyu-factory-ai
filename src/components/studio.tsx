@@ -1088,7 +1088,7 @@ export default function Studio() {
 
   async function pollImageJob(id: string) {
     try {
-      for (let attempt = 0; attempt < 120; attempt += 1) {
+      for (let attempt = 0; attempt < 210; attempt += 1) {
         await new Promise((resolve) => setTimeout(resolve, 4000));
         const statusResponse = await fetch(`/api/images/status?id=${encodeURIComponent(id)}`);
         const status = (await statusResponse.json()) as ImageJobResult;
