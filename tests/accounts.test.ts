@@ -70,6 +70,47 @@ test("admin can grant credits and user debits fail when balance is insufficient"
   );
 });
 
+test("admin credit deductions are recorded and cannot overdraw a member", () => {
+  const state = createEmptyAccountState();
+  const owner = registerAccount(state, {
+    email: "owner@siyu.factory",
+    name: "Owner",
+    password: "owner-pass"
+  }).user;
+  const user = registerAccount(state, {
+    email: "creator@example.com",
+    name: "Creator",
+    password: "creator-pass"
+  }).user;
+
+  grantCredits(state, {
+    adminId: owner.id,
+    userId: user.id,
+    amount: 1_000_000,
+    reason: "starter package"
+  });
+  const deduction = debitCredits(state, {
+    adminId: owner.id,
+    userId: user.id,
+    amount: 250_000,
+    reason: "manual correction"
+  });
+
+  assert.equal(deduction.user.credits, 750_000);
+  assert.equal(deduction.entry.amount, -250_000);
+  assert.equal(deduction.entry.adminId, owner.id);
+  assert.throws(
+    () =>
+      debitCredits(state, {
+        adminId: owner.id,
+        userId: user.id,
+        amount: 800_000,
+        reason: "manual correction"
+      }),
+    (error) => error instanceof Error && "code" in error && error.code === "insufficient_credits"
+  );
+});
+
 test("generation history is stored per user and can be updated by task id", () => {
   const state = createEmptyAccountState();
   const user = registerAccount(state, {
