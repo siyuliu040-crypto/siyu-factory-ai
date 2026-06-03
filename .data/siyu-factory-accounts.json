@@ -790,9 +790,9 @@
       "model": "vidu:viduq3-turbo",
       "prompt": "9:16 vertical product video, keep the uploaded reference object exactly: a matte gray cylindrical cosmetic bottle on a light gray studio background. Subtle camera push, realistic lighting, no text, no logo",
       "taskId": "959703294287036416",
-      "status": "created",
+      "status": "in_progress",
       "createdAt": "2026-06-03T10:30:11.091Z",
-      "updatedAt": "2026-06-03T10:30:11.091Z"
+      "updatedAt": "2026-06-03T10:30:20.532Z"
     },
     {
       "id": "12b84133-d755-4673-9eb1-92c0bdd793d6",
