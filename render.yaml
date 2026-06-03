@@ -13,6 +13,10 @@ services:
         sync: false
       - key: HELLOBABYGO_API_BASE_URL
         value: https://api.hellobabygo.com
+      - key: VIDU_API_KEY
+        sync: false
+      - key: VIDU_API_BASE_URL
+        value: https://api.vidu.cn
       - key: SIYU_PUBLIC_BASE_URL
         value: https://siyu-factory-ai.onrender.com
       - key: SIYU_GITHUB_STORAGE_REPO
