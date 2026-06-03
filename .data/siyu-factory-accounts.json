@@ -36,9 +36,9 @@
       "name": "Codex Vidu ref test",
       "passwordHash": "591526a5f4776e0b323cd2a8cd604b8a:1c959acc6c5d8d582027a4d4684156815a0ae06dc0e988ee618b39239b4a1c0090a792a5c92e9629b991b0750f1349078580eeaf080889bf11cd2586f04e2ee5",
       "role": "user",
-      "credits": 9100000,
+      "credits": 8093750,
       "createdAt": "2026-06-03T10:16:36.279Z",
-      "updatedAt": "2026-06-03T10:17:55.615Z"
+      "updatedAt": "2026-06-03T10:30:06.392Z"
     }
   ],
   "sessions": [
@@ -110,6 +110,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "f73bb82d-204f-4565-b9ab-169e80df6617",
+      "userId": "72524569-6773-4824-abb2-494855433661",
+      "amount": -1006250,
+      "balanceAfter": 8093750,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T10:30:06.392Z",
+      "metadata": {
+        "model": "vidu:viduq3-turbo",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "46f7a86e-fcd8-4db5-a61e-74457a26816f",
       "userId": "72524569-6773-4824-abb2-494855433661",
