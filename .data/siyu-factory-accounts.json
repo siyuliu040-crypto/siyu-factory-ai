@@ -29,6 +29,16 @@
       "credits": 0,
       "createdAt": "2026-06-01T07:37:19.041Z",
       "updatedAt": "2026-06-01T07:37:19.041Z"
+    },
+    {
+      "id": "57a65552-26d5-4f34-8797-df1ed4a8800e",
+      "email": "1377900116@qq.com",
+      "name": "siyu",
+      "passwordHash": "843c8456f5b1b7ebb37054929d864d6e:5d99a93b9c44a2bb4be6a4008740804896104e810d673d696f08ff6453cf3c31461a9f68675b2cb6e4d0e094e8ac073c772d2af5182d6b9b50af21a7dc6192ee",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T00:33:29.544Z",
+      "updatedAt": "2026-06-03T00:33:29.544Z"
     }
   ],
   "sessions": [
@@ -49,6 +59,12 @@
       "userId": "a7c2c324-6c83-49bf-ae7b-b785dece0edd",
       "expiresAt": "2026-06-08T07:37:19.068Z",
       "createdAt": "2026-06-01T07:37:19.068Z"
+    },
+    {
+      "token": "22ebf6a6bb1ba7abfb7aa7480d7c82b24e5e1f930226773c36a2cc54863e4632",
+      "userId": "57a65552-26d5-4f34-8797-df1ed4a8800e",
+      "expiresAt": "2026-06-10T00:33:29.782Z",
+      "createdAt": "2026-06-03T00:33:29.782Z"
     }
   ],
   "ledger": [
