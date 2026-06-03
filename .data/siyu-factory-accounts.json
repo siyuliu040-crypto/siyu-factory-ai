@@ -1,709 +1,709 @@
 {
-  "users": [
-    {
-      "id": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "email": "137700116@qq.com",
-      "name": "siyu",
-      "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
-      "role": "admin",
-      "credits": 5616250,
-      "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-03T08:04:39.849Z"
-    },
-    {
-      "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "email": "wangzhanpeng259@gmail.com",
-      "name": "wangzhanpeng",
-      "passwordHash": "b81cb7b40d0e2d5878f6613e1861f6a1:feb0b50e81c057101c13c1390549164af74148db9e9989f1321cd9461878128384bb92acb3008aa3744174de54642854c322ecb6b821d44d98380c7ecdf02208",
-      "role": "user",
-      "credits": 27375000,
-      "createdAt": "2026-06-03T02:32:37.576Z",
-      "updatedAt": "2026-06-03T06:37:30.924Z"
-    },
-    {
-      "id": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "email": "1608030992@qq.com",
-      "name": "lina",
-      "passwordHash": "e20d850461f444ee821edf54e5c035f3:1ff8e57afc2ee22aa4cdce153ef735e0bf6d3a79d046c40d398ad97a8b2386f3fe70ec9aae14db946614b661741f805c46c181eba40027176f7e308f68be1666",
-      "role": "user",
-      "credits": 20000000,
-      "createdAt": "2026-06-03T06:10:25.337Z",
-      "updatedAt": "2026-06-03T07:20:09.654Z"
-    },
-    {
-      "id": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
-      "email": "codex-video-audit-1780473870@example.com",
-      "name": "Codex Video Audit",
-      "passwordHash": "0cab13ad6b77a9585215e69634aa2df3:cb3ec1fdb0bbed1f22aef7af39793a36c47854b74566775826330b86166f0f66e0860232c62704aa870cbcdd69bd1a640c290d77ddd722cd601e2b6f3157cad8",
-      "role": "user",
-      "credits": 0,
-      "createdAt": "2026-06-03T08:04:34.770Z",
-      "updatedAt": "2026-06-03T08:04:34.770Z"
-    }
-  ],
-  "sessions": [
-    {
-      "token": "569bd3e919087a460eaf181f2f05a3825255c5ac79a22181534c7120de41f8c3",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "expiresAt": "2026-06-10T01:00:58.635Z",
-      "createdAt": "2026-06-03T01:00:58.635Z"
-    },
-    {
-      "token": "d24345a2e9a85a89ccd52b97c7290d405d3be63d8792c83432c65124a9ae9a4f",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "expiresAt": "2026-06-10T01:01:25.339Z",
-      "createdAt": "2026-06-03T01:01:25.339Z"
-    },
-    {
-      "token": "0a29ff563f805c138e1723b85a7ba5dccb103658769a2e6322b4f46b9da5a4a4",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "expiresAt": "2026-06-10T02:20:48.929Z",
-      "createdAt": "2026-06-03T02:20:48.929Z"
-    },
-    {
-      "token": "f3abedfb7f710efd72ac2e7069117c7d5b193059ae854a310f34e2c9ec5f61a6",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "expiresAt": "2026-06-10T02:32:37.728Z",
-      "createdAt": "2026-06-03T02:32:37.728Z"
-    },
-    {
-      "token": "0603cea19944e820c92157df5f16ca47c597b1fb1ed9a32b67fe91b51794b388",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "expiresAt": "2026-06-10T03:06:30.019Z",
-      "createdAt": "2026-06-03T03:06:30.019Z"
-    },
-    {
-      "token": "78df83d4e1033cf7ec71177b12d997b98e5858fa8ae752656391d94d847862ed",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "expiresAt": "2026-06-10T06:10:25.625Z",
-      "createdAt": "2026-06-03T06:10:25.625Z"
-    },
-    {
-      "token": "96788ea990b76aeb38dc4e95abd16ab8337ba9720a4ec05174ee51bb57710cdc",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "expiresAt": "2026-06-10T07:48:11.810Z",
-      "createdAt": "2026-06-03T07:48:11.810Z"
-    },
-    {
-      "token": "5301ea339897d89485948ad55f23e7b0a6a9d3a0e55b4c85e4f63371d29eaf98",
-      "userId": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
-      "expiresAt": "2026-06-10T08:04:34.999Z",
-      "createdAt": "2026-06-03T08:04:34.999Z"
-    }
-  ],
-  "ledger": [
-    {
-      "id": "6eb3dab5-5de7-46d1-9234-3ee048f90c1b",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -800000,
-      "balanceAfter": 5616250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T08:04:39.849Z",
-      "metadata": {
-        "model": "veo_3_1-fast-portrait",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "c7090a1b-ed50-432e-b1b5-e7e7347a16a4",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 1200000,
-      "balanceAfter": 6416250,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-03T08:01:25.151Z",
-      "metadata": {
-        "taskId": "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
-        "model": "firefly-veo31-fast-8s-9x16-1080p"
-      }
-    },
-    {
-      "id": "b65ed4b8-9fe5-47da-9ec7-16fbfe43fe6f",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -1200000,
-      "balanceAfter": 5216250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T08:01:08.814Z",
-      "metadata": {
-        "model": "firefly-veo31-fast-8s-9x16-1080p",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "dbf9007a-57b6-40c2-b12d-07486e1bf2bf",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 1600000,
-      "balanceAfter": 6416250,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-03T08:00:13.492Z",
-      "metadata": {
-        "taskId": "task_fLz274AhwLQI2U6ecfpvF10P7tf3khBK",
-        "model": "firefly-veo31-ref-8s-9x16-1080p"
-      }
-    },
-    {
-      "id": "7de61c16-281f-47f3-b551-ab5c6a006c50",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -1600000,
-      "balanceAfter": 4816250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T07:59:50.008Z",
-      "metadata": {
-        "model": "firefly-veo31-ref-8s-9x16-1080p",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "87545881-4cbc-47b3-9c3a-26c484d550f2",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 2000000,
-      "balanceAfter": 6416250,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-03T07:59:29.414Z",
-      "metadata": {
-        "taskId": "task_bW8soXUKMQBjVN1FTXtNPyVfaQqai6Ya",
-        "model": "veo_3_1-fast-portrait"
-      }
-    },
-    {
-      "id": "5c33c62f-ce86-4ad6-8208-f2fa25bc1ebd",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -2000000,
-      "balanceAfter": 4416250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T07:57:58.389Z",
-      "metadata": {
-        "model": "veo_3_1-fast-portrait",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "58d94973-f86d-43b5-bf70-ce46e7bd5cb5",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -40000,
-      "balanceAfter": 6416250,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:43:58.904Z",
-      "metadata": {
-        "model": "nano_banana_2-1K-portrait",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "68fdd22c-b12e-480e-88f5-6b045e74c60a",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -40000,
-      "balanceAfter": 6456250,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:40:35.651Z",
-      "metadata": {
-        "model": "gpt-image-2",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "37a6b826-d11d-4c0b-be70-0eed694f8ad8",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 120000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:20:09.654Z",
-      "metadata": {
-        "path": "/v1/images/edits"
-      }
-    },
-    {
-      "id": "23df55e8-611f-4b40-8f8b-b8c229086e05",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -120000,
-      "balanceAfter": 19880000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:18:03.445Z",
-      "metadata": {
-        "model": "nano_banana_2-4K-portrait",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "2b91e7fe-9213-4b98-9e7e-94e527e94f8b",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 70000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:16:42.701Z",
-      "metadata": {
-        "path": "/v1/images/edits"
-      }
-    },
-    {
-      "id": "dcf782e8-971b-46e7-a613-17b4552281df",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -70000,
-      "balanceAfter": 19930000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:14:36.817Z",
-      "metadata": {
-        "model": "nano_banana_2-2K-portrait",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "84604096-630a-4e68-83dc-5fa791d2e601",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 40000,
-      "balanceAfter": 6496250,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:13:37.607Z",
-      "metadata": {
-        "jobId": "img_1780470692394_1230bbc49bdec8"
-      }
-    },
-    {
-      "id": "7fc57ce5-b8e2-4b46-b0c7-9ff70fde939f",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 40000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:12:19.450Z",
-      "metadata": {
-        "path": "/v1/images/edits"
-      }
-    },
-    {
-      "id": "2c632272-e7b1-45f2-ab8c-0314ef0de27f",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -40000,
-      "balanceAfter": 6456250,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:11:31.268Z",
-      "metadata": {
-        "model": "gpt-image-2",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "aa05a32b-d990-43a9-a420-f9853c590270",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -40000,
-      "balanceAfter": 19960000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:10:13.352Z",
-      "metadata": {
-        "model": "gpt-image-2",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "fdcb1922-8086-40d1-96cc-c44117485f4c",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 40000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:09:37.410Z",
-      "metadata": {
-        "path": "/v1/images/edits"
-      }
-    },
-    {
-      "id": "365b717f-c4e8-43d1-9cf8-8b01e8c8da0b",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -40000,
-      "balanceAfter": 19960000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:07:31.183Z",
-      "metadata": {
-        "model": "gpt-image-2",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "f64b4caa-3c7a-4700-9276-1aeaf4688fe2",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "amount": 2000000,
-      "balanceAfter": 27375000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-03T06:37:30.924Z",
-      "metadata": {
-        "taskId": "task_cnZ9Wn6qqkzb5ucOS7Va63udi3NbiM5h",
-        "model": "veo_3_1-fast-portrait"
-      }
-    },
-    {
-      "id": "903a8e83-2086-4afa-abc2-e58e57a1a5b6",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "amount": -2000000,
-      "balanceAfter": 25375000,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T06:35:46.560Z",
-      "metadata": {
-        "model": "veo_3_1-fast-portrait",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "c37bd350-222f-4bd7-a3c8-7c16197aefb0",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "amount": -2625000,
-      "balanceAfter": 27375000,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T06:16:30.620Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "b7284470-04d9-478f-bf31-d5be36ee3a87",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 20000000,
-      "balanceAfter": 20000000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-03T06:11:08.153Z"
-    },
-    {
-      "id": "810ce899-83e8-41c7-ae85-b7c57a1cfb68",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 1200000,
-      "balanceAfter": 30000000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-03T02:57:02.737Z"
-    },
-    {
-      "id": "28185716-c549-4644-8e8d-4f5a7481ef9d",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -1200000,
-      "balanceAfter": 28800000,
-      "reason": "main account deduction",
-      "createdAt": "2026-06-03T02:57:00.959Z"
-    },
-    {
-      "id": "d1bcf4bf-e4f7-4ea6-b2ec-e80e7e098604",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -1001200000,
-      "balanceAfter": 30000000,
-      "reason": "main account deduction",
-      "createdAt": "2026-06-03T02:56:48.531Z"
-    },
-    {
-      "id": "08720042-246c-4d99-8855-674e30fc06f8",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 1001200000,
-      "balanceAfter": 1031200000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-03T02:56:46.703Z"
-    },
-    {
-      "id": "3f41d69c-db97-4293-a5c4-b085bc2745c6",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 30000000,
-      "balanceAfter": 30000000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-03T02:33:04.560Z"
-    },
-    {
-      "id": "33249698-ca7a-453e-bc00-d1abfa86c723",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -2625000,
-      "balanceAfter": 6496250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T02:21:39.107Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "76385fd4-0dd8-4260-87f0-e2c9b50b743c",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -2835000,
-      "balanceAfter": 9121250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T01:52:37.063Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "ecaa45a4-db5a-4cdb-a219-18fe80b23802",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -1200000,
-      "balanceAfter": 11956250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T01:52:21.116Z",
-      "metadata": {
-        "model": "firefly-veo31-fast-8s-9x16-1080p",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "2842844a-fdd7-4d26-bc61-d67ff5bb0b38",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -3018750,
-      "balanceAfter": 13156250,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T01:50:11.053Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "b1e4c55d-556b-4699-9826-340e493a59de",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -2625000,
-      "balanceAfter": 16175000,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T01:49:57.478Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "ea6b852c-139e-4aa2-8e21-9a4781e657e8",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": -1200000,
-      "balanceAfter": 18800000,
-      "reason": "video generation",
-      "createdAt": "2026-06-03T00:40:05.224Z",
-      "metadata": {
-        "model": "firefly-veo31-fast-8s-9x16-1080p",
-        "size": "720x1280"
-      }
-    }
-  ],
-  "generationTasks": [
-    {
-      "id": "task_b3dBEuq0o5ciLizpHoG1GqqVgIhpsXQS",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "type": "video",
-      "model": "veo_3_1-fast-portrait",
-      "amount": 800000,
-      "status": "queued",
-      "refunded": false,
-      "createdAt": "2026-06-03T08:04:41.244Z",
-      "updatedAt": "2026-06-03T08:04:41.244Z"
-    },
-    {
-      "id": "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "type": "video",
-      "model": "firefly-veo31-fast-8s-9x16-1080p",
-      "amount": 1200000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-03T08:01:11.092Z",
-      "updatedAt": "2026-06-03T08:01:25.151Z"
-    },
-    {
-      "id": "task_fLz274AhwLQI2U6ecfpvF10P7tf3khBK",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "type": "video",
-      "model": "firefly-veo31-ref-8s-9x16-1080p",
-      "amount": 1600000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-03T07:59:52.364Z",
-      "updatedAt": "2026-06-03T08:00:58.123Z"
-    },
-    {
-      "id": "task_bW8soXUKMQBjVN1FTXtNPyVfaQqai6Ya",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "type": "video",
-      "model": "veo_3_1-fast-portrait",
-      "amount": 2000000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-03T07:58:00.010Z",
-      "updatedAt": "2026-06-03T08:00:01.268Z"
-    },
-    {
-      "id": "task_cnZ9Wn6qqkzb5ucOS7Va63udi3NbiM5h",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "type": "video",
-      "model": "veo_3_1-fast-portrait",
-      "amount": 2000000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-03T06:35:47.920Z",
-      "updatedAt": "2026-06-03T06:37:30.924Z"
-    },
-    {
-      "id": "959639471337308160",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 2625000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-03T06:16:34.509Z",
-      "updatedAt": "2026-06-03T06:19:17.334Z"
-    },
-    {
-      "id": "959580364156706816",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 2625000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-03T02:21:42.254Z",
-      "updatedAt": "2026-06-03T02:24:36.617Z"
-    },
-    {
-      "id": "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "type": "video",
-      "model": "firefly-veo31-fast-8s-9x16-1080p",
-      "amount": 1200000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-03T01:52:23.318Z",
-      "updatedAt": "2026-06-03T01:55:57.883Z"
-    },
-    {
-      "id": "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "type": "video",
-      "model": "firefly-veo31-fast-8s-9x16-1080p",
-      "amount": 1200000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-03T00:40:06.294Z",
-      "updatedAt": "2026-06-03T00:43:34.575Z"
-    }
-  ],
-  "history": [
-    {
-      "id": "ef35251c-fc93-45d2-884d-57478eff4981",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "video",
-      "model": "veo_3_1-fast-portrait",
-      "prompt": "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain't no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you're telling me i could've been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i'm dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would've paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don't walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody's gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
-      "taskId": "task_b3dBEuq0o5ciLizpHoG1GqqVgIhpsXQS",
-      "status": "in_progress",
-      "createdAt": "2026-06-03T08:04:41.244Z",
-      "updatedAt": "2026-06-03T08:05:49.345Z"
-    },
-    {
-      "id": "8d506307-67bc-42eb-bc26-f02cdbbc4142",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "video",
-      "model": "firefly-veo31-fast-8s-9x16-1080p",
-      "prompt": "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain't no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you're telling me i could've been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i'm dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would've paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don't walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody's gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
-      "taskId": "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
-      "status": "failed",
-      "createdAt": "2026-06-03T08:01:11.092Z",
-      "updatedAt": "2026-06-03T08:01:25.151Z"
-    },
-    {
-      "id": "a3ff321a-1cb1-462d-8e05-fae22b8a0040",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "video",
-      "model": "firefly-veo31-ref-8s-9x16-1080p",
-      "prompt": "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain't no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you're telling me i could've been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i'm dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would've paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don't walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody's gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
-      "taskId": "task_fLz274AhwLQI2U6ecfpvF10P7tf3khBK",
-      "status": "failed",
-      "createdAt": "2026-06-03T07:59:52.364Z",
-      "updatedAt": "2026-06-03T08:00:58.123Z"
-    },
-    {
-      "id": "a52a2091-50d3-4e5e-89e1-048a3f574356",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "video",
-      "model": "veo_3_1-fast-portrait",
-      "prompt": "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain't no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you're telling me i could've been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i'm dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would've paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don't walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody's gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
-      "taskId": "task_bW8soXUKMQBjVN1FTXtNPyVfaQqai6Ya",
-      "status": "failed",
-      "createdAt": "2026-06-03T07:58:00.010Z",
-      "updatedAt": "2026-06-03T08:00:01.268Z"
-    },
-    {
-      "id": "c1d87984-1cdd-4d71-bd49-47f7e34111ae",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "image",
-      "model": "gpt-image-2",
-      "prompt": "Create one vertical 9:16 photorealistic TikTok UGC-style image, handheld smartphone selfie feeling, extreme close-up to medium close-up framing, realistic video texture, slight natural grain, natural lighting, smooth realistic camera feel.\n\nNo text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface, no shopping cart icon, no readable brand labels.\n\nSubject: one confident African American female TikTok beauty creator, same consistent facial identity, natural makeup, real skin texture, expressive eyes, authentic U.S. beauty creator energy. She is wearing a full, soft, voluminous human hair wig with clean lace front, natural hairline, thick ends, natural shine, realistic bounce, and luxury hair texture.\n\nScene:\nThe woman is facing the camera in a close-up selfie angle. Her expression shows shocked excitement, like she just discovered an unbelievable deal. Her eyes are wide, eyebrows lifted dramatically, mouth slightly open in disbelief, but a smile is starting to form. The emotion feels genuine, spontaneous, and highly expressive.\n\nAction:\nBoth hands are naturally placed in her hair, lifting the roots and fluffing the wig to show fullness and density. One side of the hair is slightly pulled forward toward the camera to show soft texture, thick ends, and natural movement. Her fingers bend naturally and touch the hair realistically. The lace front and hairline are visible and clean. The hair looks full from root to ends, soft, bouncy, and expensive-looking.\n\nComposition:\nVertical 9:16, close selfie framing, face and hair dominate the image. Hair should take up a large part of the frame. The camera feels like a real phone held close by the creator. Background is softly visible but not empty: a realistic bedroom or beauty room setting with natural daylight, mirror, vanity items, and casual home details, but no readable text.\n\nStyle:\nPhotorealistic, authentic TikTok creator vibe, real skin pores, natural facial expression, realistic hair movement, no over-smoothing, no plastic skin, no AI-looking face, no distorted hands, no fake lace, no thin hair ends.",
-      "previewUrl": "https://file.bandianwa.com/ziyou1/video/01f3d45a-2b1b-47eb-bb50-8eb4ed0dc32f.png",
-      "status": "completed",
-      "createdAt": "2026-06-03T07:46:12.330Z",
-      "updatedAt": "2026-06-03T07:46:12.330Z"
-    },
-    {
-      "id": "31d5e1b1-b302-4c85-982c-7bb54511100f",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "image",
-      "model": "nano_banana_2-1K-portrait",
-      "prompt": "Create one vertical 9:16 photorealistic TikTok UGC-style image, handheld smartphone selfie feeling, extreme close-up to medium close-up framing, realistic video texture, slight natural grain, natural lighting, smooth realistic camera feel.\n\nNo text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface, no shopping cart icon, no readable brand labels.\n\nSubject: one confident African American female TikTok beauty creator, same consistent facial identity, natural makeup, real skin texture, expressive eyes, authentic U.S. beauty creator energy. She is wearing a full, soft, voluminous human hair wig with clean lace front, natural hairline, thick ends, natural shine, realistic bounce, and luxury hair texture.\n\nScene:\nThe woman is facing the camera in a close-up selfie angle. Her expression shows shocked excitement, like she just discovered an unbelievable deal. Her eyes are wide, eyebrows lifted dramatically, mouth slightly open in disbelief, but a smile is starting to form. The emotion feels genuine, spontaneous, and highly expressive.\n\nAction:\nBoth hands are naturally placed in her hair, lifting the roots and fluffing the wig to show fullness and density. One side of the hair is slightly pulled forward toward the camera to show soft texture, thick ends, and natural movement. Her fingers bend naturally and touch the hair realistically. The lace front and hairline are visible and clean. The hair looks full from root to ends, soft, bouncy, and expensive-looking.\n\nComposition:\nVertical 9:16, close selfie framing, face and hair dominate the image. Hair should take up a large part of the frame. The camera feels like a real phone held close by the creator. Background is softly visible but not empty: a realistic bedroom or beauty room setting with natural daylight, mirror, vanity items, and casual home details, but no readable text.\n\nStyle:\nPhotorealistic, authentic TikTok creator vibe, real skin pores, natural facial expression, realistic hair movement, no over-smoothing, no plastic skin, no AI-looking face, no distorted hands, no fake lace, no thin hair ends.",
-      "previewUrl": "https://file.bandianwa.com/ziyou1/video/e54b5359-c616-4a9d-b7c1-3f8f071af434.jpg",
-      "status": "completed",
-      "createdAt": "2026-06-03T07:45:00.950Z",
-      "updatedAt": "2026-06-03T07:45:00.950Z"
-    },
-    {
-      "id": "a5b0cfd5-8e09-457e-95f3-abdabaa0f047",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "mode": "video",
-      "model": "veo_3_1-fast-portrait",
-      "prompt": "使用参考图三中发束产品，图一图二为做好的发型。严格按照以下脚本：严格按照以下脚本执行生成适用于TIKTOK美国区视频：核心策略：男性用专业手法展示产品硬指标（长度、弹性、光泽、饱满），女性展示佩戴后的真实效果（发际线、背后、全身动态），理发店场景增强专业信任感。\n\n表格一：基本信息表\n\n项目\n\n内容\n\n版本名称\n\n理发店男女双人展示型\n\n视频时长\n\n15秒\n\n核心逻辑\n\n男性展示产品 → 女性佩戴效果 → 全身动态验证\n\n情绪曲线\n\n专业自信 → 优雅惊艳 → 震撼满足\n\n目标受众\n\n追求真实感、专业背书、注重发际线和细节的用户\n\n独特卖点\n\n\"理发店实拍\"\"男女双人验证\"\"发尾到臀\"\"发际线自然\"\n\n项目\n\n内容\n\n人物A（展示者）\n\n40岁美国黑人男性，理发师或博主，专业感强\n\n人物B（佩戴者）\n\n35岁美国黑人女性，圆润脸型，健美身材，佩戴loosewave layeredcut Body Wave多层次大波浪Image 2 （只参考发型，人物形象严格按照脚本描述）\n\n妆容\n\n女性：精致全妆；男性：自然干净\n\n服装\n\n女性：白色吊带；男性：理发师围布/休闲装\n\n场景\n\n理发店内（理发椅、镜子、专业灯光）\n\n音乐\n\n轻快R&B / Neo-soul，有节奏感\n\n表格二：分镜脚本表（15秒，12个镜头）\n\n场景一：男性展示发束（00:00-00:06，5个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n理发店\n\n男性双手提起28inch发束，自然下垂，轻轻上下抖动Image 3 \n\nYou guys — 28 inches. Watch this bounce.\n\n专业自信\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n理发店\n\n双手握住发束中部，快速上下抖动2-3次，波浪明显回弹迅速\n\nNo cap — springs right back.\n\n弹性证明\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n理发店\n\n手指轻轻拨开发丝，展示发丝光泽、无毛躁\n\nLook at that shine — silky smooth.\n\n细节信任\n\n4\n\n00:04-00:05\n\n切\n\n正面\n\n远景\n\n镜头拉远，男性将发束放在自己头顶比划，发尾到腰部\n\nLength? Reals down to here.\n\n长度对比\n\n5\n\n00:05-00:06\n\n切\n\n侧面\n\n中景\n\n男性用手抚摸发束，从发根滑到发尾，展示饱满顺滑\n\nFull, thick, top to ends.\n\n饱满展示\n\n场景二：女性佩戴后坐姿展示（00:06-00:10，4个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n6\n\n00:06-00:07.5\n\n正面\n\n近景\n\n理发店（理发椅）\n\n女性坐在理发椅上，面对镜子，手指轻轻拨开发际线位置，展示自然，无蕾丝Image 2 （只参考发型）\n\nLook at that hairline —Lightweight & breathable, perfect for summer wear! \n\n真实自然\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面\n\n近景\n\n背对镜头，头发自然垂落，展示发尾位置到腰下\n\nThick from the roots.\n\n饱满展示\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面\n\n中景\n\n侧身坐姿，手指从发根滑到发尾，展示波浪垂坠感\n\nVarious lengths for layered big waves.\n\n曲度展示\n\n9\n\n00:09.5-00:10\n\n切\n\n微距\n\n特写\n\n镜头推进到发尾，手指轻捏发丝展示弹性和发质\n\nReal hair, no cap.\n\n细节验证\n\n场景三：女性站起来全身展示（00:10-00:15，3个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n10\n\n00:10-00:11.5\n\n正面\n\n远景\n\n理发店\n\n女性从理发椅上站起来，头发自然垂落，发尾到腰部Image 1 （只参考发型)\n\nStand up — look at that length.\n\n震撼长度\n\n11\n\n00:11.5-00:13\n\n切\n\n背面\n\n远景\n\n背对镜头，发尾到臀部，轻轻甩头，展示饱满浓密和弹性\n\nBouncy, full, and it moves.\n\n动态展示\n\n12\n\n00:13-00:15\n\n切\n\n正面\n\n中景\n\n面对镜头自信微笑，手指穿过发丝，点头\n\nGo grab yours — link in bio. Don't sleep.\n\n强引导CTA\n\n表格四：卖点覆盖表\n\n卖点\n\n展示方式\n\n对应镜头\n\n展示者\n\n28inch长度\n\n提起下垂、头顶比划、站立后到腰部\n\n镜头1、4、10\n\n男性+女性\n\n弹性/回弹\n\n快速抖动、手指轻捏发尾\n\n镜头2、9、11\n\n男性+女性\n\n发质光泽\n\n微距特写拨开发丝\n\n镜头3\n\n男性\n\n发丝饱满\n\n抚摸滑过、背面展示\n\n镜头5、7、11\n\n男性+女性\n\n无毛躁/丝滑\n\n微距特写\n\n镜头3\n\n男性\n\n发际线自然\n\n手指拨开发际线位置\n\n镜头6\n\n女性\n\n波浪曲度\n\n侧面中景滑发\n\n镜头8\n\n女性\n\n真实感发质\n\n微距特写+手指轻捏\n\n镜头9\n\n女性\n\n佩戴后长度\n\n站立背面发尾到臀部\n\n镜头10、11\n\n女性\n\nCTA引导\n\n手指屏幕+link in bio\n\n镜头12\n\n女性\n\n表格五：拍摄执行表\n\n镜头\n\n时间\n\n机位\n\n景别\n\n人物\n\n动作要点\n\n注意事项\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n男性\n\n发束提起后自然下垂，抖动幅度适中\n\n背景是理发店，有镜子/理发椅\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n男性\n\n快速抖动2-3次，回弹明显\n\n对焦锁定在发束上\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n男性\n\n手指拨开发丝，展示光泽\n\n需要足够光线，突出丝滑感\n\n4\n\n00:04-00:05\n\n切\n\n正面远景\n\n男性\n\n头顶比划，从头顺到发尾\n\n确保全身入画，地板可见\n\n5\n\n00:05-00:06\n\n切\n\n侧面中景\n\n男性\n\n手从发根滑到发尾\n\n动作慢一点，展示顺滑饱满\n\n6\n\n00:06-00:07.5\n\n切\n\n正面近景\n\n女性\n\n坐姿，手指拨开发际线\n\n发际线要自然，无蕾丝\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面近景\n\n女性\n\n背对镜头，头发自然垂落\n\n发尾位置清晰可见\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面中景\n\n女性\n\n手指从发根滑到发尾\n\n侧面光线要好，突出波浪\n\n9\n\n00:09.5-00:10\n\n切\n\n微距特写\n\n女性\n\n手指轻捏发尾\n\n展示弹性和发质\n\n10\n\n00:10-00:11.5\n\n切\n\n正面远景\n\n女性\n\n从椅子上站起来，头发自然垂落\n\n发尾到臀部，动作自然\n\n11\n\n00:11.5-00:13\n\n切\n\n背面远景\n\n女性\n\n背对镜头，轻轻甩头\n\n展示饱满、弹性、动态\n\n12\n\n00:13-00:15\n\n切\n\n正面中景\n\n女性\n\n面对镜头，手指穿发，微笑点头\n\n眼神看镜头，手指屏幕\n\n\n\n\n\n表格六：理发店场景设置表\n\n元素\n\n要求\n\n背景\n\n理发椅、镜子、美发产品架、灯光\n\n光线\n\n专业环形灯+顶光，突出头发光泽\n\n道具\n\n理发围布、梳子、剪刀（入镜增加专业感）\n\n镜子\n\n干净无遮挡，可用于反射展示\n\n空间\n\n足够拍摄远景（女性站起来全身）\n\n表格七：人物区分表\n\n特征\n\n男性（展示者）\n\n女性（佩戴者）\n\n年龄\n\n40岁\n\n35岁\n\n角色\n\n理发师/推荐者\n\n顾客/佩戴者\n\n发型\n\n短发/自然发型\n\n佩戴36inch大波浪\n\n妆容\n\n自然干净\n\n精致全妆\n\n服装\n\n理发师围布/深色休闲装\n\n纯色修身连衣裙/吊带\n\n语气\n\n专业、自信、干脆\n\n优雅、满意、自信\n\n主要任务\n\n展示产品硬指标\n\n展示佩戴后效果\n\n表格八：设备与设置表\n\n项目\n\n推荐设置\n\n画质\n\n4K / 60fps（快节奏建议60fps）\n\n镜头\n\n后置主摄（微距时靠近）\n\n对焦\n\n手动锁定在发束/头发上\n\n光线\n\n专业环形灯+自然侧光\n\n音频\n\n外接麦克风\n\n字幕\n\n无字幕\n\n音乐\n\n轻快R&B/Neo-soul，音量-20dB以下",
-      "taskId": "task_cnZ9Wn6qqkzb5ucOS7Va63udi3NbiM5h",
-      "status": "failed",
-      "createdAt": "2026-06-03T06:35:47.920Z",
-      "updatedAt": "2026-06-03T06:37:30.924Z"
-    },
-    {
-      "id": "68c5f68e-c2b1-4cb9-9306-4244404a2ac0",
-      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "使用参考图三中发束产品，图一图二为做好的发型。严格按照以下脚本：严格按照以下脚本执行生成适用于TIKTOK美国区视频：核心策略：男性用专业手法展示产品硬指标（长度、弹性、光泽、饱满），女性展示佩戴后的真实效果（发际线、背后、全身动态），理发店场景增强专业信任感。\n\n表格一：基本信息表\n\n项目\n\n内容\n\n版本名称\n\n理发店男女双人展示型\n\n视频时长\n\n15秒\n\n核心逻辑\n\n男性展示产品 → 女性佩戴效果 → 全身动态验证\n\n情绪曲线\n\n专业自信 → 优雅惊艳 → 震撼满足\n\n目标受众\n\n追求真实感、专业背书、注重发际线和细节的用户\n\n独特卖点\n\n\"理发店实拍\"\"男女双人验证\"\"发尾到臀\"\"发际线自然\"\n\n项目\n\n内容\n\n人物A（展示者）\n\n40岁美国黑人男性，理发师或博主，专业感强\n\n人物B（佩戴者）\n\n35岁美国黑人女性，圆润脸型，健美身材，佩戴loosewave layeredcut Body Wave多层次大波浪Image 2 （只参考发型，人物形象严格按照脚本描述）\n\n妆容\n\n女性：精致全妆；男性：自然干净\n\n服装\n\n女性：白色吊带；男性：理发师围布/休闲装\n\n场景\n\n理发店内（理发椅、镜子、专业灯光）\n\n音乐\n\n轻快R&B / Neo-soul，有节奏感\n\n表格二：分镜脚本表（15秒，12个镜头）\n\n场景一：男性展示发束（00:00-00:06，5个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n理发店\n\n男性双手提起28inch发束，自然下垂，轻轻上下抖动Image 3 \n\nYou guys — 28 inches. Watch this bounce.\n\n专业自信\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n理发店\n\n双手握住发束中部，快速上下抖动2-3次，波浪明显回弹迅速\n\nNo cap — springs right back.\n\n弹性证明\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n理发店\n\n手指轻轻拨开发丝，展示发丝光泽、无毛躁\n\nLook at that shine — silky smooth.\n\n细节信任\n\n4\n\n00:04-00:05\n\n切\n\n正面\n\n远景\n\n镜头拉远，男性将发束放在自己头顶比划，发尾到腰部\n\nLength? Reals down to here.\n\n长度对比\n\n5\n\n00:05-00:06\n\n切\n\n侧面\n\n中景\n\n男性用手抚摸发束，从发根滑到发尾，展示饱满顺滑\n\nFull, thick, top to ends.\n\n饱满展示\n\n场景二：女性佩戴后坐姿展示（00:06-00:10，4个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n6\n\n00:06-00:07.5\n\n正面\n\n近景\n\n理发店（理发椅）\n\n女性坐在理发椅上，面对镜子，手指轻轻拨开发际线位置，展示自然，无蕾丝Image 2 （只参考发型）\n\nLook at that hairline —Lightweight & breathable, perfect for summer wear! \n\n真实自然\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面\n\n近景\n\n背对镜头，头发自然垂落，展示发尾位置到腰下\n\nThick from the roots.\n\n饱满展示\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面\n\n中景\n\n侧身坐姿，手指从发根滑到发尾，展示波浪垂坠感\n\nVarious lengths for layered big waves.\n\n曲度展示\n\n9\n\n00:09.5-00:10\n\n切\n\n微距\n\n特写\n\n镜头推进到发尾，手指轻捏发丝展示弹性和发质\n\nReal hair, no cap.\n\n细节验证\n\n场景三：女性站起来全身展示（00:10-00:15，3个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n10\n\n00:10-00:11.5\n\n正面\n\n远景\n\n理发店\n\n女性从理发椅上站起来，头发自然垂落，发尾到腰部Image 1 （只参考发型)\n\nStand up — look at that length.\n\n震撼长度\n\n11\n\n00:11.5-00:13\n\n切\n\n背面\n\n远景\n\n背对镜头，发尾到臀部，轻轻甩头，展示饱满浓密和弹性\n\nBouncy, full, and it moves.\n\n动态展示\n\n12\n\n00:13-00:15\n\n切\n\n正面\n\n中景\n\n面对镜头自信微笑，手指穿过发丝，点头\n\nGo grab yours — link in bio. Don't sleep.\n\n强引导CTA\n\n表格四：卖点覆盖表\n\n卖点\n\n展示方式\n\n对应镜头\n\n展示者\n\n28inch长度\n\n提起下垂、头顶比划、站立后到腰部\n\n镜头1、4、10\n\n男性+女性\n\n弹性/回弹\n\n快速抖动、手指轻捏发尾\n\n镜头2、9、11\n\n男性+女性\n\n发质光泽\n\n微距特写拨开发丝\n\n镜头3\n\n男性\n\n发丝饱满\n\n抚摸滑过、背面展示\n\n镜头5、7、11\n\n男性+女性\n\n无毛躁/丝滑\n\n微距特写\n\n镜头3\n\n男性\n\n发际线自然\n\n手指拨开发际线位置\n\n镜头6\n\n女性\n\n波浪曲度\n\n侧面中景滑发\n\n镜头8\n\n女性\n\n真实感发质\n\n微距特写+手指轻捏\n\n镜头9\n\n女性\n\n佩戴后长度\n\n站立背面发尾到臀部\n\n镜头10、11\n\n女性\n\nCTA引导\n\n手指屏幕+link in bio\n\n镜头12\n\n女性\n\n表格五：拍摄执行表\n\n镜头\n\n时间\n\n机位\n\n景别\n\n人物\n\n动作要点\n\n注意事项\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n男性\n\n发束提起后自然下垂，抖动幅度适中\n\n背景是理发店，有镜子/理发椅\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n男性\n\n快速抖动2-3次，回弹明显\n\n对焦锁定在发束上\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n男性\n\n手指拨开发丝，展示光泽\n\n需要足够光线，突出丝滑感\n\n4\n\n00:04-00:05\n\n切\n\n正面远景\n\n男性\n\n头顶比划，从头顺到发尾\n\n确保全身入画，地板可见\n\n5\n\n00:05-00:06\n\n切\n\n侧面中景\n\n男性\n\n手从发根滑到发尾\n\n动作慢一点，展示顺滑饱满\n\n6\n\n00:06-00:07.5\n\n切\n\n正面近景\n\n女性\n\n坐姿，手指拨开发际线\n\n发际线要自然，无蕾丝\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面近景\n\n女性\n\n背对镜头，头发自然垂落\n\n发尾位置清晰可见\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面中景\n\n女性\n\n手指从发根滑到发尾\n\n侧面光线要好，突出波浪\n\n9\n\n00:09.5-00:10\n\n切\n\n微距特写\n\n女性\n\n手指轻捏发尾\n\n展示弹性和发质\n\n10\n\n00:10-00:11.5\n\n切\n\n正面远景\n\n女性\n\n从椅子上站起来，头发自然垂落\n\n发尾到臀部，动作自然\n\n11\n\n00:11.5-00:13\n\n切\n\n背面远景\n\n女性\n\n背对镜头，轻轻甩头\n\n展示饱满、弹性、动态\n\n12\n\n00:13-00:15\n\n切\n\n正面中景\n\n女性\n\n面对镜头，手指穿发，微笑点头\n\n眼神看镜头，手指屏幕\n\n\n\n\n\n表格六：理发店场景设置表\n\n元素\n\n要求\n\n背景\n\n理发椅、镜子、美发产品架、灯光\n\n光线\n\n专业环形灯+顶光，突出头发光泽\n\n道具\n\n理发围布、梳子、剪刀（入镜增加专业感）\n\n镜子\n\n干净无遮挡，可用于反射展示\n\n空间\n\n足够拍摄远景（女性站起来全身）\n\n表格七：人物区分表\n\n特征\n\n男性（展示者）\n\n女性（佩戴者）\n\n年龄\n\n40岁\n\n35岁\n\n角色\n\n理发师/推荐者\n\n顾客/佩戴者\n\n发型\n\n短发/自然发型\n\n佩戴36inch大波浪\n\n妆容\n\n自然干净\n\n精致全妆\n\n服装\n\n理发师围布/深色休闲装\n\n纯色修身连衣裙/吊带\n\n语气\n\n专业、自信、干脆\n\n优雅、满意、自信\n\n主要任务\n\n展示产品硬指标\n\n展示佩戴后效果\n\n表格八：设备与设置表\n\n项目\n\n推荐设置\n\n画质\n\n4K / 60fps（快节奏建议60fps）\n\n镜头\n\n后置主摄（微距时靠近）\n\n对焦\n\n手动锁定在发束/头发上\n\n光线\n\n专业环形灯+自然侧光\n\n音频\n\n外接麦克风\n\n字幕\n\n无字幕\n\n音乐\n\n轻快R&B/Neo-soul，音量-20dB以下",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_60/tasks/26/0603/06/959639471337308160/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260603%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260603T061917Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-03T06%253A19%253A11Z.mp4&x-id=GetObject&X-Amz-Signature=eca1a382d333bb4ad0abaab7fb1ee5ff0961f1b6093ebd8c03f008d5d76997c5",
-      "taskId": "959639471337308160",
-      "status": "completed",
-      "createdAt": "2026-06-03T06:16:34.509Z",
-      "updatedAt": "2026-06-03T06:19:17.334Z"
-    },
-    {
-      "id": "82cbc7c2-ab01-41ce-bf2f-688f2a81c2bc",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "Create a 15-second vertical 9:16 ultra-realistic TikTok US UGC hair bundle video. Real handheld iPhone front-camera selfie inside a car, daylight, sharp background, no blurred background, no bokeh, no subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI.\n\nSCENE:\nInside a real car during daytime. Light gray fabric seats, gray headrests, a white backpack on the back seat, rear window showing blue sky, trees, road signs, and parked cars outside. Natural sunlight comes through the side window and rear window, creating soft highlights on the hair. The car interior must stay clear and sharp, not blurred.\n\nPERSON:\nA young American Black woman, early 20s to early 30s, smooth brown skin with realistic pores, natural glam makeup, long lashes, small nose piercing, braces visible when she smiles, glossy lips. She wears a pink strapless fitted top and a simple necklace. Her expression changes naturally from playful confidence to serious product proof, then excited recommendation.\n\nPRODUCT:\nNatural black body wave human hair bundles, long, full, soft, glossy but realistic, thick full ends, defined body wave pattern, no plastic shine, no stiff wig look.\n\n0-3s GOLDEN HOOK:\nFront-camera selfie angle. She sits in the passenger seat or driver seat, slightly tilting her head down, then looks up at the camera with a small smile. Sunlight hits the top of her black body wave hair. She lightly grabs one side of her hair and flips it forward over her shoulder. Her eyes narrow slightly from the sunlight, then she smiles bigger, showing braces.\nVO:\n“You guys… this body bundle is not playing.”\n\n3-6s PRODUCT SHOW:\nClean jump cut. She holds a natural black body wave bundle close to the camera, product filling 70%-75% of the frame. Her fingers hold the top weft firmly, thumb in front, four fingers behind. Sunlight from the car window hits the bundle, showing soft waves and shine. The installed hairstyle stays behind her shoulder, clearly separate from the handheld bundle.\nVO:\n“No cap, I hate bundles that look full on top but thin at the ends.”\n\n6-9s DETAIL PROOF:\nExtreme close-up. She slowly runs her fingers through the bundle from mid-length to the ends. The waves separate smoothly and bounce back. The thick ends fall evenly into her palm. She looks down at the ends, eyebrows lift slightly, eyes widen, then she gives a satisfied little nod.\nVO:\n“Look at that — soft, bouncy, and full all the way down.”\n\n9-12s WEAR EFFECT:\nBack to selfie angle. She lets the installed body wave hair fall across her chest and lightly shakes her head side to side. The curls move naturally in the car light. She tucks one front piece away from her face, then leans closer to the camera with a confident half-smile.\nVO:\n“Car mirror check? Passed. This is the kind of hair that makes the whole look better.”\n\n12-15s CTA:\nFinal close-up. She holds the body wave bundle near the camera while her finished body wave hairstyle is visible behind it but not touching. She smiles, slightly raises one eyebrow, and gently shakes the bundle once to show bounce and thick ends.\nVO:\n“Tap the link and grab this body bundle today. Don’t wait on this one.”\n\nANTI-FAIL RULES:\nNo subtitles, no captions, no text overlay, no letters, no numbers, no readable car signs, no logo, no watermark, no TikTok UI. Keep the car background sharp and realistic, not blurred. The handheld bundle must never touch, overlap, or merge with the installed hairstyle. No installation process. No hair clipping through hands, face, shoulders, necklace, car seat, seatbelt, or clothes. No extra fingers, distorted hands, plastic skin, floating bundle, duplicated bundle, changing hair texture, or sudden outfit changes. Keep the same woman, same pink top, same car interior, same natural black body wave texture, and same lighting throughout the entire video.\n",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_16/tasks/26/0603/02/959580364156706816/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260603%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260603T022436Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-03T02%253A24%253A09Z.mp4&x-id=GetObject&X-Amz-Signature=500a1bcc3b9c5875106971ae95b647ba02b1b5c37520ca28a335e460bb5538fb",
-      "taskId": "959580364156706816",
-      "status": "completed",
-      "createdAt": "2026-06-03T02:21:42.254Z",
-      "updatedAt": "2026-06-03T02:24:36.617Z"
-    },
-    {
-      "id": "a2b00ecc-b8a0-4080-b7a1-f48c6c0f7253",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "video",
-      "model": "firefly-veo31-fast-8s-9x16-1080p",
-      "prompt": "Create a 15-second vertical 9:16 ultra-realistic TikTok US UGC hair bundle video. Real handheld iPhone front-camera selfie inside a car, daylight, sharp background, no blurred background, no bokeh, no subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI.\n\nSCENE:\nInside a real car during daytime. Light gray fabric seats, gray headrests, a white backpack on the back seat, rear window showing blue sky, trees, road signs, and parked cars outside. Natural sunlight comes through the side window and rear window, creating soft highlights on the hair. The car interior must stay clear and sharp, not blurred.\n\nPERSON:\nA young American Black woman, early 20s to early 30s, smooth brown skin with realistic pores, natural glam makeup, long lashes, small nose piercing, braces visible when she smiles, glossy lips. She wears a pink strapless fitted top and a simple necklace. Her expression changes naturally from playful confidence to serious product proof, then excited recommendation.\n\nPRODUCT:\nNatural black body wave human hair bundles, long, full, soft, glossy but realistic, thick full ends, defined body wave pattern, no plastic shine, no stiff wig look.\n\n0-3s GOLDEN HOOK:\nFront-camera selfie angle. She sits in the passenger seat or driver seat, slightly tilting her head down, then looks up at the camera with a small smile. Sunlight hits the top of her black body wave hair. She lightly grabs one side of her hair and flips it forward over her shoulder. Her eyes narrow slightly from the sunlight, then she smiles bigger, showing braces.\nVO:\n“You guys… this body bundle is not playing.”\n\n3-6s PRODUCT SHOW:\nClean jump cut. She holds a natural black body wave bundle close to the camera, product filling 70%-75% of the frame. Her fingers hold the top weft firmly, thumb in front, four fingers behind. Sunlight from the car window hits the bundle, showing soft waves and shine. The installed hairstyle stays behind her shoulder, clearly separate from the handheld bundle.\nVO:\n“No cap, I hate bundles that look full on top but thin at the ends.”\n\n6-9s DETAIL PROOF:\nExtreme close-up. She slowly runs her fingers through the bundle from mid-length to the ends. The waves separate smoothly and bounce back. The thick ends fall evenly into her palm. She looks down at the ends, eyebrows lift slightly, eyes widen, then she gives a satisfied little nod.\nVO:\n“Look at that — soft, bouncy, and full all the way down.”\n\n9-12s WEAR EFFECT:\nBack to selfie angle. She lets the installed body wave hair fall across her chest and lightly shakes her head side to side. The curls move naturally in the car light. She tucks one front piece away from her face, then leans closer to the camera with a confident half-smile.\nVO:\n“Car mirror check? Passed. This is the kind of hair that makes the whole look better.”\n\n12-15s CTA:\nFinal close-up. She holds the body wave bundle near the camera while her finished body wave hairstyle is visible behind it but not touching. She smiles, slightly raises one eyebrow, and gently shakes the bundle once to show bounce and thick ends.\nVO:\n“Tap the link and grab this body bundle today. Don’t wait on this one.”\n\nANTI-FAIL RULES:\nNo subtitles, no captions, no text overlay, no letters, no numbers, no readable car signs, no logo, no watermark, no TikTok UI. Keep the car background sharp and realistic, not blurred. The handheld bundle must never touch, overlap, or merge with the installed hairstyle. No installation process. No hair clipping through hands, face, shoulders, necklace, car seat, seatbelt, or clothes. No extra fingers, distorted hands, plastic skin, floating bundle, duplicated bundle, changing hair texture, or sudden outfit changes. Keep the same woman, same pink top, same car interior, same natural black body wave texture, and same lighting throughout the entire video.\n",
-      "previewUrl": "https://file.bandianwa.com/adobe/video/20260603/69f016a8aa6544dca9aba31c93c56b43.mp4",
-      "taskId": "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
-      "status": "completed",
-      "createdAt": "2026-06-03T01:52:23.318Z",
-      "updatedAt": "2026-06-03T01:55:57.883Z"
-    },
-    {
-      "id": "3e7524b1-4b55-47a4-bda6-aad2a22e7601",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "mode": "video",
-      "model": "firefly-veo31-fast-8s-9x16-1080p",
-      "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
-      "previewUrl": "https://file.bandianwa.com/adobe/video/20260603/c53b56af54a441cbb4a8e5262ce51020.mp4",
-      "taskId": "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
-      "status": "completed",
-      "createdAt": "2026-06-03T00:40:06.294Z",
-      "updatedAt": "2026-06-03T00:43:34.575Z"
-    }
-  ]
+    "users":  [
+                  {
+                      "id":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                      "email":  "137700116@qq.com",
+                      "name":  "siyu",
+                      "passwordHash":  "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
+                      "role":  "admin",
+                      "credits":  5616250,
+                      "createdAt":  "2026-06-03T00:39:56.017Z",
+                      "updatedAt":  "2026-06-03T08:04:39.849Z"
+                  },
+                  {
+                      "id":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                      "email":  "wangzhanpeng259@gmail.com",
+                      "name":  "wangzhanpeng",
+                      "passwordHash":  "b81cb7b40d0e2d5878f6613e1861f6a1:feb0b50e81c057101c13c1390549164af74148db9e9989f1321cd9461878128384bb92acb3008aa3744174de54642854c322ecb6b821d44d98380c7ecdf02208",
+                      "role":  "user",
+                      "credits":  27375000,
+                      "createdAt":  "2026-06-03T02:32:37.576Z",
+                      "updatedAt":  "2026-06-03T06:37:30.924Z"
+                  },
+                  {
+                      "id":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                      "email":  "1608030992@qq.com",
+                      "name":  "lina",
+                      "passwordHash":  "e20d850461f444ee821edf54e5c035f3:1ff8e57afc2ee22aa4cdce153ef735e0bf6d3a79d046c40d398ad97a8b2386f3fe70ec9aae14db946614b661741f805c46c181eba40027176f7e308f68be1666",
+                      "role":  "user",
+                      "credits":  20000000,
+                      "createdAt":  "2026-06-03T06:10:25.337Z",
+                      "updatedAt":  "2026-06-03T07:20:09.654Z"
+                  },
+                  {
+                      "id":  "88184ac3-759e-40a9-a8ae-925d0ffba7db",
+                      "email":  "codex-video-audit-1780473870@example.com",
+                      "name":  "Codex Video Audit",
+                      "passwordHash":  "0cab13ad6b77a9585215e69634aa2df3:cb3ec1fdb0bbed1f22aef7af39793a36c47854b74566775826330b86166f0f66e0860232c62704aa870cbcdd69bd1a640c290d77ddd722cd601e2b6f3157cad8",
+                      "role":  "user",
+                      "credits":  10000000,
+                      "createdAt":  "2026-06-03T08:04:34.770Z",
+                      "updatedAt":  "2026-06-03T08:05:50.7825435Z"
+                  }
+              ],
+    "sessions":  [
+                     {
+                         "token":  "569bd3e919087a460eaf181f2f05a3825255c5ac79a22181534c7120de41f8c3",
+                         "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                         "expiresAt":  "2026-06-10T01:00:58.635Z",
+                         "createdAt":  "2026-06-03T01:00:58.635Z"
+                     },
+                     {
+                         "token":  "d24345a2e9a85a89ccd52b97c7290d405d3be63d8792c83432c65124a9ae9a4f",
+                         "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                         "expiresAt":  "2026-06-10T01:01:25.339Z",
+                         "createdAt":  "2026-06-03T01:01:25.339Z"
+                     },
+                     {
+                         "token":  "0a29ff563f805c138e1723b85a7ba5dccb103658769a2e6322b4f46b9da5a4a4",
+                         "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                         "expiresAt":  "2026-06-10T02:20:48.929Z",
+                         "createdAt":  "2026-06-03T02:20:48.929Z"
+                     },
+                     {
+                         "token":  "f3abedfb7f710efd72ac2e7069117c7d5b193059ae854a310f34e2c9ec5f61a6",
+                         "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                         "expiresAt":  "2026-06-10T02:32:37.728Z",
+                         "createdAt":  "2026-06-03T02:32:37.728Z"
+                     },
+                     {
+                         "token":  "0603cea19944e820c92157df5f16ca47c597b1fb1ed9a32b67fe91b51794b388",
+                         "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                         "expiresAt":  "2026-06-10T03:06:30.019Z",
+                         "createdAt":  "2026-06-03T03:06:30.019Z"
+                     },
+                     {
+                         "token":  "78df83d4e1033cf7ec71177b12d997b98e5858fa8ae752656391d94d847862ed",
+                         "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                         "expiresAt":  "2026-06-10T06:10:25.625Z",
+                         "createdAt":  "2026-06-03T06:10:25.625Z"
+                     },
+                     {
+                         "token":  "96788ea990b76aeb38dc4e95abd16ab8337ba9720a4ec05174ee51bb57710cdc",
+                         "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                         "expiresAt":  "2026-06-10T07:48:11.810Z",
+                         "createdAt":  "2026-06-03T07:48:11.810Z"
+                     },
+                     {
+                         "token":  "5301ea339897d89485948ad55f23e7b0a6a9d3a0e55b4c85e4f63371d29eaf98",
+                         "userId":  "88184ac3-759e-40a9-a8ae-925d0ffba7db",
+                         "expiresAt":  "2026-06-10T08:04:34.999Z",
+                         "createdAt":  "2026-06-03T08:04:34.999Z"
+                     }
+                 ],
+    "ledger":  [
+                   {
+                       "id":  "6eb3dab5-5de7-46d1-9234-3ee048f90c1b",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -800000,
+                       "balanceAfter":  5616250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T08:04:39.849Z",
+                       "metadata":  {
+                                        "model":  "veo_3_1-fast-portrait",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "c7090a1b-ed50-432e-b1b5-e7e7347a16a4",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  1200000,
+                       "balanceAfter":  6416250,
+                       "reason":  "video generation failed refund",
+                       "createdAt":  "2026-06-03T08:01:25.151Z",
+                       "metadata":  {
+                                        "taskId":  "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
+                                        "model":  "firefly-veo31-fast-8s-9x16-1080p"
+                                    }
+                   },
+                   {
+                       "id":  "b65ed4b8-9fe5-47da-9ec7-16fbfe43fe6f",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -1200000,
+                       "balanceAfter":  5216250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T08:01:08.814Z",
+                       "metadata":  {
+                                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "dbf9007a-57b6-40c2-b12d-07486e1bf2bf",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  1600000,
+                       "balanceAfter":  6416250,
+                       "reason":  "video generation failed refund",
+                       "createdAt":  "2026-06-03T08:00:13.492Z",
+                       "metadata":  {
+                                        "taskId":  "task_fLz274AhwLQI2U6ecfpvF10P7tf3khBK",
+                                        "model":  "firefly-veo31-ref-8s-9x16-1080p"
+                                    }
+                   },
+                   {
+                       "id":  "7de61c16-281f-47f3-b551-ab5c6a006c50",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -1600000,
+                       "balanceAfter":  4816250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T07:59:50.008Z",
+                       "metadata":  {
+                                        "model":  "firefly-veo31-ref-8s-9x16-1080p",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "87545881-4cbc-47b3-9c3a-26c484d550f2",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  2000000,
+                       "balanceAfter":  6416250,
+                       "reason":  "video generation failed refund",
+                       "createdAt":  "2026-06-03T07:59:29.414Z",
+                       "metadata":  {
+                                        "taskId":  "task_bW8soXUKMQBjVN1FTXtNPyVfaQqai6Ya",
+                                        "model":  "veo_3_1-fast-portrait"
+                                    }
+                   },
+                   {
+                       "id":  "5c33c62f-ce86-4ad6-8208-f2fa25bc1ebd",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -2000000,
+                       "balanceAfter":  4416250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T07:57:58.389Z",
+                       "metadata":  {
+                                        "model":  "veo_3_1-fast-portrait",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "58d94973-f86d-43b5-bf70-ce46e7bd5cb5",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -40000,
+                       "balanceAfter":  6416250,
+                       "reason":  "image generation",
+                       "createdAt":  "2026-06-03T07:43:58.904Z",
+                       "metadata":  {
+                                        "model":  "nano_banana_2-1K-portrait",
+                                        "size":  "1024x1792"
+                                    }
+                   },
+                   {
+                       "id":  "68fdd22c-b12e-480e-88f5-6b045e74c60a",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -40000,
+                       "balanceAfter":  6456250,
+                       "reason":  "image generation",
+                       "createdAt":  "2026-06-03T07:40:35.651Z",
+                       "metadata":  {
+                                        "model":  "gpt-image-2",
+                                        "size":  "1024x1792"
+                                    }
+                   },
+                   {
+                       "id":  "37a6b826-d11d-4c0b-be70-0eed694f8ad8",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  120000,
+                       "balanceAfter":  20000000,
+                       "reason":  "image generation failed refund",
+                       "createdAt":  "2026-06-03T07:20:09.654Z",
+                       "metadata":  {
+                                        "path":  "/v1/images/edits"
+                                    }
+                   },
+                   {
+                       "id":  "23df55e8-611f-4b40-8f8b-b8c229086e05",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  -120000,
+                       "balanceAfter":  19880000,
+                       "reason":  "image generation",
+                       "createdAt":  "2026-06-03T07:18:03.445Z",
+                       "metadata":  {
+                                        "model":  "nano_banana_2-4K-portrait",
+                                        "size":  "1024x1792"
+                                    }
+                   },
+                   {
+                       "id":  "2b91e7fe-9213-4b98-9e7e-94e527e94f8b",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  70000,
+                       "balanceAfter":  20000000,
+                       "reason":  "image generation failed refund",
+                       "createdAt":  "2026-06-03T07:16:42.701Z",
+                       "metadata":  {
+                                        "path":  "/v1/images/edits"
+                                    }
+                   },
+                   {
+                       "id":  "dcf782e8-971b-46e7-a613-17b4552281df",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  -70000,
+                       "balanceAfter":  19930000,
+                       "reason":  "image generation",
+                       "createdAt":  "2026-06-03T07:14:36.817Z",
+                       "metadata":  {
+                                        "model":  "nano_banana_2-2K-portrait",
+                                        "size":  "1024x1792"
+                                    }
+                   },
+                   {
+                       "id":  "84604096-630a-4e68-83dc-5fa791d2e601",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  40000,
+                       "balanceAfter":  6496250,
+                       "reason":  "image generation failed refund",
+                       "createdAt":  "2026-06-03T07:13:37.607Z",
+                       "metadata":  {
+                                        "jobId":  "img_1780470692394_1230bbc49bdec8"
+                                    }
+                   },
+                   {
+                       "id":  "7fc57ce5-b8e2-4b46-b0c7-9ff70fde939f",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  40000,
+                       "balanceAfter":  20000000,
+                       "reason":  "image generation failed refund",
+                       "createdAt":  "2026-06-03T07:12:19.450Z",
+                       "metadata":  {
+                                        "path":  "/v1/images/edits"
+                                    }
+                   },
+                   {
+                       "id":  "2c632272-e7b1-45f2-ab8c-0314ef0de27f",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -40000,
+                       "balanceAfter":  6456250,
+                       "reason":  "image generation",
+                       "createdAt":  "2026-06-03T07:11:31.268Z",
+                       "metadata":  {
+                                        "model":  "gpt-image-2",
+                                        "size":  "1024x1792"
+                                    }
+                   },
+                   {
+                       "id":  "aa05a32b-d990-43a9-a420-f9853c590270",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  -40000,
+                       "balanceAfter":  19960000,
+                       "reason":  "image generation",
+                       "createdAt":  "2026-06-03T07:10:13.352Z",
+                       "metadata":  {
+                                        "model":  "gpt-image-2",
+                                        "size":  "1024x1792"
+                                    }
+                   },
+                   {
+                       "id":  "fdcb1922-8086-40d1-96cc-c44117485f4c",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  40000,
+                       "balanceAfter":  20000000,
+                       "reason":  "image generation failed refund",
+                       "createdAt":  "2026-06-03T07:09:37.410Z",
+                       "metadata":  {
+                                        "path":  "/v1/images/edits"
+                                    }
+                   },
+                   {
+                       "id":  "365b717f-c4e8-43d1-9cf8-8b01e8c8da0b",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "amount":  -40000,
+                       "balanceAfter":  19960000,
+                       "reason":  "image generation",
+                       "createdAt":  "2026-06-03T07:07:31.183Z",
+                       "metadata":  {
+                                        "model":  "gpt-image-2",
+                                        "size":  "1024x1792"
+                                    }
+                   },
+                   {
+                       "id":  "f64b4caa-3c7a-4700-9276-1aeaf4688fe2",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "amount":  2000000,
+                       "balanceAfter":  27375000,
+                       "reason":  "video generation failed refund",
+                       "createdAt":  "2026-06-03T06:37:30.924Z",
+                       "metadata":  {
+                                        "taskId":  "task_cnZ9Wn6qqkzb5ucOS7Va63udi3NbiM5h",
+                                        "model":  "veo_3_1-fast-portrait"
+                                    }
+                   },
+                   {
+                       "id":  "903a8e83-2086-4afa-abc2-e58e57a1a5b6",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "amount":  -2000000,
+                       "balanceAfter":  25375000,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T06:35:46.560Z",
+                       "metadata":  {
+                                        "model":  "veo_3_1-fast-portrait",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "c37bd350-222f-4bd7-a3c8-7c16197aefb0",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "amount":  -2625000,
+                       "balanceAfter":  27375000,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T06:16:30.620Z",
+                       "metadata":  {
+                                        "model":  "vidu:viduq3-pro-fast",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "b7284470-04d9-478f-bf31-d5be36ee3a87",
+                       "userId":  "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+                       "adminId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  20000000,
+                       "balanceAfter":  20000000,
+                       "reason":  "main account allocation",
+                       "createdAt":  "2026-06-03T06:11:08.153Z"
+                   },
+                   {
+                       "id":  "810ce899-83e8-41c7-ae85-b7c57a1cfb68",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "adminId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  1200000,
+                       "balanceAfter":  30000000,
+                       "reason":  "main account allocation",
+                       "createdAt":  "2026-06-03T02:57:02.737Z"
+                   },
+                   {
+                       "id":  "28185716-c549-4644-8e8d-4f5a7481ef9d",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "adminId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -1200000,
+                       "balanceAfter":  28800000,
+                       "reason":  "main account deduction",
+                       "createdAt":  "2026-06-03T02:57:00.959Z"
+                   },
+                   {
+                       "id":  "d1bcf4bf-e4f7-4ea6-b2ec-e80e7e098604",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "adminId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -1001200000,
+                       "balanceAfter":  30000000,
+                       "reason":  "main account deduction",
+                       "createdAt":  "2026-06-03T02:56:48.531Z"
+                   },
+                   {
+                       "id":  "08720042-246c-4d99-8855-674e30fc06f8",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "adminId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  1001200000,
+                       "balanceAfter":  1031200000,
+                       "reason":  "main account allocation",
+                       "createdAt":  "2026-06-03T02:56:46.703Z"
+                   },
+                   {
+                       "id":  "3f41d69c-db97-4293-a5c4-b085bc2745c6",
+                       "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                       "adminId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  30000000,
+                       "balanceAfter":  30000000,
+                       "reason":  "main account allocation",
+                       "createdAt":  "2026-06-03T02:33:04.560Z"
+                   },
+                   {
+                       "id":  "33249698-ca7a-453e-bc00-d1abfa86c723",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -2625000,
+                       "balanceAfter":  6496250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T02:21:39.107Z",
+                       "metadata":  {
+                                        "model":  "vidu:viduq3-pro-fast",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "76385fd4-0dd8-4260-87f0-e2c9b50b743c",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -2835000,
+                       "balanceAfter":  9121250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T01:52:37.063Z",
+                       "metadata":  {
+                                        "model":  "vidu:viduq3-pro",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "ecaa45a4-db5a-4cdb-a219-18fe80b23802",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -1200000,
+                       "balanceAfter":  11956250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T01:52:21.116Z",
+                       "metadata":  {
+                                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "2842844a-fdd7-4d26-bc61-d67ff5bb0b38",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -3018750,
+                       "balanceAfter":  13156250,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T01:50:11.053Z",
+                       "metadata":  {
+                                        "model":  "vidu:viduq3-turbo",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "b1e4c55d-556b-4699-9826-340e493a59de",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -2625000,
+                       "balanceAfter":  16175000,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T01:49:57.478Z",
+                       "metadata":  {
+                                        "model":  "vidu:viduq3-pro-fast",
+                                        "size":  "720x1280"
+                                    }
+                   },
+                   {
+                       "id":  "ea6b852c-139e-4aa2-8e21-9a4781e657e8",
+                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                       "amount":  -1200000,
+                       "balanceAfter":  18800000,
+                       "reason":  "video generation",
+                       "createdAt":  "2026-06-03T00:40:05.224Z",
+                       "metadata":  {
+                                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                                        "size":  "720x1280"
+                                    }
+                   }
+               ],
+    "generationTasks":  [
+                            {
+                                "id":  "task_b3dBEuq0o5ciLizpHoG1GqqVgIhpsXQS",
+                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                                "type":  "video",
+                                "model":  "veo_3_1-fast-portrait",
+                                "amount":  800000,
+                                "status":  "queued",
+                                "refunded":  false,
+                                "createdAt":  "2026-06-03T08:04:41.244Z",
+                                "updatedAt":  "2026-06-03T08:04:41.244Z"
+                            },
+                            {
+                                "id":  "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
+                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                                "type":  "video",
+                                "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                                "amount":  1200000,
+                                "status":  "failed",
+                                "refunded":  true,
+                                "createdAt":  "2026-06-03T08:01:11.092Z",
+                                "updatedAt":  "2026-06-03T08:01:25.151Z"
+                            },
+                            {
+                                "id":  "task_fLz274AhwLQI2U6ecfpvF10P7tf3khBK",
+                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                                "type":  "video",
+                                "model":  "firefly-veo31-ref-8s-9x16-1080p",
+                                "amount":  1600000,
+                                "status":  "failed",
+                                "refunded":  true,
+                                "createdAt":  "2026-06-03T07:59:52.364Z",
+                                "updatedAt":  "2026-06-03T08:00:58.123Z"
+                            },
+                            {
+                                "id":  "task_bW8soXUKMQBjVN1FTXtNPyVfaQqai6Ya",
+                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                                "type":  "video",
+                                "model":  "veo_3_1-fast-portrait",
+                                "amount":  2000000,
+                                "status":  "failed",
+                                "refunded":  true,
+                                "createdAt":  "2026-06-03T07:58:00.010Z",
+                                "updatedAt":  "2026-06-03T08:00:01.268Z"
+                            },
+                            {
+                                "id":  "task_cnZ9Wn6qqkzb5ucOS7Va63udi3NbiM5h",
+                                "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                                "type":  "video",
+                                "model":  "veo_3_1-fast-portrait",
+                                "amount":  2000000,
+                                "status":  "failed",
+                                "refunded":  true,
+                                "createdAt":  "2026-06-03T06:35:47.920Z",
+                                "updatedAt":  "2026-06-03T06:37:30.924Z"
+                            },
+                            {
+                                "id":  "959639471337308160",
+                                "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                                "type":  "video",
+                                "model":  "vidu:viduq3-pro-fast",
+                                "amount":  2625000,
+                                "status":  "completed",
+                                "refunded":  false,
+                                "createdAt":  "2026-06-03T06:16:34.509Z",
+                                "updatedAt":  "2026-06-03T06:19:17.334Z"
+                            },
+                            {
+                                "id":  "959580364156706816",
+                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                                "type":  "video",
+                                "model":  "vidu:viduq3-pro-fast",
+                                "amount":  2625000,
+                                "status":  "completed",
+                                "refunded":  false,
+                                "createdAt":  "2026-06-03T02:21:42.254Z",
+                                "updatedAt":  "2026-06-03T02:24:36.617Z"
+                            },
+                            {
+                                "id":  "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
+                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                                "type":  "video",
+                                "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                                "amount":  1200000,
+                                "status":  "completed",
+                                "refunded":  false,
+                                "createdAt":  "2026-06-03T01:52:23.318Z",
+                                "updatedAt":  "2026-06-03T01:55:57.883Z"
+                            },
+                            {
+                                "id":  "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
+                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                                "type":  "video",
+                                "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                                "amount":  1200000,
+                                "status":  "completed",
+                                "refunded":  false,
+                                "createdAt":  "2026-06-03T00:40:06.294Z",
+                                "updatedAt":  "2026-06-03T00:43:34.575Z"
+                            }
+                        ],
+    "history":  [
+                    {
+                        "id":  "ef35251c-fc93-45d2-884d-57478eff4981",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "video",
+                        "model":  "veo_3_1-fast-portrait",
+                        "prompt":  "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain\u0027t no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you\u0027re telling me i could\u0027ve been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i\u0027m dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would\u0027ve paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don\u0027t walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody\u0027s gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
+                        "taskId":  "task_b3dBEuq0o5ciLizpHoG1GqqVgIhpsXQS",
+                        "status":  "in_progress",
+                        "createdAt":  "2026-06-03T08:04:41.244Z",
+                        "updatedAt":  "2026-06-03T08:05:49.345Z"
+                    },
+                    {
+                        "id":  "8d506307-67bc-42eb-bc26-f02cdbbc4142",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "video",
+                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                        "prompt":  "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain\u0027t no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you\u0027re telling me i could\u0027ve been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i\u0027m dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would\u0027ve paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don\u0027t walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody\u0027s gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
+                        "taskId":  "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
+                        "status":  "failed",
+                        "createdAt":  "2026-06-03T08:01:11.092Z",
+                        "updatedAt":  "2026-06-03T08:01:25.151Z"
+                    },
+                    {
+                        "id":  "a3ff321a-1cb1-462d-8e05-fae22b8a0040",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "video",
+                        "model":  "firefly-veo31-ref-8s-9x16-1080p",
+                        "prompt":  "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain\u0027t no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you\u0027re telling me i could\u0027ve been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i\u0027m dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would\u0027ve paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don\u0027t walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody\u0027s gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
+                        "taskId":  "task_fLz274AhwLQI2U6ecfpvF10P7tf3khBK",
+                        "status":  "failed",
+                        "createdAt":  "2026-06-03T07:59:52.364Z",
+                        "updatedAt":  "2026-06-03T08:00:58.123Z"
+                    },
+                    {
+                        "id":  "a52a2091-50d3-4e5e-89e1-048a3f574356",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "video",
+                        "model":  "veo_3_1-fast-portrait",
+                        "prompt":  "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain\u0027t no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you\u0027re telling me i could\u0027ve been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i\u0027m dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would\u0027ve paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don\u0027t walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody\u0027s gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
+                        "taskId":  "task_bW8soXUKMQBjVN1FTXtNPyVfaQqai6Ya",
+                        "status":  "failed",
+                        "createdAt":  "2026-06-03T07:58:00.010Z",
+                        "updatedAt":  "2026-06-03T08:00:01.268Z"
+                    },
+                    {
+                        "id":  "c1d87984-1cdd-4d71-bd49-47f7e34111ae",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "image",
+                        "model":  "gpt-image-2",
+                        "prompt":  "Create one vertical 9:16 photorealistic TikTok UGC-style image, handheld smartphone selfie feeling, extreme close-up to medium close-up framing, realistic video texture, slight natural grain, natural lighting, smooth realistic camera feel.\n\nNo text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface, no shopping cart icon, no readable brand labels.\n\nSubject: one confident African American female TikTok beauty creator, same consistent facial identity, natural makeup, real skin texture, expressive eyes, authentic U.S. beauty creator energy. She is wearing a full, soft, voluminous human hair wig with clean lace front, natural hairline, thick ends, natural shine, realistic bounce, and luxury hair texture.\n\nScene:\nThe woman is facing the camera in a close-up selfie angle. Her expression shows shocked excitement, like she just discovered an unbelievable deal. Her eyes are wide, eyebrows lifted dramatically, mouth slightly open in disbelief, but a smile is starting to form. The emotion feels genuine, spontaneous, and highly expressive.\n\nAction:\nBoth hands are naturally placed in her hair, lifting the roots and fluffing the wig to show fullness and density. One side of the hair is slightly pulled forward toward the camera to show soft texture, thick ends, and natural movement. Her fingers bend naturally and touch the hair realistically. The lace front and hairline are visible and clean. The hair looks full from root to ends, soft, bouncy, and expensive-looking.\n\nComposition:\nVertical 9:16, close selfie framing, face and hair dominate the image. Hair should take up a large part of the frame. The camera feels like a real phone held close by the creator. Background is softly visible but not empty: a realistic bedroom or beauty room setting with natural daylight, mirror, vanity items, and casual home details, but no readable text.\n\nStyle:\nPhotorealistic, authentic TikTok creator vibe, real skin pores, natural facial expression, realistic hair movement, no over-smoothing, no plastic skin, no AI-looking face, no distorted hands, no fake lace, no thin hair ends.",
+                        "previewUrl":  "https://file.bandianwa.com/ziyou1/video/01f3d45a-2b1b-47eb-bb50-8eb4ed0dc32f.png",
+                        "status":  "completed",
+                        "createdAt":  "2026-06-03T07:46:12.330Z",
+                        "updatedAt":  "2026-06-03T07:46:12.330Z"
+                    },
+                    {
+                        "id":  "31d5e1b1-b302-4c85-982c-7bb54511100f",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "image",
+                        "model":  "nano_banana_2-1K-portrait",
+                        "prompt":  "Create one vertical 9:16 photorealistic TikTok UGC-style image, handheld smartphone selfie feeling, extreme close-up to medium close-up framing, realistic video texture, slight natural grain, natural lighting, smooth realistic camera feel.\n\nNo text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface, no shopping cart icon, no readable brand labels.\n\nSubject: one confident African American female TikTok beauty creator, same consistent facial identity, natural makeup, real skin texture, expressive eyes, authentic U.S. beauty creator energy. She is wearing a full, soft, voluminous human hair wig with clean lace front, natural hairline, thick ends, natural shine, realistic bounce, and luxury hair texture.\n\nScene:\nThe woman is facing the camera in a close-up selfie angle. Her expression shows shocked excitement, like she just discovered an unbelievable deal. Her eyes are wide, eyebrows lifted dramatically, mouth slightly open in disbelief, but a smile is starting to form. The emotion feels genuine, spontaneous, and highly expressive.\n\nAction:\nBoth hands are naturally placed in her hair, lifting the roots and fluffing the wig to show fullness and density. One side of the hair is slightly pulled forward toward the camera to show soft texture, thick ends, and natural movement. Her fingers bend naturally and touch the hair realistically. The lace front and hairline are visible and clean. The hair looks full from root to ends, soft, bouncy, and expensive-looking.\n\nComposition:\nVertical 9:16, close selfie framing, face and hair dominate the image. Hair should take up a large part of the frame. The camera feels like a real phone held close by the creator. Background is softly visible but not empty: a realistic bedroom or beauty room setting with natural daylight, mirror, vanity items, and casual home details, but no readable text.\n\nStyle:\nPhotorealistic, authentic TikTok creator vibe, real skin pores, natural facial expression, realistic hair movement, no over-smoothing, no plastic skin, no AI-looking face, no distorted hands, no fake lace, no thin hair ends.",
+                        "previewUrl":  "https://file.bandianwa.com/ziyou1/video/e54b5359-c616-4a9d-b7c1-3f8f071af434.jpg",
+                        "status":  "completed",
+                        "createdAt":  "2026-06-03T07:45:00.950Z",
+                        "updatedAt":  "2026-06-03T07:45:00.950Z"
+                    },
+                    {
+                        "id":  "a5b0cfd5-8e09-457e-95f3-abdabaa0f047",
+                        "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                        "mode":  "video",
+                        "model":  "veo_3_1-fast-portrait",
+                        "prompt":  "使用参考图三中发束产品，图一图二为做好的发型。严格按照以下脚本：严格按照以下脚本执行生成适用于TIKTOK美国区视频：核心策略：男性用专业手法展示产品硬指标（长度、弹性、光泽、饱满），女性展示佩戴后的真实效果（发际线、背后、全身动态），理发店场景增强专业信任感。\n\n表格一：基本信息表\n\n项目\n\n内容\n\n版本名称\n\n理发店男女双人展示型\n\n视频时长\n\n15秒\n\n核心逻辑\n\n男性展示产品 → 女性佩戴效果 → 全身动态验证\n\n情绪曲线\n\n专业自信 → 优雅惊艳 → 震撼满足\n\n目标受众\n\n追求真实感、专业背书、注重发际线和细节的用户\n\n独特卖点\n\n\"理发店实拍\"\"男女双人验证\"\"发尾到臀\"\"发际线自然\"\n\n项目\n\n内容\n\n人物A（展示者）\n\n40岁美国黑人男性，理发师或博主，专业感强\n\n人物B（佩戴者）\n\n35岁美国黑人女性，圆润脸型，健美身材，佩戴loosewave layeredcut Body Wave多层次大波浪Image 2 （只参考发型，人物形象严格按照脚本描述）\n\n妆容\n\n女性：精致全妆；男性：自然干净\n\n服装\n\n女性：白色吊带；男性：理发师围布/休闲装\n\n场景\n\n理发店内（理发椅、镜子、专业灯光）\n\n音乐\n\n轻快R\u0026B / Neo-soul，有节奏感\n\n表格二：分镜脚本表（15秒，12个镜头）\n\n场景一：男性展示发束（00:00-00:06，5个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n理发店\n\n男性双手提起28inch发束，自然下垂，轻轻上下抖动Image 3 \n\nYou guys — 28 inches. Watch this bounce.\n\n专业自信\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n理发店\n\n双手握住发束中部，快速上下抖动2-3次，波浪明显回弹迅速\n\nNo cap — springs right back.\n\n弹性证明\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n理发店\n\n手指轻轻拨开发丝，展示发丝光泽、无毛躁\n\nLook at that shine — silky smooth.\n\n细节信任\n\n4\n\n00:04-00:05\n\n切\n\n正面\n\n远景\n\n镜头拉远，男性将发束放在自己头顶比划，发尾到腰部\n\nLength? Reals down to here.\n\n长度对比\n\n5\n\n00:05-00:06\n\n切\n\n侧面\n\n中景\n\n男性用手抚摸发束，从发根滑到发尾，展示饱满顺滑\n\nFull, thick, top to ends.\n\n饱满展示\n\n场景二：女性佩戴后坐姿展示（00:06-00:10，4个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n6\n\n00:06-00:07.5\n\n正面\n\n近景\n\n理发店（理发椅）\n\n女性坐在理发椅上，面对镜子，手指轻轻拨开发际线位置，展示自然，无蕾丝Image 2 （只参考发型）\n\nLook at that hairline —Lightweight \u0026 breathable, perfect for summer wear! \n\n真实自然\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面\n\n近景\n\n背对镜头，头发自然垂落，展示发尾位置到腰下\n\nThick from the roots.\n\n饱满展示\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面\n\n中景\n\n侧身坐姿，手指从发根滑到发尾，展示波浪垂坠感\n\nVarious lengths for layered big waves.\n\n曲度展示\n\n9\n\n00:09.5-00:10\n\n切\n\n微距\n\n特写\n\n镜头推进到发尾，手指轻捏发丝展示弹性和发质\n\nReal hair, no cap.\n\n细节验证\n\n场景三：女性站起来全身展示（00:10-00:15，3个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n10\n\n00:10-00:11.5\n\n正面\n\n远景\n\n理发店\n\n女性从理发椅上站起来，头发自然垂落，发尾到腰部Image 1 （只参考发型)\n\nStand up — look at that length.\n\n震撼长度\n\n11\n\n00:11.5-00:13\n\n切\n\n背面\n\n远景\n\n背对镜头，发尾到臀部，轻轻甩头，展示饱满浓密和弹性\n\nBouncy, full, and it moves.\n\n动态展示\n\n12\n\n00:13-00:15\n\n切\n\n正面\n\n中景\n\n面对镜头自信微笑，手指穿过发丝，点头\n\nGo grab yours — link in bio. Don\u0027t sleep.\n\n强引导CTA\n\n表格四：卖点覆盖表\n\n卖点\n\n展示方式\n\n对应镜头\n\n展示者\n\n28inch长度\n\n提起下垂、头顶比划、站立后到腰部\n\n镜头1、4、10\n\n男性+女性\n\n弹性/回弹\n\n快速抖动、手指轻捏发尾\n\n镜头2、9、11\n\n男性+女性\n\n发质光泽\n\n微距特写拨开发丝\n\n镜头3\n\n男性\n\n发丝饱满\n\n抚摸滑过、背面展示\n\n镜头5、7、11\n\n男性+女性\n\n无毛躁/丝滑\n\n微距特写\n\n镜头3\n\n男性\n\n发际线自然\n\n手指拨开发际线位置\n\n镜头6\n\n女性\n\n波浪曲度\n\n侧面中景滑发\n\n镜头8\n\n女性\n\n真实感发质\n\n微距特写+手指轻捏\n\n镜头9\n\n女性\n\n佩戴后长度\n\n站立背面发尾到臀部\n\n镜头10、11\n\n女性\n\nCTA引导\n\n手指屏幕+link in bio\n\n镜头12\n\n女性\n\n表格五：拍摄执行表\n\n镜头\n\n时间\n\n机位\n\n景别\n\n人物\n\n动作要点\n\n注意事项\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n男性\n\n发束提起后自然下垂，抖动幅度适中\n\n背景是理发店，有镜子/理发椅\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n男性\n\n快速抖动2-3次，回弹明显\n\n对焦锁定在发束上\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n男性\n\n手指拨开发丝，展示光泽\n\n需要足够光线，突出丝滑感\n\n4\n\n00:04-00:05\n\n切\n\n正面远景\n\n男性\n\n头顶比划，从头顺到发尾\n\n确保全身入画，地板可见\n\n5\n\n00:05-00:06\n\n切\n\n侧面中景\n\n男性\n\n手从发根滑到发尾\n\n动作慢一点，展示顺滑饱满\n\n6\n\n00:06-00:07.5\n\n切\n\n正面近景\n\n女性\n\n坐姿，手指拨开发际线\n\n发际线要自然，无蕾丝\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面近景\n\n女性\n\n背对镜头，头发自然垂落\n\n发尾位置清晰可见\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面中景\n\n女性\n\n手指从发根滑到发尾\n\n侧面光线要好，突出波浪\n\n9\n\n00:09.5-00:10\n\n切\n\n微距特写\n\n女性\n\n手指轻捏发尾\n\n展示弹性和发质\n\n10\n\n00:10-00:11.5\n\n切\n\n正面远景\n\n女性\n\n从椅子上站起来，头发自然垂落\n\n发尾到臀部，动作自然\n\n11\n\n00:11.5-00:13\n\n切\n\n背面远景\n\n女性\n\n背对镜头，轻轻甩头\n\n展示饱满、弹性、动态\n\n12\n\n00:13-00:15\n\n切\n\n正面中景\n\n女性\n\n面对镜头，手指穿发，微笑点头\n\n眼神看镜头，手指屏幕\n\n\n\n\n\n表格六：理发店场景设置表\n\n元素\n\n要求\n\n背景\n\n理发椅、镜子、美发产品架、灯光\n\n光线\n\n专业环形灯+顶光，突出头发光泽\n\n道具\n\n理发围布、梳子、剪刀（入镜增加专业感）\n\n镜子\n\n干净无遮挡，可用于反射展示\n\n空间\n\n足够拍摄远景（女性站起来全身）\n\n表格七：人物区分表\n\n特征\n\n男性（展示者）\n\n女性（佩戴者）\n\n年龄\n\n40岁\n\n35岁\n\n角色\n\n理发师/推荐者\n\n顾客/佩戴者\n\n发型\n\n短发/自然发型\n\n佩戴36inch大波浪\n\n妆容\n\n自然干净\n\n精致全妆\n\n服装\n\n理发师围布/深色休闲装\n\n纯色修身连衣裙/吊带\n\n语气\n\n专业、自信、干脆\n\n优雅、满意、自信\n\n主要任务\n\n展示产品硬指标\n\n展示佩戴后效果\n\n表格八：设备与设置表\n\n项目\n\n推荐设置\n\n画质\n\n4K / 60fps（快节奏建议60fps）\n\n镜头\n\n后置主摄（微距时靠近）\n\n对焦\n\n手动锁定在发束/头发上\n\n光线\n\n专业环形灯+自然侧光\n\n音频\n\n外接麦克风\n\n字幕\n\n无字幕\n\n音乐\n\n轻快R\u0026B/Neo-soul，音量-20dB以下",
+                        "taskId":  "task_cnZ9Wn6qqkzb5ucOS7Va63udi3NbiM5h",
+                        "status":  "failed",
+                        "createdAt":  "2026-06-03T06:35:47.920Z",
+                        "updatedAt":  "2026-06-03T06:37:30.924Z"
+                    },
+                    {
+                        "id":  "68c5f68e-c2b1-4cb9-9306-4244404a2ac0",
+                        "userId":  "d8385e30-dc7a-431f-8f20-58b80ee38971",
+                        "mode":  "video",
+                        "model":  "vidu:viduq3-pro-fast",
+                        "prompt":  "使用参考图三中发束产品，图一图二为做好的发型。严格按照以下脚本：严格按照以下脚本执行生成适用于TIKTOK美国区视频：核心策略：男性用专业手法展示产品硬指标（长度、弹性、光泽、饱满），女性展示佩戴后的真实效果（发际线、背后、全身动态），理发店场景增强专业信任感。\n\n表格一：基本信息表\n\n项目\n\n内容\n\n版本名称\n\n理发店男女双人展示型\n\n视频时长\n\n15秒\n\n核心逻辑\n\n男性展示产品 → 女性佩戴效果 → 全身动态验证\n\n情绪曲线\n\n专业自信 → 优雅惊艳 → 震撼满足\n\n目标受众\n\n追求真实感、专业背书、注重发际线和细节的用户\n\n独特卖点\n\n\"理发店实拍\"\"男女双人验证\"\"发尾到臀\"\"发际线自然\"\n\n项目\n\n内容\n\n人物A（展示者）\n\n40岁美国黑人男性，理发师或博主，专业感强\n\n人物B（佩戴者）\n\n35岁美国黑人女性，圆润脸型，健美身材，佩戴loosewave layeredcut Body Wave多层次大波浪Image 2 （只参考发型，人物形象严格按照脚本描述）\n\n妆容\n\n女性：精致全妆；男性：自然干净\n\n服装\n\n女性：白色吊带；男性：理发师围布/休闲装\n\n场景\n\n理发店内（理发椅、镜子、专业灯光）\n\n音乐\n\n轻快R\u0026B / Neo-soul，有节奏感\n\n表格二：分镜脚本表（15秒，12个镜头）\n\n场景一：男性展示发束（00:00-00:06，5个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n理发店\n\n男性双手提起28inch发束，自然下垂，轻轻上下抖动Image 3 \n\nYou guys — 28 inches. Watch this bounce.\n\n专业自信\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n理发店\n\n双手握住发束中部，快速上下抖动2-3次，波浪明显回弹迅速\n\nNo cap — springs right back.\n\n弹性证明\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n理发店\n\n手指轻轻拨开发丝，展示发丝光泽、无毛躁\n\nLook at that shine — silky smooth.\n\n细节信任\n\n4\n\n00:04-00:05\n\n切\n\n正面\n\n远景\n\n镜头拉远，男性将发束放在自己头顶比划，发尾到腰部\n\nLength? Reals down to here.\n\n长度对比\n\n5\n\n00:05-00:06\n\n切\n\n侧面\n\n中景\n\n男性用手抚摸发束，从发根滑到发尾，展示饱满顺滑\n\nFull, thick, top to ends.\n\n饱满展示\n\n场景二：女性佩戴后坐姿展示（00:06-00:10，4个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n6\n\n00:06-00:07.5\n\n正面\n\n近景\n\n理发店（理发椅）\n\n女性坐在理发椅上，面对镜子，手指轻轻拨开发际线位置，展示自然，无蕾丝Image 2 （只参考发型）\n\nLook at that hairline —Lightweight \u0026 breathable, perfect for summer wear! \n\n真实自然\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面\n\n近景\n\n背对镜头，头发自然垂落，展示发尾位置到腰下\n\nThick from the roots.\n\n饱满展示\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面\n\n中景\n\n侧身坐姿，手指从发根滑到发尾，展示波浪垂坠感\n\nVarious lengths for layered big waves.\n\n曲度展示\n\n9\n\n00:09.5-00:10\n\n切\n\n微距\n\n特写\n\n镜头推进到发尾，手指轻捏发丝展示弹性和发质\n\nReal hair, no cap.\n\n细节验证\n\n场景三：女性站起来全身展示（00:10-00:15，3个镜头）\n\n镜头\n\n时间\n\n机位\n\n景别\n\n场景\n\n动作\n\n台词\n\n情绪\n\n10\n\n00:10-00:11.5\n\n正面\n\n远景\n\n理发店\n\n女性从理发椅上站起来，头发自然垂落，发尾到腰部Image 1 （只参考发型)\n\nStand up — look at that length.\n\n震撼长度\n\n11\n\n00:11.5-00:13\n\n切\n\n背面\n\n远景\n\n背对镜头，发尾到臀部，轻轻甩头，展示饱满浓密和弹性\n\nBouncy, full, and it moves.\n\n动态展示\n\n12\n\n00:13-00:15\n\n切\n\n正面\n\n中景\n\n面对镜头自信微笑，手指穿过发丝，点头\n\nGo grab yours — link in bio. Don\u0027t sleep.\n\n强引导CTA\n\n表格四：卖点覆盖表\n\n卖点\n\n展示方式\n\n对应镜头\n\n展示者\n\n28inch长度\n\n提起下垂、头顶比划、站立后到腰部\n\n镜头1、4、10\n\n男性+女性\n\n弹性/回弹\n\n快速抖动、手指轻捏发尾\n\n镜头2、9、11\n\n男性+女性\n\n发质光泽\n\n微距特写拨开发丝\n\n镜头3\n\n男性\n\n发丝饱满\n\n抚摸滑过、背面展示\n\n镜头5、7、11\n\n男性+女性\n\n无毛躁/丝滑\n\n微距特写\n\n镜头3\n\n男性\n\n发际线自然\n\n手指拨开发际线位置\n\n镜头6\n\n女性\n\n波浪曲度\n\n侧面中景滑发\n\n镜头8\n\n女性\n\n真实感发质\n\n微距特写+手指轻捏\n\n镜头9\n\n女性\n\n佩戴后长度\n\n站立背面发尾到臀部\n\n镜头10、11\n\n女性\n\nCTA引导\n\n手指屏幕+link in bio\n\n镜头12\n\n女性\n\n表格五：拍摄执行表\n\n镜头\n\n时间\n\n机位\n\n景别\n\n人物\n\n动作要点\n\n注意事项\n\n1\n\n00:00-00:01.5\n\n正面\n\n中景\n\n男性\n\n发束提起后自然下垂，抖动幅度适中\n\n背景是理发店，有镜子/理发椅\n\n2\n\n00:01.5-00:03\n\n切\n\n手部近景\n\n男性\n\n快速抖动2-3次，回弹明显\n\n对焦锁定在发束上\n\n3\n\n00:03-00:04\n\n切\n\n微距特写\n\n男性\n\n手指拨开发丝，展示光泽\n\n需要足够光线，突出丝滑感\n\n4\n\n00:04-00:05\n\n切\n\n正面远景\n\n男性\n\n头顶比划，从头顺到发尾\n\n确保全身入画，地板可见\n\n5\n\n00:05-00:06\n\n切\n\n侧面中景\n\n男性\n\n手从发根滑到发尾\n\n动作慢一点，展示顺滑饱满\n\n6\n\n00:06-00:07.5\n\n切\n\n正面近景\n\n女性\n\n坐姿，手指拨开发际线\n\n发际线要自然，无蕾丝\n\n7\n\n00:07.5-00:08.5\n\n切\n\n背面近景\n\n女性\n\n背对镜头，头发自然垂落\n\n发尾位置清晰可见\n\n8\n\n00:08.5-00:09.5\n\n切\n\n侧面中景\n\n女性\n\n手指从发根滑到发尾\n\n侧面光线要好，突出波浪\n\n9\n\n00:09.5-00:10\n\n切\n\n微距特写\n\n女性\n\n手指轻捏发尾\n\n展示弹性和发质\n\n10\n\n00:10-00:11.5\n\n切\n\n正面远景\n\n女性\n\n从椅子上站起来，头发自然垂落\n\n发尾到臀部，动作自然\n\n11\n\n00:11.5-00:13\n\n切\n\n背面远景\n\n女性\n\n背对镜头，轻轻甩头\n\n展示饱满、弹性、动态\n\n12\n\n00:13-00:15\n\n切\n\n正面中景\n\n女性\n\n面对镜头，手指穿发，微笑点头\n\n眼神看镜头，手指屏幕\n\n\n\n\n\n表格六：理发店场景设置表\n\n元素\n\n要求\n\n背景\n\n理发椅、镜子、美发产品架、灯光\n\n光线\n\n专业环形灯+顶光，突出头发光泽\n\n道具\n\n理发围布、梳子、剪刀（入镜增加专业感）\n\n镜子\n\n干净无遮挡，可用于反射展示\n\n空间\n\n足够拍摄远景（女性站起来全身）\n\n表格七：人物区分表\n\n特征\n\n男性（展示者）\n\n女性（佩戴者）\n\n年龄\n\n40岁\n\n35岁\n\n角色\n\n理发师/推荐者\n\n顾客/佩戴者\n\n发型\n\n短发/自然发型\n\n佩戴36inch大波浪\n\n妆容\n\n自然干净\n\n精致全妆\n\n服装\n\n理发师围布/深色休闲装\n\n纯色修身连衣裙/吊带\n\n语气\n\n专业、自信、干脆\n\n优雅、满意、自信\n\n主要任务\n\n展示产品硬指标\n\n展示佩戴后效果\n\n表格八：设备与设置表\n\n项目\n\n推荐设置\n\n画质\n\n4K / 60fps（快节奏建议60fps）\n\n镜头\n\n后置主摄（微距时靠近）\n\n对焦\n\n手动锁定在发束/头发上\n\n光线\n\n专业环形灯+自然侧光\n\n音频\n\n外接麦克风\n\n字幕\n\n无字幕\n\n音乐\n\n轻快R\u0026B/Neo-soul，音量-20dB以下",
+                        "previewUrl":  "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_60/tasks/26/0603/06/959639471337308160/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Checksum-Mode=ENABLED\u0026X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260603%2Fcn-northwest-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20260603T061917Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026response-cache-control=max-age%3D86400\u0026response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-03T06%253A19%253A11Z.mp4\u0026x-id=GetObject\u0026X-Amz-Signature=eca1a382d333bb4ad0abaab7fb1ee5ff0961f1b6093ebd8c03f008d5d76997c5",
+                        "taskId":  "959639471337308160",
+                        "status":  "completed",
+                        "createdAt":  "2026-06-03T06:16:34.509Z",
+                        "updatedAt":  "2026-06-03T06:19:17.334Z"
+                    },
+                    {
+                        "id":  "82cbc7c2-ab01-41ce-bf2f-688f2a81c2bc",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "video",
+                        "model":  "vidu:viduq3-pro-fast",
+                        "prompt":  "Create a 15-second vertical 9:16 ultra-realistic TikTok US UGC hair bundle video. Real handheld iPhone front-camera selfie inside a car, daylight, sharp background, no blurred background, no bokeh, no subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI.\n\nSCENE:\nInside a real car during daytime. Light gray fabric seats, gray headrests, a white backpack on the back seat, rear window showing blue sky, trees, road signs, and parked cars outside. Natural sunlight comes through the side window and rear window, creating soft highlights on the hair. The car interior must stay clear and sharp, not blurred.\n\nPERSON:\nA young American Black woman, early 20s to early 30s, smooth brown skin with realistic pores, natural glam makeup, long lashes, small nose piercing, braces visible when she smiles, glossy lips. She wears a pink strapless fitted top and a simple necklace. Her expression changes naturally from playful confidence to serious product proof, then excited recommendation.\n\nPRODUCT:\nNatural black body wave human hair bundles, long, full, soft, glossy but realistic, thick full ends, defined body wave pattern, no plastic shine, no stiff wig look.\n\n0-3s GOLDEN HOOK:\nFront-camera selfie angle. She sits in the passenger seat or driver seat, slightly tilting her head down, then looks up at the camera with a small smile. Sunlight hits the top of her black body wave hair. She lightly grabs one side of her hair and flips it forward over her shoulder. Her eyes narrow slightly from the sunlight, then she smiles bigger, showing braces.\nVO:\n“You guys… this body bundle is not playing.”\n\n3-6s PRODUCT SHOW:\nClean jump cut. She holds a natural black body wave bundle close to the camera, product filling 70%-75% of the frame. Her fingers hold the top weft firmly, thumb in front, four fingers behind. Sunlight from the car window hits the bundle, showing soft waves and shine. The installed hairstyle stays behind her shoulder, clearly separate from the handheld bundle.\nVO:\n“No cap, I hate bundles that look full on top but thin at the ends.”\n\n6-9s DETAIL PROOF:\nExtreme close-up. She slowly runs her fingers through the bundle from mid-length to the ends. The waves separate smoothly and bounce back. The thick ends fall evenly into her palm. She looks down at the ends, eyebrows lift slightly, eyes widen, then she gives a satisfied little nod.\nVO:\n“Look at that — soft, bouncy, and full all the way down.”\n\n9-12s WEAR EFFECT:\nBack to selfie angle. She lets the installed body wave hair fall across her chest and lightly shakes her head side to side. The curls move naturally in the car light. She tucks one front piece away from her face, then leans closer to the camera with a confident half-smile.\nVO:\n“Car mirror check? Passed. This is the kind of hair that makes the whole look better.”\n\n12-15s CTA:\nFinal close-up. She holds the body wave bundle near the camera while her finished body wave hairstyle is visible behind it but not touching. She smiles, slightly raises one eyebrow, and gently shakes the bundle once to show bounce and thick ends.\nVO:\n“Tap the link and grab this body bundle today. Don’t wait on this one.”\n\nANTI-FAIL RULES:\nNo subtitles, no captions, no text overlay, no letters, no numbers, no readable car signs, no logo, no watermark, no TikTok UI. Keep the car background sharp and realistic, not blurred. The handheld bundle must never touch, overlap, or merge with the installed hairstyle. No installation process. No hair clipping through hands, face, shoulders, necklace, car seat, seatbelt, or clothes. No extra fingers, distorted hands, plastic skin, floating bundle, duplicated bundle, changing hair texture, or sudden outfit changes. Keep the same woman, same pink top, same car interior, same natural black body wave texture, and same lighting throughout the entire video.\n",
+                        "previewUrl":  "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_16/tasks/26/0603/02/959580364156706816/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Checksum-Mode=ENABLED\u0026X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260603%2Fcn-northwest-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20260603T022436Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026response-cache-control=max-age%3D86400\u0026response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-03T02%253A24%253A09Z.mp4\u0026x-id=GetObject\u0026X-Amz-Signature=500a1bcc3b9c5875106971ae95b647ba02b1b5c37520ca28a335e460bb5538fb",
+                        "taskId":  "959580364156706816",
+                        "status":  "completed",
+                        "createdAt":  "2026-06-03T02:21:42.254Z",
+                        "updatedAt":  "2026-06-03T02:24:36.617Z"
+                    },
+                    {
+                        "id":  "a2b00ecc-b8a0-4080-b7a1-f48c6c0f7253",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "video",
+                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                        "prompt":  "Create a 15-second vertical 9:16 ultra-realistic TikTok US UGC hair bundle video. Real handheld iPhone front-camera selfie inside a car, daylight, sharp background, no blurred background, no bokeh, no subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI.\n\nSCENE:\nInside a real car during daytime. Light gray fabric seats, gray headrests, a white backpack on the back seat, rear window showing blue sky, trees, road signs, and parked cars outside. Natural sunlight comes through the side window and rear window, creating soft highlights on the hair. The car interior must stay clear and sharp, not blurred.\n\nPERSON:\nA young American Black woman, early 20s to early 30s, smooth brown skin with realistic pores, natural glam makeup, long lashes, small nose piercing, braces visible when she smiles, glossy lips. She wears a pink strapless fitted top and a simple necklace. Her expression changes naturally from playful confidence to serious product proof, then excited recommendation.\n\nPRODUCT:\nNatural black body wave human hair bundles, long, full, soft, glossy but realistic, thick full ends, defined body wave pattern, no plastic shine, no stiff wig look.\n\n0-3s GOLDEN HOOK:\nFront-camera selfie angle. She sits in the passenger seat or driver seat, slightly tilting her head down, then looks up at the camera with a small smile. Sunlight hits the top of her black body wave hair. She lightly grabs one side of her hair and flips it forward over her shoulder. Her eyes narrow slightly from the sunlight, then she smiles bigger, showing braces.\nVO:\n“You guys… this body bundle is not playing.”\n\n3-6s PRODUCT SHOW:\nClean jump cut. She holds a natural black body wave bundle close to the camera, product filling 70%-75% of the frame. Her fingers hold the top weft firmly, thumb in front, four fingers behind. Sunlight from the car window hits the bundle, showing soft waves and shine. The installed hairstyle stays behind her shoulder, clearly separate from the handheld bundle.\nVO:\n“No cap, I hate bundles that look full on top but thin at the ends.”\n\n6-9s DETAIL PROOF:\nExtreme close-up. She slowly runs her fingers through the bundle from mid-length to the ends. The waves separate smoothly and bounce back. The thick ends fall evenly into her palm. She looks down at the ends, eyebrows lift slightly, eyes widen, then she gives a satisfied little nod.\nVO:\n“Look at that — soft, bouncy, and full all the way down.”\n\n9-12s WEAR EFFECT:\nBack to selfie angle. She lets the installed body wave hair fall across her chest and lightly shakes her head side to side. The curls move naturally in the car light. She tucks one front piece away from her face, then leans closer to the camera with a confident half-smile.\nVO:\n“Car mirror check? Passed. This is the kind of hair that makes the whole look better.”\n\n12-15s CTA:\nFinal close-up. She holds the body wave bundle near the camera while her finished body wave hairstyle is visible behind it but not touching. She smiles, slightly raises one eyebrow, and gently shakes the bundle once to show bounce and thick ends.\nVO:\n“Tap the link and grab this body bundle today. Don’t wait on this one.”\n\nANTI-FAIL RULES:\nNo subtitles, no captions, no text overlay, no letters, no numbers, no readable car signs, no logo, no watermark, no TikTok UI. Keep the car background sharp and realistic, not blurred. The handheld bundle must never touch, overlap, or merge with the installed hairstyle. No installation process. No hair clipping through hands, face, shoulders, necklace, car seat, seatbelt, or clothes. No extra fingers, distorted hands, plastic skin, floating bundle, duplicated bundle, changing hair texture, or sudden outfit changes. Keep the same woman, same pink top, same car interior, same natural black body wave texture, and same lighting throughout the entire video.\n",
+                        "previewUrl":  "https://file.bandianwa.com/adobe/video/20260603/69f016a8aa6544dca9aba31c93c56b43.mp4",
+                        "taskId":  "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
+                        "status":  "completed",
+                        "createdAt":  "2026-06-03T01:52:23.318Z",
+                        "updatedAt":  "2026-06-03T01:55:57.883Z"
+                    },
+                    {
+                        "id":  "3e7524b1-4b55-47a4-bda6-aad2a22e7601",
+                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+                        "mode":  "video",
+                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
+                        "prompt":  "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+                        "previewUrl":  "https://file.bandianwa.com/adobe/video/20260603/c53b56af54a441cbb4a8e5262ce51020.mp4",
+                        "taskId":  "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
+                        "status":  "completed",
+                        "createdAt":  "2026-06-03T00:40:06.294Z",
+                        "updatedAt":  "2026-06-03T00:43:34.575Z"
+                    }
+                ]
 }
