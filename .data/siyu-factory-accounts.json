@@ -16,9 +16,9 @@
       "name": "Vidu Test",
       "passwordHash": "8fd646c8e70b3b6dece02a3d7f45f947:74aacd95cb552874eec863451e1bceb8a97bcbd8ce9d8d0e7a7fd89749b88fca4b78f5b86ca8619e6b4f69697750b2e63249c4a94c7de8853bee5a665ccd6137",
       "role": "user",
-      "credits": 5000000,
+      "credits": 4100000,
       "createdAt": "2026-06-03T02:03:02.994Z",
-      "updatedAt": "2026-06-03T02:03:18.6558677Z"
+      "updatedAt": "2026-06-03T02:03:58.264Z"
     }
   ],
   "sessions": [
@@ -48,6 +48,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "4634aa53-846b-4d49-b0aa-d7471120a079",
+      "userId": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "amount": -900000,
+      "balanceAfter": 4100000,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T02:03:58.264Z",
+      "metadata": {
+        "model": "vidu:viduq3-pro-fast",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "76385fd4-0dd8-4260-87f0-e2c9b50b743c",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
