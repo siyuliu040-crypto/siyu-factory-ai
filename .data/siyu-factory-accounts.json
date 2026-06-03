@@ -470,6 +470,17 @@
   ],
   "history": [
     {
+      "id": "fcbd4f6a-af9f-4bb1-a904-996073ee8a36",
+      "userId": "a3cd1d8b-4c77-4974-996d-07dc1197de23",
+      "mode": "image",
+      "model": "nano_banana_2-1K-portrait",
+      "prompt": "9:16 vertical clean ecommerce product image of a short curly pixie wig on a mannequin head, bright studio lighting, realistic hair texture, no text, no logo",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/d6356ab1-fb93-4a4b-b643-4e7c831853a3.jpg",
+      "status": "completed",
+      "createdAt": "2026-06-03T07:34:33.681Z",
+      "updatedAt": "2026-06-03T07:34:33.681Z"
+    },
+    {
       "id": "a5b0cfd5-8e09-457e-95f3-abdabaa0f047",
       "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
       "mode": "video",
