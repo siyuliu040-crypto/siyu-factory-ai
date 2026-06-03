@@ -54,9 +54,9 @@
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-03T00:40:06.294Z",
-      "updatedAt": "2026-06-03T00:40:06.294Z"
+      "updatedAt": "2026-06-03T00:40:08.705Z"
     }
   ]
 }
