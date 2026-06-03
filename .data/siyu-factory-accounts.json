@@ -26,9 +26,9 @@
       "name": "lina",
       "passwordHash": "e20d850461f444ee821edf54e5c035f3:1ff8e57afc2ee22aa4cdce153ef735e0bf6d3a79d046c40d398ad97a8b2386f3fe70ec9aae14db946614b661741f805c46c181eba40027176f7e308f68be1666",
       "role": "user",
-      "credits": 20000000,
+      "credits": 19960000,
       "createdAt": "2026-06-03T06:10:25.337Z",
-      "updatedAt": "2026-06-03T06:11:08.153Z"
+      "updatedAt": "2026-06-03T07:07:31.183Z"
     }
   ],
   "sessions": [
@@ -70,6 +70,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "365b717f-c4e8-43d1-9cf8-8b01e8c8da0b",
+      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+      "amount": -40000,
+      "balanceAfter": 19960000,
+      "reason": "image generation",
+      "createdAt": "2026-06-03T07:07:31.183Z",
+      "metadata": {
+        "model": "gpt-image-2",
+        "size": "1024x1792"
+      }
+    },
     {
       "id": "f64b4caa-3c7a-4700-9276-1aeaf4688fe2",
       "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
