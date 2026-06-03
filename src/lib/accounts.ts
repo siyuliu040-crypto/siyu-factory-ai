@@ -379,6 +379,7 @@ export function debitCredits(state: AccountState, input: CreditInput) {
   const entry: CreditLedgerEntry = {
     id: randomUUID(),
     userId: user.id,
+    adminId: input.adminId,
     amount: -amount,
     balanceAfter: user.credits,
     reason: input.reason,
