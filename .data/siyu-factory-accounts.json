@@ -29,6 +29,16 @@
       "credits": 20000000,
       "createdAt": "2026-06-03T06:10:25.337Z",
       "updatedAt": "2026-06-03T07:20:09.654Z"
+    },
+    {
+      "id": "8cbce13d-7411-4bc1-af5e-6dd3d4eef887",
+      "email": "codex-model-test-1780477351@example.com",
+      "name": "Codex model test",
+      "passwordHash": "92a16670314f4a6a3c9c6435da9809cf:39b80ff21728446262f6d5b34955b254fd014bd39b3aa77873b9a88f1ca9120670d21a752a8b22e9ad9f12da7389071b037eac32955e9653ac3b44cfe34fc3b9",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T09:02:36.190Z",
+      "updatedAt": "2026-06-03T09:02:36.190Z"
     }
   ],
   "sessions": [
@@ -73,6 +83,12 @@
       "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
       "expiresAt": "2026-06-10T07:48:11.810Z",
       "createdAt": "2026-06-03T07:48:11.810Z"
+    },
+    {
+      "token": "c72351da37c20abc21fb2c338b1db40e48a786b47ea1da0efdc0ce3dfbf00b10",
+      "userId": "8cbce13d-7411-4bc1-af5e-6dd3d4eef887",
+      "expiresAt": "2026-06-10T09:02:36.491Z",
+      "createdAt": "2026-06-03T09:02:36.491Z"
     }
   ],
   "ledger": [
