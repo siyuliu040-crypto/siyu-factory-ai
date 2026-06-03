@@ -9,6 +9,16 @@
       "credits": 9121250,
       "createdAt": "2026-06-03T00:39:56.017Z",
       "updatedAt": "2026-06-03T01:52:37.063Z"
+    },
+    {
+      "id": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "email": "vidu-test-20260603100256@example.com",
+      "name": "Vidu Test",
+      "passwordHash": "8fd646c8e70b3b6dece02a3d7f45f947:74aacd95cb552874eec863451e1bceb8a97bcbd8ce9d8d0e7a7fd89749b88fca4b78f5b86ca8619e6b4f69697750b2e63249c4a94c7de8853bee5a665ccd6137",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T02:03:02.994Z",
+      "updatedAt": "2026-06-03T02:03:02.994Z"
     }
   ],
   "sessions": [
@@ -23,6 +33,12 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-06-10T01:01:25.339Z",
       "createdAt": "2026-06-03T01:01:25.339Z"
+    },
+    {
+      "token": "61ad3aebb440efb93c21562bca5756bbf1d8c295787abc776b0383592a16afaf",
+      "userId": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "expiresAt": "2026-06-10T02:03:03.596Z",
+      "createdAt": "2026-06-03T02:03:03.596Z"
     }
   ],
   "ledger": [
