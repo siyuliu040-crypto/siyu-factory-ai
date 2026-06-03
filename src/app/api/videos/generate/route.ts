@@ -55,7 +55,22 @@ function referencePayloadFields(referenceUrls: string[]) {
   };
 }
 
+function minimalReferencePayloadFields(referenceUrls: string[]) {
+  if (!referenceUrls.length) return {};
+  return { image_url: referenceUrls[0] };
+}
+
+function isGrokReferenceVideoModel(model: string) {
+  return model === "grok-imagine-1.0-video-ref-6s" || model === "grok-imagine-1.0-video-ref-10s";
+}
+
 function normalizeUpstreamVideoRequest(model: string, seconds: FormDataEntryValue | null) {
+  if (model === "grok-imagine-1.0-video-ref-6s") {
+    return { upstreamModel: "grok-imagine-1.0-video", seconds: "6" };
+  }
+  if (model === "grok-imagine-1.0-video-ref-10s") {
+    return { upstreamModel: "grok-imagine-1.0-video", seconds: "10" };
+  }
   if (model === "grok-imagine-1.0-video-6s") {
     return { upstreamModel: "grok-imagine-1.0-video", seconds: "6" };
   }
@@ -188,6 +203,11 @@ export async function POST(request: Request) {
       ...(imageUrl ? [String(imageUrl)] : []),
       ...uploadedReferenceInputs
     ].filter(Boolean);
+
+    if (isGrokReferenceVideoModel(model) && referenceUrls.length === 0) {
+      return jsonError({ error: "This model requires one reference image." }, 400);
+    }
+
     const amount = getVideoGenerationCost(model, String(seconds || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
     const billing = { userId: charge.user.id, amount, model };
@@ -222,7 +242,9 @@ export async function POST(request: Request) {
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          ...referencePayloadFields(referenceUrls)
+          ...(isGrokReferenceVideoModel(model)
+            ? minimalReferencePayloadFields(referenceUrls)
+            : referencePayloadFields(referenceUrls))
         },
         billing
       );
@@ -234,7 +256,9 @@ export async function POST(request: Request) {
         prompt,
         ...(seconds ? { seconds: String(seconds) } : {}),
         ...(size ? { size: String(size) } : {}),
-        ...referencePayloadFields(referenceUrls)
+        ...(isGrokReferenceVideoModel(model)
+          ? minimalReferencePayloadFields(referenceUrls)
+          : referencePayloadFields(referenceUrls))
       },
       billing
     );
