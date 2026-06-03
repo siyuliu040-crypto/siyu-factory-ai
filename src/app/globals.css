@@ -263,12 +263,77 @@ button:disabled {
 
 .admin-panel {
   display: grid;
-  gap: 10px;
+  gap: 14px;
   margin-top: 14px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.58);
-  padding: 12px;
+  padding: 14px;
+}
+
+.admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.admin-panel-head .section-label {
+  margin: 0;
+}
+
+.credit-adjust-field {
+  display: grid;
+  gap: 7px;
+}
+
+.credit-adjust-field label {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.credit-adjust-field small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.credit-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.credit-preview-grid div {
+  min-width: 0;
+  border: 1px solid rgba(137, 150, 170, 0.24);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.64);
+  padding: 10px;
+}
+
+.credit-preview-grid span,
+.credit-preview-grid strong {
+  display: block;
+}
+
+.credit-preview-grid span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.credit-preview-grid strong {
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.danger-text {
+  color: #a33a3a !important;
 }
 
 .grant-row {
@@ -277,17 +342,24 @@ button:disabled {
   gap: 8px;
 }
 
+.grant-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .danger-button {
   display: inline-flex;
-  min-height: 40px;
+  min-height: 46px;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 10px;
   border: 1px solid rgba(190, 61, 61, 0.28);
   border-radius: 12px;
   background: rgba(255, 246, 246, 0.86);
   color: #9f2f2f;
   font-weight: 900;
+  line-height: 1.2;
   white-space: nowrap;
   cursor: pointer;
 }
@@ -1368,6 +1440,16 @@ button.status-pill {
   }
 
   .grant-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .credit-preview-grid,
+  .grant-actions {
     grid-template-columns: 1fr;
   }
 
