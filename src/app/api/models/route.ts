@@ -3,6 +3,11 @@ import { VIDU_MODELS } from "@/lib/vidu";
 
 export const dynamic = "force-dynamic";
 
+const CUSTOM_VIDEO_MODELS = [
+  "grok-imagine-1.0-video-6s",
+  "grok-imagine-1.0-video-10s"
+];
+
 function isAllowedModel(model: unknown) {
   if (!model || typeof model !== "object") return true;
   const id = String((model as { id?: unknown }).id || "").toLowerCase();
@@ -13,6 +18,7 @@ function isAllowedModel(model: unknown) {
   if (id.includes("veo_3_1-fast-portrait")) return false;
   if (id.includes("veo_3_1-fast-portrait-hd") || id.includes("veo_3_1-fast-portrait-fl-hd")) return false;
   if (id === "grok-imagine-video") return false;
+  if (id === "grok-imagine-1.0-video") return false;
   return true;
 }
 
@@ -35,10 +41,16 @@ export async function GET() {
           owned_by: "vidu",
           supported_endpoint_types: ["openai-video"]
         }));
+      const customVideoModels = CUSTOM_VIDEO_MODELS.map((id) => ({
+        id,
+        object: "model",
+        owned_by: "custom",
+        supported_endpoint_types: ["openai-video"]
+      }));
       return Response.json(
         {
           ...(data as Record<string, unknown>),
-          data: [...viduModels, ...filtered]
+          data: [...viduModels, ...customVideoModels, ...filtered]
         },
         { status: response.status }
       );
