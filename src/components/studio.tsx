@@ -174,7 +174,6 @@ const stableVideoModels = [
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
   "firefly-veo31-fast-8s-9x16-1080p",
-  "firefly-veo31-ref-8s-9x16-1080p",
   "veo_3_1-fast-portrait"
 ];
 
@@ -460,7 +459,7 @@ function getModelDescription(model: string, language: Language) {
         : language === "zh" ? "Q3 Pro · 参考图必填" : "Q3 Pro · reference required";
     return `${aspect} · 5/8/12/15 秒可选 · ${speed}`;
   }
-  const reference = lower.includes("hd") || lower.includes("ref") || lower.includes("veo")
+  const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
     : copy[language].modelTextOnly;
   const fixedDuration = lower.includes("firefly-veo31") ? "8" : lower.match(/(\d+)s/)?.[1];
