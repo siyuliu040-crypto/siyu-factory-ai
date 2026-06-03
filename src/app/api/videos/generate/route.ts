@@ -11,16 +11,40 @@ import { accountErrorResponse } from "@/lib/account-api";
 import { getVideoGenerationCost } from "@/lib/pricing";
 import { extractVideoUrl } from "@/lib/video-status";
 import { isViduModel, parseViduResponse, toViduModel, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
+import { randomUUID } from "crypto";
+import { mkdir, writeFile } from "fs/promises";
+import path from "path";
 
 const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
   "720x1280": "720p",
   "1080x1920": "1080p"
 };
+const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
+const IMAGE_EXTENSION_BY_TYPE: Record<string, string> = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp"
+};
 
-async function fileToDataUrl(file: File) {
+function getImageExtension(file: File) {
+  const extensionFromType = IMAGE_EXTENSION_BY_TYPE[file.type];
+  if (extensionFromType) return extensionFromType;
+  const extensionFromName = path.extname(file.name || "").replace(".", "").toLowerCase();
+  if (["jpg", "jpeg", "png", "webp"].includes(extensionFromName)) return extensionFromName;
+  return "jpg";
+}
+
+async function fileToReferenceInput(file: File, origin: string) {
   const buffer = Buffer.from(await file.arrayBuffer());
   const mediaType = file.type || "image/jpeg";
-  return `data:${mediaType};base64,${buffer.toString("base64")}`;
+  const extension = getImageExtension(file);
+  const id = `${randomUUID()}.${extension}`;
+  await mkdir(UPLOAD_DIR, { recursive: true });
+  await writeFile(path.join(UPLOAD_DIR, id), buffer);
+  return {
+    dataUrl: `data:${mediaType};base64,${buffer.toString("base64")}`,
+    publicUrl: `${origin.replace(/\/$/, "")}/api/uploads/${id}`
+  };
 }
 
 function getTaskId(payload: unknown) {
@@ -195,16 +219,21 @@ export async function POST(request: Request) {
     const { upstreamModel, seconds } = normalizeUpstreamVideoRequest(model, secondsInput);
     const size = incoming.get("size");
     const imageUrl = incoming.get("image_url");
+    const origin = new URL(request.url).origin;
     const references = incoming
       .getAll("input_reference")
       .filter((value): value is File => value instanceof File && value.size > 0);
-    const uploadedReferenceInputs = await Promise.all(references.map((reference) => fileToDataUrl(reference)));
-    const referenceUrls = [
+    const uploadedReferenceInputs = await Promise.all(references.map((reference) => fileToReferenceInput(reference, origin)));
+    const dataReferenceUrls = [
       ...(imageUrl ? [String(imageUrl)] : []),
-      ...uploadedReferenceInputs
+      ...uploadedReferenceInputs.map((input) => input.dataUrl)
+    ].filter(Boolean);
+    const publicReferenceUrls = [
+      ...(imageUrl ? [String(imageUrl)] : []),
+      ...uploadedReferenceInputs.map((input) => input.publicUrl)
     ].filter(Boolean);
 
-    if (isGrokReferenceVideoModel(model) && referenceUrls.length === 0) {
+    if (isGrokReferenceVideoModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This model requires one reference image." }, 400);
     }
 
@@ -213,8 +242,7 @@ export async function POST(request: Request) {
     const billing = { userId: charge.user.id, amount, model };
 
     if (isViduModel(upstreamModel)) {
-      const firstReference = references[0];
-      const firstImage = firstReference ? await fileToDataUrl(firstReference) : String(imageUrl || "");
+      const firstImage = dataReferenceUrls[0] || "";
       if (!firstImage) {
         await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", { model });
         return jsonError({ error: "Vidu image-to-video requires one reference image." }, 400);
@@ -243,8 +271,8 @@ export async function POST(request: Request) {
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
           ...(isGrokReferenceVideoModel(model)
-            ? minimalReferencePayloadFields(referenceUrls)
-            : referencePayloadFields(referenceUrls))
+            ? minimalReferencePayloadFields(publicReferenceUrls)
+            : referencePayloadFields(publicReferenceUrls))
         },
         billing
       );
@@ -257,8 +285,8 @@ export async function POST(request: Request) {
         ...(seconds ? { seconds: String(seconds) } : {}),
         ...(size ? { size: String(size) } : {}),
         ...(isGrokReferenceVideoModel(model)
-          ? minimalReferencePayloadFields(referenceUrls)
-          : referencePayloadFields(referenceUrls))
+          ? minimalReferencePayloadFields(publicReferenceUrls)
+          : referencePayloadFields(publicReferenceUrls))
       },
       billing
     );
