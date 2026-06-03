@@ -29,6 +29,16 @@
       "credits": 20000000,
       "createdAt": "2026-06-03T06:10:25.337Z",
       "updatedAt": "2026-06-03T07:20:09.654Z"
+    },
+    {
+      "id": "72524569-6773-4824-abb2-494855433661",
+      "email": "codex-vidu-ref-test-1780481792@example.com",
+      "name": "Codex Vidu ref test",
+      "passwordHash": "591526a5f4776e0b323cd2a8cd604b8a:1c959acc6c5d8d582027a4d4684156815a0ae06dc0e988ee618b39239b4a1c0090a792a5c92e9629b991b0750f1349078580eeaf080889bf11cd2586f04e2ee5",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T10:16:36.279Z",
+      "updatedAt": "2026-06-03T10:16:36.279Z"
     }
   ],
   "sessions": [
@@ -91,6 +101,12 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-06-10T09:19:52.061Z",
       "createdAt": "2026-06-03T09:19:52.061Z"
+    },
+    {
+      "token": "06283449faaef82ce80e299dd8e4cc00f9ead600856f060b9837b745c5dd4ccb",
+      "userId": "72524569-6773-4824-abb2-494855433661",
+      "expiresAt": "2026-06-10T10:16:36.567Z",
+      "createdAt": "2026-06-03T10:16:36.567Z"
     }
   ],
   "ledger": [
