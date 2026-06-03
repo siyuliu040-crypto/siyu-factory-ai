@@ -29,7 +29,7 @@ async function streamRemoteVideo(url: string, id: string) {
       status: response.status,
       headers: {
         "Content-Type": response.headers.get("content-type") || "video/mp4",
-        "Content-Disposition": `attachment; filename="${id}.mp4"`
+        "Content-Disposition": `inline; filename="${id}.mp4"`
       }
     });
   } catch {
