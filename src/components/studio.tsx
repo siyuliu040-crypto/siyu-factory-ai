@@ -173,9 +173,8 @@ const stableVideoModels = [
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
-  "vidu:viduq2-pro-fast",
-  "vidu:viduq2-turbo",
-  "grok-imagine-1.0-video"
+  "grok-imagine-1.0-video-6s",
+  "grok-imagine-1.0-video-10s"
 ];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
@@ -442,7 +441,10 @@ function formatQuotaText(value: string) {
 function getModelTitle(model: string, language: Language) {
   const lower = model.toLowerCase();
   if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";
-  if (lower.includes("grok-imagine")) return language === "zh" ? "Grok 文字视频" : "Grok Text to Video";
+  if (lower.includes("grok-imagine")) {
+    const seconds = lower.includes("10s") ? "10" : lower.includes("6s") ? "6" : "";
+    return language === "zh" ? `Grok 文字视频${seconds ? ` ${seconds}秒` : ""}` : `Grok Text Video${seconds ? ` ${seconds}s` : ""}`;
+  }
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
   if (lower.includes("veo_3_1")) return language === "zh" ? "VEO 3.1 Fast" : "VEO 3.1 Fast";
   if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro" : "Nano Banana Pro";
@@ -463,6 +465,12 @@ function getModelDescription(model: string, language: Language) {
     return `${aspect} · 5/8/12/15 秒可选 · ${speed}`;
   }
   if (lower.includes("grok-imagine")) {
+    const fixedDuration = lower.includes("10s") ? "10" : lower.includes("6s") ? "6" : "";
+    if (fixedDuration) {
+      return language === "zh"
+        ? `${aspect} · ${fixedDuration} 秒固定 · 纯提示词视频`
+        : `${aspect} · fixed ${fixedDuration}s · prompt-only video`;
+    }
     return language === "zh"
       ? `${aspect} · 6/10 秒可选 · 纯提示词视频`
       : `${aspect} · 6/10s selectable · prompt-only video`;
@@ -488,6 +496,8 @@ function getDurationOptions(model: string, language: Language) {
     ];
   }
   if (lower.includes("grok-imagine")) {
+    if (lower.includes("10s")) return [{ value: "10", label: language === "zh" ? "10 秒（模型固定）" : "10 seconds fixed" }];
+    if (lower.includes("6s")) return [{ value: "6", label: language === "zh" ? "6 秒（模型固定）" : "6 seconds fixed" }];
     return [
       { value: "6", label: language === "zh" ? "6 秒" : "6 seconds" },
       { value: "10", label: language === "zh" ? "10 秒" : "10 seconds" }
