@@ -1,156 +1,162 @@
 {
-    "users":  [
-                  {
-                      "id":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                      "email":  "137700116@qq.com",
-                      "name":  "siyu",
-                      "passwordHash":  "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
-                      "role":  "admin",
-                      "credits":  9121250,
-                      "createdAt":  "2026-06-03T00:39:56.017Z",
-                      "updatedAt":  "2026-06-03T01:52:37.063Z"
-                  },
-                  {
-                      "id":  "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
-                      "email":  "vidu-test-20260603100256@example.com",
-                      "name":  "Vidu Test",
-                      "passwordHash":  "8fd646c8e70b3b6dece02a3d7f45f947:74aacd95cb552874eec863451e1bceb8a97bcbd8ce9d8d0e7a7fd89749b88fca4b78f5b86ca8619e6b4f69697750b2e63249c4a94c7de8853bee5a665ccd6137",
-                      "role":  "user",
-                      "credits":  5000000,
-                      "createdAt":  "2026-06-03T02:03:02.994Z",
-                      "updatedAt":  "2026-06-03T02:03:18.6558677Z"
-                  }
-              ],
-    "sessions":  [
-                     {
-                         "token":  "569bd3e919087a460eaf181f2f05a3825255c5ac79a22181534c7120de41f8c3",
-                         "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                         "expiresAt":  "2026-06-10T01:00:58.635Z",
-                         "createdAt":  "2026-06-03T01:00:58.635Z"
-                     },
-                     {
-                         "token":  "d24345a2e9a85a89ccd52b97c7290d405d3be63d8792c83432c65124a9ae9a4f",
-                         "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                         "expiresAt":  "2026-06-10T01:01:25.339Z",
-                         "createdAt":  "2026-06-03T01:01:25.339Z"
-                     },
-                     {
-                         "token":  "61ad3aebb440efb93c21562bca5756bbf1d8c295787abc776b0383592a16afaf",
-                         "userId":  "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
-                         "expiresAt":  "2026-06-10T02:03:03.596Z",
-                         "createdAt":  "2026-06-03T02:03:03.596Z"
-                     }
-                 ],
-    "ledger":  [
-                   {
-                       "id":  "76385fd4-0dd8-4260-87f0-e2c9b50b743c",
-                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                       "amount":  -2835000,
-                       "balanceAfter":  9121250,
-                       "reason":  "video generation",
-                       "createdAt":  "2026-06-03T01:52:37.063Z",
-                       "metadata":  {
-                                        "model":  "vidu:viduq3-pro",
-                                        "size":  "720x1280"
-                                    }
-                   },
-                   {
-                       "id":  "ecaa45a4-db5a-4cdb-a219-18fe80b23802",
-                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                       "amount":  -1200000,
-                       "balanceAfter":  11956250,
-                       "reason":  "video generation",
-                       "createdAt":  "2026-06-03T01:52:21.116Z",
-                       "metadata":  {
-                                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
-                                        "size":  "720x1280"
-                                    }
-                   },
-                   {
-                       "id":  "2842844a-fdd7-4d26-bc61-d67ff5bb0b38",
-                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                       "amount":  -3018750,
-                       "balanceAfter":  13156250,
-                       "reason":  "video generation",
-                       "createdAt":  "2026-06-03T01:50:11.053Z",
-                       "metadata":  {
-                                        "model":  "vidu:viduq3-turbo",
-                                        "size":  "720x1280"
-                                    }
-                   },
-                   {
-                       "id":  "b1e4c55d-556b-4699-9826-340e493a59de",
-                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                       "amount":  -2625000,
-                       "balanceAfter":  16175000,
-                       "reason":  "video generation",
-                       "createdAt":  "2026-06-03T01:49:57.478Z",
-                       "metadata":  {
-                                        "model":  "vidu:viduq3-pro-fast",
-                                        "size":  "720x1280"
-                                    }
-                   },
-                   {
-                       "id":  "ea6b852c-139e-4aa2-8e21-9a4781e657e8",
-                       "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                       "amount":  -1200000,
-                       "balanceAfter":  18800000,
-                       "reason":  "video generation",
-                       "createdAt":  "2026-06-03T00:40:05.224Z",
-                       "metadata":  {
-                                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
-                                        "size":  "720x1280"
-                                    }
-                   }
-               ],
-    "generationTasks":  [
-                            {
-                                "id":  "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
-                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                                "type":  "video",
-                                "model":  "firefly-veo31-fast-8s-9x16-1080p",
-                                "amount":  1200000,
-                                "status":  "completed",
-                                "refunded":  false,
-                                "createdAt":  "2026-06-03T01:52:23.318Z",
-                                "updatedAt":  "2026-06-03T01:55:57.883Z"
-                            },
-                            {
-                                "id":  "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
-                                "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                                "type":  "video",
-                                "model":  "firefly-veo31-fast-8s-9x16-1080p",
-                                "amount":  1200000,
-                                "status":  "completed",
-                                "refunded":  false,
-                                "createdAt":  "2026-06-03T00:40:06.294Z",
-                                "updatedAt":  "2026-06-03T00:43:34.575Z"
-                            }
-                        ],
-    "history":  [
-                    {
-                        "id":  "a2b00ecc-b8a0-4080-b7a1-f48c6c0f7253",
-                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                        "mode":  "video",
-                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
-                        "prompt":  "Create a 15-second vertical 9:16 ultra-realistic TikTok US UGC hair bundle video. Real handheld iPhone front-camera selfie inside a car, daylight, sharp background, no blurred background, no bokeh, no subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI.\n\nSCENE:\nInside a real car during daytime. Light gray fabric seats, gray headrests, a white backpack on the back seat, rear window showing blue sky, trees, road signs, and parked cars outside. Natural sunlight comes through the side window and rear window, creating soft highlights on the hair. The car interior must stay clear and sharp, not blurred.\n\nPERSON:\nA young American Black woman, early 20s to early 30s, smooth brown skin with realistic pores, natural glam makeup, long lashes, small nose piercing, braces visible when she smiles, glossy lips. She wears a pink strapless fitted top and a simple necklace. Her expression changes naturally from playful confidence to serious product proof, then excited recommendation.\n\nPRODUCT:\nNatural black body wave human hair bundles, long, full, soft, glossy but realistic, thick full ends, defined body wave pattern, no plastic shine, no stiff wig look.\n\n0-3s GOLDEN HOOK:\nFront-camera selfie angle. She sits in the passenger seat or driver seat, slightly tilting her head down, then looks up at the camera with a small smile. Sunlight hits the top of her black body wave hair. She lightly grabs one side of her hair and flips it forward over her shoulder. Her eyes narrow slightly from the sunlight, then she smiles bigger, showing braces.\nVO:\n“You guys… this body bundle is not playing.”\n\n3-6s PRODUCT SHOW:\nClean jump cut. She holds a natural black body wave bundle close to the camera, product filling 70%-75% of the frame. Her fingers hold the top weft firmly, thumb in front, four fingers behind. Sunlight from the car window hits the bundle, showing soft waves and shine. The installed hairstyle stays behind her shoulder, clearly separate from the handheld bundle.\nVO:\n“No cap, I hate bundles that look full on top but thin at the ends.”\n\n6-9s DETAIL PROOF:\nExtreme close-up. She slowly runs her fingers through the bundle from mid-length to the ends. The waves separate smoothly and bounce back. The thick ends fall evenly into her palm. She looks down at the ends, eyebrows lift slightly, eyes widen, then she gives a satisfied little nod.\nVO:\n“Look at that — soft, bouncy, and full all the way down.”\n\n9-12s WEAR EFFECT:\nBack to selfie angle. She lets the installed body wave hair fall across her chest and lightly shakes her head side to side. The curls move naturally in the car light. She tucks one front piece away from her face, then leans closer to the camera with a confident half-smile.\nVO:\n“Car mirror check? Passed. This is the kind of hair that makes the whole look better.”\n\n12-15s CTA:\nFinal close-up. She holds the body wave bundle near the camera while her finished body wave hairstyle is visible behind it but not touching. She smiles, slightly raises one eyebrow, and gently shakes the bundle once to show bounce and thick ends.\nVO:\n“Tap the link and grab this body bundle today. Don’t wait on this one.”\n\nANTI-FAIL RULES:\nNo subtitles, no captions, no text overlay, no letters, no numbers, no readable car signs, no logo, no watermark, no TikTok UI. Keep the car background sharp and realistic, not blurred. The handheld bundle must never touch, overlap, or merge with the installed hairstyle. No installation process. No hair clipping through hands, face, shoulders, necklace, car seat, seatbelt, or clothes. No extra fingers, distorted hands, plastic skin, floating bundle, duplicated bundle, changing hair texture, or sudden outfit changes. Keep the same woman, same pink top, same car interior, same natural black body wave texture, and same lighting throughout the entire video.\n",
-                        "previewUrl":  "https://file.bandianwa.com/adobe/video/20260603/69f016a8aa6544dca9aba31c93c56b43.mp4",
-                        "taskId":  "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
-                        "status":  "completed",
-                        "createdAt":  "2026-06-03T01:52:23.318Z",
-                        "updatedAt":  "2026-06-03T01:55:57.883Z"
-                    },
-                    {
-                        "id":  "3e7524b1-4b55-47a4-bda6-aad2a22e7601",
-                        "userId":  "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-                        "mode":  "video",
-                        "model":  "firefly-veo31-fast-8s-9x16-1080p",
-                        "prompt":  "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
-                        "previewUrl":  "https://file.bandianwa.com/adobe/video/20260603/c53b56af54a441cbb4a8e5262ce51020.mp4",
-                        "taskId":  "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
-                        "status":  "completed",
-                        "createdAt":  "2026-06-03T00:40:06.294Z",
-                        "updatedAt":  "2026-06-03T00:43:34.575Z"
-                    }
-                ]
+  "users": [
+    {
+      "id": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "email": "137700116@qq.com",
+      "name": "siyu",
+      "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
+      "role": "admin",
+      "credits": 9121250,
+      "createdAt": "2026-06-03T00:39:56.017Z",
+      "updatedAt": "2026-06-03T01:52:37.063Z"
+    },
+    {
+      "id": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "email": "vidu-test-20260603100256@example.com",
+      "name": "Vidu Test",
+      "passwordHash": "8fd646c8e70b3b6dece02a3d7f45f947:74aacd95cb552874eec863451e1bceb8a97bcbd8ce9d8d0e7a7fd89749b88fca4b78f5b86ca8619e6b4f69697750b2e63249c4a94c7de8853bee5a665ccd6137",
+      "role": "user",
+      "credits": 5000000,
+      "createdAt": "2026-06-03T02:03:02.994Z",
+      "updatedAt": "2026-06-03T02:03:18.6558677Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "569bd3e919087a460eaf181f2f05a3825255c5ac79a22181534c7120de41f8c3",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "expiresAt": "2026-06-10T01:00:58.635Z",
+      "createdAt": "2026-06-03T01:00:58.635Z"
+    },
+    {
+      "token": "d24345a2e9a85a89ccd52b97c7290d405d3be63d8792c83432c65124a9ae9a4f",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "expiresAt": "2026-06-10T01:01:25.339Z",
+      "createdAt": "2026-06-03T01:01:25.339Z"
+    },
+    {
+      "token": "61ad3aebb440efb93c21562bca5756bbf1d8c295787abc776b0383592a16afaf",
+      "userId": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "expiresAt": "2026-06-10T02:03:03.596Z",
+      "createdAt": "2026-06-03T02:03:03.596Z"
+    },
+    {
+      "token": "dadc25b558d2a3d728779e27caeeb0680add52c55a8ceccc5c8009ff273a4e59",
+      "userId": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "expiresAt": "2026-06-10T02:03:56.482Z",
+      "createdAt": "2026-06-03T02:03:56.482Z"
+    }
+  ],
+  "ledger": [
+    {
+      "id": "76385fd4-0dd8-4260-87f0-e2c9b50b743c",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -2835000,
+      "balanceAfter": 9121250,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T01:52:37.063Z",
+      "metadata": {
+        "model": "vidu:viduq3-pro",
+        "size": "720x1280"
+      }
+    },
+    {
+      "id": "ecaa45a4-db5a-4cdb-a219-18fe80b23802",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -1200000,
+      "balanceAfter": 11956250,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T01:52:21.116Z",
+      "metadata": {
+        "model": "firefly-veo31-fast-8s-9x16-1080p",
+        "size": "720x1280"
+      }
+    },
+    {
+      "id": "2842844a-fdd7-4d26-bc61-d67ff5bb0b38",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -3018750,
+      "balanceAfter": 13156250,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T01:50:11.053Z",
+      "metadata": {
+        "model": "vidu:viduq3-turbo",
+        "size": "720x1280"
+      }
+    },
+    {
+      "id": "b1e4c55d-556b-4699-9826-340e493a59de",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -2625000,
+      "balanceAfter": 16175000,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T01:49:57.478Z",
+      "metadata": {
+        "model": "vidu:viduq3-pro-fast",
+        "size": "720x1280"
+      }
+    },
+    {
+      "id": "ea6b852c-139e-4aa2-8e21-9a4781e657e8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -1200000,
+      "balanceAfter": 18800000,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T00:40:05.224Z",
+      "metadata": {
+        "model": "firefly-veo31-fast-8s-9x16-1080p",
+        "size": "720x1280"
+      }
+    }
+  ],
+  "generationTasks": [
+    {
+      "id": "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "firefly-veo31-fast-8s-9x16-1080p",
+      "amount": 1200000,
+      "status": "completed",
+      "refunded": false,
+      "createdAt": "2026-06-03T01:52:23.318Z",
+      "updatedAt": "2026-06-03T01:55:57.883Z"
+    },
+    {
+      "id": "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "firefly-veo31-fast-8s-9x16-1080p",
+      "amount": 1200000,
+      "status": "completed",
+      "refunded": false,
+      "createdAt": "2026-06-03T00:40:06.294Z",
+      "updatedAt": "2026-06-03T00:43:34.575Z"
+    }
+  ],
+  "history": [
+    {
+      "id": "a2b00ecc-b8a0-4080-b7a1-f48c6c0f7253",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "firefly-veo31-fast-8s-9x16-1080p",
+      "prompt": "Create a 15-second vertical 9:16 ultra-realistic TikTok US UGC hair bundle video. Real handheld iPhone front-camera selfie inside a car, daylight, sharp background, no blurred background, no bokeh, no subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI.\n\nSCENE:\nInside a real car during daytime. Light gray fabric seats, gray headrests, a white backpack on the back seat, rear window showing blue sky, trees, road signs, and parked cars outside. Natural sunlight comes through the side window and rear window, creating soft highlights on the hair. The car interior must stay clear and sharp, not blurred.\n\nPERSON:\nA young American Black woman, early 20s to early 30s, smooth brown skin with realistic pores, natural glam makeup, long lashes, small nose piercing, braces visible when she smiles, glossy lips. She wears a pink strapless fitted top and a simple necklace. Her expression changes naturally from playful confidence to serious product proof, then excited recommendation.\n\nPRODUCT:\nNatural black body wave human hair bundles, long, full, soft, glossy but realistic, thick full ends, defined body wave pattern, no plastic shine, no stiff wig look.\n\n0-3s GOLDEN HOOK:\nFront-camera selfie angle. She sits in the passenger seat or driver seat, slightly tilting her head down, then looks up at the camera with a small smile. Sunlight hits the top of her black body wave hair. She lightly grabs one side of her hair and flips it forward over her shoulder. Her eyes narrow slightly from the sunlight, then she smiles bigger, showing braces.\nVO:\n“You guys… this body bundle is not playing.”\n\n3-6s PRODUCT SHOW:\nClean jump cut. She holds a natural black body wave bundle close to the camera, product filling 70%-75% of the frame. Her fingers hold the top weft firmly, thumb in front, four fingers behind. Sunlight from the car window hits the bundle, showing soft waves and shine. The installed hairstyle stays behind her shoulder, clearly separate from the handheld bundle.\nVO:\n“No cap, I hate bundles that look full on top but thin at the ends.”\n\n6-9s DETAIL PROOF:\nExtreme close-up. She slowly runs her fingers through the bundle from mid-length to the ends. The waves separate smoothly and bounce back. The thick ends fall evenly into her palm. She looks down at the ends, eyebrows lift slightly, eyes widen, then she gives a satisfied little nod.\nVO:\n“Look at that — soft, bouncy, and full all the way down.”\n\n9-12s WEAR EFFECT:\nBack to selfie angle. She lets the installed body wave hair fall across her chest and lightly shakes her head side to side. The curls move naturally in the car light. She tucks one front piece away from her face, then leans closer to the camera with a confident half-smile.\nVO:\n“Car mirror check? Passed. This is the kind of hair that makes the whole look better.”\n\n12-15s CTA:\nFinal close-up. She holds the body wave bundle near the camera while her finished body wave hairstyle is visible behind it but not touching. She smiles, slightly raises one eyebrow, and gently shakes the bundle once to show bounce and thick ends.\nVO:\n“Tap the link and grab this body bundle today. Don’t wait on this one.”\n\nANTI-FAIL RULES:\nNo subtitles, no captions, no text overlay, no letters, no numbers, no readable car signs, no logo, no watermark, no TikTok UI. Keep the car background sharp and realistic, not blurred. The handheld bundle must never touch, overlap, or merge with the installed hairstyle. No installation process. No hair clipping through hands, face, shoulders, necklace, car seat, seatbelt, or clothes. No extra fingers, distorted hands, plastic skin, floating bundle, duplicated bundle, changing hair texture, or sudden outfit changes. Keep the same woman, same pink top, same car interior, same natural black body wave texture, and same lighting throughout the entire video.\n",
+      "previewUrl": "https://file.bandianwa.com/adobe/video/20260603/69f016a8aa6544dca9aba31c93c56b43.mp4",
+      "taskId": "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
+      "status": "completed",
+      "createdAt": "2026-06-03T01:52:23.318Z",
+      "updatedAt": "2026-06-03T01:55:57.883Z"
+    },
+    {
+      "id": "3e7524b1-4b55-47a4-bda6-aad2a22e7601",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "firefly-veo31-fast-8s-9x16-1080p",
+      "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "previewUrl": "https://file.bandianwa.com/adobe/video/20260603/c53b56af54a441cbb4a8e5262ce51020.mp4",
+      "taskId": "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
+      "status": "completed",
+      "createdAt": "2026-06-03T00:40:06.294Z",
+      "updatedAt": "2026-06-03T00:43:34.575Z"
+    }
+  ]
 }
