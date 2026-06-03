@@ -36,9 +36,9 @@
       "name": "Codex Grok ref test",
       "passwordHash": "28be76762e4802957b1c869df96f0e37:4601d6e4a4d6ba19b9431eda376860ccb88e790294fae3f9fc3b3c624dbd1b0ea14380a13f4e5293f3f97b2e7a9fbc8beb21d8ccebd0741733917262a9d2b957",
       "role": "user",
-      "credits": 8700000,
+      "credits": 7000000,
       "createdAt": "2026-06-03T09:55:01.271Z",
-      "updatedAt": "2026-06-03T09:56:28.955Z"
+      "updatedAt": "2026-06-03T09:57:33.312Z"
     }
   ],
   "sessions": [
@@ -110,6 +110,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "d510c5eb-8a57-43ea-9e45-036993324fd0",
+      "userId": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
+      "amount": -1700000,
+      "balanceAfter": 7000000,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T09:57:33.312Z",
+      "metadata": {
+        "model": "grok-imagine-1.0-video-ref-10s",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "79ce5929-d53d-4b9f-8243-1a818aa389fc",
       "userId": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
