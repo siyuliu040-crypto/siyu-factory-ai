@@ -26,9 +26,9 @@
       "name": "lina",
       "passwordHash": "e20d850461f444ee821edf54e5c035f3:1ff8e57afc2ee22aa4cdce153ef735e0bf6d3a79d046c40d398ad97a8b2386f3fe70ec9aae14db946614b661741f805c46c181eba40027176f7e308f68be1666",
       "role": "user",
-      "credits": 20000000,
+      "credits": 19880000,
       "createdAt": "2026-06-03T06:10:25.337Z",
-      "updatedAt": "2026-06-03T07:16:42.701Z"
+      "updatedAt": "2026-06-03T07:18:03.445Z"
     }
   ],
   "sessions": [
@@ -70,6 +70,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "23df55e8-611f-4b40-8f8b-b8c229086e05",
+      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+      "amount": -120000,
+      "balanceAfter": 19880000,
+      "reason": "image generation",
+      "createdAt": "2026-06-03T07:18:03.445Z",
+      "metadata": {
+        "model": "nano_banana_2-4K-portrait",
+        "size": "1024x1792"
+      }
+    },
     {
       "id": "2b91e7fe-9213-4b98-9e7e-94e527e94f8b",
       "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
