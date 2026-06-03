@@ -431,6 +431,17 @@
   ],
   "history": [
     {
+      "id": "31d5e1b1-b302-4c85-982c-7bb54511100f",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "image",
+      "model": "nano_banana_2-1K-portrait",
+      "prompt": "Create one vertical 9:16 photorealistic TikTok UGC-style image, handheld smartphone selfie feeling, extreme close-up to medium close-up framing, realistic video texture, slight natural grain, natural lighting, smooth realistic camera feel.\n\nNo text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface, no shopping cart icon, no readable brand labels.\n\nSubject: one confident African American female TikTok beauty creator, same consistent facial identity, natural makeup, real skin texture, expressive eyes, authentic U.S. beauty creator energy. She is wearing a full, soft, voluminous human hair wig with clean lace front, natural hairline, thick ends, natural shine, realistic bounce, and luxury hair texture.\n\nScene:\nThe woman is facing the camera in a close-up selfie angle. Her expression shows shocked excitement, like she just discovered an unbelievable deal. Her eyes are wide, eyebrows lifted dramatically, mouth slightly open in disbelief, but a smile is starting to form. The emotion feels genuine, spontaneous, and highly expressive.\n\nAction:\nBoth hands are naturally placed in her hair, lifting the roots and fluffing the wig to show fullness and density. One side of the hair is slightly pulled forward toward the camera to show soft texture, thick ends, and natural movement. Her fingers bend naturally and touch the hair realistically. The lace front and hairline are visible and clean. The hair looks full from root to ends, soft, bouncy, and expensive-looking.\n\nComposition:\nVertical 9:16, close selfie framing, face and hair dominate the image. Hair should take up a large part of the frame. The camera feels like a real phone held close by the creator. Background is softly visible but not empty: a realistic bedroom or beauty room setting with natural daylight, mirror, vanity items, and casual home details, but no readable text.\n\nStyle:\nPhotorealistic, authentic TikTok creator vibe, real skin pores, natural facial expression, realistic hair movement, no over-smoothing, no plastic skin, no AI-looking face, no distorted hands, no fake lace, no thin hair ends.",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/e54b5359-c616-4a9d-b7c1-3f8f071af434.jpg",
+      "status": "completed",
+      "createdAt": "2026-06-03T07:45:00.950Z",
+      "updatedAt": "2026-06-03T07:45:00.950Z"
+    },
+    {
       "id": "a5b0cfd5-8e09-457e-95f3-abdabaa0f047",
       "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
       "mode": "video",
