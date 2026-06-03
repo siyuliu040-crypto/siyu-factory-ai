@@ -173,8 +173,8 @@ const stableVideoModels = [
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
-  "grok-imagine-1.0-video-6s",
-  "grok-imagine-1.0-video-10s"
+  "grok-imagine-1.0-video-ref-6s",
+  "grok-imagine-1.0-video-ref-10s"
 ];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
@@ -443,7 +443,8 @@ function getModelTitle(model: string, language: Language) {
   if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";
   if (lower.includes("grok-imagine")) {
     const seconds = lower.includes("10s") ? "10" : lower.includes("6s") ? "6" : "";
-    return language === "zh" ? `Grok 文字视频${seconds ? ` ${seconds}秒` : ""}` : `Grok Text Video${seconds ? ` ${seconds}s` : ""}`;
+    const prefix = lower.includes("ref") ? (language === "zh" ? "Grok 参考图视频" : "Grok Reference Video") : (language === "zh" ? "Grok 文字视频" : "Grok Text Video");
+    return `${prefix}${seconds ? language === "zh" ? ` ${seconds}秒` : ` ${seconds}s` : ""}`;
   }
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
   if (lower.includes("veo_3_1")) return language === "zh" ? "VEO 3.1 Fast" : "VEO 3.1 Fast";
@@ -466,14 +467,17 @@ function getModelDescription(model: string, language: Language) {
   }
   if (lower.includes("grok-imagine")) {
     const fixedDuration = lower.includes("10s") ? "10" : lower.includes("6s") ? "6" : "";
+    const kind = lower.includes("ref")
+      ? language === "zh" ? "参考图必填" : "reference required"
+      : language === "zh" ? "纯提示词视频" : "prompt-only video";
     if (fixedDuration) {
       return language === "zh"
-        ? `${aspect} · ${fixedDuration} 秒固定 · 纯提示词视频`
-        : `${aspect} · fixed ${fixedDuration}s · prompt-only video`;
+        ? `${aspect} · ${fixedDuration} 秒固定 · ${kind}`
+        : `${aspect} · fixed ${fixedDuration}s · ${kind}`;
     }
     return language === "zh"
-      ? `${aspect} · 6/10 秒可选 · 纯提示词视频`
-      : `${aspect} · 6/10s selectable · prompt-only video`;
+      ? `${aspect} · 6/10 秒可选 · ${kind}`
+      : `${aspect} · 6/10s selectable · ${kind}`;
   }
   const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
