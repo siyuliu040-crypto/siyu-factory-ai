@@ -1,5 +1,7 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+import { withAccountState } from "@/lib/accounts";
 import { extractVideoUrl } from "@/lib/video-status";
+import { extractViduVideoUrl, isViduModel, parseViduResponse, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +11,14 @@ async function fetchVideoMetadata(path: string, id: string) {
     cache: "no-store"
   });
   return parseUpstreamResponse(response);
+}
+
+async function fetchViduVideoMetadata(id: string) {
+  const response = await fetch(`${VIDU_BASE_URL}/ent/v2/tasks/${encodeURIComponent(id)}/creations`, {
+    headers: viduHeaders({ Accept: "application/json" }),
+    cache: "no-store"
+  });
+  return parseViduResponse(response);
 }
 
 async function streamRemoteVideo(url: string, id: string) {
@@ -35,6 +45,14 @@ export async function GET(
     const { id } = await params;
     if (!id) {
       return jsonError({ error: "video id is required" }, 400);
+    }
+
+    const task = await withAccountState((state) => state.generationTasks.find((item) => item.id === id) || null);
+    if (task && isViduModel(task.model)) {
+      const viduMetadata = await fetchViduVideoMetadata(id);
+      const viduUrl = extractViduVideoUrl(viduMetadata);
+      if (viduUrl) return streamRemoteVideo(viduUrl, id);
+      return jsonError({ error: "Unable to download generated Vidu video" }, 404);
     }
 
     const primaryMetadata = await fetchVideoMetadata("/v1/videos/:id", id);
