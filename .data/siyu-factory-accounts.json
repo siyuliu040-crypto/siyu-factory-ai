@@ -36,9 +36,9 @@
       "name": "Codex Image Test",
       "passwordHash": "cdccec41033d709cea19df2c3debb54f:29871b0066ac5cb325816566b412af50cc0bd2dafb604da19f05483413adbb63c5ae359939b820ab554a7512fef390291aab00c344a9443aa0173de106935383",
       "role": "user",
-      "credits": 1000000,
+      "credits": 960000,
       "createdAt": "2026-06-03T07:23:47.232Z",
-      "updatedAt": "2026-06-03T07:24:03.4507144Z"
+      "updatedAt": "2026-06-03T07:26:06.288Z"
     }
   ],
   "sessions": [
@@ -92,6 +92,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "e1a956b3-ef09-4f42-999f-c6a072434daa",
+      "userId": "a3cd1d8b-4c77-4974-996d-07dc1197de23",
+      "amount": -40000,
+      "balanceAfter": 960000,
+      "reason": "image generation",
+      "createdAt": "2026-06-03T07:26:06.288Z",
+      "metadata": {
+        "model": "gpt-image-2",
+        "size": "1024x1792"
+      }
+    },
     {
       "id": "37a6b826-d11d-4c0b-be70-0eed694f8ad8",
       "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
