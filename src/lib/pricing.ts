@@ -12,9 +12,9 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "vidu:viduq3-pro-fast": 1400000,
   "vidu:viduq3-turbo": 1600000,
   "vidu:viduq3-pro": 1900000,
-  "vidu:viduq2-pro-fast": 1200000,
-  "vidu:viduq2-turbo": 1300000,
-  "grok-imagine-1.0-video": 1200000
+  "grok-imagine-1.0-video": 1200000,
+  "grok-imagine-1.0-video-6s": 1100000,
+  "grok-imagine-1.0-video-10s": 1500000
 };
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
@@ -55,13 +55,11 @@ export function getVideoGenerationCost(model: string, duration?: string | number
         ? 1.15
         : lower.includes("q3-pro")
           ? 1.35
-          : lower.includes("q2-pro-fast")
-            ? 0.9
-            : lower.includes("q2-turbo")
-              ? 0.95
-              : 1;
+          : 1;
     return Math.round(Math.max(900000, seconds * 175000 * multiplier));
   }
+  if (lower.includes("grok-imagine-1.0-video-10s")) return 1500000;
+  if (lower.includes("grok-imagine-1.0-video-6s")) return 1100000;
   if (lower.includes("grok-imagine-1.0-video")) {
     const seconds = Math.max(6, Number(duration || 6));
     return seconds >= 10 ? 1500000 : 1100000;
