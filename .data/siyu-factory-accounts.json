@@ -476,6 +476,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_FuQJB7NWgVqQscigUuINLb1aVcxx6ZlS",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "firefly-veo31-ref-8s-9x16-1080p",
+      "amount": 1600000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T08:31:57.372Z",
+      "updatedAt": "2026-06-03T08:31:57.372Z"
+    },
+    {
       "id": "task_b3dBEuq0o5ciLizpHoG1GqqVgIhpsXQS",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -576,6 +587,17 @@
     }
   ],
   "history": [
+    {
+      "id": "45e1f6be-8823-45c9-b38e-b50896e57a1f",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "firefly-veo31-ref-8s-9x16-1080p",
+      "prompt": "Create one vertical 9:16 photorealistic TikTok UGC-style image, handheld smartphone selfie feeling, extreme close-up to medium close-up framing, realistic video texture, slight natural grain, natural lighting, smooth realistic camera feel.\r\n\r\nNo text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface, no shopping cart icon, no readable brand labels.\r\n\r\nSubject: one confident African American female TikTok beauty creator, same consistent facial identity, natural makeup, real skin texture, expressive eyes, authentic U.S. beauty creator energy. She is wearing a full, soft, voluminous human hair wig with clean lace front, natural hairline, thick ends, natural shine, realistic bounce, and luxury hair texture.\r\n\r\nScene:\r\nThe woman is facing the camera in a close-up selfie angle. Her expression shows shocked excitement, like she just discovered an unbelievable deal. Her eyes are wide, eyebrows lifted dramatically, mouth slightly open in disbelief, but a smile is starting to form. The emotion feels genuine, spontaneous, and highly expressive.\r\n\r\nAction:\r\nBoth hands are naturally placed in her hair, lifting the roots and fluffing the wig to show fullness and density. One side of the hair is slightly pulled forward toward the camera to show soft texture, thick ends, and natural movement. Her fingers bend naturally and touch the hair realistically. The lace front and hairline are visible and clean. The hair looks full from root to ends, soft, bouncy, and expensive-looking.\r\n\r\nComposition:\r\nVertical 9:16, close selfie framing, face and hair dominate the image. Hair should take up a large part of the frame. The camera feels like a real phone held close by the creator. Background is softly visible but not empty: a realistic bedroom or beauty room setting with natural daylight, mirror, vanity items, and casual home details, but no readable text.\r\n\r\nStyle:\r\nPhotorealistic, authentic TikTok creator vibe, real skin pores, natural facial expression, realistic hair movement, no over-smoothing, no plastic skin, no AI-looking face, no distorted hands, no fake lace, no thin hair ends.",
+      "taskId": "task_FuQJB7NWgVqQscigUuINLb1aVcxx6ZlS",
+      "status": "queued",
+      "createdAt": "2026-06-03T08:31:57.372Z",
+      "updatedAt": "2026-06-03T08:31:57.372Z"
+    },
     {
       "id": "ef35251c-fc93-45d2-884d-57478eff4981",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
