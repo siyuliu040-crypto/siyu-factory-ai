@@ -40,6 +40,8 @@ const globalForImageJobs = globalThis as typeof globalThis & {
 
 const jobs = globalForImageJobs.siyuImageJobs ?? new Map<string, ImageJobRecord>();
 globalForImageJobs.siyuImageJobs = jobs;
+const IMAGE_JOB_MAX_ATTEMPTS = 3;
+const IMAGE_JOB_RETRY_DELAY_MS = 120000;
 
 function createJobId() {
   return `img_${Date.now()}_${Math.random().toString(16).slice(2)}`;
@@ -51,6 +53,27 @@ function parsePayload(text: string) {
   } catch {
     return { error: "Image upstream request failed", detail: text };
   }
+}
+
+function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRetryableImageError(status: number, payload: unknown) {
+  const message = typeof payload === "string" ? payload : JSON.stringify(payload);
+  return (
+    status === 408 ||
+    status === 425 ||
+    status === 429 ||
+    status === 500 ||
+    status === 502 ||
+    status === 503 ||
+    status === 504 ||
+    status === 524 ||
+    message.includes("Proxy Read Timeout") ||
+    message.includes("origin_response_timeout") ||
+    message.includes("retryable")
+  );
 }
 
 function save(record: ImageJobRecord) {
@@ -95,25 +118,31 @@ async function runImageJob(id: string) {
   save({ ...record, status: "in_progress", progress: 5 });
 
   try {
-    const references = record.request.references || [];
-    const response = references.length
-      ? await postImageEdit(record, references)
-      : await fetch(`${HELLOBABYGO_BASE_URL}/v1/images/generations`, {
-          method: "POST",
-          headers: authHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
-          body: JSON.stringify({
-            model: record.request.model,
-            prompt: record.request.prompt.trim(),
-            n: record.request.n ?? 1,
-            size: record.request.size ?? "1024x1024",
-            ...(record.request.aspect_ratio ? { aspect_ratio: record.request.aspect_ratio } : {}),
-            response_format: record.request.response_format ?? "url"
-          }),
-          cache: "no-store"
-        });
+    for (let attempt = 1; attempt <= IMAGE_JOB_MAX_ATTEMPTS; attempt += 1) {
+      const references = record.request.references || [];
+      const response = references.length
+        ? await postImageEdit(record, references)
+        : await postImageGeneration(record);
 
-    const payload = parsePayload(await response.text());
-    if (!response.ok) {
+      const payload = parsePayload(await response.text());
+      if (response.ok) {
+        await saveImageHistory(record, payload);
+        save({ ...record, status: "completed", progress: 100, result: payload, upstream_status: response.status });
+        return;
+      }
+
+      if (attempt < IMAGE_JOB_MAX_ATTEMPTS && isRetryableImageError(response.status, payload)) {
+        save({
+          ...record,
+          status: "in_progress",
+          progress: Math.min(90, 10 + attempt * 25),
+          error: payload,
+          upstream_status: response.status
+        });
+        await wait(IMAGE_JOB_RETRY_DELAY_MS);
+        continue;
+      }
+
       await refundImageJob(record, "image generation failed refund");
       save({
         ...record,
@@ -124,9 +153,6 @@ async function runImageJob(id: string) {
       });
       return;
     }
-
-    await saveImageHistory(record, payload);
-    save({ ...record, status: "completed", progress: 100, result: payload });
   } catch (error) {
     await refundImageJob(record, "image generation failed refund");
     save({
@@ -136,6 +162,22 @@ async function runImageJob(id: string) {
       error: error instanceof Error ? error.message : error
     });
   }
+}
+
+function postImageGeneration(record: ImageJobRecord) {
+  return fetch(`${HELLOBABYGO_BASE_URL}/v1/images/generations`, {
+    method: "POST",
+    headers: authHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+    body: JSON.stringify({
+      model: record.request.model,
+      prompt: record.request.prompt.trim(),
+      n: record.request.n ?? 1,
+      size: record.request.size ?? "1024x1024",
+      ...(record.request.aspect_ratio ? { aspect_ratio: record.request.aspect_ratio } : {}),
+      response_format: record.request.response_format ?? "url"
+    }),
+    cache: "no-store"
+  });
 }
 
 async function postImageEdit(
