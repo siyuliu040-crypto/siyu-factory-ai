@@ -16,9 +16,9 @@
       "name": "wangzhanpeng",
       "passwordHash": "b81cb7b40d0e2d5878f6613e1861f6a1:feb0b50e81c057101c13c1390549164af74148db9e9989f1321cd9461878128384bb92acb3008aa3744174de54642854c322ecb6b821d44d98380c7ecdf02208",
       "role": "user",
-      "credits": 28800000,
+      "credits": 30000000,
       "createdAt": "2026-06-03T02:32:37.576Z",
-      "updatedAt": "2026-06-03T02:57:00.959Z"
+      "updatedAt": "2026-06-03T02:57:02.736Z"
     }
   ],
   "sessions": [
@@ -48,6 +48,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "810ce899-83e8-41c7-ae85-b7c57a1cfb68",
+      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200000,
+      "balanceAfter": 30000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-06-03T02:57:02.737Z"
+    },
     {
       "id": "28185716-c549-4644-8e8d-4f5a7481ef9d",
       "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
