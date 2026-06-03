@@ -570,6 +570,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_wwc4JZ1x6TLb9hSXb7UdfBezV0Yxsg9Y",
+      "userId": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
+      "type": "video",
+      "model": "grok-imagine-1.0-video-ref-10s",
+      "amount": 1700000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T09:57:36.151Z",
+      "updatedAt": "2026-06-03T09:57:36.151Z"
+    },
+    {
       "id": "task_OQB1LWISr6QXExcn5RfSqqFvC3PcUtIc",
       "userId": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
       "type": "video",
@@ -703,6 +714,17 @@
     }
   ],
   "history": [
+    {
+      "id": "a8e98413-630f-4267-95b0-7c9f406131a4",
+      "userId": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
+      "mode": "video",
+      "model": "grok-imagine-1.0-video-ref-10s",
+      "prompt": "9:16 vertical, use uploaded reference image as visual guidance for a short curly pixie wig, realistic studio product video, slow turn, no text, no logo",
+      "taskId": "task_wwc4JZ1x6TLb9hSXb7UdfBezV0Yxsg9Y",
+      "status": "queued",
+      "createdAt": "2026-06-03T09:57:36.151Z",
+      "updatedAt": "2026-06-03T09:57:36.151Z"
+    },
     {
       "id": "967910b0-6558-494c-8dba-81ca3e30ca72",
       "userId": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
