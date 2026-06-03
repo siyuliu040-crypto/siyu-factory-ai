@@ -8,7 +8,10 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "nano_banana_pro-4K-portrait": 280000,
   "firefly-veo31-fast-8s-9x16-1080p": 1200000,
   "firefly-veo31-ref-8s-9x16-1080p": 1600000,
-  "veo_3_1-fast-portrait": 1600000
+  "veo_3_1-fast-portrait": 1600000,
+  "vidu:viduq3-pro-fast": 1400000,
+  "vidu:viduq3-turbo": 1600000,
+  "vidu:viduq3-pro": 1900000
 };
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
@@ -41,6 +44,11 @@ function durationCost(duration?: string | number) {
 
 export function getVideoGenerationCost(model: string, duration?: string | number) {
   const lower = model.toLowerCase();
+  if (lower.startsWith("vidu:")) {
+    const seconds = Math.max(1, Number(duration || 8));
+    const multiplier = lower.includes("q3-pro-fast") ? 1 : lower.includes("q3-turbo") ? 1.15 : 1.35;
+    return Math.round(Math.max(900000, seconds * 175000 * multiplier));
+  }
   if (MODEL_CREDIT_COSTS[model] && lower.includes("firefly-veo31")) return MODEL_CREDIT_COSTS[model];
   const base = durationCost(duration || lower.match(/(\d+)s/)?.[1]);
   if (lower.includes("hd") || lower.includes("ref")) return base + 400000;
