@@ -16,9 +16,9 @@
       "name": "wangzhanpeng",
       "passwordHash": "b81cb7b40d0e2d5878f6613e1861f6a1:feb0b50e81c057101c13c1390549164af74148db9e9989f1321cd9461878128384bb92acb3008aa3744174de54642854c322ecb6b821d44d98380c7ecdf02208",
       "role": "user",
-      "credits": 27375000,
+      "credits": 25375000,
       "createdAt": "2026-06-03T02:32:37.576Z",
-      "updatedAt": "2026-06-03T06:16:30.619Z"
+      "updatedAt": "2026-06-03T06:35:46.560Z"
     },
     {
       "id": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
@@ -70,6 +70,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "903a8e83-2086-4afa-abc2-e58e57a1a5b6",
+      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
+      "amount": -2000000,
+      "balanceAfter": 25375000,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T06:35:46.560Z",
+      "metadata": {
+        "model": "veo_3_1-fast-portrait",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "c37bd350-222f-4bd7-a3c8-7c16197aefb0",
       "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
