@@ -139,7 +139,6 @@ const TOPUP_URL = "https://api.hellobabygo.com/console/topup";
 const MAX_REFERENCE_IMAGES = 6;
 const MAX_REFERENCE_SIDE = 1280;
 const REFERENCE_IMAGE_QUALITY = 0.82;
-const HISTORY_KEY = "siyu-factory-generation-history";
 const HISTORY_LIMIT = 40;
 const MAX_BATCH_VIDEOS = 10;
 const DISPLAY_CREDIT_SCALE = 10000;
@@ -628,21 +627,6 @@ function findQuotaValue(data: unknown, language: Language): string {
   return "";
 }
 
-function readHistory(): HistoryItem[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const stored = window.localStorage.getItem(HISTORY_KEY);
-    const parsed = stored ? JSON.parse(stored) : [];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
-function writeHistory(items: HistoryItem[]) {
-  window.localStorage.setItem(HISTORY_KEY, JSON.stringify(items.slice(0, HISTORY_LIMIT)));
-}
-
 function normalizeHistoryItems(items: unknown): HistoryItem[] {
   if (!Array.isArray(items)) return [];
   return items
@@ -662,6 +646,13 @@ function normalizeHistoryItems(items: unknown): HistoryItem[] {
       };
     })
     .filter((item) => item.model && item.prompt);
+}
+
+function getHistoryVideoPreviewUrl(item: HistoryItem) {
+  if (item.previewUrl) return item.previewUrl;
+  const taskId = item.videoId || item.taskId;
+  if (!taskId || !isVideoDone(item.status, { status: item.status })) return "";
+  return `/api/videos/${encodeURIComponent(taskId)}/content`;
 }
 
 export default function Studio() {
@@ -699,7 +690,7 @@ export default function Studio() {
   const [batchJobs, setBatchJobs] = useState<BatchJob[]>([]);
   const [quota, setQuota] = useState<QuotaResult | null>(null);
   const [isQuotaLoading, setIsQuotaLoading] = useState(true);
-  const [history, setHistory] = useState<HistoryItem[]>(() => readHistory());
+  const [history, setHistory] = useState<HistoryItem[]>([]);
   const [isOptimizingReferences, setIsOptimizingReferences] = useState(false);
   const [error, setError] = useState("");
   const [session, setSession] = useState<AuthSession | null>(null);
@@ -797,6 +788,8 @@ export default function Studio() {
       if (payload.authenticated) {
         void refreshQuota(false);
         void refreshHistory();
+      } else {
+        setHistory([]);
       }
     } catch {
       setSession({ authenticated: false });
@@ -827,7 +820,6 @@ export default function Studio() {
     setSession({ authenticated: false });
     setQuota(null);
     setHistory([]);
-    writeHistory([]);
   }
 
   async function refreshHistory() {
@@ -837,9 +829,8 @@ export default function Studio() {
       if (!response.ok) return;
       const next = normalizeHistoryItems(payload.history).slice(0, HISTORY_LIMIT);
       setHistory(next);
-      writeHistory(next);
     } catch {
-      // Local history remains available if the server-side history endpoint is unavailable.
+      setHistory([]);
     }
   }
 
@@ -992,12 +983,19 @@ export default function Studio() {
     const nextItem = { ...item, id: `${Date.now()}-${Math.random().toString(16).slice(2)}`, createdAt: new Date().toISOString() };
     const next = [nextItem, ...history].slice(0, HISTORY_LIMIT);
     setHistory(next);
-    writeHistory(next);
     void fetch("/api/history", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nextItem)
-    }).catch(() => undefined);
+    })
+      .then((response) => response.ok ? response.json() : null)
+      .then((payload) => {
+        const saved = normalizeHistoryItems(payload?.history ? [payload.history] : [])[0];
+        if (saved) {
+          setHistory((current) => current.map((entry) => entry.id === nextItem.id ? saved : entry));
+        }
+      })
+      .catch(() => undefined);
   }
 
   function updateVideoHistory(taskId: string, result: VideoResult) {
@@ -1006,14 +1004,12 @@ export default function Studio() {
       const next = current.map((item) =>
         item.videoId === taskId ? { ...item, previewUrl: previewUrl || item.previewUrl, status: result.status || item.status } : item
       );
-      writeHistory(next);
       return next;
     });
   }
 
   function clearHistory() {
     setHistory([]);
-    window.localStorage.removeItem(HISTORY_KEY);
     void fetch("/api/history", { method: "DELETE" }).catch(() => undefined);
   }
 
@@ -1925,21 +1921,23 @@ export default function Studio() {
                 </div>
                 <div className="history-section-title"><Film size={14} />{t.video}</div>
                 <div className="history-list">
-                  {videoHistory.map((item) => (
-                    <button className="history-item" key={item.id} onClick={() => restoreHistory(item)} type="button">
-                      <div className="history-thumb">
-                        {item.previewUrl ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img alt={item.prompt} src={item.previewUrl} />
-                        ) : <Film size={22} />}
-                      </div>
-                      <div>
-                        <strong>{t.video}</strong>
-                        <span>{item.prompt}</span>
-                        <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
-                      </div>
-                    </button>
-                  ))}
+                  {videoHistory.map((item) => {
+                    const previewUrl = getHistoryVideoPreviewUrl(item);
+                    return (
+                      <button className="history-item" key={item.id} onClick={() => restoreHistory(item)} type="button">
+                        <div className="history-thumb video-thumb">
+                          {previewUrl ? (
+                            <video muted playsInline preload="metadata" src={previewUrl} />
+                          ) : <Film size={22} />}
+                        </div>
+                        <div>
+                          <strong>{t.video}</strong>
+                          <span>{item.prompt}</span>
+                          <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
+                        </div>
+                      </button>
+                    );
+                  })}
                   {!videoHistory.length ? <p className="history-empty">{t.historyEmpty}</p> : null}
                 </div>
               </>
