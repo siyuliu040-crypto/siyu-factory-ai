@@ -4,8 +4,8 @@ import { VIDU_MODELS } from "@/lib/vidu";
 export const dynamic = "force-dynamic";
 
 const CUSTOM_VIDEO_MODELS = [
-  "grok-imagine-1.0-video-6s",
-  "grok-imagine-1.0-video-10s"
+  "grok-imagine-1.0-video-ref-6s",
+  "grok-imagine-1.0-video-ref-10s"
 ];
 
 function isAllowedModel(model: unknown) {
