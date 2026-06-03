@@ -1,6 +1,24 @@
 {
-  "users": [],
-  "sessions": [],
+  "users": [
+    {
+      "id": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "email": "137700116@qq.com",
+      "name": "siyu",
+      "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
+      "role": "admin",
+      "credits": 20000000,
+      "createdAt": "2026-06-03T00:39:56.017Z",
+      "updatedAt": "2026-06-03T00:39:56.017Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "3266af1ccf710192378a836499b3b63fb24aa16a8a55aad089efb52b68e55a86",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "expiresAt": "2026-06-10T00:39:56.240Z",
+      "createdAt": "2026-06-03T00:39:56.240Z"
+    }
+  ],
   "ledger": [],
   "generationTasks": [],
   "history": []
