@@ -273,8 +273,28 @@ button:disabled {
 
 .grant-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   gap: 8px;
+}
+
+.danger-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid rgba(190, 61, 61, 0.28);
+  border-radius: 12px;
+  background: rgba(255, 246, 246, 0.86);
+  color: #9f2f2f;
+  font-weight: 900;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  border-color: rgba(190, 61, 61, 0.48);
+  background: rgba(255, 236, 236, 0.94);
 }
 
 .admin-message {
@@ -1338,6 +1358,10 @@ button.status-pill {
   }
 
   .param-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grant-row {
     grid-template-columns: 1fr;
   }
 
