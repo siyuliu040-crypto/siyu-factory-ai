@@ -349,6 +349,10 @@ function isVideoModel(model: string) {
   return lower.includes("video") || lower.includes("veo") || lower.startsWith("vidu:");
 }
 
+function isViduModelId(model: string) {
+  return model.toLowerCase().startsWith("vidu:");
+}
+
 function getCreditCost(model: string, duration?: string) {
   if (isVideoModel(model)) return getVideoGenerationCost(model, duration);
   return getModelCreditCost(model);
@@ -402,7 +406,7 @@ function getModelDescription(model: string, language: Language) {
       : lower.includes("turbo")
         ? language === "zh" ? "Q3 Turbo · 参考图必填" : "Q3 Turbo · reference required"
         : language === "zh" ? "Q3 Pro · 参考图必填" : "Q3 Pro · reference required";
-    return `${aspect} · 4/8/12/15 秒可选 · ${speed}`;
+    return `${aspect} · 模型默认时长 · ${speed}`;
   }
   const reference = lower.includes("hd") || lower.includes("ref") || lower.includes("veo")
     ? copy[language].modelCanReference
@@ -464,6 +468,24 @@ function getRetryMessage(language: Language, attempt: number) {
 }
 function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function readJsonResponse<T>(response: Response): Promise<T> {
+  const text = await response.text();
+  if (!text.trim()) {
+    return {
+      error: "empty_response",
+      message: "The server returned an empty response."
+    } as T;
+  }
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    return {
+      error: "invalid_json_response",
+      message: text
+    } as T;
+  }
 }
 
 function getTransientVideoMessage(language: Language) {
@@ -624,7 +646,7 @@ export default function Studio() {
     }))
   );
   const [imageSize, setImageSize] = useState("1024x1792");
-  const [seconds, setSeconds] = useState("8");
+  const [seconds] = useState("8");
   const [videoSize, setVideoSize] = useState("720x1280");
   const [imageUrl, setImageUrl] = useState("");
   const [referenceFiles, setReferenceFiles] = useState<File[]>([]);
@@ -706,12 +728,18 @@ export default function Studio() {
   const referenceInputId = `reference-images-${mode}`;
   const singleVideoHasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
   const activeModel = mode === "image" ? imageModel : videoModel;
-  const activeModelCost = getCreditCost(activeModel, seconds);
+  const activeModelCost = getCreditCost(activeModel);
+  const activeVideoNeedsReference = mode === "video" && isViduModelId(activeModel);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
-  const canSubmit = prompt.trim().length > 0 && !isLoading && Boolean(currentUser) && canAffordActiveModel;
+  const canSubmit =
+    prompt.trim().length > 0 &&
+    !isLoading &&
+    Boolean(currentUser) &&
+    canAffordActiveModel &&
+    (!activeVideoNeedsReference || singleVideoHasReference);
   const filledBatchSlots = batchPrompts.filter((item) => item.value.trim()).slice(0, MAX_BATCH_VIDEOS);
   const batchCreditTotal = filledBatchSlots.length
-    ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds), seconds), 0)
+    ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds)), 0)
     : undefined;
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal);
   const showCreditWarning = Boolean(currentUser && activeModelCost && currentUser.credits < activeModelCost);
@@ -827,7 +855,7 @@ export default function Studio() {
         ...current,
         ...optimized.map((file) => ({ name: file.name, url: URL.createObjectURL(file) }))
       ]);
-      setVideoModel(getEffectiveVideoModel(videoSize, true, seconds));
+      if (!isViduModelId(videoModel)) setVideoModel(getEffectiveVideoModel(videoSize, true, seconds));
     } finally {
       setIsOptimizingReferences(false);
     }
@@ -839,7 +867,9 @@ export default function Studio() {
     const nextFiles = referenceFiles.filter((_, itemIndex) => itemIndex !== index);
     setReferenceFiles(nextFiles);
     setReferencePreviews((current) => current.filter((_, itemIndex) => itemIndex !== index));
-    setVideoModel(getEffectiveVideoModel(videoSize, nextFiles.length > 0 || imageUrl.trim().length > 0, seconds));
+    if (!isViduModelId(videoModel)) {
+      setVideoModel(getEffectiveVideoModel(videoSize, nextFiles.length > 0 || imageUrl.trim().length > 0, seconds));
+    }
   }
 
   function clearReferences() {
@@ -847,7 +877,7 @@ export default function Studio() {
     setReferenceFiles([]);
     setReferencePreviews([]);
     setImageUrl("");
-    setVideoModel(getEffectiveVideoModel(videoSize, false, seconds));
+    if (!isViduModelId(videoModel)) setVideoModel(getEffectiveVideoModel(videoSize, false, seconds));
   }
 
   function updateBatchPrompt(id: string, value: string) {
@@ -1083,13 +1113,13 @@ export default function Studio() {
     const formData = new FormData();
     formData.set("model", model);
     formData.set("prompt", videoPrompt);
-    formData.set("seconds", seconds);
+    if (!isViduModelId(model)) formData.set("seconds", seconds);
     formData.set("size", videoSize);
     if (referenceUrl) formData.set("image_url", referenceUrl);
     for (const reference of references) formData.append("input_reference", reference, reference.name);
 
     const response = await fetch("/api/videos/generate", { method: "POST", body: formData });
-    const payload = (await response.json()) as VideoResult;
+    const payload = await readJsonResponse<VideoResult>(response);
     if (!response.ok) throw new Error(JSON.stringify(payload));
     return payload;
   }
@@ -1100,7 +1130,7 @@ export default function Studio() {
       let transientAttempts = 0;
       for (let attempt = 0; attempt < VIDEO_MAX_POLL_ATTEMPTS; attempt += 1) {
         const response = await fetch(`/api/videos/${encodeURIComponent(id)}`);
-        const payload = (await response.json()) as VideoResult;
+        const payload = await readJsonResponse<VideoResult>(response);
         if (!response.ok && !isTransientVideoStatusError(payload)) throw new Error(JSON.stringify(payload));
 
         if (payload.transient || isTransientVideoStatusError(payload)) {
@@ -1475,7 +1505,7 @@ export default function Studio() {
                     <span>{getModelTitle(model, language)}</span>
                     <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
                   </div>
-                  <small>{formatCreditCost(model, language, seconds)}</small>
+                  <small>{formatCreditCost(model, language)}</small>
                   {active ? <Wand2 size={15} /> : null}
                 </button>
               );
@@ -1495,7 +1525,7 @@ export default function Studio() {
                 <Languages size={15} />{language === "zh" ? "简体中文" : "English"}
               </button>
               <div className="status-pill"><Clapperboard size={15} />{activeModel}</div>
-              <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language, seconds)}</div>
+              <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language)}</div>
             </div>
           </header>
 
@@ -1508,7 +1538,7 @@ export default function Studio() {
                   <span>
                     {tx("noCreditsBody", "当前账号积分不够生成，请联系主账号分配积分后再试。")}
                     {" "}
-                    {tx("estimatedCost", "预计消耗")}: {formatCreditCost(activeModel, language, seconds)}
+                    {tx("estimatedCost", "预计消耗")}: {formatCreditCost(activeModel, language)}
                   </span>
                 </div>
               </div>
@@ -1546,24 +1576,6 @@ export default function Studio() {
               <>
                 <div className="param-grid">
                   <div className="field">
-                    <label htmlFor="seconds">{t.duration}</label>
-                    <select
-                      className="select"
-                      id="seconds"
-                      onChange={(event) => {
-                        const nextSeconds = event.target.value;
-                        setSeconds(nextSeconds);
-                        setVideoModel(getEffectiveVideoModel(videoSize, referenceFiles.length > 0 || imageUrl.trim().length > 0, nextSeconds));
-                      }}
-                      value={seconds}
-                    >
-                      <option value="4">{t.seconds4}</option>
-                      <option value="8">{t.seconds8}</option>
-                      <option value="12">{t.seconds12}</option>
-                      <option value="15">{t.seconds15}</option>
-                    </select>
-                  </div>
-                  <div className="field">
                     <label htmlFor="video-size">{t.aspect}</label>
                     <select
                       className="select"
@@ -1571,7 +1583,9 @@ export default function Studio() {
                       onChange={(event) => {
                         const nextSize = event.target.value;
                         setVideoSize(nextSize);
-                        setVideoModel(getEffectiveVideoModel(nextSize, referenceFiles.length > 0 || imageUrl.trim().length > 0, seconds));
+                        if (!isViduModelId(videoModel)) {
+                          setVideoModel(getEffectiveVideoModel(nextSize, referenceFiles.length > 0 || imageUrl.trim().length > 0, seconds));
+                        }
                       }}
                       value={videoSize}
                     >
@@ -1579,10 +1593,14 @@ export default function Studio() {
                     </select>
                   </div>
                   <div className="field">
+                    <label>{tx("durationAuto", "时长")}</label>
+                    <input className="input" readOnly value={tx("modelDefaultDuration", "模型默认选择")} />
+                  </div>
+                  <div className="field">
                     <label>{t.estimatedCost}</label>
                     <button className="primary-button" disabled={!canSubmit} onClick={generateVideo} type="button">
                       {isLoading ? <Loader2 size={18} /> : <Play size={18} />}{t.generateVideo}
-                      <small>{formatCreditCost(videoModel, language, seconds)}</small>
+                      <small>{formatCreditCost(videoModel, language)}</small>
                     </button>
                   </div>
                 </div>
@@ -1597,7 +1615,7 @@ export default function Studio() {
                       <div className="batch-card" key={slot.id}>
                         <div className="batch-card-head">
                           <strong>{tx("work", "作品")} {index + 1}</strong>
-                          <small>{formatCreditCost(getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds), language, seconds)}</small>
+                          <small>{formatCreditCost(getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds), language)}</small>
                         </div>
                         <textarea
                           className="textarea batch-textarea"
@@ -1703,7 +1721,9 @@ export default function Studio() {
                       className="input"
                       onChange={(event) => {
                         setImageUrl(event.target.value);
-                        setVideoModel(getEffectiveVideoModel(videoSize, referenceFiles.length > 0 || event.target.value.trim().length > 0, seconds));
+                        if (!isViduModelId(videoModel)) {
+                          setVideoModel(getEffectiveVideoModel(videoSize, referenceFiles.length > 0 || event.target.value.trim().length > 0, seconds));
+                        }
                       }}
                       placeholder={t.optionalReferenceUrl}
                       value={imageUrl}
@@ -1788,7 +1808,7 @@ export default function Studio() {
                 <div className="batch-job" key={job.id}>
                   <div>
                     <strong>#{index + 1} {job.status}</strong>
-                    <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language, seconds)}</span>
+                    <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language)}</span>
                     <small>{job.prompt}</small>
                   </div>
                   {job.url ? <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer"><Download size={15} />{t.download}</a> : null}
