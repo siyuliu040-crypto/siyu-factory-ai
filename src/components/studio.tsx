@@ -173,8 +173,9 @@ const stableVideoModels = [
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
-  "firefly-veo31-fast-8s-9x16-1080p",
-  "veo_3_1-fast-portrait"
+  "vidu:viduq2-pro-fast",
+  "vidu:viduq2-turbo",
+  "grok-imagine-1.0-video"
 ];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
@@ -441,6 +442,7 @@ function formatQuotaText(value: string) {
 function getModelTitle(model: string, language: Language) {
   const lower = model.toLowerCase();
   if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";
+  if (lower.includes("grok-imagine")) return language === "zh" ? "Grok 文字视频" : "Grok Text to Video";
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
   if (lower.includes("veo_3_1")) return language === "zh" ? "VEO 3.1 Fast" : "VEO 3.1 Fast";
   if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro" : "Nano Banana Pro";
@@ -452,12 +454,18 @@ function getModelDescription(model: string, language: Language) {
   const lower = model.toLowerCase();
   const aspect = language === "zh" ? "9:16 竖屏" : "9:16 portrait";
   if (lower.startsWith("vidu:")) {
+    const family = lower.includes("q2") ? "Q2" : "Q3";
     const speed = lower.includes("pro-fast")
-      ? language === "zh" ? "Q3 Pro Fast · 参考图必填" : "Q3 Pro Fast · reference required"
+      ? language === "zh" ? `${family} Pro Fast · 参考图必填` : `${family} Pro Fast · reference required`
       : lower.includes("turbo")
-        ? language === "zh" ? "Q3 Turbo · 参考图必填" : "Q3 Turbo · reference required"
-        : language === "zh" ? "Q3 Pro · 参考图必填" : "Q3 Pro · reference required";
+        ? language === "zh" ? `${family} Turbo · 参考图必填` : `${family} Turbo · reference required`
+        : language === "zh" ? `${family} Pro · 参考图必填` : `${family} Pro · reference required`;
     return `${aspect} · 5/8/12/15 秒可选 · ${speed}`;
+  }
+  if (lower.includes("grok-imagine")) {
+    return language === "zh"
+      ? `${aspect} · 6/10 秒可选 · 纯提示词视频`
+      : `${aspect} · 6/10s selectable · prompt-only video`;
   }
   const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
@@ -477,6 +485,12 @@ function getDurationOptions(model: string, language: Language) {
       { value: "8", label: language === "zh" ? "8 秒" : "8 seconds" },
       { value: "12", label: language === "zh" ? "12 秒" : "12 seconds" },
       { value: "15", label: language === "zh" ? "15 秒" : "15 seconds" }
+    ];
+  }
+  if (lower.includes("grok-imagine")) {
+    return [
+      { value: "6", label: language === "zh" ? "6 秒" : "6 seconds" },
+      { value: "10", label: language === "zh" ? "10 秒" : "10 seconds" }
     ];
   }
   if (lower.includes("firefly-veo31")) {
