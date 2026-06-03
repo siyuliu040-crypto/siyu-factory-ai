@@ -11,7 +11,14 @@
       "updatedAt": "2026-06-03T00:40:05.224Z"
     }
   ],
-  "sessions": [],
+  "sessions": [
+    {
+      "token": "569bd3e919087a460eaf181f2f05a3825255c5ac79a22181534c7120de41f8c3",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "expiresAt": "2026-06-10T01:00:58.635Z",
+      "createdAt": "2026-06-03T01:00:58.635Z"
+    }
+  ],
   "ledger": [
     {
       "id": "ea6b852c-139e-4aa2-8e21-9a4781e657e8",
