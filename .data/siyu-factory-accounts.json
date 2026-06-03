@@ -107,6 +107,17 @@
   ],
   "generationTasks": [
     {
+      "id": "959580364156706816",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "vidu:viduq3-pro-fast",
+      "amount": 2625000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T02:21:42.254Z",
+      "updatedAt": "2026-06-03T02:21:42.254Z"
+    },
+    {
       "id": "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -130,6 +141,17 @@
     }
   ],
   "history": [
+    {
+      "id": "82cbc7c2-ab01-41ce-bf2f-688f2a81c2bc",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "vidu:viduq3-pro-fast",
+      "prompt": "Create a 15-second vertical 9:16 ultra-realistic TikTok US UGC hair bundle video. Real handheld iPhone front-camera selfie inside a car, daylight, sharp background, no blurred background, no bokeh, no subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI.\r\n\r\nSCENE:\r\nInside a real car during daytime. Light gray fabric seats, gray headrests, a white backpack on the back seat, rear window showing blue sky, trees, road signs, and parked cars outside. Natural sunlight comes through the side window and rear window, creating soft highlights on the hair. The car interior must stay clear and sharp, not blurred.\r\n\r\nPERSON:\r\nA young American Black woman, early 20s to early 30s, smooth brown skin with realistic pores, natural glam makeup, long lashes, small nose piercing, braces visible when she smiles, glossy lips. She wears a pink strapless fitted top and a simple necklace. Her expression changes naturally from playful confidence to serious product proof, then excited recommendation.\r\n\r\nPRODUCT:\r\nNatural black body wave human hair bundles, long, full, soft, glossy but realistic, thick full ends, defined body wave pattern, no plastic shine, no stiff wig look.\r\n\r\n0-3s GOLDEN HOOK:\r\nFront-camera selfie angle. She sits in the passenger seat or driver seat, slightly tilting her head down, then looks up at the camera with a small smile. Sunlight hits the top of her black body wave hair. She lightly grabs one side of her hair and flips it forward over her shoulder. Her eyes narrow slightly from the sunlight, then she smiles bigger, showing braces.\r\nVO:\r\n“You guys… this body bundle is not playing.”\r\n\r\n3-6s PRODUCT SHOW:\r\nClean jump cut. She holds a natural black body wave bundle close to the camera, product filling 70%-75% of the frame. Her fingers hold the top weft firmly, thumb in front, four fingers behind. Sunlight from the car window hits the bundle, showing soft waves and shine. The installed hairstyle stays behind her shoulder, clearly separate from the handheld bundle.\r\nVO:\r\n“No cap, I hate bundles that look full on top but thin at the ends.”\r\n\r\n6-9s DETAIL PROOF:\r\nExtreme close-up. She slowly runs her fingers through the bundle from mid-length to the ends. The waves separate smoothly and bounce back. The thick ends fall evenly into her palm. She looks down at the ends, eyebrows lift slightly, eyes widen, then she gives a satisfied little nod.\r\nVO:\r\n“Look at that — soft, bouncy, and full all the way down.”\r\n\r\n9-12s WEAR EFFECT:\r\nBack to selfie angle. She lets the installed body wave hair fall across her chest and lightly shakes her head side to side. The curls move naturally in the car light. She tucks one front piece away from her face, then leans closer to the camera with a confident half-smile.\r\nVO:\r\n“Car mirror check? Passed. This is the kind of hair that makes the whole look better.”\r\n\r\n12-15s CTA:\r\nFinal close-up. She holds the body wave bundle near the camera while her finished body wave hairstyle is visible behind it but not touching. She smiles, slightly raises one eyebrow, and gently shakes the bundle once to show bounce and thick ends.\r\nVO:\r\n“Tap the link and grab this body bundle today. Don’t wait on this one.”\r\n\r\nANTI-FAIL RULES:\r\nNo subtitles, no captions, no text overlay, no letters, no numbers, no readable car signs, no logo, no watermark, no TikTok UI. Keep the car background sharp and realistic, not blurred. The handheld bundle must never touch, overlap, or merge with the installed hairstyle. No installation process. No hair clipping through hands, face, shoulders, necklace, car seat, seatbelt, or clothes. No extra fingers, distorted hands, plastic skin, floating bundle, duplicated bundle, changing hair texture, or sudden outfit changes. Keep the same woman, same pink top, same car interior, same natural black body wave texture, and same lighting throughout the entire video.",
+      "taskId": "959580364156706816",
+      "status": "created",
+      "createdAt": "2026-06-03T02:21:42.254Z",
+      "updatedAt": "2026-06-03T02:21:42.254Z"
+    },
     {
       "id": "a2b00ecc-b8a0-4080-b7a1-f48c6c0f7253",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
