@@ -9,6 +9,16 @@
       "credits": 6496250,
       "createdAt": "2026-06-03T00:39:56.017Z",
       "updatedAt": "2026-06-03T02:21:39.107Z"
+    },
+    {
+      "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
+      "email": "wangzhanpeng259@gmail.com",
+      "name": "wangzhanpeng",
+      "passwordHash": "b81cb7b40d0e2d5878f6613e1861f6a1:feb0b50e81c057101c13c1390549164af74148db9e9989f1321cd9461878128384bb92acb3008aa3744174de54642854c322ecb6b821d44d98380c7ecdf02208",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T02:32:37.576Z",
+      "updatedAt": "2026-06-03T02:32:37.576Z"
     }
   ],
   "sessions": [
@@ -29,6 +39,12 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-06-10T02:20:48.929Z",
       "createdAt": "2026-06-03T02:20:48.929Z"
+    },
+    {
+      "token": "f3abedfb7f710efd72ac2e7069117c7d5b193059ae854a310f34e2c9ec5f61a6",
+      "userId": "d8385e30-dc7a-431f-8f20-58b80ee38971",
+      "expiresAt": "2026-06-10T02:32:37.728Z",
+      "createdAt": "2026-06-03T02:32:37.728Z"
     }
   ],
   "ledger": [
