@@ -1,17 +1,7 @@
 {
-    "ledger":  [
-
-               ],
-    "history":  [
-
-                ],
-    "users":  [
-
-              ],
-    "sessions":  [
-
-                 ],
-    "generationTasks":  [
-
-                        ]
+  "users": [],
+  "sessions": [],
+  "ledger": [],
+  "generationTasks": [],
+  "history": []
 }
