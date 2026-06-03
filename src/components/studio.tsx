@@ -244,6 +244,12 @@ const copy = {
     subtractCredits: "减积分",
     memberCredits: "成员积分管理",
     selectMember: "选择用户",
+    creditAmount: "调整积分数量",
+    creditAmountHint: "手动输入要增加或扣减的站内积分，例如 120。",
+    selectedBalance: "当前余额",
+    afterAdd: "加后余额",
+    afterSubtract: "减后余额",
+    insufficientAfterSubtract: "积分不足",
     refreshAccount: "刷新账号",
     invalidCreditAmount: "请输入大于 0 的积分",
     grantSuccess: "积分已增加",
@@ -325,6 +331,12 @@ const copy = {
     subtractCredits: "Subtract",
     memberCredits: "Member credits",
     selectMember: "Select user",
+    creditAmount: "Credit amount",
+    creditAmountHint: "Type the site credits to add or subtract, for example 120.",
+    selectedBalance: "Current balance",
+    afterAdd: "After add",
+    afterSubtract: "After subtract",
+    insufficientAfterSubtract: "Not enough",
     refreshAccount: "Refresh account",
     invalidCreditAmount: "Enter credits greater than 0",
     grantSuccess: "Credits added",
@@ -779,6 +791,10 @@ export default function Studio() {
   const showCreditWarning = Boolean(currentUser && activeModelCost && currentUser.credits < activeModelCost);
   const imageHistory = history.filter((item) => item.mode === "image");
   const videoHistory = history.filter((item) => item.mode === "video");
+  const selectedGrantUser = (session?.users || []).find((user) => user.id === grantUserId);
+  const grantInternalAmount = parseDisplayCredits(grantAmount);
+  const addPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits + grantInternalAmount : undefined;
+  const subtractPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits - grantInternalAmount : undefined;
 
   async function refreshSession() {
     try {
@@ -1508,7 +1524,10 @@ export default function Studio() {
               </a>
 
               <div className="admin-panel">
-                <p className="section-label compact"><Users size={14} />{tx("memberCredits", "成员积分管理")}</p>
+                <div className="admin-panel-head">
+                  <p className="section-label compact"><Users size={14} />{tx("memberCredits", "成员积分管理")}</p>
+                  <button className="text-button" onClick={() => void refreshSession()} type="button">{tx("refreshAccount", "刷新账号")}</button>
+                </div>
                 <select className="select" onChange={(event) => setGrantUserId(event.target.value)} value={grantUserId}>
                   <option value="">{tx("selectMember", "选择用户")}</option>
                   {(session?.users || []).map((user) => (
@@ -1517,8 +1536,45 @@ export default function Studio() {
                     </option>
                   ))}
                 </select>
-                <div className="grant-row">
-                  <input className="input" onChange={(event) => setGrantAmount(event.target.value)} type="number" value={grantAmount} />
+
+                <div className="credit-adjust-field">
+                  <label htmlFor="credit-adjust-amount">{tx("creditAmount", "调整积分数量")}</label>
+                  <input
+                    className="input"
+                    id="credit-adjust-amount"
+                    inputMode="decimal"
+                    min="0"
+                    onChange={(event) => setGrantAmount(event.target.value)}
+                    placeholder="120"
+                    step="1"
+                    type="number"
+                    value={grantAmount}
+                  />
+                  <small>{tx("creditAmountHint", "手动输入要增加或扣减的站内积分，例如 120。")}</small>
+                </div>
+
+                <div className="credit-preview-grid">
+                  <div>
+                    <span>{tx("selectedBalance", "当前余额")}</span>
+                    <strong>{selectedGrantUser ? formatDisplayCredits(selectedGrantUser.credits) : "-"}</strong>
+                  </div>
+                  <div>
+                    <span>{tx("afterAdd", "加后余额")}</span>
+                    <strong>{addPreviewCredits !== undefined ? formatDisplayCredits(addPreviewCredits) : "-"}</strong>
+                  </div>
+                  <div>
+                    <span>{tx("afterSubtract", "减后余额")}</span>
+                    <strong className={subtractPreviewCredits !== undefined && subtractPreviewCredits < 0 ? "danger-text" : ""}>
+                      {subtractPreviewCredits === undefined
+                        ? "-"
+                        : subtractPreviewCredits < 0
+                          ? tx("insufficientAfterSubtract", "积分不足")
+                          : formatDisplayCredits(subtractPreviewCredits)}
+                    </strong>
+                  </div>
+                </div>
+
+                <div className="grant-actions">
                   <button className="secondary-button" onClick={() => void adjustUserCredits("add")} type="button">
                     <Plus size={16} />{tx("addCredits", "加积分")}
                   </button>
