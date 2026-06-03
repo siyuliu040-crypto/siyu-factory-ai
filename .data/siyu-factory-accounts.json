@@ -563,10 +563,10 @@
       "type": "video",
       "model": "grok-imagine-1.0-video-ref-6s",
       "amount": 1300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-03T09:56:31.254Z",
-      "updatedAt": "2026-06-03T09:56:31.254Z"
+      "updatedAt": "2026-06-03T09:57:28.337Z"
     },
     {
       "id": "task_SR8PF9dYEC501JU6gJ0NTSOdCPqMepN1",
@@ -697,10 +697,11 @@
       "mode": "video",
       "model": "grok-imagine-1.0-video-ref-6s",
       "prompt": "9:16 vertical, use uploaded reference image as visual guidance for a short curly pixie wig, realistic studio product video, slow turn, no text, no logo",
+      "previewUrl": "https://ngrok.zhoushurencz1.top/v1/files/video?id=video_3f69aacedbf64c6ab09b4f1923609e60",
       "taskId": "task_OQB1LWISr6QXExcn5RfSqqFvC3PcUtIc",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-03T09:56:31.254Z",
-      "updatedAt": "2026-06-03T09:57:20.097Z"
+      "updatedAt": "2026-06-03T09:57:28.337Z"
     },
     {
       "id": "bd50a81c-71bf-4e1c-9a54-553d9da6ea36",
