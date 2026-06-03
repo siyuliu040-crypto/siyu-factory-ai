@@ -10,6 +10,7 @@ import {
 import { accountErrorResponse } from "@/lib/account-api";
 import { getVideoGenerationCost } from "@/lib/pricing";
 import { extractVideoUrl } from "@/lib/video-status";
+import { isViduModel, parseViduResponse, toViduModel, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 import { randomUUID } from "crypto";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
@@ -19,6 +20,10 @@ const MIME_EXTENSIONS: Record<string, string> = {
   "image/jpeg": "jpg",
   "image/png": "png",
   "image/webp": "webp"
+};
+const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
+  "720x1280": "720p",
+  "1080x1920": "1080p"
 };
 
 function getPublicBaseUrl(request: Request) {
@@ -40,6 +45,12 @@ async function fileToPublicUrl(request: Request, file: File) {
   await mkdir(UPLOAD_DIR, { recursive: true });
   await writeFile(path.join(UPLOAD_DIR, id), buffer);
   return `${getPublicBaseUrl(request)}/api/uploads/${id}`;
+}
+
+async function fileToDataUrl(file: File) {
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const mediaType = file.type || "image/jpeg";
+  return `data:${mediaType};base64,${buffer.toString("base64")}`;
 }
 
 function getTaskId(payload: unknown) {
@@ -105,6 +116,57 @@ async function postVideoPayload(
   );
 }
 
+async function postViduPayload(
+  payload: Record<string, unknown>,
+  billing: { userId: string; amount: number; model: string }
+) {
+  const response = await fetch(`${VIDU_BASE_URL}/ent/v2/img2video`, {
+    method: "POST",
+    headers: viduHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+    body: JSON.stringify(payload),
+    cache: "no-store"
+  });
+  const data = await parseViduResponse(response);
+  const taskId = getTaskId(data);
+
+  if (!response.ok || !taskId) {
+    await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
+      model: billing.model
+    });
+    return Response.json(data, { status: response.status });
+  }
+
+  await withAccountState((state) => {
+    recordGenerationTask(state, {
+      id: taskId,
+      userId: billing.userId,
+      type: "video",
+      model: billing.model,
+      amount: billing.amount
+    });
+    recordGenerationHistory(state, {
+      userId: billing.userId,
+      type: "video",
+      model: billing.model,
+      prompt: String(payload.prompt || ""),
+      taskId,
+      status: String((data as { state?: unknown })?.state || "queued")
+    });
+  });
+
+  return Response.json(
+    {
+      ...(typeof data === "object" && data ? data : { data }),
+      id: taskId,
+      task_id: taskId,
+      status: String((data as { state?: unknown })?.state || "queued").toLowerCase(),
+      provider: "vidu",
+      charged: billing.amount
+    },
+    { status: response.status }
+  );
+}
+
 export async function POST(request: Request) {
   try {
     const incoming = await request.formData();
@@ -121,7 +183,9 @@ export async function POST(request: Request) {
     const references = incoming
       .getAll("input_reference")
       .filter((value): value is File => value instanceof File && value.size > 0);
-    const uploadedReferenceUrls = await Promise.all(references.map((reference) => fileToPublicUrl(request, reference)));
+    const uploadedReferenceUrls = isViduModel(model)
+      ? []
+      : await Promise.all(references.map((reference) => fileToPublicUrl(request, reference)));
     const referenceUrls = [
       ...(imageUrl ? [String(imageUrl)] : []),
       ...uploadedReferenceUrls
@@ -129,6 +193,29 @@ export async function POST(request: Request) {
     const amount = getVideoGenerationCost(model, String(seconds || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
     const billing = { userId: charge.user.id, amount, model };
+
+    if (isViduModel(model)) {
+      const firstReference = references[0];
+      const firstImage = firstReference ? await fileToDataUrl(firstReference) : String(imageUrl || "");
+      if (!firstImage) {
+        await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", { model });
+        return jsonError({ error: "Vidu image-to-video requires one reference image." }, 400);
+      }
+
+      return postViduPayload(
+        {
+          model: toViduModel(model),
+          images: [firstImage],
+          prompt,
+          duration: Number(seconds || 5),
+          resolution: VIDU_SIZE_TO_RESOLUTION[String(size || "")] || "720p",
+          movement_amplitude: "auto",
+          watermark: false,
+          audio: false
+        },
+        billing
+      );
+    }
 
     if (references.length === 0) {
       return await postVideoPayload(
