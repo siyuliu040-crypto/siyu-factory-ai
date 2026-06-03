@@ -533,10 +533,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro-fast",
       "amount": 900000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-03T08:20:51.880Z",
-      "updatedAt": "2026-06-03T08:20:51.880Z"
+      "updatedAt": "2026-06-03T08:21:57.435Z"
     },
     {
       "id": "task_wuU4aDOkD4Vanjm7XYQXHPwk7hCbkMiq",
@@ -656,10 +656,11 @@
       "mode": "video",
       "model": "vidu:viduq3-pro-fast",
       "prompt": "9:16 vertical, product video of a curly pixie wig, slow turn, studio lighting, no text",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_40/tasks/26/0603/08/959670749751152640/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260603%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260603T082157Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-6-2026-06-03T08%253A21%253A50Z.mp4&x-id=GetObject&X-Amz-Signature=bea0aa24b6dd2d72698a76d7ebf3d189d125a40f52ee6e19f9237911f5648b94",
       "taskId": "959670749751152640",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-03T08:20:51.880Z",
-      "updatedAt": "2026-06-03T08:21:44.717Z"
+      "updatedAt": "2026-06-03T08:21:57.435Z"
     },
     {
       "id": "6e6e2c3c-22bc-49fc-8130-e1a30ad0ef4d",
