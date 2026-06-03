@@ -221,6 +221,8 @@ const copy = {
     topUpHint: "HellobabyGo 钱包",
     quotaErrorTitle: "上游账户余额不足",
     quotaErrorBody: "需要到 HellobabyGo 钱包充值后再生成。",
+    memberQuotaErrorBody: "上游账户余额不足，请联系主账号处理充值后再生成。",
+    adminOnly: "只有主账号可以操作积分。",
     imageFailed: "图片生成失败",
     videoFailed: "视频生成失败",
     videoStillProcessing: "视频任务还在处理中，系统会继续查询。",
@@ -308,6 +310,8 @@ const copy = {
     topUpHint: "HellobabyGo wallet",
     quotaErrorTitle: "Upstream account balance is low",
     quotaErrorBody: "Top up the HellobabyGo wallet before generating again.",
+    memberQuotaErrorBody: "The upstream balance is low. Contact the main account to top up before generating again.",
+    adminOnly: "Only the main account can adjust credits.",
     imageFailed: "Image generation failed",
     videoFailed: "Video generation failed",
     videoStillProcessing: "The video task is still processing. The system will keep checking.",
@@ -802,7 +806,11 @@ export default function Studio() {
       const payload = (await response.json()) as AuthSession;
       setSession(payload);
       if (payload.authenticated) {
-        void refreshQuota(false);
+        if (payload.user?.role === "admin") {
+          void refreshQuota(false);
+        } else {
+          setQuota(null);
+        }
         void refreshHistory();
       } else {
         setHistory([]);
@@ -851,6 +859,10 @@ export default function Studio() {
   }
 
   async function adjustUserCredits(operation: "add" | "subtract") {
+    if (!isAdmin) {
+      setGrantMessage(tx("adminOnly", "只有主账号可以操作积分。"));
+      return;
+    }
     if (!grantUserId) {
       setGrantMessage(tx("selectMember", "选择用户"));
       return;
@@ -1912,10 +1924,12 @@ export default function Studio() {
           </div>
 
           {needsTopUp ? (
-            <div className="quota-alert">
+          <div className="quota-alert">
               <strong>{t.quotaErrorTitle}</strong>
-              <span>{t.quotaErrorBody}</span>
-              <a className="secondary-button" href={TOPUP_URL} rel="noreferrer" target="_blank"><CreditCard size={16} />{t.topUp}</a>
+              <span>{isAdmin ? t.quotaErrorBody : tx("memberQuotaErrorBody", "上游账户余额不足，请联系主账号处理充值后再生成。")}</span>
+              {isAdmin ? (
+                <a className="secondary-button" href={TOPUP_URL} rel="noreferrer" target="_blank"><CreditCard size={16} />{t.topUp}</a>
+              ) : null}
             </div>
           ) : null}
           {displayError ? <div className="status-alert">{displayError}</div> : null}
