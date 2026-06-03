@@ -128,10 +128,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro-fast",
       "amount": 900000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-03T02:04:00.461Z",
-      "updatedAt": "2026-06-03T02:04:00.461Z"
+      "updatedAt": "2026-06-03T02:04:53.982Z"
     },
     {
       "id": "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
@@ -163,10 +163,11 @@
       "mode": "video",
       "model": "vidu:viduq3-pro-fast",
       "prompt": "9:16 vertical product video, clean studio lighting, slow camera movement, short curly pixie wig display, no text, no logo",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_44/tasks/26/0603/02/959575910678278144/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260603%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260603T020453Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-6-2026-06-03T02%253A04%253A42Z.mp4&x-id=GetObject&X-Amz-Signature=32f5a6fd0aaa08e9af3436b3a595bfa97167d0f8aca5c84ac52d438c67bf3099",
       "taskId": "959575910678278144",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-03T02:04:00.461Z",
-      "updatedAt": "2026-06-03T02:04:40.425Z"
+      "updatedAt": "2026-06-03T02:04:53.982Z"
     },
     {
       "id": "a2b00ecc-b8a0-4080-b7a1-f48c6c0f7253",
