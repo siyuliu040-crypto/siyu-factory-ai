@@ -29,6 +29,16 @@
       "credits": 20000000,
       "createdAt": "2026-06-03T06:10:25.337Z",
       "updatedAt": "2026-06-03T07:20:09.654Z"
+    },
+    {
+      "id": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
+      "email": "codex-grok-ref-test-1780480496@example.com",
+      "name": "Codex Grok ref test",
+      "passwordHash": "28be76762e4802957b1c869df96f0e37:4601d6e4a4d6ba19b9431eda376860ccb88e790294fae3f9fc3b3c624dbd1b0ea14380a13f4e5293f3f97b2e7a9fbc8beb21d8ccebd0741733917262a9d2b957",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T09:55:01.271Z",
+      "updatedAt": "2026-06-03T09:55:01.271Z"
     }
   ],
   "sessions": [
@@ -91,6 +101,12 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-06-10T09:19:52.061Z",
       "createdAt": "2026-06-03T09:19:52.061Z"
+    },
+    {
+      "token": "c670b36f05597e39aa933d3b3aff61fdd4a80c07837fc52db927edc27679714f",
+      "userId": "ed6aea15-61ea-415b-a04e-f814a69b21e5",
+      "expiresAt": "2026-06-10T09:55:01.649Z",
+      "createdAt": "2026-06-03T09:55:01.649Z"
     }
   ],
   "ledger": [
