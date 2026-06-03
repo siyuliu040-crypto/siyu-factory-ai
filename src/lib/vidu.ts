@@ -3,9 +3,7 @@ export const VIDU_BASE_URL = process.env.VIDU_API_BASE_URL?.replace(/\/$/, "") |
 export const VIDU_MODELS = [
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
-  "vidu:viduq3-pro",
-  "vidu:viduq2-pro-fast",
-  "vidu:viduq2-turbo"
+  "vidu:viduq3-pro"
 ];
 
 export function isViduModel(model: string) {
