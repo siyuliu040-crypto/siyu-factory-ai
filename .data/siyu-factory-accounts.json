@@ -36,9 +36,9 @@
       "name": "Codex Vidu ref test",
       "passwordHash": "591526a5f4776e0b323cd2a8cd604b8a:1c959acc6c5d8d582027a4d4684156815a0ae06dc0e988ee618b39239b4a1c0090a792a5c92e9629b991b0750f1349078580eeaf080889bf11cd2586f04e2ee5",
       "role": "user",
-      "credits": 6793750,
+      "credits": 5093750,
       "createdAt": "2026-06-03T10:16:36.279Z",
-      "updatedAt": "2026-06-03T10:43:08.909Z"
+      "updatedAt": "2026-06-03T10:44:54.413Z"
     }
   ],
   "sessions": [
@@ -110,6 +110,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "3be518b5-0487-471b-8b88-e3194e50892f",
+      "userId": "72524569-6773-4824-abb2-494855433661",
+      "amount": -1700000,
+      "balanceAfter": 5093750,
+      "reason": "video generation",
+      "createdAt": "2026-06-03T10:44:54.413Z",
+      "metadata": {
+        "model": "grok-imagine-1.0-video-ref-10s",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "0c1b36a4-01a7-4a79-9b8f-2fbdd5236f58",
       "userId": "72524569-6773-4824-abb2-494855433661",
