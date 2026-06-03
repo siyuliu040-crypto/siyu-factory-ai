@@ -47,10 +47,22 @@ function referencePayloadFields(referenceUrls: string[]) {
     first_frame_image: first,
     reference_image: first,
     image_input: referenceUrls,
+    image_urls: referenceUrls,
     images: referenceUrls,
     input_images: referenceUrls,
-    reference_images: referenceUrls
+    reference_images: referenceUrls,
+    reference_image_urls: referenceUrls
   };
+}
+
+function normalizeUpstreamVideoRequest(model: string, seconds: FormDataEntryValue | null) {
+  if (model === "grok-imagine-1.0-video-6s") {
+    return { upstreamModel: "grok-imagine-1.0-video", seconds: "6" };
+  }
+  if (model === "grok-imagine-1.0-video-10s") {
+    return { upstreamModel: "grok-imagine-1.0-video", seconds: "10" };
+  }
+  return { upstreamModel: model, seconds: seconds ? String(seconds) : "" };
 }
 
 async function postVideoPayload(
@@ -164,7 +176,8 @@ export async function POST(request: Request) {
       return jsonError({ error: "model and prompt are required" }, 400);
     }
 
-    const seconds = incoming.get("seconds");
+    const secondsInput = incoming.get("seconds");
+    const { upstreamModel, seconds } = normalizeUpstreamVideoRequest(model, secondsInput);
     const size = incoming.get("size");
     const imageUrl = incoming.get("image_url");
     const references = incoming
@@ -179,7 +192,7 @@ export async function POST(request: Request) {
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
     const billing = { userId: charge.user.id, amount, model };
 
-    if (isViduModel(model)) {
+    if (isViduModel(upstreamModel)) {
       const firstReference = references[0];
       const firstImage = firstReference ? await fileToDataUrl(firstReference) : String(imageUrl || "");
       if (!firstImage) {
@@ -189,7 +202,7 @@ export async function POST(request: Request) {
 
       return postViduPayload(
         {
-          model: toViduModel(model),
+          model: toViduModel(upstreamModel),
           images: [firstImage],
           prompt,
           ...(seconds ? { duration: Number(seconds) } : {}),
@@ -205,7 +218,7 @@ export async function POST(request: Request) {
     if (references.length === 0) {
       return await postVideoPayload(
         {
-          model,
+          model: upstreamModel,
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
@@ -217,7 +230,7 @@ export async function POST(request: Request) {
 
     return await postVideoPayload(
       {
-        model,
+        model: upstreamModel,
         prompt,
         ...(seconds ? { seconds: String(seconds) } : {}),
         ...(size ? { size: String(size) } : {}),
