@@ -571,10 +571,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 1006250,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-03T10:06:46.932Z",
-      "updatedAt": "2026-06-03T10:06:46.932Z"
+      "updatedAt": "2026-06-03T15:07:49.461Z"
     },
     {
       "id": "task_Fnnl7NctqrnWvpbbgbliPrPWU2OddxQI",
@@ -728,9 +728,10 @@
       "model": "vidu:viduq3-turbo",
       "prompt": "Create a vertical 9:16 four-panel storyboard image, arranged in a clean 2x2 grid. No text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface.\n\nPhotorealistic TikTok UGC style, handheld smartphone selfie feeling, realistic skin texture, natural lighting, slight natural grain, authentic creator energy. The same woman must appear consistently in all four panels with the same face, same hairstyle, same outfit, and same identity.\n\nSubject: a confident African American female TikTok beauty creator wearing a full, soft, voluminous human hair wig with natural bounce, clean lace front, realistic hairline, thick ends, shiny but not fake-looking hair. Natural makeup, expressive face, real skin texture, no plastic skin.\n\nPanel 1:\nExtreme close-up selfie angle. The woman looks completely shocked and amazed, eyes wide open, eyebrows lifted high, mouth open as if she just shouted in disbelief. Both hands are raised beside her face naturally, fingers bent realistically. Her head leans back slightly. The emotion feels genuine, like she discovered something unbelievable.\n\nPanel 2:\nMedium close-up selfie angle. Her expression shifts from disbelief into excitement. A smile starts forming. Both hands are in her hair, lifting the roots and fluffing the wig to show fullness and density. The hair looks soft, full, and bouncy. Natural hair movement, realistic fingers, no distorted hands.\n\nPanel 3:\nCloser medium close-up. She leans slightly toward the camera with bright excited eyes and a big genuine smile. One hand lightly taps her chest while the other hand gestures toward herself, showing a spontaneous “I can’t believe this” reaction. The hair frames her face naturally with volume and shine.\n\nPanel 4:\nClose-up beauty proof shot. She shows the clean lace front and natural hairline with one hand, while the other hand runs through the thick soft ends. The curls fall naturally with visible bounce and fullness. She gives a playful confident smile and points slightly downward like a TikTok shopping CTA, but without showing any shopping cart, text, or UI.\n\nOverall image style:\nRealistic smartphone selfie, vertical 9:16, high detail, natural blinking expression, realistic facial emotion, natural finger bending, authentic UGC beauty creator vibe, smooth hair texture, thick full ends, clean lace, luxury hair look, no over-editing, no AI plastic skin.",
       "taskId": "959697404796407808",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-03T10:06:46.932Z",
-      "updatedAt": "2026-06-03T10:13:40.558Z"
+      "updatedAt": "2026-06-03T15:07:49.461Z",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_08/tasks/26/0603/10/959697404796407808/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260603%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260603T150749Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-6-2026-06-03T12%253A57%253A41Z.mp4&x-id=GetObject&X-Amz-Signature=4565c9682f4e39e305955d770c4eb6f4d7114ce394f10aa4cde07c6387c17b1b"
     },
     {
       "id": "5651551d-761f-49e5-9576-a5e6e7402e0a",
