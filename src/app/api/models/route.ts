@@ -1,4 +1,5 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+import { VIDU_MODELS } from "@/lib/vidu";
 
 export const dynamic = "force-dynamic";
 
@@ -21,10 +22,20 @@ export async function GET() {
     });
     const data = await parseUpstreamResponse(response);
     if (data && typeof data === "object" && Array.isArray((data as { data?: unknown }).data)) {
+      const filtered = ((data as { data: unknown[] }).data).filter(isAllowedModel);
+      const liveIds = new Set(filtered.map((item) => String((item as { id?: unknown })?.id || "")));
+      const viduModels = VIDU_MODELS
+        .filter((id) => !liveIds.has(id))
+        .map((id) => ({
+          id,
+          object: "model",
+          owned_by: "vidu",
+          supported_endpoint_types: ["openai-video"]
+        }));
       return Response.json(
         {
           ...(data as Record<string, unknown>),
-          data: ((data as { data: unknown[] }).data).filter(isAllowedModel)
+          data: [...viduModels, ...filtered]
         },
         { status: response.status }
       );
