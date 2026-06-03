@@ -95,6 +95,17 @@ type BatchJob = {
   error?: string;
 };
 
+type ImageTask = {
+  id: string;
+  prompt: string;
+  model: string;
+  status: string;
+  progress: number;
+  result?: ImageResult;
+  url?: string;
+  error?: string;
+};
+
 type BatchPromptSlot = {
   id: string;
   value: string;
@@ -210,10 +221,13 @@ const copy = {
     resultIdle: "生成结果会显示在这里。",
     resultError: "请求返回提示。",
     download: "下载",
+    viewResult: "查看",
     waiting: "等待生成",
     waitingHint: "提交任务后，进度和预览会自动出现在这里。",
     imageSubmitted: "图片任务提交成功",
     imageSubmittedHint: "系统正在后台生成，您可以继续提交下一张图片。",
+    imageTasks: "图片任务",
+    imageTaskEmpty: "当前还没有图片任务。",
     quota: "剩余额度",
     refreshQuota: "刷新额度",
     quotaConnected: "Key 已连接",
@@ -301,10 +315,13 @@ const copy = {
     resultIdle: "Generated output appears here.",
     resultError: "The request returned a notice.",
     download: "Download",
+    viewResult: "View",
     waiting: "Waiting for generation",
     waitingHint: "Progress and preview will appear here after submission.",
     imageSubmitted: "Image task submitted",
     imageSubmittedHint: "The image is generating in the background. You can submit the next image now.",
+    imageTasks: "Image tasks",
+    imageTaskEmpty: "No image tasks in this session yet.",
     quota: "Remaining quota",
     refreshQuota: "Refresh quota",
     quotaConnected: "Key connected",
@@ -707,6 +724,7 @@ export default function Studio() {
   const [isPolling, setIsPolling] = useState(false);
   const [imageResult, setImageResult] = useState<ImageResult | null>(null);
   const [videoResult, setVideoResult] = useState<VideoResult | null>(null);
+  const [imageTasks, setImageTasks] = useState<ImageTask[]>([]);
   const [batchJobs, setBatchJobs] = useState<BatchJob[]>([]);
   const [quota, setQuota] = useState<QuotaResult | null>(null);
   const [isQuotaLoading, setIsQuotaLoading] = useState(true);
@@ -1040,6 +1058,10 @@ export default function Studio() {
     });
   }
 
+  function updateImageTask(id: string, patch: Partial<ImageTask>) {
+    setImageTasks((current) => current.map((item) => (item.id === id ? { ...item, ...patch } : item)));
+  }
+
   function clearHistory() {
     setHistory([]);
     void fetch("/api/history", { method: "DELETE" }).catch(() => undefined);
@@ -1093,6 +1115,10 @@ export default function Studio() {
         const statusResponse = await fetch(`/api/images/status?id=${encodeURIComponent(id)}`);
         const status = (await statusResponse.json()) as ImageJobResult;
         if (!statusResponse.ok) throw new Error(JSON.stringify(status));
+        updateImageTask(id, {
+          status: status.status || "in_progress",
+          progress: status.progress || 0
+        });
         setGenerationStatus({
           label: status.status || tx("statusProcessing", "生成中"),
           detail: id,
@@ -1100,6 +1126,14 @@ export default function Studio() {
           tone: "running"
         });
         if (status.status === "completed" && status.result) {
+          const imageUrl = extractImageUrl(status.result);
+          updateImageTask(id, {
+            status: "completed",
+            progress: 100,
+            result: status.result,
+            url: imageUrl || undefined,
+            error: ""
+          });
           setImageResult(status.result);
           setGenerationStatus({
             label: tx("statusCompleted", "生成完成"),
@@ -1115,6 +1149,11 @@ export default function Studio() {
 
       throw new Error(language === "zh" ? "图片任务还在处理中，请稍后刷新历史记录。" : "Image task is still processing. Check history later.");
     } catch (caught) {
+      updateImageTask(id, {
+        status: "failed",
+        progress: 0,
+        error: cleanErrorMessage(stringifyError(caught), language)
+      });
       setError(stringifyError(caught) || t.imageFailed);
       setGenerationStatus({
         label: tx("statusFailed", "生成失败"),
@@ -1160,6 +1199,14 @@ export default function Studio() {
           });
       const started = (await startResponse.json()) as ImageJobResult;
       if (!startResponse.ok || !started.id) throw new Error(JSON.stringify(started));
+      const nextTask: ImageTask = {
+        id: started.id,
+        prompt,
+        model: imageModel,
+        status: started.status || "queued",
+        progress: started.progress || 0
+      };
+      setImageTasks((current) => [nextTask, ...current].slice(0, 20));
       setGenerationStatus({
         label: tx("imageSubmitted", "图片任务提交成功"),
         detail: tx("imageSubmittedHint", "系统正在后台生成，您可以继续提交下一张图片。"),
@@ -1943,6 +1990,57 @@ export default function Studio() {
             </div>
           ) : null}
           {displayError ? <div className="status-alert">{displayError}</div> : null}
+
+          {mode === "image" ? (
+            <div className="image-task-panel">
+              <div className="history-head">
+                <h3>{tx("imageTasks", "图片任务")}</h3>
+                <small>{imageTasks.length ? `${imageTasks.length}` : tx("imageTaskEmpty", "当前还没有图片任务。")}</small>
+              </div>
+              {imageTasks.length ? (
+                <div className="image-task-list">
+                  {imageTasks.map((task) => (
+                    <div className={`image-task-card ${task.status === "completed" ? "done" : ""} ${task.status === "failed" ? "failed" : ""}`} key={task.id}>
+                      <div className="image-task-thumb">
+                        {task.url ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img alt={task.prompt} src={task.url} />
+                        ) : task.status === "failed" ? (
+                          <X size={22} />
+                        ) : (
+                          <Loader2 className="spin" size={22} />
+                        )}
+                      </div>
+                      <div className="image-task-main">
+                        <div className="image-task-top">
+                          <strong>{task.status}</strong>
+                          <small>{Math.max(0, Math.min(100, task.progress || 0))}%</small>
+                        </div>
+                        <span>{task.model}</span>
+                        <p>{task.prompt}</p>
+                        {task.error ? <em>{task.error}</em> : null}
+                        <div className="status-track compact-track">
+                          <span style={{ width: `${Math.max(0, Math.min(100, task.progress || 0))}%` }} />
+                        </div>
+                      </div>
+                      <div className="image-task-actions">
+                        {task.result ? (
+                          <button className="text-button" onClick={() => setImageResult(task.result || null)} type="button">
+                            {tx("viewResult", "查看")}
+                          </button>
+                        ) : null}
+                        {task.url ? (
+                          <a className="text-button" download href={task.url} target="_blank" rel="noreferrer">
+                            {t.download}
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
 
           {batchJobs.length ? (
             <div className="batch-results">
