@@ -606,6 +606,17 @@
   ],
   "generationTasks": [
     {
+      "id": "959703294287036416",
+      "userId": "72524569-6773-4824-abb2-494855433661",
+      "type": "video",
+      "model": "vidu:viduq3-turbo",
+      "amount": 1006250,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T10:30:11.091Z",
+      "updatedAt": "2026-06-03T10:30:11.091Z"
+    },
+    {
       "id": "959700227235889152",
       "userId": "72524569-6773-4824-abb2-494855433661",
       "type": "video",
@@ -772,6 +783,17 @@
     }
   ],
   "history": [
+    {
+      "id": "f5840b79-344b-4815-968f-f6c78c6dc71b",
+      "userId": "72524569-6773-4824-abb2-494855433661",
+      "mode": "video",
+      "model": "vidu:viduq3-turbo",
+      "prompt": "9:16 vertical product video, keep the uploaded reference object exactly: a matte gray cylindrical cosmetic bottle on a light gray studio background. Subtle camera push, realistic lighting, no text, no logo",
+      "taskId": "959703294287036416",
+      "status": "created",
+      "createdAt": "2026-06-03T10:30:11.091Z",
+      "updatedAt": "2026-06-03T10:30:11.091Z"
+    },
     {
       "id": "12b84133-d755-4673-9eb1-92c0bdd793d6",
       "userId": "72524569-6773-4824-abb2-494855433661",
