@@ -587,10 +587,10 @@
       "type": "video",
       "model": "grok-imagine-1.0-video-6s",
       "amount": 1100000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-03T09:27:45.773Z",
-      "updatedAt": "2026-06-03T09:27:45.773Z"
+      "updatedAt": "2026-06-03T09:28:44.612Z"
     },
     {
       "id": "959684512231469056",
@@ -743,10 +743,11 @@
       "mode": "video",
       "model": "grok-imagine-1.0-video-6s",
       "prompt": "9:16 vertical, realistic product video of a curly pixie wig on a model, slow turn, studio lighting, no text",
+      "previewUrl": "https://ngrok2.zhoushurencz1.top/v1/files/video?id=video_a3e1252b43464d1a9193b5d2bfc542a6",
       "taskId": "task_lLFcZAGu9jwAJREyVkgUtG5jDRCV5Fd5",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-03T09:27:45.773Z",
-      "updatedAt": "2026-06-03T09:28:36.421Z"
+      "updatedAt": "2026-06-03T09:28:44.612Z"
     },
     {
       "id": "324cd0dd-3c44-4a21-b2c5-33009d6a6ce2",
