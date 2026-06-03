@@ -123,6 +123,17 @@
   ],
   "generationTasks": [
     {
+      "id": "959575910678278144",
+      "userId": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "type": "video",
+      "model": "vidu:viduq3-pro-fast",
+      "amount": 900000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T02:04:00.461Z",
+      "updatedAt": "2026-06-03T02:04:00.461Z"
+    },
+    {
       "id": "task_iytYGoiT8fTbW9Coua2KvZvhbOVcDkX7",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -146,6 +157,17 @@
     }
   ],
   "history": [
+    {
+      "id": "a33fc9ba-104f-4b06-8698-87f17abed91f",
+      "userId": "6cde3dcd-0ce3-4c43-b813-d0cb7bc4788a",
+      "mode": "video",
+      "model": "vidu:viduq3-pro-fast",
+      "prompt": "9:16 vertical product video, clean studio lighting, slow camera movement, short curly pixie wig display, no text, no logo",
+      "taskId": "959575910678278144",
+      "status": "created",
+      "createdAt": "2026-06-03T02:04:00.461Z",
+      "updatedAt": "2026-06-03T02:04:00.461Z"
+    },
     {
       "id": "a2b00ecc-b8a0-4080-b7a1-f48c6c0f7253",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
