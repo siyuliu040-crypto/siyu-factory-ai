@@ -8,7 +8,10 @@ export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as Partial<ImageJobRequest>;
+    const contentType = request.headers.get("content-type") || "";
+    const body = contentType.includes("multipart/form-data")
+      ? await readMultipartImageRequest(request)
+      : ((await request.json()) as Partial<ImageJobRequest>);
     const model = body.model || "";
     const prompt = body.prompt?.trim() || "";
 
@@ -24,7 +27,8 @@ export async function POST(request: Request) {
       n: body.n ?? 1,
       size: body.size ?? "1024x1024",
       aspect_ratio: body.aspect_ratio,
-      response_format: body.response_format ?? "url"
+      response_format: body.response_format ?? "url",
+      references: body.references
     }, {
       userId: charge.user.id,
       amount
@@ -41,4 +45,28 @@ export async function POST(request: Request) {
       detail: error instanceof Error ? error.message : error
     });
   }
+}
+
+async function readMultipartImageRequest(request: Request): Promise<Partial<ImageJobRequest>> {
+  const incoming = await request.formData();
+  const references = await Promise.all(
+    incoming
+      .getAll("image")
+      .filter((value): value is File => value instanceof File && value.size > 0)
+      .map(async (file, index) => ({
+        name: file.name || `reference-${index + 1}.png`,
+        type: file.type || "image/png",
+        data: Buffer.from(await file.arrayBuffer()).toString("base64")
+      }))
+  );
+
+  return {
+    model: String(incoming.get("model") || ""),
+    prompt: String(incoming.get("prompt") || ""),
+    n: Number(incoming.get("n") || 1),
+    size: String(incoming.get("size") || "1024x1024"),
+    aspect_ratio: incoming.get("aspect_ratio") ? String(incoming.get("aspect_ratio")) : undefined,
+    response_format: String(incoming.get("response_format") || "url") as ImageJobRequest["response_format"],
+    references
+  };
 }
