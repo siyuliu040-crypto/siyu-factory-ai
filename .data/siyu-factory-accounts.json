@@ -59,6 +59,12 @@
       "userId": "a7c2c324-6c83-49bf-ae7b-b785dece0edd",
       "expiresAt": "2026-06-08T07:37:19.068Z",
       "createdAt": "2026-06-01T07:37:19.068Z"
+    },
+    {
+      "token": "475ac6c163e8f35d9156e870ef2e3f3021f431cf291ffe230727ddb5afaa67ae",
+      "userId": "57a65552-26d5-4f34-8797-df1ed4a8800e",
+      "expiresAt": "2026-06-10T00:35:20.885Z",
+      "createdAt": "2026-06-03T00:35:20.885Z"
     }
   ],
   "ledger": [
