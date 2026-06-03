@@ -40,10 +40,10 @@
       "type": "video",
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "amount": 1200000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-03T00:40:06.294Z",
-      "updatedAt": "2026-06-03T00:40:06.294Z"
+      "updatedAt": "2026-06-03T00:43:34.575Z"
     }
   ],
   "history": [
@@ -53,10 +53,11 @@
       "mode": "video",
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "previewUrl": "https://file.bandianwa.com/adobe/video/20260603/c53b56af54a441cbb4a8e5262ce51020.mp4",
       "taskId": "task_ip78GpV1wtlYSRsx6E10IF8Ng8801bxI",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-03T00:40:06.294Z",
-      "updatedAt": "2026-06-03T00:43:28.455Z"
+      "updatedAt": "2026-06-03T00:43:34.575Z"
     }
   ]
 }
