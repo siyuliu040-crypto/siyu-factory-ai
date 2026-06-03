@@ -212,6 +212,8 @@ const copy = {
     download: "下载",
     waiting: "等待生成",
     waitingHint: "提交任务后，进度和预览会自动出现在这里。",
+    imageSubmitted: "图片任务提交成功",
+    imageSubmittedHint: "系统正在后台生成，您可以继续提交下一张图片。",
     quota: "剩余额度",
     refreshQuota: "刷新额度",
     quotaConnected: "Key 已连接",
@@ -301,6 +303,8 @@ const copy = {
     download: "Download",
     waiting: "Waiting for generation",
     waitingHint: "Progress and preview will appear here after submission.",
+    imageSubmitted: "Image task submitted",
+    imageSubmittedHint: "The image is generating in the background. You can submit the next image now.",
     quota: "Remaining quota",
     refreshQuota: "Refresh quota",
     quotaConnected: "Key connected",
@@ -1082,6 +1086,47 @@ export default function Studio() {
     }
   }
 
+  async function pollImageJob(id: string) {
+    try {
+      for (let attempt = 0; attempt < 120; attempt += 1) {
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+        const statusResponse = await fetch(`/api/images/status?id=${encodeURIComponent(id)}`);
+        const status = (await statusResponse.json()) as ImageJobResult;
+        if (!statusResponse.ok) throw new Error(JSON.stringify(status));
+        setGenerationStatus({
+          label: status.status || tx("statusProcessing", "生成中"),
+          detail: id,
+          progress: status.progress || 0,
+          tone: "running"
+        });
+        if (status.status === "completed" && status.result) {
+          setImageResult(status.result);
+          setGenerationStatus({
+            label: tx("statusCompleted", "生成完成"),
+            detail: tx("statusImageReady", "图片已生成，可以预览和下载。"),
+            progress: 100,
+            tone: "done"
+          });
+          void refreshHistory();
+          return;
+        }
+        if (status.status === "failed") throw new Error(JSON.stringify(status.error || status));
+      }
+
+      throw new Error(language === "zh" ? "图片任务还在处理中，请稍后刷新历史记录。" : "Image task is still processing. Check history later.");
+    } catch (caught) {
+      setError(stringifyError(caught) || t.imageFailed);
+      setGenerationStatus({
+        label: tx("statusFailed", "生成失败"),
+        detail: cleanErrorMessage(stringifyError(caught), language),
+        progress: 0,
+        tone: "error"
+      });
+    } finally {
+      void refreshSession();
+    }
+  }
+
   async function generateImage() {
     if (!currentUser) return;
     if (!canAffordActiveModel) {
@@ -1099,77 +1144,31 @@ export default function Studio() {
       tone: "running"
     });
     try {
-      if (referenceFiles.length > 0) {
-        const formData = new FormData();
-        formData.set("model", imageModel);
-        formData.set("prompt", prompt);
-        formData.set("size", imageSize);
-        formData.set("aspect_ratio", "9:16");
-        formData.set("n", "1");
-        formData.set("response_format", "url");
-        for (const reference of referenceFiles) formData.append("image", reference, reference.name);
-
-        const response = await fetch("/api/images/generate", { method: "POST", body: formData });
-        const payload = (await response.json()) as ImageResult;
-        if (!response.ok || !extractImageUrl(payload)) throw new Error(JSON.stringify(payload));
-        setImageResult(payload);
-        setGenerationStatus({
-          label: tx("statusCompleted", "生成完成"),
-          detail: tx("statusImageReady", "图片已生成，可以预览和下载。"),
-          progress: 100,
-          tone: "done"
-        });
-        saveHistory({ mode: "image", model: imageModel, prompt, previewUrl: extractImageUrl(payload) });
-        return;
-      }
-
-      const startResponse = await fetch("/api/images/start", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: imageModel,
-          prompt,
-          size: imageSize,
-          aspect_ratio: "9:16",
-          n: 1,
-          response_format: "url"
-        })
-      });
+      const startResponse = referenceFiles.length > 0
+        ? await submitImageStartForm()
+        : await fetch("/api/images/start", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              model: imageModel,
+              prompt,
+              size: imageSize,
+              aspect_ratio: "9:16",
+              n: 1,
+              response_format: "url"
+            })
+          });
       const started = (await startResponse.json()) as ImageJobResult;
       if (!startResponse.ok || !started.id) throw new Error(JSON.stringify(started));
       setGenerationStatus({
-              label: tx("statusQueued", "任务已排队"),
-        detail: started.id,
-        progress: started.progress || 0,
+        label: tx("imageSubmitted", "图片任务提交成功"),
+        detail: tx("imageSubmittedHint", "系统正在后台生成，您可以继续提交下一张图片。"),
+        progress: Math.max(5, started.progress || 5),
         tone: "running"
       });
-
-      for (let attempt = 0; attempt < 90; attempt += 1) {
-        await new Promise((resolve) => setTimeout(resolve, 4000));
-        const statusResponse = await fetch(`/api/images/status?id=${encodeURIComponent(started.id)}`);
-        const status = (await statusResponse.json()) as ImageJobResult;
-        if (!statusResponse.ok) throw new Error(JSON.stringify(status));
-        setGenerationStatus({
-          label: status.status || tx("statusProcessing", "生成中"),
-          detail: started.id,
-          progress: status.progress || 0,
-          tone: "running"
-        });
-        if (status.status === "completed" && status.result) {
-          setImageResult(status.result);
-          setGenerationStatus({
-          label: tx("statusCompleted", "生成完成"),
-          detail: tx("statusImageReady", "图片已生成，可以预览和下载。"),
-            progress: 100,
-            tone: "done"
-          });
-          saveHistory({ mode: "image", model: imageModel, prompt, previewUrl: extractImageUrl(status.result) });
-          return;
-        }
-        if (status.status === "failed") throw new Error(JSON.stringify(status.error || status));
-      }
-
-      throw new Error(language === "zh" ? "图片任务还在处理中，请稍后再试。" : "Image task is still processing. Try again later.");
+      setIsLoading(false);
+      void refreshSession();
+      void pollImageJob(started.id);
     } catch (caught) {
       setError(stringifyError(caught) || t.imageFailed);
       setGenerationStatus({
@@ -1178,10 +1177,21 @@ export default function Studio() {
         progress: 0,
         tone: "error"
       });
-    } finally {
-      await refreshSession();
       setIsLoading(false);
+      void refreshSession();
     }
+  }
+
+  function submitImageStartForm() {
+    const formData = new FormData();
+    formData.set("model", imageModel);
+    formData.set("prompt", prompt);
+    formData.set("size", imageSize);
+    formData.set("aspect_ratio", "9:16");
+    formData.set("n", "1");
+    formData.set("response_format", "url");
+    for (const reference of referenceFiles) formData.append("image", reference, reference.name);
+    return fetch("/api/images/start", { method: "POST", body: formData });
   }
 
   async function submitVideo(videoPrompt: string, model: string, options?: { references?: File[]; referenceUrl?: string }) {
