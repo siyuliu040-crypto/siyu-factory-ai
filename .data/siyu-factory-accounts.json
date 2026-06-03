@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 5216250,
+      "credits": 6416250,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-03T08:01:08.814Z"
+      "updatedAt": "2026-06-03T08:01:25.151Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -76,6 +76,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c7090a1b-ed50-432e-b1b5-e7e7347a16a4",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200000,
+      "balanceAfter": 6416250,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-03T08:01:25.151Z",
+      "metadata": {
+        "taskId": "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
+        "model": "firefly-veo31-fast-8s-9x16-1080p"
+      }
+    },
     {
       "id": "b65ed4b8-9fe5-47da-9ec7-16fbfe43fe6f",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -445,10 +457,10 @@
       "type": "video",
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "amount": 1200000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-03T08:01:11.092Z",
-      "updatedAt": "2026-06-03T08:01:11.092Z"
+      "updatedAt": "2026-06-03T08:01:25.151Z"
     },
     {
       "id": "task_fLz274AhwLQI2U6ecfpvF10P7tf3khBK",
@@ -536,9 +548,9 @@
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "prompt": "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\nExtreme close-up.\nShe freezes for a brief moment, eyes widening naturally.\nBoth hands rise beside her face in disbelief.\nHead leans back slightly.\nHer eyebrows lift dramatically.\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\n\"hold up—ain't no damn way?!\"\nStrong emphasis on:\n\"no\"\n\"damn\"\n\"way\"\nThe reaction feels completely genuine, like she just discovered something unbelievable.\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\n\"you're telling me i could've been saving hundreds this whole time?!\"\nUrgent, shocked, highly emotional delivery.\nEyes stay wide.\nShe slowly shakes her head once as if she genuinely cannot believe it.\nAt 00:03 her expression shifts from disbelief to excitement.\nA smile begins to form.\nAt 00:04 both hands move naturally into the hair.\nShe lifts the roots and gently fluffs the hair to show fullness and density.\nAt 00:05 she slowly turns her head left and right.\nThe hair moves naturally with visible bounce and volume.\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\nShe says:\n\"i'm dead serious right now.\"\nNatural emphasis on:\n\"dead serious\"\n\"right now\"\nShe laughs softly at the end of the sentence.\n00:07–00:14\nCamera gently pushes closer.\nShe leans slightly toward the camera with growing excitement.\nBig genuine smile.\nEyes bright and expressive.\nAt 00:08 she lightly taps her chest once and laughs.\nAt 00:09 she gestures toward herself briefly and nods.\nShe says:\n\"girl, i would've paid three times more for this.\"\nAt 00:10 she points toward the camera and says:\n\"don't walk—go grab this wig right now.\"\nHer excitement feels spontaneous and authentic.\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\nShe says:\n\"and yes, this is real human hair.\"\nAt 00:12 she lightly touches the front hairline.\nShe says:\n\"look how clean that lace is.\"\nNatural confidence.\nAt 00:13 she runs her fingers through the ends of the hair.\nThe hair appears thick, soft, and full.\nShe smiles and says:\n\"baby, this is luxury without the luxury price.\"\nThen adds:\n\"everybody's gonna think you spent a bag on it.\"\nAt 00:14 she gives a playful confident smile.\nShe points downward toward the shopping cart area and says:\n\"run before they sell out.\"\nHold the confident smile briefly before the video ends.\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
       "taskId": "task_WtmZ4TgN8lXajarVWxXnkMfemS4LliFE",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-06-03T08:01:11.092Z",
-      "updatedAt": "2026-06-03T08:01:17.764Z"
+      "updatedAt": "2026-06-03T08:01:25.151Z"
     },
     {
       "id": "a3ff321a-1cb1-462d-8e05-fae22b8a0040",
