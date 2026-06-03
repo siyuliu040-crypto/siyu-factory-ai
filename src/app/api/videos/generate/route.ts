@@ -207,6 +207,7 @@ export async function POST(request: Request) {
           model: toViduModel(model),
           images: [firstImage],
           prompt,
+          ...(seconds ? { duration: Number(seconds) } : {}),
           resolution: VIDU_SIZE_TO_RESOLUTION[String(size || "")] || "720p",
           movement_amplitude: "auto",
           watermark: false,
