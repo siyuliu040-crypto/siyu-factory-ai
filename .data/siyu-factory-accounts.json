@@ -552,6 +552,17 @@
   ],
   "generationTasks": [
     {
+      "id": "959684512231469056",
+      "userId": "8cbce13d-7411-4bc1-af5e-6dd3d4eef887",
+      "type": "video",
+      "model": "vidu:viduq2-turbo",
+      "amount": 900000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T09:15:33.066Z",
+      "updatedAt": "2026-06-03T09:15:33.066Z"
+    },
+    {
       "id": "959681529695449088",
       "userId": "8cbce13d-7411-4bc1-af5e-6dd3d4eef887",
       "type": "video",
@@ -685,6 +696,17 @@
     }
   ],
   "history": [
+    {
+      "id": "324cd0dd-3c44-4a21-b2c5-33009d6a6ce2",
+      "userId": "8cbce13d-7411-4bc1-af5e-6dd3d4eef887",
+      "mode": "video",
+      "model": "vidu:viduq2-turbo",
+      "prompt": "9:16 vertical, realistic product video of a short curly pixie wig, slow turn, studio lighting, no text, no logo",
+      "taskId": "959684512231469056",
+      "status": "created",
+      "createdAt": "2026-06-03T09:15:33.066Z",
+      "updatedAt": "2026-06-03T09:15:33.066Z"
+    },
     {
       "id": "bca5ced8-1568-40e9-a645-8341c9870d0e",
       "userId": "8cbce13d-7411-4bc1-af5e-6dd3d4eef887",
