@@ -8,6 +8,11 @@ export type ImageJobRequest = {
   size?: string;
   aspect_ratio?: string;
   response_format?: "url" | "b64_json";
+  references?: Array<{
+    name: string;
+    type: string;
+    data: string;
+  }>;
 };
 
 export type ImageJobRecord = {
@@ -90,19 +95,22 @@ async function runImageJob(id: string) {
   save({ ...record, status: "in_progress", progress: 5 });
 
   try {
-    const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/images/generations`, {
-      method: "POST",
-      headers: authHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
-      body: JSON.stringify({
-        model: record.request.model,
-        prompt: record.request.prompt.trim(),
-        n: record.request.n ?? 1,
-        size: record.request.size ?? "1024x1024",
-        ...(record.request.aspect_ratio ? { aspect_ratio: record.request.aspect_ratio } : {}),
-        response_format: record.request.response_format ?? "url"
-      }),
-      cache: "no-store"
-    });
+    const references = record.request.references || [];
+    const response = references.length
+      ? await postImageEdit(record, references)
+      : await fetch(`${HELLOBABYGO_BASE_URL}/v1/images/generations`, {
+          method: "POST",
+          headers: authHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+          body: JSON.stringify({
+            model: record.request.model,
+            prompt: record.request.prompt.trim(),
+            n: record.request.n ?? 1,
+            size: record.request.size ?? "1024x1024",
+            ...(record.request.aspect_ratio ? { aspect_ratio: record.request.aspect_ratio } : {}),
+            response_format: record.request.response_format ?? "url"
+          }),
+          cache: "no-store"
+        });
 
     const payload = parsePayload(await response.text());
     if (!response.ok) {
@@ -128,6 +136,31 @@ async function runImageJob(id: string) {
       error: error instanceof Error ? error.message : error
     });
   }
+}
+
+async function postImageEdit(
+  record: ImageJobRecord,
+  references: NonNullable<ImageJobRequest["references"]>
+) {
+  const formData = new FormData();
+  formData.set("model", record.request.model);
+  formData.set("prompt", record.request.prompt.trim());
+  formData.set("n", String(record.request.n ?? 1));
+  formData.set("size", record.request.size ?? "1024x1024");
+  if (record.request.aspect_ratio) formData.set("aspect_ratio", record.request.aspect_ratio);
+  formData.set("response_format", record.request.response_format ?? "url");
+
+  for (const [index, reference] of references.entries()) {
+    const bytes = Buffer.from(reference.data, "base64");
+    formData.append("image", new Blob([bytes], { type: reference.type || "image/png" }), reference.name || `reference-${index + 1}.png`);
+  }
+
+  return fetch(`${HELLOBABYGO_BASE_URL}/v1/images/edits`, {
+    method: "POST",
+    headers: authHeaders({ Accept: "application/json" }),
+    body: formData,
+    cache: "no-store"
+  });
 }
 
 export function startImageJob(
