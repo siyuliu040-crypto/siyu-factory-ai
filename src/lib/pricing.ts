@@ -11,7 +11,10 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "veo_3_1-fast-portrait": 1600000,
   "vidu:viduq3-pro-fast": 1400000,
   "vidu:viduq3-turbo": 1600000,
-  "vidu:viduq3-pro": 1900000
+  "vidu:viduq3-pro": 1900000,
+  "vidu:viduq2-pro-fast": 1200000,
+  "vidu:viduq2-turbo": 1300000,
+  "grok-imagine-1.0-video": 1200000
 };
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
@@ -46,8 +49,22 @@ export function getVideoGenerationCost(model: string, duration?: string | number
   const lower = model.toLowerCase();
   if (lower.startsWith("vidu:")) {
     const seconds = Math.max(1, Number(duration || 5));
-    const multiplier = lower.includes("q3-pro-fast") ? 1 : lower.includes("q3-turbo") ? 1.15 : 1.35;
+    const multiplier = lower.includes("q3-pro-fast")
+      ? 1
+      : lower.includes("q3-turbo")
+        ? 1.15
+        : lower.includes("q3-pro")
+          ? 1.35
+          : lower.includes("q2-pro-fast")
+            ? 0.9
+            : lower.includes("q2-turbo")
+              ? 0.95
+              : 1;
     return Math.round(Math.max(900000, seconds * 175000 * multiplier));
+  }
+  if (lower.includes("grok-imagine-1.0-video")) {
+    const seconds = Math.max(6, Number(duration || 6));
+    return seconds >= 10 ? 1500000 : 1100000;
   }
   if (MODEL_CREDIT_COSTS[model] && lower.includes("firefly-veo31")) return MODEL_CREDIT_COSTS[model];
   const base = durationCost(duration || lower.match(/(\d+)s/)?.[1]);
