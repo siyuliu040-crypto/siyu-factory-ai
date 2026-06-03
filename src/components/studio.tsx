@@ -159,6 +159,9 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
+  "vidu:viduq3-pro-fast",
+  "vidu:viduq3-turbo",
+  "vidu:viduq3-pro",
   "firefly-veo31-fast-8s-9x16-1080p",
   "firefly-veo31-ref-8s-9x16-1080p",
   "veo_3_1-fast-portrait"
@@ -343,7 +346,7 @@ function getModelCreditCost(model: string) {
 
 function isVideoModel(model: string) {
   const lower = model.toLowerCase();
-  return lower.includes("video") || lower.includes("veo");
+  return lower.includes("video") || lower.includes("veo") || lower.startsWith("vidu:");
 }
 
 function getCreditCost(model: string, duration?: string) {
@@ -382,6 +385,7 @@ function formatQuotaText(value: string) {
 
 function getModelTitle(model: string, language: Language) {
   const lower = model.toLowerCase();
+  if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
   if (lower.includes("veo_3_1")) return language === "zh" ? "VEO 3.1 Fast" : "VEO 3.1 Fast";
   if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro" : "Nano Banana Pro";
@@ -392,6 +396,14 @@ function getModelTitle(model: string, language: Language) {
 function getModelDescription(model: string, language: Language) {
   const lower = model.toLowerCase();
   const aspect = language === "zh" ? "9:16 竖屏" : "9:16 portrait";
+  if (lower.startsWith("vidu:")) {
+    const speed = lower.includes("pro-fast")
+      ? language === "zh" ? "Q3 Pro Fast · 参考图必填" : "Q3 Pro Fast · reference required"
+      : lower.includes("turbo")
+        ? language === "zh" ? "Q3 Turbo · 参考图必填" : "Q3 Turbo · reference required"
+        : language === "zh" ? "Q3 Pro · 参考图必填" : "Q3 Pro · reference required";
+    return `${aspect} · 4/8/12/15 秒可选 · ${speed}`;
+  }
   const reference = lower.includes("hd") || lower.includes("ref") || lower.includes("veo")
     ? copy[language].modelCanReference
     : copy[language].modelTextOnly;
