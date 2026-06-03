@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 4016250,
+      "credits": 5616250,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-03T08:32:32.195Z"
+      "updatedAt": "2026-06-03T08:32:48.292Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -76,6 +76,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "db99828c-4ceb-48a5-8a80-be9d7d3c5730",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1600000,
+      "balanceAfter": 5616250,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-03T08:32:48.292Z",
+      "metadata": {
+        "taskId": "task_SR8PF9dYEC501JU6gJ0NTSOdCPqMepN1",
+        "model": "firefly-veo31-ref-8s-9x16-1080p"
+      }
+    },
     {
       "id": "caaebbde-76a7-45f4-bcd5-3ad75d05f2e9",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -505,10 +517,10 @@
       "type": "video",
       "model": "firefly-veo31-ref-8s-9x16-1080p",
       "amount": 1600000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-03T08:32:34.607Z",
-      "updatedAt": "2026-06-03T08:32:34.607Z"
+      "updatedAt": "2026-06-03T08:32:48.292Z"
     },
     {
       "id": "task_FuQJB7NWgVqQscigUuINLb1aVcxx6ZlS",
@@ -629,9 +641,9 @@
       "model": "firefly-veo31-ref-8s-9x16-1080p",
       "prompt": "Create one vertical 9:16 photorealistic TikTok UGC-style image, handheld smartphone selfie feeling, extreme close-up to medium close-up framing, realistic video texture, slight natural grain, natural lighting, smooth realistic camera feel.\n\nNo text, no captions, no letters, no speech bubbles, no logo, no watermark, no TikTok interface, no shopping cart icon, no readable brand labels.\n\nSubject: one confident African American female TikTok beauty creator, same consistent facial identity, natural makeup, real skin texture, expressive eyes, authentic U.S. beauty creator energy. She is wearing a full, soft, voluminous human hair wig with clean lace front, natural hairline, thick ends, natural shine, realistic bounce, and luxury hair texture.\n\nScene:\nThe woman is facing the camera in a close-up selfie angle. Her expression shows shocked excitement, like she just discovered an unbelievable deal. Her eyes are wide, eyebrows lifted dramatically, mouth slightly open in disbelief, but a smile is starting to form. The emotion feels genuine, spontaneous, and highly expressive.\n\nAction:\nBoth hands are naturally placed in her hair, lifting the roots and fluffing the wig to show fullness and density. One side of the hair is slightly pulled forward toward the camera to show soft texture, thick ends, and natural movement. Her fingers bend naturally and touch the hair realistically. The lace front and hairline are visible and clean. The hair looks full from root to ends, soft, bouncy, and expensive-looking.\n\nComposition:\nVertical 9:16, close selfie framing, face and hair dominate the image. Hair should take up a large part of the frame. The camera feels like a real phone held close by the creator. Background is softly visible but not empty: a realistic bedroom or beauty room setting with natural daylight, mirror, vanity items, and casual home details, but no readable text.\n\nStyle:\nPhotorealistic, authentic TikTok creator vibe, real skin pores, natural facial expression, realistic hair movement, no over-smoothing, no plastic skin, no AI-looking face, no distorted hands, no fake lace, no thin hair ends.",
       "taskId": "task_SR8PF9dYEC501JU6gJ0NTSOdCPqMepN1",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-06-03T08:32:34.607Z",
-      "updatedAt": "2026-06-03T08:32:40.942Z"
+      "updatedAt": "2026-06-03T08:32:48.292Z"
     },
     {
       "id": "45e1f6be-8823-45c9-b38e-b50896e57a1f",
