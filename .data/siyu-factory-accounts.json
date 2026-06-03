@@ -19,6 +19,16 @@
       "credits": 30000000,
       "createdAt": "2026-06-03T02:32:37.576Z",
       "updatedAt": "2026-06-03T02:57:02.736Z"
+    },
+    {
+      "id": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+      "email": "1608030992@qq.com",
+      "name": "lina",
+      "passwordHash": "e20d850461f444ee821edf54e5c035f3:1ff8e57afc2ee22aa4cdce153ef735e0bf6d3a79d046c40d398ad97a8b2386f3fe70ec9aae14db946614b661741f805c46c181eba40027176f7e308f68be1666",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T06:10:25.337Z",
+      "updatedAt": "2026-06-03T06:10:25.337Z"
     }
   ],
   "sessions": [
@@ -51,6 +61,12 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-06-10T03:06:30.019Z",
       "createdAt": "2026-06-03T03:06:30.019Z"
+    },
+    {
+      "token": "78df83d4e1033cf7ec71177b12d997b98e5858fa8ae752656391d94d847862ed",
+      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+      "expiresAt": "2026-06-10T06:10:25.625Z",
+      "createdAt": "2026-06-03T06:10:25.625Z"
     }
   ],
   "ledger": [
