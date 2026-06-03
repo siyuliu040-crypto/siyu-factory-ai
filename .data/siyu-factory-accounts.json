@@ -542,6 +542,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_PEkahiQWP9itBPuyB5vEFeHKwVZUTSSg",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "grok-imagine-1.0-video-ref-10s",
+      "amount": 1700000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T10:01:07.088Z",
+      "updatedAt": "2026-06-03T10:01:07.088Z"
+    },
+    {
       "id": "task_SR8PF9dYEC501JU6gJ0NTSOdCPqMepN1",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -664,6 +675,17 @@
     }
   ],
   "history": [
+    {
+      "id": "54bce2f8-50bd-45da-8b41-ea3c38fa2e18",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "grok-imagine-1.0-video-ref-10s",
+      "prompt": "TikTok Vertical 9:16, handheld smartphone selfie style, subtle natural breathing motion, realistic video texture, slight natural grain, smooth camera movement. Start from extreme close-up, slowly pull to medium close-up, then gently push closer. Consistent facial identity throughout the entire video. Natural blinking every 3–5 seconds. Natural breathing. Realistic hair movement. Natural finger bending. Authentic TikTok creator energy. Highly expressive but natural.\r\nExtreme close-up.\r\nShe freezes for a brief moment, eyes widening naturally.\r\nBoth hands rise beside her face in disbelief.\r\nHead leans back slightly.\r\nHer eyebrows lift dramatically.\r\nShe suddenly shouts at maximum volume with overwhelming excitement and amazement:\r\n\"hold up—ain't no damn way?!\"\r\nStrong emphasis on:\r\n\"no\"\r\n\"damn\"\r\n\"way\"\r\nThe reaction feels completely genuine, like she just discovered something unbelievable.\r\nImmediately after, without pausing, she leans slightly closer toward the camera and continues:\r\n\"you're telling me i could've been saving hundreds this whole time?!\"\r\nUrgent, shocked, highly emotional delivery.\r\nEyes stay wide.\r\nShe slowly shakes her head once as if she genuinely cannot believe it.\r\nAt 00:03 her expression shifts from disbelief to excitement.\r\nA smile begins to form.\r\nAt 00:04 both hands move naturally into the hair.\r\nShe lifts the roots and gently fluffs the hair to show fullness and density.\r\nAt 00:05 she slowly turns her head left and right.\r\nThe hair moves naturally with visible bounce and volume.\r\nAt 00:06 she brings a section of hair slightly closer toward the camera while smiling.\r\nShe says:\r\n\"i'm dead serious right now.\"\r\nNatural emphasis on:\r\n\"dead serious\"\r\n\"right now\"\r\nShe laughs softly at the end of the sentence.\r\n00:07–00:14\r\nCamera gently pushes closer.\r\nShe leans slightly toward the camera with growing excitement.\r\nBig genuine smile.\r\nEyes bright and expressive.\r\nAt 00:08 she lightly taps her chest once and laughs.\r\nAt 00:09 she gestures toward herself briefly and nods.\r\nShe says:\r\n\"girl, i would've paid three times more for this.\"\r\nAt 00:10 she points toward the camera and says:\r\n\"don't walk—go grab this wig right now.\"\r\nHer excitement feels spontaneous and authentic.\r\nAt 00:11 she lifts the hair with one hand and lets the curls fall naturally.\r\nShe says:\r\n\"and yes, this is real human hair.\"\r\nAt 00:12 she lightly touches the front hairline.\r\nShe says:\r\n\"look how clean that lace is.\"\r\nNatural confidence.\r\nAt 00:13 she runs her fingers through the ends of the hair.\r\nThe hair appears thick, soft, and full.\r\nShe smiles and says:\r\n\"baby, this is luxury without the luxury price.\"\r\nThen adds:\r\n\"everybody's gonna think you spent a bag on it.\"\r\nAt 00:14 she gives a playful confident smile.\r\nShe points downward toward the shopping cart area and says:\r\n\"run before they sell out.\"\r\nHold the confident smile briefly before the video ends.\r\nUse the above script to generate a four-grid image for me. The image should correspond to the storyboard without any letters or text",
+      "taskId": "task_PEkahiQWP9itBPuyB5vEFeHKwVZUTSSg",
+      "status": "queued",
+      "createdAt": "2026-06-03T10:01:07.088Z",
+      "updatedAt": "2026-06-03T10:01:07.088Z"
+    },
     {
       "id": "bd50a81c-71bf-4e1c-9a54-553d9da6ea36",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
