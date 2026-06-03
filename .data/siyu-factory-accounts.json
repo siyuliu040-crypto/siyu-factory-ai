@@ -36,9 +36,9 @@
       "name": "Codex Video Audit",
       "passwordHash": "0cab13ad6b77a9585215e69634aa2df3:cb3ec1fdb0bbed1f22aef7af39793a36c47854b74566775826330b86166f0f66e0860232c62704aa870cbcdd69bd1a640c290d77ddd722cd601e2b6f3157cad8",
       "role": "user",
-      "credits": 8400000,
+      "credits": 10000000,
       "createdAt": "2026-06-03T08:04:34.770Z",
-      "updatedAt": "2026-06-03T08:19:15.841Z"
+      "updatedAt": "2026-06-03T08:19:54.887Z"
     }
   ],
   "sessions": [
@@ -104,6 +104,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "b8efff36-6890-4842-bc48-0f984f24f193",
+      "userId": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
+      "amount": 1600000,
+      "balanceAfter": 10000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-03T08:19:54.887Z",
+      "metadata": {
+        "taskId": "task_wuU4aDOkD4Vanjm7XYQXHPwk7hCbkMiq",
+        "model": "firefly-veo31-ref-8s-9x16-1080p"
+      }
+    },
     {
       "id": "33939c2e-c3d9-44f8-bc43-b4ece60c6406",
       "userId": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
@@ -509,10 +521,10 @@
       "type": "video",
       "model": "firefly-veo31-ref-8s-9x16-1080p",
       "amount": 1600000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-03T08:19:17.239Z",
-      "updatedAt": "2026-06-03T08:19:17.239Z"
+      "updatedAt": "2026-06-03T08:19:54.886Z"
     },
     {
       "id": "task_b3dBEuq0o5ciLizpHoG1GqqVgIhpsXQS",
@@ -622,9 +634,9 @@
       "model": "firefly-veo31-ref-8s-9x16-1080p",
       "prompt": "9:16 vertical, product video of a curly pixie wig, slow turn, studio lighting, no text",
       "taskId": "task_wuU4aDOkD4Vanjm7XYQXHPwk7hCbkMiq",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-03T08:19:17.239Z",
-      "updatedAt": "2026-06-03T08:19:17.239Z"
+      "updatedAt": "2026-06-03T08:19:54.887Z"
     },
     {
       "id": "ef35251c-fc93-45d2-884d-57478eff4981",
