@@ -504,6 +504,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_wuU4aDOkD4Vanjm7XYQXHPwk7hCbkMiq",
+      "userId": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
+      "type": "video",
+      "model": "firefly-veo31-ref-8s-9x16-1080p",
+      "amount": 1600000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-03T08:19:17.239Z",
+      "updatedAt": "2026-06-03T08:19:17.239Z"
+    },
+    {
       "id": "task_b3dBEuq0o5ciLizpHoG1GqqVgIhpsXQS",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -604,6 +615,17 @@
     }
   ],
   "history": [
+    {
+      "id": "6e6e2c3c-22bc-49fc-8130-e1a30ad0ef4d",
+      "userId": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
+      "mode": "video",
+      "model": "firefly-veo31-ref-8s-9x16-1080p",
+      "prompt": "9:16 vertical, product video of a curly pixie wig, slow turn, studio lighting, no text",
+      "taskId": "task_wuU4aDOkD4Vanjm7XYQXHPwk7hCbkMiq",
+      "status": "queued",
+      "createdAt": "2026-06-03T08:19:17.239Z",
+      "updatedAt": "2026-06-03T08:19:17.239Z"
+    },
     {
       "id": "ef35251c-fc93-45d2-884d-57478eff4981",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
