@@ -5,6 +5,7 @@ import {
   parseUpstreamResponse
 } from "@/lib/hellobabygo";
 import { settleGenerationTask, updateHistoryByTaskId, withAccountState } from "@/lib/accounts";
+import { isViduModel, normalizeViduStatus, parseViduResponse, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 import {
   extractVideoUrl,
   normalizeVideoStatusPayload,
@@ -25,6 +26,18 @@ async function fetchVideoStatus(path: string, id: string) {
   return {
     response,
     data: await parseUpstreamResponse(response)
+  };
+}
+
+async function fetchViduVideoStatus(id: string) {
+  const response = await fetch(`${VIDU_BASE_URL}/ent/v2/tasks/${encodeURIComponent(id)}/creations`, {
+    method: "GET",
+    headers: viduHeaders({ Accept: "application/json" }),
+    cache: "no-store"
+  });
+  return {
+    response,
+    data: await parseViduResponse(response)
   };
 }
 
@@ -50,6 +63,20 @@ export async function GET(
     requestedId = id;
     if (!id) {
       return jsonError({ error: "video id is required" }, 400);
+    }
+
+    const task = await withAccountState((state) => state.generationTasks.find((item) => item.id === id) || null);
+    if (task && isViduModel(task.model)) {
+      const vidu = await fetchViduVideoStatus(id);
+      const payload = normalizeViduStatus(id, vidu.data, vidu.response.status);
+      await withAccountState((state) => {
+        settleGenerationTask(state, id, payload.status);
+        if (payload.video_url || payload.status) {
+          updateHistoryByTaskId(state, id, { status: payload.status, previewUrl: payload.video_url });
+        }
+      });
+      const statusCode = payload.status === "queued" || payload.status === "in_progress" ? 202 : vidu.response.status;
+      return Response.json(payload, { status: statusCode });
     }
 
     const primary = await fetchVideoStatus("/v1/videos/:id", id);
