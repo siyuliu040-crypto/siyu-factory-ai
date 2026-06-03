@@ -1,4 +1,6 @@
 import { forwardJson, getApiKey, jsonError } from "@/lib/hellobabygo";
+import { AccountError, requireUser } from "@/lib/accounts";
+import { accountErrorResponse } from "@/lib/account-api";
 
 type Probe = {
   path: string;
@@ -17,7 +19,17 @@ const probes: Probe[] = [
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request: Request) {
+  try {
+    const user = await requireUser(request);
+    if (user.role !== "admin") {
+      throw new AccountError("admin_required", "Only the main account can view upstream quota.", 403);
+    }
+  } catch (error) {
+    if (error instanceof AccountError) return accountErrorResponse(error);
+    return jsonError({ error: "Unable to verify account", detail: error instanceof Error ? error.message : error }, 500);
+  }
+
   const attempts = [];
 
   for (const probe of probes) {
