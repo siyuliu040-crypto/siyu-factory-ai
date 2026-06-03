@@ -29,6 +29,16 @@
       "credits": 20000000,
       "createdAt": "2026-06-03T06:10:25.337Z",
       "updatedAt": "2026-06-03T07:20:09.654Z"
+    },
+    {
+      "id": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
+      "email": "codex-video-audit-1780473870@example.com",
+      "name": "Codex Video Audit",
+      "passwordHash": "0cab13ad6b77a9585215e69634aa2df3:cb3ec1fdb0bbed1f22aef7af39793a36c47854b74566775826330b86166f0f66e0860232c62704aa870cbcdd69bd1a640c290d77ddd722cd601e2b6f3157cad8",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-03T08:04:34.770Z",
+      "updatedAt": "2026-06-03T08:04:34.770Z"
     }
   ],
   "sessions": [
@@ -73,6 +83,12 @@
       "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
       "expiresAt": "2026-06-10T07:48:11.810Z",
       "createdAt": "2026-06-03T07:48:11.810Z"
+    },
+    {
+      "token": "5301ea339897d89485948ad55f23e7b0a6a9d3a0e55b4c85e4f63371d29eaf98",
+      "userId": "88184ac3-759e-40a9-a8ae-925d0ffba7db",
+      "expiresAt": "2026-06-10T08:04:34.999Z",
+      "createdAt": "2026-06-03T08:04:34.999Z"
     }
   ],
   "ledger": [
