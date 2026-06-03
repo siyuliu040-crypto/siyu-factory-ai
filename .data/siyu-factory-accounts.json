@@ -703,9 +703,9 @@
       "model": "vidu:viduq2-turbo",
       "prompt": "9:16 vertical, realistic product video of a short curly pixie wig, slow turn, studio lighting, no text, no logo",
       "taskId": "959684512231469056",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-03T09:15:33.066Z",
-      "updatedAt": "2026-06-03T09:15:42.562Z"
+      "updatedAt": "2026-06-03T09:15:51.653Z"
     },
     {
       "id": "bca5ced8-1568-40e9-a645-8341c9870d0e",
