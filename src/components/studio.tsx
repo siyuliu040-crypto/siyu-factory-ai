@@ -10,6 +10,7 @@ import {
   Languages,
   Loader2,
   LogOut,
+  Minus,
   Plus,
   Play,
   RefreshCw,
@@ -240,9 +241,14 @@ const copy = {
     noCreditsTitle: "站内积分不足",
     noCreditsBody: "当前账号积分不够生成，请联系主账号分配积分后再试。",
     grant: "分配",
+    addCredits: "加积分",
+    subtractCredits: "减积分",
     memberCredits: "成员积分管理",
     selectMember: "选择用户",
     refreshAccount: "刷新账号",
+    invalidCreditAmount: "请输入大于 0 的积分",
+    grantSuccess: "积分已增加",
+    subtractSuccess: "积分已扣减",
     name: "昵称",
     email: "邮箱"
   },
@@ -316,9 +322,14 @@ const copy = {
     noCreditsTitle: "Not enough site credits",
     noCreditsBody: "This account needs more site credits from the main account before generating.",
     grant: "Grant",
+    addCredits: "Add",
+    subtractCredits: "Subtract",
     memberCredits: "Member credits",
     selectMember: "Select user",
     refreshAccount: "Refresh account",
+    invalidCreditAmount: "Enter credits greater than 0",
+    grantSuccess: "Credits added",
+    subtractSuccess: "Credits subtracted",
     name: "Name",
     email: "Email"
   }
@@ -832,7 +843,7 @@ export default function Studio() {
     }
   }
 
-  async function grantUserCredits() {
+  async function adjustUserCredits(operation: "add" | "subtract") {
     if (!grantUserId) {
       setGrantMessage(tx("selectMember", "选择用户"));
       return;
@@ -849,13 +860,14 @@ export default function Studio() {
         body: JSON.stringify({
           userId: grantUserId,
           amount: parseDisplayCredits(grantAmount),
-          reason: "main account allocation"
+          operation,
+          reason: operation === "subtract" ? "main account deduction" : "main account allocation"
         })
       });
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.message || payload.error || "Credit allocation failed");
       await refreshSession();
-      setGrantMessage(tx("grantSuccess", "积分已分配"));
+      setGrantMessage(operation === "subtract" ? tx("subtractSuccess", "积分已扣减") : tx("grantSuccess", "积分已增加"));
     } catch (caught) {
       setGrantMessage(cleanErrorMessage(stringifyError(caught), language));
     }
@@ -1511,8 +1523,11 @@ export default function Studio() {
                 </select>
                 <div className="grant-row">
                   <input className="input" onChange={(event) => setGrantAmount(event.target.value)} type="number" value={grantAmount} />
-                  <button className="secondary-button" onClick={() => void grantUserCredits()} type="button">
-                    <Plus size={16} />{tx("grant", "分配")}
+                  <button className="secondary-button" onClick={() => void adjustUserCredits("add")} type="button">
+                    <Plus size={16} />{tx("addCredits", "加积分")}
+                  </button>
+                  <button className="danger-button" onClick={() => void adjustUserCredits("subtract")} type="button">
+                    <Minus size={16} />{tx("subtractCredits", "减积分")}
                   </button>
                 </div>
                 {grantMessage ? <small className="admin-message">{grantMessage}</small> : null}
