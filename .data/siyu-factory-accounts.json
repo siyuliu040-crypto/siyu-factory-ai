@@ -26,9 +26,9 @@
       "name": "lina",
       "passwordHash": "e20d850461f444ee821edf54e5c035f3:1ff8e57afc2ee22aa4cdce153ef735e0bf6d3a79d046c40d398ad97a8b2386f3fe70ec9aae14db946614b661741f805c46c181eba40027176f7e308f68be1666",
       "role": "user",
-      "credits": 19930000,
+      "credits": 20000000,
       "createdAt": "2026-06-03T06:10:25.337Z",
-      "updatedAt": "2026-06-03T07:14:36.817Z"
+      "updatedAt": "2026-06-03T07:16:42.701Z"
     }
   ],
   "sessions": [
@@ -70,6 +70,17 @@
     }
   ],
   "ledger": [
+    {
+      "id": "2b91e7fe-9213-4b98-9e7e-94e527e94f8b",
+      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
+      "amount": 70000,
+      "balanceAfter": 20000000,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-06-03T07:16:42.701Z",
+      "metadata": {
+        "path": "/v1/images/edits"
+      }
+    },
     {
       "id": "dcf782e8-971b-46e7-a613-17b4552281df",
       "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
