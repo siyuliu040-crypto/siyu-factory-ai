@@ -45,7 +45,7 @@ function durationCost(duration?: string | number) {
 export function getVideoGenerationCost(model: string, duration?: string | number) {
   const lower = model.toLowerCase();
   if (lower.startsWith("vidu:")) {
-    const seconds = Math.max(1, Number(duration || 8));
+    const seconds = Math.max(1, Number(duration || 5));
     const multiplier = lower.includes("q3-pro-fast") ? 1 : lower.includes("q3-turbo") ? 1.15 : 1.35;
     return Math.round(Math.max(900000, seconds * 175000 * multiplier));
   }
