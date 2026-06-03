@@ -10,7 +10,9 @@ function isAllowedModel(model: unknown) {
   if (id.includes("sora")) return false;
   if (id.includes("16x9") || id.includes("landscape")) return false;
   if (id.includes("firefly-veo31-ref")) return false;
+  if (id.includes("veo_3_1-fast-portrait")) return false;
   if (id.includes("veo_3_1-fast-portrait-hd") || id.includes("veo_3_1-fast-portrait-fl-hd")) return false;
+  if (id === "grok-imagine-video") return false;
   return true;
 }
 
