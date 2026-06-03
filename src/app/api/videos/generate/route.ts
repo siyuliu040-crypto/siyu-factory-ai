@@ -11,41 +11,11 @@ import { accountErrorResponse } from "@/lib/account-api";
 import { getVideoGenerationCost } from "@/lib/pricing";
 import { extractVideoUrl } from "@/lib/video-status";
 import { isViduModel, parseViduResponse, toViduModel, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
-import { randomUUID } from "crypto";
-import { mkdir, writeFile } from "fs/promises";
-import path from "path";
 
-const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
-const MIME_EXTENSIONS: Record<string, string> = {
-  "image/jpeg": "jpg",
-  "image/png": "png",
-  "image/webp": "webp"
-};
 const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
   "720x1280": "720p",
   "1080x1920": "1080p"
 };
-
-function getPublicBaseUrl(request: Request) {
-  if (process.env.SIYU_PUBLIC_BASE_URL) {
-    return process.env.SIYU_PUBLIC_BASE_URL.replace(/\/$/, "");
-  }
-
-  const forwardedHost = request.headers.get("x-forwarded-host") || request.headers.get("host");
-  const forwardedProto = request.headers.get("x-forwarded-proto") || new URL(request.url).protocol.replace(":", "");
-  if (forwardedHost) return `${forwardedProto}://${forwardedHost}`;
-  return new URL(request.url).origin;
-}
-
-async function fileToPublicUrl(request: Request, file: File) {
-  const buffer = Buffer.from(await file.arrayBuffer());
-  const mediaType = file.type || "image/jpeg";
-  const extension = MIME_EXTENSIONS[mediaType] || "jpg";
-  const id = `${randomUUID()}.${extension}`;
-  await mkdir(UPLOAD_DIR, { recursive: true });
-  await writeFile(path.join(UPLOAD_DIR, id), buffer);
-  return `${getPublicBaseUrl(request)}/api/uploads/${id}`;
-}
 
 async function fileToDataUrl(file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
@@ -64,6 +34,23 @@ function isImmediateFailure(payload: unknown) {
   const record = payload as Record<string, unknown>;
   const code = String(record.code || record.error || "");
   return Boolean(code && !getTaskId(payload));
+}
+
+function referencePayloadFields(referenceUrls: string[]) {
+  if (!referenceUrls.length) return {};
+  const first = referenceUrls[0];
+  return {
+    image_url: first,
+    image: first,
+    input_reference: first,
+    input_image: first,
+    first_frame_image: first,
+    reference_image: first,
+    image_input: referenceUrls,
+    images: referenceUrls,
+    input_images: referenceUrls,
+    reference_images: referenceUrls
+  };
 }
 
 async function postVideoPayload(
@@ -183,12 +170,10 @@ export async function POST(request: Request) {
     const references = incoming
       .getAll("input_reference")
       .filter((value): value is File => value instanceof File && value.size > 0);
-    const uploadedReferenceUrls = isViduModel(model)
-      ? []
-      : await Promise.all(references.map((reference) => fileToPublicUrl(request, reference)));
+    const uploadedReferenceInputs = await Promise.all(references.map((reference) => fileToDataUrl(reference)));
     const referenceUrls = [
       ...(imageUrl ? [String(imageUrl)] : []),
-      ...uploadedReferenceUrls
+      ...uploadedReferenceInputs
     ].filter(Boolean);
     const amount = getVideoGenerationCost(model, String(seconds || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
@@ -224,9 +209,7 @@ export async function POST(request: Request) {
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          ...(imageUrl
-            ? { image_url: String(imageUrl), image_input: [String(imageUrl)], input_reference: String(imageUrl) }
-            : {})
+          ...referencePayloadFields(referenceUrls)
         },
         billing
       );
@@ -238,9 +221,7 @@ export async function POST(request: Request) {
         prompt,
         ...(seconds ? { seconds: String(seconds) } : {}),
         ...(size ? { size: String(size) } : {}),
-        image_url: referenceUrls[0],
-        image_input: referenceUrls,
-        input_reference: referenceUrls[0]
+        ...referencePayloadFields(referenceUrls)
       },
       billing
     );
