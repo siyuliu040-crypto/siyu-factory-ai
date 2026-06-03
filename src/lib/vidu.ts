@@ -29,8 +29,26 @@ export function viduHeaders(extra?: HeadersInit): HeadersInit {
 
 export async function parseViduResponse(response: Response) {
   const contentType = response.headers.get("content-type") || "";
-  if (contentType.includes("application/json")) return response.json();
-  return response.text();
+  const text = await response.text();
+  if (!text.trim()) {
+    return {
+      error: "empty_vidu_response",
+      message: "Vidu returned an empty response.",
+      upstream_status: response.status
+    };
+  }
+  if (contentType.includes("application/json")) {
+    try {
+      return JSON.parse(text);
+    } catch {
+      return {
+        error: "invalid_vidu_json",
+        message: text,
+        upstream_status: response.status
+      };
+    }
+  }
+  return text;
 }
 
 export function extractViduVideoUrl(payload: unknown) {
