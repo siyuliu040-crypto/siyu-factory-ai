@@ -400,6 +400,11 @@ function isViduModelId(model: string) {
   return model.toLowerCase().startsWith("vidu:");
 }
 
+function modelRequiresReference(model: string) {
+  const lower = model.toLowerCase();
+  return isViduModelId(model) || lower.includes("-ref-") || lower.includes("_ref_");
+}
+
 function getCreditCost(model: string, duration?: string) {
   if (isVideoModel(model)) return getVideoGenerationCost(model, duration);
   return getModelCreditCost(model);
@@ -589,23 +594,6 @@ function cleanErrorMessage(error: string, language: Language) {
   } catch {
     return error;
   }
-}
-
-function getReferenceVideoModel(size: string) {
-  void size;
-  return "firefly-veo31-ref-8s-9x16-1080p";
-}
-
-function getFastVideoModel(size: string, duration: string) {
-  void size;
-  if (duration === "15") {
-    return "veo_3_1-fast-portrait";
-  }
-  return "firefly-veo31-fast-8s-9x16-1080p";
-}
-
-function getEffectiveVideoModel(size: string, hasReference: boolean, duration: string) {
-  return hasReference ? getReferenceVideoModel(size) : getFastVideoModel(size, duration);
 }
 
 async function compressImage(file: File): Promise<File> {
@@ -800,7 +788,7 @@ export default function Studio() {
   const activeModel = mode === "image" ? imageModel : videoModel;
   const durationOptions = mode === "video" ? getDurationOptions(videoModel, language) : [];
   const activeModelCost = getCreditCost(activeModel, mode === "video" ? seconds : undefined);
-  const activeVideoNeedsReference = mode === "video" && isViduModelId(activeModel);
+  const activeVideoNeedsReference = mode === "video" && modelRequiresReference(activeModel);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
   const canSubmit =
     prompt.trim().length > 0 &&
@@ -812,7 +800,7 @@ export default function Studio() {
   const batchCreditTotal = filledBatchSlots.length
     ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getBatchSlotModel(slot), seconds), 0)
     : undefined;
-  const batchMissingRequiredReference = isViduModelId(videoModel) && filledBatchSlots.some((slot) => slot.referenceFiles.length === 0);
+  const batchMissingRequiredReference = modelRequiresReference(videoModel) && filledBatchSlots.some((slot) => slot.referenceFiles.length === 0);
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal && !batchMissingRequiredReference);
   const showCreditWarning = Boolean(currentUser && activeModelCost && currentUser.credits < activeModelCost);
   const imageHistory = history.filter((item) => item.mode === "image");
@@ -940,7 +928,6 @@ export default function Studio() {
         ...current,
         ...optimized.map((file) => ({ name: file.name, url: URL.createObjectURL(file) }))
       ]);
-      if (!isViduModelId(videoModel)) chooseVideoModel(getEffectiveVideoModel(videoSize, true, seconds));
     } finally {
       setIsOptimizingReferences(false);
     }
@@ -952,9 +939,6 @@ export default function Studio() {
     const nextFiles = referenceFiles.filter((_, itemIndex) => itemIndex !== index);
     setReferenceFiles(nextFiles);
     setReferencePreviews((current) => current.filter((_, itemIndex) => itemIndex !== index));
-    if (!isViduModelId(videoModel)) {
-      chooseVideoModel(getEffectiveVideoModel(videoSize, nextFiles.length > 0 || imageUrl.trim().length > 0, seconds));
-    }
   }
 
   function clearReferences() {
@@ -962,7 +946,6 @@ export default function Studio() {
     setReferenceFiles([]);
     setReferencePreviews([]);
     setImageUrl("");
-    if (!isViduModelId(videoModel)) chooseVideoModel(getEffectiveVideoModel(videoSize, false, seconds));
   }
 
   function updateBatchPrompt(id: string, value: string) {
@@ -970,7 +953,8 @@ export default function Studio() {
   }
 
   function getBatchSlotModel(slot: BatchPromptSlot) {
-    return isViduModelId(videoModel) ? videoModel : getEffectiveVideoModel(videoSize, slot.referenceFiles.length > 0, seconds);
+    void slot;
+    return videoModel;
   }
 
   function chooseVideoModel(model: string) {
@@ -1330,8 +1314,7 @@ export default function Studio() {
       tone: "running"
     });
     try {
-      const effectiveModel = videoModel || getEffectiveVideoModel(videoSize, singleVideoHasReference, seconds);
-      chooseVideoModel(effectiveModel);
+      const effectiveModel = videoModel;
 
       for (let attempt = 0; attempt < MAX_VIDEO_ATTEMPTS; attempt += 1) {
         try {
@@ -1760,9 +1743,6 @@ export default function Studio() {
                       onChange={(event) => {
                         const nextSize = event.target.value;
                         setVideoSize(nextSize);
-                        if (!isViduModelId(videoModel)) {
-                          chooseVideoModel(getEffectiveVideoModel(nextSize, referenceFiles.length > 0 || imageUrl.trim().length > 0, seconds));
-                        }
                       }}
                       value={videoSize}
                     >
@@ -1904,16 +1884,13 @@ export default function Studio() {
 
                 {mode === "video" ? (
                   <div className="upload-actions reference-actions">
-                    <input
-                      className="input"
-                      onChange={(event) => {
-                        setImageUrl(event.target.value);
-                        if (!isViduModelId(videoModel)) {
-                          chooseVideoModel(getEffectiveVideoModel(videoSize, referenceFiles.length > 0 || event.target.value.trim().length > 0, seconds));
-                        }
-                      }}
-                      placeholder={t.optionalReferenceUrl}
-                      value={imageUrl}
+                      <input
+                        className="input"
+                        onChange={(event) => {
+                          setImageUrl(event.target.value);
+                        }}
+                        placeholder={t.optionalReferenceUrl}
+                        value={imageUrl}
                     />
                     <button className="secondary-button" disabled={!referenceFiles.length && !imageUrl} onClick={clearReferences} type="button">
                       <X size={16} />{t.clearAll}
