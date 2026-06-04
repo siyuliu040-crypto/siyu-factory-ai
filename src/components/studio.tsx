@@ -32,6 +32,7 @@ import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
+type WorkspaceTool = "home" | "image" | "video" | "batch" | "library";
 
 type ModelItem = {
   id: string;
@@ -715,6 +716,7 @@ function getHistoryVideoPreviewUrl(item: HistoryItem) {
 export default function Studio() {
   const [language, setLanguage] = useState<Language>("zh");
   const [mode, setMode] = useState<Mode>("image");
+  const [activeTool, setActiveTool] = useState<WorkspaceTool>("home");
   const [models, setModels] = useState<ModelItem[]>([]);
   const [imageModel, setImageModel] = useState(stableImageModels[0]);
   const [videoModel, setVideoModel] = useState(stableVideoModels[0]);
@@ -841,13 +843,46 @@ export default function Studio() {
   const grantInternalAmount = parseDisplayCredits(grantAmount);
   const addPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits + grantInternalAmount : undefined;
   const subtractPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits - grantInternalAmount : undefined;
+  const isBatchWorkspace = activeTool === "batch";
+  const productionTotalCost = isBatchWorkspace ? batchCreditTotal || activeModelCost : activeModelCost;
+  const productionTotalLabel = isBatchWorkspace ? tx("batchTotal", "本批总计") : tx("currentTaskCost", "当前任务");
+  const workspaceCapacity = isBatchWorkspace ? MAX_BATCH_VIDEOS : 1;
+  const workspaceAvatar =
+    activeTool === "batch" ? tx("batchAvatar", "批")
+    : activeTool === "video" ? tx("videoAvatar", "视")
+    : activeTool === "library" ? tx("libraryAvatar", "库")
+    : tx("imageAvatar", "图");
+  const workspaceTitle =
+    activeTool === "batch" ? tx("batchWorkspace", "批量生成")
+    : activeTool === "video" ? tx("videoWorkspace", "视频生产")
+    : activeTool === "library" ? tx("libraryWorkspace", "资源库")
+    : tx("imageWorkspace", "图片生产");
   const runningCount = [
     ...imageTasks,
     ...batchJobs
   ].filter((item) => ["queued", "submitting", "in_progress", "processing", "retrying"].includes(String(item.status).toLowerCase())).length + (isPolling || isLoading ? 1 : 0);
   const completedCount = imageTasks.filter((item) => item.status === "completed").length + batchJobs.filter((item) => isVideoDone(item.status)).length;
   const failedCount = imageTasks.filter((item) => item.status === "failed").length + batchJobs.filter((item) => isVideoFailed(item.status)).length;
-  const readyCount = Math.min(MAX_BATCH_VIDEOS, Math.max(0, filledBatchSlots.length || (prompt.trim() ? 1 : 0)));
+  const readyCount = isBatchWorkspace
+    ? Math.min(MAX_BATCH_VIDEOS, filledBatchSlots.length)
+    : prompt.trim()
+      ? 1
+      : 0;
+
+  function switchWorkspace(tool: WorkspaceTool) {
+    setActiveTool(tool);
+    if (tool === "home" || tool === "image") {
+      setMode("image");
+    }
+    if (tool === "video" || tool === "batch") {
+      setMode("video");
+    }
+  }
+
+  function switchMedia(nextMode: Mode) {
+    setMode(nextMode);
+    setActiveTool(nextMode);
+  }
 
   async function refreshSession() {
     try {
@@ -1114,6 +1149,7 @@ export default function Studio() {
 
   function restoreHistory(item: HistoryItem) {
     setMode(item.mode);
+    setActiveTool(item.mode);
     setPrompt(item.prompt);
     setError("");
     if (item.mode === "image") {
@@ -1408,6 +1444,7 @@ export default function Studio() {
     }
 
     setMode("video");
+    setActiveTool("batch");
     setError("");
     setImageResult(null);
     setVideoResult(null);
@@ -1571,32 +1608,32 @@ export default function Studio() {
           </div>
 
           <div className="workspace-switcher">
-            <div className="workspace-avatar">{mode === "video" ? "视" : "图"}</div>
+            <div className="workspace-avatar">{workspaceAvatar}</div>
             <div>
-              <strong>{mode === "video" ? tx("videoWorkspace", "视频生产") : tx("imageWorkspace", "图片生产")}</strong>
+              <strong>{workspaceTitle}</strong>
               <small>{tx("teamSpace", "团队空间")}</small>
             </div>
           </div>
 
           <nav className="feature-nav" aria-label={tx("featureArea", "功能区")}>
-            <button className="feature-nav-item active" type="button">
+            <button className={`feature-nav-item ${activeTool === "home" ? "active" : ""}`} onClick={() => switchWorkspace("home")} type="button">
               <Home size={17} />
               <span>{tx("home", "首页")}</span>
             </button>
-            <button className="feature-nav-item" type="button" onClick={() => setMode("video")}>
+            <button className={`feature-nav-item ${activeTool === "video" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("video")}>
               <Film size={17} />
               <span>{tx("aiVideo", "AI 视频")}</span>
             </button>
-            <button className="feature-nav-item" type="button" onClick={() => setMode("image")}>
+            <button className={`feature-nav-item ${activeTool === "image" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("image")}>
               <ImageIcon size={17} />
               <span>{tx("aiImage", "AI 图片")}</span>
             </button>
-            <button className="feature-nav-item" type="button" onClick={() => setMode("video")}>
+            <button className={`feature-nav-item ${activeTool === "batch" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("batch")}>
               <Layers3 size={17} />
               <span>{tx("batchGenerate", "批量生成")}</span>
               <small>{filledBatchSlots.length}/10</small>
             </button>
-            <button className="feature-nav-item" type="button">
+            <button className={`feature-nav-item ${activeTool === "library" ? "active" : ""}`} onClick={() => switchWorkspace("library")} type="button">
               <FolderOpen size={17} />
               <span>{tx("assetLibrary", "资源库")}</span>
             </button>
@@ -1712,10 +1749,10 @@ export default function Studio() {
 
           <p className="section-label">{t.mediaType}</p>
           <div className="segmented" aria-label="media type">
-            <button className={`segment ${mode === "image" ? "active" : ""}`} onClick={() => setMode("image")} type="button">
+            <button className={`segment ${mode === "image" ? "active" : ""}`} onClick={() => switchMedia("image")} type="button">
               <ImageIcon size={16} />{t.image}
             </button>
-            <button className={`segment ${mode === "video" ? "active" : ""}`} onClick={() => setMode("video")} type="button">
+            <button className={`segment ${mode === "video" ? "active" : ""}`} onClick={() => switchMedia("video")} type="button">
               <Film size={16} />{t.video}
             </button>
           </div>
@@ -1762,9 +1799,9 @@ export default function Studio() {
 
           <div className="production-strip">
             <div className="production-left">
-              <span className="mini-pill"><Layers3 size={14} />{readyCount}/{MAX_BATCH_VIDEOS}</span>
+              <span className="mini-pill"><Layers3 size={14} />{readyCount}/{workspaceCapacity}</span>
               <span className="mini-pill">{tx("singleTask", "单条任务")}: {formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined)}</span>
-              <span className="mini-pill">{tx("batchTotal", "本批总计")}: {formatCreditTotal(batchCreditTotal || activeModelCost, language)}</span>
+              <span className="mini-pill">{productionTotalLabel}: {formatCreditTotal(productionTotalCost, language)}</span>
             </div>
             <div className="production-stats">
               <div>
@@ -1805,10 +1842,12 @@ export default function Studio() {
               </div>
             ) : null}
 
-            <div className="field">
-              <label htmlFor="prompt">{t.prompt}</label>
-              <textarea className="textarea" id="prompt" onChange={(event) => setPrompt(event.target.value)} placeholder={t.promptPlaceholder} value={prompt} />
-            </div>
+            {!isBatchWorkspace ? (
+              <div className="field">
+                <label htmlFor="prompt">{t.prompt}</label>
+                <textarea className="textarea" id="prompt" onChange={(event) => setPrompt(event.target.value)} placeholder={t.promptPlaceholder} value={prompt} />
+              </div>
+            ) : null}
 
             {mode === "image" ? (
               <div className="param-grid">
@@ -1864,89 +1903,103 @@ export default function Studio() {
                       ))}
                     </select>
                   </div>
-                  <div className="field">
-                    <label>{t.estimatedCost}</label>
-                    <button className="primary-button" disabled={!canSubmit} onClick={generateVideo} type="button">
-                      {isLoading ? <Loader2 size={18} /> : <Play size={18} />}{t.generateVideo}
-                      <small>{formatCreditCost(videoModel, language, seconds)}</small>
-                    </button>
-                  </div>
+                  {isBatchWorkspace ? (
+                    <div className="field">
+                      <label>{tx("batchWorkspace", "批量生成")}</label>
+                      <input
+                        className="input"
+                        readOnly
+                        value={`${readyCount}/${MAX_BATCH_VIDEOS} · ${formatCreditTotal(batchCreditTotal, language)}`}
+                      />
+                    </div>
+                  ) : (
+                    <div className="field">
+                      <label>{t.estimatedCost}</label>
+                      <button className="primary-button" disabled={!canSubmit} onClick={generateVideo} type="button">
+                        {isLoading ? <Loader2 size={18} /> : <Play size={18} />}{t.generateVideo}
+                        <small>{formatCreditCost(videoModel, language, seconds)}</small>
+                      </button>
+                    </div>
+                  )}
                 </div>
 
-                <div className="batch-panel">
-                  <div className="field-head">
-                    <label htmlFor="batch-prompt">{t.batchPrompt}</label>
-                    <span>{t.batchLimit} · {t.batchEstimatedCost}: {formatCreditTotal(batchCreditTotal, language)}</span>
-                  </div>
-                  <div className="batch-grid">
-                    {batchPrompts.map((slot, index) => (
-                      <div className="batch-card" key={slot.id}>
-                        <div className="batch-card-head">
-                          <strong>{tx("work", "作品")} {index + 1}</strong>
-                          <small>{formatCreditCost(getBatchSlotModel(slot), language, seconds)}</small>
-                        </div>
-                        <textarea
-                          className="textarea batch-textarea"
-                          id={index === 0 ? "batch-prompt" : undefined}
-                          onChange={(event) => updateBatchPrompt(slot.id, event.target.value)}
-                          placeholder={index === 0 ? t.batchPlaceholder : tx("batchCardPlaceholder", "填写这个作品的视频提示词")}
-                          value={slot.value}
-                        />
-                        <div className="batch-reference-panel">
-                          <div className="field-head compact-head">
-                            <span>{tx("workReferences", "作品参考图")}</span>
-                            <small>{slot.referenceFiles.length}/{MAX_REFERENCE_IMAGES}</small>
+                {isBatchWorkspace ? (
+                  <div className="batch-panel">
+                    <div className="field-head">
+                      <label htmlFor="batch-prompt">{t.batchPrompt}</label>
+                      <span>{t.batchLimit} · {t.batchEstimatedCost}: {formatCreditTotal(batchCreditTotal, language)}</span>
+                    </div>
+                    <div className="batch-grid">
+                      {batchPrompts.map((slot, index) => (
+                        <div className="batch-card" key={slot.id}>
+                          <div className="batch-card-head">
+                            <strong>{tx("work", "作品")} {index + 1}</strong>
+                            <small>{formatCreditCost(getBatchSlotModel(slot), language, seconds)}</small>
                           </div>
-                          <label className="batch-reference-drop" htmlFor={`batch-reference-${slot.id}`}>
-                            <ImagePlus size={16} />
-                            <span>{slot.referenceFiles.length ? t.addReferences : t.uploadReferences}</span>
-                          </label>
-                          <input
-                            accept="image/*"
-                            id={`batch-reference-${slot.id}`}
-                            multiple
-                            onChange={(event) => {
-                              void addBatchReferenceFiles(slot.id, event.target.files);
-                              event.target.value = "";
-                            }}
-                            type="file"
+                          <textarea
+                            className="textarea batch-textarea"
+                            id={index === 0 ? "batch-prompt" : undefined}
+                            onChange={(event) => updateBatchPrompt(slot.id, event.target.value)}
+                            placeholder={index === 0 ? t.batchPlaceholder : tx("batchCardPlaceholder", "填写这个作品的视频提示词")}
+                            value={slot.value}
                           />
-                          {slot.referencePreviews.length ? (
-                            <div className="batch-reference-grid">
-                              {slot.referencePreviews.map((preview, previewIndex) => (
-                                <div className="reference-thumb" key={`${slot.id}-${preview.name}-${preview.url}`}>
-                                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                                  <img alt={preview.name} src={preview.url} />
-                                  <button
-                                    aria-label={t.removeReference}
-                                    className="thumb-remove"
-                                    onClick={() => removeBatchReference(slot.id, previewIndex)}
-                                    title={t.removeReference}
-                                    type="button"
-                                  >
-                                    <X size={14} />
-                                  </button>
-                                </div>
-                              ))}
+                          <div className="batch-reference-panel">
+                            <div className="field-head compact-head">
+                              <span>{tx("workReferences", "作品参考图")}</span>
+                              <small>{slot.referenceFiles.length}/{MAX_REFERENCE_IMAGES}</small>
                             </div>
-                          ) : null}
-                          {slot.referenceFiles.length ? (
-                            <button className="text-button batch-clear" onClick={() => clearBatchReferences(slot.id)} type="button">
-                              {t.clearAll}
-                            </button>
-                          ) : null}
+                            <label className="batch-reference-drop" htmlFor={`batch-reference-${slot.id}`}>
+                              <ImagePlus size={16} />
+                              <span>{slot.referenceFiles.length ? t.addReferences : t.uploadReferences}</span>
+                            </label>
+                            <input
+                              accept="image/*"
+                              id={`batch-reference-${slot.id}`}
+                              multiple
+                              onChange={(event) => {
+                                void addBatchReferenceFiles(slot.id, event.target.files);
+                                event.target.value = "";
+                              }}
+                              type="file"
+                            />
+                            {slot.referencePreviews.length ? (
+                              <div className="batch-reference-grid">
+                                {slot.referencePreviews.map((preview, previewIndex) => (
+                                  <div className="reference-thumb" key={`${slot.id}-${preview.name}-${preview.url}`}>
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img alt={preview.name} src={preview.url} />
+                                    <button
+                                      aria-label={t.removeReference}
+                                      className="thumb-remove"
+                                      onClick={() => removeBatchReference(slot.id, previewIndex)}
+                                      title={t.removeReference}
+                                      type="button"
+                                    >
+                                      <X size={14} />
+                                    </button>
+                                  </div>
+                                ))}
+                              </div>
+                            ) : null}
+                            {slot.referenceFiles.length ? (
+                              <button className="text-button batch-clear" onClick={() => clearBatchReferences(slot.id)} type="button">
+                                {t.clearAll}
+                              </button>
+                            ) : null}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                    <button className="secondary-button" disabled={isLoading || isPolling || !canAffordBatch} onClick={generateBatchVideos} type="button">
+                      {isLoading ? <Loader2 size={18} /> : <Clapperboard size={18} />}{t.generateBatch}
+                      <small>{formatCreditTotal(batchCreditTotal, language)}</small>
+                    </button>
                   </div>
-                  <button className="secondary-button" disabled={isLoading || isPolling || !canAffordBatch} onClick={generateBatchVideos} type="button">
-                    {isLoading ? <Loader2 size={18} /> : <Clapperboard size={18} />}{t.generateBatch}
-                    <small>{formatCreditTotal(batchCreditTotal, language)}</small>
-                  </button>
-                </div>
+                ) : null}
               </>
             )}
 
+            {!isBatchWorkspace ? (
             <div className="field reference-field">
               <div className="field-head">
                 <label htmlFor={referenceInputId}>{t.referenceImages}</label>
@@ -2006,6 +2059,7 @@ export default function Studio() {
                 )}
               </div>
             </div>
+            ) : null}
 
             {videoId ? (
               <button className="secondary-button" onClick={() => void pollVideo(videoId)} type="button">
