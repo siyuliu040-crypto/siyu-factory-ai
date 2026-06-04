@@ -32,7 +32,8 @@ import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
-type WorkspaceTool = "home" | "image" | "video" | "batch" | "library";
+type WorkspaceTool = "home" | "image" | "video" | "deepseek" | "batch" | "library";
+type DeepSeekTask = "image_prompt" | "video_prompt" | "batch_shots" | "product_copy";
 
 type ModelItem = {
   id: string;
@@ -152,6 +153,15 @@ type GenerationStatus = {
   tone?: "idle" | "running" | "done" | "error";
 };
 
+type DeepSeekResult = {
+  text?: string;
+  model?: string;
+  task?: DeepSeekTask;
+  charged?: number;
+  balance?: number;
+  raw?: unknown;
+};
+
 const TOPUP_URL = "https://api.hellobabygo.com/console/topup";
 const MAX_REFERENCE_IMAGES = 6;
 const MAX_REFERENCE_SIDE = 1280;
@@ -182,6 +192,9 @@ const stableVideoModels = [
   "grok-imagine-1.0-video-ref-6s",
   "grok-imagine-1.0-video-ref-10s"
 ];
+
+const stableDeepSeekModels = ["deepseek-v4-flash", "deepseek-v4-pro"];
+const deepSeekTaskOptions: DeepSeekTask[] = ["image_prompt", "video_prompt", "batch_shots", "product_copy"];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
 
@@ -495,6 +508,45 @@ function getModelDescription(model: string, language: Language) {
   return `${aspect} · ${durationText} · ${reference}`;
 }
 
+function getDeepSeekTaskTitle(task: DeepSeekTask, language: Language) {
+  const zh: Record<DeepSeekTask, string> = {
+    image_prompt: "图片提示词",
+    video_prompt: "视频提示词",
+    batch_shots: "批量分镜",
+    product_copy: "产品文案"
+  };
+  const en: Record<DeepSeekTask, string> = {
+    image_prompt: "Image prompt",
+    video_prompt: "Video prompt",
+    batch_shots: "Batch shots",
+    product_copy: "Product copy"
+  };
+  return (language === "zh" ? zh : en)[task];
+}
+
+function getDeepSeekTaskDescription(task: DeepSeekTask, language: Language) {
+  const zh: Record<DeepSeekTask, string> = {
+    image_prompt: "把想法改成可直接生图的英文提示词。",
+    video_prompt: "把想法改成可直接生视频的镜头提示词。",
+    batch_shots: "把一个主题拆成多条批量视频作品。",
+    product_copy: "生成适合广告和电商的卖点文案。"
+  };
+  const en: Record<DeepSeekTask, string> = {
+    image_prompt: "Turn an idea into an image-ready English prompt.",
+    video_prompt: "Turn an idea into a video-ready shot prompt.",
+    batch_shots: "Split one idea into multiple batch video prompts.",
+    product_copy: "Write ad and ecommerce product copy."
+  };
+  return (language === "zh" ? zh : en)[task];
+}
+
+function getDeepSeekModelDescription(model: string, language: Language) {
+  if (model === "deepseek-v4-pro") {
+    return language === "zh" ? "更强推理，适合复杂分镜和长文案" : "Stronger reasoning for complex shots and long copy";
+  }
+  return language === "zh" ? "速度快，适合日常提示词优化" : "Fast model for everyday prompt polishing";
+}
+
 function getDurationOptions(model: string, language: Language) {
   const lower = model.toLowerCase();
   if (lower.startsWith("vidu:")) {
@@ -720,6 +772,11 @@ export default function Studio() {
   const [models, setModels] = useState<ModelItem[]>([]);
   const [imageModel, setImageModel] = useState(stableImageModels[0]);
   const [videoModel, setVideoModel] = useState(stableVideoModels[0]);
+  const [deepSeekModel, setDeepSeekModel] = useState(stableDeepSeekModels[0]);
+  const [deepSeekTask, setDeepSeekTask] = useState<DeepSeekTask>("image_prompt");
+  const [deepSeekInput, setDeepSeekInput] = useState("帮我写一个适合假发产品图的高转化提示词，9:16 竖屏，真实质感，适合电商广告。");
+  const [deepSeekResult, setDeepSeekResult] = useState<DeepSeekResult | null>(null);
+  const [isDeepSeekLoading, setIsDeepSeekLoading] = useState(false);
   const [prompt, setPrompt] = useState(
     "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text"
   );
@@ -820,10 +877,20 @@ export default function Studio() {
   const referenceInputId = `reference-images-${mode}`;
   const singleVideoHasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
   const activeModel = mode === "image" ? imageModel : videoModel;
+  const isBatchWorkspace = activeTool === "batch";
+  const isDeepSeekWorkspace = activeTool === "deepseek";
   const durationOptions = mode === "video" ? getDurationOptions(videoModel, language) : [];
   const activeModelCost = getCreditCost(activeModel, mode === "video" ? seconds : undefined);
+  const deepSeekCost = getCreditCost(deepSeekModel);
+  const activeWorkspaceModel = isDeepSeekWorkspace ? deepSeekModel : activeModel;
+  const activeWorkspaceCost = isDeepSeekWorkspace ? deepSeekCost : activeModelCost;
+  const activeWorkspaceCostText = isDeepSeekWorkspace
+    ? formatCreditTotal(deepSeekCost, language)
+    : formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined);
   const activeVideoNeedsReference = mode === "video" && modelRequiresReference(activeModel);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
+  const canAffordDeepSeek = Boolean(currentUser && deepSeekCost && currentUser.credits >= deepSeekCost);
+  const canSubmitDeepSeek = Boolean(currentUser && deepSeekInput.trim() && !isDeepSeekLoading && canAffordDeepSeek);
   const canSubmit =
     prompt.trim().length > 0 &&
     !isLoading &&
@@ -836,35 +903,40 @@ export default function Studio() {
     : undefined;
   const batchMissingRequiredReference = modelRequiresReference(videoModel) && filledBatchSlots.some((slot) => slot.referenceFiles.length === 0);
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal && !batchMissingRequiredReference);
-  const showCreditWarning = Boolean(currentUser && activeModelCost && currentUser.credits < activeModelCost);
+  const showCreditWarning = Boolean(currentUser && activeWorkspaceCost && currentUser.credits < activeWorkspaceCost);
   const imageHistory = history.filter((item) => item.mode === "image");
   const videoHistory = history.filter((item) => item.mode === "video");
   const selectedGrantUser = (session?.users || []).find((user) => user.id === grantUserId);
   const grantInternalAmount = parseDisplayCredits(grantAmount);
   const addPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits + grantInternalAmount : undefined;
   const subtractPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits - grantInternalAmount : undefined;
-  const isBatchWorkspace = activeTool === "batch";
-  const productionTotalCost = isBatchWorkspace ? batchCreditTotal || activeModelCost : activeModelCost;
+  const productionTotalCost = isDeepSeekWorkspace ? deepSeekCost : isBatchWorkspace ? batchCreditTotal || activeModelCost : activeModelCost;
   const productionTotalLabel = isBatchWorkspace ? tx("batchTotal", "本批总计") : tx("currentTaskCost", "当前任务");
   const workspaceCapacity = isBatchWorkspace ? MAX_BATCH_VIDEOS : 1;
   const workspaceAvatar =
     activeTool === "batch" ? tx("batchAvatar", "批")
+    : activeTool === "deepseek" ? tx("deepSeekAvatar", "深")
     : activeTool === "video" ? tx("videoAvatar", "视")
     : activeTool === "library" ? tx("libraryAvatar", "库")
     : tx("imageAvatar", "图");
   const workspaceTitle =
     activeTool === "batch" ? tx("batchWorkspace", "批量生成")
+    : activeTool === "deepseek" ? tx("deepSeekWorkspace", "DeepSeek 助手")
     : activeTool === "video" ? tx("videoWorkspace", "视频生产")
     : activeTool === "library" ? tx("libraryWorkspace", "资源库")
     : tx("imageWorkspace", "图片生产");
   const runningCount = [
     ...imageTasks,
     ...batchJobs
-  ].filter((item) => ["queued", "submitting", "in_progress", "processing", "retrying"].includes(String(item.status).toLowerCase())).length + (isPolling || isLoading ? 1 : 0);
+  ].filter((item) => ["queued", "submitting", "in_progress", "processing", "retrying"].includes(String(item.status).toLowerCase())).length + (isPolling || isLoading || isDeepSeekLoading ? 1 : 0);
   const completedCount = imageTasks.filter((item) => item.status === "completed").length + batchJobs.filter((item) => isVideoDone(item.status)).length;
   const failedCount = imageTasks.filter((item) => item.status === "failed").length + batchJobs.filter((item) => isVideoFailed(item.status)).length;
   const readyCount = isBatchWorkspace
     ? Math.min(MAX_BATCH_VIDEOS, filledBatchSlots.length)
+    : isDeepSeekWorkspace
+      ? deepSeekInput.trim()
+        ? 1
+        : 0
     : prompt.trim()
       ? 1
       : 0;
@@ -1522,6 +1594,81 @@ export default function Studio() {
     setIsLoading(false);
   }
 
+  async function generateDeepSeek() {
+    if (!currentUser) return;
+    if (!canSubmitDeepSeek) {
+      setError(tx("insufficientSiteCredits", "站内积分不足，请联系主账号分配积分。"));
+      return;
+    }
+
+    setError("");
+    setDeepSeekResult(null);
+    setIsDeepSeekLoading(true);
+    setGenerationStatus({
+      label: tx("deepSeekSubmitting", "DeepSeek 正在生成"),
+      detail: tx("deepSeekSubmittingHint", "正在优化提示词和文案。"),
+      progress: 20,
+      tone: "running"
+    });
+
+    try {
+      const response = await fetch("/api/deepseek/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: deepSeekModel,
+          task: deepSeekTask,
+          prompt: deepSeekInput,
+          language
+        })
+      });
+      const payload = (await response.json()) as DeepSeekResult & { error?: unknown; detail?: unknown };
+      if (!response.ok || !payload.text) throw new Error(JSON.stringify(payload));
+      setDeepSeekResult(payload);
+      setGenerationStatus({
+        label: tx("deepSeekDone", "DeepSeek 已完成"),
+        detail: tx("deepSeekDoneHint", "结果可以复制或填入生成提示词。"),
+        progress: 100,
+        tone: "done"
+      });
+      await refreshSession();
+    } catch (caught) {
+      const message = cleanErrorMessage(stringifyError(caught), language) || tx("deepSeekFailed", "DeepSeek 生成失败");
+      setError(message);
+      setGenerationStatus({
+        label: tx("statusFailed", "生成失败"),
+        detail: message,
+        progress: 0,
+        tone: "error"
+      });
+    } finally {
+      setIsDeepSeekLoading(false);
+    }
+  }
+
+  function applyDeepSeekResult() {
+    const text = deepSeekResult?.text?.trim();
+    if (!text) return;
+    if (deepSeekTask === "batch_shots") {
+      const lines = text
+        .split(/\n+/)
+        .map((line) => line.replace(/^\s*(?:[-*]|\d+[.)、])\s*/, "").trim())
+        .filter(Boolean)
+        .slice(0, MAX_BATCH_VIDEOS);
+      if (lines.length) {
+        setBatchPrompts((current) => current.map((item, index) => (lines[index] ? { ...item, value: lines[index] } : item)));
+      }
+      switchWorkspace("batch");
+      return;
+    }
+    setPrompt(text);
+    if (deepSeekTask === "video_prompt") {
+      switchWorkspace("video");
+      return;
+    }
+    switchWorkspace("image");
+  }
+
   if (isAuthLoading) {
     return (
       <main className="app-shell auth-shell">
@@ -1627,6 +1774,10 @@ export default function Studio() {
             <button className={`feature-nav-item ${activeTool === "image" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("image")}>
               <ImageIcon size={17} />
               <span>{tx("aiImage", "AI 图片")}</span>
+            </button>
+            <button className={`feature-nav-item ${activeTool === "deepseek" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("deepseek")}>
+              <Wand2 size={17} />
+              <span>{tx("deepSeekAssistant", "DeepSeek 助手")}</span>
             </button>
             <button className={`feature-nav-item ${activeTool === "batch" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("batch")}>
               <Layers3 size={17} />
@@ -1760,15 +1911,15 @@ export default function Studio() {
               <button className="status-pill" onClick={() => setLanguage(language === "zh" ? "en" : "zh")} type="button">
                 <Languages size={15} />{language === "zh" ? "简体中文" : "English"}
               </button>
-              <div className="status-pill"><Clapperboard size={15} />{activeModel}</div>
-              <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined)}</div>
+              <div className="status-pill"><Clapperboard size={15} />{activeWorkspaceModel}</div>
+              <div className="status-pill cost-pill">{t.estimatedCost}: {activeWorkspaceCostText}</div>
             </div>
           </header>
 
           <div className="production-strip">
             <div className="production-left">
               <span className="mini-pill"><Layers3 size={14} />{readyCount}/{workspaceCapacity}</span>
-              <span className="mini-pill">{tx("singleTask", "单条任务")}: {formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined)}</span>
+              <span className="mini-pill">{tx("singleTask", "单条任务")}: {activeWorkspaceCostText}</span>
               <span className="mini-pill">{productionTotalLabel}: {formatCreditTotal(productionTotalCost, language)}</span>
             </div>
             <div className="production-stats">
@@ -1804,19 +1955,20 @@ export default function Studio() {
                   <span>
                     {tx("noCreditsBody", "当前账号积分不够生成，请联系主账号分配积分后再试。")}
                     {" "}
-                    {tx("estimatedCost", "预计消耗")}: {formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined)}
+                    {tx("estimatedCost", "预计消耗")}: {activeWorkspaceCostText}
                   </span>
                 </div>
               </div>
             ) : null}
 
-            {!isBatchWorkspace ? (
+            {!isBatchWorkspace && !isDeepSeekWorkspace ? (
               <div className="field">
                 <label htmlFor="prompt">{t.prompt}</label>
                 <textarea className="textarea" id="prompt" onChange={(event) => setPrompt(event.target.value)} placeholder={t.promptPlaceholder} value={prompt} />
               </div>
             ) : null}
 
+            {!isDeepSeekWorkspace ? (
             <div className="model-picker-panel">
               <div className="field-head">
                 <label>{tx("modelType", language === "zh" ? "模型类型" : "Model type")}</label>
@@ -1857,8 +2009,73 @@ export default function Studio() {
                 })}
               </div>
             </div>
+            ) : null}
 
-            {mode === "image" ? (
+            {isDeepSeekWorkspace ? (
+              <div className="deepseek-panel">
+                <div className="field-head">
+                  <label>{tx("deepSeekAssistant", "DeepSeek 助手")}</label>
+                  <span>{tx("deepSeekPanelHint", "写提示词、拆分分镜、生成产品卖点。")}</span>
+                </div>
+
+                <div className="param-grid deepseek-controls">
+                  <div className="field">
+                    <label htmlFor="deepseek-model">{tx("deepSeekModel", "DeepSeek 模型")}</label>
+                    <select className="select" id="deepseek-model" onChange={(event) => setDeepSeekModel(event.target.value)} value={deepSeekModel}>
+                      {stableDeepSeekModels.map((model) => (
+                        <option key={model} value={model}>
+                          {model} · {formatCreditCost(model, language)}
+                        </option>
+                      ))}
+                    </select>
+                    <small className="field-note">{getDeepSeekModelDescription(deepSeekModel, language)}</small>
+                  </div>
+                  <div className="field">
+                    <label htmlFor="deepseek-task">{tx("deepSeekTask", "输出用途")}</label>
+                    <select className="select" id="deepseek-task" onChange={(event) => setDeepSeekTask(event.target.value as DeepSeekTask)} value={deepSeekTask}>
+                      {deepSeekTaskOptions.map((task) => (
+                        <option key={task} value={task}>{getDeepSeekTaskTitle(task, language)}</option>
+                      ))}
+                    </select>
+                    <small className="field-note">{getDeepSeekTaskDescription(deepSeekTask, language)}</small>
+                  </div>
+                  <div className="field">
+                    <label>{t.estimatedCost}</label>
+                    <button className="primary-button" disabled={!canSubmitDeepSeek} onClick={() => void generateDeepSeek()} type="button">
+                      {isDeepSeekLoading ? <Loader2 size={18} /> : <Wand2 size={18} />}
+                      {tx("generateDeepSeek", "生成文案")}
+                      <small>{formatCreditCost(deepSeekModel, language)}</small>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="field">
+                  <label htmlFor="deepseek-input">{tx("deepSeekInput", "你的想法")}</label>
+                  <textarea
+                    className="textarea deepseek-input"
+                    id="deepseek-input"
+                    onChange={(event) => setDeepSeekInput(event.target.value)}
+                    placeholder={tx("deepSeekInputPlaceholder", "例如：帮我写一个黑人短卷 pixie 假发的视频广告分镜，真实质感，适合 TikTok。")}
+                    value={deepSeekInput}
+                  />
+                </div>
+
+                {deepSeekResult?.text ? (
+                  <div className="deepseek-output">
+                    <div className="field-head">
+                      <label>{tx("deepSeekOutput", "DeepSeek 结果")}</label>
+                      <span>{formatCreditTotal(deepSeekResult.charged, language)}</span>
+                    </div>
+                    <pre>{deepSeekResult.text}</pre>
+                    <div className="deepseek-actions">
+                      <button className="secondary-button" onClick={applyDeepSeekResult} type="button">
+                        <Wand2 size={16} />{tx("applyDeepSeek", "填入生成提示词")}
+                      </button>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            ) : mode === "image" ? (
               <div className="param-grid">
                 <div className="field">
                   <label htmlFor="image-size">{t.imageSize}</label>
@@ -2004,7 +2221,7 @@ export default function Studio() {
               </>
             )}
 
-            {!isBatchWorkspace ? (
+            {!isBatchWorkspace && !isDeepSeekWorkspace ? (
             <div className="field reference-field">
               <div className="field-head">
                 <label htmlFor={referenceInputId}>{t.referenceImages}</label>
@@ -2066,7 +2283,7 @@ export default function Studio() {
             </div>
             ) : null}
 
-            {videoId ? (
+            {videoId && !isDeepSeekWorkspace ? (
               <button className="secondary-button" onClick={() => void pollVideo(videoId)} type="button">
                 <RefreshCw size={17} />{t.refreshStatus}
               </button>
@@ -2097,7 +2314,11 @@ export default function Studio() {
           </div>
 
           <div className="preview">
-            {activeImageUrl ? (
+            {isDeepSeekWorkspace && deepSeekResult?.text ? (
+              <div className="deepseek-result-preview">
+                <pre>{deepSeekResult.text}</pre>
+              </div>
+            ) : activeImageUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img alt="Generated result" src={activeImageUrl} />
             ) : videoSrc ? (
@@ -2110,9 +2331,9 @@ export default function Studio() {
               </div>
             ) : (
               <div className="empty-state">
-                {mode === "image" ? <ImageIcon size={44} /> : <Film size={44} />}
+                {isDeepSeekWorkspace ? <Wand2 size={44} /> : mode === "image" ? <ImageIcon size={44} /> : <Film size={44} />}
                 <strong>{t.waiting}</strong>
-                <span>{t.waitingHint}</span>
+                <span>{isDeepSeekWorkspace ? tx("deepSeekWaitingHint", "输入想法后，DeepSeek 会帮你整理成可直接使用的提示词或文案。") : t.waitingHint}</span>
               </div>
             )}
           </div>
@@ -2128,7 +2349,7 @@ export default function Studio() {
           ) : null}
           {displayError ? <div className="status-alert">{displayError}</div> : null}
 
-          {mode === "image" ? (
+          {mode === "image" && !isDeepSeekWorkspace ? (
             <div className="image-task-panel">
               <div className="history-head">
                 <h3>{tx("imageTasks", "图片任务")}</h3>
@@ -2199,6 +2420,12 @@ export default function Studio() {
             <details className="debug-box">
               <summary>API response</summary>
               <pre>{JSON.stringify(imageResult, null, 2)}</pre>
+            </details>
+          ) : null}
+          {deepSeekResult?.raw ? (
+            <details className="debug-box">
+              <summary>DeepSeek response</summary>
+              <pre>{JSON.stringify(deepSeekResult.raw, null, 2)}</pre>
             </details>
           ) : null}
           {videoResult && !videoResult.transient ? (

@@ -16,7 +16,9 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "grok-imagine-1.0-video-6s": 1100000,
   "grok-imagine-1.0-video-10s": 1500000,
   "grok-imagine-1.0-video-ref-6s": 1300000,
-  "grok-imagine-1.0-video-ref-10s": 1700000
+  "grok-imagine-1.0-video-ref-10s": 1700000,
+  "deepseek-v4-flash": 10000,
+  "deepseek-v4-pro": 30000
 };
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
