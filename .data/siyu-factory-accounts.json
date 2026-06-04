@@ -760,9 +760,9 @@
       "model": "vidu:viduq3-pro-fast",
       "prompt": "A black cat notices the empty box on the side table. The cat slowly jumps onto the table, landing softly with its front paws first, then brings its back paws up. It lowers its head, sniffs the corner of the box, ears upright, whiskers close to the cardboard. The cat stays crouched, shoulders low, eyes locked on the box.\n\nThe cat slowly lifts one front paw and gives the box a tiny cautious tap, then immediately pulls the paw back and pauses, watching if the box moves. After a short still moment, it reaches out again and gently hooks the edge of the box with its paw. The movement is small and realistic, using the paw pads and slightly curled claws, not a big slap.\n\nThe cat starts pushing the box little by little toward the edge of the table. Each paw movement shifts the box only a few centimeters. The cat pauses between each push, tilts its head down, and looks over the edge of the table as if checking where the box will fall. Its body leans forward, back slightly arched, back legs planted firmly, tail moving slightly for balance.\n\nAs the box reaches the edge, the cat gives one stronger slow push with the same paw. The box tilts halfway over the table, wobbles for a brief second, then drops off the edge. The cat quickly pulls its paw back, ears flicking backward, eyes widening slightly. It freezes for half a second, looks down at the fallen box, then suddenly jumps back and runs away like it got scared by the noise.",
       "taskId": "960020148553547776",
-      "status": "created",
+      "status": "queued",
       "createdAt": "2026-06-04T07:29:15.034Z",
-      "updatedAt": "2026-06-04T07:29:21.176Z"
+      "updatedAt": "2026-06-04T07:29:22.151Z"
     },
     {
       "id": "773394b7-9719-4e33-99df-4366f77dda8a",
