@@ -1747,39 +1747,7 @@ export default function Studio() {
             </>
           ) : null}
 
-          <p className="section-label">{t.mediaType}</p>
-          <div className="segmented" aria-label="media type">
-            <button className={`segment ${mode === "image" ? "active" : ""}`} onClick={() => switchMedia("image")} type="button">
-              <ImageIcon size={16} />{t.image}
-            </button>
-            <button className={`segment ${mode === "video" ? "active" : ""}`} onClick={() => switchMedia("video")} type="button">
-              <Film size={16} />{t.video}
-            </button>
-          </div>
-
-          <p className="section-label">{t.stableModels}</p>
-          <div className="model-list">
-            {(mode === "image" ? imageModels : videoModels).map((model) => {
-              const active = mode === "image" ? imageModel === model : activeModel === model || videoModel === model;
-              return (
-                <button
-                  className={`model-chip ${active ? "active" : ""}`}
-                  key={model}
-                  onClick={() => (mode === "image" ? setImageModel(model) : chooseVideoModel(model))}
-                  title={model}
-                  type="button"
-                >
-                  <div className="model-copy">
-                    <span>{getModelTitle(model, language)}</span>
-                    <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
-                  </div>
-                  <small>{formatCreditCost(model, language, normalizeDurationForModel(model, seconds, language))}</small>
-                  {active ? <Wand2 size={15} /> : null}
-                </button>
-              );
-            })}
-          </div>
-          <div className="note">{t.note}</div>
+          <div className="rail-note">{t.note}</div>
         </aside>
 
         <section className="composer">
@@ -1849,6 +1817,47 @@ export default function Studio() {
               </div>
             ) : null}
 
+            <div className="model-picker-panel">
+              <div className="field-head">
+                <label>{tx("modelType", language === "zh" ? "模型类型" : "Model type")}</label>
+                <span>
+                  {mode === "image"
+                    ? tx("imageModelHint", language === "zh" ? "图片生成模型和费用" : "Image models and cost")
+                    : tx("videoModelHint", language === "zh" ? "视频生成模型、时长和费用" : "Video models, duration, and cost")}
+                </span>
+              </div>
+              <div className="segmented model-mode-tabs" aria-label="media type">
+                <button className={`segment ${mode === "image" ? "active" : ""}`} onClick={() => switchMedia("image")} type="button">
+                  <ImageIcon size={16} />{t.image}
+                </button>
+                <button className={`segment ${mode === "video" ? "active" : ""}`} onClick={() => switchMedia("video")} type="button">
+                  <Film size={16} />{t.video}
+                </button>
+              </div>
+              <div className="model-list model-grid">
+                {(mode === "image" ? imageModels : videoModels).map((model) => {
+                  const active = mode === "image" ? imageModel === model : activeModel === model || videoModel === model;
+                  const modelDuration = mode === "video" ? normalizeDurationForModel(model, seconds, language) : undefined;
+                  return (
+                    <button
+                      className={`model-chip ${active ? "active" : ""}`}
+                      key={model}
+                      onClick={() => (mode === "image" ? setImageModel(model) : chooseVideoModel(model))}
+                      title={model}
+                      type="button"
+                    >
+                      <div className="model-copy">
+                        <span>{getModelTitle(model, language)}</span>
+                        <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
+                      </div>
+                      <small>{formatCreditCost(model, language, modelDuration)}</small>
+                      {active ? <Wand2 size={15} /> : null}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {mode === "image" ? (
               <div className="param-grid">
                 <div className="field">
@@ -1859,10 +1868,6 @@ export default function Studio() {
                     <option value="1024x1024">1:1 - 1024x1024</option>
                     <option value="1536x1024">3:2 - 1536x1024</option>
                   </select>
-                </div>
-                <div className="field">
-                  <label htmlFor="image-model">{t.currentModel}</label>
-                  <input className="input" id="image-model" readOnly value={`${imageModel} · ${formatCreditCost(imageModel, language)}`} />
                 </div>
                 <div className="field">
                   <label>{t.estimatedCost}</label>
