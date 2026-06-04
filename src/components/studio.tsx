@@ -1,13 +1,18 @@
 ﻿"use client";
 
 import {
+  Activity,
+  CheckCircle2,
   Clapperboard,
   CreditCard,
   Download,
   Film,
+  FolderOpen,
+  Home,
   Image as ImageIcon,
   ImagePlus,
   Languages,
+  Layers3,
   Loader2,
   LogOut,
   Minus,
@@ -836,6 +841,13 @@ export default function Studio() {
   const grantInternalAmount = parseDisplayCredits(grantAmount);
   const addPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits + grantInternalAmount : undefined;
   const subtractPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits - grantInternalAmount : undefined;
+  const runningCount = [
+    ...imageTasks,
+    ...batchJobs
+  ].filter((item) => ["queued", "submitting", "in_progress", "processing", "retrying"].includes(String(item.status).toLowerCase())).length + (isPolling || isLoading ? 1 : 0);
+  const completedCount = imageTasks.filter((item) => item.status === "completed").length + batchJobs.filter((item) => isVideoDone(item.status)).length;
+  const failedCount = imageTasks.filter((item) => item.status === "failed").length + batchJobs.filter((item) => isVideoFailed(item.status)).length;
+  const readyCount = Math.min(MAX_BATCH_VIDEOS, Math.max(0, filledBatchSlots.length || (prompt.trim() ? 1 : 0)));
 
   async function refreshSession() {
     try {
@@ -1558,6 +1570,38 @@ export default function Studio() {
             </div>
           </div>
 
+          <div className="workspace-switcher">
+            <div className="workspace-avatar">{mode === "video" ? "视" : "图"}</div>
+            <div>
+              <strong>{mode === "video" ? tx("videoWorkspace", "视频生产") : tx("imageWorkspace", "图片生产")}</strong>
+              <small>{tx("teamSpace", "团队空间")}</small>
+            </div>
+          </div>
+
+          <nav className="feature-nav" aria-label={tx("featureArea", "功能区")}>
+            <button className="feature-nav-item active" type="button">
+              <Home size={17} />
+              <span>{tx("home", "首页")}</span>
+            </button>
+            <button className="feature-nav-item" type="button" onClick={() => setMode("video")}>
+              <Film size={17} />
+              <span>{tx("aiVideo", "AI 视频")}</span>
+            </button>
+            <button className="feature-nav-item" type="button" onClick={() => setMode("image")}>
+              <ImageIcon size={17} />
+              <span>{tx("aiImage", "AI 图片")}</span>
+            </button>
+            <button className="feature-nav-item" type="button" onClick={() => setMode("video")}>
+              <Layers3 size={17} />
+              <span>{tx("batchGenerate", "批量生成")}</span>
+              <small>{filledBatchSlots.length}/10</small>
+            </button>
+            <button className="feature-nav-item" type="button">
+              <FolderOpen size={17} />
+              <span>{tx("assetLibrary", "资源库")}</span>
+            </button>
+          </nav>
+
           <div className="account-card">
             <div>
               <span className="section-label compact">
@@ -1715,6 +1759,36 @@ export default function Studio() {
               <div className="status-pill cost-pill">{t.estimatedCost}: {formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined)}</div>
             </div>
           </header>
+
+          <div className="production-strip">
+            <div className="production-left">
+              <span className="mini-pill"><Layers3 size={14} />{readyCount}/{MAX_BATCH_VIDEOS}</span>
+              <span className="mini-pill">{tx("singleTask", "单条任务")}: {formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined)}</span>
+              <span className="mini-pill">{tx("batchTotal", "本批总计")}: {formatCreditTotal(batchCreditTotal || activeModelCost, language)}</span>
+            </div>
+            <div className="production-stats">
+              <div>
+                <Activity size={15} />
+                <span>{tx("ready", "就绪")}</span>
+                <strong>{readyCount}</strong>
+              </div>
+              <div>
+                <Loader2 className={runningCount ? "spin" : ""} size={15} />
+                <span>{tx("running", "进行中")}</span>
+                <strong>{runningCount}</strong>
+              </div>
+              <div>
+                <CheckCircle2 size={15} />
+                <span>{tx("done", "已完成")}</span>
+                <strong>{completedCount}</strong>
+              </div>
+              <div>
+                <X size={15} />
+                <span>{tx("failed", "失败")}</span>
+                <strong>{failedCount}</strong>
+              </div>
+            </div>
+          </div>
 
           <div className="compose-body">
             {showCreditWarning ? (
