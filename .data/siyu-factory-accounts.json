@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43984880,
+      "credits": 43986080,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T10:00:20.848Z"
+      "updatedAt": "2026-06-05T10:01:54.044Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "2c62832b-9b6d-4bf3-9af1-c973de6fe06e",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200,
+      "balanceAfter": 43986080,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T10:01:54.044Z",
+      "metadata": {
+        "taskId": "task_2hf53R0E5ybsJhiobHOg4Njm2dRF2T6z",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "0e8268a6-81bf-4621-a311-111abb990505",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1360,10 +1372,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 1200,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T10:00:24.652Z",
-      "updatedAt": "2026-06-05T10:00:24.652Z"
+      "updatedAt": "2026-06-05T10:01:54.044Z"
     },
     {
       "id": "task_i6Bp4kD699uScGEMMOQbfmXJeMbNBboD",
@@ -1924,9 +1936,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_2hf53R0E5ybsJhiobHOg4Njm2dRF2T6z",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-05T10:00:24.652Z",
-      "updatedAt": "2026-06-05T10:01:46.482Z"
+      "updatedAt": "2026-06-05T10:01:54.044Z"
     },
     {
       "id": "8bc372d8-57b2-4876-b1c3-da2a133c5c04",
