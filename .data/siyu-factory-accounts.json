@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43995040,
+      "credits": 44006560,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T07:36:14.548Z"
+      "updatedAt": "2026-06-05T07:37:56.507Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "74adee8f-88c8-4fef-95e7-10ad1b0af785",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 11520,
+      "balanceAfter": 44006560,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T07:37:56.507Z",
+      "metadata": {
+        "taskId": "task_GEiM6JJu3GCbPEcpMYfTA5SKoNYdHZth",
+        "model": "sora-2-12s-9x16"
+      }
+    },
     {
       "id": "64a44672-c0a6-4c67-8fb4-cd47765a0e61",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1162,10 +1174,10 @@
       "type": "video",
       "model": "sora-2-12s-9x16",
       "amount": 11520,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T07:34:14.557Z",
-      "updatedAt": "2026-06-05T07:34:14.557Z"
+      "updatedAt": "2026-06-05T07:37:56.507Z"
     },
     {
       "id": "task_7rhuQFFzgvD5eO6c2Q6gpuwFmijc0WJi",
@@ -1588,9 +1600,9 @@
       "model": "sora-2-12s-9x16",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_GEiM6JJu3GCbPEcpMYfTA5SKoNYdHZth",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-06-05T07:34:14.557Z",
-      "updatedAt": "2026-06-05T07:37:29.717Z"
+      "updatedAt": "2026-06-05T07:37:56.507Z"
     },
     {
       "id": "19ebc203-7d9f-4615-b05b-9c1dab5f7093",
