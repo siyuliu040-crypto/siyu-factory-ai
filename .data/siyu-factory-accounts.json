@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 49810000,
+      "credits": 49800000,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-04T07:29:11.809Z"
+      "updatedAt": "2026-06-05T01:03:58.561Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -100,6 +100,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "f8570bbe-f347-48bf-8de3-9cd3e366d3c0",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -10000,
+      "balanceAfter": 49800000,
+      "reason": "deepseek assistant",
+      "createdAt": "2026-06-05T01:03:58.561Z",
+      "metadata": {
+        "model": "deepseek-v4-flash",
+        "task": "image_prompt"
+      }
+    },
     {
       "id": "c84e2f20-1383-49a9-a7d6-5aca078ea537",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
