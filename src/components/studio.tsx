@@ -186,15 +186,7 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
-  "firefly-veo31-fast-8s-9x16-1080p",
-  "veo_3_1-fast-portrait",
-  "veo_3_1-fast-portrait-hd",
-  "veo_3_1-fast-portrait-fl-hd",
-  "ali-sora-video-portrait-official-4s",
-  "ali-sora-video-portrait-official-8s",
   "sora-2-4s-9x16",
-  "sora-2-8s-9x16",
-  "sora-2-12s-9x16",
   "sora2-pro-12s-9x16",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
