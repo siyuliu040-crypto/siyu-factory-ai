@@ -876,6 +876,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_KragRfTgrui1CMA8xTZSXkFJK6vLA4Ft",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "ali-sora-video-portrait-official-4s",
+      "amount": 2880,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-05T07:33:58.959Z",
+      "updatedAt": "2026-06-05T07:33:58.959Z"
+    },
+    {
       "id": "task_vOuc25GwMLoIB0GXH0TvkfbC4UXs02l0",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -1174,6 +1185,17 @@
     }
   ],
   "history": [
+    {
+      "id": "ee350227-86d3-4318-80b5-a1342146c49b",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "ali-sora-video-portrait-official-4s",
+      "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
+      "taskId": "task_KragRfTgrui1CMA8xTZSXkFJK6vLA4Ft",
+      "status": "in_progress",
+      "createdAt": "2026-06-05T07:33:58.959Z",
+      "updatedAt": "2026-06-05T07:33:58.959Z"
+    },
     {
       "id": "7cbc4e98-d34b-45ae-b4aa-5e5e7785713d",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
