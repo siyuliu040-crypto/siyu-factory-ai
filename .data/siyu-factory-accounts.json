@@ -39,6 +39,16 @@
       "credits": 0,
       "createdAt": "2026-06-05T06:35:19.123Z",
       "updatedAt": "2026-06-05T06:35:19.123Z"
+    },
+    {
+      "id": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
+      "email": "511693553@qq.com",
+      "name": "future",
+      "passwordHash": "3d406d6cd7b51797b764bf7f945289ce:5d43dce08c4b591f9f59c7e0784e0c1627bc313e731e0dbb7fbaa9d835142a43a74b00c01efc416b7dfe0b009e1bfb37130c46cb0cb039339ed1bec32c618fa9",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-05T06:35:20.237Z",
+      "updatedAt": "2026-06-05T06:35:20.237Z"
     }
   ],
   "sessions": [
@@ -107,6 +117,12 @@
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
       "expiresAt": "2026-06-12T06:35:19.325Z",
       "createdAt": "2026-06-05T06:35:19.325Z"
+    },
+    {
+      "token": "39c5ad5f7955e4fcb9e9da7967dfae2ca4fbc33027e081e0d6308f7cf0a1c886",
+      "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
+      "expiresAt": "2026-06-12T06:35:20.425Z",
+      "createdAt": "2026-06-05T06:35:20.425Z"
     }
   ],
   "ledger": [
