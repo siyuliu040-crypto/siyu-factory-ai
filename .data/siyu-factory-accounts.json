@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43988480,
+      "credits": 43989680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T08:43:51.741Z"
+      "updatedAt": "2026-06-05T08:44:00.277Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "b2fdf02f-5d8d-4914-8dd4-d7383aba6f23",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200,
+      "balanceAfter": 43989680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T08:44:00.277Z",
+      "metadata": {
+        "taskId": "task_EdyYhnf9Z3jcIUEsRmt8vA5iqo2X2Wyj",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "40a1f64a-f7b8-47fb-8868-d1580faf4edc",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1132,10 +1144,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 1200,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T08:43:54.689Z",
-      "updatedAt": "2026-06-05T08:43:54.689Z"
+      "updatedAt": "2026-06-05T08:44:00.277Z"
     },
     {
       "id": "task_zaOHIWWB0xBA8aCz0NgkQMNDIKHSoiyV",
@@ -1575,9 +1587,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_EdyYhnf9Z3jcIUEsRmt8vA5iqo2X2Wyj",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-05T08:43:54.689Z",
-      "updatedAt": "2026-06-05T08:43:59.277Z"
+      "updatedAt": "2026-06-05T08:44:00.277Z"
     },
     {
       "id": "8f007c6b-366a-43ab-9dda-e1a0b821853a",
