@@ -29,6 +29,16 @@
       "credits": 20000000,
       "createdAt": "2026-06-03T06:10:25.337Z",
       "updatedAt": "2026-06-03T07:20:09.654Z"
+    },
+    {
+      "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "email": "wen54426@gmail.com",
+      "name": "h",
+      "passwordHash": "26ef75d62b39b24c2836fe24a1829c10:4f610fc60f56cb700e120616669061b0fe9d5f527cc74a02fdee207037a7b33dfb8f2161b1c17c55a01950b0a567581bae8848d2785300ab5d894a0211629d93",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-05T06:35:19.123Z",
+      "updatedAt": "2026-06-05T06:35:19.123Z"
     }
   ],
   "sessions": [
@@ -91,6 +101,12 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-06-10T09:19:52.061Z",
       "createdAt": "2026-06-03T09:19:52.061Z"
+    },
+    {
+      "token": "b4f13e46f59c314a000563f08b3ff100e701f620b4fc1c883f7fd7018ba7f9ed",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "expiresAt": "2026-06-12T06:35:19.325Z",
+      "createdAt": "2026-06-05T06:35:19.325Z"
     }
   ],
   "ledger": [
