@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43980400,
+      "credits": 43981600,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T07:35:13.635Z"
+      "updatedAt": "2026-06-05T07:35:16.774Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "9da5044c-6861-4e9e-aae7-9b9723fd886a",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200,
+      "balanceAfter": 43981600,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T07:35:16.774Z",
+      "metadata": {
+        "taskId": "task_vOuc25GwMLoIB0GXH0TvkfbC4UXs02l0",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "9f5f9168-fb26-4ba9-b456-b1f5e6b07491",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1169,10 +1181,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 1200,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T07:33:54.624Z",
-      "updatedAt": "2026-06-05T07:33:54.624Z"
+      "updatedAt": "2026-06-05T07:35:16.774Z"
     },
     {
       "id": "task_6oi9WM9IjURaJFQ60dT9x8JRyhx7kd2Q",
@@ -1590,9 +1602,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_vOuc25GwMLoIB0GXH0TvkfbC4UXs02l0",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-05T07:33:54.624Z",
-      "updatedAt": "2026-06-05T07:33:54.624Z"
+      "updatedAt": "2026-06-05T07:35:16.774Z"
     },
     {
       "id": "c3598891-b32f-4318-851d-963302f851b1",
