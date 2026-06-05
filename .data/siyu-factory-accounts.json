@@ -46,9 +46,9 @@
       "name": "future",
       "passwordHash": "3d406d6cd7b51797b764bf7f945289ce:5d43dce08c4b591f9f59c7e0784e0c1627bc313e731e0dbb7fbaa9d835142a43a74b00c01efc416b7dfe0b009e1bfb37130c46cb0cb039339ed1bec32c618fa9",
       "role": "user",
-      "credits": 0,
+      "credits": 50000000,
       "createdAt": "2026-06-05T06:35:20.237Z",
-      "updatedAt": "2026-06-05T06:35:20.237Z"
+      "updatedAt": "2026-06-05T06:36:39.795Z"
     }
   ],
   "sessions": [
@@ -126,6 +126,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "7e5605cf-886a-48f3-8936-ec2103dabcc2",
+      "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 50000000,
+      "balanceAfter": 50000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-06-05T06:36:39.795Z"
+    },
     {
       "id": "ee431217-0773-4d9f-9e48-23f0d3584c62",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
