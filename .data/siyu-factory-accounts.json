@@ -1582,9 +1582,9 @@
       "model": "sora-2-8s-9x16",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_7rhuQFFzgvD5eO6c2Q6gpuwFmijc0WJi",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-05T07:34:10.835Z",
-      "updatedAt": "2026-06-05T07:34:10.835Z"
+      "updatedAt": "2026-06-05T07:35:29.639Z"
     },
     {
       "id": "a7aa62e2-588e-44a6-9444-50dad1822773",
