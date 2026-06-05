@@ -2,7 +2,7 @@ export const DEEPSEEK_BASE_URL =
   process.env.DEEPSEEK_API_BASE_URL?.replace(/\/$/, "") ||
   "https://api.deepseek.com";
 
-export const DEEPSEEK_MODELS = ["deepseek-v4-flash", "deepseek-v4-pro"] as const;
+export const DEEPSEEK_MODELS = ["deepseek-v4-flash", "deepseek-v4-pro", "omni_flash"] as const;
 
 export type DeepSeekModel = (typeof DEEPSEEK_MODELS)[number];
 

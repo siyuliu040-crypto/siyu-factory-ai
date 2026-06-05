@@ -23,7 +23,8 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "grok-imagine-1.0-video-ref-6s": 11520,
   "grok-imagine-1.0-video-ref-10s": 11520,
   "deepseek-v4-flash": 10000,
-  "deepseek-v4-pro": 30000
+  "deepseek-v4-pro": 30000,
+  "omni_flash": 40000
 };
 
 const INTERNAL_CREDIT_SCALE = 10000;

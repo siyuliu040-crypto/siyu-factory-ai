@@ -1367,6 +1367,20 @@ button.status-pill {
   overflow-wrap: anywhere;
 }
 
+.model-requirement-badge {
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid rgba(189, 74, 27, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 241, 230, 0.9);
+  color: #9a3412;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
 .model-chip small {
   flex: 0 1 auto;
   max-width: 96px;

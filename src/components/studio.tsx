@@ -188,6 +188,7 @@ const stableImageModels = [
 const stableVideoModels = [
   "sora-2-4s-9x16",
   "sora2-pro-12s-9x16",
+  "veo_3_1-fast-portrait-fl-hd",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
@@ -195,7 +196,7 @@ const stableVideoModels = [
   "grok-imagine-1.0-video-ref-10s"
 ];
 
-const stableDeepSeekModels = ["deepseek-v4-flash", "deepseek-v4-pro"];
+const stableDeepSeekModels = ["deepseek-v4-flash", "deepseek-v4-pro", "omni_flash"];
 const deepSeekTaskOptions: DeepSeekTask[] = ["image_prompt", "video_prompt", "batch_shots", "product_copy"];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
@@ -424,7 +425,11 @@ function isViduModelId(model: string) {
 
 function modelRequiresReference(model: string) {
   const lower = model.toLowerCase();
-  return isViduModelId(model) || lower.includes("-ref-") || lower.includes("_ref_");
+  return isViduModelId(model) || lower.includes("-ref-") || lower.includes("_ref_") || lower.includes("fl-hd");
+}
+
+function modelRequiresFirstFrame(model: string) {
+  return model.toLowerCase().includes("fl-hd");
 }
 
 function getCreditCost(model: string, duration?: string, resolution?: string) {
@@ -476,7 +481,7 @@ function getModelTitle(model: string, language: Language) {
   }
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
   if (lower.includes("veo_3_1")) {
-    if (lower.includes("fl-hd")) return language === "zh" ? "VEO 3.1 Fast 首尾帧 HD" : "VEO 3.1 Fast FL HD";
+    if (lower.includes("fl-hd")) return language === "zh" ? "VEO 3.1 Fast 首帧 HD" : "VEO 3.1 Fast First Frame HD";
     if (lower.includes("-hd")) return language === "zh" ? "VEO 3.1 Fast HD" : "VEO 3.1 Fast HD";
     return language === "zh" ? "VEO 3.1 Fast 竖屏" : "VEO 3.1 Fast Portrait";
   }
@@ -522,6 +527,11 @@ function getModelDescription(model: string, language: Language) {
       ? `${aspect} · ${fixedDuration} 秒固定 · ${family} 纯提示词视频`
       : `${aspect} · fixed ${fixedDuration}s · ${family} prompt-only video`;
   }
+  if (lower.includes("veo_3_1") && lower.includes("fl-hd")) {
+    return language === "zh"
+      ? `${aspect} · 4/8/12/15 秒可选 · 必须上传首帧图`
+      : `${aspect} · 4/8/12/15s selectable · first frame required`;
+  }
   const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
     : copy[language].modelTextOnly;
@@ -565,6 +575,9 @@ function getDeepSeekTaskDescription(task: DeepSeekTask, language: Language) {
 }
 
 function getDeepSeekModelDescription(model: string, language: Language) {
+  if (model === "omni_flash") {
+    return language === "zh" ? "上游 Omni Flash，适合快速文案和提示词整理" : "Upstream Omni Flash for fast copy and prompt polishing";
+  }
   if (model === "deepseek-v4-pro") {
     return language === "zh" ? "更强推理，适合复杂分镜和长文案" : "Stronger reasoning for complex shots and long copy";
   }
@@ -2069,6 +2082,11 @@ export default function Studio() {
                       <div className="model-copy">
                         <span>{getModelTitle(model, language)}</span>
                         <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
+                        {mode === "video" && modelRequiresFirstFrame(model) ? (
+                          <b className="model-requirement-badge">
+                            {tx("firstFrameRequired", language === "zh" ? "首帧图必填" : "First frame required")}
+                          </b>
+                        ) : null}
                       </div>
                       <small>{formatCreditCost(model, language, modelDuration, modelResolution)}</small>
                       {active ? <Wand2 size={15} /> : null}

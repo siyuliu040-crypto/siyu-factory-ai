@@ -24,6 +24,7 @@ const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
 const VERIFIED_VIDEO_MODELS = new Set([
   "sora-2-4s-9x16",
   "sora2-pro-12s-9x16",
+  "veo_3_1-fast-portrait-fl-hd",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
@@ -79,13 +80,20 @@ function referencePayloadFields(referenceUrls: string[]) {
     input_reference: first,
     input_image: first,
     first_frame_image: first,
+    first_frame_url: first,
+    start_frame: first,
+    start_frame_url: first,
+    frame_image: first,
+    frame_image_url: first,
     reference_image: first,
     image_input: referenceUrls,
     image_urls: referenceUrls,
     images: referenceUrls,
     input_images: referenceUrls,
     reference_images: referenceUrls,
-    reference_image_urls: referenceUrls
+    reference_image_urls: referenceUrls,
+    frames: referenceUrls,
+    frame_urls: referenceUrls
   };
 }
 
@@ -96,6 +104,10 @@ function minimalReferencePayloadFields(referenceUrls: string[]) {
 
 function isGrokReferenceVideoModel(model: string) {
   return model === "grok-imagine-1.0-video-ref-6s" || model === "grok-imagine-1.0-video-ref-10s";
+}
+
+function requiresFirstFrame(model: string) {
+  return model === "veo_3_1-fast-portrait-fl-hd";
 }
 
 function normalizeUpstreamVideoRequest(model: string, seconds: FormDataEntryValue | null) {
@@ -251,6 +263,12 @@ export async function POST(request: Request) {
 
     if (isGrokReferenceVideoModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This model requires one reference image." }, 400);
+    }
+    if (requiresFirstFrame(model) && publicReferenceUrls.length === 0) {
+      return jsonError({
+        error: "first_frame_required",
+        message: "This VEO frame-to-video model requires at least one first-frame reference image."
+      }, 400);
     }
 
     const amount = getVideoGenerationCost(model, String(seconds || ""), String(size || ""));

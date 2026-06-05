@@ -7,7 +7,7 @@ import {
 } from "@/lib/deepseek";
 import { AccountError, chargeUserCredits, refundCreditsForUser, requireUser } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
-import { jsonError } from "@/lib/hellobabygo";
+import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
 import { getGenerationCost } from "@/lib/pricing";
 
 export const dynamic = "force-dynamic";
@@ -36,6 +36,10 @@ function taskInstruction(task: DeepSeekTask, language: string) {
     : "Rewrite the user idea into an English prompt for 9:16 AI image generation. Include subject, scene, lighting, material, composition, and no text/logo constraints.";
 }
 
+function isHelloBabyGoTextModel(model: string) {
+  return model === "omni_flash";
+}
+
 export async function POST(request: Request) {
   let charged: { user: { id: string; credits: number }; entry?: unknown } | null = null;
   let amount = 0;
@@ -61,11 +65,15 @@ export async function POST(request: Request) {
     }
 
     await requireUser(request);
-    const headers = deepSeekHeaders({ "Content-Type": "application/json", Accept: "application/json" });
+    const headers = isHelloBabyGoTextModel(model)
+      ? authHeaders({ "Content-Type": "application/json", Accept: "application/json" })
+      : deepSeekHeaders({ "Content-Type": "application/json", Accept: "application/json" });
     amount = getGenerationCost(model, 1);
     charged = await chargeUserCredits(request, amount, "deepseek assistant", { model, task });
     const instruction = taskInstruction(task, language);
-    const response = await fetch(`${DEEPSEEK_BASE_URL}/chat/completions`, {
+    const response = await fetch(
+      `${isHelloBabyGoTextModel(model) ? `${HELLOBABYGO_BASE_URL}/v1` : DEEPSEEK_BASE_URL}/chat/completions`,
+      {
       method: "POST",
       headers,
       body: JSON.stringify({
@@ -84,10 +92,11 @@ export async function POST(request: Request) {
         temperature: task === "product_copy" ? 0.75 : 0.65,
         max_tokens: task === "batch_shots" ? 1600 : 1200
       }),
-      cache: "no-store"
-    });
+        cache: "no-store"
+      }
+    );
 
-    const payload = await parseDeepSeekResponse(response);
+    const payload = isHelloBabyGoTextModel(model) ? await parseUpstreamResponse(response) : await parseDeepSeekResponse(response);
     const text = extractDeepSeekText(payload);
 
     if (!response.ok || !text) {
