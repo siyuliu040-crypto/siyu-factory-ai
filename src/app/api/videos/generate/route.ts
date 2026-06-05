@@ -197,6 +197,74 @@ async function postVideoPayload(
   );
 }
 
+async function postFrameVideoPayload(
+  payload: { model: string; prompt: string; seconds?: string; size?: string; image: Blob; fileName: string },
+  billing: { userId: string; amount: number; model: string }
+) {
+  const formData = new FormData();
+  formData.set("model", payload.model);
+  formData.set("prompt", payload.prompt);
+  if (payload.seconds) formData.set("seconds", payload.seconds);
+  if (payload.size) formData.set("size", payload.size);
+  formData.set("image", payload.image, payload.fileName);
+
+  const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/videos`, {
+    method: "POST",
+    headers: authHeaders({ Accept: "application/json" }),
+    body: formData,
+    cache: "no-store"
+  });
+  const data = await parseUpstreamResponse(response);
+  const taskId = getTaskId(data);
+
+  if (!response.ok || isImmediateFailure(data)) {
+    await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
+      model: billing.model
+    });
+    return Response.json(data, { status: response.status });
+  }
+
+  if (taskId) {
+    await withAccountState((state) => {
+      recordGenerationTask(state, {
+        id: taskId,
+        userId: billing.userId,
+        type: "video",
+        model: billing.model,
+        amount: billing.amount
+      });
+      recordGenerationHistory(state, {
+        userId: billing.userId,
+        type: "video",
+        model: billing.model,
+        prompt: payload.prompt,
+        taskId,
+        status: String((data as { status?: unknown })?.status || "queued"),
+        previewUrl: extractVideoUrl(data) || undefined
+      });
+    });
+  }
+
+  return Response.json(
+    {
+      ...(typeof data === "object" && data ? data : { data }),
+      charged: billing.amount
+    },
+    { status: response.status }
+  );
+}
+
+async function imageUrlToBlob(imageUrl: string) {
+  const response = await fetch(imageUrl, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`Unable to fetch first-frame image URL: ${response.status}`);
+  }
+  return {
+    blob: await response.blob(),
+    fileName: imageUrl.split("/").pop()?.split("?")[0] || "first-frame.jpg"
+  };
+}
+
 async function postViduPayload(
   payload: Record<string, unknown>,
   billing: { userId: string; amount: number; model: string }
@@ -291,10 +359,29 @@ export async function POST(request: Request) {
         message: "This VEO frame-to-video model requires at least one first-frame reference image."
       }, 400);
     }
+    const preparedFirstFrame = requiresFirstFrame(model)
+      ? references[0]
+        ? { blob: references[0], fileName: references[0].name || "first-frame.jpg" }
+        : await imageUrlToBlob(String(imageUrl || ""))
+      : null;
 
     const amount = getVideoGenerationCost(model, String(seconds || ""), String(size || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
     const billing = { userId: charge.user.id, amount, model };
+
+    if (requiresFirstFrame(model)) {
+      return postFrameVideoPayload(
+        {
+          model: upstreamModel,
+          prompt,
+          ...(seconds ? { seconds: String(seconds) } : {}),
+          ...(size ? { size: String(size) } : {}),
+          image: preparedFirstFrame!.blob,
+          fileName: preparedFirstFrame!.fileName
+        },
+        billing
+      );
+    }
 
     if (isViduModel(upstreamModel)) {
       const firstImage = dataReferenceUrls[0] || "";
