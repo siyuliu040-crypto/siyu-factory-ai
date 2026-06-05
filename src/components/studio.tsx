@@ -687,9 +687,21 @@ function isTransientVideoStatusError(payload: unknown) {
 function isInsufficientQuota(message: string) {
   return (
     message.includes("insufficient_user_quota") ||
+    message.includes("PUBLIC_ERROR_USER_QUOTA_REACHED") ||
+    message.includes("RESOURCE_EXHAUSTED") ||
     message.includes("额度不足") ||
     message.includes("余额不足") ||
     message.includes("预扣费额度失败")
+  );
+}
+
+function isProviderInternalError(message: string) {
+  return (
+    message.includes("Internal error encountered") ||
+    message.includes("\"status\":\"INTERNAL\"") ||
+    message.includes("\"status\": \"INTERNAL\"") ||
+    message.includes("\"code\":500") ||
+    message.includes("\"code\": 500")
   );
 }
 
@@ -743,8 +755,13 @@ function cleanErrorMessage(error: string, language: Language) {
   if (isTransientVideoStatusError(error)) return getTransientVideoMessage(language);
   if (isInsufficientQuota(error)) {
     return language === "zh"
-      ? "上游账户余额不足，请先充值后再生成。"
-      : "The upstream account balance is low. Please top up before generating again.";
+      ? "上游 VEO 供应商资源或额度不足，任务已失败。站内积分会退回；请稍后重试，或先用 Vidu/Grok 模型生成。"
+      : "The upstream VEO provider is out of quota or resources. Site credits will be refunded; retry later or use Vidu/Grok.";
+  }
+  if (isProviderInternalError(error)) {
+    return language === "zh"
+      ? "上游 VEO 供应商内部错误，任务已失败。站内积分会退回；请换一张首帧图/简化提示词后重试，或先用 Vidu/Grok。"
+      : "The upstream VEO provider returned an internal error. Site credits will be refunded; try another first frame, simplify the prompt, or use Vidu/Grok.";
   }
   try {
     const parsed = JSON.parse(error) as { message?: string; error?: string; detail?: unknown };
