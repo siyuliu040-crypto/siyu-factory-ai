@@ -58,6 +58,27 @@ async function fileToReferenceInput(file: File, origin: string) {
   };
 }
 
+function getPublicOrigin(request: Request) {
+  const configured =
+    process.env.PUBLIC_SITE_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.RENDER_EXTERNAL_URL ||
+    "";
+  if (configured) return configured.replace(/\/$/, "");
+
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  if (forwardedHost) {
+    const forwardedProto = request.headers.get("x-forwarded-proto") || "https";
+    return `${forwardedProto}://${forwardedHost}`.replace(/\/$/, "");
+  }
+
+  const origin = new URL(request.url).origin.replace(/\/$/, "");
+  if (origin.includes("localhost") || origin.includes("127.0.0.1") || origin.includes("0.0.0.0")) {
+    return "https://siyu-factory-ai.onrender.com";
+  }
+  return origin;
+}
+
 function getTaskId(payload: unknown) {
   if (!payload || typeof payload !== "object") return "";
   const record = payload as Record<string, unknown>;
@@ -247,7 +268,7 @@ export async function POST(request: Request) {
     const { upstreamModel, seconds } = normalizeUpstreamVideoRequest(model, secondsInput);
     const size = incoming.get("size");
     const imageUrl = incoming.get("image_url");
-    const origin = new URL(request.url).origin;
+    const origin = getPublicOrigin(request);
     const references = incoming
       .getAll("input_reference")
       .filter((value): value is File => value instanceof File && value.size > 0);

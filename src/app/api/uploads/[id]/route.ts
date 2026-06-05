@@ -21,6 +21,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     return new Response(file, {
       headers: {
         "Cache-Control": "public, max-age=3600",
+        "Content-Length": String(file.byteLength),
         "Content-Type": CONTENT_TYPES[extension] || "image/jpeg"
       }
     });
