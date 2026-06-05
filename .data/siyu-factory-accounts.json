@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43987280,
+      "credits": 43988480,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T09:55:13.544Z"
+      "updatedAt": "2026-06-05T09:56:36.733Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "5a3122a5-d046-429b-95b4-b26d714f5774",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200,
+      "balanceAfter": 43988480,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T09:56:36.733Z",
+      "metadata": {
+        "taskId": "task_iXY2LSoKgqXUWUrh6K6b9fye9iSrJuVo",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "398349d8-f355-4a0d-8041-14f772b54cfb",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1299,10 +1311,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 1200,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T09:55:05.114Z",
-      "updatedAt": "2026-06-05T09:55:05.114Z"
+      "updatedAt": "2026-06-05T09:56:36.732Z"
     },
     {
       "id": "task_Jez7hEjAAUxsBEGA2jB8A3QEwceCGzhB",
@@ -1819,9 +1831,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_iXY2LSoKgqXUWUrh6K6b9fye9iSrJuVo",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-05T09:55:05.114Z",
-      "updatedAt": "2026-06-05T09:56:27.966Z"
+      "updatedAt": "2026-06-05T09:56:36.733Z"
     },
     {
       "id": "229388ad-4be2-4757-9fd6-aced96f5f0c0",
