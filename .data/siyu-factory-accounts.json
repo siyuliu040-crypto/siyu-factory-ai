@@ -1117,10 +1117,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 350000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-05T07:34:40.411Z",
-      "updatedAt": "2026-06-05T07:34:40.411Z"
+      "updatedAt": "2026-06-05T07:35:47.668Z"
     },
     {
       "id": "960383860024086528",
@@ -1537,10 +1537,11 @@
       "mode": "video",
       "model": "vidu:viduq3-turbo",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_60/tasks/26/0605/07/960383901199503360/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260605%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260605T073545Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-6-2026-06-05T07%253A35%253A05Z.mp4&x-id=GetObject&X-Amz-Signature=7b4a9fbf93c9b8ce56be6a8dcb81bc556bfc7499f7ab4a136cf7af54c57ff568",
       "taskId": "960383901199503360",
-      "status": "created",
+      "status": "completed",
       "createdAt": "2026-06-05T07:34:40.411Z",
-      "updatedAt": "2026-06-05T07:34:40.411Z"
+      "updatedAt": "2026-06-05T07:35:47.668Z"
     },
     {
       "id": "61e434a4-26b7-498d-85bb-f1f2afe7012f",
