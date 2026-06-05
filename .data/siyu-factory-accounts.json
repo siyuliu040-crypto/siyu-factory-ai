@@ -701,10 +701,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro-fast",
       "amount": 900000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-05T06:39:43.473Z",
-      "updatedAt": "2026-06-05T06:39:43.473Z"
+      "updatedAt": "2026-06-05T06:40:37.869Z"
     },
     {
       "id": "960020148553547776",
@@ -879,10 +879,11 @@
       "mode": "video",
       "model": "vidu:viduq3-pro-fast",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_88/tasks/26/0605/06/960370072830885888/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260605%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260605T064037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-6-2026-06-05T06%253A40%253A24Z.mp4&x-id=GetObject&X-Amz-Signature=1c1dcc9575a1829369bf2ecd2f37cc60d376f301034c857b6bb80ada6e239e48",
       "taskId": "960370072830885888",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-05T06:39:43.474Z",
-      "updatedAt": "2026-06-05T06:40:29.950Z"
+      "updatedAt": "2026-06-05T06:40:37.869Z"
     },
     {
       "id": "939660ce-cb5f-43ab-b0bd-0f35f1facfac",
