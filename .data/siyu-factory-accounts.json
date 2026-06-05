@@ -1552,9 +1552,9 @@
       "model": "sora2-pro-12s-9x16",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "task_zaOHIWWB0xBA8aCz0NgkQMNDIKHSoiyV",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-05T08:16:51.283Z",
-      "updatedAt": "2026-06-05T08:16:58.182Z"
+      "updatedAt": "2026-06-05T08:16:59.251Z"
     },
     {
       "id": "3f704026-d042-416b-adcd-680eca751d76",
