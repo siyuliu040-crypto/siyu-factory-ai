@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43988480,
+      "credits": 43989680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T09:30:42.499Z"
+      "updatedAt": "2026-06-05T09:31:59.694Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "0d7c7353-7c68-4ef0-a825-440bf628b577",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200,
+      "balanceAfter": 43989680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T09:31:59.694Z",
+      "metadata": {
+        "taskId": "task_uNFQVUyzNHWjBtJjq0aAYTP3hYaTKIII",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "445b7751-a098-4f76-a1d8-b45ca49fcab6",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1180,10 +1192,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 1200,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T09:30:44.033Z",
-      "updatedAt": "2026-06-05T09:30:44.033Z"
+      "updatedAt": "2026-06-05T09:31:59.694Z"
     },
     {
       "id": "task_jpzpSCb5lZcZGhfb1Ilp2PlMri2YHHLt",
@@ -1645,9 +1657,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "task_uNFQVUyzNHWjBtJjq0aAYTP3hYaTKIII",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-05T09:30:44.033Z",
-      "updatedAt": "2026-06-05T09:31:56.588Z"
+      "updatedAt": "2026-06-05T09:31:59.694Z"
     },
     {
       "id": "252c86d7-ad26-4c08-81f0-845b9f18823c",
