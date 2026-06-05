@@ -36,9 +36,9 @@
       "name": "h",
       "passwordHash": "26ef75d62b39b24c2836fe24a1829c10:4f610fc60f56cb700e120616669061b0fe9d5f527cc74a02fdee207037a7b33dfb8f2161b1c17c55a01950b0a567581bae8848d2785300ab5d894a0211629d93",
       "role": "user",
-      "credits": 49960000,
+      "credits": 50000000,
       "createdAt": "2026-06-05T06:35:19.123Z",
-      "updatedAt": "2026-06-05T06:39:26.753Z"
+      "updatedAt": "2026-06-05T06:39:28.740Z"
     },
     {
       "id": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -126,6 +126,17 @@
     }
   ],
   "ledger": [
+    {
+      "id": "3acfe1e7-c85d-4373-a23d-a05426723f7c",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "amount": 40000,
+      "balanceAfter": 50000000,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-06-05T06:39:28.740Z",
+      "metadata": {
+        "jobId": "img_1780641567571_535856aa9a0fd"
+      }
+    },
     {
       "id": "8d2101a2-3fab-4786-9b68-e3960b5110c2",
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
