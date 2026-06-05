@@ -1184,10 +1184,10 @@
       "type": "video",
       "model": "sora-2-4s-9x16",
       "amount": 3840,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-05T07:34:07.151Z",
-      "updatedAt": "2026-06-05T07:34:07.151Z"
+      "updatedAt": "2026-06-05T07:36:26.002Z"
     },
     {
       "id": "task_9p04ngcChBC3xVIlJXP9inqei1patkKS",
@@ -1608,10 +1608,11 @@
       "mode": "video",
       "model": "sora-2-4s-9x16",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
+      "previewUrl": "https://file.bandianwa.com/adobe2/video/20260605/658031e4ab214cbea24f5fa952f4ecad.mp4",
       "taskId": "task_SCM5Fh9YV0QZcr0itDvUW2R0yJikXDyu",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-05T07:34:07.151Z",
-      "updatedAt": "2026-06-05T07:35:26.495Z"
+      "updatedAt": "2026-06-05T07:36:26.002Z"
     },
     {
       "id": "6467a93e-5644-44a0-80e2-8f68f1930e9b",
