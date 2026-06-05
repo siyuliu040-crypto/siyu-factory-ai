@@ -1505,9 +1505,9 @@
       "model": "grok-imagine-1.0-video-ref-10s",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_ujsk4tV6JSoxn1twzHt9NWvkkQkyk4zf",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-05T07:35:03.105Z",
-      "updatedAt": "2026-06-05T07:35:03.105Z"
+      "updatedAt": "2026-06-05T07:36:02.809Z"
     },
     {
       "id": "1c706143-9b23-4f52-904b-3eee83926740",
