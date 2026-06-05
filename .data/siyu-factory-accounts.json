@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43970320,
+      "credits": 43979200,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T07:35:01.967Z"
+      "updatedAt": "2026-06-05T07:35:08.671Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "e9cd8a38-7e04-466d-903b-bc3edba09c25",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 8880,
+      "balanceAfter": 43979200,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T07:35:08.671Z",
+      "metadata": {
+        "taskId": "task_OtTP1KeHiCuv91BsYW5tUaKIol9h7jQD",
+        "model": "firefly-veo31-fast-8s-9x16-1080p"
+      }
+    },
     {
       "id": "eee99b9e-584f-4cd0-b7ad-4979be654437",
       "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -1178,10 +1190,10 @@
       "type": "video",
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "amount": 8880,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T07:33:43.860Z",
-      "updatedAt": "2026-06-05T07:33:43.860Z"
+      "updatedAt": "2026-06-05T07:35:08.671Z"
     },
     {
       "id": "task_STQI9g2R0771URQaDZovDXUxgaL1AGVD",
@@ -1599,9 +1611,9 @@
       "model": "firefly-veo31-fast-8s-9x16-1080p",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_OtTP1KeHiCuv91BsYW5tUaKIol9h7jQD",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-05T07:33:43.860Z",
-      "updatedAt": "2026-06-05T07:33:43.860Z"
+      "updatedAt": "2026-06-05T07:35:08.671Z"
     },
     {
       "id": "4d5af559-a24b-4cdc-bba2-57e1f4e9369a",
