@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43984480,
+      "credits": 43987360,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T07:35:19.972Z"
+      "updatedAt": "2026-06-05T07:35:23.180Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "ecc9c9a6-494a-4dd2-b25d-d43bdf58aa5c",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 2880,
+      "balanceAfter": 43987360,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T07:35:23.180Z",
+      "metadata": {
+        "taskId": "task_9p04ngcChBC3xVIlJXP9inqei1patkKS",
+        "model": "ali-sora-video-portrait-official-8s"
+      }
+    },
     {
       "id": "6dcbb317-7c1f-4e66-9885-1bb5b718c79c",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1171,10 +1183,10 @@
       "type": "video",
       "model": "ali-sora-video-portrait-official-8s",
       "amount": 2880,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T07:34:03.013Z",
-      "updatedAt": "2026-06-05T07:34:03.013Z"
+      "updatedAt": "2026-06-05T07:35:23.180Z"
     },
     {
       "id": "task_KragRfTgrui1CMA8xTZSXkFJK6vLA4Ft",
@@ -1592,9 +1604,9 @@
       "model": "ali-sora-video-portrait-official-8s",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_9p04ngcChBC3xVIlJXP9inqei1patkKS",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-06-05T07:34:03.013Z",
-      "updatedAt": "2026-06-05T07:34:03.013Z"
+      "updatedAt": "2026-06-05T07:35:23.180Z"
     },
     {
       "id": "ee350227-86d3-4318-80b5-a1342146c49b",
