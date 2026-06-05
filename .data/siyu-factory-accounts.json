@@ -1319,6 +1319,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_anfgLXoSweqxiqedpJ7dttQ06kTlXVre",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 1200,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-05T09:59:45.817Z",
+      "updatedAt": "2026-06-05T09:59:45.817Z"
+    },
+    {
       "id": "task_BhyL5MZVsmMXdzUir8miMq4uiHQOjqMW",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -1837,6 +1848,17 @@
     }
   ],
   "history": [
+    {
+      "id": "82aae599-50a0-4522-b0a9-8dfe5e29d0b3",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
+      "taskId": "task_anfgLXoSweqxiqedpJ7dttQ06kTlXVre",
+      "status": "queued",
+      "createdAt": "2026-06-05T09:59:45.817Z",
+      "updatedAt": "2026-06-05T09:59:45.817Z"
+    },
     {
       "id": "cef23c8c-51b0-40b4-a257-c6499ef4db6a",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
