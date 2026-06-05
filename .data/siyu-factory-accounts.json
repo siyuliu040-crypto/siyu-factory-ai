@@ -809,10 +809,10 @@
       "type": "video",
       "model": "sora-2-12s-9x16",
       "amount": 11520,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-05T07:24:22.939Z",
-      "updatedAt": "2026-06-05T07:24:22.939Z"
+      "updatedAt": "2026-06-05T07:28:08.414Z"
     },
     {
       "id": "task_VSVUqj7WjrHuCWwkaQXqUHZeAM5bP40H",
@@ -1064,10 +1064,11 @@
       "mode": "video",
       "model": "sora-2-12s-9x16",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "previewUrl": "https://file.bandianwa.com/adobe2/video/20260605/0c19d43cafd548a68c3a6cf6194c0fff.mp4",
       "taskId": "task_STQI9g2R0771URQaDZovDXUxgaL1AGVD",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-05T07:24:22.939Z",
-      "updatedAt": "2026-06-05T07:28:06.287Z"
+      "updatedAt": "2026-06-05T07:28:08.414Z"
     },
     {
       "id": "addba066-8eb0-4888-a572-5b831fa7df1b",
