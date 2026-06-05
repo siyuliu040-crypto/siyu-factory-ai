@@ -227,6 +227,7 @@ const copy = {
     generateVideo: "生成视频",
     generateBatch: "批量生成视频",
     duration: "时长",
+    resolution: "清晰度",
     seconds4: "4 秒",
     seconds8: "8 秒",
     seconds12: "12 秒",
@@ -321,6 +322,7 @@ const copy = {
     generateVideo: "Generate video",
     generateBatch: "Batch generate videos",
     duration: "Duration",
+    resolution: "Resolution",
     seconds4: "4 seconds",
     seconds8: "8 seconds",
     seconds12: "12 seconds",
@@ -433,13 +435,13 @@ function modelRequiresReference(model: string) {
   return isViduModelId(model) || lower.includes("-ref-") || lower.includes("_ref_");
 }
 
-function getCreditCost(model: string, duration?: string) {
-  if (isVideoModel(model)) return getVideoGenerationCost(model, duration);
+function getCreditCost(model: string, duration?: string, resolution?: string) {
+  if (isVideoModel(model)) return getVideoGenerationCost(model, duration, resolution);
   return getModelCreditCost(model);
 }
 
-function formatCreditCost(model: string, language: Language, duration?: string) {
-  const cost = getCreditCost(model, duration);
+function formatCreditCost(model: string, language: Language, duration?: string, resolution?: string) {
+  const cost = getCreditCost(model, duration, resolution);
   if (!cost) return copy[language].costUnknown;
   return `${formatDisplayCredits(cost)} ${copy[language].credits}`;
 }
@@ -453,7 +455,7 @@ function formatDisplayCredits(value: number | undefined) {
   if (!value || !Number.isFinite(value)) return "0";
   const scaled = value / DISPLAY_CREDIT_SCALE;
   return new Intl.NumberFormat("zh-CN", {
-    maximumFractionDigits: scaled < 10 ? 1 : 0
+    maximumFractionDigits: scaled < 10 ? 3 : 0
   }).format(scaled);
 }
 
@@ -617,6 +619,38 @@ function normalizeDurationForModel(model: string, currentDuration: string, langu
   const options = getDurationOptions(model, language);
   if (options.some((option) => option.value === currentDuration)) return currentDuration;
   return options[0]?.value || currentDuration;
+}
+
+function getResolutionOptions(model: string, language: Language) {
+  const lower = model.toLowerCase();
+  if (lower === "vidu:viduq3-pro-fast") {
+    return [
+      { value: "720x1280", label: "720P" },
+      { value: "1080x1920", label: "1080P" }
+    ];
+  }
+  if (lower === "vidu:viduq3-turbo" || lower === "vidu:viduq3-pro") {
+    return [
+      { value: "540x960", label: language === "zh" ? "540P（上游支持）" : "540P supported" },
+      { value: "720x1280", label: "720P" },
+      { value: "1080x1920", label: "1080P" }
+    ];
+  }
+  if (lower.includes("veo_3_1-fast-portrait")) {
+    return lower.includes("hd")
+      ? [{ value: "1080x1920", label: "1080P" }]
+      : [{ value: "720x1280", label: "720P" }];
+  }
+  if (lower.includes("firefly-veo31") || lower.includes("sora")) {
+    return [{ value: "1080x1920", label: "1080P" }];
+  }
+  return [{ value: "720x1280", label: "720P" }];
+}
+
+function normalizeResolutionForModel(model: string, currentSize: string, language: Language) {
+  const options = getResolutionOptions(model, language);
+  if (options.some((option) => option.value === currentSize)) return currentSize;
+  return options[0]?.value || currentSize;
 }
 function isVideoDone(status?: string, result?: VideoResult | null) {
   return (
@@ -914,13 +948,15 @@ export default function Studio() {
   const isBatchWorkspace = activeTool === "batch";
   const isDeepSeekWorkspace = activeTool === "deepseek";
   const durationOptions = mode === "video" ? getDurationOptions(videoModel, language) : [];
-  const activeModelCost = getCreditCost(activeModel, mode === "video" ? seconds : undefined);
+  const resolutionOptions = mode === "video" ? getResolutionOptions(videoModel, language) : [];
+  const normalizedVideoSize = normalizeResolutionForModel(videoModel, videoSize, language);
+  const activeModelCost = getCreditCost(activeModel, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
   const deepSeekCost = getCreditCost(deepSeekModel);
   const activeWorkspaceModel = isDeepSeekWorkspace ? deepSeekModel : activeModel;
   const activeWorkspaceCost = isDeepSeekWorkspace ? deepSeekCost : activeModelCost;
   const activeWorkspaceCostText = isDeepSeekWorkspace
     ? formatCreditTotal(deepSeekCost, language)
-    : formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined);
+    : formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
   const activeVideoNeedsReference = mode === "video" && modelRequiresReference(activeModel);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
   const canAffordDeepSeek = Boolean(currentUser && deepSeekCost && currentUser.credits >= deepSeekCost);
@@ -933,7 +969,7 @@ export default function Studio() {
     (!activeVideoNeedsReference || singleVideoHasReference);
   const filledBatchSlots = batchPrompts.filter((item) => item.value.trim()).slice(0, MAX_BATCH_VIDEOS);
   const batchCreditTotal = filledBatchSlots.length
-    ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getBatchSlotModel(slot), seconds), 0)
+    ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getBatchSlotModel(slot), seconds, normalizeResolutionForModel(getBatchSlotModel(slot), videoSize, language)), 0)
     : undefined;
   const batchMissingRequiredReference = modelRequiresReference(videoModel) && filledBatchSlots.some((slot) => slot.referenceFiles.length === 0);
   const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal && !batchMissingRequiredReference);
@@ -988,6 +1024,10 @@ export default function Studio() {
   function switchMedia(nextMode: Mode) {
     setMode(nextMode);
     setActiveTool(nextMode);
+  }
+
+  function chooseVideoResolution(size: string) {
+    setVideoSize(size);
   }
 
   async function refreshSession() {
@@ -1140,6 +1180,7 @@ export default function Studio() {
   function chooseVideoModel(model: string) {
     setVideoModel(model);
     setSeconds((current) => normalizeDurationForModel(model, current, language));
+    setVideoSize((current) => normalizeResolutionForModel(model, current, language));
   }
 
   async function addBatchReferenceFiles(id: string, files: FileList | null) {
@@ -1413,7 +1454,7 @@ export default function Studio() {
     formData.set("model", model);
     formData.set("prompt", videoPrompt);
     formData.set("seconds", normalizeDurationForModel(model, seconds, language));
-    formData.set("size", videoSize);
+    formData.set("size", normalizeResolutionForModel(model, videoSize, language));
     if (referenceUrl) formData.set("image_url", referenceUrl);
     for (const reference of references) formData.append("input_reference", reference, reference.name);
 
@@ -2022,9 +2063,10 @@ export default function Studio() {
               </div>
               <div className="model-list model-grid">
                 {(mode === "image" ? imageModels : videoModels).map((model) => {
-                  const active = mode === "image" ? imageModel === model : activeModel === model || videoModel === model;
-                  const modelDuration = mode === "video" ? normalizeDurationForModel(model, seconds, language) : undefined;
-                  return (
+                      const active = mode === "image" ? imageModel === model : activeModel === model || videoModel === model;
+                      const modelDuration = mode === "video" ? normalizeDurationForModel(model, seconds, language) : undefined;
+                      const modelResolution = mode === "video" ? normalizeResolutionForModel(model, videoSize, language) : undefined;
+                      return (
                     <button
                       className={`model-chip ${active ? "active" : ""}`}
                       key={model}
@@ -2036,7 +2078,7 @@ export default function Studio() {
                         <span>{getModelTitle(model, language)}</span>
                         <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
                       </div>
-                      <small>{formatCreditCost(model, language, modelDuration)}</small>
+                      <small>{formatCreditCost(model, language, modelDuration, modelResolution)}</small>
                       {active ? <Wand2 size={15} /> : null}
                     </button>
                   );
@@ -2132,17 +2174,17 @@ export default function Studio() {
               <>
                 <div className="param-grid">
                   <div className="field">
-                    <label htmlFor="video-size">{t.aspect}</label>
+                    <label htmlFor="video-size">{t.resolution}</label>
                     <select
                       className="select"
                       id="video-size"
-                      onChange={(event) => {
-                        const nextSize = event.target.value;
-                        setVideoSize(nextSize);
-                      }}
-                      value={videoSize}
+                      disabled={resolutionOptions.length <= 1}
+                      onChange={(event) => chooseVideoResolution(event.target.value)}
+                      value={normalizedVideoSize}
                     >
-                      <option value="720x1280">{t.portrait}</option>
+                      {resolutionOptions.map((option) => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                      ))}
                     </select>
                   </div>
                   <div className="field">
@@ -2173,7 +2215,7 @@ export default function Studio() {
                       <label>{t.estimatedCost}</label>
                       <button className="primary-button" disabled={!canSubmit} onClick={generateVideo} type="button">
                         {isLoading ? <Loader2 size={18} /> : <Play size={18} />}{t.generateVideo}
-                        <small>{formatCreditCost(videoModel, language, seconds)}</small>
+                        <small>{formatCreditCost(videoModel, language, seconds, normalizedVideoSize)}</small>
                       </button>
                     </div>
                   )}
@@ -2190,7 +2232,7 @@ export default function Studio() {
                         <div className="batch-card" key={slot.id}>
                           <div className="batch-card-head">
                             <strong>{tx("work", "作品")} {index + 1}</strong>
-                            <small>{formatCreditCost(getBatchSlotModel(slot), language, seconds)}</small>
+                            <small>{formatCreditCost(getBatchSlotModel(slot), language, seconds, normalizeResolutionForModel(getBatchSlotModel(slot), videoSize, language))}</small>
                           </div>
                           <textarea
                             className="textarea batch-textarea"
@@ -2440,7 +2482,7 @@ export default function Studio() {
                 <div className="batch-job" key={job.id}>
                   <div>
                     <strong>#{index + 1} {job.status}</strong>
-                    <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language, seconds)}</span>
+                    <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language, seconds, normalizeResolutionForModel(job.model, videoSize, language))}</span>
                     <small>{job.prompt}</small>
                   </div>
                   {job.url ? <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer"><Download size={15} />{t.download}</a> : null}

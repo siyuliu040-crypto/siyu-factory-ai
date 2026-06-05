@@ -16,6 +16,7 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 
 const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
+  "540x960": "540p",
   "720x1280": "720p",
   "1080x1920": "1080p"
 };
@@ -237,7 +238,7 @@ export async function POST(request: Request) {
       return jsonError({ error: "This model requires one reference image." }, 400);
     }
 
-    const amount = getVideoGenerationCost(model, String(seconds || ""));
+    const amount = getVideoGenerationCost(model, String(seconds || ""), String(size || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
     const billing = { userId: charge.user.id, amount, model };
 

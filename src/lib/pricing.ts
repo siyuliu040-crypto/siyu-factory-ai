@@ -1,33 +1,32 @@
 export const MODEL_CREDIT_COSTS: Record<string, number> = {
-  "gpt-image-2": 40000,
-  "nano_banana_2-1K-portrait": 40000,
-  "nano_banana_2-2K-portrait": 70000,
-  "nano_banana_2-4K-portrait": 120000,
-  "nano_banana_pro-1K-portrait": 120000,
-  "nano_banana_pro-2K-portrait": 180000,
-  "nano_banana_pro-4K-portrait": 280000,
-  "firefly-veo31-fast-8s-9x16-1080p": 1200000,
-  "firefly-veo31-ref-8s-9x16-1080p": 1600000,
-  "veo_3_1-fast-portrait": 300000,
-  "veo_3_1-fast-portrait-hd": 400000,
-  "veo_3_1-fast-portrait-fl-hd": 400000,
-  "ali-sora-video-portrait-official-4s": 600000,
-  "ali-sora-video-portrait-official-8s": 600000,
-  "sora-2-4s-9x16": 700000,
-  "sora-2-8s-9x16": 1200000,
-  "sora-2-12s-9x16": 1700000,
-  "sora2-pro-12s-9x16": 2400000,
-  "vidu:viduq3-pro-fast": 1400000,
-  "vidu:viduq3-turbo": 1600000,
-  "vidu:viduq3-pro": 1900000,
-  "grok-imagine-1.0-video": 1200000,
-  "grok-imagine-1.0-video-6s": 1100000,
-  "grok-imagine-1.0-video-10s": 1500000,
-  "grok-imagine-1.0-video-ref-6s": 1300000,
-  "grok-imagine-1.0-video-ref-10s": 1700000,
+  "gpt-image-2": 720,
+  "nano_banana_2-1K-portrait": 3200,
+  "nano_banana_2-2K-portrait": 3200,
+  "nano_banana_2-4K-portrait": 5000,
+  "nano_banana_pro-1K-portrait": 3200,
+  "nano_banana_pro-2K-portrait": 3200,
+  "nano_banana_pro-4K-portrait": 5000,
+  "firefly-veo31-fast-8s-9x16-1080p": 8880,
+  "firefly-veo31-ref-8s-9x16-1080p": 11520,
+  "veo_3_1-fast-portrait": 1200,
+  "veo_3_1-fast-portrait-hd": 1200,
+  "veo_3_1-fast-portrait-fl-hd": 1200,
+  "ali-sora-video-portrait-official-4s": 2880,
+  "ali-sora-video-portrait-official-8s": 2880,
+  "sora-2-4s-9x16": 3840,
+  "sora-2-8s-9x16": 7680,
+  "sora-2-12s-9x16": 11520,
+  "sora2-pro-12s-9x16": 16880,
+  "grok-imagine-1.0-video": 11520,
+  "grok-imagine-1.0-video-6s": 11520,
+  "grok-imagine-1.0-video-10s": 11520,
+  "grok-imagine-1.0-video-ref-6s": 11520,
+  "grok-imagine-1.0-video-ref-10s": 11520,
   "deepseek-v4-flash": 10000,
   "deepseek-v4-pro": 30000
 };
+
+const INTERNAL_CREDIT_SCALE = 10000;
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
   "firefly-veo31-fast-8s-9x16-1080p": 0.888,
@@ -42,6 +41,41 @@ export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
   "sora-2-12s-9x16": 1.152,
   "sora2-pro-12s-9x16": 1.688
 };
+
+const VIDU_CREDITS_PER_SECOND: Record<string, Record<string, number>> = {
+  "vidu:viduq3-pro-fast": {
+    "720p": 12,
+    "1080p": 15
+  },
+  "vidu:viduq3-turbo": {
+    "540p": 7,
+    "720p": 12,
+    "1080p": 13
+  },
+  "vidu:viduq3-pro": {
+    "540p": 9,
+    "720p": 20,
+    "1080p": 24
+  }
+};
+
+export function normalizeVideoResolution(resolution?: string | number) {
+  const raw = String(resolution || "").toLowerCase();
+  if (raw.includes("1080")) return "1080p";
+  if (raw.includes("720")) return "720p";
+  if (raw.includes("540")) return "540p";
+  if (raw.includes("480")) return "480p";
+  return "";
+}
+
+export function getViduDisplayCreditCost(model: string, duration?: string | number, resolution?: string | number) {
+  const seconds = Math.max(1, Number(duration || 5));
+  const rates = VIDU_CREDITS_PER_SECOND[model];
+  if (!rates) return 0;
+  const normalized = normalizeVideoResolution(resolution);
+  const rate = rates[normalized] ?? rates["720p"] ?? Object.values(rates)[0] ?? 0;
+  return rate * seconds;
+}
 
 export function getModelCreditCost(model: string) {
   if (MODEL_CREDIT_COSTS[model]) return MODEL_CREDIT_COSTS[model];
@@ -65,18 +99,10 @@ function durationCost(duration?: string | number) {
   return 1200000;
 }
 
-export function getVideoGenerationCost(model: string, duration?: string | number) {
+export function getVideoGenerationCost(model: string, duration?: string | number, resolution?: string | number) {
   const lower = model.toLowerCase();
   if (lower.startsWith("vidu:")) {
-    const seconds = Math.max(1, Number(duration || 5));
-    const multiplier = lower.includes("q3-pro-fast")
-      ? 1
-      : lower.includes("q3-turbo")
-        ? 1.15
-        : lower.includes("q3-pro")
-          ? 1.35
-          : 1;
-    return Math.round(Math.max(900000, seconds * 175000 * multiplier));
+    return Math.round(getViduDisplayCreditCost(model, duration, resolution) * INTERNAL_CREDIT_SCALE);
   }
   if (lower.includes("grok-imagine-1.0-video-ref-10s")) return 1700000;
   if (lower.includes("grok-imagine-1.0-video-ref-6s")) return 1300000;
