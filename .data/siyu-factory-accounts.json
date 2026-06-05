@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 43979200,
+      "credits": 43980400,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T07:35:08.671Z"
+      "updatedAt": "2026-06-05T07:35:13.635Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "9f5f9168-fb26-4ba9-b456-b1f5e6b07491",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200,
+      "balanceAfter": 43980400,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-05T07:35:13.635Z",
+      "metadata": {
+        "taskId": "task_9VmeP0oF5O71zc17RWcO0ohXGC5gJGcp",
+        "model": "veo_3_1-fast-portrait"
+      }
+    },
     {
       "id": "e9cd8a38-7e04-466d-903b-bc3edba09c25",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1179,10 +1191,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait",
       "amount": 1200,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-05T07:33:47.562Z",
-      "updatedAt": "2026-06-05T07:33:47.562Z"
+      "updatedAt": "2026-06-05T07:35:13.635Z"
     },
     {
       "id": "task_OtTP1KeHiCuv91BsYW5tUaKIol9h7jQD",
@@ -1600,9 +1612,9 @@
       "model": "veo_3_1-fast-portrait",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
       "taskId": "task_9VmeP0oF5O71zc17RWcO0ohXGC5gJGcp",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-05T07:33:47.562Z",
-      "updatedAt": "2026-06-05T07:33:47.562Z"
+      "updatedAt": "2026-06-05T07:35:13.635Z"
     },
     {
       "id": "5c050be4-222b-45e2-b6ed-43aec201e504",
