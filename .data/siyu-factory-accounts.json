@@ -1096,10 +1096,10 @@
       "type": "video",
       "model": "grok-imagine-1.0-video-ref-10s",
       "amount": 1700000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-05T07:35:03.105Z",
-      "updatedAt": "2026-06-05T07:35:03.105Z"
+      "updatedAt": "2026-06-05T07:36:38.833Z"
     },
     {
       "id": "task_UuWPEN2krDUgut6ullePjfx35tSZSNQ3",
@@ -1516,10 +1516,11 @@
       "mode": "video",
       "model": "grok-imagine-1.0-video-ref-10s",
       "prompt": "9:16 vertical product beauty shot, short curly wig on mannequin head, clean studio lighting, slow camera push in, no text, no logo",
+      "previewUrl": "https://ngrok7.zhoushurencz1.top/v1/files/video?id=video_adf076abb40c45bf83f605a839a275f0",
       "taskId": "task_ujsk4tV6JSoxn1twzHt9NWvkkQkyk4zf",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-05T07:35:03.105Z",
-      "updatedAt": "2026-06-05T07:36:02.809Z"
+      "updatedAt": "2026-06-05T07:36:38.833Z"
     },
     {
       "id": "1c706143-9b23-4f52-904b-3eee83926740",
