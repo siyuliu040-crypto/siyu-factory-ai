@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 48428480,
+      "credits": 48419600,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-05T07:30:23.235Z"
+      "updatedAt": "2026-06-05T07:33:42.519Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -126,6 +126,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "5ad4a0bb-c611-4a90-a272-d4f2e69a24d5",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -8880,
+      "balanceAfter": 48419600,
+      "reason": "video generation",
+      "createdAt": "2026-06-05T07:33:42.519Z",
+      "metadata": {
+        "model": "firefly-veo31-fast-8s-9x16-1080p",
+        "size": "1080x1920"
+      }
+    },
     {
       "id": "061349a7-051e-4f06-9756-716bcaa211f4",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
