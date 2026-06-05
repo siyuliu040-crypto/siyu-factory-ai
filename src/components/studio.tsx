@@ -186,6 +186,16 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
+  "firefly-veo31-fast-8s-9x16-1080p",
+  "veo_3_1-fast-portrait",
+  "veo_3_1-fast-portrait-hd",
+  "veo_3_1-fast-portrait-fl-hd",
+  "ali-sora-video-portrait-official-4s",
+  "ali-sora-video-portrait-official-8s",
+  "sora-2-4s-9x16",
+  "sora-2-8s-9x16",
+  "sora-2-12s-9x16",
+  "sora2-pro-12s-9x16",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
@@ -411,7 +421,7 @@ function getModelCreditCost(model: string) {
 
 function isVideoModel(model: string) {
   const lower = model.toLowerCase();
-  return lower.includes("video") || lower.includes("veo") || lower.startsWith("vidu:");
+  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:");
 }
 
 function isViduModelId(model: string) {
@@ -465,8 +475,17 @@ function getModelTitle(model: string, language: Language) {
     const prefix = lower.includes("ref") ? (language === "zh" ? "Grok 参考图视频" : "Grok Reference Video") : (language === "zh" ? "Grok 文字视频" : "Grok Text Video");
     return `${prefix}${seconds ? language === "zh" ? ` ${seconds}秒` : ` ${seconds}s` : ""}`;
   }
+  if (lower.includes("sora")) {
+    if (lower.includes("ali-sora")) return language === "zh" ? "阿里 Sora 竖屏" : "Ali Sora Portrait";
+    if (lower.includes("sora2-pro")) return language === "zh" ? "Sora 2 Pro 竖屏" : "Sora 2 Pro Portrait";
+    return language === "zh" ? "Sora 2 竖屏" : "Sora 2 Portrait";
+  }
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
-  if (lower.includes("veo_3_1")) return language === "zh" ? "VEO 3.1 Fast" : "VEO 3.1 Fast";
+  if (lower.includes("veo_3_1")) {
+    if (lower.includes("fl-hd")) return language === "zh" ? "VEO 3.1 Fast 首尾帧 HD" : "VEO 3.1 Fast FL HD";
+    if (lower.includes("-hd")) return language === "zh" ? "VEO 3.1 Fast HD" : "VEO 3.1 Fast HD";
+    return language === "zh" ? "VEO 3.1 Fast 竖屏" : "VEO 3.1 Fast Portrait";
+  }
   if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro" : "Nano Banana Pro";
   if (lower.includes("nano_banana")) return language === "zh" ? "Nano Banana" : "Nano Banana";
   return model;
@@ -497,6 +516,17 @@ function getModelDescription(model: string, language: Language) {
     return language === "zh"
       ? `${aspect} · 6/10 秒可选 · ${kind}`
       : `${aspect} · 6/10s selectable · ${kind}`;
+  }
+  if (lower.includes("sora")) {
+    const fixedDuration = lower.match(/(\d+)s/)?.[1] || "8";
+    const family = lower.includes("ali-sora")
+      ? language === "zh" ? "阿里官方 Sora" : "Ali official Sora"
+      : lower.includes("sora2-pro")
+        ? language === "zh" ? "Sora 2 Pro" : "Sora 2 Pro"
+        : language === "zh" ? "Sora 2" : "Sora 2";
+    return language === "zh"
+      ? `${aspect} · ${fixedDuration} 秒固定 · ${family} 纯提示词视频`
+      : `${aspect} · fixed ${fixedDuration}s · ${family} prompt-only video`;
   }
   const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
@@ -564,6 +594,10 @@ function getDurationOptions(model: string, language: Language) {
       { value: "6", label: language === "zh" ? "6 秒" : "6 seconds" },
       { value: "10", label: language === "zh" ? "10 秒" : "10 seconds" }
     ];
+  }
+  if (lower.includes("sora")) {
+    const fixedDuration = lower.match(/(\d+)s/)?.[1] || "8";
+    return [{ value: fixedDuration, label: language === "zh" ? `${fixedDuration} 秒（模型固定）` : `${fixedDuration} seconds fixed` }];
   }
   if (lower.includes("firefly-veo31")) {
     return [{ value: "8", label: language === "zh" ? "8 秒（模型固定）" : "8 seconds fixed" }];

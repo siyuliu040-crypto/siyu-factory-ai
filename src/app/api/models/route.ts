@@ -8,15 +8,28 @@ const CUSTOM_VIDEO_MODELS = [
   "grok-imagine-1.0-video-ref-10s"
 ];
 
+const VERIFIED_PORTRAIT_VIDEO_MODELS = new Set([
+  "firefly-veo31-fast-8s-9x16-1080p",
+  "veo_3_1-fast-portrait",
+  "veo_3_1-fast-portrait-hd",
+  "veo_3_1-fast-portrait-fl-hd",
+  "ali-sora-video-portrait-official-4s",
+  "ali-sora-video-portrait-official-8s",
+  "sora-2-4s-9x16",
+  "sora-2-8s-9x16",
+  "sora-2-12s-9x16",
+  "sora2-pro-12s-9x16"
+]);
+
 function isAllowedModel(model: unknown) {
   if (!model || typeof model !== "object") return true;
   const id = String((model as { id?: unknown }).id || "").toLowerCase();
   if (!id) return true;
-  if (id.includes("sora")) return false;
   if (id.includes("16x9") || id.includes("landscape")) return false;
+  if (id.includes("sora") || id.includes("veo_3_1-fast-portrait") || id.includes("firefly-veo31-fast")) {
+    return VERIFIED_PORTRAIT_VIDEO_MODELS.has(id);
+  }
   if (id.includes("firefly-veo31-ref")) return false;
-  if (id.includes("veo_3_1-fast-portrait")) return false;
-  if (id.includes("veo_3_1-fast-portrait-hd") || id.includes("veo_3_1-fast-portrait-fl-hd")) return false;
   if (id === "grok-imagine-video") return false;
   if (id === "grok-imagine-1.0-video") return false;
   return true;

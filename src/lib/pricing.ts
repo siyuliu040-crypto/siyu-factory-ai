@@ -8,7 +8,15 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "nano_banana_pro-4K-portrait": 280000,
   "firefly-veo31-fast-8s-9x16-1080p": 1200000,
   "firefly-veo31-ref-8s-9x16-1080p": 1600000,
-  "veo_3_1-fast-portrait": 1600000,
+  "veo_3_1-fast-portrait": 300000,
+  "veo_3_1-fast-portrait-hd": 400000,
+  "veo_3_1-fast-portrait-fl-hd": 400000,
+  "ali-sora-video-portrait-official-4s": 600000,
+  "ali-sora-video-portrait-official-8s": 600000,
+  "sora-2-4s-9x16": 700000,
+  "sora-2-8s-9x16": 1200000,
+  "sora-2-12s-9x16": 1700000,
+  "sora2-pro-12s-9x16": 2400000,
   "vidu:viduq3-pro-fast": 1400000,
   "vidu:viduq3-turbo": 1600000,
   "vidu:viduq3-pro": 1900000,
@@ -22,9 +30,17 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
 };
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
-  "firefly-veo31-fast-8s-9x16-1080p": 1.152,
+  "firefly-veo31-fast-8s-9x16-1080p": 0.888,
   "firefly-veo31-ref-8s-9x16-1080p": 1.152,
-  "veo_3_1-fast-portrait": 1.152
+  "veo_3_1-fast-portrait": 0.12,
+  "veo_3_1-fast-portrait-hd": 0.12,
+  "veo_3_1-fast-portrait-fl-hd": 0.12,
+  "ali-sora-video-portrait-official-4s": 0.288,
+  "ali-sora-video-portrait-official-8s": 0.288,
+  "sora-2-4s-9x16": 0.384,
+  "sora-2-8s-9x16": 0.768,
+  "sora-2-12s-9x16": 1.152,
+  "sora2-pro-12s-9x16": 1.688
 };
 
 export function getModelCreditCost(model: string) {
@@ -33,7 +49,7 @@ export function getModelCreditCost(model: string) {
   if (lower.includes("15s")) return 2000000;
   if (lower.includes("12s")) return 1600000;
   if (lower.includes("4s")) return 800000;
-  if (lower.includes("video") || lower.includes("veo")) return 1200000;
+  if (lower.includes("video") || lower.includes("veo") || lower.includes("sora")) return 1200000;
   return 40000;
 }
 
@@ -70,7 +86,9 @@ export function getVideoGenerationCost(model: string, duration?: string | number
     const seconds = Math.max(6, Number(duration || 6));
     return seconds >= 10 ? 1500000 : 1100000;
   }
+  if (MODEL_CREDIT_COSTS[model] && lower.includes("sora")) return MODEL_CREDIT_COSTS[model];
   if (MODEL_CREDIT_COSTS[model] && lower.includes("firefly-veo31")) return MODEL_CREDIT_COSTS[model];
+  if (MODEL_CREDIT_COSTS[model] && lower.includes("veo_3_1")) return MODEL_CREDIT_COSTS[model];
   const base = durationCost(duration || lower.match(/(\d+)s/)?.[1]);
   if (lower.includes("hd") || lower.includes("ref")) return base + 400000;
   if (lower.includes("veo")) return base;
@@ -80,6 +98,6 @@ export function getVideoGenerationCost(model: string, duration?: string | number
 export function getUpstreamPrechargeUsd(model: string) {
   if (MODEL_UPSTREAM_PRECHARGE_USD[model]) return MODEL_UPSTREAM_PRECHARGE_USD[model];
   const lower = model.toLowerCase();
-  if (lower.includes("video") || lower.includes("veo")) return 1.152;
+  if (lower.includes("video") || lower.includes("veo") || lower.includes("sora")) return 1.152;
   return undefined;
 }
