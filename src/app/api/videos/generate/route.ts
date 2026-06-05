@@ -127,7 +127,7 @@ function isGrokReferenceVideoModel(model: string) {
   return model === "grok-imagine-1.0-video-ref-6s" || model === "grok-imagine-1.0-video-ref-10s";
 }
 
-function requiresFirstFrame(model: string) {
+function supportsStartEndFrames(model: string) {
   return model === "veo_3_1-fast-portrait-fl-hd";
 }
 
@@ -198,7 +198,16 @@ async function postVideoPayload(
 }
 
 async function postFrameVideoPayload(
-  payload: { model: string; prompt: string; seconds?: string; size?: string; image: Blob; fileName: string },
+  payload: {
+    model: string;
+    prompt: string;
+    seconds?: string;
+    size?: string;
+    image: Blob;
+    fileName: string;
+    lastImage?: Blob;
+    lastFileName?: string;
+  },
   billing: { userId: string; amount: number; model: string }
 ) {
   const formData = new FormData();
@@ -207,6 +216,9 @@ async function postFrameVideoPayload(
   if (payload.seconds) formData.set("seconds", payload.seconds);
   if (payload.size) formData.set("size", payload.size);
   formData.set("image", payload.image, payload.fileName);
+  if (payload.lastImage) {
+    formData.set("last_frame", payload.lastImage, payload.lastFileName || "last-frame.jpg");
+  }
 
   const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/videos`, {
     method: "POST",
@@ -353,31 +365,40 @@ export async function POST(request: Request) {
     if (isGrokReferenceVideoModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This model requires one reference image." }, 400);
     }
-    if (requiresFirstFrame(model) && publicReferenceUrls.length === 0) {
+    if (supportsStartEndFrames(model) && publicReferenceUrls.length === 0) {
       return jsonError({
         error: "first_frame_required",
-        message: "This VEO frame-to-video model requires at least one first-frame reference image."
+        message: "This VEO frame-to-video model requires at least one first-frame reference image. Upload a second image to control the ending frame."
       }, 400);
     }
-    const preparedFirstFrame = requiresFirstFrame(model)
+    const preparedFrameImages = supportsStartEndFrames(model)
       ? references[0]
-        ? { blob: references[0], fileName: references[0].name || "first-frame.jpg" }
-        : await imageUrlToBlob(String(imageUrl || ""))
+        ? {
+            first: { blob: references[0], fileName: references[0].name || "first-frame.jpg" },
+            last: references[1] ? { blob: references[1], fileName: references[1].name || "last-frame.jpg" } : null
+          }
+        : { first: await imageUrlToBlob(String(imageUrl || "")), last: null }
       : null;
 
     const amount = getVideoGenerationCost(model, String(seconds || ""), String(size || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
     const billing = { userId: charge.user.id, amount, model };
 
-    if (requiresFirstFrame(model)) {
+    if (supportsStartEndFrames(model)) {
       return postFrameVideoPayload(
         {
           model: upstreamModel,
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          image: preparedFirstFrame!.blob,
-          fileName: preparedFirstFrame!.fileName
+          image: preparedFrameImages!.first.blob,
+          fileName: preparedFrameImages!.first.fileName,
+          ...(preparedFrameImages!.last
+            ? {
+                lastImage: preparedFrameImages!.last.blob,
+                lastFileName: preparedFrameImages!.last.fileName
+              }
+            : {})
         },
         billing
       );

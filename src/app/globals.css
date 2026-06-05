@@ -1546,6 +1546,25 @@ button.status-pill {
   object-fit: cover;
 }
 
+.frame-role-badge {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  max-width: calc(100% - 12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  background: rgba(12, 19, 38, 0.76);
+  color: #fff;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 .thumb-remove {
   position: absolute;
   top: 6px;

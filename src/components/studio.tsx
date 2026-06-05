@@ -432,6 +432,17 @@ function modelRequiresFirstFrame(model: string) {
   return model.toLowerCase().includes("fl-hd");
 }
 
+function modelSupportsEndFrame(model: string) {
+  return model.toLowerCase().includes("fl-hd");
+}
+
+function getReferenceRoleLabel(index: number, model: string, language: Language) {
+  if (!modelSupportsEndFrame(model)) return "";
+  if (index === 0) return language === "zh" ? "首帧" : "Start";
+  if (index === 1) return language === "zh" ? "尾帧" : "End";
+  return language === "zh" ? `参考 ${index + 1}` : `Ref ${index + 1}`;
+}
+
 function getCreditCost(model: string, duration?: string, resolution?: string) {
   if (isVideoModel(model)) return getVideoGenerationCost(model, duration, resolution);
   return getModelCreditCost(model);
@@ -481,7 +492,7 @@ function getModelTitle(model: string, language: Language) {
   }
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
   if (lower.includes("veo_3_1")) {
-    if (lower.includes("fl-hd")) return language === "zh" ? "VEO 3.1 Fast 首帧 HD" : "VEO 3.1 Fast First Frame HD";
+    if (lower.includes("fl-hd")) return language === "zh" ? "VEO 3.1 Fast 首尾帧 HD" : "VEO 3.1 Fast Start-End HD";
     if (lower.includes("-hd")) return language === "zh" ? "VEO 3.1 Fast HD" : "VEO 3.1 Fast HD";
     return language === "zh" ? "VEO 3.1 Fast 竖屏" : "VEO 3.1 Fast Portrait";
   }
@@ -529,8 +540,8 @@ function getModelDescription(model: string, language: Language) {
   }
   if (lower.includes("veo_3_1") && lower.includes("fl-hd")) {
     return language === "zh"
-      ? `${aspect} · 4/8/12/15 秒可选 · 必须上传首帧图`
-      : `${aspect} · 4/8/12/15s selectable · first frame required`;
+      ? `${aspect} · 4/8/12/15 秒可选 · 首帧必填，尾帧可选`
+      : `${aspect} · 4/8/12/15s selectable · start required, end optional`;
   }
   const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
@@ -2101,7 +2112,7 @@ export default function Studio() {
                         <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
                         {mode === "video" && modelRequiresFirstFrame(model) ? (
                           <b className="model-requirement-badge">
-                            {tx("firstFrameRequired", language === "zh" ? "首帧图必填" : "First frame required")}
+                            {tx("startEndFrameSupported", language === "zh" ? "首帧必填 · 尾帧可选" : "Start required · End optional")}
                           </b>
                         ) : null}
                       </div>
@@ -2293,6 +2304,9 @@ export default function Studio() {
                                   <div className="reference-thumb" key={`${slot.id}-${preview.name}-${preview.url}`}>
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img alt={preview.name} src={preview.url} />
+                                    {getReferenceRoleLabel(previewIndex, videoModel, language) ? (
+                                      <span className="frame-role-badge">{getReferenceRoleLabel(previewIndex, videoModel, language)}</span>
+                                    ) : null}
                                     <button
                                       aria-label={t.removeReference}
                                       className="thumb-remove"
@@ -2328,7 +2342,11 @@ export default function Studio() {
             <div className="field reference-field">
               <div className="field-head">
                 <label htmlFor={referenceInputId}>{t.referenceImages}</label>
-                <span>{t.referenceLimit}</span>
+                <span>
+                  {modelSupportsEndFrame(videoModel)
+                    ? tx("startEndFrameHint", language === "zh" ? "第 1 张首帧，第 2 张尾帧" : "1st image start, 2nd image end")
+                    : t.referenceLimit}
+                </span>
               </div>
               <div className="reference-panel">
                 <label className="reference-drop" htmlFor={referenceInputId}>
@@ -2353,6 +2371,9 @@ export default function Studio() {
                       <div className="reference-thumb" key={`${preview.name}-${preview.url}`}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img alt={preview.name} src={preview.url} />
+                        {getReferenceRoleLabel(index, videoModel, language) ? (
+                          <span className="frame-role-badge">{getReferenceRoleLabel(index, videoModel, language)}</span>
+                        ) : null}
                         <button aria-label={t.removeReference} className="thumb-remove" onClick={() => removeReference(index)} title={t.removeReference} type="button">
                           <X size={14} />
                         </button>
