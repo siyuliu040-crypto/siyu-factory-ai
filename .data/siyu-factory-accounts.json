@@ -1942,6 +1942,17 @@
   ],
   "history": [
     {
+      "id": "3f236fef-00a1-4d2e-9fcd-46a43ce4493f",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "image",
+      "model": "nano_banana_2-1K-portrait",
+      "prompt": "将图片人物修改为头发茂盛的人",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/5fa426f2-5e89-48c5-bfc9-138bfbaae329.jpg",
+      "status": "completed",
+      "createdAt": "2026-06-07T11:46:14.176Z",
+      "updatedAt": "2026-06-07T11:46:14.176Z"
+    },
+    {
       "id": "ccb5b9d6-e65c-4009-ad04-87a549867054",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "video",
