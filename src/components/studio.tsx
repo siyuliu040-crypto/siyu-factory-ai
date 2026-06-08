@@ -463,7 +463,7 @@ function formatDisplayCredits(value: number | undefined) {
   if (!value || !Number.isFinite(value)) return "0";
   const scaled = value / DISPLAY_CREDIT_SCALE;
   return new Intl.NumberFormat("zh-CN", {
-    maximumFractionDigits: scaled < 10 ? 3 : 0
+    maximumFractionDigits: 0
   }).format(scaled);
 }
 

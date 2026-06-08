@@ -1,33 +1,37 @@
-export const MODEL_CREDIT_COSTS: Record<string, number> = {
-  "gpt-image-2": 720,
-  "nano_banana_2-1K-portrait": 3200,
-  "nano_banana_2-2K-portrait": 3200,
-  "nano_banana_2-4K-portrait": 5000,
-  "nano_banana_pro-1K-portrait": 3200,
-  "nano_banana_pro-2K-portrait": 3200,
-  "nano_banana_pro-4K-portrait": 5000,
-  "firefly-veo31-fast-8s-9x16-1080p": 8880,
-  "firefly-veo31-ref-8s-9x16-1080p": 11520,
-  "veo_3_1-fast-portrait": 1200,
-  "veo_3_1-fast-portrait-hd": 1200,
-  "veo_3_1-fast-portrait-fl-hd": 1200,
-  "ali-sora-video-portrait-official-4s": 2880,
-  "ali-sora-video-portrait-official-8s": 2880,
-  "sora-2-4s-9x16": 3840,
-  "sora-2-8s-9x16": 7680,
-  "sora-2-12s-9x16": 11520,
-  "sora2-pro-12s-9x16": 16880,
-  "grok-imagine-1.0-video": 11520,
-  "grok-imagine-1.0-video-6s": 11520,
-  "grok-imagine-1.0-video-10s": 11520,
-  "grok-imagine-1.0-video-ref-6s": 11520,
-  "grok-imagine-1.0-video-ref-10s": 11520,
-  "deepseek-v4-flash": 10000,
-  "deepseek-v4-pro": 30000,
-  "omni_flash": 40000
-};
-
 const INTERNAL_CREDIT_SCALE = 10000;
+
+function siteCredits(value: number) {
+  return Math.round(value * INTERNAL_CREDIT_SCALE);
+}
+
+export const MODEL_CREDIT_COSTS: Record<string, number> = {
+  "gpt-image-2": siteCredits(1),
+  "nano_banana_2-1K-portrait": siteCredits(2),
+  "nano_banana_2-2K-portrait": siteCredits(2),
+  "nano_banana_2-4K-portrait": siteCredits(4),
+  "nano_banana_pro-1K-portrait": siteCredits(2),
+  "nano_banana_pro-2K-portrait": siteCredits(2),
+  "nano_banana_pro-4K-portrait": siteCredits(4),
+  "firefly-veo31-fast-8s-9x16-1080p": siteCredits(12),
+  "firefly-veo31-ref-8s-9x16-1080p": siteCredits(15),
+  "veo_3_1-fast-portrait": siteCredits(3),
+  "veo_3_1-fast-portrait-hd": siteCredits(3),
+  "veo_3_1-fast-portrait-fl-hd": siteCredits(3),
+  "ali-sora-video-portrait-official-4s": siteCredits(5),
+  "ali-sora-video-portrait-official-8s": siteCredits(8),
+  "sora-2-4s-9x16": siteCredits(6),
+  "sora-2-8s-9x16": siteCredits(12),
+  "sora-2-12s-9x16": siteCredits(18),
+  "sora2-pro-12s-9x16": siteCredits(25),
+  "grok-imagine-1.0-video": siteCredits(15),
+  "grok-imagine-1.0-video-6s": siteCredits(12),
+  "grok-imagine-1.0-video-10s": siteCredits(18),
+  "grok-imagine-1.0-video-ref-6s": siteCredits(15),
+  "grok-imagine-1.0-video-ref-10s": siteCredits(20),
+  "deepseek-v4-flash": siteCredits(1),
+  "deepseek-v4-pro": siteCredits(2),
+  "omni_flash": siteCredits(2)
+};
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
   "firefly-veo31-fast-8s-9x16-1080p": 0.888,
@@ -45,18 +49,18 @@ export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
 
 const VIDU_CREDITS_PER_SECOND: Record<string, Record<string, number>> = {
   "vidu:viduq3-pro-fast": {
-    "720p": 12,
-    "1080p": 15
+    "720p": 2,
+    "1080p": 3
   },
   "vidu:viduq3-turbo": {
-    "540p": 7,
-    "720p": 12,
-    "1080p": 13
+    "540p": 1,
+    "720p": 2,
+    "1080p": 3
   },
   "vidu:viduq3-pro": {
-    "540p": 9,
-    "720p": 20,
-    "1080p": 24
+    "540p": 1,
+    "720p": 2,
+    "1080p": 3
   }
 };
 
@@ -81,11 +85,11 @@ export function getViduDisplayCreditCost(model: string, duration?: string | numb
 export function getModelCreditCost(model: string) {
   if (MODEL_CREDIT_COSTS[model]) return MODEL_CREDIT_COSTS[model];
   const lower = model.toLowerCase();
-  if (lower.includes("15s")) return 2000000;
-  if (lower.includes("12s")) return 1600000;
-  if (lower.includes("4s")) return 800000;
-  if (lower.includes("video") || lower.includes("veo") || lower.includes("sora")) return 1200000;
-  return 40000;
+  if (lower.includes("15s")) return siteCredits(30);
+  if (lower.includes("12s")) return siteCredits(24);
+  if (lower.includes("4s")) return siteCredits(8);
+  if (lower.includes("video") || lower.includes("veo") || lower.includes("sora")) return siteCredits(15);
+  return siteCredits(2);
 }
 
 export function getGenerationCost(model: string, count = 1) {
@@ -94,10 +98,10 @@ export function getGenerationCost(model: string, count = 1) {
 
 function durationCost(duration?: string | number) {
   const seconds = Number(duration || 0);
-  if (seconds >= 15) return 2000000;
-  if (seconds >= 12) return 1600000;
-  if (seconds <= 4 && seconds > 0) return 800000;
-  return 1200000;
+  if (seconds >= 15) return siteCredits(30);
+  if (seconds >= 12) return siteCredits(24);
+  if (seconds <= 4 && seconds > 0) return siteCredits(8);
+  return siteCredits(15);
 }
 
 export function getVideoGenerationCost(model: string, duration?: string | number, resolution?: string | number) {
@@ -105,19 +109,19 @@ export function getVideoGenerationCost(model: string, duration?: string | number
   if (lower.startsWith("vidu:")) {
     return Math.round(getViduDisplayCreditCost(model, duration, resolution) * INTERNAL_CREDIT_SCALE);
   }
-  if (lower.includes("grok-imagine-1.0-video-ref-10s")) return 1700000;
-  if (lower.includes("grok-imagine-1.0-video-ref-6s")) return 1300000;
-  if (lower.includes("grok-imagine-1.0-video-10s")) return 1500000;
-  if (lower.includes("grok-imagine-1.0-video-6s")) return 1100000;
+  if (lower.includes("grok-imagine-1.0-video-ref-10s")) return siteCredits(20);
+  if (lower.includes("grok-imagine-1.0-video-ref-6s")) return siteCredits(15);
+  if (lower.includes("grok-imagine-1.0-video-10s")) return siteCredits(18);
+  if (lower.includes("grok-imagine-1.0-video-6s")) return siteCredits(12);
   if (lower.includes("grok-imagine-1.0-video")) {
     const seconds = Math.max(6, Number(duration || 6));
-    return seconds >= 10 ? 1500000 : 1100000;
+    return seconds >= 10 ? siteCredits(18) : siteCredits(12);
   }
   if (MODEL_CREDIT_COSTS[model] && lower.includes("sora")) return MODEL_CREDIT_COSTS[model];
   if (MODEL_CREDIT_COSTS[model] && lower.includes("firefly-veo31")) return MODEL_CREDIT_COSTS[model];
   if (MODEL_CREDIT_COSTS[model] && lower.includes("veo_3_1")) return MODEL_CREDIT_COSTS[model];
   const base = durationCost(duration || lower.match(/(\d+)s/)?.[1]);
-  if (lower.includes("hd") || lower.includes("ref")) return base + 400000;
+  if (lower.includes("hd") || lower.includes("ref")) return base + siteCredits(5);
   if (lower.includes("veo")) return base;
   return getModelCreditCost(model);
 }
