@@ -1987,9 +1987,9 @@
       "model": "grok-imagine-1.0-video-ref-10s",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "task_P3x7Lppy9FpxeqEoLKGNESUpC9vrFNMW",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-08T08:20:32.033Z",
-      "updatedAt": "2026-06-08T08:20:47.461Z"
+      "updatedAt": "2026-06-08T08:20:55.353Z"
     },
     {
       "id": "3f236fef-00a1-4d2e-9fcd-46a43ce4493f",
