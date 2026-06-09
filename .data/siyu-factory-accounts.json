@@ -2644,11 +2644,11 @@
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "mode": "video",
       "model": "vidu:viduq3-turbo",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\r\n\r\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\r\n\r\n0-3s: Bestie glances at the long-sleeve top.\r\nBestie: “Don’t you overheat in that?”\r\n\r\n3-7s: Wearer lightly brushes the sleeve.\r\nYou: “No, it feels cool and lets my skin breathe.”\r\n\r\n7-10s: Bestie touches the fabric and nods.",
+      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
       "taskId": "961837311316754432",
       "status": "created",
       "createdAt": "2026-06-09T07:50:00.382Z",
-      "updatedAt": "2026-06-09T07:50:00.382Z"
+      "updatedAt": "2026-06-09T07:50:05.569Z"
     },
     {
       "id": "ea21d7d9-d379-4483-aa13-7702ba1409cd",
