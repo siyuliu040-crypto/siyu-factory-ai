@@ -7,6 +7,13 @@ import {
 import { settleGenerationTask, updateHistoryByTaskId, withAccountState } from "@/lib/accounts";
 import { isViduModel, normalizeViduStatus, parseViduResponse, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 import {
+  getSyCredentials,
+  isSyModel,
+  normalizeSyStatusPayload,
+  parseSyResponse,
+  SY_BASE_URL
+} from "@/lib/sy";
+import {
   extractVideoUrl,
   normalizeVideoStatusPayload,
   type NormalizedVideoStatus
@@ -38,6 +45,25 @@ async function fetchViduVideoStatus(id: string) {
   return {
     response,
     data: await parseViduResponse(response)
+  };
+}
+
+async function fetchSyVideoStatus(id: string) {
+  const credentials = getSyCredentials();
+  const body = new URLSearchParams({
+    username: credentials.username,
+    userpwd: credentials.userpwd,
+    task_id: id
+  });
+  const response = await fetch(`${SY_BASE_URL}/dm/ai_api.php?action=query`, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
+    body,
+    cache: "no-store"
+  });
+  return {
+    response,
+    data: await parseSyResponse(response)
   };
 }
 
@@ -76,6 +102,19 @@ export async function GET(
         }
       });
       const statusCode = payload.status === "queued" || payload.status === "in_progress" ? 202 : vidu.response.status;
+      return Response.json(payload, { status: statusCode });
+    }
+
+    if (task && isSyModel(task.model)) {
+      const sy = await fetchSyVideoStatus(id);
+      const payload = normalizeSyStatusPayload(id, sy.data, sy.response.status);
+      await withAccountState((state) => {
+        settleGenerationTask(state, id, payload.status);
+        if (payload.video_url || payload.status) {
+          updateHistoryByTaskId(state, id, { status: payload.status, previewUrl: payload.video_url });
+        }
+      });
+      const statusCode = payload.status === "queued" || payload.status === "in_progress" ? 202 : sy.response.status;
       return Response.json(payload, { status: statusCode });
     }
 
