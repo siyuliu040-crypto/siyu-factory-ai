@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 1600000,
+      "credits": 1850000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-09T05:46:01.508Z"
+      "updatedAt": "2026-06-09T05:46:02.627Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -174,6 +174,17 @@
     }
   ],
   "ledger": [
+    {
+      "id": "62f973a7-b19b-45d2-b61a-36da117aa227",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "amount": 250000,
+      "balanceAfter": 1850000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-09T05:46:02.627Z",
+      "metadata": {
+        "model": "sora2-pro-12s-9x16"
+      }
+    },
     {
       "id": "fe2a8de3-30a7-4794-b48a-66c2344e4f46",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
