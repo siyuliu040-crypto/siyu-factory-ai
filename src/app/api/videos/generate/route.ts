@@ -9,6 +9,16 @@ import {
 } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
 import { getVideoGenerationCost } from "@/lib/pricing";
+import {
+  getSyCredentials,
+  getSyModel,
+  getSyTaskId,
+  isSyModel,
+  parseSyResponse,
+  SY_BASE_URL,
+  SY_MODELS,
+  syModelSupportsEndFrame
+} from "@/lib/sy";
 import { extractVideoUrl } from "@/lib/video-status";
 import { isViduModel, parseViduResponse, toViduModel, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 import { randomUUID } from "crypto";
@@ -29,7 +39,8 @@ const VERIFIED_VIDEO_MODELS = new Set([
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
   "grok-imagine-1.0-video-ref-6s",
-  "grok-imagine-1.0-video-ref-10s"
+  "grok-imagine-1.0-video-ref-10s",
+  ...SY_MODELS.map((model) => model.id)
 ]);
 const IMAGE_EXTENSION_BY_TYPE: Record<string, string> = {
   "image/jpeg": "jpg",
@@ -328,6 +339,94 @@ async function postViduPayload(
   );
 }
 
+async function postSyPayload(
+  payload: {
+    model: string;
+    prompt: string;
+    imageUrls: string[];
+  },
+  billing: { userId: string; amount: number; model: string }
+) {
+  const syModel = getSyModel(payload.model);
+  if (!syModel) {
+    await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
+      model: billing.model
+    });
+    return jsonError({ error: "sy_model_unavailable" }, 400);
+  }
+
+  const credentials = getSyCredentials();
+  const formData = new URLSearchParams({
+    videoType: syModel.videoType,
+    videoChannel: syModel.videoChannel,
+    username: credentials.username,
+    userpwd: credentials.userpwd,
+    cardNo: credentials.cardNo,
+    duration: String(syModel.duration),
+    ratio: "9:16",
+    video_prompt: payload.prompt
+  });
+  if (payload.imageUrls[0]) {
+    formData.set("imageUrl", payload.imageUrls[0]);
+  }
+  payload.imageUrls.slice(1).forEach((url, index) => {
+    formData.set(`imageUrl${index + 2}`, url);
+  });
+  if (payload.imageUrls.length > 1) {
+    formData.set("imageUrls", payload.imageUrls.join(","));
+  }
+  if (syModelSupportsEndFrame(payload.model) && payload.imageUrls[1]) {
+    formData.set("lastImageUrl", payload.imageUrls[1]);
+    formData.set("endImageUrl", payload.imageUrls[1]);
+  }
+
+  const response = await fetch(`${SY_BASE_URL}/dm/action_card.php?action=generateOneVideo_dragImage_image2Video`, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
+    body: formData,
+    cache: "no-store"
+  });
+  const data = await parseSyResponse(response);
+  const taskId = getSyTaskId(data);
+
+  if (!response.ok || !taskId || String((data as { code?: unknown })?.code || "").toLowerCase().includes("fail")) {
+    await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
+      model: billing.model
+    });
+    return Response.json(data, { status: response.status });
+  }
+
+  await withAccountState((state) => {
+    recordGenerationTask(state, {
+      id: taskId,
+      userId: billing.userId,
+      type: "video",
+      model: billing.model,
+      amount: billing.amount
+    });
+    recordGenerationHistory(state, {
+      userId: billing.userId,
+      type: "video",
+      model: billing.model,
+      prompt: payload.prompt,
+      taskId,
+      status: String((data as { status?: unknown })?.status || "queued")
+    });
+  });
+
+  return Response.json(
+    {
+      ...(typeof data === "object" && data ? data : { data }),
+      id: taskId,
+      task_id: taskId,
+      status: String((data as { status?: unknown })?.status || "queued").toLowerCase(),
+      provider: "sy",
+      charged: billing.amount
+    },
+    { status: response.status }
+  );
+}
+
 export async function POST(request: Request) {
   try {
     const incoming = await request.formData();
@@ -365,6 +464,9 @@ export async function POST(request: Request) {
     if (isGrokReferenceVideoModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This model requires one reference image." }, 400);
     }
+    if (isSyModel(model) && publicReferenceUrls.length === 0) {
+      return jsonError({ error: "This SY model requires one reference image." }, 400);
+    }
     if (supportsStartEndFrames(model) && publicReferenceUrls.length === 0) {
       return jsonError({
         error: "first_frame_required",
@@ -399,6 +501,17 @@ export async function POST(request: Request) {
                 lastFileName: preparedFrameImages!.last.fileName
               }
             : {})
+        },
+        billing
+      );
+    }
+
+    if (isSyModel(model)) {
+      return postSyPayload(
+        {
+          model,
+          prompt,
+          imageUrls: publicReferenceUrls
         },
         billing
       );
