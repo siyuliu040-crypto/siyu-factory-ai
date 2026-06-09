@@ -8,6 +8,7 @@ import {
 } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
 import { getGenerationCost } from "@/lib/pricing";
+import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
 
 type ImageGeneratePayload = {
   model: string;
@@ -117,6 +118,12 @@ export async function POST(request: Request) {
       if (!model || !prompt) {
         return jsonError({ error: "model and prompt are required" }, 400);
       }
+      if (isPromptTooLong(model, prompt, "image")) {
+        return jsonError({
+          error: "prompt_too_long",
+          message: `This image model supports up to ${getPromptLimit(model, "image")} prompt characters. Shorten the prompt and try again.`
+        }, 400);
+      }
       const amount = getGenerationCost(model, Number(incoming.get("n") || 1));
       const charge = await chargeUserCredits(request, amount, "image generation", {
         model,
@@ -169,6 +176,12 @@ export async function POST(request: Request) {
 
     if (!body.model || !body.prompt?.trim()) {
       return jsonError({ error: "model and prompt are required" }, 400);
+    }
+    if (isPromptTooLong(body.model, body.prompt.trim(), "image")) {
+      return jsonError({
+        error: "prompt_too_long",
+        message: `This image model supports up to ${getPromptLimit(body.model, "image")} prompt characters. Shorten the prompt and try again.`
+      }, 400);
     }
     const amount = getGenerationCost(body.model, body.n ?? 1);
     const charge = await chargeUserCredits(request, amount, "image generation", {
