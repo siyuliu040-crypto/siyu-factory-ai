@@ -56,9 +56,9 @@
       "name": "Test User",
       "passwordHash": "12b7e9328268ab2493bb88fa9052d5e1:c4e4fb7227d1f6c51a88bce4c6fd866d1c60a191a03b6217b1f4fcb9db0cbbfc21355681c7a4b29804c6181e6a776efcfa89146bddec5383eddb9c6ed7a25754",
       "role": "user",
-      "credits": 0,
+      "credits": 1500000,
       "createdAt": "2026-06-07T11:52:29.750Z",
-      "updatedAt": "2026-06-07T11:52:29.750Z"
+      "updatedAt": "2026-06-09T05:36:16.198Z"
     },
     {
       "id": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
@@ -174,6 +174,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c9a93030-5116-4d83-ba3a-07509d1d97b7",
+      "userId": "2d8ac096-a632-4290-8379-b80db80a3703",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1500000,
+      "balanceAfter": 1500000,
+      "reason": "main account allocation",
+      "createdAt": "2026-06-09T05:36:16.198Z"
+    },
     {
       "id": "49a2ecd2-7824-4b32-b4a5-5380e99915a3",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
