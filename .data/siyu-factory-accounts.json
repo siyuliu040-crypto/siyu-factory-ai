@@ -2090,11 +2090,11 @@
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "mode": "video",
       "model": "vidu:viduq3-pro",
-      "prompt": "9:16 vertical, Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\r\n\r\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\r\n\r\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\r\n\r\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\r\n\r\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\r\n\r\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”natural hair movement, no logo, no text",
+      "prompt": "9:16 vertical, Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\n\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”natural hair movement, no logo, no text",
       "taskId": "961804689618259968",
-      "status": "queued",
+      "status": "created",
       "createdAt": "2026-06-09T05:40:22.758Z",
-      "updatedAt": "2026-06-09T05:40:26.111Z"
+      "updatedAt": "2026-06-09T05:40:27.604Z"
     },
     {
       "id": "e5f29351-320b-4074-a180-91d23ae8460e",
