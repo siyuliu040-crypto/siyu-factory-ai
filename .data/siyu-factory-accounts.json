@@ -1762,7 +1762,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-06-09T06:38:42.774Z",
-      "updatedAt": "2026-06-09T06:40:44.266Z"
+      "updatedAt": "2026-06-09T06:59:07.672Z"
     },
     {
       "id": "task_GVnrdAzQQWp0jlJVxftQBLZZmCLEXijr",
@@ -2458,7 +2458,7 @@
       "taskId": "task_8dIjZM1g899Kn1n29U9hqSye3aKifaDG",
       "status": "failed",
       "createdAt": "2026-06-09T06:38:42.774Z",
-      "updatedAt": "2026-06-09T06:40:44.266Z"
+      "updatedAt": "2026-06-09T06:59:07.672Z"
     },
     {
       "id": "4d446057-b416-478f-b6d2-685ef1baf6f5",
