@@ -53,6 +53,7 @@ async function fetchSyVideoStatus(id: string) {
   const body = new URLSearchParams({
     username: credentials.username,
     userpwd: credentials.userpwd,
+    cardNo: credentials.cardNo,
     task_id: id
   });
   const response = await fetch(`${SY_BASE_URL}/dm/ai_api.php?action=query`, {
