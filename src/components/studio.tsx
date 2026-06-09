@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
+import { getSyModel, syModelSupportsEndFrame } from "@/lib/sy";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
@@ -186,6 +187,12 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
+  "sy:sora2-BB-api-12s",
+  "sy:veo-X-veo_3_1-fast-fl",
+  "sy:veo_3_1-fast-portrait-fl-hd-B",
+  "sy:veo-K-first-last-frame",
+  "sy:veo-X-veo_3_1-fast",
+  "sy:veo-X-veo_3_1-fast-hd",
   "sora-2-4s-9x16",
   "sora2-pro-12s-9x16",
   "veo_3_1-fast-portrait-fl-hd",
@@ -416,7 +423,7 @@ function getModelCreditCost(model: string) {
 
 function isVideoModel(model: string) {
   const lower = model.toLowerCase();
-  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:");
+  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:") || lower.startsWith("sy:");
 }
 
 function isViduModelId(model: string) {
@@ -425,15 +432,15 @@ function isViduModelId(model: string) {
 
 function modelRequiresReference(model: string) {
   const lower = model.toLowerCase();
-  return isViduModelId(model) || lower.includes("-ref-") || lower.includes("_ref_") || lower.includes("fl-hd");
+  return Boolean(getSyModel(model)) || isViduModelId(model) || lower.includes("-ref-") || lower.includes("_ref_") || lower.includes("fl-hd");
 }
 
 function modelRequiresFirstFrame(model: string) {
-  return model.toLowerCase().includes("fl-hd");
+  return syModelSupportsEndFrame(model) || model.toLowerCase().includes("fl-hd");
 }
 
 function modelSupportsEndFrame(model: string) {
-  return model.toLowerCase().includes("fl-hd");
+  return syModelSupportsEndFrame(model) || model.toLowerCase().includes("fl-hd");
 }
 
 function getReferenceRoleLabel(index: number, model: string, language: Language) {
@@ -479,6 +486,8 @@ function formatQuotaText(value: string) {
 
 function getModelTitle(model: string, language: Language) {
   const lower = model.toLowerCase();
+  const syModel = getSyModel(model);
+  if (syModel) return syModel.label;
   if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";
   if (lower.includes("grok-imagine")) {
     const seconds = lower.includes("10s") ? "10" : lower.includes("6s") ? "6" : "";
@@ -504,6 +513,15 @@ function getModelTitle(model: string, language: Language) {
 function getModelDescription(model: string, language: Language) {
   const lower = model.toLowerCase();
   const aspect = language === "zh" ? "9:16 竖屏" : "9:16 portrait";
+  const syModel = getSyModel(model);
+  if (syModel) {
+    const mode = syModel.mode === "first-last"
+      ? language === "zh" ? "首帧必填，尾帧可选" : "start required, end optional"
+      : language === "zh" ? "参考图必填，可传多张" : "reference required, multiple images accepted";
+    return language === "zh"
+      ? `${aspect} · ${syModel.duration} 秒固定 · ${syModel.resolution} · ${mode} · SY 上游${syModel.successHint ? ` · ${syModel.successHint}` : ""}`
+      : `${aspect} · fixed ${syModel.duration}s · ${syModel.resolution} · ${mode} · SY upstream${syModel.successHint ? ` · ${syModel.successHint}` : ""}`;
+  }
   if (lower.startsWith("vidu:")) {
     const family = lower.includes("q2") ? "Q2" : "Q3";
     const speed = lower.includes("pro-fast")
@@ -597,6 +615,10 @@ function getDeepSeekModelDescription(model: string, language: Language) {
 
 function getDurationOptions(model: string, language: Language) {
   const lower = model.toLowerCase();
+  const syModel = getSyModel(model);
+  if (syModel) {
+    return [{ value: String(syModel.duration), label: language === "zh" ? `${syModel.duration} 秒（SY固定）` : `${syModel.duration} seconds fixed by SY` }];
+  }
   if (lower.startsWith("vidu:")) {
     return [
       { value: "5", label: language === "zh" ? "5 秒" : "5 seconds" },
@@ -639,6 +661,11 @@ function normalizeDurationForModel(model: string, currentDuration: string, langu
 
 function getResolutionOptions(model: string, language: Language) {
   const lower = model.toLowerCase();
+  const syModel = getSyModel(model);
+  if (syModel) {
+    const value = syModel.resolution === "4K" ? "2160x3840" : syModel.resolution === "1080P" ? "1080x1920" : "720x1280";
+    return [{ value, label: syModel.resolution }];
+  }
   if (lower === "vidu:viduq3-pro-fast") {
     return [
       { value: "720x1280", label: "720P" },
