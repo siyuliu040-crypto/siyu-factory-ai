@@ -158,6 +158,22 @@ function normalizeUpstreamVideoRequest(model: string, seconds: FormDataEntryValu
   return { upstreamModel: model, seconds: seconds ? String(seconds) : "" };
 }
 
+function prepareSyVideoPrompt(model: string, prompt: string) {
+  const syModel = getSyModel(model);
+  if (!syModel || !syModel.videoChannel.toLowerCase().includes("sora2")) return prompt;
+
+  return [
+    "IMPORTANT AUDIO REQUIREMENT:",
+    "Generate a video with synchronized spoken audio. Do not make a silent video.",
+    "If the prompt contains dialogue, the characters must speak those exact lines out loud in natural English, with matching mouth movement and timing.",
+    "Do not express the dialogue only as subtitles or on-screen text. No logo, no watermark, no unrelated text.",
+    "",
+    "【重要】必须生成带声音的口播视频，不要静音。对白和旁白必须真实说出来，并尽量匹配人物嘴型和动作。不要只用字幕表达对白。",
+    "",
+    prompt
+  ].join("\n");
+}
+
 async function postVideoPayload(
   payload: Record<string, unknown>,
   billing: { userId: string; amount: number; model: string }
@@ -356,6 +372,7 @@ async function postSyPayload(
   }
 
   const credentials = getSyCredentials();
+  const upstreamPrompt = prepareSyVideoPrompt(payload.model, payload.prompt);
   const formData = new URLSearchParams({
     videoType: syModel.videoType,
     videoChannel: syModel.videoChannel,
@@ -364,7 +381,7 @@ async function postSyPayload(
     cardNo: credentials.cardNo,
     duration: String(syModel.duration),
     ratio: "9:16",
-    video_prompt: payload.prompt
+    video_prompt: upstreamPrompt
   });
   if (payload.imageUrls[0]) {
     formData.set("imageUrl", payload.imageUrls[0]);
