@@ -1659,10 +1659,10 @@
       "type": "video",
       "model": "grok-imagine-1.0-video-ref-10s",
       "amount": 200000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-09T06:22:35.989Z",
-      "updatedAt": "2026-06-09T06:22:35.989Z"
+      "updatedAt": "2026-06-09T06:24:44.571Z"
     },
     {
       "id": "task_ovePJwtrueCJELItLrPXD1kjLrc3sJcN",
@@ -2310,10 +2310,11 @@
       "mode": "video",
       "model": "grok-imagine-1.0-video-ref-10s",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "previewUrl": "https://ngrok2.zhoushurencz1.top/v1/files/video?id=video_0274d75daa8f4e1f9679805ee7275f5d",
       "taskId": "task_hPzDhiMmrkqdLI6qmPjiA8ryON06RHpb",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-09T06:22:35.989Z",
-      "updatedAt": "2026-06-09T06:24:36.646Z"
+      "updatedAt": "2026-06-09T06:24:44.571Z"
     },
     {
       "id": "f37d1cf5-8de6-4b09-8338-d177280296e8",
