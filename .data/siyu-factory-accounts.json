@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 35302880,
+      "credits": 37222880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-09T09:37:02.507Z"
+      "updatedAt": "2026-06-09T09:37:34.788Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "758efa20-2a84-4df5-aaa4-fb3852f57ed9",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1920000,
+      "balanceAfter": 37222880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-09T09:37:34.788Z",
+      "metadata": {
+        "taskId": "task_xXb5HqRVjl3PhyO7aZe02umlZA7OcPYg",
+        "model": "sy:sora2-BB-api-12s"
+      }
+    },
     {
       "id": "beddecab-6b43-4670-bdf0-41ab5b46087d",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2005,10 +2017,10 @@
       "type": "video",
       "model": "sy:sora2-BB-api-12s",
       "amount": 1920000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-09T09:37:04.306Z",
-      "updatedAt": "2026-06-09T09:37:04.306Z"
+      "updatedAt": "2026-06-09T09:37:34.788Z"
     },
     {
       "id": "961864046515064832",
@@ -2866,9 +2878,9 @@
       "model": "sy:sora2-BB-api-12s",
       "prompt": "Create an 8-second vertical 9:16 handheld iPhone-style TikTok UGC fashion video.\n\nNo subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI, no readable signs, no readable labels, no brand names.\n\nScene: modern downtown sidewalk outside small cafés in soft afternoon daylight. Round metal café tables, iced drinks with condensation, napkins moving in a light breeze, pedestrians passing behind, a bicycle in the far background, low traffic sound, cups placed on tables, faint café chatter. Keep the background clear enough to see street, tables, chairs, people, and traffic. Do not blur the background.\n\nCharacters: two stylish women walking side by side like close friends. The main wearer wears one fitted long-sleeve top. The top keeps the same color, neckline, sleeve length, fit, and fabric texture throughout. The best friend holds one iced coffee in her right hand the entire time. Both women keep the same face, hairstyle, outfit, and body proportions.\n\nProduct: fitted long-sleeve top with smooth fabric, close body fit, clean shoulder line, slim waist shape, soft stretch, cool-touch surface, breathable feel, quick-dry behavior, and wrinkle-free finish. Fabric looks thin but not transparent, fitted but not tight, smooth but not plastic.\n\n0-1s: Medium handheld walking shot. The best friend slows down, looks at the sleeve, raises one eyebrow, points with her left index finger, iced coffee steady in her right hand. Sunlight hits the wearer’s cheek and sleeve; she slightly squints, smiles, and looks down at the sleeve. A pedestrian passes behind; the wearer shifts her shoulder slightly inward.\nBest friend: “Girl, don’t you overheat in that?”\n\n1-2s: Close-up on sleeve. The wearer brushes from wrist to elbow with three fingers, presses her palm on the fabric, pinches the sleeve near the wrist, pulls it one inch from the skin, then releases. Fabric snaps back smooth, no sagging, no wrinkles.\nWearer: “Nope. It feels cool right when it touches my skin.”\n\n2-3s: Front medium close-up. The wearer lifts her forearm, opens the sleeve slightly away from the skin to show airflow, takes one relaxed breath, shoulders drop. Breeze moves hair across her cheek; she tucks it behind her ear, then returns her hand to the sleeve.\nWearer: “It lets my skin breathe. No trapped heat.”\n\n3-4s: Close-up near café table. The wearer touches an iced drink; condensation wets her fingertips. She taps the damp fingers near the sleeve cuff and rubs the fabric once. Sleeve does not darken, cling, sag, or twist.\nWearer: “And it doesn’t get sticky.”\n\n4-5s: Walking tracking shot. The wearer takes three quick steps, swings her arm, then lifts her elbow like adjusting a bag strap. Sleeve stretches at the elbow, then smooths back out. Top stays flat at shoulder, waist, and armpit.\nWearer: “It dries fast when I’m moving around.”\n\n5-6s: The best friend steps closer, touches the shoulder fabric with two fingers, rubs it once, presses the sleeve, then releases. Her expression changes from skeptical squint to widened eyes, parted lips, then two small nods. Iced coffee stays in her right hand.\nBest friend: “Wait… it’s soft, and it’s not thick?”\n\n6-7s: Upper-body fit check. The wearer faces camera, smooths the front of the top downward from chest to waist with both hands, turns 45 degrees to show side shape, lifts one arm shoulder-high, bends elbow, lowers it. Top stays fitted, flat, and wrinkle-free.\nWearer: “Soft, fitted, and it stays smooth.”\n\n7-8s: Final walking shot. The wearer turns her head back to camera while walking, brushes the sleeve once, and gives a satisfied smile. The best friend looks from the sleeve to her face and nods. Product stays centered until the last frame.\nBest friend: “Okay, I need that.”\nWearer: “This is the long sleeve I can wear all day.”\n\nCamera: vertical 9:16, handheld phone movement, slight walking shake, close enough to show sleeve texture, waist fit, shoulder line, and hand contact. Do not cut during sleeve pinch, fabric release, damp finger touch, best friend fabric touch, or final fit check.\n\nContinuity: same wearer, same best friend, same café street, same iced coffee, same top, same color, same neckline, same fit. Hands have five fingers and normal joints. Pedestrians stay behind and never block the product. No product deformation, no transparent fabric, no outfit change, no face change, no hairstyle change, no object popping in or disappearing.\n",
       "taskId": "task_xXb5HqRVjl3PhyO7aZe02umlZA7OcPYg",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-09T09:37:04.306Z",
-      "updatedAt": "2026-06-09T09:37:27.282Z"
+      "updatedAt": "2026-06-09T09:37:34.788Z"
     },
     {
       "id": "47174a07-845f-4c60-af3b-871d5cbd1314",
