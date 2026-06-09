@@ -1748,10 +1748,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro-fast",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-09T06:45:50.560Z",
-      "updatedAt": "2026-06-09T06:45:50.560Z"
+      "updatedAt": "2026-06-09T06:53:46.884Z"
     },
     {
       "id": "task_8dIjZM1g899Kn1n29U9hqSye3aKifaDG",
@@ -2444,9 +2444,10 @@
       "model": "vidu:viduq3-pro-fast",
       "prompt": "轻奢简约风（高端瑜伽馆/成熟女性）\n\n定位：高级质感，精致优雅，适配成熟微胖群体\n0-2s 痛点吸睛\n穿搭：劣质普通健身服，面料粗糙、版型生硬臃肿\n画面：触摸粗糙面料，轻扯衣物，定格身形显短板\n转场：低头抬手柔和转场\n口播/字幕：Ordinary activewear looks dull & uncomfortable?\n\n2-8s 冰感+高弹+遮肉塑形\n穿搭：纯色高端冰感瑜伽服\n画面：慢镜头展示冰感肌理，轻拉面料显柔韧弹力；轻柔瑜伽动作，镜头扫全身，优雅收肉塑型\n口播/字幕：Luxury icy fabric, conceals flaws & shapes you elegantly!\n\n8-13s 透气+速干+长效舒适\n画面：慢动作吹气、洒水，展示透气瞬干；优雅舒展，衣物不变形\n口播/字幕：Always airy & dry, comfy for every moment!\n\n13-15s 下单引导\n画面：端庄微笑，轻柔指引链接\n口播/字幕：Click the link now!",
       "taskId": "961821163946782720",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-09T06:45:50.560Z",
-      "updatedAt": "2026-06-09T06:53:38.769Z"
+      "updatedAt": "2026-06-09T06:53:46.884Z",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_20/tasks/26/0609/06/961821163946782720/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T065346Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T06%253A53%253A39Z.mp4&x-id=GetObject&X-Amz-Signature=34679bee78fddec5e2140a4d75d3a567d7c6300ee14c32dd7318f27a2a49d01f"
     },
     {
       "id": "fa6bd067-200e-49fc-a8a5-41c9347c8f1f",
