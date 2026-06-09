@@ -1988,6 +1988,17 @@
   ],
   "generationTasks": [
     {
+      "id": "961864046515064832",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "vidu:viduq3-turbo",
+      "amount": 240000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-09T09:36:14.549Z",
+      "updatedAt": "2026-06-09T09:36:14.549Z"
+    },
+    {
       "id": "task_RvxkPupbSYYLvYzS4qyUBRsZ6NMWfHdF",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "type": "video",
@@ -2825,6 +2836,17 @@
     }
   ],
   "history": [
+    {
+      "id": "47174a07-845f-4c60-af3b-871d5cbd1314",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "vidu:viduq3-turbo",
+      "prompt": "Create an 8-second vertical 9:16 handheld iPhone-style TikTok UGC fashion video.\r\n\r\nNo subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI, no readable signs, no readable labels, no brand names.\r\n\r\nScene: modern downtown sidewalk outside small cafés in soft afternoon daylight. Round metal café tables, iced drinks with condensation, napkins moving in a light breeze, pedestrians passing behind, a bicycle in the far background, low traffic sound, cups placed on tables, faint café chatter. Keep the background clear enough to see street, tables, chairs, people, and traffic. Do not blur the background.\r\n\r\nCharacters: two stylish women walking side by side like close friends. The main wearer wears one fitted long-sleeve top. The top keeps the same color, neckline, sleeve length, fit, and fabric texture throughout. The best friend holds one iced coffee in her right hand the entire time. Both women keep the same face, hairstyle, outfit, and body proportions.\r\n\r\nProduct: fitted long-sleeve top with smooth fabric, close body fit, clean shoulder line, slim waist shape, soft stretch, cool-touch surface, breathable feel, quick-dry behavior, and wrinkle-free finish. Fabric looks thin but not transparent, fitted but not tight, smooth but not plastic.\r\n\r\n0-1s: Medium handheld walking shot. The best friend slows down, looks at the sleeve, raises one eyebrow, points with her left index finger, iced coffee steady in her right hand. Sunlight hits the wearer’s cheek and sleeve; she slightly squints, smiles, and looks down at the sleeve. A pedestrian passes behind; the wearer shifts her shoulder slightly inward.\r\nBest friend: “Girl, don’t you overheat in that?”\r\n\r\n1-2s: Close-up on sleeve. The wearer brushes from wrist to elbow with three fingers, presses her palm on the fabric, pinches the sleeve near the wrist, pulls it one inch from the skin, then releases. Fabric snaps back smooth, no sagging, no wrinkles.\r\nWearer: “Nope. It feels cool right when it touches my skin.”\r\n\r\n2-3s: Front medium close-up. The wearer lifts her forearm, opens the sleeve slightly away from the skin to show airflow, takes one relaxed breath, shoulders drop. Breeze moves hair across her cheek; she tucks it behind her ear, then returns her hand to the sleeve.\r\nWearer: “It lets my skin breathe. No trapped heat.”\r\n\r\n3-4s: Close-up near café table. The wearer touches an iced drink; condensation wets her fingertips. She taps the damp fingers near the sleeve cuff and rubs the fabric once. Sleeve does not darken, cling, sag, or twist.\r\nWearer: “And it doesn’t get sticky.”\r\n\r\n4-5s: Walking tracking shot. The wearer takes three quick steps, swings her arm, then lifts her elbow like adjusting a bag strap. Sleeve stretches at the elbow, then smooths back out. Top stays flat at shoulder, waist, and armpit.\r\nWearer: “It dries fast when I’m moving around.”\r\n\r\n5-6s: The best friend steps closer, touches the shoulder fabric with two fingers, rubs it once, presses the sleeve, then releases. Her expression changes from skeptical squint to widened eyes, parted lips, then two small nods. Iced coffee stays in her right hand.\r\nBest friend: “Wait… it’s soft, and it’s not thick?”\r\n\r\n6-7s: Upper-body fit check. The wearer faces camera, smooths the front of the top downward from chest to waist with both hands, turns 45 degrees to show side shape, lifts one arm shoulder-high, bends elbow, lowers it. Top stays fitted, flat, and wrinkle-free.\r\nWearer: “Soft, fitted, and it stays smooth.”\r\n\r\n7-8s: Final walking shot. The wearer turns her head back to camera while walking, brushes the sleeve once, and gives a satisfied smile. The best friend looks from the sleeve to her face and nods. Product stays centered until the last frame.\r\nBest friend: “Okay, I need that.”\r\nWearer: “This is the long sleeve I can wear all day.”\r\n\r\nCamera: vertical 9:16, handheld phone movement, slight walking shake, close enough to show sleeve texture, waist fit, shoulder line, and hand contact. Do not cut during sleeve pinch, fabric release, damp finger touch, best friend fabric touch, or final fit check.\r\n\r\nContinuity: same wearer, same best friend, same café street, same iced coffee, same top, same color, same neckline, same fit. Hands have five fingers and normal joints. Pedestrians stay behind and never block the product. No product deformation, no transparent fabric, no outfit change, no face change, no hairstyle change, no object popping in or disappearing.",
+      "taskId": "961864046515064832",
+      "status": "created",
+      "createdAt": "2026-06-09T09:36:14.549Z",
+      "updatedAt": "2026-06-09T09:36:14.549Z"
+    },
     {
       "id": "ef10780b-5cb0-41be-8a53-25239cb006d7",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
