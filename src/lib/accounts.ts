@@ -62,6 +62,7 @@ export type GenerationHistoryRecord = {
   previewUrl?: string;
   taskId?: string;
   status?: string;
+  error?: string;
 };
 
 export type AccountState = {
@@ -102,11 +103,13 @@ type RecordHistoryInput = {
   previewUrl?: string;
   taskId?: string;
   status?: string;
+  error?: string;
 };
 
 type HistoryPatch = {
   previewUrl?: string;
   status?: string;
+  error?: string;
 };
 
 const SESSION_DAYS = 7;
@@ -421,6 +424,7 @@ export function recordGenerationHistory(state: AccountState, input: RecordHistor
     existing.prompt = input.prompt || existing.prompt;
     existing.previewUrl = input.previewUrl || existing.previewUrl;
     existing.status = input.status || existing.status;
+    existing.error = input.error || existing.error;
     existing.updatedAt = updatedAt;
     return existing;
   }
@@ -434,6 +438,7 @@ export function recordGenerationHistory(state: AccountState, input: RecordHistor
     previewUrl: input.previewUrl,
     taskId: input.taskId,
     status: input.status,
+    error: input.error,
     createdAt: updatedAt,
     updatedAt
   };
@@ -450,6 +455,7 @@ export function updateHistoryByTaskId(state: AccountState, taskId: string, patch
     if (item.taskId !== taskId) continue;
     item.previewUrl = patch.previewUrl || item.previewUrl;
     item.status = patch.status || item.status;
+    item.error = patch.error || item.error;
     item.updatedAt = updatedAt;
     updated.push(item);
   }
