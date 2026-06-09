@@ -9,6 +9,7 @@ import {
 } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
 import { getVideoGenerationCost } from "@/lib/pricing";
+import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
 import {
   getSyCredentials,
   getSyModel,
@@ -34,7 +35,6 @@ const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
 const VERIFIED_VIDEO_MODELS = new Set([
   "sora-2-4s-9x16",
   "sora2-pro-12s-9x16",
-  "veo_3_1-fast-portrait-fl-hd",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
@@ -169,6 +169,18 @@ function prepareSyVideoPrompt(model: string, prompt: string) {
     "Do not express the dialogue only as subtitles or on-screen text. No logo, no watermark, no unrelated text.",
     "",
     "【重要】必须生成带声音的口播视频，不要静音。对白和旁白必须真实说出来，并尽量匹配人物嘴型和动作。不要只用字幕表达对白。",
+    "",
+    prompt
+  ].join("\n");
+}
+
+function prepareViduVideoPrompt(prompt: string) {
+  return [
+    "IMPORTANT AUDIO REQUIREMENT:",
+    "Generate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.",
+    "All dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.",
+    "",
+    "【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。",
     "",
     prompt
   ].join("\n");
@@ -453,6 +465,12 @@ export async function POST(request: Request) {
     if (!model || !prompt) {
       return jsonError({ error: "model and prompt are required" }, 400);
     }
+    if (isPromptTooLong(model, prompt, "video")) {
+      return jsonError({
+        error: "prompt_too_long",
+        message: `This model supports up to ${getPromptLimit(model, "video")} prompt characters. Shorten the prompt and try again.`
+      }, 400);
+    }
     if (!VERIFIED_VIDEO_MODELS.has(model)) {
       return jsonError({
         error: "model_unavailable",
@@ -545,12 +563,12 @@ export async function POST(request: Request) {
         {
           model: toViduModel(upstreamModel),
           images: [firstImage],
-          prompt,
+          prompt: prepareViduVideoPrompt(prompt),
           ...(seconds ? { duration: Number(seconds) } : {}),
           resolution: VIDU_SIZE_TO_RESOLUTION[String(size || "")] || "720p",
           movement_amplitude: "auto",
           watermark: false,
-          audio: false
+          audio: true
         },
         billing
       );
