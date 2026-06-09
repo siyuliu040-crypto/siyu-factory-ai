@@ -1874,10 +1874,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-09T07:53:07.878Z",
-      "updatedAt": "2026-06-09T07:53:07.878Z"
+      "updatedAt": "2026-06-09T07:58:56.624Z"
     },
     {
       "id": "961837311316754432",
@@ -2668,10 +2668,11 @@
       "mode": "video",
       "model": "vidu:viduq3-pro",
       "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_28/tasks/26/0609/07/961838097731964928/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T075856Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T07%253A58%253A45Z.mp4&x-id=GetObject&X-Amz-Signature=9cd8e1f585fc14db938e135303e4cd50a165d22267a1bbfe172744bf901b7277",
       "taskId": "961838097731964928",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-09T07:53:07.878Z",
-      "updatedAt": "2026-06-09T07:58:47.619Z"
+      "updatedAt": "2026-06-09T07:58:56.624Z"
     },
     {
       "id": "9c990057-877f-43f3-927d-b0e3a772196c",
