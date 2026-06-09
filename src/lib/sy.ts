@@ -125,6 +125,16 @@ export async function parseSyResponse(response: Response) {
   }
 }
 
+function decodeMojibake(value: string) {
+  if (!/[ÃÂÅÆÇÈÉåæçèéäöüï¼]/.test(value)) return value;
+  try {
+    const decoded = Buffer.from(value, "latin1").toString("utf8");
+    return decoded.includes("�") ? value : decoded;
+  } catch {
+    return value;
+  }
+}
+
 export function getSyTaskId(payload: unknown) {
   if (!payload || typeof payload !== "object") return "";
   const record = payload as Record<string, unknown>;
@@ -176,7 +186,7 @@ export function normalizeSyStatusPayload(taskId: string, payload: unknown, upstr
   const videoUrl = extractSyVideoUrl(record);
   const rawProgress = upstream.progress ?? record.progress;
   const parsedProgress = typeof rawProgress === "string" ? Number(rawProgress.replace("%", "").trim()) : rawProgress;
-  const failureReason = String(upstream.sora_task_failure_reason || record.error || record.msg || "").trim();
+  const failureReason = decodeMojibake(String(upstream.sora_task_failure_reason || record.error || record.msg || "").trim());
   const status = videoUrl
     ? "completed"
     : ok === "failed" || failureReason || (typeof parsedProgress === "number" && parsedProgress < 0)
@@ -200,7 +210,7 @@ export function normalizeSyStatusPayload(taskId: string, payload: unknown, upstr
     video_url: videoUrl || undefined,
     url: videoUrl || undefined,
     image_url: videoUrl || undefined,
-    error: record.error || record.msg || upstream.sora_task_failure_reason || undefined,
+    error: failureReason || record.error || record.msg || upstream.sora_task_failure_reason || undefined,
     upstream: record
   };
 }
