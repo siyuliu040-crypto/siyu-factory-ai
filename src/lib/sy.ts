@@ -139,9 +139,27 @@ function normalizeSyStatus(status: unknown) {
   return "queued";
 }
 
+function parseSyUpstreamRaw(payload: unknown) {
+  if (!payload || typeof payload !== "object") return {};
+  const record = payload as Record<string, unknown>;
+  const raw = record.upstream_raw;
+  if (typeof raw !== "string" || !raw.trim()) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : {};
+  } catch {
+    return {};
+  }
+}
+
 export function extractSyVideoUrl(payload: unknown): string {
   if (!payload || typeof payload !== "object") return "";
   const record = payload as Record<string, unknown>;
+  const upstream = parseSyUpstreamRaw(record);
+  for (const key of ["videoUrl", "video_url", "url", "result_url", "output_url"]) {
+    const value = upstream[key];
+    if (typeof value === "string" && value) return value;
+  }
   for (const key of ["videoUrl", "video_url", "url", "result_url", "output_url"]) {
     const value = record[key];
     if (typeof value === "string" && value) return value;
@@ -153,12 +171,20 @@ export function extractSyVideoUrl(payload: unknown): string {
 
 export function normalizeSyStatusPayload(taskId: string, payload: unknown, upstreamStatus = 200) {
   const record = payload && typeof payload === "object" ? (payload as Record<string, unknown>) : {};
-  const status = normalizeSyStatus(record.status);
+  const upstream = parseSyUpstreamRaw(record);
+  const ok = String(record.ok || "").toLowerCase();
   const videoUrl = extractSyVideoUrl(record);
+  const rawProgress = upstream.progress ?? record.progress;
+  const parsedProgress = typeof rawProgress === "string" ? Number(rawProgress.replace("%", "").trim()) : rawProgress;
+  const status = videoUrl
+    ? "completed"
+    : ok === "failed"
+      ? "failed"
+      : normalizeSyStatus(record.status || upstream.status);
   const progress = status === "completed" || status === "failed"
     ? 100
-    : typeof record.progress === "number"
-      ? Math.max(0, Math.min(100, Math.round(record.progress)))
+    : typeof parsedProgress === "number" && Number.isFinite(parsedProgress)
+      ? Math.max(0, Math.min(100, Math.round(parsedProgress)))
       : status === "in_progress"
         ? 60
         : 0;
@@ -173,7 +199,7 @@ export function normalizeSyStatusPayload(taskId: string, payload: unknown, upstr
     video_url: videoUrl || undefined,
     url: videoUrl || undefined,
     image_url: videoUrl || undefined,
-    error: record.error || record.msg || undefined,
+    error: record.error || record.msg || upstream.sora_task_failure_reason || undefined,
     upstream: record
   };
 }
