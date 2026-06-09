@@ -11,8 +11,7 @@ const CUSTOM_VIDEO_MODELS = [
 
 const VERIFIED_PORTRAIT_VIDEO_MODELS = new Set([
   "sora-2-4s-9x16",
-  "sora2-pro-12s-9x16",
-  "veo_3_1-fast-portrait-fl-hd"
+  "sora2-pro-12s-9x16"
 ]);
 
 function isAllowedModel(model: unknown) {
