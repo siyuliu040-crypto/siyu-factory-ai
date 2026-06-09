@@ -2692,9 +2692,9 @@
       "model": "sy:sora2-BB-api-12s",
       "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
       "taskId": "task_WWA1INFvvPazvSTqdoNzDdfGoVmAfixE",
-      "status": "success",
+      "status": "queued",
       "createdAt": "2026-06-09T08:00:03.929Z",
-      "updatedAt": "2026-06-09T08:00:09.500Z"
+      "updatedAt": "2026-06-09T08:00:12.795Z"
     },
     {
       "id": "d51b4079-7903-4203-b8f8-f540975c0192",
