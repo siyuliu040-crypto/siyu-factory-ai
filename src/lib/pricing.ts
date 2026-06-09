@@ -1,3 +1,5 @@
+import { getSyModel } from "@/lib/sy";
+
 const INTERNAL_CREDIT_SCALE = 10000;
 
 function siteCredits(value: number) {
@@ -28,6 +30,12 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "grok-imagine-1.0-video-10s": siteCredits(18),
   "grok-imagine-1.0-video-ref-6s": siteCredits(15),
   "grok-imagine-1.0-video-ref-10s": siteCredits(20),
+  "sy:sora2-BB-api-12s": siteCredits(192),
+  "sy:veo-X-veo_3_1-fast-fl": siteCredits(65),
+  "sy:veo_3_1-fast-portrait-fl-hd-B": siteCredits(75),
+  "sy:veo-K-first-last-frame": siteCredits(80),
+  "sy:veo-X-veo_3_1-fast": siteCredits(65),
+  "sy:veo-X-veo_3_1-fast-hd": siteCredits(130),
   "deepseek-v4-flash": siteCredits(1),
   "deepseek-v4-pro": siteCredits(2),
   "omni_flash": siteCredits(2)
@@ -106,6 +114,8 @@ function durationCost(duration?: string | number) {
 
 export function getVideoGenerationCost(model: string, duration?: string | number, resolution?: string | number) {
   const lower = model.toLowerCase();
+  const syModel = getSyModel(model);
+  if (syModel) return siteCredits(syModel.credits);
   if (lower.startsWith("vidu:")) {
     return Math.round(getViduDisplayCreditCost(model, duration, resolution) * INTERNAL_CREDIT_SCALE);
   }
