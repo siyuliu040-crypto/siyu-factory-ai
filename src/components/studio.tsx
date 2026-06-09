@@ -518,9 +518,12 @@ function getModelDescription(model: string, language: Language) {
     const mode = syModel.mode === "first-last"
       ? language === "zh" ? "首帧必填，尾帧可选" : "start required, end optional"
       : language === "zh" ? "参考图必填，可传多张" : "reference required, multiple images accepted";
+    const voiceHint = syModel.id === "sy:sora2-BB-api-12s"
+      ? language === "zh" ? " · 口播已自动增强，脚本里请写清对白" : " · spoken audio prompt enhanced, include dialogue clearly"
+      : "";
     return language === "zh"
-      ? `${aspect} · ${syModel.duration} 秒固定 · ${syModel.resolution} · ${mode} · SY 上游${syModel.successHint ? ` · ${syModel.successHint}` : ""}`
-      : `${aspect} · fixed ${syModel.duration}s · ${syModel.resolution} · ${mode} · SY upstream${syModel.successHint ? ` · ${syModel.successHint}` : ""}`;
+      ? `${aspect} · ${syModel.duration} 秒固定 · ${syModel.resolution} · ${mode}${voiceHint} · SY 上游${syModel.successHint ? ` · ${syModel.successHint}` : ""}`
+      : `${aspect} · fixed ${syModel.duration}s · ${syModel.resolution} · ${mode}${voiceHint} · SY upstream${syModel.successHint ? ` · ${syModel.successHint}` : ""}`;
   }
   if (lower.startsWith("vidu:")) {
     const family = lower.includes("q2") ? "Q2" : "Q3";
