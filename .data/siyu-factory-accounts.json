@@ -59,6 +59,16 @@
       "credits": 0,
       "createdAt": "2026-06-07T11:52:29.750Z",
       "updatedAt": "2026-06-07T11:52:29.750Z"
+    },
+    {
+      "id": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "email": "3057664853@qq.com",
+      "name": "susu",
+      "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-06-09T05:27:41.409Z",
+      "updatedAt": "2026-06-09T05:27:41.409Z"
     }
   ],
   "sessions": [
@@ -139,6 +149,12 @@
       "userId": "2d8ac096-a632-4290-8379-b80db80a3703",
       "expiresAt": "2026-06-14T11:52:29.983Z",
       "createdAt": "2026-06-07T11:52:29.983Z"
+    },
+    {
+      "token": "994a3e7fff50d4e20c11ff902cb4c778beb63f67ea21e5d067dfbbf6444c8b47",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "expiresAt": "2026-06-16T05:27:41.674Z",
+      "createdAt": "2026-06-09T05:27:41.674Z"
     }
   ],
   "ledger": [
