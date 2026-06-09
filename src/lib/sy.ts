@@ -176,9 +176,10 @@ export function normalizeSyStatusPayload(taskId: string, payload: unknown, upstr
   const videoUrl = extractSyVideoUrl(record);
   const rawProgress = upstream.progress ?? record.progress;
   const parsedProgress = typeof rawProgress === "string" ? Number(rawProgress.replace("%", "").trim()) : rawProgress;
+  const failureReason = String(upstream.sora_task_failure_reason || record.error || record.msg || "").trim();
   const status = videoUrl
     ? "completed"
-    : ok === "failed"
+    : ok === "failed" || failureReason || (typeof parsedProgress === "number" && parsedProgress < 0)
       ? "failed"
       : normalizeSyStatus(record.status || upstream.status);
   const progress = status === "completed" || status === "failed"
