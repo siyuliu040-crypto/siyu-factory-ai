@@ -1,4 +1,5 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+import { SY_MODELS } from "@/lib/sy";
 import { VIDU_MODELS } from "@/lib/vidu";
 
 export const dynamic = "force-dynamic";
@@ -53,10 +54,17 @@ export async function GET() {
         owned_by: "custom",
         supported_endpoint_types: ["openai-video"]
       }));
+      const syModels = SY_MODELS.map((model) => ({
+        id: model.id,
+        object: "model",
+        owned_by: "sy",
+        supported_endpoint_types: ["openai-video"],
+        name: model.label
+      }));
       return Response.json(
         {
           ...(data as Record<string, unknown>),
-          data: [...viduModels, ...customVideoModels, ...filtered]
+          data: [...syModels, ...viduModels, ...customVideoModels, ...filtered]
         },
         { status: response.status }
       );
