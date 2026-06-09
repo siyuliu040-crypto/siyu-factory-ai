@@ -71,11 +71,12 @@ async function fetchSyVideoStatus(id: string) {
 async function settleNormalizedStatus(id: string, normalized: NormalizedVideoStatus) {
   const status = normalized.payload.status;
   const previewUrl = extractVideoUrl(normalized.payload);
+  const error = normalized.payload.error ? JSON.stringify(normalized.payload.error) : undefined;
 
   await withAccountState((state) => {
     settleGenerationTask(state, id, status);
     if (previewUrl || status) {
-      updateHistoryByTaskId(state, id, { status, previewUrl });
+      updateHistoryByTaskId(state, id, { status, previewUrl, error });
     }
   });
 }
@@ -99,7 +100,11 @@ export async function GET(
       await withAccountState((state) => {
         settleGenerationTask(state, id, payload.status);
         if (payload.video_url || payload.status) {
-          updateHistoryByTaskId(state, id, { status: payload.status, previewUrl: payload.video_url });
+          updateHistoryByTaskId(state, id, {
+            status: payload.status,
+            previewUrl: payload.video_url,
+            error: payload.error ? JSON.stringify(payload.error) : undefined
+          });
         }
       });
       const statusCode = payload.status === "queued" || payload.status === "in_progress" ? 202 : vidu.response.status;
@@ -112,7 +117,11 @@ export async function GET(
       await withAccountState((state) => {
         settleGenerationTask(state, id, payload.status);
         if (payload.video_url || payload.status) {
-          updateHistoryByTaskId(state, id, { status: payload.status, previewUrl: payload.video_url });
+          updateHistoryByTaskId(state, id, {
+            status: payload.status,
+            previewUrl: payload.video_url,
+            error: payload.error ? String(payload.error) : undefined
+          });
         }
       });
       const statusCode = payload.status === "queued" || payload.status === "in_progress" ? 202 : sy.response.status;
