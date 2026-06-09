@@ -3,6 +3,7 @@ import { startImageJob, type ImageJobRequest } from "@/lib/image-jobs";
 import { AccountError, chargeUserCredits } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
 import { getGenerationCost } from "@/lib/pricing";
+import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +18,12 @@ export async function POST(request: Request) {
 
     if (!model || !prompt) {
       return jsonError({ error: "model and prompt are required" }, 400);
+    }
+    if (isPromptTooLong(model, prompt, "image")) {
+      return jsonError({
+        error: "prompt_too_long",
+        message: `This image model supports up to ${getPromptLimit(model, "image")} prompt characters. Shorten the prompt and try again.`
+      }, 400);
     }
 
     const amount = getGenerationCost(model, body.n ?? 1);
