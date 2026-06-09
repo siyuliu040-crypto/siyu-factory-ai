@@ -1801,10 +1801,10 @@
       "type": "video",
       "model": "sy:veo-X-veo_3_1-fast-fl",
       "amount": 650000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-09T07:15:31.547Z",
-      "updatedAt": "2026-06-09T07:15:31.547Z"
+      "updatedAt": "2026-06-09T07:24:32.188Z"
     },
     {
       "id": "961821163946782720",
@@ -2519,9 +2519,10 @@
       "model": "sy:veo-X-veo_3_1-fast-fl",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "task_L22WqKiphFZKGovf5JYERExkjDe6BFTi",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-06-09T07:15:31.547Z",
-      "updatedAt": "2026-06-09T07:22:31.758Z"
+      "updatedAt": "2026-06-09T07:24:32.188Z",
+      "previewUrl": "https://oss-us.file-download.life/2026/06/09/291f16e91914c3bd789e2910150a5092.mp4"
     },
     {
       "id": "3a9a8552-897e-488b-bbaf-f6165fc86485",
