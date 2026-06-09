@@ -1945,10 +1945,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-09T09:10:58.193Z",
-      "updatedAt": "2026-06-09T09:10:58.193Z"
+      "updatedAt": "2026-06-09T09:14:08.664Z"
     },
     {
       "id": "task_WWA1INFvvPazvSTqdoNzDdfGoVmAfixE",
@@ -2772,10 +2772,11 @@
       "mode": "video",
       "model": "vidu:viduq3-turbo",
       "prompt": "百搭·新手沙漏（BGM：Watermelon Sugar 纯音乐）\n\n0–3s 轻快拆袋，拎起整套服饰\n口播：New unboxing! A must-have for all curvy ladies.\n3–8s 日常站姿，自然微笑\n口播：Hard to find clothes that hide flaws and show curves.\n8–15s 慢转身，展示腰臀流畅线条\n口播：This set balances everything, shaping an hourglass figure.\n15–20s 自信回眸，明确引导点击\n口播：Comfy, flattering and perfect for daily wear. Tap the link below!\n剪辑&运营补充\n\n1. 字幕：最后5秒同步弹出大字 Tap Link Below / Shop Now，醒目吸睛\n\n2. 画面：引导动作自然不生硬，北美用户偏好直白的手势指引\n\n3. BGM：结尾保持原节奏，无需降速，维持整体活力氛围\n",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_16/tasks/26/0609/09/961857686469615616/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T091408Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T09%253A13%253A48Z.mp4&x-id=GetObject&X-Amz-Signature=eea8a66c786bde1072dbfde3242ac2a3b1663f434820bb8eb0c61aa3632f71e7",
       "taskId": "961857686469615616",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-09T09:10:58.193Z",
-      "updatedAt": "2026-06-09T09:14:00.068Z"
+      "updatedAt": "2026-06-09T09:14:08.664Z"
     },
     {
       "id": "bd7c0577-8bef-47b8-b7ba-dbd8b10f03cd",
