@@ -1723,10 +1723,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro-fast",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-09T06:30:38.946Z",
-      "updatedAt": "2026-06-09T06:30:38.946Z"
+      "updatedAt": "2026-06-09T06:33:47.799Z"
     },
     {
       "id": "task_hPzDhiMmrkqdLI6qmPjiA8ryON06RHpb",
@@ -2396,10 +2396,11 @@
       "mode": "video",
       "model": "vidu:viduq3-pro-fast",
       "prompt": "无惧骄阳 (The Effortless Sun-Set) 时长画面内容 (Visual)字幕 (Text) / 英文口播 (Voiceover)运镜与音效0-3s室内，对着衣橱纠结，转头看向窗外极其刺眼的阳光，遮眼。（模特穿白短袖睡裤） 字幕: 不知道穿什么？ 口播: Struggling to choose? 快速抓拍，焦距在衣橱与窗外强光间切换，伴随轻微纠结的叹气声。3-6s手部拿起叠放整齐的瑜伽服，镜头扫过平整袖口与无口袋设计。\n字幕: 防晒套装 口播: Meet your new sun-proof essential. 特写镜头，展示面料高级质感，背景音乐节奏起。6-9s转场： 模特侧身遮挡镜头（无缝变装），瞬间穿好套装，腰线利落（无前中缝）。 字幕: 变装出门！ 口播: Effortless, breathable, cool. “唰”的一声转场，干脆利落，不露脸，仅展示身体线条\n。9-12s户外阳光下，快速跑动/拉伸，展示面料的大弹力与凉感。衣服细节参考\n字幕: 高弹 透气 口播: Stretchy and cooling in the heat. 跟拍与慢动作特写结合，光影交错。12-15s阳光下定格，展示平整袖口与套装轮廓，文案定格。 字幕: 女生的衣橱里总需要这么一件！ 口播: Every wardrobe needs one. 结尾缩放定格，引导下单，伴随清脆的“咔哒”结束音。 核心创作要点： 不露脸策略： 在 6-12s 的展示环节，通过局部特写（袖口、腰线、后背线条）和动态跟拍（奔跑、拉伸）来替代面部展示，保留静奢感。衣服细节参考 设计细节植入： 在 3-6s 的拿取特写中，重点展示袖口无穿指设计和平整的缝线。 在 6-9s 的变装后，镜头扫过腹部（强调无前中缝）和侧面（强调无口袋），这是高品质瑜伽服的核心卖点。 色调滤镜： 保持您偏好的“Aesop 风格”，冷调的粉色（或原色），避开过度艳丽的色彩，突出面料在阳光下的自然光泽。 口播建议： 英文口播要语速轻快，带有美式活力的自信感。字幕为英文。",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_84/tasks/26/0609/06/961817340398301184/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T063347Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T06%253A33%253A33Z.mp4&x-id=GetObject&X-Amz-Signature=1f8b9662877b6a08ffec6bdab47866383b8a9e52fa8b2c5f87d4dc8076976a33",
       "taskId": "961817340398301184",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-09T06:30:38.946Z",
-      "updatedAt": "2026-06-09T06:33:39.598Z"
+      "updatedAt": "2026-06-09T06:33:47.799Z"
     },
     {
       "id": "a193b1fa-7fc1-4631-9d5a-06e06162eb0f",
