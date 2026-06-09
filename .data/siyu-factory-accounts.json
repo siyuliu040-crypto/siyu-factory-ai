@@ -2623,9 +2623,9 @@
       "model": "vidu:viduq3-turbo",
       "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\r\n\r\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\r\n\r\n0-3s: Bestie glances at the long-sleeve top.\r\nBestie: “Don’t you overheat in that?”\r\n\r\n3-7s: Wearer lightly brushes the sleeve.\r\nYou: “No, it feels cool and lets my skin breathe.”\r\n\r\n7-10s: Bestie touches the fabric and nods.",
       "taskId": "961836876048642048",
-      "status": "created",
+      "status": "queued",
       "createdAt": "2026-06-09T07:48:16.625Z",
-      "updatedAt": "2026-06-09T07:48:16.625Z"
+      "updatedAt": "2026-06-09T07:48:21.995Z"
     },
     {
       "id": "ee4bb1f4-a1cb-4268-a8b9-57bc53038249",
