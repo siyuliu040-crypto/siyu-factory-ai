@@ -1845,6 +1845,17 @@
   ],
   "generationTasks": [
     {
+      "id": "961836876048642048",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "type": "video",
+      "model": "vidu:viduq3-turbo",
+      "amount": 100000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-09T07:48:16.625Z",
+      "updatedAt": "2026-06-09T07:48:16.625Z"
+    },
+    {
       "id": "task_b25xP24aEyCEPoiQD7k1iXLrScgkmN7Y",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "type": "video",
@@ -2605,6 +2616,17 @@
     }
   ],
   "history": [
+    {
+      "id": "ea21d7d9-d379-4483-aa13-7702ba1409cd",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "mode": "video",
+      "model": "vidu:viduq3-turbo",
+      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\r\n\r\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\r\n\r\n0-3s: Bestie glances at the long-sleeve top.\r\nBestie: “Don’t you overheat in that?”\r\n\r\n3-7s: Wearer lightly brushes the sleeve.\r\nYou: “No, it feels cool and lets my skin breathe.”\r\n\r\n7-10s: Bestie touches the fabric and nods.",
+      "taskId": "961836876048642048",
+      "status": "created",
+      "createdAt": "2026-06-09T07:48:16.625Z",
+      "updatedAt": "2026-06-09T07:48:16.625Z"
+    },
     {
       "id": "ee4bb1f4-a1cb-4268-a8b9-57bc53038249",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
