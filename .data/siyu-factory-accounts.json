@@ -1518,10 +1518,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro",
       "amount": 150000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-09T05:40:22.758Z",
-      "updatedAt": "2026-06-09T05:40:22.758Z"
+      "updatedAt": "2026-06-09T05:44:20.103Z"
     },
     {
       "id": "task_2od0UzEkdk9X50pf0LDDcAEk0sEjLkDz",
@@ -2125,10 +2125,11 @@
       "mode": "video",
       "model": "vidu:viduq3-pro",
       "prompt": "9:16 vertical, Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\n\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”natural hair movement, no logo, no text",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_68/tasks/26/0609/05/961804689618259968/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T054419Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T05%253A44%253A14Z.mp4&x-id=GetObject&X-Amz-Signature=a79d0b8c12d558694e4dd2604ff8d497b1043115420cfb478f3e7deb0aa29a58",
       "taskId": "961804689618259968",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-09T05:40:22.758Z",
-      "updatedAt": "2026-06-09T05:44:11.069Z"
+      "updatedAt": "2026-06-09T05:44:20.103Z"
     },
     {
       "id": "e5f29351-320b-4074-a180-91d23ae8460e",
