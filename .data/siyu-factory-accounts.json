@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 1570000,
+      "credits": 1600000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-09T06:38:41.411Z"
+      "updatedAt": "2026-06-09T06:40:44.266Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "e13b6af6-cc67-43db-9de5-cebaaa573a10",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "amount": 30000,
+      "balanceAfter": 1600000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-09T06:40:44.266Z",
+      "metadata": {
+        "taskId": "task_8dIjZM1g899Kn1n29U9hqSye3aKifaDG",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "42660c0f-ec77-4725-87f1-0999fb7eacc2",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
@@ -1724,10 +1736,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 30000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-09T06:38:42.774Z",
-      "updatedAt": "2026-06-09T06:38:42.774Z"
+      "updatedAt": "2026-06-09T06:40:44.266Z"
     },
     {
       "id": "task_GVnrdAzQQWp0jlJVxftQBLZZmCLEXijr",
@@ -2409,9 +2421,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "9:16 vertical,Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\n\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
       "taskId": "task_8dIjZM1g899Kn1n29U9hqSye3aKifaDG",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-06-09T06:38:42.774Z",
-      "updatedAt": "2026-06-09T06:40:37.139Z"
+      "updatedAt": "2026-06-09T06:40:44.266Z"
     },
     {
       "id": "4d446057-b416-478f-b6d2-685ef1baf6f5",
