@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 1600000,
+      "credits": 21600000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-09T06:40:44.266Z"
+      "updatedAt": "2026-06-09T07:14:49.146Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -180,6 +180,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "cb467a12-5fd8-4cb8-aca4-87ac2d562b07",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 20000000,
+      "balanceAfter": 21600000,
+      "reason": "main account allocation",
+      "createdAt": "2026-06-09T07:14:49.146Z"
+    },
     {
       "id": "ecc35e73-ebe1-4cfc-ae8c-f6352fd07b2f",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
