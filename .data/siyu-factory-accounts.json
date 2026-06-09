@@ -76,9 +76,9 @@
       "name": "温妮",
       "passwordHash": "a4e1604a6383d8a558c588b8c971e103:0da8411d81ac7e48f83812b016aea193e5303a1c915f4a65c69d021d7efe08f8a481219aafed50b338515e7acecc7cc67b424f088d7b55506cee34202d533bc9",
       "role": "user",
-      "credits": 1700000,
+      "credits": 1400000,
       "createdAt": "2026-06-09T05:28:41.446Z",
-      "updatedAt": "2026-06-09T06:30:36.177Z"
+      "updatedAt": "2026-06-09T06:45:47.762Z"
     }
   ],
   "sessions": [
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "dda974ee-8120-4169-9518-7c34dfbbeb05",
+      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
+      "amount": -300000,
+      "balanceAfter": 1400000,
+      "reason": "video generation",
+      "createdAt": "2026-06-09T06:45:47.762Z",
+      "metadata": {
+        "model": "vidu:viduq3-pro-fast",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "e13b6af6-cc67-43db-9de5-cebaaa573a10",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
