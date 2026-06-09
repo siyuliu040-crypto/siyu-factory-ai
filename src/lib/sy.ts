@@ -1,0 +1,179 @@
+export const SY_BASE_URL = process.env.SY_API_BASE_URL?.replace(/\/$/, "") || "https://sys.tk666666.com";
+
+export type SyModelConfig = {
+  id: string;
+  videoType: string;
+  videoChannel: string;
+  label: string;
+  credits: number;
+  duration: number;
+  mode: "reference" | "first-last";
+  resolution: "720P" | "1080P" | "4K";
+  successHint?: string;
+};
+
+export const SY_MODELS: SyModelConfig[] = [
+  {
+    id: "sy:sora2-BB-api-12s",
+    videoType: "Sora2",
+    videoChannel: "sora2-BB-api-12s",
+    label: "SY Sora2 官方参考图 12秒",
+    credits: 192,
+    duration: 12,
+    mode: "reference",
+    resolution: "1080P",
+    successHint: "今日成功率约 90%"
+  },
+  {
+    id: "sy:veo-X-veo_3_1-fast-fl",
+    videoType: "Veo",
+    videoChannel: "veo-X-veo_3_1-fast-fl",
+    label: "SY VEO 3.1 Fast 首尾帧",
+    credits: 65,
+    duration: 8,
+    mode: "first-last",
+    resolution: "720P",
+    successHint: "30分钟成功率约 89%"
+  },
+  {
+    id: "sy:veo_3_1-fast-portrait-fl-hd-B",
+    videoType: "Veo",
+    videoChannel: "veo_3_1-fast-portrait-fl-hd-B",
+    label: "SY VEO 3.1 Fast 首尾帧 HD",
+    credits: 75,
+    duration: 8,
+    mode: "first-last",
+    resolution: "1080P"
+  },
+  {
+    id: "sy:veo-K-first-last-frame",
+    videoType: "Veo",
+    videoChannel: "veo-K-first-last-frame",
+    label: "SY VEO K 首尾帧",
+    credits: 80,
+    duration: 8,
+    mode: "first-last",
+    resolution: "1080P"
+  },
+  {
+    id: "sy:veo-X-veo_3_1-fast",
+    videoType: "Veo",
+    videoChannel: "veo-X-veo_3_1-fast",
+    label: "SY VEO 3.1 Fast 多参考图",
+    credits: 65,
+    duration: 8,
+    mode: "reference",
+    resolution: "720P"
+  },
+  {
+    id: "sy:veo-X-veo_3_1-fast-hd",
+    videoType: "Veo",
+    videoChannel: "veo-X-veo_3_1-fast-hd",
+    label: "SY VEO 3.1 Fast 多参考图 HD",
+    credits: 130,
+    duration: 8,
+    mode: "reference",
+    resolution: "1080P"
+  }
+];
+
+const SY_MODEL_BY_ID = new Map(SY_MODELS.map((model) => [model.id, model]));
+
+export function isSyModel(model: string) {
+  return model.startsWith("sy:");
+}
+
+export function getSyModel(model: string) {
+  return SY_MODEL_BY_ID.get(model);
+}
+
+export function syModelRequiresReference(model: string) {
+  return Boolean(getSyModel(model));
+}
+
+export function syModelSupportsEndFrame(model: string) {
+  return getSyModel(model)?.mode === "first-last";
+}
+
+export function getSyCredentials() {
+  const username = process.env.SY_API_USERNAME || "";
+  const userpwd = process.env.SY_API_PASSWORD || "";
+  const cardNo = process.env.SY_API_CARD_NO || "";
+  if (!username || !userpwd || !cardNo) {
+    throw new Error("SY_API_USERNAME, SY_API_PASSWORD, and SY_API_CARD_NO must be configured");
+  }
+  return { username, userpwd, cardNo };
+}
+
+export async function parseSyResponse(response: Response) {
+  const text = await response.text();
+  if (!text.trim()) {
+    return {
+      error: "empty_sy_response",
+      message: "SY returned an empty response.",
+      upstream_status: response.status
+    };
+  }
+  try {
+    return JSON.parse(text);
+  } catch {
+    return {
+      error: "invalid_sy_json",
+      message: text,
+      upstream_status: response.status
+    };
+  }
+}
+
+export function getSyTaskId(payload: unknown) {
+  if (!payload || typeof payload !== "object") return "";
+  const record = payload as Record<string, unknown>;
+  return String(record.task_id || record.id || record.data || "");
+}
+
+function normalizeSyStatus(status: unknown) {
+  const value = String(status || "").toLowerCase();
+  if (["success", "completed", "succeeded", "done"].includes(value)) return "completed";
+  if (["failed", "fail", "error", "canceled", "cancelled"].includes(value)) return "failed";
+  if (["running", "processing", "in_progress"].includes(value)) return "in_progress";
+  return "queued";
+}
+
+export function extractSyVideoUrl(payload: unknown): string {
+  if (!payload || typeof payload !== "object") return "";
+  const record = payload as Record<string, unknown>;
+  for (const key of ["videoUrl", "video_url", "url", "result_url", "output_url"]) {
+    const value = record[key];
+    if (typeof value === "string" && value) return value;
+  }
+  const data = record.data;
+  if (data && typeof data === "object") return extractSyVideoUrl(data);
+  return "";
+}
+
+export function normalizeSyStatusPayload(taskId: string, payload: unknown, upstreamStatus = 200) {
+  const record = payload && typeof payload === "object" ? (payload as Record<string, unknown>) : {};
+  const status = normalizeSyStatus(record.status);
+  const videoUrl = extractSyVideoUrl(record);
+  const progress = status === "completed" || status === "failed"
+    ? 100
+    : typeof record.progress === "number"
+      ? Math.max(0, Math.min(100, Math.round(record.progress)))
+      : status === "in_progress"
+        ? 60
+        : 0;
+
+  return {
+    id: taskId,
+    task_id: taskId,
+    status,
+    progress,
+    upstream_status: upstreamStatus,
+    provider: "sy",
+    video_url: videoUrl || undefined,
+    url: videoUrl || undefined,
+    image_url: videoUrl || undefined,
+    error: record.error || record.msg || undefined,
+    upstream: record
+  };
+}
