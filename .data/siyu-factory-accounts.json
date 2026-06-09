@@ -76,9 +76,9 @@
       "name": "温妮",
       "passwordHash": "a4e1604a6383d8a558c588b8c971e103:0da8411d81ac7e48f83812b016aea193e5303a1c915f4a65c69d021d7efe08f8a481219aafed50b338515e7acecc7cc67b424f088d7b55506cee34202d533bc9",
       "role": "user",
-      "credits": 1400000,
+      "credits": 21400000,
       "createdAt": "2026-06-09T05:28:41.446Z",
-      "updatedAt": "2026-06-09T06:45:47.762Z"
+      "updatedAt": "2026-06-09T07:14:43.578Z"
     }
   ],
   "sessions": [
@@ -180,6 +180,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "ecc35e73-ebe1-4cfc-ae8c-f6352fd07b2f",
+      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 20000000,
+      "balanceAfter": 21400000,
+      "reason": "main account allocation",
+      "createdAt": "2026-06-09T07:14:43.578Z"
+    },
     {
       "id": "dda974ee-8120-4169-9518-7c34dfbbeb05",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
