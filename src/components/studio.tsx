@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
+import { getHfsyModel } from "@/lib/hfsy";
 import { getSyModel, syModelSupportsEndFrame } from "@/lib/sy";
 
 type Mode = "image" | "video";
@@ -193,6 +194,9 @@ const stableVideoModels = [
   "sy:veo-K-first-last-frame",
   "sy:veo-X-veo_3_1-fast",
   "sy:veo-X-veo_3_1-fast-hd",
+  "hfsy:sora-2",
+  "hfsy:sd-2-vip",
+  "hfsy:kling-omni",
   "sora-2-4s-9x16",
   "sora2-pro-12s-9x16",
   "veo_3_1-fast-portrait-fl-hd",
@@ -423,7 +427,7 @@ function getModelCreditCost(model: string) {
 
 function isVideoModel(model: string) {
   const lower = model.toLowerCase();
-  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:") || lower.startsWith("sy:");
+  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:") || lower.startsWith("sy:") || lower.startsWith("hfsy:");
 }
 
 function isViduModelId(model: string) {
@@ -488,6 +492,8 @@ function getModelTitle(model: string, language: Language) {
   const lower = model.toLowerCase();
   const syModel = getSyModel(model);
   if (syModel) return syModel.label;
+  const hfsyModel = getHfsyModel(model);
+  if (hfsyModel) return hfsyModel.label;
   if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";
   if (lower.includes("grok-imagine")) {
     const seconds = lower.includes("10s") ? "10" : lower.includes("6s") ? "6" : "";
@@ -622,6 +628,13 @@ function getDurationOptions(model: string, language: Language) {
   if (syModel) {
     return [{ value: String(syModel.duration), label: language === "zh" ? `${syModel.duration} 秒（SY固定）` : `${syModel.duration} seconds fixed by SY` }];
   }
+  const hfsyModel = getHfsyModel(model);
+  if (hfsyModel) {
+    return hfsyModel.durationOptions.map((duration) => ({
+      value: String(duration),
+      label: language === "zh" ? `${duration} 秒（HFSY固定）` : `${duration} seconds fixed by HFSY`
+    }));
+  }
   if (lower.startsWith("vidu:")) {
     return [
       { value: "5", label: language === "zh" ? "5 秒" : "5 seconds" },
@@ -668,6 +681,10 @@ function getResolutionOptions(model: string, language: Language) {
   if (syModel) {
     const value = syModel.resolution === "4K" ? "2160x3840" : syModel.resolution === "1080P" ? "1080x1920" : "720x1280";
     return [{ value, label: syModel.resolution }];
+  }
+  const hfsyModel = getHfsyModel(model);
+  if (hfsyModel) {
+    return [{ value: hfsyModel.resolution === "1080P" ? "1080x1920" : "720x1280", label: hfsyModel.resolution }];
   }
   if (lower === "vidu:viduq3-pro-fast") {
     return [
