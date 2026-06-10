@@ -578,6 +578,12 @@ export async function POST(request: Request) {
     if (hfsyModel?.referenceMode === "required" && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This HFSY model requires one reference image." }, 400);
     }
+    if (isHfsyModel(model) && !process.env.HFSY_API_KEY) {
+      return jsonError({
+        error: "hfsy_not_configured",
+        message: "This HFSY model is not enabled because HFSY_API_KEY is not configured."
+      }, 503);
+    }
     if (supportsStartEndFrames(model) && publicReferenceUrls.length === 0) {
       return jsonError({
         error: "first_frame_required",

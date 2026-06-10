@@ -61,13 +61,15 @@ export async function GET() {
         supported_endpoint_types: ["openai-video"],
         name: model.label
       }));
-      const hfsyModels = HFSY_MODELS.map((model) => ({
-        id: model.id,
-        object: "model",
-        owned_by: "hfsy",
-        supported_endpoint_types: ["openai-video"],
-        name: model.label
-      }));
+      const hfsyModels = process.env.HFSY_API_KEY
+        ? HFSY_MODELS.map((model) => ({
+            id: model.id,
+            object: "model",
+            owned_by: "hfsy",
+            supported_endpoint_types: ["openai-video"],
+            name: model.label
+          }))
+        : [];
       return Response.json(
         {
           ...(data as Record<string, unknown>),
