@@ -2108,6 +2108,17 @@
   ],
   "generationTasks": [
     {
+      "id": "962185751359922176",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "type": "video",
+      "model": "vidu:viduq3-turbo",
+      "amount": 300000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-10T06:54:34.951Z",
+      "updatedAt": "2026-06-10T06:54:34.951Z"
+    },
+    {
       "id": "962183388037406720",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "type": "video",
@@ -3055,6 +3066,17 @@
     }
   ],
   "history": [
+    {
+      "id": "77a6b3c9-bd8f-4a4d-bb8e-3162c9bfdfc8",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "mode": "video",
+      "model": "vidu:viduq3-turbo",
+      "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\n15s vertical 9:16 US TikTok casual UGC vlog, authentic girl-next-door vibe, natural handheld walking shake, real sunny American downtown café sidewalk scene. Pure live-action, no CG, no heavy filters, no studio styling. No subtitles, text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright warm afternoon daylight, clear layered street background with pedestrians and soft breeze, no fake blurred backdrops.\r\nTwo consistent trendy American best friends with fixed faces, hairstyles and outfits. Main girl wears an unchanged fitted summer long-sleeve top with steady color, texture and fit. Her friend holds an iced coffee in the right hand the whole time. Natural relaxed demeanor, no stiff poses. Progressive real emotion: skeptical doubt → curious test → genuine surprise & approval. The top stays center-framed and unblocked in all shots.\r\nProduct: Viral summer essential long-sleeve top, lightweight matte breathable fabric, cool-to-touch, soft stretch, sweat-proof, non-sticky, quick-dry and wrinkle-free. Thin and opaque, slim-flattering but not tight, no bulky texture or plastic shine, perfect for all-day summer wear.\r\n0–3s Golden Hook. Candid walking shot. On a hot sunny day, the friend notices the long sleeve, leans in with relatable doubt, raises an eyebrow and gestures at the fabric. Friend line: “Wait, long sleeves in this heat? Aren’t you sweating?”\r\n3–5s Breathability Demo. Smooth close-up. Main girl gently pulls the sleeve outward to show clear air gaps between fabric and skin, visualizing great ventilation and zero trapped heat. Wearer line: “It’s super breathable. No stuffy heat at all all summer.”\r\n5–7s Non-Stick Sweat-Proof Test. Real café scene detail shot. She touches condensation-covered iced drink, rubs damp fingertips on the cuff. Fabric stays flat and clean with no wet marks, no skin clinging or sticky sweat buildup. Wearer line: “It never gets sticky or clingy when I sweat.”\r\n7–9s Friend Real-Person Verification. Natural interactive shot. The friend steps close, touches and feels the sleeve texture. Her skeptical look turns to shocked surprise at how lightweight and soft the fabric is. Friend line: “No way… this is so soft and not thick at all!”\r\n9–15s Fit Check & Viral Closing. Upper-body fit showcase. Main girl smoothes the top, turns 45 degrees to display clean shoulder lines and slim flattering waist fit. Arm movement proves zero wrinkles or bunching. Natural casual daily vibe. Wearer line: “Soft, fitted, and stays smooth all day.” Friend line: “I need this ASAP.” Wearer line: “My new go-to summer long sleeve.”\r\nCamera Rules: continuous smooth handheld shots, no jump cuts during fabric tests. Keep product details clear. Full scene, character and outfit consistency throughout 15 seconds.\r\nNegative Prompt: Text overlays, logos, watermarks, studio background, heavy filters, plastic skin, deformed limbs, floating objects, transparent fabric, thick sweaters, sweat stains, messy wrinkles, stiff modeling poses, abrupt emotions, CG, oversaturated colors, fabric deformation, blocked product",
+      "taskId": "962185751359922176",
+      "status": "created",
+      "createdAt": "2026-06-10T06:54:34.951Z",
+      "updatedAt": "2026-06-10T06:54:34.951Z"
+    },
     {
       "id": "2503355d-f632-41e4-aaf9-6434edd4abcd",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
