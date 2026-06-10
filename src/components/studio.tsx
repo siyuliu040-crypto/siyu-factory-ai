@@ -31,6 +31,7 @@ import { useEffect, useMemo, useState } from "react";
 import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
 import { getHfsyModel } from "@/lib/hfsy";
 import { getSyModel, syModelSupportsEndFrame } from "@/lib/sy";
+import { getPromptLimit } from "@/lib/prompt-limits";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
@@ -90,6 +91,7 @@ type HistoryItem = {
   taskId?: string;
   videoId?: string;
   status?: string;
+  error?: string;
 };
 
 type BatchJob = {
@@ -188,18 +190,15 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
-  "sy:sora2-BB-api-12s",
   "sy:veo-X-veo_3_1-fast-fl",
-  "sy:veo_3_1-fast-portrait-fl-hd-B",
-  "sy:veo-K-first-last-frame",
-  "sy:veo-X-veo_3_1-fast",
-  "sy:veo-X-veo_3_1-fast-hd",
+  "sy:veo-X-veo_3_1-fl",
+  "sy:grok-Yun",
+  "sy:grok-imagine-1.0-video-A-12",
   "hfsy:sora-2",
   "hfsy:sd-2-vip",
   "hfsy:kling-omni",
   "sora-2-4s-9x16",
   "sora2-pro-12s-9x16",
-  "veo_3_1-fast-portrait-fl-hd",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
@@ -290,6 +289,9 @@ const copy = {
     modelTextOnly: "纯提示词",
     noCreditsTitle: "站内积分不足",
     noCreditsBody: "当前账号积分不够生成，请联系主账号分配积分后再试。",
+    promptLimit: "提示词上限",
+    promptTooLong: "提示词太长，请先精简后再生成。",
+    promptCounter: "当前 / 上限",
     grant: "分配",
     addCredits: "加积分",
     subtractCredits: "减积分",
@@ -385,6 +387,9 @@ const copy = {
     modelTextOnly: "Prompt only",
     noCreditsTitle: "Not enough site credits",
     noCreditsBody: "This account needs more site credits from the main account before generating.",
+    promptLimit: "Prompt limit",
+    promptTooLong: "The prompt is too long. Shorten it before generating.",
+    promptCounter: "Current / limit",
     grant: "Grant",
     addCredits: "Add",
     subtractCredits: "Subtract",
@@ -488,6 +493,15 @@ function formatQuotaText(value: string) {
   return value.replace(/\$/g, "").replace(/\s*USD\s*/gi, "").trim();
 }
 
+function getModelPromptLimit(model: string, mode: Mode) {
+  return getPromptLimit(model, mode === "image" ? "image" : "video");
+}
+
+function formatPromptLimit(model: string, mode: Mode, language: Language) {
+  const limit = getModelPromptLimit(model, mode);
+  return language === "zh" ? `提示词上限 ${limit} 字符` : `Prompt limit ${limit} chars`;
+}
+
 function getModelTitle(model: string, language: Language) {
   const lower = model.toLowerCase();
   const syModel = getSyModel(model);
@@ -524,20 +538,29 @@ function getModelDescription(model: string, language: Language) {
     const mode = syModel.mode === "first-last"
       ? language === "zh" ? "首帧必填，尾帧可选" : "start required, end optional"
       : language === "zh" ? "参考图必填，可传多张" : "reference required, multiple images accepted";
-    const voiceHint = syModel.id === "sy:sora2-BB-api-12s"
-      ? language === "zh" ? " · 口播已自动增强，脚本里请写清对白" : " · spoken audio prompt enhanced, include dialogue clearly"
-      : "";
     return language === "zh"
-      ? `${aspect} · ${syModel.duration} 秒固定 · ${syModel.resolution} · ${mode}${voiceHint} · SY 上游${syModel.successHint ? ` · ${syModel.successHint}` : ""}`
-      : `${aspect} · fixed ${syModel.duration}s · ${syModel.resolution} · ${mode}${voiceHint} · SY upstream${syModel.successHint ? ` · ${syModel.successHint}` : ""}`;
+      ? `${aspect} · ${syModel.duration} 秒固定 · ${syModel.resolution} · ${mode} · SY 上游${syModel.successHint ? ` · ${syModel.successHint}` : ""}`
+      : `${aspect} · fixed ${syModel.duration}s · ${syModel.resolution} · ${mode} · SY upstream${syModel.successHint ? ` · ${syModel.successHint}` : ""}`;
+  }
+  const hfsyModel = getHfsyModel(model);
+  if (hfsyModel) {
+    const durationText = hfsyModel.durationOptions.length === 1
+      ? language === "zh" ? `${hfsyModel.durationOptions[0]} 秒固定` : `fixed ${hfsyModel.durationOptions[0]}s`
+      : language === "zh" ? `${hfsyModel.durationOptions.join("/")} 秒可选` : `${hfsyModel.durationOptions.join("/")}s selectable`;
+    const mode = hfsyModel.referenceMode === "required"
+      ? language === "zh" ? "参考图必填" : "reference required"
+      : language === "zh" ? "文字或参考图均可" : "prompt or reference image";
+    return language === "zh"
+      ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode} · HFSY 上游 · 上游价 ${hfsyModel.upstreamPrice}`
+      : `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode} · HFSY upstream · upstream ${hfsyModel.upstreamPrice}`;
   }
   if (lower.startsWith("vidu:")) {
     const family = lower.includes("q2") ? "Q2" : "Q3";
     const speed = lower.includes("pro-fast")
-      ? language === "zh" ? `${family} Pro Fast · 参考图必填` : `${family} Pro Fast · reference required`
+      ? language === "zh" ? `${family} Pro Fast · 参考图必填 · 口播已开启` : `${family} Pro Fast · reference required · audio enabled`
       : lower.includes("turbo")
-        ? language === "zh" ? `${family} Turbo · 参考图必填` : `${family} Turbo · reference required`
-        : language === "zh" ? `${family} Pro · 参考图必填` : `${family} Pro · reference required`;
+        ? language === "zh" ? `${family} Turbo · 参考图必填 · 口播已开启` : `${family} Turbo · reference required · audio enabled`
+        : language === "zh" ? `${family} Pro · 参考图必填 · 口播已开启` : `${family} Pro · reference required · audio enabled`;
     return `${aspect} · 5/8/12/15 秒可选 · ${speed}`;
   }
   if (lower.includes("grok-imagine")) {
@@ -808,9 +831,18 @@ function getStaleVideoMessage(id: string, language: Language) {
     : `This video task has not returned a result for a long time and may have expired upstream. Please generate it again, or send task ID ${id} for troubleshooting.`;
 }
 
+function getPromptTooLongMessage(length: number, limit: number, language: Language) {
+  return language === "zh"
+    ? `提示词太长：当前 ${length} 字符，上限 ${limit} 字符。请精简镜头描述后再提交。`
+    : `Prompt is too long: ${length} characters, limit ${limit}. Shorten the prompt before submitting.`;
+}
+
 function cleanErrorMessage(error: string, language: Language) {
   if (!error) return "";
   if (isTransientVideoStatusError(error)) return getTransientVideoMessage(language);
+  if (error.includes("prompt_too_long")) {
+    return language === "zh" ? "提示词超过当前模型上限，请精简后再提交。" : "The prompt exceeds this model's limit. Shorten it and submit again.";
+  }
   if (isInsufficientQuota(error)) {
     return language === "zh"
       ? "上游 VEO 供应商资源或额度不足，任务已失败。站内积分会退回；请稍后重试，或先用 Vidu/Grok 模型生成。"
@@ -900,7 +932,8 @@ function normalizeHistoryItems(items: unknown): HistoryItem[] {
         previewUrl: typeof item.previewUrl === "string" ? item.previewUrl : undefined,
         taskId: typeof item.taskId === "string" ? item.taskId : undefined,
         videoId: typeof item.videoId === "string" ? item.videoId : typeof item.taskId === "string" ? item.taskId : undefined,
-        status: typeof item.status === "string" ? item.status : undefined
+        status: typeof item.status === "string" ? item.status : undefined,
+        error: typeof item.error === "string" ? item.error : undefined
       };
     })
     .filter((item) => item.model && item.prompt);
@@ -989,11 +1022,6 @@ export default function Studio() {
   }, []);
 
   useEffect(() => {
-    void refreshSession();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
     return () => {
       for (const preview of referencePreviews) URL.revokeObjectURL(preview.url);
     };
@@ -1037,22 +1065,27 @@ export default function Studio() {
   const activeWorkspaceCostText = isDeepSeekWorkspace
     ? formatCreditTotal(deepSeekCost, language)
     : formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
+  const promptLimit = isDeepSeekWorkspace ? getPromptLimit(deepSeekModel, "text") : getModelPromptLimit(activeModel, mode);
+  const promptLength = isDeepSeekWorkspace ? deepSeekInput.trim().length : prompt.trim().length;
+  const promptOverLimit = promptLength > promptLimit;
   const activeVideoNeedsReference = mode === "video" && modelRequiresReference(activeModel);
   const canAffordActiveModel = Boolean(currentUser && activeModelCost && currentUser.credits >= activeModelCost);
   const canAffordDeepSeek = Boolean(currentUser && deepSeekCost && currentUser.credits >= deepSeekCost);
-  const canSubmitDeepSeek = Boolean(currentUser && deepSeekInput.trim() && !isDeepSeekLoading && canAffordDeepSeek);
+  const canSubmitDeepSeek = Boolean(currentUser && deepSeekInput.trim() && !promptOverLimit && !isDeepSeekLoading && canAffordDeepSeek);
   const canSubmit =
     prompt.trim().length > 0 &&
+    !promptOverLimit &&
     !isLoading &&
     Boolean(currentUser) &&
     canAffordActiveModel &&
     (!activeVideoNeedsReference || singleVideoHasReference);
   const filledBatchSlots = batchPrompts.filter((item) => item.value.trim()).slice(0, MAX_BATCH_VIDEOS);
+  const batchPromptOverLimit = filledBatchSlots.some((slot) => slot.value.trim().length > getModelPromptLimit(getBatchSlotModel(slot), "video"));
   const batchCreditTotal = filledBatchSlots.length
     ? filledBatchSlots.reduce((total, slot) => total + getCreditCost(getBatchSlotModel(slot), seconds, normalizeResolutionForModel(getBatchSlotModel(slot), videoSize, language)), 0)
     : undefined;
   const batchMissingRequiredReference = modelRequiresReference(videoModel) && filledBatchSlots.some((slot) => slot.referenceFiles.length === 0);
-  const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal && !batchMissingRequiredReference);
+  const canAffordBatch = Boolean(currentUser && batchCreditTotal && currentUser.credits >= batchCreditTotal && !batchMissingRequiredReference && !batchPromptOverLimit);
   const showCreditWarning = Boolean(currentUser && activeWorkspaceCost && currentUser.credits < activeWorkspaceCost);
   const imageHistory = history.filter((item) => item.mode === "image");
   const videoHistory = history.filter((item) => item.mode === "video");
@@ -1131,6 +1164,12 @@ export default function Studio() {
       setIsAuthLoading(false);
     }
   }
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    void refreshSession();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function submitAuth() {
     setAuthError("");
@@ -1454,6 +1493,10 @@ export default function Studio() {
 
   async function generateImage() {
     if (!currentUser) return;
+    if (promptOverLimit) {
+      setError(getPromptTooLongMessage(promptLength, promptLimit, language));
+      return;
+    }
     if (!canAffordActiveModel) {
       setError(tx("insufficientSiteCredits", "站内积分不足，请联系主账号分配积分。"));
       return;
@@ -1601,6 +1644,10 @@ export default function Studio() {
 
   async function generateVideo() {
     if (!currentUser) return;
+    if (promptOverLimit) {
+      setError(getPromptTooLongMessage(promptLength, promptLimit, language));
+      return;
+    }
     if (!canAffordActiveModel) {
       setError(tx("insufficientSiteCredits", "站内积分不足，请联系主账号分配积分。"));
       return;
@@ -1663,6 +1710,10 @@ export default function Studio() {
     const slots = filledBatchSlots;
     if (!slots.length) {
       setError(t.noBatchPrompt);
+      return;
+    }
+    if (batchPromptOverLimit) {
+      setError(tx("promptTooLong", "提示词太长，请先精简后再生成。"));
       return;
     }
     if (!canAffordBatch) {
@@ -2118,8 +2169,14 @@ export default function Studio() {
 
             {!isBatchWorkspace && !isDeepSeekWorkspace ? (
               <div className="field">
-                <label htmlFor="prompt">{t.prompt}</label>
+                <div className="field-head">
+                  <label htmlFor="prompt">{t.prompt}</label>
+                  <span className={promptOverLimit ? "limit-counter over" : "limit-counter"}>
+                    {tx("promptCounter", "当前 / 上限")}: {promptLength}/{promptLimit}
+                  </span>
+                </div>
                 <textarea className="textarea" id="prompt" onChange={(event) => setPrompt(event.target.value)} placeholder={t.promptPlaceholder} value={prompt} />
+                {promptOverLimit ? <small className="field-note danger-text">{getPromptTooLongMessage(promptLength, promptLimit, language)}</small> : null}
               </div>
             ) : null}
 
@@ -2157,6 +2214,7 @@ export default function Studio() {
                       <div className="model-copy">
                         <span>{getModelTitle(model, language)}</span>
                         <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
+                        <b className="model-limit-badge">{formatPromptLimit(model, mode, language)}</b>
                         {mode === "video" && modelRequiresFirstFrame(model) ? (
                           <b className="model-requirement-badge">
                             {tx("startEndFrameSupported", language === "zh" ? "首帧必填 · 尾帧可选" : "Start required · End optional")}
@@ -2211,7 +2269,12 @@ export default function Studio() {
                 </div>
 
                 <div className="field">
-                  <label htmlFor="deepseek-input">{tx("deepSeekInput", "你的想法")}</label>
+                  <div className="field-head">
+                    <label htmlFor="deepseek-input">{tx("deepSeekInput", "你的想法")}</label>
+                    <span className={promptOverLimit ? "limit-counter over" : "limit-counter"}>
+                      {tx("promptCounter", "当前 / 上限")}: {promptLength}/{promptLimit}
+                    </span>
+                  </div>
                   <textarea
                     className="textarea deepseek-input"
                     id="deepseek-input"
@@ -2219,6 +2282,7 @@ export default function Studio() {
                     placeholder={tx("deepSeekInputPlaceholder", "例如：帮我写一个黑人短卷 pixie 假发的视频广告分镜，真实质感，适合 TikTok。")}
                     value={deepSeekInput}
                   />
+                  {promptOverLimit ? <small className="field-note danger-text">{getPromptTooLongMessage(promptLength, promptLimit, language)}</small> : null}
                 </div>
 
                 {deepSeekResult?.text ? (
@@ -2318,6 +2382,12 @@ export default function Studio() {
                           <div className="batch-card-head">
                             <strong>{tx("work", "作品")} {index + 1}</strong>
                             <small>{formatCreditCost(getBatchSlotModel(slot), language, seconds, normalizeResolutionForModel(getBatchSlotModel(slot), videoSize, language))}</small>
+                          </div>
+                          <div className="batch-limit-row">
+                            <span>{formatPromptLimit(getBatchSlotModel(slot), "video", language)}</span>
+                            <b className={slot.value.trim().length > getModelPromptLimit(getBatchSlotModel(slot), "video") ? "over" : ""}>
+                              {slot.value.trim().length}/{getModelPromptLimit(getBatchSlotModel(slot), "video")}
+                            </b>
                           </div>
                           <textarea
                             className="textarea batch-textarea"
@@ -2626,6 +2696,7 @@ export default function Studio() {
                       <div>
                         <strong>{t.image}</strong>
                         <span>{item.prompt}</span>
+                        {item.error ? <small className="history-error">{cleanErrorMessage(item.error, language)}</small> : null}
                         <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
                       </div>
                     </button>
@@ -2646,6 +2717,7 @@ export default function Studio() {
                         <div>
                           <strong>{t.video}</strong>
                           <span>{item.prompt}</span>
+                          {item.error ? <small className="history-error">{cleanErrorMessage(item.error, language)}</small> : null}
                           <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
                         </div>
                       </button>

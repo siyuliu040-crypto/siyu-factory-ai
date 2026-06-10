@@ -21,6 +21,10 @@ services:
         sync: false
       - key: DEEPSEEK_API_BASE_URL
         value: https://api.deepseek.com
+      - key: HFSY_API_KEY
+        sync: false
+      - key: HFSY_API_BASE_URL
+        value: https://www.hfsyapi.cn
       - key: SIYU_PUBLIC_BASE_URL
         value: https://siyu-factory-ai.onrender.com
       - key: SIYU_GITHUB_STORAGE_REPO
