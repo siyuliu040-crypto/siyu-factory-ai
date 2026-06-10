@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 36222880,
+      "credits": 37222880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-10T11:01:35.089Z"
+      "updatedAt": "2026-06-10T11:02:16.614Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -138,6 +138,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "9fac0cdb-66f8-42b5-9e0d-645f46d78cb6",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1000000,
+      "balanceAfter": 37222880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-10T11:02:16.614Z",
+      "metadata": {
+        "taskId": "task_tF7ba5S8BqdDOP8d60dwyal8aRkTHyyk",
+        "model": "sy:grok-Yun"
+      }
+    },
     {
       "id": "b867316b-63ee-42cd-a249-f72e92ed5bf9",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2203,10 +2215,10 @@
       "type": "video",
       "model": "sy:grok-Yun",
       "amount": 1000000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-10T11:01:38.477Z",
-      "updatedAt": "2026-06-10T11:01:38.477Z"
+      "updatedAt": "2026-06-10T11:02:16.614Z"
     },
     {
       "id": "task_klE2ke1SnXPJ5VUGjZeHtzJittisKwYL",
@@ -3240,9 +3252,10 @@
       "model": "sy:grok-Yun",
       "prompt": "9:16 vertical product video, show the reference product clearly, natural motion, clean commercial lighting, no text, no logo.",
       "taskId": "task_tF7ba5S8BqdDOP8d60dwyal8aRkTHyyk",
-      "status": "queued",
+      "status": "failed",
+      "error": "任务启动失败: 图片上传有误，请检查你的图片类型是否有问题",
       "createdAt": "2026-06-10T11:01:38.477Z",
-      "updatedAt": "2026-06-10T11:01:57.964Z"
+      "updatedAt": "2026-06-10T11:02:16.614Z"
     },
     {
       "id": "708ba770-40a5-4f48-9d61-8b48dc1125b8",
