@@ -46,17 +46,6 @@ export const SY_MODELS: SyModelConfig[] = [
     mode: "reference",
     resolution: "1080P",
     successHint: "SY 实时统计：今日 100%"
-  },
-  {
-    id: "sy:grok-imagine-1.0-video-A-12",
-    videoType: "Grok",
-    videoChannel: "grok-imagine-1.0-video-A-12",
-    label: "SY Grok A 12秒 参考图",
-    credits: 100,
-    duration: 12,
-    mode: "reference",
-    resolution: "1080P",
-    successHint: "SY 实时统计：今日 100%"
   }
 ];
 
