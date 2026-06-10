@@ -1,0 +1,188 @@
+name: Apply HFSY video integration
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/hfsy-integrate.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply HFSY integration
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          function read(file) { return fs.readFileSync(file, 'utf8'); }
+          function write(file, content) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, content); }
+          function replaceOnce(file, from, to) {
+            const current = read(file);
+            if (current.includes(to)) return;
+            if (!current.includes(from)) throw new Error('Missing patch marker in ' + file + ': ' + from.slice(0, 120));
+            write(file, current.replace(from, to));
+          }
+          function insertBefore(file, marker, insert) {
+            const current = read(file);
+            if (current.includes(insert.trim())) return;
+            if (!current.includes(marker)) throw new Error('Missing insert marker in ' + file + ': ' + marker.slice(0, 120));
+            write(file, current.replace(marker, insert + marker));
+          }
+          function insertAfter(file, marker, insert) {
+            const current = read(file);
+            if (current.includes(insert.trim())) return;
+            if (!current.includes(marker)) throw new Error('Missing insert marker in ' + file + ': ' + marker.slice(0, 120));
+            write(file, current.replace(marker, marker + insert));
+          }
+
+          const hfsyLines = [
+            'export const HFSY_BASE_URL =',
+            '  process.env.HFSY_API_BASE_URL?.replace(/\\/$/, "") ||',
+            '  "https://www.hfsyapi.cn";',
+            '',
+            'export type HfsyModel = {',
+            '  id: string;',
+            '  upstreamModel: string;',
+            '  label: string;',
+            '  media: "video";',
+            '  credits: number;',
+            '  upstreamPrice: number;',
+            '  durationOptions: number[];',
+            '  resolution: "720P" | "1080P";',
+            '  referenceMode: "optional" | "required";',
+            '  description: string;',
+            '};',
+            '',
+            'export const HFSY_MODELS: HfsyModel[] = [',
+            '  {',
+            '    id: "hfsy:sora-2",',
+            '    upstreamModel: "sora-2",',
+            '    label: "HFSY Sora 2 VIP",',
+            '    media: "video",',
+            '    credits: 1,',
+            '    upstreamPrice: 0.8,',
+            '    durationOptions: [10],',
+            '    resolution: "1080P",',
+            '    referenceMode: "optional",',
+            '    description:',
+            '      "Official-transfer Sora 2 video model. Supports text prompts or reference image input, with dialogue, sound effects, and background music."',
+            '  },',
+            '  {',
+            '    id: "hfsy:sd-2-vip",',
+            '    upstreamModel: "sd-2-vip",',
+            '    label: "HFSY SD 2 VIP",',
+            '    media: "video",',
+            '    credits: 5,',
+            '    upstreamPrice: 4.5,',
+            '    durationOptions: [8],',
+            '    resolution: "1080P",',
+            '    referenceMode: "optional",',
+            '    description:',
+            '      "Stable Diffusion 2.0 VIP video model. Supports text-to-video and image-to-video generation."',
+            '  },',
+            '  {',
+            '    id: "hfsy:kling-omni",',
+            '    upstreamModel: "Kling Omni",',
+            '    label: "HFSY Kling Omni VIP",',
+            '    media: "video",',
+            '    credits: 5,',
+            '    upstreamPrice: 0,',
+            '    durationOptions: [8],',
+            '    resolution: "1080P",',
+            '    referenceMode: "optional",',
+            '    description:',
+            '      "Kling Omni video model from HFSY. Supports prompt-based video and reference media workflows where the upstream account allows it."',
+            '  }',
+            '];',
+            '',
+            'export function isHfsyModel(model: string) {',
+            '  return model.toLowerCase().startsWith("hfsy:");',
+            '}',
+            '',
+            'export function getHfsyModel(model: string) {',
+            '  return HFSY_MODELS.find((item) => item.id === model || item.upstreamModel === model);',
+            '}',
+            '',
+            'export function getHfsyApiKey() {',
+            '  const apiKey = process.env.HFSY_API_KEY;',
+            '  if (!apiKey) throw new Error("HFSY_API_KEY is not configured");',
+            '  return apiKey;',
+            '}',
+            '',
+            'export function hfsyHeaders(extra?: HeadersInit): HeadersInit {',
+            '  return {',
+            '    Authorization: `Bearer ${getHfsyApiKey()}`,',
+            '    ...extra',
+            '  };',
+            '}',
+            '',
+            'export async function parseHfsyResponse(response: Response) {',
+            '  const text = await response.text();',
+            '  if (!text.trim()) {',
+            '    return {',
+            '      error: "empty_hfsy_response",',
+            '      message: "HFSY returned an empty response.",',
+            '      upstream_status: response.status',
+            '    };',
+            '  }',
+            '  try {',
+            '    return JSON.parse(text) as unknown;',
+            '  } catch {',
+            '    return {',
+            '      error: "invalid_hfsy_response",',
+            '      message: text,',
+            '      upstream_status: response.status',
+            '    };',
+            '  }',
+            '}',
+            '',
+            'export function getHfsyTaskId(payload: unknown) {',
+            '  if (!payload || typeof payload !== "object") return "";',
+            '  const record = payload as Record<string, unknown>;',
+            '  const data = record.data && typeof record.data === "object" ? (record.data as Record<string, unknown>) : {};',
+            '  return String(record.task_id || record.id || record.video_id || data.task_id || data.id || "");',
+            '}',
+            ''
+          ];
+          write('src/lib/hfsy.ts', hfsyLines.join('\n'));
+
+          replaceOnce('src/lib/pricing.ts', 'import { getSyModel } from "@/lib/sy";\n', 'import { getSyModel } from "@/lib/sy";\nimport { getHfsyModel } from "@/lib/hfsy";\n');
+          replaceOnce('src/lib/pricing.ts', '  "sy:veo-X-veo_3_1-fast-hd": siteCredits(130),\n  "deepseek-v4-flash": siteCredits(1),', '  "sy:veo-X-veo_3_1-fast-hd": siteCredits(130),\n  "hfsy:sora-2": siteCredits(1),\n  "hfsy:sd-2-vip": siteCredits(5),\n  "hfsy:kling-omni": siteCredits(5),\n  "deepseek-v4-flash": siteCredits(1),');
+          replaceOnce('src/lib/pricing.ts', '  const syModel = getSyModel(model);\n  if (syModel) return siteCredits(syModel.credits);\n  if (lower.startsWith("vidu:")) {', '  const syModel = getSyModel(model);\n  if (syModel) return siteCredits(syModel.credits);\n  const hfsyModel = getHfsyModel(model);\n  if (hfsyModel) return siteCredits(hfsyModel.credits);\n  if (lower.startsWith("vidu:")) {');
+          replaceOnce('src/lib/prompt-limits.ts', '  "sy:veo-X-veo_3_1-fast-hd": 1800,\n  "deepseek-v4-flash": 3000,', '  "sy:veo-X-veo_3_1-fast-hd": 1800,\n  "hfsy:sora-2": 2000,\n  "hfsy:sd-2-vip": 1600,\n  "hfsy:kling-omni": 1600,\n  "deepseek-v4-flash": 3000,');
+          replaceOnce('src/app/api/models/route.ts', 'import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";\n', 'import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";\nimport { HFSY_MODELS } from "@/lib/hfsy";\n');
+          replaceOnce('src/app/api/models/route.ts', '      const syModels = SY_MODELS.map((model) => ({\n        id: model.id,\n        object: "model",\n        owned_by: "sy",\n        supported_endpoint_types: ["openai-video"],\n        name: model.label\n      }));\n      return Response.json(', '      const syModels = SY_MODELS.map((model) => ({\n        id: model.id,\n        object: "model",\n        owned_by: "sy",\n        supported_endpoint_types: ["openai-video"],\n        name: model.label\n      }));\n      const hfsyModels = HFSY_MODELS.map((model) => ({\n        id: model.id,\n        object: "model",\n        owned_by: "hfsy",\n        supported_endpoint_types: ["openai-video"],\n        name: model.label\n      }));\n      return Response.json(');
+          replaceOnce('src/app/api/models/route.ts', '          data: [...syModels, ...viduModels, ...customVideoModels, ...filtered]', '          data: [...syModels, ...hfsyModels, ...viduModels, ...customVideoModels, ...filtered]');
+          replaceOnce('src/app/api/videos/generate/route.ts', 'import { accountErrorResponse } from "@/lib/account-api";\n', 'import { accountErrorResponse } from "@/lib/account-api";\nimport {\n  getHfsyModel,\n  getHfsyTaskId,\n  hfsyHeaders,\n  HFSY_BASE_URL,\n  HFSY_MODELS,\n  isHfsyModel,\n  parseHfsyResponse\n} from "@/lib/hfsy";\n');
+          replaceOnce('src/app/api/videos/generate/route.ts', '  "grok-imagine-1.0-video-ref-10s",\n  ...SY_MODELS.map((model) => model.id)', '  "grok-imagine-1.0-video-ref-10s",\n  ...HFSY_MODELS.map((model) => model.id),\n  ...SY_MODELS.map((model) => model.id)');
+          insertBefore('src/app/api/videos/generate/route.ts', 'async function postFrameVideoPayload(', 'async function postHfsyVideoPayload(\n  payload: Record<string, unknown>,\n  billing: { userId: string; amount: number; model: string }\n) {\n  const hfsyModel = getHfsyModel(billing.model);\n  const upstreamPayload = {\n    ...payload,\n    model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, "")\n  };\n  const response = await fetch(`${HFSY_BASE_URL}/v1/videos`, {\n    method: "POST",\n    headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),\n    body: JSON.stringify(upstreamPayload),\n    cache: "no-store"\n  });\n  const data = await parseHfsyResponse(response);\n  const taskId = getHfsyTaskId(data);\n\n  if (!response.ok || isImmediateFailure(data) || !taskId) {\n    await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {\n      model: billing.model\n    });\n    return Response.json(data, { status: response.status });\n  }\n\n  await withAccountState((state) => {\n    recordGenerationTask(state, {\n      id: taskId,\n      userId: billing.userId,\n      type: "video",\n      model: billing.model,\n      amount: billing.amount\n    });\n    recordGenerationHistory(state, {\n      userId: billing.userId,\n      type: "video",\n      model: billing.model,\n      prompt: String(payload.prompt || ""),\n      taskId,\n      status: String((data as { status?: unknown })?.status || "queued"),\n      previewUrl: extractVideoUrl(data) || undefined\n    });\n  });\n\n  return Response.json(\n    {\n      ...(typeof data === "object" && data ? data : { data }),\n      id: taskId,\n      task_id: taskId,\n      provider: "hfsy",\n      charged: billing.amount\n    },\n    { status: response.status }\n  );\n}\n\n');
+          insertBefore('src/app/api/videos/generate/route.ts', '    if (supportsStartEndFrames(model) && publicReferenceUrls.length === 0) {', '    const hfsyModel = getHfsyModel(model);\n    if (hfsyModel?.referenceMode === "required" && publicReferenceUrls.length === 0) {\n      return jsonError({ error: "This HFSY model requires one reference image." }, 400);\n    }\n');
+          insertBefore('src/app/api/videos/generate/route.ts', '    if (references.length === 0) {', '    if (isHfsyModel(model)) {\n      return postHfsyVideoPayload(\n        {\n          model,\n          prompt,\n          ...(seconds ? { seconds: String(seconds) } : {}),\n          ...(size ? { size: String(size) } : {}),\n          ...(publicReferenceUrls.length ? referencePayloadFields(publicReferenceUrls) : {})\n        },\n        billing\n      );\n    }\n\n');
+          replaceOnce('src/app/api/videos/[id]/route.ts', '} from "@/lib/hellobabygo";\n', '} from "@/lib/hellobabygo";\nimport { hfsyHeaders, HFSY_BASE_URL, isHfsyModel, parseHfsyResponse } from "@/lib/hfsy";\n');
+          insertAfter('src/app/api/videos/[id]/route.ts', 'async function fetchVideoStatus(path: string, id: string) {\n  const response = await fetch(\n    `${HELLOBABYGO_BASE_URL}${path.replace(":id", encodeURIComponent(id))}`,\n    {\n      method: "GET",\n      headers: authHeaders({ Accept: "application/json" }),\n      cache: "no-store"\n    }\n  );\n  return {\n    response,\n    data: await parseUpstreamResponse(response)\n  };\n}\n', 'async function fetchHfsyVideoStatus(path: string, id: string) {\n  const response = await fetch(\n    `${HFSY_BASE_URL}${path.replace(":id", encodeURIComponent(id))}`,\n    {\n      method: "GET",\n      headers: hfsyHeaders({ Accept: "application/json" }),\n      cache: "no-store"\n    }\n  );\n  return {\n    response,\n    data: await parseHfsyResponse(response)\n  };\n}\n');
+          insertBefore('src/app/api/videos/[id]/route.ts', '    const primary = await fetchVideoStatus("/v1/videos/:id", id);', '    if (task && isHfsyModel(task.model)) {\n      const primary = await fetchHfsyVideoStatus("/v1/videos/:id", id);\n      let normalized = normalizeVideoStatusPayload(id, primary.data, primary.response.status);\n\n      if (normalized.transient) {\n        const legacy = await fetchHfsyVideoStatus("/v1/video/generations/:id", id);\n        const legacyNormalized = normalizeVideoStatusPayload(id, legacy.data, legacy.response.status);\n        if (!legacyNormalized.transient) normalized = legacyNormalized;\n      }\n\n      if (!normalized.transient) {\n        await settleNormalizedStatus(id, normalized);\n      }\n      return Response.json(\n        { ...normalized.payload, provider: "hfsy" },\n        { status: normalized.statusCode }\n      );\n    }\n\n');
+          replaceOnce('src/components/studio.tsx', 'import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";\n', 'import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";\nimport { getHfsyModel } from "@/lib/hfsy";\n');
+          replaceOnce('src/components/studio.tsx', '  "sy:veo-X-veo_3_1-fast-hd",\n  "sora-2-4s-9x16",', '  "sy:veo-X-veo_3_1-fast-hd",\n  "hfsy:sora-2",\n  "hfsy:sd-2-vip",\n  "hfsy:kling-omni",\n  "sora-2-4s-9x16",');
+          replaceOnce('src/components/studio.tsx', '  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:") || lower.startsWith("sy:");', '  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:") || lower.startsWith("sy:") || lower.startsWith("hfsy:");');
+          replaceOnce('src/components/studio.tsx', '  const syModel = getSyModel(model);\n  if (syModel) return syModel.label;\n  if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";', '  const syModel = getSyModel(model);\n  if (syModel) return syModel.label;\n  const hfsyModel = getHfsyModel(model);\n  if (hfsyModel) return hfsyModel.label;\n  if (lower.startsWith("vidu:")) return language === "zh" ? "Vidu 图生视频" : "Vidu Image to Video";');
+          replaceOnce('src/components/studio.tsx', '  if (lower.startsWith("vidu:")) {\n    return [', '  const hfsyModel = getHfsyModel(model);\n  if (hfsyModel) {\n    return hfsyModel.durationOptions.map((duration) => ({\n      value: String(duration),\n      label: language === "zh" ? `${duration} 秒（HFSY固定）` : `${duration} seconds fixed by HFSY`\n    }));\n  }\n  if (lower.startsWith("vidu:")) {\n    return [');
+          replaceOnce('src/components/studio.tsx', '  if (lower === "vidu:viduq3-pro-fast") {', '  const hfsyModel = getHfsyModel(model);\n  if (hfsyModel) {\n    return [{ value: hfsyModel.resolution === "1080P" ? "1080x1920" : "720x1280", label: hfsyModel.resolution }];\n  }\n  if (lower === "vidu:viduq3-pro-fast") {');
+
+          const { execSync } = require('child_process');
+          execSync('git config user.name "siyu-factory-bot"');
+          execSync('git config user.email "actions@github.com"');
+          execSync('git add src/lib/hfsy.ts src/lib/pricing.ts src/lib/prompt-limits.ts src/app/api/models/route.ts src/app/api/videos/generate/route.ts src/app/api/videos/[id]/route.ts src/components/studio.tsx');
+          try {
+            execSync('git diff --cached --quiet');
+            console.log('No changes to commit.');
+          } catch {
+            execSync('git commit -m "Connect HFSY VIP video models"');
+            execSync('git push');
+          }
+          NODE
