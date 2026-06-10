@@ -8,6 +8,15 @@ import {
   withAccountState
 } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
+import {
+  getHfsyModel,
+  getHfsyTaskId,
+  hfsyHeaders,
+  HFSY_BASE_URL,
+  HFSY_MODELS,
+  isHfsyModel,
+  parseHfsyResponse
+} from "@/lib/hfsy";
 import { getVideoGenerationCost } from "@/lib/pricing";
 import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
 import {
@@ -40,6 +49,7 @@ const VERIFIED_VIDEO_MODELS = new Set([
   "vidu:viduq3-pro",
   "grok-imagine-1.0-video-ref-6s",
   "grok-imagine-1.0-video-ref-10s",
+  ...HFSY_MODELS.map((model) => model.id),
   ...SY_MODELS.map((model) => model.id)
 ]);
 const IMAGE_EXTENSION_BY_TYPE: Record<string, string> = {
@@ -230,6 +240,62 @@ async function postVideoPayload(
   return Response.json(
     {
       ...(typeof data === "object" && data ? data : { data }),
+      charged: billing.amount
+    },
+    { status: response.status }
+  );
+}
+
+async function postHfsyVideoPayload(
+  payload: Record<string, unknown>,
+  billing: { userId: string; amount: number; model: string }
+) {
+  const hfsyModel = getHfsyModel(billing.model);
+  const upstreamPayload = {
+    ...payload,
+    model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, "")
+  };
+  const response = await fetch(`${HFSY_BASE_URL}/v1/videos`, {
+    method: "POST",
+    headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+    body: JSON.stringify(upstreamPayload),
+    cache: "no-store"
+  });
+  const data = await parseHfsyResponse(response);
+  const taskId = getHfsyTaskId(data);
+
+  if (!response.ok || isImmediateFailure(data) || !taskId) {
+    await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
+      model: billing.model
+    });
+    return Response.json(data, { status: response.status });
+  }
+
+  await withAccountState((state) => {
+    recordGenerationTask(state, {
+      id: taskId,
+      userId: billing.userId,
+      type: "video",
+      model: billing.model,
+      amount: billing.amount
+    });
+    recordGenerationHistory(state, {
+      userId: billing.userId,
+      type: "video",
+      model: billing.model,
+      prompt: String(payload.prompt || ""),
+      taskId,
+      status: String((data as { status?: unknown })?.status || "queued"),
+      previewUrl: extractVideoUrl(data) || undefined
+    });
+  });
+
+  return Response.json(
+    {
+      ...(typeof data === "object" && data ? data : { data }),
+      id: taskId,
+      task_id: taskId,
+      provider: "hfsy",
       charged: billing.amount
     },
     { status: response.status }
@@ -502,6 +568,10 @@ export async function POST(request: Request) {
     if (isSyModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This SY model requires one reference image." }, 400);
     }
+    const hfsyModel = getHfsyModel(model);
+    if (hfsyModel?.referenceMode === "required" && publicReferenceUrls.length === 0) {
+      return jsonError({ error: "This HFSY model requires one reference image." }, 400);
+    }
     if (supportsStartEndFrames(model) && publicReferenceUrls.length === 0) {
       return jsonError({
         error: "first_frame_required",
@@ -569,6 +639,19 @@ export async function POST(request: Request) {
           movement_amplitude: "auto",
           watermark: false,
           audio: true
+        },
+        billing
+      );
+    }
+
+    if (isHfsyModel(model)) {
+      return postHfsyVideoPayload(
+        {
+          model,
+          prompt,
+          ...(seconds ? { seconds: String(seconds) } : {}),
+          ...(size ? { size: String(size) } : {}),
+          ...(publicReferenceUrls.length ? referencePayloadFields(publicReferenceUrls) : {})
         },
         billing
       );

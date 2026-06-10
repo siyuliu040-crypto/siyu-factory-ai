@@ -4,6 +4,7 @@ import {
   jsonError,
   parseUpstreamResponse
 } from "@/lib/hellobabygo";
+import { hfsyHeaders, HFSY_BASE_URL, isHfsyModel, parseHfsyResponse } from "@/lib/hfsy";
 import { settleGenerationTask, updateHistoryByTaskId, withAccountState } from "@/lib/accounts";
 import { isViduModel, normalizeViduStatus, parseViduResponse, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 import {
@@ -33,6 +34,20 @@ async function fetchVideoStatus(path: string, id: string) {
   return {
     response,
     data: await parseUpstreamResponse(response)
+  };
+}
+async function fetchHfsyVideoStatus(path: string, id: string) {
+  const response = await fetch(
+    `${HFSY_BASE_URL}${path.replace(":id", encodeURIComponent(id))}`,
+    {
+      method: "GET",
+      headers: hfsyHeaders({ Accept: "application/json" }),
+      cache: "no-store"
+    }
+  );
+  return {
+    response,
+    data: await parseHfsyResponse(response)
   };
 }
 
@@ -126,6 +141,25 @@ export async function GET(
       });
       const statusCode = payload.status === "queued" || payload.status === "in_progress" ? 202 : sy.response.status;
       return Response.json(payload, { status: statusCode });
+    }
+
+    if (task && isHfsyModel(task.model)) {
+      const primary = await fetchHfsyVideoStatus("/v1/videos/:id", id);
+      let normalized = normalizeVideoStatusPayload(id, primary.data, primary.response.status);
+
+      if (normalized.transient) {
+        const legacy = await fetchHfsyVideoStatus("/v1/video/generations/:id", id);
+        const legacyNormalized = normalizeVideoStatusPayload(id, legacy.data, legacy.response.status);
+        if (!legacyNormalized.transient) normalized = legacyNormalized;
+      }
+
+      if (!normalized.transient) {
+        await settleNormalizedStatus(id, normalized);
+      }
+      return Response.json(
+        { ...normalized.payload, provider: "hfsy" },
+        { status: normalized.statusCode }
+      );
     }
 
     const primary = await fetchVideoStatus("/v1/videos/:id", id);

@@ -1,4 +1,5 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+import { HFSY_MODELS } from "@/lib/hfsy";
 import { SY_MODELS } from "@/lib/sy";
 import { VIDU_MODELS } from "@/lib/vidu";
 
@@ -60,10 +61,17 @@ export async function GET() {
         supported_endpoint_types: ["openai-video"],
         name: model.label
       }));
+      const hfsyModels = HFSY_MODELS.map((model) => ({
+        id: model.id,
+        object: "model",
+        owned_by: "hfsy",
+        supported_endpoint_types: ["openai-video"],
+        name: model.label
+      }));
       return Response.json(
         {
           ...(data as Record<string, unknown>),
-          data: [...syModels, ...viduModels, ...customVideoModels, ...filtered]
+          data: [...syModels, ...hfsyModels, ...viduModels, ...customVideoModels, ...filtered]
         },
         { status: response.status }
       );
