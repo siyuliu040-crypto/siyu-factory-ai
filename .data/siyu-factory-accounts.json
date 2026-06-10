@@ -2018,6 +2018,17 @@
   ],
   "generationTasks": [
     {
+      "id": "962133074227761152",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "type": "video",
+      "model": "vidu:viduq3-pro",
+      "amount": 300000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-10T03:25:15.752Z",
+      "updatedAt": "2026-06-10T03:25:15.752Z"
+    },
+    {
       "id": "962125927549005824",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "type": "video",
@@ -2899,6 +2910,17 @@
     }
   ],
   "history": [
+    {
+      "id": "c017d254-d59b-4ee1-9ce3-ab057cad33f5",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "mode": "video",
+      "model": "vidu:viduq3-pro",
+      "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\n15s vertical 9:16 handheld iPhone UGC TikTok fashion vlog, natural subtle walking camera shake, authentic real live-action, no CG or animation. Fully remove all on-screen text: subtitles, overlays, logos, watermarks, TikTok UI, readable signs and brand marks; blur all printed prop text completely unrecognizable.\r\nScene: Lively downtown outdoor café sidewalk under soft bright afternoon daylight. Maintain moderate natural depth of field with clear layered background details: metal tables, condensation-covered iced drinks, breeze-fluttering napkins, sidewalk chairs, casual passing pedestrians, distant bicycle, faint street traffic noise and relaxed café ambient chatter. No heavy background blur or empty solid wall backdrop, keep realistic daily street vitality.\r\nProduct: Slim fitted functional long-sleeve top with smooth matte breathable fabric, clean shoulder lines, tailored slim waist, soft stretch, instant cool skin touch, lightweight breathability, quick-dry performance and wrinkle-resistant finish. Core fabric balance: thin and fully opaque, fitted but non-restrictive, matte non-plastic surface, stretches freely and rebounds flat without sagging or wrinkling.\r\n1–2s Cool-touch core demo, continuous uncut push-in close-up on forearm sleeve. Responding to the doubt, the wearer strokes the sleeve from wrist to elbow, presses her palm to show its cool texture, gently pinches and pulls the cuff outward one inch before releasing. The elastic fabric snaps perfectly flat with no residual wrinkles. Wearer line: “Nope. It feels cool right when it touches my skin.”\r\n3–4s Anti-stick & water-resistant test, static tabletop close-up. The wearer touches condensation-covered iced drink, dampening her fingertips, then taps and rubs the wet tips on the sleeve cuff. No dark water stains appear, fabric never sticks or sags, staying neat and flat on the wrist. Wearer line: “And it doesn’t get sticky.”\r\n5–6s Interactive texture verification, side medium close-up. The friend steps closer, touches and rubs the shoulder fabric to feel its thickness and softness personally. Her skeptical expression turns to surprise, followed by approving nods, still holding the coffee steadily. Friend line: “Wait… it’s soft, and it’s not thick?”\r\n7–15s Closing emotional resolution, continuous walking shot till end. The two girls keep walking steadily. The wearer glances back at the camera, brushes her sleeve lightly with a satisfied smile. The friend fully approves the product and nods in agreement, completing the full persuasive arc. Friend line: “Okay, I need that.” Wearer line: “This is the long sleeve I can wear all day.”\r\nNegative Prompt: Text overlays, logos, watermarks, TikTok UI, readable labels, heavy background blur, empty street, studio backdrop, plastic fake skin, overdone beauty filters, deformed fingers/wrists/limbs, floating props, changing outfit/face/hair, transparent fabric, thick sweater texture, sweat stains, messy wrinkles, stiff posing, fast random cuts, abrupt emotion shifts, CG animation, oversaturated colors, harsh lighting, fabric deformation, blurry product, blocked view, lost background details",
+      "taskId": "962133074227761152",
+      "status": "created",
+      "createdAt": "2026-06-10T03:25:15.752Z",
+      "updatedAt": "2026-06-10T03:25:15.752Z"
+    },
     {
       "id": "6241895a-4f87-4f76-abd8-da94d27aa3ce",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
