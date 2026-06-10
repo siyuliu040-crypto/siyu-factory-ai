@@ -2179,10 +2179,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-10T07:53:08.213Z",
-      "updatedAt": "2026-06-10T07:53:08.213Z"
+      "updatedAt": "2026-06-10T07:57:05.409Z"
     },
     {
       "id": "962196177401425920",
@@ -3193,10 +3193,11 @@
       "mode": "video",
       "model": "vidu:viduq3-turbo",
       "prompt": "15s vertical 9:16 US trending TikTok UGC vlog, authentic casual girl-next-door aesthetic, natural subtle handheld walking shake, real sunny downtown café sidewalk background. Pure live-action, no CG, no over-filtered skin, no studio backdrop. No text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright soft afternoon sunlight, active street atmosphere with pedestrians and gentle breeze, clean background details without heavy blur.\nTwo fixed American best friends with consistent faces, hairstyles and body proportions throughout the video. No stiff posing, only relaxed natural daily behavior. Main girl wears an unchanged fitted long-sleeve top with stable color, fabric and fit. Supporting friend holds iced coffee in her right hand the whole time. Emotion progresses naturally: confused doubt → curious observation → genuine approval. The top remains centered and clearly visible in every frame.\nProduct: Viral summer long-sleeve top, ultra-light breathable matte fabric, cool touch, stretchy, wrinkle-free and non-bulky. Thin but fully opaque, designed for summer wear, no sweat trapping, no awkward tight compression, specially tailored for slim, flattering female body shaping.\n0–3s Golden Hook. Candid walking shot on hot sunny day. Friend notices the main girl wearing long sleeves outdoors, leans in with relatable confused expression, raises an eyebrow and stares at her sleeve, creating strong viral curiosity. Friend line: “Wait, you’re wearing long sleeves in summer? Isn’t that way too hot?”\n3–5s Breathability Demonstration. Smooth uncut close-up. Main girl casually pulls the sleeve outward to show obvious air gap between fabric and skin. Visible airflow circulates freely, completely eliminating stuffiness and trapped heat. Light wind flows through the fabric, showing ultra-breathable summer performance. Wearer line: “It’s super breathable. No trapped heat at all even on hot days.”\n5–8s Slim Figure Flattering Effect. Medium upper-body shot. While walking naturally, main girl moves her arms freely to show the fabric’s soft stretch. The top perfectly contours the shoulder and waist line, subtly shaping the body without tight squeezing. It hides arm flab, optimizes shoulder proportion, and creates a clean, slender casual silhouette, no bulky upper body look. Friend watches closely and shows obvious surprised recognition. Friend line: “Wow, it actually makes your figure look so good!”\n8–15s Clean Fit & Full Version Closing. Final fit-check showcase. Main girl smoothes the top surface, turns 45 degrees to display the overall tailored fit. No wrinkles, bunching or deformation during all movements. Clean shoulder lines, neat waist shaping and all-day smooth texture. Natural casual street style, perfect everyday summer basic. Wearer line: “Light, flattering, and stays smooth all day.” Friend line: “I definitely need this top.” Wearer line: “My new favorite summer long sleeve.”\nCamera Rules: Strict 9:16 vertical framing, continuous handheld smooth shots, no jump cuts. Keep fabric texture and body shaping details clear. Maintain full consistency of characters, outfit and scene throughout 15 seconds.\nNegative Prompt: Text overlays, logos, watermarks, studio background, heavy filters, plastic skin, deformed hands, floating objects, transparent fabric, thick sweaters, sweat stains, messy wrinkles, stiff model poses, abrupt emotions, CG, oversaturated colors, fake tight fit, blocked product details",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_80/tasks/26/0610/07/962200487002644480/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T075705Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T07%253A56%253A59Z.mp4&x-id=GetObject&X-Amz-Signature=78584be4e3336a01f5cbbc249810f35590b8cf9e5f7b3fc269b31fb0a48b5f97",
       "taskId": "962200487002644480",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-10T07:53:08.213Z",
-      "updatedAt": "2026-06-10T07:56:57.479Z"
+      "updatedAt": "2026-06-10T07:57:05.409Z"
     },
     {
       "id": "f7c02f2a-3614-40bd-9d6b-8c7fe81a7675",
