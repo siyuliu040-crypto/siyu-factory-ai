@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 12910000,
+      "credits": 12610000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-10T07:35:57.485Z"
+      "updatedAt": "2026-06-10T07:53:05.296Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -82,12 +82,6 @@
     }
   ],
   "sessions": [
-    {
-      "token": "96788ea990b76aeb38dc4e95abd16ab8337ba9720a4ec05174ee51bb57710cdc",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "expiresAt": "2026-06-10T07:48:11.810Z",
-      "createdAt": "2026-06-03T07:48:11.810Z"
-    },
     {
       "token": "82da8033f3a3ccc8b233932695f77e34c3213f8f04ef08402a7fa620b6c8e60e",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -156,6 +150,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "5bcc1a16-9194-471f-ac6e-7a998c0b6505",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "amount": -300000,
+      "balanceAfter": 12610000,
+      "reason": "video generation",
+      "createdAt": "2026-06-10T07:53:05.296Z",
+      "metadata": {
+        "model": "vidu:viduq3-turbo",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "2fcc5694-0bd5-494e-9a76-22e651997705",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
