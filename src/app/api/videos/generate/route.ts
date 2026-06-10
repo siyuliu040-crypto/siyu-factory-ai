@@ -271,24 +271,26 @@ async function postHfsyVideoPayload(
     return Response.json(data, { status: response.status });
   }
 
-  await withAccountState((state) => {
-    recordGenerationTask(state, {
-      id: taskId,
-      userId: billing.userId,
-      type: "video",
-      model: billing.model,
-      amount: billing.amount
+  if (taskId) {
+    await withAccountState((state) => {
+      recordGenerationTask(state, {
+        id: taskId,
+        userId: billing.userId,
+        type: "video",
+        model: billing.model,
+        amount: billing.amount
+      });
+      recordGenerationHistory(state, {
+        userId: billing.userId,
+        type: "video",
+        model: billing.model,
+        prompt: String(payload.prompt || ""),
+        taskId,
+        status: String((data as { status?: unknown })?.status || "queued"),
+        previewUrl: extractVideoUrl(data) || undefined
+      });
     });
-    recordGenerationHistory(state, {
-      userId: billing.userId,
-      type: "video",
-      model: billing.model,
-      prompt: String(payload.prompt || ""),
-      taskId,
-      status: String((data as { status?: unknown })?.status || "queued"),
-      previewUrl: extractVideoUrl(data) || undefined
-    });
-  });
+  }
 
   return Response.json(
     {
@@ -451,18 +453,22 @@ async function postSyPayload(
 
   const credentials = getSyCredentials();
   const upstreamPrompt = prepareSyVideoPrompt(payload.model, payload.prompt);
-  const formData = new URLSearchParams({
-    videoType: syModel.videoType,
-    videoChannel: syModel.videoChannel,
-    username: credentials.username,
-    userpwd: credentials.userpwd,
-    cardNo: credentials.cardNo,
-    duration: String(syModel.duration),
-    ratio: "9:16",
-    video_prompt: upstreamPrompt
-  });
-  if (payload.imageUrls[0]) {
-    formData.set("imageUrl", payload.imageUrls[0]);
+  const formData = new FormData();
+  formData.set("currentVideoType", "图生视频");
+  formData.set("cardNo", credentials.cardNo);
+  formData.set("video_prompt", upstreamPrompt);
+  formData.set("video_count", "1");
+  formData.set("username", credentials.username);
+  formData.set("userpwd", credentials.userpwd);
+  formData.set("ratio", "9:16");
+  formData.set("duration", String(syModel.duration));
+  formData.set("videoType", syModel.videoType);
+  formData.set("videoChannel", syModel.videoChannel);
+  formData.set("promptType", "custom");
+  formData.set("languageValue", "English");
+  formData.set("remarks", "siyu-factory");
+  if (payload.imageUrls.length) {
+    formData.set("imageUrl", payload.imageUrls.join(","));
   }
   payload.imageUrls.slice(1).forEach((url, index) => {
     formData.set(`imageUrl${index + 2}`, url);
@@ -477,7 +483,7 @@ async function postSyPayload(
 
   const response = await fetch(`${SY_BASE_URL}/dm/action_card.php?action=generateOneVideo_dragImage_image2Video`, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
+    headers: { Accept: "application/json" },
     body: formData,
     cache: "no-store"
   });
