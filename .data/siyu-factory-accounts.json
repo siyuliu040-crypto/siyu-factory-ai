@@ -2174,6 +2174,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_klE2ke1SnXPJ5VUGjZeHtzJittisKwYL",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "sy:sora2-BB-api-12s",
+      "amount": 1920000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-10T09:45:06.572Z",
+      "updatedAt": "2026-06-10T09:45:06.572Z"
+    },
+    {
       "id": "962200487002644480",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "type": "video",
@@ -3187,6 +3198,17 @@
     }
   ],
   "history": [
+    {
+      "id": "708ba770-40a5-4f48-9d61-8b48dc1125b8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "sy:sora2-BB-api-12s",
+      "prompt": "生成一走路视频",
+      "taskId": "task_klE2ke1SnXPJ5VUGjZeHtzJittisKwYL",
+      "status": "success",
+      "createdAt": "2026-06-10T09:45:06.572Z",
+      "updatedAt": "2026-06-10T09:45:06.572Z"
+    },
     {
       "id": "c8fb420a-113e-48db-8801-88e95dbfbc82",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
