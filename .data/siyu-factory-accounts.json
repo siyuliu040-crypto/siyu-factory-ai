@@ -2198,6 +2198,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_tF7ba5S8BqdDOP8d60dwyal8aRkTHyyk",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "sy:grok-Yun",
+      "amount": 1000000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-10T11:01:38.477Z",
+      "updatedAt": "2026-06-10T11:01:38.477Z"
+    },
+    {
       "id": "task_klE2ke1SnXPJ5VUGjZeHtzJittisKwYL",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3222,6 +3233,17 @@
     }
   ],
   "history": [
+    {
+      "id": "13cc56b9-b94b-41d0-8e40-0c73ba19bb32",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "sy:grok-Yun",
+      "prompt": "9:16 vertical product video, show the reference product clearly, natural motion, clean commercial lighting, no text, no logo.",
+      "taskId": "task_tF7ba5S8BqdDOP8d60dwyal8aRkTHyyk",
+      "status": "success",
+      "createdAt": "2026-06-10T11:01:38.477Z",
+      "updatedAt": "2026-06-10T11:01:38.477Z"
+    },
     {
       "id": "708ba770-40a5-4f48-9d61-8b48dc1125b8",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
