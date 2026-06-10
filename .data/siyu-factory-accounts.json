@@ -2251,10 +2251,10 @@
       "type": "video",
       "model": "sy:veo-X-veo_3_1-fl",
       "amount": 700000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-10T11:14:04.457Z",
-      "updatedAt": "2026-06-10T11:14:04.457Z"
+      "updatedAt": "2026-06-10T11:17:46.824Z"
     },
     {
       "id": "task_ikXTpcgu2rvaEo5nbokh6eA8F6FP8nQO",
@@ -3320,10 +3320,11 @@
       "mode": "video",
       "model": "sy:veo-X-veo_3_1-fl",
       "prompt": "9:16 vertical product commercial. Use the uploaded image as first frame, keep the gray bottle shape accurate, slow studio camera movement, clean background, no text, no logo.",
+      "previewUrl": "https://oss-us.file-download.life/2026/06/10/2986de170573d78f3f15f2c9796c49d9.mp4",
       "taskId": "task_JW5Jy03L4JuvLmYMUPuXFOjiH0R2rgmk",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-06-10T11:14:04.457Z",
-      "updatedAt": "2026-06-10T11:17:28.886Z"
+      "updatedAt": "2026-06-10T11:17:46.824Z"
     },
     {
       "id": "0eae94ee-b891-4c86-8b69-d8adcb85c682",
