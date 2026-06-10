@@ -3275,9 +3275,9 @@
       "model": "sy:grok-Yun",
       "prompt": "9:16 vertical product commercial video. Keep the bottle shape and color from the reference image. Slow camera push in, soft studio lighting, clean premium background, realistic product motion, no text, no logo.",
       "taskId": "task_LHYcycchEMQAVMGJY5SWZoptJro3SLkY",
-      "status": "success",
+      "status": "queued",
       "createdAt": "2026-06-10T11:02:57.998Z",
-      "updatedAt": "2026-06-10T11:02:57.998Z"
+      "updatedAt": "2026-06-10T11:03:18.663Z"
     },
     {
       "id": "13cc56b9-b94b-41d0-8e40-0c73ba19bb32",
