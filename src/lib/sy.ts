@@ -10,20 +10,10 @@ export type SyModelConfig = {
   mode: "reference" | "first-last";
   resolution: "720P" | "1080P" | "4K";
   successHint?: string;
+  disabledReason?: string;
 };
 
 export const SY_MODELS: SyModelConfig[] = [
-  {
-    id: "sy:sora2-BB-api-12s",
-    videoType: "Sora2",
-    videoChannel: "sora2-BB-api-12s",
-    label: "SY Sora2 官方参考图 12秒",
-    credits: 192,
-    duration: 12,
-    mode: "reference",
-    resolution: "1080P",
-    successHint: "今日成功率约 90%"
-  },
   {
     id: "sy:veo-X-veo_3_1-fast-fl",
     videoType: "Veo",
@@ -33,47 +23,40 @@ export const SY_MODELS: SyModelConfig[] = [
     duration: 8,
     mode: "first-last",
     resolution: "720P",
-    successHint: "30分钟成功率约 89%"
+    successHint: "SY 实时统计：今日 80%，近 30 分钟约 78%"
   },
   {
-    id: "sy:veo_3_1-fast-portrait-fl-hd-B",
+    id: "sy:veo-X-veo_3_1-fl",
     videoType: "Veo",
-    videoChannel: "veo_3_1-fast-portrait-fl-hd-B",
-    label: "SY VEO 3.1 Fast 首尾帧 HD",
-    credits: 75,
+    videoChannel: "veo-X-veo_3_1-fl",
+    label: "SY VEO 3.1 首尾帧",
+    credits: 70,
     duration: 8,
     mode: "first-last",
-    resolution: "1080P"
+    resolution: "720P",
+    successHint: "SY 实时统计：今日 100%"
   },
   {
-    id: "sy:veo-K-first-last-frame",
-    videoType: "Veo",
-    videoChannel: "veo-K-first-last-frame",
-    label: "SY VEO K 首尾帧",
-    credits: 80,
-    duration: 8,
-    mode: "first-last",
-    resolution: "1080P"
-  },
-  {
-    id: "sy:veo-X-veo_3_1-fast",
-    videoType: "Veo",
-    videoChannel: "veo-X-veo_3_1-fast",
-    label: "SY VEO 3.1 Fast 多参考图",
-    credits: 65,
-    duration: 8,
+    id: "sy:grok-Yun",
+    videoType: "Grok",
+    videoChannel: "grok-Yun",
+    label: "SY Grok 10秒 参考图",
+    credits: 100,
+    duration: 10,
     mode: "reference",
-    resolution: "720P"
+    resolution: "1080P",
+    successHint: "SY 实时统计：今日 100%"
   },
   {
-    id: "sy:veo-X-veo_3_1-fast-hd",
-    videoType: "Veo",
-    videoChannel: "veo-X-veo_3_1-fast-hd",
-    label: "SY VEO 3.1 Fast 多参考图 HD",
-    credits: 130,
-    duration: 8,
+    id: "sy:grok-imagine-1.0-video-A-12",
+    videoType: "Grok",
+    videoChannel: "grok-imagine-1.0-video-A-12",
+    label: "SY Grok A 12秒 参考图",
+    credits: 100,
+    duration: 12,
     mode: "reference",
-    resolution: "1080P"
+    resolution: "1080P",
+    successHint: "SY 实时统计：今日 100%"
   }
 ];
 
