@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 14710000,
+      "credits": 15010000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-10T05:34:06.902Z"
+      "updatedAt": "2026-06-10T05:34:14.811Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -162,6 +162,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "cca3dd75-0865-4611-950e-34446b4f7c38",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "amount": 300000,
+      "balanceAfter": 15010000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-10T05:34:14.812Z",
+      "metadata": {
+        "taskId": "962165512240914432",
+        "model": "vidu:viduq3-pro"
+      }
+    },
     {
       "id": "924fba73-aebb-410c-b06e-c61d04f1e334",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
@@ -2059,10 +2071,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro",
       "amount": 300000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-10T05:34:09.593Z",
-      "updatedAt": "2026-06-10T05:34:09.593Z"
+      "updatedAt": "2026-06-10T05:34:14.811Z"
     },
     {
       "id": "962160196841390080",
@@ -2975,9 +2987,10 @@
       "model": "vidu:viduq3-pro",
       "prompt": "Create a 15-second vertical 9:16 handheld iPhone-style TikTok UGC fashion product video.\nNo subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI, no readable storefront signs, no readable cup labels, no brand names.\nLocation:\nA lively downtown sidewalk outside cozy cafés during soft afternoon daylight.\nOutdoor tables, iced drinks, chairs, light pedestrian traffic, occasional bicycles, distant car sounds, and natural café chatter create a realistic city atmosphere.\nThe background remains visible and detailed throughout the video.\nCharacters:\nTwo fashionable women walking together like close friends.\nThe wearer is dressed in a fitted long-sleeve top.\nThe friend holds an iced coffee in her right hand for the entire video.\nBoth women maintain the same face, hairstyle, outfit, and body proportions from beginning to end.\nProduct:\nA fitted long-sleeve top with smooth fabric, soft stretch, breathable construction, cool-touch feel, wrinkle-resistant finish, quick-dry performance, and a flattering waist fit.\nThe fabric appears lightweight but not transparent, fitted but comfortable, soft but structured.\n0-2s:\nMedium handheld walking shot.\nThe two women walk past a café patio.\nThe friend glances at the wearer’s long sleeve and smiles with curiosity.\nAfternoon sunlight highlights the sleeve and shoulder area.\nFriend says:\n“Girl, aren't you hot wearing long sleeves?”\n2-4s:\nMedium close-up on the wearer.\nShe lightly brushes the sleeve with one hand and smiles.\nThe camera moves slightly closer to show the fabric texture.\nWearer says:\n“Not at all. It actually feels cool on my skin.”\n4-6s:\nClose-up of the sleeve.\nThe wearer gently pulls the fabric away from her forearm and releases it.\nThe material returns smoothly without wrinkles.\nA light breeze moves a few strands of hair.\nWearer says:\n“It’s breathable, so it never feels stuffy.”\n6-8s:\nWalking shot beside a café table.\nThe wearer reaches toward an iced drink and briefly touches the sleeve near the cuff.\nThe fabric remains smooth and comfortable-looking.\nWearer says:\n“And it doesn’t get sticky.”\n8-10s:\nMedium shot while walking.\nThe wearer swings her arms naturally and adjusts her shoulder slightly.\nThe top remains smooth across the shoulders, sleeves, and waist.\nWearer says:\n“It moves with me and dries fast.”\n10-12s:\nThe friend steps a little closer.\nShe gently touches the sleeve fabric with two fingers.\nHer expression changes from curious to impressed.\nFriend says:\n“Wait, this is actually really soft.”\n12-15s:\nFinal fit-check walking shot.\nThe wearer smooths the front of the top once and turns slightly to show the side fit.\nBoth women continue walking past the café.\nThe friend nods approvingly.\nFriend says:\n“Okay, now I want one.”\nWearer says:\n“This is my everyday long sleeve.”\n\nCamera Rules:\nVertical 9:16 format.\nNatural handheld smartphone movement.\nKeep the product visible in every shot.\nSimple camera transitions with no dramatic zooms.\nFocus on sleeve texture, shoulder line, waist fit, and natural movement.\nContinuity Rules:\nThe top must remain identical throughout the video.\nThe friend always keeps the iced coffee in her right hand.\nBoth women remain consistent in appearance.\nThe product never changes shape, color, thickness, or fit.\nPedestrians stay in the background and never block the product.\n\nEmotions progress naturally:\nCurious → Interested → Impressed.\nNegative Prompt:\nNo subtitles, captions, text overlays, logos, watermarks, TikTok interface, readable signs, readable labels, brand names, blurred background, empty streets, studio settings, beauty filters, warped hands, extra fingers, missing fingers, floating objects, outfit changes, hairstyle changes, face changes, fabric deformation, transparency issues, sweat stains, heavy wrinkles, stiff posing, runway walking, luxury-commercial pacing, random cuts, disappearing objects, or unrealistic fabric behavior.",
       "taskId": "962165512240914432",
-      "status": "created",
+      "status": "failed",
+      "error": "\"AuditSubmitIllegal\"",
       "createdAt": "2026-06-10T05:34:09.593Z",
-      "updatedAt": "2026-06-10T05:34:13.287Z"
+      "updatedAt": "2026-06-10T05:34:14.812Z"
     },
     {
       "id": "d88ed52b-cf02-4338-bb3f-8929c5846d28",
