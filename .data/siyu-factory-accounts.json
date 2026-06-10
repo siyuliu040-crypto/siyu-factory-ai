@@ -3321,9 +3321,9 @@
       "model": "sy:veo-X-veo_3_1-fl",
       "prompt": "9:16 vertical product commercial. Use the uploaded image as first frame, keep the gray bottle shape accurate, slow studio camera movement, clean background, no text, no logo.",
       "taskId": "task_JW5Jy03L4JuvLmYMUPuXFOjiH0R2rgmk",
-      "status": "success",
+      "status": "queued",
       "createdAt": "2026-06-10T11:14:04.457Z",
-      "updatedAt": "2026-06-10T11:14:04.457Z"
+      "updatedAt": "2026-06-10T11:14:07.195Z"
     },
     {
       "id": "0eae94ee-b891-4c86-8b69-d8adcb85c682",
