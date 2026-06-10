@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   apply:
@@ -177,12 +178,14 @@ jobs:
           const { execSync } = require('child_process');
           execSync('git config user.name "siyu-factory-bot"');
           execSync('git config user.email "actions@github.com"');
+          execSync('git checkout -B hfsy-vip-models');
           execSync('git add src/lib/hfsy.ts src/lib/pricing.ts src/lib/prompt-limits.ts src/app/api/models/route.ts src/app/api/videos/generate/route.ts src/app/api/videos/[id]/route.ts src/components/studio.tsx');
           try {
             execSync('git diff --cached --quiet');
             console.log('No changes to commit.');
           } catch {
             execSync('git commit -m "Connect HFSY VIP video models"');
-            execSync('git push');
+            execSync('git push -f origin hfsy-vip-models');
           }
           NODE
+
