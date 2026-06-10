@@ -2234,6 +2234,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_ikXTpcgu2rvaEo5nbokh6eA8F6FP8nQO",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "sy:veo-X-veo_3_1-fast-fl",
+      "amount": 650000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-10T11:05:00.905Z",
+      "updatedAt": "2026-06-10T11:05:00.905Z"
+    },
+    {
       "id": "task_LHYcycchEMQAVMGJY5SWZoptJro3SLkY",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3280,6 +3291,17 @@
     }
   ],
   "history": [
+    {
+      "id": "0eae94ee-b891-4c86-8b69-d8adcb85c682",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "sy:veo-X-veo_3_1-fast-fl",
+      "prompt": "9:16 vertical product commercial video. Use the uploaded image as the first frame. Keep the exact bottle silhouette and matte gray material. Slow push-in camera, soft studio shadows, premium clean background, no text, no logo.",
+      "taskId": "task_ikXTpcgu2rvaEo5nbokh6eA8F6FP8nQO",
+      "status": "success",
+      "createdAt": "2026-06-10T11:05:00.905Z",
+      "updatedAt": "2026-06-10T11:05:00.905Z"
+    },
     {
       "id": "89225758-6120-4add-a618-aaa97d6954ee",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
