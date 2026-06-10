@@ -2072,6 +2072,17 @@
   ],
   "generationTasks": [
     {
+      "id": "962178120822038528",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "type": "video",
+      "model": "vidu:viduq3-pro",
+      "amount": 300000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-10T06:24:15.686Z",
+      "updatedAt": "2026-06-10T06:24:15.686Z"
+    },
+    {
       "id": "962165512240914432",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "type": "video",
@@ -2986,6 +2997,17 @@
     }
   ],
   "history": [
+    {
+      "id": "4d54b497-0f09-4486-b0c1-7c53d86b2d9b",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "mode": "video",
+      "model": "vidu:viduq3-pro",
+      "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\n15s vertical 9:16 handheld iPhone TikTok UGC fashion vlog, natural subtle walking camera shake, real lifelike street footage, no CG, no heavy filters. No subtitles, text overlays, logos, watermarks, UI elements or readable brand signs; all printed text on props is fully blurred. Shot on a lively downtown café sidewalk under soft bright afternoon daylight. Background stays clear and layered with outdoor tables, iced condensation drinks, light breeze, distant pedestrians and gentle street ambiance. No studio blur or empty fake background.\r\nTwo consistent female best friends with unchanged faces, hairstyles and body proportions throughout the clip. Main model wears one fixed fitted long-sleeve top with identical color, fit and fabric texture in every frame. The supporting girl holds an iced coffee in her right hand at all times. Natural human anatomy, no deformed hands or limbs. Progressive realistic emotion shift: friend from skeptical to curious and convinced; wearer stays calm and confidently demonstrative. The long-sleeve top always remains centered and visible.\r\nProduct: Slim fitted lightweight long-sleeve top, smooth matte breathable fabric, soft stretch, cool touch, anti-stick, quick-dry and wrinkle-free. Thin but opaque, fitted but not tight, non-plastic texture, rebounds flat perfectly after movement.\r\n0–3s Golden Hook. Continuous handheld walking shot. On a warm sunny afternoon, two girls walk past outdoor café tables. The supporting girl notices the wearer wearing long sleeves outdoors, slows down, raises a skeptical eyebrow, points at the sleeve with obvious doubt. Natural bright sunlight hits the fabric. Wearer smiles calmly at her friend’s reaction. Friend line: “Girl, don’t you overheat in that?”\r\n3–5s Breathability Demonstration. Smooth uncut close-up on sleeve. Wearer bends her elbow and gently pulls the fabric outward to show clear air gap between skin and material. Visible airflow releases body heat. Light wind brushes her hair naturally. Intuitive visual breathable effect, no trapped heat. Wearer line: “It’s super breathable, no trapped heat at all.”\r\n5–7s Non-Stick & Anti-Humid Test. Clean tabletop detail shot. Wearer touches condensation-covered iced drink, dampens fingertips, then gently rubs wet fingers across sleeve cuff. Fabric stays flat and dry, no wet stains, no clinging or sticky tightness on skin, perfect for hot humid weather. Wearer line: “It never gets sticky even with sweat or humidity.”\r\n7–9s Real-Person Friend Verification. Natural side interactive shot. The skeptical friend steps closer, personally touches, presses and rubs the sleeve fabric to test thickness and softness. Her doubtful expression smoothly turns into surprise and genuine approval. She nods repeatedly, fully convinced by the real tactile experience. Friend line: “Wait… it’s so soft and way lighter than it looks.”\r\n9–15s Fit & Texture Final Closing. Clean upper-body fit showcase. Wearer smoothes the top from chest to waist, turns 45 degrees to display slim waist shaping and clean shoulder lines. She lifts and bends her arm to demonstrate stretch recovery. No wrinkles, bunching or deformation. The outfit stays sleek, fitted and smooth during all movements. Both girls keep walking naturally. Wearer line: “Soft, fitted, and stays smooth all day.” Friend line: “Okay, I need that.” Wearer closing line: “This is my perfect everyday long sleeve.”\r\nCamera Rules: Strict 9:16 vertical framing, pure handheld subtle walking motion, continuous smooth shots. No jump cuts during fabric pull, wet test and fit check. Product always stays clear and centered. Full scene, character and outfit consistency for 15 seconds.\r\nNegative Prompt: Text overlays, logos, watermarks, TikTok UI, readable labels, heavy background blur, studio backdrop, plastic skin, over-filtered face, deformed hands, floating objects, changing outfit, transparent fabric, thick sweater texture, sweat stains, messy wrinkles, stiff posing, abrupt emotion jumps, CG art, oversaturated colors, fabric deformation, blocked product details",
+      "taskId": "962178120822038528",
+      "status": "created",
+      "createdAt": "2026-06-10T06:24:15.687Z",
+      "updatedAt": "2026-06-10T06:24:15.687Z"
+    },
     {
       "id": "e1f8ad88-e58f-48c5-a7f2-ae3a8be6a643",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
