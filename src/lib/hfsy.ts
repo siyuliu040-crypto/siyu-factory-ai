@@ -17,17 +17,30 @@ export type HfsyModel = {
 
 export const HFSY_MODELS: HfsyModel[] = [
   {
+    id: "hfsy:sd-2",
+    upstreamModel: "sd-2",
+    label: "HFSY SD 2",
+    media: "video",
+    credits: 5,
+    upstreamPrice: 0,
+    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    resolution: "1080P",
+    referenceMode: "optional",
+    description:
+      "Stable Diffusion 2.0 video model from HFSY. Supports 4-15 second text-to-video and image-to-video generation."
+  },
+  {
     id: "hfsy:sd-2-vip",
     upstreamModel: "sd-2-vip",
     label: "HFSY SD 2 VIP",
     media: "video",
     credits: 5,
     upstreamPrice: 4.5,
-    durationOptions: [8],
+    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     resolution: "1080P",
     referenceMode: "optional",
     description:
-      "Stable Diffusion 2.0 VIP video model. Supports text-to-video and image-to-video generation."
+      "Stable Diffusion 2.0 VIP video model. Supports 4-15 second text-to-video and image-to-video generation."
   }
 ];
 

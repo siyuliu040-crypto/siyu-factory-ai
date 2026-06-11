@@ -19,6 +19,7 @@ export const MODEL_PROMPT_LIMITS: Record<string, number> = {
   "sy:veo-X-veo_3_1-fast-fl": 1800,
   "sy:veo-X-veo_3_1-fl": 1800,
   "sy:grok-Yun": 1600,
+  "hfsy:sd-2": 1600,
   "hfsy:sd-2-vip": 1600,
   "deepseek-v4-flash": 3000,
   "deepseek-v4-pro": 3000,
