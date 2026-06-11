@@ -2446,10 +2446,10 @@
       "type": "video",
       "model": "vidu:viduq3-pro",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T07:15:00.065Z",
-      "updatedAt": "2026-06-11T07:15:00.065Z"
+      "updatedAt": "2026-06-11T07:20:08.295Z"
     },
     {
       "id": "962551602521083904",
@@ -3570,10 +3570,11 @@
       "mode": "video",
       "model": "vidu:viduq3-pro",
       "prompt": "Location: Outdoor café counter. Two friends waiting for their iced coffees. Soft afternoon sunlight, light street activity in the background.\nOutfit:\nSage green long-sleeve yoga jacket and high-waist leggings. Clean minimalist design, smooth matte fabric, flattering fit.\n0-3s\nBestie looks at her friend while waiting in line.\nBestie:\n\"Wait... have you been working out?\"\n3-7s\nWearer laughs.\nYou:\n\"Not more than usual.\"\nBestie:\n\"Then why do you look so toned?\"\nCamera slowly captures the clean silhouette from the side.\n7-12s\nYou lightly smooth the jacket.\nYou:\n\"It's honestly the fit.\"\nYou:\n\"It hugs everything without feeling tight.\"\nBestie:\n\"Okay, that's exactly what I need.\"\n12-15s\nBarista places drinks on the counter.\nBestie grabs her coffee.\nBestie:\n\"Sending me the link?\"\nYou smile.\nYou:\n\"I'll send it now before your size disappears.\"",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_36/tasks/26/0611/07/962553277633806336/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T072008Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A20%253A04Z.mp4&x-id=GetObject&X-Amz-Signature=7d39ca0e4ef92f361846f5ba497be27415333b466b756759b6ea3cd470c5a2a7",
       "taskId": "962553277633806336",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-11T07:15:00.066Z",
-      "updatedAt": "2026-06-11T07:20:00.006Z"
+      "updatedAt": "2026-06-11T07:20:08.295Z"
     },
     {
       "id": "e4bacd53-35f8-46ba-a379-dea493ac697b",
