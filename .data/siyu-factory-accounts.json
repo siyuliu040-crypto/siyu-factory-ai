@@ -4193,9 +4193,9 @@
       "model": "sora2-pro-12s-9x16",
       "prompt": "9:16 vertical product demo, clean studio, smooth camera motion, realistic lighting, no text, no logo",
       "taskId": "task_JPMrODstaICSQ4mrZaqN571jLNGVmpGc",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-11T09:07:44.718Z",
-      "updatedAt": "2026-06-11T09:07:44.718Z"
+      "updatedAt": "2026-06-11T09:08:20.095Z"
     },
     {
       "id": "0a15bfe2-fd62-48ce-94aa-3be7c9c79dd3",
