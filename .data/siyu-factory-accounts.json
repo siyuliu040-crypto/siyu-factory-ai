@@ -3663,9 +3663,9 @@
       "model": "vidu:viduq3-pro-fast",
       "prompt": "Location: Sunny downtown sidewalk outside a coffee shop.\n0-3s\nBestie:\n\"It's pretty warm today. Aren't you hot?\"\n3-7s\nShot: Wearer lightly pulls the sleeve away from the arm.\nYou:\n\"Actually, this fabric feels cool.\"\n7-11s\nShot: Bestie touches the sleeve.\nBestie:\n\"Wow, it really does.\"\n11-15s\nYou:\n\"And it's so lightweight.\"\nBestie:\n\"Now I want one.\"\n",
       "taskId": "962561575103770624",
-      "status": "created",
+      "status": "in_progress",
       "createdAt": "2026-06-11T07:47:58.344Z",
-      "updatedAt": "2026-06-11T07:48:04.310Z"
+      "updatedAt": "2026-06-11T07:48:38.526Z"
     },
     {
       "id": "7d3770da-9af7-4e82-94a5-c0bfbe9a4203",
