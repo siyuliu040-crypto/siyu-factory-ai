@@ -17,19 +17,6 @@ export type HfsyModel = {
 
 export const HFSY_MODELS: HfsyModel[] = [
   {
-    id: "hfsy:sora-2",
-    upstreamModel: "sora-2",
-    label: "HFSY Sora 2 VIP",
-    media: "video",
-    credits: 1,
-    upstreamPrice: 0.8,
-    durationOptions: [10],
-    resolution: "1080P",
-    referenceMode: "optional",
-    description:
-      "Official-transfer Sora 2 video model. Supports text prompts or reference image input, with dialogue, sound effects, and background music."
-  },
-  {
     id: "hfsy:sd-2-vip",
     upstreamModel: "sd-2-vip",
     label: "HFSY SD 2 VIP",
@@ -41,19 +28,6 @@ export const HFSY_MODELS: HfsyModel[] = [
     referenceMode: "optional",
     description:
       "Stable Diffusion 2.0 VIP video model. Supports text-to-video and image-to-video generation."
-  },
-  {
-    id: "hfsy:kling-omni",
-    upstreamModel: "Kling Omni",
-    label: "HFSY Kling Omni VIP",
-    media: "video",
-    credits: 5,
-    upstreamPrice: 0,
-    durationOptions: [8],
-    resolution: "1080P",
-    referenceMode: "optional",
-    description:
-      "Kling Omni video model from HFSY. Supports prompt-based video and reference media workflows where the upstream account allows it."
   }
 ];
 

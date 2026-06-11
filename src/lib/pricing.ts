@@ -34,9 +34,7 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "sy:veo-X-veo_3_1-fast-fl": siteCredits(65),
   "sy:veo-X-veo_3_1-fl": siteCredits(70),
   "sy:grok-Yun": siteCredits(100),
-  "hfsy:sora-2": siteCredits(1),
   "hfsy:sd-2-vip": siteCredits(5),
-  "hfsy:kling-omni": siteCredits(5),
   "deepseek-v4-flash": siteCredits(1),
   "deepseek-v4-pro": siteCredits(2),
   "omni_flash": siteCredits(2)
