@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import {
   Activity,
@@ -601,6 +601,30 @@ function getModelDescription(model: string, language: Language) {
   return `${aspect} · ${durationText} · ${reference}`;
 }
 
+function getModelGroupLabel(model: string, mode: Mode, language: Language) {
+  const lower = model.toLowerCase();
+  if (mode === "image") {
+    if (lower.includes("nano")) return language === "zh" ? "Nano Banana 图片" : "Nano Banana images";
+    if (lower.includes("gpt")) return language === "zh" ? "GPT 图片" : "GPT images";
+    return language === "zh" ? "图片模型" : "Image models";
+  }
+  if (lower.startsWith("vidu:")) return "Vidu";
+  if (lower.startsWith("sy:")) return "SY";
+  if (lower.startsWith("hfsy:")) return "HFSY";
+  if (lower.includes("sora")) return "Sora";
+  if (lower.includes("grok")) return "Grok";
+  return language === "zh" ? "其他视频模型" : "Other video models";
+}
+
+function groupModelsForSelect(models: string[], mode: Mode, language: Language) {
+  const groups = new Map<string, string[]>();
+  for (const model of models) {
+    const label = getModelGroupLabel(model, mode, language);
+    groups.set(label, [...(groups.get(label) || []), model]);
+  }
+  return Array.from(groups.entries()).map(([label, items]) => ({ label, items }));
+}
+
 function getDeepSeekTaskTitle(task: DeepSeekTask, language: Language) {
   const zh: Record<DeepSeekTask, string> = {
     image_prompt: "图片提示词",
@@ -1053,6 +1077,8 @@ export default function Studio() {
   const activeModel = mode === "image" ? imageModel : videoModel;
   const isBatchWorkspace = activeTool === "batch";
   const isDeepSeekWorkspace = activeTool === "deepseek";
+  const visibleModels = mode === "image" ? imageModels : videoModels;
+  const groupedVisibleModels = groupModelsForSelect(visibleModels, mode, language);
   const durationOptions = mode === "video" ? getDurationOptions(videoModel, language) : [];
   const resolutionOptions = mode === "video" ? getResolutionOptions(videoModel, language) : [];
   const normalizedVideoSize = normalizeResolutionForModel(videoModel, videoSize, language);
@@ -1063,6 +1089,7 @@ export default function Studio() {
   const activeWorkspaceCostText = isDeepSeekWorkspace
     ? formatCreditTotal(deepSeekCost, language)
     : formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
+  const activeModelDescription = mode === "video" ? getModelDescription(activeModel, language) : activeModel;
   const promptLimit = isDeepSeekWorkspace ? getPromptLimit(deepSeekModel, "text") : getModelPromptLimit(activeModel, mode);
   const promptLength = isDeepSeekWorkspace ? deepSeekInput.trim().length : prompt.trim().length;
   const promptOverLimit = promptLength > promptLimit;
@@ -2165,8 +2192,61 @@ export default function Studio() {
               </div>
             ) : null}
 
+            {!isDeepSeekWorkspace ? (
+            <div className="model-picker-panel">
+              <div className="model-compact-row">
+                <div className="segmented model-mode-tabs" aria-label="media type">
+                  <button className={`segment ${mode === "image" ? "active" : ""}`} onClick={() => switchMedia("image")} type="button">
+                    <ImageIcon size={16} />{t.image}
+                  </button>
+                  <button className={`segment ${mode === "video" ? "active" : ""}`} onClick={() => switchMedia("video")} type="button">
+                    <Film size={16} />{t.video}
+                  </button>
+                </div>
+
+                <div className="field model-select-field">
+                  <label htmlFor="model-select">{tx("model", "模型")}</label>
+                  <select
+                    className="select"
+                    id="model-select"
+                    onChange={(event) => (mode === "image" ? setImageModel(event.target.value) : chooseVideoModel(event.target.value))}
+                    value={activeModel}
+                  >
+                    {groupedVisibleModels.map((group) => (
+                      <optgroup key={group.label} label={group.label}>
+                        {group.items.map((model) => {
+                          const modelDuration = mode === "video" ? normalizeDurationForModel(model, seconds, language) : undefined;
+                          const modelResolution = mode === "video" ? normalizeResolutionForModel(model, videoSize, language) : undefined;
+                          return (
+                            <option key={model} value={model}>
+                              {getModelTitle(model, language)} · {formatCreditCost(model, language, modelDuration, modelResolution)}
+                            </option>
+                          );
+                        })}
+                      </optgroup>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="selected-model-summary">
+                <div>
+                  <strong>{getModelTitle(activeModel, language)}</strong>
+                  <span>{activeModelDescription}</span>
+                </div>
+                <div className="model-summary-badges">
+                  <b>{formatPromptLimit(activeModel, mode, language)}</b>
+                  {mode === "video" && modelRequiresFirstFrame(activeModel) ? (
+                    <b>{tx("startEndFrameSupported", language === "zh" ? "首帧必填 · 尾帧可选" : "Start required · End optional")}</b>
+                  ) : null}
+                  <b>{activeWorkspaceCostText}</b>
+                </div>
+              </div>
+            </div>
+            ) : null}
+
             {!isBatchWorkspace && !isDeepSeekWorkspace ? (
-              <div className="field">
+              <div className="field prompt-field">
                 <div className="field-head">
                   <label htmlFor="prompt">{t.prompt}</label>
                   <span className={promptOverLimit ? "limit-counter over" : "limit-counter"}>
@@ -2176,56 +2256,6 @@ export default function Studio() {
                 <textarea className="textarea" id="prompt" onChange={(event) => setPrompt(event.target.value)} placeholder={t.promptPlaceholder} value={prompt} />
                 {promptOverLimit ? <small className="field-note danger-text">{getPromptTooLongMessage(promptLength, promptLimit, language)}</small> : null}
               </div>
-            ) : null}
-
-            {!isDeepSeekWorkspace ? (
-            <div className="model-picker-panel">
-              <div className="field-head">
-                <label>{tx("modelType", language === "zh" ? "模型类型" : "Model type")}</label>
-                <span>
-                  {mode === "image"
-                    ? tx("imageModelHint", language === "zh" ? "图片生成模型和费用" : "Image models and cost")
-                    : tx("videoModelHint", language === "zh" ? "视频生成模型、时长和费用" : "Video models, duration, and cost")}
-                </span>
-              </div>
-              <div className="segmented model-mode-tabs" aria-label="media type">
-                <button className={`segment ${mode === "image" ? "active" : ""}`} onClick={() => switchMedia("image")} type="button">
-                  <ImageIcon size={16} />{t.image}
-                </button>
-                <button className={`segment ${mode === "video" ? "active" : ""}`} onClick={() => switchMedia("video")} type="button">
-                  <Film size={16} />{t.video}
-                </button>
-              </div>
-              <div className="model-list model-grid">
-                {(mode === "image" ? imageModels : videoModels).map((model) => {
-                      const active = mode === "image" ? imageModel === model : activeModel === model || videoModel === model;
-                      const modelDuration = mode === "video" ? normalizeDurationForModel(model, seconds, language) : undefined;
-                      const modelResolution = mode === "video" ? normalizeResolutionForModel(model, videoSize, language) : undefined;
-                      return (
-                    <button
-                      className={`model-chip ${active ? "active" : ""}`}
-                      key={model}
-                      onClick={() => (mode === "image" ? setImageModel(model) : chooseVideoModel(model))}
-                      title={model}
-                      type="button"
-                    >
-                      <div className="model-copy">
-                        <span>{getModelTitle(model, language)}</span>
-                        <em>{mode === "video" ? getModelDescription(model, language) : model}</em>
-                        <b className="model-limit-badge">{formatPromptLimit(model, mode, language)}</b>
-                        {mode === "video" && modelRequiresFirstFrame(model) ? (
-                          <b className="model-requirement-badge">
-                            {tx("startEndFrameSupported", language === "zh" ? "首帧必填 · 尾帧可选" : "Start required · End optional")}
-                          </b>
-                        ) : null}
-                      </div>
-                      <small>{formatCreditCost(model, language, modelDuration, modelResolution)}</small>
-                      {active ? <Wand2 size={15} /> : null}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
             ) : null}
 
             {isDeepSeekWorkspace ? (
