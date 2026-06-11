@@ -2470,10 +2470,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T07:34:58.910Z",
-      "updatedAt": "2026-06-11T07:34:58.910Z"
+      "updatedAt": "2026-06-11T07:37:27.470Z"
     },
     {
       "id": "962556588801937408",
@@ -3616,10 +3616,11 @@
       "mode": "video",
       "model": "vidu:viduq3-turbo",
       "prompt": "3-7s\nCamera follows as they walk side by side.\nWearer smiles.\nYou:\n“It’s actually just the fabric and fit.”\nShe lightly stretches the sleeve.\nYou:\n“Super smooth, lightweight, and really flattering.”\n7-12s\nBestie gently touches the sleeve and waistband.\nClose-up of the clean seams and sleek silhouette.\nBestie:\n“Wow... it feels way softer than it looks.”\nYou:\n“And it stays comfortable all day.”\n12-15s\nBoth women stop near the café entrance.\nBestie:\n“I’m ordering one tonight.”\nYou look at camera and smile.\nYou:\n“If you're thinking about it, just get it before your size sells out.”",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_60/tasks/26/0611/07/962558305996124160/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T073727Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A37%253A19Z.mp4&x-id=GetObject&X-Amz-Signature=07d8ccab11a12a961fc33765e2efbfcbde00aa4ca4c39a92839c2115187eabb5",
       "taskId": "962558305996124160",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-11T07:34:58.911Z",
-      "updatedAt": "2026-06-11T07:37:19.179Z"
+      "updatedAt": "2026-06-11T07:37:27.470Z"
     },
     {
       "id": "ea391036-1eb2-41d2-8a44-4d10d6cc11f3",
