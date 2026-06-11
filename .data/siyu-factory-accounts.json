@@ -4066,9 +4066,9 @@
       "model": "vidu:viduq3-pro-fast",
       "prompt": "【夏季出游：拒绝闷汗，防晒自由】核心策略： 使用对比色调（室内稍微昏暗/沉闷 vs. 室外明亮/清爽），配合清脆的夏天音效（蝉鸣、冰块撞击玻璃的声音），增强感官体验。时间 (秒)画面内容 (Visuals)口播 (VO - English)字幕 (Text)0-4s【钩子】：闺蜜正对着风扇吹，一脸烦躁。你拿着套装递过去。\"Bestie, we're going out! Stop sweating and put this on.\"Beat the Summer Heat! ☀️5-9s【凉感对比】：两人快速换装。切入阳光下漫步的镜头，展示面料的垂坠感与呼吸感。\"It's UPF 50+ sun-safe, super cooling, and zero sweat.\"UPF 50+ & Cooling! ❄️10-12s【场景切换】：快速闪现：瑜伽垫上拉伸 -> 街头买冰咖啡 -> 公园漫步。\"From yoga flow to city strolls, it’s the ultimate summer set.\"Yoga to Street-ready! 🧘‍♀️13-15s【高光定格】：两人在阳光下自信对视，画面弹出价格与诱导语。\"Best $22.99 you’ll spend all summer!\"Just $22.99! Get Yours! 🛍️💡 针对“防晒与凉感”的视觉与执行升级：增加“凉感”视觉元素：在 5-9秒 两人切换镜头时，可以加一个“冰块化开”的叠化转场效果，或者在画面四周加一点点清透的冰晶装饰素材，强化“凉感 (Cooling)”的概念。强化“防晒”卖点：在 5-9秒 的阳光镜头中，使用色彩偏冷、饱和度略高的滤镜，让观众感觉到即使阳光很烈，你们穿上这套衣服依然显得清爽，而不是被阳光暴晒的燥热感。强调“不闷汗”：在展示瑜伽动作（10-12秒）时，动作幅度一定要稍微大一点，展现出即使在运动中，面料依然平整、干爽的状态。",
       "taskId": "962579731532746752",
-      "status": "created",
+      "status": "queued",
       "createdAt": "2026-06-11T09:00:07.187Z",
-      "updatedAt": "2026-06-11T09:00:13.248Z"
+      "updatedAt": "2026-06-11T09:00:15.520Z"
     },
     {
       "id": "fec232a2-5be1-42d0-88f0-ab47b3d375fe",
