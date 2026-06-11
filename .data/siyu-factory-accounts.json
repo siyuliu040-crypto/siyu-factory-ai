@@ -2936,10 +2936,10 @@
       "type": "video",
       "model": "sora-2-4s-9x16",
       "amount": 600000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T09:07:41.949Z",
-      "updatedAt": "2026-06-11T09:07:41.949Z"
+      "updatedAt": "2026-06-11T09:12:06.897Z"
     },
     {
       "id": "task_ydu5wZ3EKVcXV71iGTGLp8TinH4il87D",
@@ -4203,10 +4203,11 @@
       "mode": "video",
       "model": "sora-2-4s-9x16",
       "prompt": "9:16 vertical product demo, clean studio, smooth camera motion, realistic lighting, no text, no logo",
+      "previewUrl": "https://file.bandianwa.com/adobe2/video/20260611/df265f136f4549ecbc6425d3b5228510.mp4",
       "taskId": "task_kiqcjpJ2Nwt8K9F4s3MLSRuwkbbXVg6E",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-11T09:07:41.949Z",
-      "updatedAt": "2026-06-11T09:08:17.371Z"
+      "updatedAt": "2026-06-11T09:12:06.897Z"
     },
     {
       "id": "0f3be7f8-0600-4fe3-bd66-7c6bc06ceca7",
