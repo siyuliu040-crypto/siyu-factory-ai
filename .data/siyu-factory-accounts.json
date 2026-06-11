@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 32022880,
+      "credits": 33622880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-11T09:03:03.699Z"
+      "updatedAt": "2026-06-11T09:07:11.229Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "10d80fb9-88b4-4c67-afc3-1882654a65ce",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1600000,
+      "balanceAfter": 33622880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-11T09:07:11.229Z",
+      "metadata": {
+        "taskId": "task_ydu5wZ3EKVcXV71iGTGLp8TinH4il87D",
+        "model": "sora2-pro-12s-9x16"
+      }
+    },
     {
       "id": "99eef8e7-4d17-4554-b810-b6c4efb464be",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2843,10 +2855,10 @@
       "type": "video",
       "model": "sora2-pro-12s-9x16",
       "amount": 1600000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-11T09:03:05.622Z",
-      "updatedAt": "2026-06-11T09:03:05.622Z"
+      "updatedAt": "2026-06-11T09:07:11.229Z"
     },
     {
       "id": "962579731532746752",
@@ -4089,9 +4101,10 @@
       "model": "sora2-pro-12s-9x16",
       "prompt": "亚洲青年动起来\n",
       "taskId": "task_ydu5wZ3EKVcXV71iGTGLp8TinH4il87D",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-06-11T09:03:05.622Z",
-      "updatedAt": "2026-06-11T09:07:03.163Z"
+      "updatedAt": "2026-06-11T09:07:11.229Z",
+      "error": "{\"code\":\"upstream_generation_failed\",\"message\":\"内容违规，请调整提示词或者图片\"}"
     },
     {
       "id": "baadb7a3-032a-4dd6-b4d4-58828e6ed18a",
