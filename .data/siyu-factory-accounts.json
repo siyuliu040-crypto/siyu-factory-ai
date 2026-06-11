@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 34812880,
+      "credits": 34822880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-11T01:04:04.671Z"
+      "updatedAt": "2026-06-11T01:04:13.471Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "61f43cae-aa1d-4412-aaed-7e1d6230c683",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000,
+      "balanceAfter": 34822880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-11T01:04:13.471Z",
+      "metadata": {
+        "taskId": "094fe150df5240e88c1e9432899880a9",
+        "model": "hfsy:sora-2"
+      }
+    },
     {
       "id": "f8f5502c-226e-4bef-ad79-dfa81a6e0f9f",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2386,10 +2398,10 @@
       "type": "video",
       "model": "hfsy:sora-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-11T01:04:06.548Z",
-      "updatedAt": "2026-06-11T01:04:06.548Z"
+      "updatedAt": "2026-06-11T01:04:13.471Z"
     },
     {
       "id": "c1c85b4a862e4e62b40f4387145ad55a",
@@ -3478,9 +3490,10 @@
       "model": "hfsy:sora-2",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "094fe150df5240e88c1e9432899880a9",
-      "status": "IN_PROGRESS",
+      "status": "failed",
+      "error": "\"Sora仅支持4/8/12秒时长\"",
       "createdAt": "2026-06-11T01:04:06.549Z",
-      "updatedAt": "2026-06-11T01:04:10.785Z"
+      "updatedAt": "2026-06-11T01:04:13.471Z"
     },
     {
       "id": "4984ad4b-e2d2-4a52-a7e8-9d188f9b8a01",
