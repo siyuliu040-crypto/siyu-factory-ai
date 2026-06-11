@@ -121,8 +121,8 @@ export function getVideoGenerationCost(model: string, duration?: string | number
   if (lower.startsWith("vidu:")) {
     return Math.round(getViduDisplayCreditCost(model, duration, resolution) * INTERNAL_CREDIT_SCALE);
   }
-  if (lower.includes("grok-imagine-1.0-video-ref-10s")) return siteCredits(20);
-  if (lower.includes("grok-imagine-1.0-video-ref-6s")) return siteCredits(15);
+  if (lower.includes("grok-imagine-1.0-video-ref-10s")) return siteCredits(120);
+  if (lower.includes("grok-imagine-1.0-video-ref-6s")) return siteCredits(80);
   if (lower.includes("grok-imagine-1.0-video-10s")) return siteCredits(18);
   if (lower.includes("grok-imagine-1.0-video-6s")) return siteCredits(12);
   if (lower.includes("grok-imagine-1.0-video")) {
