@@ -2553,10 +2553,10 @@
       "type": "video",
       "model": "hfsy:sd-2-vip",
       "amount": 50000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T08:40:18.327Z",
-      "updatedAt": "2026-06-11T08:40:18.327Z"
+      "updatedAt": "2026-06-11T08:44:28.707Z"
     },
     {
       "id": "962564774086856704",
@@ -3755,9 +3755,10 @@
       "model": "hfsy:sd-2-vip",
       "prompt": "Create a 15-second vertical 9:16 realistic UGC unboxing and try-on video at home. Use the Base Prompt.\n0-3s: Close-up of a plain shipping mailer on a bed. The woman opens the package naturally and pulls out a sage green activewear set.\n3-6s: She unfolds the zip-front jacket and leggings on the bed. Camera shows the soft sage green color, smooth fabric, clean stitching, and minimal design.\n6-9s: Quick transition to her standing in front of a full-length mirror wearing the full set. She holds the phone in one hand and lightly adjusts the zipper with the other.\n9-12s: Mirror shot as she turns slightly to the side, showing the fitted waist, high-rise leggings, and clean body-hugging silhouette.\n12-15s: She steps back for a full outfit check, smooths the jacket hem, and gives a small confident smile.\nVoiceover：\n“First impression? This set looks way more expensive than I expected. Clean, fitted, and so easy to wear.”",
       "taskId": "7ecc2be147914699a82dc9d3ed411f48",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-11T08:40:18.328Z",
-      "updatedAt": "2026-06-11T08:44:19.578Z"
+      "updatedAt": "2026-06-11T08:44:28.707Z",
+      "previewUrl": "http://sd2oss-american.oss-us-west-1.aliyuncs.com/2026-06-11%2Fe9f21b3a-18b7-4b4e-9e87-cec33c44f2c5.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1781253850&Signature=E1MiQG4VNE2owF2MunSTwmVgE4c%3D"
     },
     {
       "id": "d1560b8c-c049-4a22-b6ca-5e7f9f7b8cff",
