@@ -2802,6 +2802,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_ETVsXpJfKCOduZHmeN971zOMtz8gXT6o",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "sora-2-4s-9x16",
+      "amount": 600000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-11T08:58:02.135Z",
+      "updatedAt": "2026-06-11T08:58:02.135Z"
+    },
+    {
       "id": "task_ObqFfUGGkmigakBXwKoGzf4Y8JVZ0J4W",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -4013,6 +4024,17 @@
     }
   ],
   "history": [
+    {
+      "id": "fec232a2-5be1-42d0-88f0-ab47b3d375fe",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "sora-2-4s-9x16",
+      "prompt": "动起来",
+      "taskId": "task_ETVsXpJfKCOduZHmeN971zOMtz8gXT6o",
+      "status": "queued",
+      "createdAt": "2026-06-11T08:58:02.135Z",
+      "updatedAt": "2026-06-11T08:58:02.135Z"
+    },
     {
       "id": "06284c2c-a5f8-4c9d-8ed4-fd11d67e2eba",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
