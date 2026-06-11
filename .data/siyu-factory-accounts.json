@@ -4029,11 +4029,11 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "video",
       "model": "sora-2-4s-9x16",
-      "prompt": "动起来",
+      "prompt": "动起来\n",
       "taskId": "task_ETVsXpJfKCOduZHmeN971zOMtz8gXT6o",
       "status": "queued",
       "createdAt": "2026-06-11T08:58:02.135Z",
-      "updatedAt": "2026-06-11T08:58:02.135Z"
+      "updatedAt": "2026-06-11T08:58:07.195Z"
     },
     {
       "id": "06284c2c-a5f8-4c9d-8ed4-fd11d67e2eba",
