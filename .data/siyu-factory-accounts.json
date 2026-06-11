@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 11710000,
+      "credits": 11410000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-11T07:28:06.340Z"
+      "updatedAt": "2026-06-11T07:34:55.788Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "0d74c6ff-9581-4d1f-880d-df2336e22441",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "amount": -300000,
+      "balanceAfter": 11410000,
+      "reason": "video generation",
+      "createdAt": "2026-06-11T07:34:55.788Z",
+      "metadata": {
+        "model": "vidu:viduq3-turbo",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "e2e88ec2-744d-45cf-842a-19d6163f5361",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
