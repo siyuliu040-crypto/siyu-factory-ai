@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 10160000,
+      "credits": 8960000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-11T08:48:37.760Z"
+      "updatedAt": "2026-06-11T08:49:53.167Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "95b7cd91-2437-48f4-b7d1-7828be1455b0",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "amount": -1200000,
+      "balanceAfter": 8960000,
+      "reason": "video generation",
+      "createdAt": "2026-06-11T08:49:53.167Z",
+      "metadata": {
+        "model": "sy:veo-X-veo_3_1-fast-fl",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "53fbb732-2a1a-46d8-bf98-f392ef15a514",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
