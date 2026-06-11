@@ -1,6 +1,7 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
 import { withAccountState } from "@/lib/accounts";
 import { extractVideoUrl } from "@/lib/video-status";
+import { extractSyVideoUrl, getSyCredentials, isSyModel, parseSyResponse, SY_BASE_URL } from "@/lib/sy";
 import { extractViduVideoUrl, isViduModel, parseViduResponse, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 
 export const dynamic = "force-dynamic";
@@ -21,6 +22,26 @@ async function fetchViduVideoMetadata(id: string) {
   return parseViduResponse(response);
 }
 
+async function fetchSyVideoMetadata(id: string) {
+  const credentials = getSyCredentials();
+  const body = new URLSearchParams({
+    username: credentials.username,
+    userpwd: credentials.userpwd,
+    cardNo: credentials.cardNo,
+    task_id: id
+  });
+  const response = await fetch(`${SY_BASE_URL}/dm/ai_api.php?action=query`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body,
+    cache: "no-store"
+  });
+  return parseSyResponse(response);
+}
+
 async function streamRemoteVideo(url: string, id: string) {
   try {
     const response = await fetch(url, { cache: "no-store" });
@@ -29,7 +50,7 @@ async function streamRemoteVideo(url: string, id: string) {
       status: response.status,
       headers: {
         "Content-Type": response.headers.get("content-type") || "video/mp4",
-        "Content-Disposition": `inline; filename="${id}.mp4"`
+        "Content-Disposition": `attachment; filename="${id}.mp4"`
       }
     });
   } catch {
@@ -53,6 +74,13 @@ export async function GET(
       const viduUrl = extractViduVideoUrl(viduMetadata);
       if (viduUrl) return streamRemoteVideo(viduUrl, id);
       return jsonError({ error: "Unable to download generated Vidu video" }, 404);
+    }
+
+    if (task && isSyModel(task.model)) {
+      const syMetadata = await fetchSyVideoMetadata(id);
+      const syUrl = extractSyVideoUrl(syMetadata);
+      if (syUrl) return streamRemoteVideo(syUrl, id);
+      return jsonError({ error: "Unable to download generated SY video" }, 404);
     }
 
     const primaryMetadata = await fetchVideoMetadata("/v1/videos/:id", id);
@@ -82,7 +110,7 @@ export async function GET(
       status: response.status,
       headers: {
         "Content-Type": response.headers.get("content-type") || "video/mp4",
-        "Content-Disposition": `inline; filename="${id}.mp4"`
+        "Content-Disposition": `attachment; filename="${id}.mp4"`
       }
     });
   } catch (error) {
