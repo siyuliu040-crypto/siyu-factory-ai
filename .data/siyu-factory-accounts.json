@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 34822880,
+      "credits": 33622880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-11T01:05:40.734Z"
+      "updatedAt": "2026-06-11T08:52:21.999Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "395894f1-7044-40b6-8819-56ca499874b6",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -1200000,
+      "balanceAfter": 33622880,
+      "reason": "video generation",
+      "createdAt": "2026-06-11T08:52:21.999Z",
+      "metadata": {
+        "model": "sy:veo-X-veo_3_1-fast-fl",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "6c92c6fe-52b4-4544-a43f-6c22ceb9916b",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
