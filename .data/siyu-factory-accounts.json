@@ -3686,9 +3686,9 @@
       "model": "vidu:viduq3-pro-fast",
       "prompt": "Location: Modern city plaza with glass buildings and outdoor seating.\n0-3s\nBestie:\n\"That set looks expensive.\"\n3-7s\nYou:\n\"It's actually just the fabric and the fit.\"\n7-11s\nShot: Camera follows a slow turn. Clean lines of the outfit visible.\nBestie:\n\"I like that there's nothing extra on it.\"\n11-15s\nYou:\n\"That's why I wear it everywhere.\"\nBestie:\n\"Yeah... it looks really polished.\"",
       "taskId": "962563199020830720",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-11T07:54:25.495Z",
-      "updatedAt": "2026-06-11T07:54:32.837Z"
+      "updatedAt": "2026-06-11T07:54:41.857Z"
     },
     {
       "id": "567415db-ecf1-4f93-a5a3-232a6e27dadb",
