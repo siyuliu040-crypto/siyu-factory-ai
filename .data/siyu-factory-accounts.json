@@ -3937,11 +3937,11 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "video",
       "model": "sy:grok-Yun",
-      "prompt": "动起来",
+      "prompt": "动起来\n",
       "taskId": "task_ObqFfUGGkmigakBXwKoGzf4Y8JVZ0J4W",
       "status": "success",
       "createdAt": "2026-06-11T08:52:55.409Z",
-      "updatedAt": "2026-06-11T08:52:55.409Z"
+      "updatedAt": "2026-06-11T08:52:59.882Z"
     },
     {
       "id": "b1a881ae-111c-4545-9d4e-71b6676f6a53",
