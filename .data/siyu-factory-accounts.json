@@ -4308,9 +4308,9 @@
       "model": "sy:veo-X-veo_3_1-fl",
       "prompt": "Create a 8-second vertical 9:16 realistic UGC unboxing and try-on video at home. Use the Base Prompt.\n0-3s: Close-up of a plain shipping mailer on a bed. The woman opens the package naturally and pulls out a sage green activewear set.\n3-6s: She unfolds the zip-front jacket and leggings on the bed. Camera shows the soft sage green color, smooth fabric, clean stitching, and minimal design.\n6-8s: Quick transition to her standing in front of a full-length mirror wearing the full set. She holds the phone in one hand and lightly adjusts the zipper with the other.\n",
       "taskId": "task_kcyCYhLqa8atwcOK2KBWwdoCUJ3vEyWr",
-      "status": "success",
+      "status": "queued",
       "createdAt": "2026-06-11T09:24:24.673Z",
-      "updatedAt": "2026-06-11T09:24:30.474Z"
+      "updatedAt": "2026-06-11T09:24:31.580Z"
     },
     {
       "id": "ecef97b9-f09d-4173-b153-5d2be815ce40",
