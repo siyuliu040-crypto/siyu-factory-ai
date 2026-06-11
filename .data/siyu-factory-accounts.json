@@ -2862,6 +2862,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_kiqcjpJ2Nwt8K9F4s3MLSRuwkbbXVg6E",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "sora-2-4s-9x16",
+      "amount": 600000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-11T09:07:41.949Z",
+      "updatedAt": "2026-06-11T09:07:41.949Z"
+    },
+    {
       "id": "task_ydu5wZ3EKVcXV71iGTGLp8TinH4il87D",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -4106,6 +4117,17 @@
     }
   ],
   "history": [
+    {
+      "id": "0a15bfe2-fd62-48ce-94aa-3be7c9c79dd3",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "sora-2-4s-9x16",
+      "prompt": "9:16 vertical product demo, clean studio, smooth camera motion, realistic lighting, no text, no logo",
+      "taskId": "task_kiqcjpJ2Nwt8K9F4s3MLSRuwkbbXVg6E",
+      "status": "queued",
+      "createdAt": "2026-06-11T09:07:41.949Z",
+      "updatedAt": "2026-06-11T09:07:41.949Z"
+    },
     {
       "id": "0f3be7f8-0600-4fe3-bd66-7c6bc06ceca7",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
