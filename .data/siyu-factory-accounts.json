@@ -3707,11 +3707,11 @@
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "mode": "video",
       "model": "vidu:viduq3-turbo",
-      "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\nLocation: Modern city plaza with glass buildings and outdoor seating.\r\n0-3s\r\nBestie:\r\n\"That set looks expensive.\"\r\n3-7s\r\nYou:\r\n\"It's actually just the fabric and the fit.\"\r\n7-11s\r\nShot: Camera follows a slow turn. Clean lines of the outfit visible.\r\nBestie:\r\n\"I like that there's nothing extra on it.\"\r\n11-15s\r\nYou:\r\n\"That's why I wear it everywhere.\"\r\nBestie:\r\n\"Yeah... it looks really polished.\"",
+      "prompt": "Location: Modern city plaza with glass buildings and outdoor seating.\n0-3s\nBestie:\n\"That set looks expensive.\"\n3-7s\nYou:\n\"It's actually just the fabric and the fit.\"\n7-11s\nShot: Camera follows a slow turn. Clean lines of the outfit visible.\nBestie:\n\"I like that there's nothing extra on it.\"\n11-15s\nYou:\n\"That's why I wear it everywhere.\"\nBestie:\n\"Yeah... it looks really polished.\"",
       "taskId": "962564774086856704",
       "status": "created",
       "createdAt": "2026-06-11T08:00:41.033Z",
-      "updatedAt": "2026-06-11T08:00:41.033Z"
+      "updatedAt": "2026-06-11T08:00:47.106Z"
     },
     {
       "id": "c3ed7f6d-067c-4789-9a3a-1b830c2926eb",
