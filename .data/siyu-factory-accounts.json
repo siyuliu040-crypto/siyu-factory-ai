@@ -3571,9 +3571,9 @@
       "model": "vidu:viduq3-pro",
       "prompt": "Location: Outdoor café counter. Two friends waiting for their iced coffees. Soft afternoon sunlight, light street activity in the background.\nOutfit:\nSage green long-sleeve yoga jacket and high-waist leggings. Clean minimalist design, smooth matte fabric, flattering fit.\n0-3s\nBestie looks at her friend while waiting in line.\nBestie:\n\"Wait... have you been working out?\"\n3-7s\nWearer laughs.\nYou:\n\"Not more than usual.\"\nBestie:\n\"Then why do you look so toned?\"\nCamera slowly captures the clean silhouette from the side.\n7-12s\nYou lightly smooth the jacket.\nYou:\n\"It's honestly the fit.\"\nYou:\n\"It hugs everything without feeling tight.\"\nBestie:\n\"Okay, that's exactly what I need.\"\n12-15s\nBarista places drinks on the counter.\nBestie grabs her coffee.\nBestie:\n\"Sending me the link?\"\nYou smile.\nYou:\n\"I'll send it now before your size disappears.\"",
       "taskId": "962553277633806336",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-11T07:15:00.066Z",
-      "updatedAt": "2026-06-11T07:15:15.437Z"
+      "updatedAt": "2026-06-11T07:15:24.187Z"
     },
     {
       "id": "e4bacd53-35f8-46ba-a379-dea493ac697b",
