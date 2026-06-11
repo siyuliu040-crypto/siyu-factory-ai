@@ -75,7 +75,9 @@ async function fileToReferenceInput(file: File, origin: string) {
   await writeFile(path.join(UPLOAD_DIR, id), buffer);
   return {
     dataUrl: `data:${mediaType};base64,${buffer.toString("base64")}`,
-    publicUrl: `${origin.replace(/\/$/, "")}/api/uploads/${id}`
+    publicUrl: `${origin.replace(/\/$/, "")}/api/uploads/${id}`,
+    blob: new Blob([buffer], { type: mediaType }),
+    fileName: file.name || `reference.${extension}`
   };
 }
 
@@ -454,6 +456,7 @@ async function postSyPayload(
     model: string;
     prompt: string;
     imageUrls: string[];
+    imageFiles?: Array<{ blob: Blob; fileName: string }>;
   },
   billing: { userId: string; amount: number; model: string }
 ) {
@@ -484,6 +487,13 @@ async function postSyPayload(
   if (payload.imageUrls.length) {
     formData.set("imageUrl", payload.imageUrls.join(","));
   }
+  const firstImageFile = payload.imageFiles?.[0];
+  const lastImageFile = payload.imageFiles?.[1];
+  if (firstImageFile) {
+    for (const field of ["image", "file", "imageFile", "image_file", "firstImage", "firstImageFile", "startImage", "startImageFile"]) {
+      formData.set(field, firstImageFile.blob, firstImageFile.fileName);
+    }
+  }
   payload.imageUrls.slice(1).forEach((url, index) => {
     formData.set(`imageUrl${index + 2}`, url);
   });
@@ -493,6 +503,11 @@ async function postSyPayload(
   if (syModelSupportsEndFrame(payload.model) && payload.imageUrls[1]) {
     formData.set("lastImageUrl", payload.imageUrls[1]);
     formData.set("endImageUrl", payload.imageUrls[1]);
+  }
+  if (syModelSupportsEndFrame(payload.model) && lastImageFile) {
+    for (const field of ["lastImage", "lastImageFile", "endImage", "endImageFile", "tailImage", "tailImageFile", "last_frame", "end_frame"]) {
+      formData.set(field, lastImageFile.blob, lastImageFile.fileName);
+    }
   }
 
   const response = await fetch(`${SY_BASE_URL}/dm/action_card.php?action=generateOneVideo_dragImage_image2Video`, {
@@ -642,7 +657,11 @@ export async function POST(request: Request) {
         {
           model,
           prompt,
-          imageUrls: publicReferenceUrls
+          imageUrls: publicReferenceUrls,
+          imageFiles: uploadedReferenceInputs.map((input) => ({
+            blob: input.blob,
+            fileName: input.fileName
+          }))
         },
         billing
       );
