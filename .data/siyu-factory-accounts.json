@@ -2374,10 +2374,10 @@
       "type": "video",
       "model": "hfsy:sd-2-vip",
       "amount": 50000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T01:01:08.596Z",
-      "updatedAt": "2026-06-11T01:01:08.596Z"
+      "updatedAt": "2026-06-11T01:03:42.338Z"
     },
     {
       "id": "task_JW5Jy03L4JuvLmYMUPuXFOjiH0R2rgmk",
@@ -3454,10 +3454,11 @@
       "mode": "video",
       "model": "hfsy:sd-2-vip",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "previewUrl": "http://sd2oss-american.oss-us-west-1.aliyuncs.com/2026-06-11%2F7dc0e7c8-faa4-4580-a15a-125ad7d27eec.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1781226199&Signature=ePveXtfCyI%2Bm9AjHIv%2Fj7yeUgNc%3D",
       "taskId": "c1c85b4a862e4e62b40f4387145ad55a",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-11T01:01:08.596Z",
-      "updatedAt": "2026-06-11T01:03:34.344Z"
+      "updatedAt": "2026-06-11T01:03:42.338Z"
     },
     {
       "id": "06c4224f-d015-4bf2-a326-6efd05b24086",
