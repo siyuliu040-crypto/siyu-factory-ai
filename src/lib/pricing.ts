@@ -22,20 +22,20 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "veo_3_1-fast-portrait-fl-hd": siteCredits(3),
   "ali-sora-video-portrait-official-4s": siteCredits(5),
   "ali-sora-video-portrait-official-8s": siteCredits(8),
-  "sora-2-4s-9x16": siteCredits(6),
-  "sora-2-8s-9x16": siteCredits(12),
-  "sora-2-12s-9x16": siteCredits(18),
-  "sora2-pro-12s-9x16": siteCredits(25),
+  "sora-2-4s-9x16": siteCredits(60),
+  "sora-2-8s-9x16": siteCredits(110),
+  "sora-2-12s-9x16": siteCredits(160),
+  "sora2-pro-12s-9x16": siteCredits(160),
   "grok-imagine-1.0-video": siteCredits(15),
   "grok-imagine-1.0-video-6s": siteCredits(12),
   "grok-imagine-1.0-video-10s": siteCredits(18),
-  "grok-imagine-1.0-video-ref-6s": siteCredits(15),
-  "grok-imagine-1.0-video-ref-10s": siteCredits(20),
-  "sy:veo-X-veo_3_1-fast-fl": siteCredits(65),
-  "sy:veo-X-veo_3_1-fl": siteCredits(70),
-  "sy:grok-Yun": siteCredits(100),
-  "hfsy:sd-2": siteCredits(5),
-  "hfsy:sd-2-vip": siteCredits(5),
+  "grok-imagine-1.0-video-ref-6s": siteCredits(80),
+  "grok-imagine-1.0-video-ref-10s": siteCredits(120),
+  "sy:veo-X-veo_3_1-fast-fl": siteCredits(120),
+  "sy:veo-X-veo_3_1-fl": siteCredits(180),
+  "sy:grok-Yun": siteCredits(120),
+  "hfsy:sd-2": siteCredits(1350),
+  "hfsy:sd-2-vip": siteCredits(1350),
   "deepseek-v4-flash": siteCredits(1),
   "deepseek-v4-pro": siteCredits(2),
   "omni_flash": siteCredits(2)
@@ -57,18 +57,18 @@ export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
 
 const VIDU_CREDITS_PER_SECOND: Record<string, Record<string, number>> = {
   "vidu:viduq3-pro-fast": {
-    "720p": 2,
-    "1080p": 3
+    "720p": 187.6,
+    "1080p": 225
   },
   "vidu:viduq3-turbo": {
-    "540p": 1,
-    "720p": 2,
-    "1080p": 3
+    "540p": 103.2,
+    "720p": 103.2,
+    "1080p": 121.8
   },
   "vidu:viduq3-pro": {
-    "540p": 1,
-    "720p": 2,
-    "1080p": 3
+    "540p": 187.6,
+    "720p": 187.6,
+    "1080p": 225
   }
 };
 

@@ -19,33 +19,33 @@ export const SY_MODELS: SyModelConfig[] = [
     videoType: "Veo",
     videoChannel: "veo-X-veo_3_1-fast-fl",
     label: "SY VEO 3.1 Fast 首尾帧",
-    credits: 65,
+    credits: 120,
     duration: 8,
     mode: "first-last",
     resolution: "720P",
-    successHint: "SY 实时统计：今日 80%，近 30 分钟约 78%"
+    successHint: "SY 实时统计：今日约 80%，近 30 分钟约 78%"
   },
   {
     id: "sy:veo-X-veo_3_1-fl",
     videoType: "Veo",
     videoChannel: "veo-X-veo_3_1-fl",
     label: "SY VEO 3.1 首尾帧",
-    credits: 70,
+    credits: 180,
     duration: 8,
     mode: "first-last",
     resolution: "720P",
-    successHint: "SY 实时统计：今日 100%"
+    successHint: "SY 实时统计：今日约 100%"
   },
   {
     id: "sy:grok-Yun",
     videoType: "Grok",
     videoChannel: "grok-Yun",
-    label: "SY Grok 10秒 参考图",
-    credits: 100,
+    label: "SY Grok 10秒参考图",
+    credits: 120,
     duration: 10,
     mode: "reference",
     resolution: "1080P",
-    successHint: "SY 实时统计：今日 100%"
+    successHint: "SY 实时统计：今日约 100%"
   }
 ];
 
@@ -98,10 +98,10 @@ export async function parseSyResponse(response: Response) {
 }
 
 function decodeMojibake(value: string) {
-  if (!/[ÃÂÅÆÇÈÉåæçèéäöüï¼]/.test(value)) return value;
+  if (!/[脙脗脜脝脟脠脡氓忙莽猫茅盲枚眉茂录]/.test(value)) return value;
   try {
     const decoded = Buffer.from(value, "latin1").toString("utf8");
-    return decoded.includes("�") ? value : decoded;
+    return decoded.includes("锟?") ? value : decoded;
   } catch {
     return value;
   }
@@ -128,7 +128,7 @@ function parseSyUpstreamRaw(payload: unknown) {
   if (typeof raw !== "string" || !raw.trim()) return {};
   try {
     const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === "object" ? parsed as Record<string, unknown> : {};
+    return parsed && typeof parsed === "object" ? (parsed as Record<string, unknown>) : {};
   } catch {
     return {};
   }
