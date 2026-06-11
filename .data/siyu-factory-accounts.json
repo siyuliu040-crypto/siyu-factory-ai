@@ -2772,10 +2772,10 @@
       "type": "video",
       "model": "sy:grok-Yun",
       "amount": 1200000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T08:52:55.409Z",
-      "updatedAt": "2026-06-11T08:52:55.409Z"
+      "updatedAt": "2026-06-11T08:54:01.702Z"
     },
     {
       "id": "7ecc2be147914699a82dc9d3ed411f48",
@@ -3984,10 +3984,11 @@
       "mode": "video",
       "model": "sy:grok-Yun",
       "prompt": "动起来\n",
+      "previewUrl": "https://soruxgpt-saas-yimeng-api.soruxgpt.com/file_download/e375987f-934e-44b2-bf90-63d9895f6a97.mp4",
       "taskId": "task_ObqFfUGGkmigakBXwKoGzf4Y8JVZ0J4W",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-06-11T08:52:55.409Z",
-      "updatedAt": "2026-06-11T08:53:54.066Z"
+      "updatedAt": "2026-06-11T08:54:01.702Z"
     },
     {
       "id": "b1a881ae-111c-4545-9d4e-71b6676f6a53",
