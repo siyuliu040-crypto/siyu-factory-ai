@@ -3663,9 +3663,9 @@
       "model": "vidu:viduq3-pro-fast",
       "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\nLocation: Sunny downtown sidewalk outside a coffee shop.\r\n0-3s\r\nBestie:\r\n\"It's pretty warm today. Aren't you hot?\"\r\n3-7s\r\nShot: Wearer lightly pulls the sleeve away from the arm.\r\nYou:\r\n\"Actually, this fabric feels cool.\"\r\n7-11s\r\nShot: Bestie touches the sleeve.\r\nBestie:\r\n\"Wow, it really does.\"\r\n11-15s\r\nYou:\r\n\"And it's so lightweight.\"\r\nBestie:\r\n\"Now I want one.\"",
       "taskId": "962561575103770624",
-      "status": "created",
+      "status": "queued",
       "createdAt": "2026-06-11T07:47:58.344Z",
-      "updatedAt": "2026-06-11T07:47:58.344Z"
+      "updatedAt": "2026-06-11T07:48:03.347Z"
     },
     {
       "id": "7d3770da-9af7-4e82-94a5-c0bfbe9a4203",
