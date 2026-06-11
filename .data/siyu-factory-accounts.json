@@ -3024,6 +3024,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_kcyCYhLqa8atwcOK2KBWwdoCUJ3vEyWr",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "type": "video",
+      "model": "sy:veo-X-veo_3_1-fl",
+      "amount": 1800000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-11T09:24:24.673Z",
+      "updatedAt": "2026-06-11T09:24:24.673Z"
+    },
+    {
       "id": "task_JPMrODstaICSQ4mrZaqN571jLNGVmpGc",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -4290,6 +4301,17 @@
     }
   ],
   "history": [
+    {
+      "id": "8569d6e5-c8d0-447e-96db-1b9c5bfe34c2",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "mode": "video",
+      "model": "sy:veo-X-veo_3_1-fl",
+      "prompt": "Create a 8-second vertical 9:16 realistic UGC unboxing and try-on video at home. Use the Base Prompt.\r\n0-3s: Close-up of a plain shipping mailer on a bed. The woman opens the package naturally and pulls out a sage green activewear set.\r\n3-6s: She unfolds the zip-front jacket and leggings on the bed. Camera shows the soft sage green color, smooth fabric, clean stitching, and minimal design.\r\n6-8s: Quick transition to her standing in front of a full-length mirror wearing the full set. She holds the phone in one hand and lightly adjusts the zipper with the other.",
+      "taskId": "task_kcyCYhLqa8atwcOK2KBWwdoCUJ3vEyWr",
+      "status": "success",
+      "createdAt": "2026-06-11T09:24:24.673Z",
+      "updatedAt": "2026-06-11T09:24:24.673Z"
+    },
     {
       "id": "ecef97b9-f09d-4173-b153-5d2be815ce40",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
