@@ -3569,11 +3569,11 @@
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "mode": "video",
       "model": "vidu:viduq3-pro",
-      "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\nLocation: Outdoor café counter. Two friends waiting for their iced coffees. Soft afternoon sunlight, light street activity in the background.\r\nOutfit:\r\nSage green long-sleeve yoga jacket and high-waist leggings. Clean minimalist design, smooth matte fabric, flattering fit.\r\n0-3s\r\nBestie looks at her friend while waiting in line.\r\nBestie:\r\n\"Wait... have you been working out?\"\r\n3-7s\r\nWearer laughs.\r\nYou:\r\n\"Not more than usual.\"\r\nBestie:\r\n\"Then why do you look so toned?\"\r\nCamera slowly captures the clean silhouette from the side.\r\n7-12s\r\nYou lightly smooth the jacket.\r\nYou:\r\n\"It's honestly the fit.\"\r\nYou:\r\n\"It hugs everything without feeling tight.\"\r\nBestie:\r\n\"Okay, that's exactly what I need.\"\r\n12-15s\r\nBarista places drinks on the counter.\r\nBestie grabs her coffee.\r\nBestie:\r\n\"Sending me the link?\"\r\nYou smile.\r\nYou:\r\n\"I'll send it now before your size disappears.\"",
+      "prompt": "Location: Outdoor café counter. Two friends waiting for their iced coffees. Soft afternoon sunlight, light street activity in the background.\nOutfit:\nSage green long-sleeve yoga jacket and high-waist leggings. Clean minimalist design, smooth matte fabric, flattering fit.\n0-3s\nBestie looks at her friend while waiting in line.\nBestie:\n\"Wait... have you been working out?\"\n3-7s\nWearer laughs.\nYou:\n\"Not more than usual.\"\nBestie:\n\"Then why do you look so toned?\"\nCamera slowly captures the clean silhouette from the side.\n7-12s\nYou lightly smooth the jacket.\nYou:\n\"It's honestly the fit.\"\nYou:\n\"It hugs everything without feeling tight.\"\nBestie:\n\"Okay, that's exactly what I need.\"\n12-15s\nBarista places drinks on the counter.\nBestie grabs her coffee.\nBestie:\n\"Sending me the link?\"\nYou smile.\nYou:\n\"I'll send it now before your size disappears.\"",
       "taskId": "962553277633806336",
       "status": "created",
       "createdAt": "2026-06-11T07:15:00.066Z",
-      "updatedAt": "2026-06-11T07:15:00.066Z"
+      "updatedAt": "2026-06-11T07:15:05.634Z"
     },
     {
       "id": "e4bacd53-35f8-46ba-a379-dea493ac697b",
