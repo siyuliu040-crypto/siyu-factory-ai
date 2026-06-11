@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 34772880,
+      "credits": 34822880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-11T01:05:33.825Z"
+      "updatedAt": "2026-06-11T01:05:40.734Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "530562e4-68e7-4a35-bf86-25c5b29d126c",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 50000,
+      "balanceAfter": 34822880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-11T01:05:40.734Z",
+      "metadata": {
+        "taskId": "3073c0f9bb1343ea8e027b04c4037dd5",
+        "model": "hfsy:kling-omni"
+      }
+    },
     {
       "id": "42243e4e-4c76-407a-9498-90c90aa54996",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2410,10 +2422,10 @@
       "type": "video",
       "model": "hfsy:kling-omni",
       "amount": 50000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-11T01:05:35.694Z",
-      "updatedAt": "2026-06-11T01:05:35.694Z"
+      "updatedAt": "2026-06-11T01:05:40.734Z"
     },
     {
       "id": "094fe150df5240e88c1e9432899880a9",
@@ -3513,9 +3525,10 @@
       "model": "hfsy:kling-omni",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "3073c0f9bb1343ea8e027b04c4037dd5",
-      "status": "IN_PROGRESS",
+      "status": "failed",
+      "error": "\"No available channel for model ko3 under group zdy (distributor) (request id: 20260611010537279594793KwqOyqkr)\"",
       "createdAt": "2026-06-11T01:05:35.694Z",
-      "updatedAt": "2026-06-11T01:05:39.921Z"
+      "updatedAt": "2026-06-11T01:05:40.734Z"
     },
     {
       "id": "fd67dc48-dde2-45a8-a53e-58d26057e2c9",
