@@ -190,6 +190,8 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
+  "sy:veo-X-veo_3_1-fast-fl",
+  "sy:veo-X-veo_3_1-fl",
   "sy:grok-Yun",
   "hfsy:sd-2",
   "hfsy:sd-2-vip",

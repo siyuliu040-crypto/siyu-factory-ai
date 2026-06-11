@@ -15,6 +15,28 @@ export type SyModelConfig = {
 
 export const SY_MODELS: SyModelConfig[] = [
   {
+    id: "sy:veo-X-veo_3_1-fast-fl",
+    videoType: "Veo",
+    videoChannel: "veo-X-veo_3_1-fast-fl",
+    label: "SY VEO 3.1 Fast 首尾帧",
+    credits: 120,
+    duration: 8,
+    mode: "first-last",
+    resolution: "720P",
+    successHint: "SY 上游：首尾帧，当前通道可能波动"
+  },
+  {
+    id: "sy:veo-X-veo_3_1-fl",
+    videoType: "Veo",
+    videoChannel: "veo-X-veo_3_1-fl",
+    label: "SY VEO 3.1 首尾帧",
+    credits: 180,
+    duration: 8,
+    mode: "first-last",
+    resolution: "720P",
+    successHint: "SY 上游：首尾帧，当前通道可能波动"
+  },
+  {
     id: "sy:grok-Yun",
     videoType: "Grok",
     videoChannel: "grok-Yun",
