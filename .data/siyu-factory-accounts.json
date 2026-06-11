@@ -4031,9 +4031,9 @@
       "model": "sora-2-4s-9x16",
       "prompt": "动起来\n",
       "taskId": "task_ETVsXpJfKCOduZHmeN971zOMtz8gXT6o",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-06-11T08:58:02.135Z",
-      "updatedAt": "2026-06-11T08:58:07.195Z"
+      "updatedAt": "2026-06-11T08:58:10.934Z"
     },
     {
       "id": "06284c2c-a5f8-4c9d-8ed4-fd11d67e2eba",
