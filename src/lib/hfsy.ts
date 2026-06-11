@@ -61,6 +61,10 @@ export function isHfsyModel(model: string) {
   return model.toLowerCase().startsWith("hfsy:");
 }
 
+export function toHfsyModel(model: string) {
+  return model.replace(/^hfsy:/i, "");
+}
+
 export function getHfsyModel(model: string) {
   return HFSY_MODELS.find((item) => item.id === model || item.upstreamModel === model);
 }
@@ -102,5 +106,5 @@ export function getHfsyTaskId(payload: unknown) {
   if (!payload || typeof payload !== "object") return "";
   const record = payload as Record<string, unknown>;
   const data = record.data && typeof record.data === "object" ? (record.data as Record<string, unknown>) : {};
-  return String(record.task_id || record.id || record.video_id || data.task_id || data.id || "");
+  return String(record.task_id || record.id || record.video_id || data.task_id || data.id || data.video_id || "");
 }

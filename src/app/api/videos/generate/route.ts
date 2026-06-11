@@ -251,11 +251,25 @@ async function postHfsyVideoPayload(
   billing: { userId: string; amount: number; model: string }
 ) {
   const hfsyModel = getHfsyModel(billing.model);
+  const referenceUrls = [
+    ...(Array.isArray(payload.images) ? payload.images : []),
+    ...(Array.isArray(payload.image_urls) ? payload.image_urls : []),
+    ...(Array.isArray(payload.reference_images) ? payload.reference_images : [])
+  ].map(String).filter(Boolean);
+  const size = String(payload.size || "");
+  const [width, height] = size.split("x").map((value) => Number(value));
+  const orientation = Number.isFinite(width) && Number.isFinite(height) && width > height ? "landscape" : "portrait";
+  const duration = Number(payload.duration || payload.seconds || hfsyModel?.durationOptions[0] || 10);
   const upstreamPayload = {
-    ...payload,
-    model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, "")
+    model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, ""),
+    prompt: String(payload.prompt || ""),
+    duration,
+    orientation,
+    ...(referenceUrls.length ? { images: referenceUrls } : {}),
+    watermark: false,
+    size: "large"
   };
-  const response = await fetch(`${HFSY_BASE_URL}/v1/videos`, {
+  const response = await fetch(`${HFSY_BASE_URL}/v1/video/create`, {
     method: "POST",
     headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
     body: JSON.stringify(upstreamPayload),
@@ -271,8 +285,8 @@ async function postHfsyVideoPayload(
     return Response.json(data, { status: response.status });
   }
 
-  if (taskId) {
-    await withAccountState((state) => {
+    if (taskId) {
+      await withAccountState((state) => {
       recordGenerationTask(state, {
         id: taskId,
         userId: billing.userId,
@@ -663,7 +677,7 @@ export async function POST(request: Request) {
           prompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          ...(publicReferenceUrls.length ? referencePayloadFields(publicReferenceUrls) : {})
+          ...(publicReferenceUrls.length ? { images: publicReferenceUrls } : {})
         },
         billing
       );

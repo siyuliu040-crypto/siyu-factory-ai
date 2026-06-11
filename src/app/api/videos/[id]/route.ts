@@ -36,9 +36,13 @@ async function fetchVideoStatus(path: string, id: string) {
     data: await parseUpstreamResponse(response)
   };
 }
+
 async function fetchHfsyVideoStatus(path: string, id: string) {
+  const resolvedPath = path.includes(":id")
+    ? path.replace(":id", encodeURIComponent(id))
+    : `${path}${path.includes("?") ? "&" : "?"}id=${encodeURIComponent(id)}`;
   const response = await fetch(
-    `${HFSY_BASE_URL}${path.replace(":id", encodeURIComponent(id))}`,
+    `${HFSY_BASE_URL}${resolvedPath}`,
     {
       method: "GET",
       headers: hfsyHeaders({ Accept: "application/json" }),
@@ -144,11 +148,17 @@ export async function GET(
     }
 
     if (task && isHfsyModel(task.model)) {
-      const primary = await fetchHfsyVideoStatus("/v1/videos/:id", id);
+      const primary = await fetchHfsyVideoStatus("/v1/video/query", id);
       let normalized = normalizeVideoStatusPayload(id, primary.data, primary.response.status);
 
       if (normalized.transient) {
-        const legacy = await fetchHfsyVideoStatus("/v1/video/generations/:id", id);
+        const legacy = await fetchHfsyVideoStatus("/pg/videos/async-generations/:id", id);
+        const legacyNormalized = normalizeVideoStatusPayload(id, legacy.data, legacy.response.status);
+        if (!legacyNormalized.transient) normalized = legacyNormalized;
+      }
+
+      if (normalized.transient) {
+        const legacy = await fetchHfsyVideoStatus("/v1/videos/:id", id);
         const legacyNormalized = normalizeVideoStatusPayload(id, legacy.data, legacy.response.status);
         if (!legacyNormalized.transient) normalized = legacyNormalized;
       }
