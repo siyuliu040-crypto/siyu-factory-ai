@@ -2518,10 +2518,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T08:00:41.033Z",
-      "updatedAt": "2026-06-11T08:00:41.033Z"
+      "updatedAt": "2026-06-11T08:03:18.369Z"
     },
     {
       "id": "962563199020830720",
@@ -3708,10 +3708,11 @@
       "mode": "video",
       "model": "vidu:viduq3-turbo",
       "prompt": "Location: Modern city plaza with glass buildings and outdoor seating.\n0-3s\nBestie:\n\"That set looks expensive.\"\n3-7s\nYou:\n\"It's actually just the fabric and the fit.\"\n7-11s\nShot: Camera follows a slow turn. Clean lines of the outfit visible.\nBestie:\n\"I like that there's nothing extra on it.\"\n11-15s\nYou:\n\"That's why I wear it everywhere.\"\nBestie:\n\"Yeah... it looks really polished.\"",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_04/tasks/26/0611/08/962564774086856704/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T080318Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T08%253A03%253A16Z.mp4&x-id=GetObject&X-Amz-Signature=6fed9dce207bf706e2ae47cea7a538f9deb15a91f6600b69d0fa805c1d3019c4",
       "taskId": "962564774086856704",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-11T08:00:41.033Z",
-      "updatedAt": "2026-06-11T08:03:09.660Z"
+      "updatedAt": "2026-06-11T08:03:18.369Z"
     },
     {
       "id": "c3ed7f6d-067c-4789-9a3a-1b830c2926eb",
