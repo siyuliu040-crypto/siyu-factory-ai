@@ -3592,11 +3592,11 @@
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
       "mode": "video",
       "model": "vidu:viduq3-pro",
-      "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\n3-7s\r\nCamera follows as they walk side by side.\r\nWearer smiles.\r\nYou:\r\n“It’s actually just the fabric and fit.”\r\nShe lightly stretches the sleeve.\r\nYou:\r\n“Super smooth, lightweight, and really flattering.”\r\n7-12s\r\nBestie gently touches the sleeve and waistband.\r\nClose-up of the clean seams and sleek silhouette.\r\nBestie:\r\n“Wow... it feels way softer than it looks.”\r\nYou:\r\n“And it stays comfortable all day.”\r\n12-15s\r\nBoth women stop near the café entrance.\r\nBestie:\r\n“I’m ordering one tonight.”\r\nYou look at camera and smile.\r\nYou:\r\n“If you're thinking about it, just get it before your size sells out.”",
+      "prompt": "3-7s\nCamera follows as they walk side by side.\nWearer smiles.\nYou:\n“It’s actually just the fabric and fit.”\nShe lightly stretches the sleeve.\nYou:\n“Super smooth, lightweight, and really flattering.”\n7-12s\nBestie gently touches the sleeve and waistband.\nClose-up of the clean seams and sleek silhouette.\nBestie:\n“Wow... it feels way softer than it looks.”\nYou:\n“And it stays comfortable all day.”\n12-15s\nBoth women stop near the café entrance.\nBestie:\n“I’m ordering one tonight.”\nYou look at camera and smile.\nYou:\n“If you're thinking about it, just get it before your size sells out.”",
       "taskId": "962556588801937408",
       "status": "created",
       "createdAt": "2026-06-11T07:28:09.495Z",
-      "updatedAt": "2026-06-11T07:28:09.495Z"
+      "updatedAt": "2026-06-11T07:28:15.283Z"
     },
     {
       "id": "c1feacd6-878c-4cee-9634-51387a44d675",
