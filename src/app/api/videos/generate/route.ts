@@ -506,12 +506,18 @@ async function postSyPayload(
   });
   const data = await parseSyResponse(response);
   const taskId = getSyTaskId(data);
+  const syFailure =
+    !response.ok ||
+    !taskId ||
+    String((data as { code?: unknown })?.code || "").toLowerCase().includes("fail") ||
+    String((data as { error?: unknown })?.error || "").toLowerCase().includes("invalid_sy_json") ||
+    String((data as { message?: unknown })?.message || "").toLowerCase().includes("error code:");
 
-  if (!response.ok || !taskId || String((data as { code?: unknown })?.code || "").toLowerCase().includes("fail")) {
+  if (syFailure) {
     await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
       model: billing.model
     });
-    return Response.json(data, { status: response.status });
+    return Response.json(data, { status: response.ok ? 502 : response.status });
   }
 
   await withAccountState((state) => {

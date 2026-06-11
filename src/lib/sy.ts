@@ -17,24 +17,24 @@ export const SY_MODELS: SyModelConfig[] = [
   {
     id: "sy:veo-X-veo_3_1-fast-fl",
     videoType: "Veo",
-    videoChannel: "veo-X-veo_3_1-fast-fl",
-    label: "SY VEO 3.1 Fast 首尾帧",
+    videoChannel: "veo_3_1-fast-portrait-fl-hd-B",
+    label: "SY VEO 3.1 Fast 首尾帧 HD",
     credits: 120,
     duration: 8,
     mode: "first-last",
-    resolution: "720P",
-    successHint: "SY 实时统计：今日约 80%，近 30 分钟约 78%"
+    resolution: "1080P",
+    successHint: "SY 通道 B：直连测试可创建任务"
   },
   {
     id: "sy:veo-X-veo_3_1-fl",
     videoType: "Veo",
-    videoChannel: "veo-X-veo_3_1-fl",
-    label: "SY VEO 3.1 首尾帧",
+    videoChannel: "veo_3_1-fast-portrait-hd-B",
+    label: "SY VEO 3.1 Fast 高清参考图",
     credits: 180,
     duration: 8,
-    mode: "first-last",
-    resolution: "720P",
-    successHint: "SY 实时统计：今日约 100%"
+    mode: "reference",
+    resolution: "1080P",
+    successHint: "SY 通道 B：直连测试可创建任务"
   },
   {
     id: "sy:grok-Yun",
