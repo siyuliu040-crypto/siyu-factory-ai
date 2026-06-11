@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 33022880,
+      "credits": 33622880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-11T08:57:59.956Z"
+      "updatedAt": "2026-06-11T08:59:37.175Z"
     },
     {
       "id": "d8385e30-dc7a-431f-8f20-58b80ee38971",
@@ -180,6 +180,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "cd56a11b-7767-494e-a524-9037b1447933",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 600000,
+      "balanceAfter": 33622880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-11T08:59:37.175Z",
+      "metadata": {
+        "taskId": "task_ETVsXpJfKCOduZHmeN971zOMtz8gXT6o",
+        "model": "sora-2-4s-9x16"
+      }
+    },
     {
       "id": "9d9b6a3f-3b84-4e42-b5bb-a01b30efa9b8",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2807,10 +2819,10 @@
       "type": "video",
       "model": "sora-2-4s-9x16",
       "amount": 600000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-11T08:58:02.135Z",
-      "updatedAt": "2026-06-11T08:58:02.135Z"
+      "updatedAt": "2026-06-11T08:59:37.175Z"
     },
     {
       "id": "task_ObqFfUGGkmigakBXwKoGzf4Y8JVZ0J4W",
@@ -4031,9 +4043,10 @@
       "model": "sora-2-4s-9x16",
       "prompt": "动起来\n",
       "taskId": "task_ETVsXpJfKCOduZHmeN971zOMtz8gXT6o",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "{\"code\":\"upstream_generation_failed\",\"message\":\"内容违规，请调整提示词或者图片\"}",
       "createdAt": "2026-06-11T08:58:02.135Z",
-      "updatedAt": "2026-06-11T08:59:29.326Z"
+      "updatedAt": "2026-06-11T08:59:37.175Z"
     },
     {
       "id": "06284c2c-a5f8-4c9d-8ed4-fd11d67e2eba",
