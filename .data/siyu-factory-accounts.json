@@ -2482,10 +2482,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-11T07:38:18.307Z",
-      "updatedAt": "2026-06-11T07:38:18.307Z"
+      "updatedAt": "2026-06-11T07:41:37.905Z"
     },
     {
       "id": "962558305996124160",
@@ -3639,10 +3639,11 @@
       "mode": "video",
       "model": "vidu:viduq3-turbo",
       "prompt": "Location: Sunny downtown sidewalk outside a coffee shop.\n0-3s\nBestie:\n\"It's pretty warm today. Aren't you hot?\"\n3-7s\nShot: Wearer lightly pulls the sleeve away from the arm.\nYou:\n\"Actually, this fabric feels cool.\"\n7-11s\nShot: Bestie touches the sleeve.\nBestie:\n\"Wow, it really does.\"\n11-15s\nYou:\n\"And it's so lightweight.\"\nBestie:\n\"Now I want one.\"\n",
+      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_00/tasks/26/0611/07/962559142386483200/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T074137Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A41%253A36Z.mp4&x-id=GetObject&X-Amz-Signature=2d697bca74afad77b0e862be0485b9ce708fa4177462ddd73705ab787ab43ce7",
       "taskId": "962559142386483200",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-06-11T07:38:18.307Z",
-      "updatedAt": "2026-06-11T07:41:29.168Z"
+      "updatedAt": "2026-06-11T07:41:37.905Z"
     },
     {
       "id": "e8ecff0c-7ac2-4123-81f2-01ac7300890e",
