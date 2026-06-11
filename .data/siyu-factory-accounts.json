@@ -2429,6 +2429,17 @@
   ],
   "generationTasks": [
     {
+      "id": "962551602521083904",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "type": "video",
+      "model": "vidu:viduq3-pro",
+      "amount": 300000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-11T07:08:20.708Z",
+      "updatedAt": "2026-06-11T07:08:20.708Z"
+    },
+    {
       "id": "3073c0f9bb1343ea8e027b04c4037dd5",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3530,6 +3541,17 @@
     }
   ],
   "history": [
+    {
+      "id": "e4bacd53-35f8-46ba-a379-dea493ac697b",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "mode": "video",
+      "model": "vidu:viduq3-pro",
+      "prompt": "IMPORTANT AUDIO REQUIREMENT:\nGenerate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.\nAll dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.\n\n【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。\n\nLocation: Modern downtown sidewalk with cafés and glass buildings. Soft golden-hour sunlight.\r\nOutfit:\r\nSage green matching yoga set. Long-sleeve zip jacket and high-rise leggings. Sleek, minimal, premium-looking fabric.\r\n0-3s\r\nTwo friends walking together.\r\nBestie glances over.\r\nBestie:\r\n\"That outfit looks designer.\"\r\n3-7s\r\nYou smile.\r\nYou:\r\n\"Really?\"\r\nBestie:\r\n\"Yeah, it's so clean.\"\r\nCamera shows the smooth fabric and minimalist design.\r\n7-12s\r\nYou gesture toward the outfit.\r\nYou:\r\n\"No logos. No extra details.\"\r\nYou:\r\n\"Just a really good fit and fabric.\"\r\nBestie nods.\r\nBestie:\r\n\"That's probably why it looks expensive.\"\r\n12-15s\r\nThey continue walking past a café.\r\nYou:\r\n\"It's one of those pieces you wear everywhere.\"\r\nBestie:\r\n\"Adding to cart tonight.\"\r\nYou look toward camera.\r\nYou:\r\n\"If you've been looking for the perfect set, this is it.\"",
+      "taskId": "962551602521083904",
+      "status": "created",
+      "createdAt": "2026-06-11T07:08:20.709Z",
+      "updatedAt": "2026-06-11T07:08:20.709Z"
+    },
     {
       "id": "6a068bf3-741f-4d5c-b2d0-6083a64dc1b7",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
