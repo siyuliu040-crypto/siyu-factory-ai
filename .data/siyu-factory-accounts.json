@@ -41,16 +41,6 @@
       "updatedAt": "2026-06-09T05:36:16.198Z"
     },
     {
-      "id": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "email": "3057664853@qq.com",
-      "name": "susu",
-      "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
-      "role": "user",
-      "credits": 5360000,
-      "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-12T03:56:08.317Z"
-    },
-    {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "email": "2109024912@qq.com",
       "name": "温妮",
@@ -69,22 +59,10 @@
       "createdAt": "2026-06-07T11:52:29.983Z"
     },
     {
-      "token": "994a3e7fff50d4e20c11ff902cb4c778beb63f67ea21e5d067dfbbf6444c8b47",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "expiresAt": "2026-06-16T05:27:41.674Z",
-      "createdAt": "2026-06-09T05:27:41.674Z"
-    },
-    {
       "token": "484110ecdfe0a46d2ceb8663f115c8f5a85f0bf2ae96842369e3948f788a6726",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "expiresAt": "2026-06-16T05:28:41.583Z",
       "createdAt": "2026-06-09T05:28:41.583Z"
-    },
-    {
-      "token": "81950ec8f4b47117a39a6262b133249130125dc9049ffa7aea9cfe9c260b98ed",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "expiresAt": "2026-06-16T06:32:11.383Z",
-      "createdAt": "2026-06-09T06:32:11.383Z"
     },
     {
       "token": "0a05ea944983c534f08a1ec37d1ff085b3067fa768d6aa2fa6985a381be1c2d7",
@@ -293,30 +271,6 @@
       }
     },
     {
-      "id": "527b3c88-ea49-45cd-b877-bca2f058fdd7",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -2400000,
-      "balanceAfter": 5360000,
-      "reason": "video generation",
-      "createdAt": "2026-06-12T03:56:08.317Z",
-      "metadata": {
-        "model": "hfsy:sora-2",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "339c6dec-0160-4b90-a2f6-5607af7a6848",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -2400000,
-      "balanceAfter": 7760000,
-      "reason": "video generation",
-      "createdAt": "2026-06-12T03:50:54.124Z",
-      "metadata": {
-        "model": "hfsy:sora-2",
-        "size": "1080x1920"
-      }
-    },
-    {
       "id": "085e70a5-3b5e-462a-bae6-67fce4a95c8a",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": -10000,
@@ -329,75 +283,6 @@
       }
     },
     {
-      "id": "8bcf54c5-412e-4886-8533-be678cecace8",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1800000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-12T03:05:46.797Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fl"
-      }
-    },
-    {
-      "id": "5e6a4cf3-7ad7-49b4-aadc-6ab97fe58019",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1800000,
-      "balanceAfter": 8360000,
-      "reason": "video generation",
-      "createdAt": "2026-06-12T03:05:44.792Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "cd7c9ab2-47ca-4f15-ba9d-d9500fa32c5d",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1200000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-12T03:05:32.864Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl"
-      }
-    },
-    {
-      "id": "a0f30e24-45d1-40eb-806e-747566230ce8",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1200000,
-      "balanceAfter": 8960000,
-      "reason": "video generation",
-      "createdAt": "2026-06-12T03:05:30.897Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "16838fae-b25d-49c5-933e-eeed610f785e",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1200000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-12T02:57:02.626Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl"
-      }
-    },
-    {
-      "id": "e2f0e785-5da2-4504-bc58-469e5d18c767",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1200000,
-      "balanceAfter": 8960000,
-      "reason": "video generation",
-      "createdAt": "2026-06-12T02:57:00.463Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl",
-        "size": "720x1280"
-      }
-    },
-    {
       "id": "22effacf-b60d-468f-a8d1-fa52a8343d85",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": -600000,
@@ -407,30 +292,6 @@
       "metadata": {
         "model": "sora-2-4s-9x16",
         "size": "1080x1920"
-      }
-    },
-    {
-      "id": "d809cb5c-7224-4adb-8d8c-2e634f122270",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1800000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-11T09:26:13.503Z",
-      "metadata": {
-        "taskId": "task_kcyCYhLqa8atwcOK2KBWwdoCUJ3vEyWr",
-        "model": "sy:veo-X-veo_3_1-fl"
-      }
-    },
-    {
-      "id": "0c04e57f-b077-4dc5-9c15-d77b442c5efc",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1800000,
-      "balanceAfter": 8360000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T09:24:21.976Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fl",
-        "size": "720x1280"
       }
     },
     {
@@ -737,29 +598,6 @@
       }
     },
     {
-      "id": "6988c740-e8eb-4266-b7b2-3183b2446339",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1800000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-11T08:52:47.726Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fl"
-      }
-    },
-    {
-      "id": "648c03b8-4730-4a09-aad3-d4b37282e602",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1800000,
-      "balanceAfter": 8360000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:52:45.143Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fl",
-        "size": "720x1280"
-      }
-    },
-    {
       "id": "929420f4-5347-440a-844b-cefa58f3e804",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": 1800000,
@@ -802,229 +640,6 @@
       "createdAt": "2026-06-11T08:52:21.999Z",
       "metadata": {
         "model": "sy:veo-X-veo_3_1-fast-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "6c92c6fe-52b4-4544-a43f-6c22ceb9916b",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1200000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-11T08:49:55.364Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl"
-      }
-    },
-    {
-      "id": "95b7cd91-2437-48f4-b7d1-7828be1455b0",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1200000,
-      "balanceAfter": 8960000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:49:53.167Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "53fbb732-2a1a-46d8-bf98-f392ef15a514",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1200000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-11T08:48:37.760Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl"
-      }
-    },
-    {
-      "id": "4661f865-d1a6-4c73-a52b-71fb2c829eb1",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1200000,
-      "balanceAfter": 8960000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:48:35.886Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "860360db-2dfd-4b01-afa8-552990da7eae",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1800000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-11T08:47:46.852Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fl"
-      }
-    },
-    {
-      "id": "8437ffa8-f311-4622-a772-687680d6dbca",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1800000,
-      "balanceAfter": 8360000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:47:43.522Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "c19ee4be-5aa1-4abc-b158-f769fee109fe",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1200000,
-      "balanceAfter": 10160000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-11T08:46:20.375Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl"
-      }
-    },
-    {
-      "id": "25045af4-b344-4a34-be2a-846656606c7e",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1200000,
-      "balanceAfter": 8960000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:46:17.623Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "7de31f01-6af2-463f-9381-a8e7f5253eee",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -50000,
-      "balanceAfter": 10160000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:40:15.736Z",
-      "metadata": {
-        "model": "hfsy:sd-2-vip",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "c783a72c-8b63-4aa6-8728-dcf4edd7b24d",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 50000,
-      "balanceAfter": 10210000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-11T08:27:49.377Z",
-      "metadata": {
-        "model": "hfsy:sd-2"
-      }
-    },
-    {
-      "id": "943ee2a5-0e13-4e2d-8d85-2958aaffcd80",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -50000,
-      "balanceAfter": 10160000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:27:47.153Z",
-      "metadata": {
-        "model": "hfsy:sd-2",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "95976873-6c73-405b-bd44-0a890a2e79c0",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 10210000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T08:00:37.318Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "891554c6-d886-4e71-bab9-ce16fd1e7213",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 10510000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T07:54:22.353Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "8bba1991-a7f8-4807-98ef-37d2893877f0",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 10810000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T07:47:55.365Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "ef2e17b4-e7c6-4c80-955f-0c5b83f4e2f8",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 11110000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T07:38:14.681Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "0d74c6ff-9581-4d1f-880d-df2336e22441",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 11410000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T07:34:55.788Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "e2e88ec2-744d-45cf-842a-19d6163f5361",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 11710000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T07:28:06.340Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "46d73fdd-fc89-4f2c-a024-42c45f1fe7b6",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 12010000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T07:14:56.970Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "46a610ac-dee5-411d-a97f-486daec7bcfe",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 12310000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T07:08:16.809Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
         "size": "720x1280"
       }
     },
@@ -1242,198 +857,6 @@
       }
     },
     {
-      "id": "5bcc1a16-9194-471f-ac6e-7a998c0b6505",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 12610000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T07:53:05.296Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "2fcc5694-0bd5-494e-9a76-22e651997705",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 12910000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T07:35:57.485Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "9cea9e9e-b8ec-4522-9ebd-0e0f8e994338",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 13210000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T07:23:30.805Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "0a13e5ff-b043-4bc9-8c51-000032b5c2d5",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1920000,
-      "balanceAfter": 13510000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-10T07:09:46.125Z",
-      "metadata": {
-        "taskId": "task_DltI772q45GhBgBgVDcNYiH2fPxOHKkG",
-        "model": "sy:sora2-BB-api-12s"
-      }
-    },
-    {
-      "id": "c56f3924-8a58-4438-b100-de2fa5856b22",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1920000,
-      "balanceAfter": 11590000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T07:09:07.104Z",
-      "metadata": {
-        "model": "sy:sora2-BB-api-12s",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "7f652d70-0930-4c67-b896-c071bb182e0c",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 13510000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T07:00:29.878Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "0241f63f-eb26-4f42-9569-bb22932886b6",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 13810000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T06:54:31.646Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "b0fef3ac-f5db-4c7c-9671-051c7aeb18be",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 14110000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T06:45:08.477Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "05e5c3e7-dbae-43ca-83c0-d7df7ca72e8f",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 14410000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T06:36:38.231Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "b773e39b-a1f8-48ef-97aa-b7f1dd1a879e",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 14710000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T06:24:12.224Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "cca3dd75-0865-4611-950e-34446b4f7c38",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 300000,
-      "balanceAfter": 15010000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-10T05:34:14.812Z",
-      "metadata": {
-        "taskId": "962165512240914432",
-        "model": "vidu:viduq3-pro"
-      }
-    },
-    {
-      "id": "924fba73-aebb-410c-b06e-c61d04f1e334",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 14710000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T05:34:06.902Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "b4932ddd-49da-4e45-b2d3-f5b6bc536cdf",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 15010000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T05:12:58.839Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "691fa32d-fd23-4ef2-9000-c178e4850cb1",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 15310000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T03:25:13.071Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "f4f7cbf8-21fb-4a08-8cd4-a1d847a7b1e4",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 15610000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T02:56:48.492Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "91d52c85-06ef-4446-84d7-9fa5ac6274e5",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 15910000,
-      "reason": "video generation",
-      "createdAt": "2026-06-10T01:53:46.553Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
       "id": "758efa20-2a84-4df5-aaa4-fb3852f57ed9",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": 1920000,
@@ -1493,30 +916,6 @@
       }
     },
     {
-      "id": "5e9e1b47-fbbc-4e80-902e-45d4519e743f",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1920000,
-      "balanceAfter": 16210000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T09:25:37.067Z",
-      "metadata": {
-        "taskId": "task_RvxkPupbSYYLvYzS4qyUBRsZ6NMWfHdF",
-        "model": "sy:sora2-BB-api-12s"
-      }
-    },
-    {
-      "id": "4925266d-e516-4fbd-bde2-82087d2d4211",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1920000,
-      "balanceAfter": 14290000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T09:24:51.084Z",
-      "metadata": {
-        "model": "sy:sora2-BB-api-12s",
-        "size": "1080x1920"
-      }
-    },
-    {
       "id": "823227fb-b2b4-4ced-a814-06e5c2a4e481",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "amount": 30000,
@@ -1553,114 +952,6 @@
       }
     },
     {
-      "id": "63ef0991-9a1f-45a3-bced-71d84cefe1ec",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 1920000,
-      "balanceAfter": 16210000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T09:06:22.880Z",
-      "metadata": {
-        "taskId": "task_WWA1INFvvPazvSTqdoNzDdfGoVmAfixE",
-        "model": "sy:sora2-BB-api-12s"
-      }
-    },
-    {
-      "id": "aecbea2f-0c56-4a09-8b40-4eb7e217a959",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1920000,
-      "balanceAfter": 14290000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T08:00:01.684Z",
-      "metadata": {
-        "model": "sy:sora2-BB-api-12s",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "a16f02aa-83fc-48fb-8450-53ceffc17148",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 16210000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T07:53:05.254Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "41ddfb2e-c50a-4f8f-b388-166cbd44389e",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -300000,
-      "balanceAfter": 16510000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T07:49:57.375Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "2209b465-cce0-4431-8ed5-f535b538e79d",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -100000,
-      "balanceAfter": 16810000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T07:48:13.192Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "de85c0e3-255c-4daf-b7ce-2790556aa837",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -200000,
-      "balanceAfter": 16910000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T07:46:27.370Z",
-      "metadata": {
-        "model": "grok-imagine-1.0-video-ref-10s",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "108760bc-c488-4bd6-bb43-9adf3d00ec4c",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1920000,
-      "balanceAfter": 17110000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T07:39:38.431Z",
-      "metadata": {
-        "model": "sy:sora2-BB-api-12s",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "cc8bf338-ca76-4500-9017-e11588a29d29",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -650000,
-      "balanceAfter": 19030000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T07:34:27.621Z",
-      "metadata": {
-        "model": "sy:veo-X-veo_3_1-fast-fl",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "ec03ecd5-d300-4586-ba54-8ec28ee3682f",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -1920000,
-      "balanceAfter": 19680000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T07:26:07.216Z",
-      "metadata": {
-        "model": "sy:sora2-BB-api-12s",
-        "size": "1080x1920"
-      }
-    },
-    {
       "id": "acfb7cc7-5129-4206-baf4-44bb0c25de1c",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": -1920000,
@@ -1685,15 +976,6 @@
       }
     },
     {
-      "id": "cb467a12-5fd8-4cb8-aca4-87ac2d562b07",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 20000000,
-      "balanceAfter": 21600000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-09T07:14:49.146Z"
-    },
-    {
       "id": "ecc35e73-ebe1-4cfc-ae8c-f6352fd07b2f",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1712,42 +994,6 @@
       "metadata": {
         "model": "vidu:viduq3-pro-fast",
         "size": "720x1280"
-      }
-    },
-    {
-      "id": "e13b6af6-cc67-43db-9de5-cebaaa573a10",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 30000,
-      "balanceAfter": 1600000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T06:40:44.266Z",
-      "metadata": {
-        "taskId": "task_8dIjZM1g899Kn1n29U9hqSye3aKifaDG",
-        "model": "veo_3_1-fast-portrait-fl-hd"
-      }
-    },
-    {
-      "id": "42660c0f-ec77-4725-87f1-0999fb7eacc2",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -30000,
-      "balanceAfter": 1570000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T06:38:41.411Z",
-      "metadata": {
-        "model": "veo_3_1-fast-portrait-fl-hd",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "6931f96d-6c25-4726-a5d0-c5def2b92e51",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -250000,
-      "balanceAfter": 1600000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T06:33:31.436Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16",
-        "size": "1080x1920"
       }
     },
     {
@@ -1821,36 +1067,12 @@
       }
     },
     {
-      "id": "919074d0-f406-42cc-855f-f591f2679d50",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 250000,
-      "balanceAfter": 1850000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T06:01:04.352Z",
-      "metadata": {
-        "taskId": "task_3S6sxfokZsbubyUbxF26L78EMR5qnPe2",
-        "model": "sora2-pro-12s-9x16"
-      }
-    },
-    {
       "id": "f53e1cb1-3239-49ad-a071-98b59462749e",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": -250000,
       "balanceAfter": 40232880,
       "reason": "video generation",
       "createdAt": "2026-06-09T06:00:31.021Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "5bf9143e-f4cc-43c3-b153-595c66ab74c6",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -250000,
-      "balanceAfter": 1600000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T05:57:57.898Z",
       "metadata": {
         "model": "sora2-pro-12s-9x16",
         "size": "1080x1920"
@@ -1869,75 +1091,6 @@
       }
     },
     {
-      "id": "dcc1e583-0b3a-4265-b80e-8d807a3be067",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 250000,
-      "balanceAfter": 1850000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T05:54:41.821Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16"
-      }
-    },
-    {
-      "id": "7f30da76-7922-4d2b-924b-6ba2d6633b12",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -250000,
-      "balanceAfter": 1600000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T05:54:40.878Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "f9dc81d9-eb21-450a-a968-d48a40782724",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 250000,
-      "balanceAfter": 1850000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T05:46:31.361Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16"
-      }
-    },
-    {
-      "id": "eff2c3e3-8f54-4f8e-8c14-6d3f24e52500",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -250000,
-      "balanceAfter": 1600000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T05:46:30.451Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "62f973a7-b19b-45d2-b61a-36da117aa227",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": 250000,
-      "balanceAfter": 1850000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T05:46:02.627Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16"
-      }
-    },
-    {
-      "id": "fe2a8de3-30a7-4794-b48a-66c2344e4f46",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -250000,
-      "balanceAfter": 1600000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T05:46:01.508Z",
-      "metadata": {
-        "model": "sora2-pro-12s-9x16",
-        "size": "1080x1920"
-      }
-    },
-    {
       "id": "003ab8bb-0300-4fe6-91d2-305945b1746c",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": -250000,
@@ -1950,18 +1103,6 @@
       }
     },
     {
-      "id": "8c5ffe7b-e0df-4842-8654-4ec30afb6d33",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "amount": -150000,
-      "balanceAfter": 1850000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T05:40:19.998Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro",
-        "size": "540x960"
-      }
-    },
-    {
       "id": "c9a93030-5116-4d83-ba3a-07509d1d97b7",
       "userId": "2d8ac096-a632-4290-8379-b80db80a3703",
       "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -1969,15 +1110,6 @@
       "balanceAfter": 1500000,
       "reason": "main account allocation",
       "createdAt": "2026-06-09T05:36:16.198Z"
-    },
-    {
-      "id": "49a2ecd2-7824-4b32-b4a5-5380e99915a3",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 2000000,
-      "balanceAfter": 2000000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-09T05:36:10.159Z"
     },
     {
       "id": "051ee04e-d4ca-4a33-a587-2819359780df",
@@ -3149,28 +2281,6 @@
       "updatedAt": "2026-06-12T07:14:06.711Z"
     },
     {
-      "id": "2b1917dfddf64beb80ad5d5bd69863f8",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "hfsy:sora-2",
-      "amount": 2400000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-12T03:56:10.185Z",
-      "updatedAt": "2026-06-12T04:02:20.727Z"
-    },
-    {
-      "id": "5c0415afba214101b21160d8a014f1e8",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "hfsy:sora-2",
-      "amount": 2400000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-12T03:50:56.445Z",
-      "updatedAt": "2026-06-12T03:57:21.228Z"
-    },
-    {
       "id": "task_e7rpMAydLTEW2ALoLMKgALuo7WLh9bJ0",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3180,17 +2290,6 @@
       "refunded": false,
       "createdAt": "2026-06-11T09:46:24.249Z",
       "updatedAt": "2026-06-11T09:48:41.360Z"
-    },
-    {
-      "id": "task_kcyCYhLqa8atwcOK2KBWwdoCUJ3vEyWr",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sy:veo-X-veo_3_1-fl",
-      "amount": 1800000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-11T09:24:24.673Z",
-      "updatedAt": "2026-06-11T09:26:13.502Z"
     },
     {
       "id": "task_JPMrODstaICSQ4mrZaqN571jLNGVmpGc",
@@ -3257,105 +2356,6 @@
       "refunded": false,
       "createdAt": "2026-06-11T08:52:55.409Z",
       "updatedAt": "2026-06-11T08:54:01.702Z"
-    },
-    {
-      "id": "7ecc2be147914699a82dc9d3ed411f48",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "hfsy:sd-2-vip",
-      "amount": 50000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T08:40:18.327Z",
-      "updatedAt": "2026-06-11T08:44:28.707Z"
-    },
-    {
-      "id": "962564774086856704",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T08:00:41.033Z",
-      "updatedAt": "2026-06-11T08:03:18.369Z"
-    },
-    {
-      "id": "962563199020830720",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T07:54:25.495Z",
-      "updatedAt": "2026-06-11T07:56:49.616Z"
-    },
-    {
-      "id": "962561575103770624",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T07:47:58.343Z",
-      "updatedAt": "2026-06-11T07:51:28.536Z"
-    },
-    {
-      "id": "962559142386483200",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T07:38:18.307Z",
-      "updatedAt": "2026-06-11T07:41:37.905Z"
-    },
-    {
-      "id": "962558305996124160",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T07:34:58.910Z",
-      "updatedAt": "2026-06-11T07:37:27.470Z"
-    },
-    {
-      "id": "962556588801937408",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T07:28:09.495Z",
-      "updatedAt": "2026-06-11T07:34:22.109Z"
-    },
-    {
-      "id": "962553277633806336",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T07:15:00.065Z",
-      "updatedAt": "2026-06-11T07:20:08.295Z"
-    },
-    {
-      "id": "962551602521083904",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-11T07:08:20.708Z",
-      "updatedAt": "2026-06-11T07:13:48.015Z"
     },
     {
       "id": "3073c0f9bb1343ea8e027b04c4037dd5",
@@ -3446,160 +2446,6 @@
       "updatedAt": "2026-06-10T10:32:57.421Z"
     },
     {
-      "id": "962200487002644480",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T07:53:08.213Z",
-      "updatedAt": "2026-06-10T07:57:05.409Z"
-    },
-    {
-      "id": "962196177401425920",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T07:36:00.717Z",
-      "updatedAt": "2026-06-10T07:46:44.521Z"
-    },
-    {
-      "id": "962193046181531648",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T07:23:34.188Z",
-      "updatedAt": "2026-06-10T07:30:16.136Z"
-    },
-    {
-      "id": "task_DltI772q45GhBgBgVDcNYiH2fPxOHKkG",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "amount": 1920000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-10T07:09:08.928Z",
-      "updatedAt": "2026-06-10T07:09:46.125Z"
-    },
-    {
-      "id": "962187251507286016",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T07:00:32.625Z",
-      "updatedAt": "2026-06-10T07:08:07.148Z"
-    },
-    {
-      "id": "962185751359922176",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T06:54:34.951Z",
-      "updatedAt": "2026-06-10T06:57:22.814Z"
-    },
-    {
-      "id": "962183388037406720",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T06:45:11.501Z",
-      "updatedAt": "2026-06-10T06:50:37.173Z"
-    },
-    {
-      "id": "962181247784722432",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T06:36:41.224Z",
-      "updatedAt": "2026-06-10T06:43:37.245Z"
-    },
-    {
-      "id": "962178120822038528",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T06:24:15.686Z",
-      "updatedAt": "2026-06-10T06:32:37.229Z"
-    },
-    {
-      "id": "962165512240914432",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-10T05:34:09.593Z",
-      "updatedAt": "2026-06-10T05:34:14.811Z"
-    },
-    {
-      "id": "962160196841390080",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T05:13:02.276Z",
-      "updatedAt": "2026-06-10T05:21:20.856Z"
-    },
-    {
-      "id": "962133074227761152",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T03:25:15.752Z",
-      "updatedAt": "2026-06-10T03:31:12.522Z"
-    },
-    {
-      "id": "962125927549005824",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T02:56:51.848Z",
-      "updatedAt": "2026-06-10T03:03:57.099Z"
-    },
-    {
-      "id": "962110062153719808",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-10T01:53:49.230Z",
-      "updatedAt": "2026-06-10T01:57:03.513Z"
-    },
-    {
       "id": "task_xXb5HqRVjl3PhyO7aZe02umlZA7OcPYg",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3622,17 +2468,6 @@
       "updatedAt": "2026-06-09T09:41:03.400Z"
     },
     {
-      "id": "task_RvxkPupbSYYLvYzS4qyUBRsZ6NMWfHdF",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "amount": 1920000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-09T09:24:53.001Z",
-      "updatedAt": "2026-06-09T09:41:58.884Z"
-    },
-    {
       "id": "task_wBkePbn3IJUWzBL96IVQLZPtTn8ZnRZr",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "type": "video",
@@ -3653,94 +2488,6 @@
       "refunded": false,
       "createdAt": "2026-06-09T09:10:58.193Z",
       "updatedAt": "2026-06-09T09:14:08.664Z"
-    },
-    {
-      "id": "task_WWA1INFvvPazvSTqdoNzDdfGoVmAfixE",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "amount": 1920000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-09T08:00:03.929Z",
-      "updatedAt": "2026-06-09T09:06:22.880Z"
-    },
-    {
-      "id": "961838097731964928",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T07:53:07.878Z",
-      "updatedAt": "2026-06-09T07:58:56.624Z"
-    },
-    {
-      "id": "961837311316754432",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T07:50:00.382Z",
-      "updatedAt": "2026-06-09T07:52:29.460Z"
-    },
-    {
-      "id": "961836876048642048",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 100000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T07:48:16.625Z",
-      "updatedAt": "2026-06-09T07:49:13.883Z"
-    },
-    {
-      "id": "task_b25xP24aEyCEPoiQD7k1iXLrScgkmN7Y",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "grok-imagine-1.0-video-ref-10s",
-      "amount": 200000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T07:46:28.763Z",
-      "updatedAt": "2026-06-09T07:47:40.787Z"
-    },
-    {
-      "id": "task_1KxBw5xRU2eFiBztJvxsyj7yTNR0vYbb",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "amount": 1920000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T07:39:40.088Z",
-      "updatedAt": "2026-06-09T07:44:18.743Z"
-    },
-    {
-      "id": "task_JJ0QSOXQ1Z96Dq29DEDFvJXrGkUm0FdS",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sy:veo-X-veo_3_1-fast-fl",
-      "amount": 650000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T07:34:30.090Z",
-      "updatedAt": "2026-06-09T07:36:42.262Z"
-    },
-    {
-      "id": "task_E73SG9Wn0nJ677ZZRRH9zhMuPYfAFvSq",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "amount": 1920000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T07:26:09.271Z",
-      "updatedAt": "2026-06-09T07:30:45.963Z"
     },
     {
       "id": "task_VRAsslenq79IuI0ucZABf0kMgKyHgvSz",
@@ -3776,28 +2523,6 @@
       "updatedAt": "2026-06-09T06:53:46.884Z"
     },
     {
-      "id": "task_8dIjZM1g899Kn1n29U9hqSye3aKifaDG",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "veo_3_1-fast-portrait-fl-hd",
-      "amount": 30000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-09T06:38:42.774Z",
-      "updatedAt": "2026-06-09T09:42:03.525Z"
-    },
-    {
-      "id": "task_GVnrdAzQQWp0jlJVxftQBLZZmCLEXijr",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sora2-pro-12s-9x16",
-      "amount": 250000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T06:33:32.630Z",
-      "updatedAt": "2026-06-09T06:37:22.554Z"
-    },
-    {
       "id": "961817340398301184",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "type": "video",
@@ -3831,17 +2556,6 @@
       "updatedAt": "2026-06-09T06:04:22.643Z"
     },
     {
-      "id": "task_3S6sxfokZsbubyUbxF26L78EMR5qnPe2",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "sora2-pro-12s-9x16",
-      "amount": 250000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-09T05:57:59.353Z",
-      "updatedAt": "2026-06-09T06:01:04.351Z"
-    },
-    {
       "id": "task_z3ar9eciaET42NZ4Jah1WDanHWjr7egC",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3862,17 +2576,6 @@
       "refunded": false,
       "createdAt": "2026-06-09T05:43:19.486Z",
       "updatedAt": "2026-06-09T05:46:34.951Z"
-    },
-    {
-      "id": "961804689618259968",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "type": "video",
-      "model": "vidu:viduq3-pro",
-      "amount": 150000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T05:40:22.758Z",
-      "updatedAt": "2026-06-09T05:44:20.103Z"
     },
     {
       "id": "task_2od0UzEkdk9X50pf0LDDcAEk0sEjLkDz",
@@ -4510,30 +3213,6 @@
       "updatedAt": "2026-06-12T07:14:06.711Z"
     },
     {
-      "id": "43b8574f-1bd4-4e99-844e-a70b8a36aba9",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "hfsy:sora-2",
-      "prompt": "画面风格：明亮、干净、现代运动生活感\n目标人群：美国 20-50 岁女性\n\n画面从白色极简室内开始，一位女性站在柔和自然光中，穿着一整套亮粉色瑜伽服。镜头从她的肩颈位置缓慢下移，展示上衣的立领设计、前中顺直的同色拉链，以及贴合身体曲线的长袖短款版型。上衣长度停在腰线附近，干净利落，不拖沓。\n\n她轻轻转身，镜头切到侧面，展示上衣贴合腰部线条，高腰九分瑜伽裤从腰腹到腿部自然延展，整体轮廓修长。瑜伽裤没有复杂装饰，只有简洁的同色缝线，视觉上干净统一。她穿着白色运动鞋，做一个轻松的站姿转换，整套粉色瑜伽服在动作中保持平整贴身。\n\n随后画面切换到户外咖啡店前的人行道，她自然向前走，粉色套装在阳光下明亮醒目但不夸张。镜头捕捉她从正面走来的状态：上衣的短款比例拉高腰线，高腰裤修饰腿部线条，整套造型简约、利落、有活力。\n\n英文旁白：\n“Clean lines. A sculpted fit. This matching pink yoga set is made to flatter your shape without overcomplicating your look.”",
-      "previewUrl": "http://img688.com/file/1781236900655_b8b0d50b50cb44c480e51d9cd97a1ed1.mp4",
-      "taskId": "2b1917dfddf64beb80ad5d5bd69863f8",
-      "status": "completed",
-      "createdAt": "2026-06-12T03:56:10.185Z",
-      "updatedAt": "2026-06-12T04:02:20.727Z"
-    },
-    {
-      "id": "32f88211-cef8-4bb9-a14a-6bb7290cf71b",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "hfsy:sora-2",
-      "prompt": "画面风格：明亮、干净、现代运动生活感\n目标人群：美国 20-50 岁女性\n\n画面从白色极简室内开始，一位女性站在柔和自然光中，穿着一整套亮粉色瑜伽服。镜头从她的肩颈位置缓慢下移，展示上衣的立领设计、前中顺直的同色拉链，以及贴合身体曲线的长袖短款版型。上衣长度停在腰线附近，干净利落，不拖沓。\n\n她轻轻转身，镜头切到侧面，展示上衣贴合腰部线条，高腰九分瑜伽裤从腰腹到腿部自然延展，整体轮廓修长。瑜伽裤没有复杂装饰，只有简洁的同色缝线，视觉上干净统一。她穿着白色运动鞋，做一个轻松的站姿转换，整套粉色瑜伽服在动作中保持平整贴身。\n\n随后画面切换到户外咖啡店前的人行道，她自然向前走，粉色套装在阳光下明亮醒目但不夸张。镜头捕捉她从正面走来的状态：上衣的短款比例拉高腰线，高腰裤修饰腿部线条，整套造型简约、利落、有活力。\n\n英文旁白：\n“Clean lines. A sculpted fit. This matching pink yoga set is made to flatter your shape without overcomplicating your look.”",
-      "previewUrl": "http://img688.com/file/1781236614328_f7d75f64bc444dfba8e91c01925cf63f.mp4",
-      "taskId": "5c0415afba214101b21160d8a014f1e8",
-      "status": "completed",
-      "createdAt": "2026-06-12T03:50:56.446Z",
-      "updatedAt": "2026-06-12T03:57:21.228Z"
-    },
-    {
       "id": "701c1d75-f87e-4834-a0a6-91053df78907",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "image",
@@ -4555,18 +3234,6 @@
       "status": "completed",
       "createdAt": "2026-06-11T09:46:24.249Z",
       "updatedAt": "2026-06-11T09:48:41.360Z"
-    },
-    {
-      "id": "8569d6e5-c8d0-447e-96db-1b9c5bfe34c2",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sy:veo-X-veo_3_1-fl",
-      "prompt": "Create a 8-second vertical 9:16 realistic UGC unboxing and try-on video at home. Use the Base Prompt.\n0-3s: Close-up of a plain shipping mailer on a bed. The woman opens the package naturally and pulls out a sage green activewear set.\n3-6s: She unfolds the zip-front jacket and leggings on the bed. Camera shows the soft sage green color, smooth fabric, clean stitching, and minimal design.\n6-8s: Quick transition to her standing in front of a full-length mirror wearing the full set. She holds the phone in one hand and lightly adjusts the zipper with the other.\n",
-      "taskId": "task_kcyCYhLqa8atwcOK2KBWwdoCUJ3vEyWr",
-      "status": "failed",
-      "error": "生成过程中出现异常，请重新发起请求",
-      "createdAt": "2026-06-11T09:24:24.673Z",
-      "updatedAt": "2026-06-11T09:26:13.503Z"
     },
     {
       "id": "ecef97b9-f09d-4173-b153-5d2be815ce40",
@@ -4638,114 +3305,6 @@
       "status": "completed",
       "createdAt": "2026-06-11T08:52:55.409Z",
       "updatedAt": "2026-06-11T08:54:01.702Z"
-    },
-    {
-      "id": "b1a881ae-111c-4545-9d4e-71b6676f6a53",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "hfsy:sd-2-vip",
-      "prompt": "Create a 15-second vertical 9:16 realistic UGC unboxing and try-on video at home. Use the Base Prompt.\n0-3s: Close-up of a plain shipping mailer on a bed. The woman opens the package naturally and pulls out a sage green activewear set.\n3-6s: She unfolds the zip-front jacket and leggings on the bed. Camera shows the soft sage green color, smooth fabric, clean stitching, and minimal design.\n6-9s: Quick transition to her standing in front of a full-length mirror wearing the full set. She holds the phone in one hand and lightly adjusts the zipper with the other.\n9-12s: Mirror shot as she turns slightly to the side, showing the fitted waist, high-rise leggings, and clean body-hugging silhouette.\n12-15s: She steps back for a full outfit check, smooths the jacket hem, and gives a small confident smile.\nVoiceover：\n“First impression? This set looks way more expensive than I expected. Clean, fitted, and so easy to wear.”",
-      "taskId": "7ecc2be147914699a82dc9d3ed411f48",
-      "status": "completed",
-      "createdAt": "2026-06-11T08:40:18.328Z",
-      "updatedAt": "2026-06-11T08:44:28.707Z",
-      "previewUrl": "http://sd2oss-american.oss-us-west-1.aliyuncs.com/2026-06-11%2Fe9f21b3a-18b7-4b4e-9e87-cec33c44f2c5.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1781253850&Signature=E1MiQG4VNE2owF2MunSTwmVgE4c%3D"
-    },
-    {
-      "id": "d1560b8c-c049-4a22-b6ca-5e7f9f7b8cff",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "Location: Modern city plaza with glass buildings and outdoor seating.\n0-3s\nBestie:\n\"That set looks expensive.\"\n3-7s\nYou:\n\"It's actually just the fabric and the fit.\"\n7-11s\nShot: Camera follows a slow turn. Clean lines of the outfit visible.\nBestie:\n\"I like that there's nothing extra on it.\"\n11-15s\nYou:\n\"That's why I wear it everywhere.\"\nBestie:\n\"Yeah... it looks really polished.\"",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_04/tasks/26/0611/08/962564774086856704/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T080318Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T08%253A03%253A16Z.mp4&x-id=GetObject&X-Amz-Signature=6fed9dce207bf706e2ae47cea7a538f9deb15a91f6600b69d0fa805c1d3019c4",
-      "taskId": "962564774086856704",
-      "status": "completed",
-      "createdAt": "2026-06-11T08:00:41.033Z",
-      "updatedAt": "2026-06-11T08:03:18.369Z"
-    },
-    {
-      "id": "c3ed7f6d-067c-4789-9a3a-1b830c2926eb",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "Location: Modern city plaza with glass buildings and outdoor seating.\n0-3s\nBestie:\n\"That set looks expensive.\"\n3-7s\nYou:\n\"It's actually just the fabric and the fit.\"\n7-11s\nShot: Camera follows a slow turn. Clean lines of the outfit visible.\nBestie:\n\"I like that there's nothing extra on it.\"\n11-15s\nYou:\n\"That's why I wear it everywhere.\"\nBestie:\n\"Yeah... it looks really polished.\"",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_20/tasks/26/0611/07/962563199020830720/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T075649Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A56%253A41Z.mp4&x-id=GetObject&X-Amz-Signature=03246524e862dac71e1d1e54eef49bb60069c8557dcb66f7fbfb6847e8dcc783",
-      "taskId": "962563199020830720",
-      "status": "completed",
-      "createdAt": "2026-06-11T07:54:25.495Z",
-      "updatedAt": "2026-06-11T07:56:49.616Z"
-    },
-    {
-      "id": "567415db-ecf1-4f93-a5a3-232a6e27dadb",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "Location: Sunny downtown sidewalk outside a coffee shop.\n0-3s\nBestie:\n\"It's pretty warm today. Aren't you hot?\"\n3-7s\nShot: Wearer lightly pulls the sleeve away from the arm.\nYou:\n\"Actually, this fabric feels cool.\"\n7-11s\nShot: Bestie touches the sleeve.\nBestie:\n\"Wow, it really does.\"\n11-15s\nYou:\n\"And it's so lightweight.\"\nBestie:\n\"Now I want one.\"\n",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_24/tasks/26/0611/07/962561575103770624/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T075128Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A51%253A24Z.mp4&x-id=GetObject&X-Amz-Signature=942848d7285c481bb430af54874a8613595b4a5cdae7650f7f551e0c7ce53329",
-      "taskId": "962561575103770624",
-      "status": "completed",
-      "createdAt": "2026-06-11T07:47:58.344Z",
-      "updatedAt": "2026-06-11T07:51:28.536Z"
-    },
-    {
-      "id": "7d3770da-9af7-4e82-94a5-c0bfbe9a4203",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "Location: Sunny downtown sidewalk outside a coffee shop.\n0-3s\nBestie:\n\"It's pretty warm today. Aren't you hot?\"\n3-7s\nShot: Wearer lightly pulls the sleeve away from the arm.\nYou:\n\"Actually, this fabric feels cool.\"\n7-11s\nShot: Bestie touches the sleeve.\nBestie:\n\"Wow, it really does.\"\n11-15s\nYou:\n\"And it's so lightweight.\"\nBestie:\n\"Now I want one.\"\n",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_00/tasks/26/0611/07/962559142386483200/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T074137Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A41%253A36Z.mp4&x-id=GetObject&X-Amz-Signature=2d697bca74afad77b0e862be0485b9ce708fa4177462ddd73705ab787ab43ce7",
-      "taskId": "962559142386483200",
-      "status": "completed",
-      "createdAt": "2026-06-11T07:38:18.307Z",
-      "updatedAt": "2026-06-11T07:41:37.905Z"
-    },
-    {
-      "id": "e8ecff0c-7ac2-4123-81f2-01ac7300890e",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "3-7s\nCamera follows as they walk side by side.\nWearer smiles.\nYou:\n“It’s actually just the fabric and fit.”\nShe lightly stretches the sleeve.\nYou:\n“Super smooth, lightweight, and really flattering.”\n7-12s\nBestie gently touches the sleeve and waistband.\nClose-up of the clean seams and sleek silhouette.\nBestie:\n“Wow... it feels way softer than it looks.”\nYou:\n“And it stays comfortable all day.”\n12-15s\nBoth women stop near the café entrance.\nBestie:\n“I’m ordering one tonight.”\nYou look at camera and smile.\nYou:\n“If you're thinking about it, just get it before your size sells out.”",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_60/tasks/26/0611/07/962558305996124160/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T073727Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A37%253A19Z.mp4&x-id=GetObject&X-Amz-Signature=07d8ccab11a12a961fc33765e2efbfcbde00aa4ca4c39a92839c2115187eabb5",
-      "taskId": "962558305996124160",
-      "status": "completed",
-      "createdAt": "2026-06-11T07:34:58.911Z",
-      "updatedAt": "2026-06-11T07:37:27.470Z"
-    },
-    {
-      "id": "ea391036-1eb2-41d2-8a44-4d10d6cc11f3",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "3-7s\nCamera follows as they walk side by side.\nWearer smiles.\nYou:\n“It’s actually just the fabric and fit.”\nShe lightly stretches the sleeve.\nYou:\n“Super smooth, lightweight, and really flattering.”\n7-12s\nBestie gently touches the sleeve and waistband.\nClose-up of the clean seams and sleek silhouette.\nBestie:\n“Wow... it feels way softer than it looks.”\nYou:\n“And it stays comfortable all day.”\n12-15s\nBoth women stop near the café entrance.\nBestie:\n“I’m ordering one tonight.”\nYou look at camera and smile.\nYou:\n“If you're thinking about it, just get it before your size sells out.”",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_08/tasks/26/0611/07/962556588801937408/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T073421Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A34%253A17Z.mp4&x-id=GetObject&X-Amz-Signature=1c28c0345a471cb0ca84f75838cc330e0e4094c0cb0ee6e9c376f6199d4f7972",
-      "taskId": "962556588801937408",
-      "status": "completed",
-      "createdAt": "2026-06-11T07:28:09.495Z",
-      "updatedAt": "2026-06-11T07:34:22.109Z"
-    },
-    {
-      "id": "c1feacd6-878c-4cee-9634-51387a44d675",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "Location: Outdoor café counter. Two friends waiting for their iced coffees. Soft afternoon sunlight, light street activity in the background.\nOutfit:\nSage green long-sleeve yoga jacket and high-waist leggings. Clean minimalist design, smooth matte fabric, flattering fit.\n0-3s\nBestie looks at her friend while waiting in line.\nBestie:\n\"Wait... have you been working out?\"\n3-7s\nWearer laughs.\nYou:\n\"Not more than usual.\"\nBestie:\n\"Then why do you look so toned?\"\nCamera slowly captures the clean silhouette from the side.\n7-12s\nYou lightly smooth the jacket.\nYou:\n\"It's honestly the fit.\"\nYou:\n\"It hugs everything without feeling tight.\"\nBestie:\n\"Okay, that's exactly what I need.\"\n12-15s\nBarista places drinks on the counter.\nBestie grabs her coffee.\nBestie:\n\"Sending me the link?\"\nYou smile.\nYou:\n\"I'll send it now before your size disappears.\"",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_36/tasks/26/0611/07/962553277633806336/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T072008Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A20%253A04Z.mp4&x-id=GetObject&X-Amz-Signature=7d39ca0e4ef92f361846f5ba497be27415333b466b756759b6ea3cd470c5a2a7",
-      "taskId": "962553277633806336",
-      "status": "completed",
-      "createdAt": "2026-06-11T07:15:00.066Z",
-      "updatedAt": "2026-06-11T07:20:08.295Z"
-    },
-    {
-      "id": "e4bacd53-35f8-46ba-a379-dea493ac697b",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "Location: Modern downtown sidewalk with cafés and glass buildings. Soft golden-hour sunlight.\nOutfit:\nSage green matching yoga set. Long-sleeve zip jacket and high-rise leggings. Sleek, minimal, premium-looking fabric.\n0-3s\nTwo friends walking together.\nBestie glances over.\nBestie:\n\"That outfit looks designer.\"\n3-7s\nYou smile.\nYou:\n\"Really?\"\nBestie:\n\"Yeah, it's so clean.\"\nCamera shows the smooth fabric and minimalist design.\n7-12s\nYou gesture toward the outfit.\nYou:\n\"No logos. No extra details.\"\nYou:\n\"Just a really good fit and fabric.\"\nBestie nods.\nBestie:\n\"That's probably why it looks expensive.\"\n12-15s\nThey continue walking past a café.\nYou:\n\"It's one of those pieces you wear everywhere.\"\nBestie:\n\"Adding to cart tonight.\"\nYou look toward camera.\nYou:\n\"If you've been looking for the perfect set, this is it.\"",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_04/tasks/26/0611/07/962551602521083904/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260611%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260611T071347Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-11T07%253A13%253A44Z.mp4&x-id=GetObject&X-Amz-Signature=ef6b2e8413c18400034e15e5b67cc46adc891881665d5b7882c1b847bc3ab802",
-      "taskId": "962551602521083904",
-      "status": "completed",
-      "createdAt": "2026-06-11T07:08:20.709Z",
-      "updatedAt": "2026-06-11T07:13:48.015Z"
     },
     {
       "id": "6a068bf3-741f-4d5c-b2d0-6083a64dc1b7",
@@ -4844,174 +3403,6 @@
       "error": "生成服务暂时繁忙，请稍后再试"
     },
     {
-      "id": "c8fb420a-113e-48db-8801-88e95dbfbc82",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "15s vertical 9:16 US trending TikTok UGC vlog, authentic casual girl-next-door aesthetic, natural subtle handheld walking shake, real sunny downtown café sidewalk background. Pure live-action, no CG, no over-filtered skin, no studio backdrop. No text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright soft afternoon sunlight, active street atmosphere with pedestrians and gentle breeze, clean background details without heavy blur.\nTwo fixed American best friends with consistent faces, hairstyles and body proportions throughout the video. No stiff posing, only relaxed natural daily behavior. Main girl wears an unchanged fitted long-sleeve top with stable color, fabric and fit. Supporting friend holds iced coffee in her right hand the whole time. Emotion progresses naturally: confused doubt → curious observation → genuine approval. The top remains centered and clearly visible in every frame.\nProduct: Viral summer long-sleeve top, ultra-light breathable matte fabric, cool touch, stretchy, wrinkle-free and non-bulky. Thin but fully opaque, designed for summer wear, no sweat trapping, no awkward tight compression, specially tailored for slim, flattering female body shaping.\n0–3s Golden Hook. Candid walking shot on hot sunny day. Friend notices the main girl wearing long sleeves outdoors, leans in with relatable confused expression, raises an eyebrow and stares at her sleeve, creating strong viral curiosity. Friend line: “Wait, you’re wearing long sleeves in summer? Isn’t that way too hot?”\n3–5s Breathability Demonstration. Smooth uncut close-up. Main girl casually pulls the sleeve outward to show obvious air gap between fabric and skin. Visible airflow circulates freely, completely eliminating stuffiness and trapped heat. Light wind flows through the fabric, showing ultra-breathable summer performance. Wearer line: “It’s super breathable. No trapped heat at all even on hot days.”\n5–8s Slim Figure Flattering Effect. Medium upper-body shot. While walking naturally, main girl moves her arms freely to show the fabric’s soft stretch. The top perfectly contours the shoulder and waist line, subtly shaping the body without tight squeezing. It hides arm flab, optimizes shoulder proportion, and creates a clean, slender casual silhouette, no bulky upper body look. Friend watches closely and shows obvious surprised recognition. Friend line: “Wow, it actually makes your figure look so good!”\n8–15s Clean Fit & Full Version Closing. Final fit-check showcase. Main girl smoothes the top surface, turns 45 degrees to display the overall tailored fit. No wrinkles, bunching or deformation during all movements. Clean shoulder lines, neat waist shaping and all-day smooth texture. Natural casual street style, perfect everyday summer basic. Wearer line: “Light, flattering, and stays smooth all day.” Friend line: “I definitely need this top.” Wearer line: “My new favorite summer long sleeve.”\nCamera Rules: Strict 9:16 vertical framing, continuous handheld smooth shots, no jump cuts. Keep fabric texture and body shaping details clear. Maintain full consistency of characters, outfit and scene throughout 15 seconds.\nNegative Prompt: Text overlays, logos, watermarks, studio background, heavy filters, plastic skin, deformed hands, floating objects, transparent fabric, thick sweaters, sweat stains, messy wrinkles, stiff model poses, abrupt emotions, CG, oversaturated colors, fake tight fit, blocked product details",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_80/tasks/26/0610/07/962200487002644480/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T075705Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T07%253A56%253A59Z.mp4&x-id=GetObject&X-Amz-Signature=78584be4e3336a01f5cbbc249810f35590b8cf9e5f7b3fc269b31fb0a48b5f97",
-      "taskId": "962200487002644480",
-      "status": "completed",
-      "createdAt": "2026-06-10T07:53:08.213Z",
-      "updatedAt": "2026-06-10T07:57:05.409Z"
-    },
-    {
-      "id": "f7c02f2a-3614-40bd-9d6b-8c7fe81a7675",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "15s vertical 9:16 US TikTok casual UGC vlog, authentic girl-next-door vibe, natural handheld walking shake, real sunny American downtown café sidewalk scene. Pure live-action, no CG, no heavy filters, no studio styling. No subtitles, text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright warm afternoon daylight, clear layered street background with pedestrians and soft breeze, no fake blurred backdrops.\nTwo consistent trendy American best friends with fixed faces, hairstyles and outfits. Main girl wears an unchanged fitted summer long-sleeve top with steady color, texture and fit. Her friend holds an iced coffee in the right hand the whole time. Natural relaxed demeanor, no stiff poses. Progressive real emotion: skeptical doubt → curious test → genuine surprise & approval. The top stays center-framed and unblocked in all shots.\nProduct: Viral summer essential long-sleeve top, lightweight matte breathable fabric, cool-to-touch, soft stretch, sweat-proof, non-sticky, quick-dry and wrinkle-free. Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_20/tasks/26/0610/07/962196177401425920/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T074644Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T07%253A46%253A37Z.mp4&x-id=GetObject&X-Amz-Signature=855bd9ba0a6b70739354f591e5a0db91aa43343e04dcd2283830a32188a3a184",
-      "taskId": "962196177401425920",
-      "status": "completed",
-      "createdAt": "2026-06-10T07:36:00.717Z",
-      "updatedAt": "2026-06-10T07:46:44.521Z"
-    },
-    {
-      "id": "d64cbd98-2398-415f-bbe4-0131f4313590",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "15s vertical 9:16 US TikTok casual UGC vlog, authentic girl-next-door vibe, natural handheld walking shake, real sunny American downtown café sidewalk scene. Pure live-action, no CG, no heavy filters, no studio styling. No subtitles, text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright warm afternoon daylight, clear layered street background with pedestrians and soft breeze, no fake blurred backdrops.\nTwo consistent trendy American best friends with fixed faces, hairstyles and outfits. Main girl wears an unchanged fitted summer long-sleeve top with steady color, texture and fit. Her friend holds an iced coffee in the right hand the whole time. Natural relaxed demeanor, no stiff poses. Progressive real emotion: skeptical doubt → curious test → genuine surprise & approval. The top stays center-framed and unblocked in all shots.\nProduct: Viral summer essential long-sleeve top, lightweight matte breathable fabric, cool-to-touch, soft stretch, sweat-proof, non-sticky, quick-dry and wrinkle-free. Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_48/tasks/26/0610/07/962193046181531648/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T073016Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T07%253A30%253A13Z.mp4&x-id=GetObject&X-Amz-Signature=fb8dc933cdf6dc52aa35a5dc7fc38627a741b59963698fa72d75cab8da90045a",
-      "taskId": "962193046181531648",
-      "status": "completed",
-      "createdAt": "2026-06-10T07:23:34.188Z",
-      "updatedAt": "2026-06-10T07:30:16.136Z"
-    },
-    {
-      "id": "131fd43d-4d54-447a-a65d-0b9b97acd52f",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "prompt": "15s vertical 9:16 US TikTok casual UGC vlog, authentic girl-next-door vibe, natural handheld walking shake, real sunny American downtown café sidewalk scene. Pure live-action, no CG, no heavy filters, no studio styling. No subtitles, text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright warm afternoon daylight, clear layered street background with pedestrians and soft breeze, no fake blurred backdrops.\nTwo consistent trendy American best friends with fixed faces, hairstyles and outfits. Main girl wears an unchanged fitted summer long-sleeve top with steady color, texture and fit. Her friend holds an iced coffee in the right hand the whole time. Natural relaxed demeanor, no stiff poses. Progressive real emotion: skeptical doubt → curious test → genuine surprise & approval. The top stays center-framed and unblocked in all shots.\nProduct: Viral summer essential long-sleeve top, lightweight matte breathable fabric, cool-to-touch, soft stretch, sweat-proof, non-sticky, quick-dry and wrinkle-free. Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
-      "taskId": "task_DltI772q45GhBgBgVDcNYiH2fPxOHKkG",
-      "status": "failed",
-      "error": "视频生成超时，请稍后再试",
-      "createdAt": "2026-06-10T07:09:08.928Z",
-      "updatedAt": "2026-06-10T07:09:46.125Z"
-    },
-    {
-      "id": "5b8eb87d-aeb1-4b89-9ea2-3c5c72689728",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "15s vertical 9:16 US TikTok casual UGC vlog, authentic girl-next-door vibe, natural handheld walking shake, real sunny American downtown café sidewalk scene. Pure live-action, no CG, no heavy filters, no studio styling. No subtitles, text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright warm afternoon daylight, clear layered street background with pedestrians and soft breeze, no fake blurred backdrops.\nTwo consistent trendy American best friends with fixed faces, hairstyles and outfits. Main girl wears an unchanged fitted summer long-sleeve top with steady color, texture and fit. Her friend holds an iced coffee in the right hand the whole time. Natural relaxed demeanor, no stiff poses. Progressive real emotion: skeptical doubt → curious test → genuine surprise & approval. The top stays center-framed and unblocked in all shots.\nProduct: Viral summer essential long-sleeve top, lightweight matte breathable fabric, cool-to-touch, soft stretch, sweat-proof, non-sticky, quick-dry and wrinkle-free. Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_16/tasks/26/0610/07/962187251507286016/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T070807Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T07%253A08%253A05Z.mp4&x-id=GetObject&X-Amz-Signature=2ac4f9c48294d85409589daca409f2bf057809799d4dfc5bf9d81fa424ef6c36",
-      "taskId": "962187251507286016",
-      "status": "completed",
-      "createdAt": "2026-06-10T07:00:32.625Z",
-      "updatedAt": "2026-06-10T07:08:07.148Z"
-    },
-    {
-      "id": "77a6b3c9-bd8f-4a4d-bb8e-3162c9bfdfc8",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "15s vertical 9:16 US TikTok casual UGC vlog, authentic girl-next-door vibe, natural handheld walking shake, real sunny American downtown café sidewalk scene. Pure live-action, no CG, no heavy filters, no studio styling. No subtitles, text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright warm afternoon daylight, clear layered street background with pedestrians and soft breeze, no fake blurred backdrops.\nTwo consistent trendy American best friends with fixed faces, hairstyles and outfits. Main girl wears an unchanged fitted summer long-sleeve top with steady color, texture and fit. Her friend holds an iced coffee in the right hand the whole time. Natural relaxed demeanor, no stiff poses. Progressive real emotion: skeptical doubt → curious test → genuine surprise & approval. The top stays center-framed and unblocked in all shots.\nProduct: Viral summer essential long-sleeve top, lightweight matte breathable fabric, cool-to-touch, soft stretch, sweat-proof, non-sticky, quick-dry and wrinkle-free. Thin and opaque, slim-flattering but not tight, no bulky texture or plastic shine, perfect for all-day summer wear.\n0–3s Golden Hook. Candid walking shot. On a hot sunny day, the friend notices the long sleeve, leans in with relatable doubt, raises an eyebrow and gestures at the fabric. Friend line: “Wait, long sleeves in this heat? Aren’t you sweating?”\n3–5s Breathability Demo. Smooth close-up. Main girl gently pulls the sleeve outward to show clear air gaps between fabric and skin, visualizing great ventilation and zero trapped heat. Wearer line: “It’s super breathable. No stuffy heat at all all summer.”\n5–7s Non-Stick Sweat-Proof Test. Real café scene detail shot. She touches condensation-covered iced drink, rubs damp fingertips on the cuff. Fabric stays flat and clean with no wet marks, no skin clinging or sticky sweat buildup. Wearer line: “It never gets sticky or clingy when I sweat.”\n7–9s Friend Real-Person Verification. Natural interactive shot. The friend steps close, touches and feels the sleeve texture. Her skeptical look turns to shocked surprise at how lightweight and soft the fabric is. Friend line: “No way… this is so soft and not thick at all!”\n9–15s Fit Check & Viral Closing. Upper-body fit showcase. Main girl smoothes the top, turns 45 degrees to display clean shoulder lines and slim flattering waist fit. Arm movement proves zero wrinkles or bunching. Natural casual daily vibe. Wearer line: “Soft, fitted, and stays smooth all day.” Friend line: “I need this ASAP.” Wearer line: “My new go-to summer long sleeve.”\nCamera Rules: continuous smooth handheld shots, no jump cuts during fabric tests. Keep product details clear. Full scene, character and outfit consistency throughout 15 seconds.\nNegative Prompt: Text overlays, logos, watermarks, studio background, heavy filters, plastic skin, deformed limbs, floating objects, transparent fabric, thick sweaters, sweat stains, messy wrinkles, stiff modeling poses, abrupt emotions, CG, oversaturated colors, fabric deformation, blocked product",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_76/tasks/26/0610/06/962185751359922176/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T065722Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T06%253A57%253A13Z.mp4&x-id=GetObject&X-Amz-Signature=d6cd03e1c8bdbfb6e187a49609e91d62113248e3be041e09c552deea19655ed4",
-      "taskId": "962185751359922176",
-      "status": "completed",
-      "createdAt": "2026-06-10T06:54:34.951Z",
-      "updatedAt": "2026-06-10T06:57:22.814Z"
-    },
-    {
-      "id": "2503355d-f632-41e4-aaf9-6434edd4abcd",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "15s vertical 9:16 US TikTok casual UGC vlog, authentic girl-next-door vibe, natural handheld walking shake, real sunny American downtown café sidewalk scene. Pure live-action, no CG, no heavy filters, no studio styling. No subtitles, text, logos, watermarks, UI or readable labels; all printed prop text fully blurred. Bright warm afternoon daylight, clear layered street background with pedestrians and soft breeze, no fake blurred backdrops.\nTwo consistent trendy American best friends with fixed faces, hairstyles and outfits. Main girl wears an unchanged fitted summer long-sleeve top with steady color, texture and fit. Her friend holds an iced coffee in the right hand the whole time. Natural relaxed demeanor, no stiff poses. Progressive real emotion: skeptical doubt → curious test → genuine surprise & approval. The top stays center-framed and unblocked in all shots.\nProduct: Viral summer essential long-sleeve top, lightweight matte breathable fabric, cool-to-touch, soft stretch, sweat-proof, non-sticky, quick-dry and wrinkle-free. Thin and opaque, slim-flattering but not tight, no bulky texture or plastic shine, perfect for all-day summer wear.\n0–3s Golden Hook. Candid walking shot. On a hot sunny day, the friend notices the long sleeve, leans in with relatable doubt, raises an eyebrow and gestures at the fabric. Friend line: “Wait, long sleeves in this heat? Aren’t you sweating?”\n3–5s Breathability Demo. Smooth close-up. Main girl gently pulls the sleeve outward to show clear air gaps between fabric and skin, visualizing great ventilation and zero trapped heat. Wearer line: “It’s super breathable. No stuffy heat at all all summer.”\n5–7s Non-Stick Sweat-Proof Test. Real café scene detail shot. She touches condensation-covered iced drink, rubs damp fingertips on the cuff. Fabric stays flat and clean with no wet marks, no skin clinging or sticky sweat buildup. Wearer line: “It never gets sticky or clingy when I sweat.”\n7–9s Friend Real-Person Verification. Natural interactive shot. The friend steps close, touches and feels the sleeve texture. Her skeptical look turns to shocked surprise at how lightweight and soft the fabric is. Friend line: “No way… this is so soft and not thick at all!”\n9–15s Fit Check & Viral Closing. Upper-body fit showcase. Main girl smoothes the top, turns 45 degrees to display clean shoulder lines and slim flattering waist fit. Arm movement proves zero wrinkles or bunching. Natural casual daily vibe. Wearer line: “Soft, fitted, and stays smooth all day.” Friend line: “I need this ASAP.” Wearer line: “My new go-to summer long sleeve.”\nCamera Rules: continuous smooth handheld shots, no jump cuts during fabric tests. Keep product details clear. Full scene, character and outfit consistency throughout 15 seconds.\nNegative Prompt: Text overlays, logos, watermarks, studio background, heavy filters, plastic skin, deformed limbs, floating objects, transparent fabric, thick sweaters, sweat stains, messy wrinkles, stiff modeling poses, abrupt emotions, CG, oversaturated colors, fabric deformation, blocked product",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_20/tasks/26/0610/06/962183388037406720/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T065037Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T06%253A50%253A29Z.mp4&x-id=GetObject&X-Amz-Signature=4d675d4672f2f35e5e1f74d7c26c3bade068d18b7bfd7be2411726ba48be703e",
-      "taskId": "962183388037406720",
-      "status": "completed",
-      "createdAt": "2026-06-10T06:45:11.501Z",
-      "updatedAt": "2026-06-10T06:50:37.173Z"
-    },
-    {
-      "id": "77cc4904-df40-480a-88fb-f1f87e40cbdd",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "15s vertical 9:16 handheld iPhone TikTok UGC fashion vlog, natural subtle walking camera shake, real lifelike street footage, no CG, no heavy filters. No subtitles, text overlays, logos, watermarks, UI elements or readable brand signs; all printed text on props is fully blurred. Shot on a lively downtown café sidewalk under soft bright afternoon daylight. Background stays clear and layered with outdoor tables, iced condensation drinks, light breeze, distant pedestrians and gentle street ambiance. No studio blur or empty fake background.\nTwo consistent female best friends with unchanged faces, hairstyles and body proportions throughout the clip. Main model wears one fixed fitted long-sleeve top with identical color, fit and fabric texture in every frame. The supporting girl holds an iced coffee in her right hand at all times. Natural human anatomy, no deformed hands or limbs. Progressive realistic emotion shift: friend from skeptical to curious and convinced; wearer stays calm and confidently demonstrative. The long-sleeve top always remains centered and visible.\nProduct: Slim fitted lightweight long-sleeve top, smooth matte breathable fabric, soft stretch, cool touch, anti-stick, quick-dry and wrinkle-free. Thin but opaque, fitted but not tight, non-plastic texture, rebounds flat perfectly after movement.\n0–3s Golden Hook. Continuous handheld walking shot. On a warm sunny afternoon, two girls walk past outdoor café tables. The supporting girl notices the wearer wearing long sleeves outdoors, slows down, raises a skeptical eyebrow, points at the sleeve with obvious doubt. Natural bright sunlight hits the fabric. Wearer smiles calmly at her friend’s reaction. Friend line: “Girl, don’t you overheat in that?”\n3–5s Breathability Demonstration. Smooth uncut close-up on sleeve. Wearer bends her elbow and gently pulls the fabric outward to show clear air gap between skin and material. Visible airflow releases body heat. Light wind brushes her hair naturally. Intuitive visual breathable effect, no trapped heat. Wearer line: “It’s super breathable, no trapped heat at all.”\n5–7s Non-Stick & Anti-Humid Test. Clean tabletop detail shot. Wearer touches condensation-covered iced drink, dampens fingertips, then gently rubs wet fingers across sleeve cuff. Fabric stays flat and dry, no wet stains, no clinging or sticky tightness on skin, perfect for hot humid weather. Wearer line: “It never gets sticky even with sweat or humidity.”\n7–9s Real-Person Friend Verification. Natural side interactive shot. The skeptical friend steps closer, personally touches, presses and rubs the sleeve fabric to test thickness and softness. Her doubtful expression smoothly turns into surprise and genuine approval. She nods repeatedly, fully convinced by the real tactile experience. Friend line: “Wait… it’s so soft and way lighter than it looks.”\n9–15s Fit & Texture Final Closing. Clean upper-body fit showcase. Wearer smoothes the top from chest to waist, turns 45 degrees to display slim waist shaping and clean shoulder lines. She lifts and bends her arm to demonstrate stretch recovery. No wrinkles, bunching or deformation. The outfit stays sleek, fitted and smooth during all movements. Both girls keep walking naturally. Wearer line: “Soft, fitted, and stays smooth all day.” Friend line: “Okay, I need that.” Wearer closing line: “This is my perfect everyday long sleeve.”\nCamera Rules: Strict 9:16 vertical framing, pure handheld subtle walking motion, continuous smooth shots. No jump cuts during fabric pull, wet test and fit check. Product always stays clear and centered. Full scene, character and outfit consistency for 15 seconds.",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_32/tasks/26/0610/06/962181247784722432/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T064337Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T06%253A43%253A33Z.mp4&x-id=GetObject&X-Amz-Signature=2c39546f61855ea20ee83e90917abef4ecf4e5dcdf13d5155fcac7463cb2fc59",
-      "taskId": "962181247784722432",
-      "status": "completed",
-      "createdAt": "2026-06-10T06:36:41.225Z",
-      "updatedAt": "2026-06-10T06:43:37.245Z"
-    },
-    {
-      "id": "4d54b497-0f09-4486-b0c1-7c53d86b2d9b",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "15s vertical 9:16 handheld iPhone TikTok UGC fashion vlog, natural subtle walking camera shake, real lifelike street footage, no CG, no heavy filters. No subtitles, text overlays, logos, watermarks, UI elements or readable brand signs; all printed text on props is fully blurred. Shot on a lively downtown café sidewalk under soft bright afternoon daylight. Background stays clear and layered with outdoor tables, iced condensation drinks, light breeze, distant pedestrians and gentle street ambiance. No studio blur or empty fake background.\nTwo consistent female best friends with unchanged faces, hairstyles and body proportions throughout the clip. Main model wears one fixed fitted long-sleeve top with identical color, fit and fabric texture in every frame. The supporting girl holds an iced coffee in her right hand at all times. Natural human anatomy, no deformed hands or limbs. Progressive realistic emotion shift: friend from skeptical to curious and convinced; wearer stays calm and confidently demonstrative. The long-sleeve top always remains centered and visible.\nProduct: Slim fitted lightweight long-sleeve top, smooth matte breathable fabric, soft stretch, cool touch, anti-stick, quick-dry and wrinkle-free. Thin but opaque, fitted but not tight, non-plastic texture, rebounds flat perfectly after movement.\n0–3s Golden Hook. Continuous handheld walking shot. On a warm sunny afternoon, two girls walk past outdoor café tables. The supporting girl notices the wearer wearing long sleeves outdoors, slows down, raises a skeptical eyebrow, points at the sleeve with obvious doubt. Natural bright sunlight hits the fabric. Wearer smiles calmly at her friend’s reaction. Friend line: “Girl, don’t you overheat in that?”\n3–5s Breathability Demonstration. Smooth uncut close-up on sleeve. Wearer bends her elbow and gently pulls the fabric outward to show clear air gap between skin and material. Visible airflow releases body heat. Light wind brushes her hair naturally. Intuitive visual breathable effect, no trapped heat. Wearer line: “It’s super breathable, no trapped heat at all.”\n5–7s Non-Stick & Anti-Humid Test. Clean tabletop detail shot. Wearer touches condensation-covered iced drink, dampens fingertips, then gently rubs wet fingers across sleeve cuff. Fabric stays flat and dry, no wet stains, no clinging or sticky tightness on skin, perfect for hot humid weather. Wearer line: “It never gets sticky even with sweat or humidity.”\n7–9s Real-Person Friend Verification. Natural side interactive shot. The skeptical friend steps closer, personally touches, presses and rubs the sleeve fabric to test thickness and softness. Her doubtful expression smoothly turns into surprise and genuine approval. She nods repeatedly, fully convinced by the real tactile experience. Friend line: “Wait… it’s so soft and way lighter than it looks.”\n9–15s Fit & Texture Final Closing. Clean upper-body fit showcase. Wearer smoothes the top from chest to waist, turns 45 degrees to display slim waist shaping and clean shoulder lines. She lifts and bends her arm to demonstrate stretch recovery. No wrinkles, bunching or deformation. The outfit stays sleek, fitted and smooth during all movements. Both girls keep walking naturally. Wearer line: “Soft, fitted, and stays smooth all day.” Friend line: “Okay, I need that.” Wearer closing line: “This is my perfect everyday long sleeve.”\nCamera Rules: Strict 9:16 vertical framing, pure handheld subtle walking motion, continuous smooth shots. No jump cuts during fabric pull, wet test and fit check. Product always stays clear and centered. Full scene, character and outfit consistency for 15 seconds.\nNegative Prompt: Text overlays, logos, watermarks, TikTok UI, readable labels, heavy background blur, studio backdrop, plastic skin, over-filtered face, deformed hands, floating objects, changing outfit, transparent fabric, thick sweater texture, sweat stains, messy wrinkles, stiff posing, abrupt emotion jumps, CG art, oversaturated colors, fabric deformation, blocked product details",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_28/tasks/26/0610/06/962178120822038528/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T063237Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T06%253A32%253A29Z.mp4&x-id=GetObject&X-Amz-Signature=1d8b95a4412612ff96cd091a975e358de613b3a6b8b92c12de56d23d4fc42071",
-      "taskId": "962178120822038528",
-      "status": "completed",
-      "createdAt": "2026-06-10T06:24:15.687Z",
-      "updatedAt": "2026-06-10T06:32:37.229Z"
-    },
-    {
-      "id": "e1f8ad88-e58f-48c5-a7f2-ae3a8be6a643",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "Create a 15-second vertical 9:16 handheld iPhone-style TikTok UGC fashion product video.\nNo subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI, no readable storefront signs, no readable cup labels, no brand names.\nLocation:\nA lively downtown sidewalk outside cozy cafés during soft afternoon daylight.\nOutdoor tables, iced drinks, chairs, light pedestrian traffic, occasional bicycles, distant car sounds, and natural café chatter create a realistic city atmosphere.\nThe background remains visible and detailed throughout the video.\nCharacters:\nTwo fashionable women walking together like close friends.\nThe wearer is dressed in a fitted long-sleeve top.\nThe friend holds an iced coffee in her right hand for the entire video.\nBoth women maintain the same face, hairstyle, outfit, and body proportions from beginning to end.\nProduct:\nA fitted long-sleeve top with smooth fabric, soft stretch, breathable construction, cool-touch feel, wrinkle-resistant finish, quick-dry performance, and a flattering waist fit.\nThe fabric appears lightweight but not transparent, fitted but comfortable, soft but structured.\n0-2s:\nMedium handheld walking shot.\nThe two women walk past a café patio.\nThe friend glances at the wearer’s long sleeve and smiles with curiosity.\nAfternoon sunlight highlights the sleeve and shoulder area.\nFriend says:\n“Girl, aren't you hot wearing long sleeves?”\n2-4s:\nMedium close-up on the wearer.\nShe lightly brushes the sleeve with one hand and smiles.\nThe camera moves slightly closer to show the fabric texture.\nWearer says:\n“Not at all. It actually feels cool on my skin.”\n4-6s:\nClose-up of the sleeve.\nThe wearer gently pulls the fabric away from her forearm and releases it.\nThe material returns smoothly without wrinkles.\nA light breeze moves a few strands of hair.\nWearer says:\n“It’s breathable, so it never feels stuffy.”\n6-8s:\nWalking shot beside a café table.\nThe wearer reaches toward an iced drink and briefly touches the sleeve near the cuff.\nThe fabric remains smooth and comfortable-looking.\nWearer says:\n“And it doesn’t get sticky.”\n8-10s:\nMedium shot while walking.\nThe wearer swings her arms naturally and adjusts her shoulder slightly.\nThe top remains smooth across the shoulders, sleeves, and waist.\nWearer says:\n“It moves with me and dries fast.”\n10-12s:\nThe friend steps a little closer.\nShe gently touches the sleeve fabric with two fingers.\nHer expression changes from curious to impressed.\nFriend says:\n“Wait, this is actually really soft.”\n12-15s:\nFinal fit-check walking shot.\nThe wearer smooths the front of the top once and turns slightly to show the side fit.\nBoth women continue walking past the café.\nThe friend nods approvingly.\nFriend says:\n“Okay, now I want one.”\nWearer says:\n“This is my everyday long sleeve.”\n\nCamera Rules:\nVertical 9:16 format.\nNatural handheld smartphone movement.\nKeep the product visible in every shot.\nSimple camera transitions with no dramatic zooms.\nFocus on sleeve texture, shoulder line, waist fit, and natural movement.\nContinuity Rules:\nThe top must remain identical throughout the video.\nThe friend always keeps the iced coffee in her right hand.\nBoth women remain consistent in appearance.\nThe product never changes shape, color, thickness, or fit.\nPedestrians stay in the background and never block the product.\n\nEmotions progress naturally:\nCurious → Interested → Impressed.\nNegative Prompt:\nNo subtitles, captions, text overlays, logos, watermarks, TikTok interface, readable signs, readable labels, brand names, blurred background, empty streets, studio settings, beauty filters, warped hands, extra fingers, missing fingers, floating objects, outfit changes, hairstyle changes, face changes, fabric deformation, transparency issues, sweat stains, heavy wrinkles, stiff posing, runway walking, luxury-commercial pacing, random cuts, disappearing objects, or unrealistic fabric behavior.",
-      "taskId": "962165512240914432",
-      "status": "failed",
-      "error": "\"AuditSubmitIllegal\"",
-      "createdAt": "2026-06-10T05:34:09.593Z",
-      "updatedAt": "2026-06-10T05:34:14.812Z"
-    },
-    {
-      "id": "d88ed52b-cf02-4338-bb3f-8929c5846d28",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "Create a 15-second vertical 9:16 handheld iPhone-style TikTok UGC fashion product video.\nNo subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI, no readable storefront signs, no readable cup labels, no brand names.\nLocation\nA lively downtown café street during warm afternoon daylight.\nOutdoor café seating lines the sidewalk. Small tables hold iced drinks with visible condensation. Light wind occasionally moves napkins and loose hair strands. People walk naturally in the background, a cyclist passes in the distance, and occasional traffic sounds mix with quiet café conversations.\nThe background remains detailed and visible throughout the video. Do not blur the street environment.\nCharacters\nTwo fashionable women walking together like longtime friends.\nThe wearer is wearing one fitted long-sleeve top.\nThe best friend carries one iced coffee in her right hand during the entire video.\nBoth women maintain the same face, hairstyle, outfit, body proportions, and accessories from beginning to end.\nProductA fitted long-sleeve top featuring:\nsmooth cool-touch fabric\nbreathable construction\nlightweight stretch\nwrinkle-resistant surface\nclean shoulder structure\nflattering waist fit\nquick-dry performance\nsoft hand feel\nThe fabric appears light and airy without looking sheer.\n0-1sMedium walking shot.\nThe two women walk past a café table.\nThe best friend notices the wearer pulling lightly at the neckline to let air flow inside the shirt.\nShe tilts her head and raises an eyebrow.\nA pedestrian passes behind them and both women naturally shift slightly to make room.\nBest friend says:\n\"You're wearing long sleeves in this weather?\"\n1-2s\nClose-up on the upper chest and shoulder area.\nThe wearer gently lifts the fabric near the collarbone with two fingers, creating a small gap between fabric and skin.\nA light breeze moves through the opening.\nThe fabric settles smoothly back against the body without wrinkles.\nCamera follows the motion continuously.\nWearer says:\n\"That's exactly why I like it.\"\n2-3sMedium close-up.\nThe wearer fans the front of the shirt once with her hand.\nHer shoulders relax as she takes an easy breath.\nSeveral loose hair strands move in the breeze.\nThe shirt remains smooth across the chest and waist.\nWearer says:\n\"It feels light and airy all day.\"\n3-4sClose-up of the sleeve and forearm.\nThe wearer rolls her wrist, stretches her arm forward, then bends the elbow.\nThe sleeve flexes naturally with the movement.\nNo pulling, bunching, or twisting appears around the elbow.\nWearer says:\n\"It moves with you.\"\n4-5sTracking walking shot.\nThe wearer quickens her pace for several steps.\nHer arms swing naturally.\nThe fabric remains smooth along the shoulder and side seam.\nA napkin lifts briefly from a nearby table in the breeze.\nWearer says:\n\"And it never feels heavy.\"\n5-6sClose-up at a café table.\nThe wearer picks up a cold iced drink.\nCondensation touches her fingertips.\nShe lightly brushes those fingertips against the sleeve near the wrist.\nThe fabric remains smooth and keeps its shape.\nNo dark wet patch appears.\nWearer says:\n\"Even when it's warm out.\"\n6-7s\nThe best friend steps closer.\nKeeping her iced coffee in her right hand, she gently pinches the shoulder fabric between her left thumb and finger.\nShe rubs the material once.\nHer expression shifts from doubtful to pleasantly surprised.\nBest friend says:\n\"Wait... this is actually really soft.\"\n7-8sUpper-body fit shot.\nThe wearer smooths the front of the shirt from chest to waist.\nShe turns slightly sideways.\nThe waist remains fitted.\nThe shoulder line stays clean.\n\nThe fabric lies flat without wrinkles.\nWearer says:\n\"And it keeps its shape.\"\n8-10sWalking side shot.\nThe wearer reaches forward as if opening a café door.\nThe sleeve stretches naturally through the reach.\nWhen her arm lowers, the fabric immediately returns to a smooth finish.\nThe camera stays continuous through the movement.\nWearer says:\n\"No sagging. No bunching.\"\n10-12sMedium shot.\nThe best friend looks from the sleeve to the overall fit.\nShe nods twice while walking.\nBest friend says:\n\"Okay, now I get it.\"\n12-15sFinal walking shot.\nThe wearer lightly brushes her sleeve once.\nShe smiles confidently toward the camera.\nThe two women continue walking past the café tables while the product remains centered and clearly visible.\nBest friend says:\n\"I need one.\"\nWearer says:\n\"It's the easiest top to wear every day.\"",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_80/tasks/26/0610/05/962160196841390080/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T052120Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T05%253A21%253A15Z.mp4&x-id=GetObject&X-Amz-Signature=7fb8c47c24f754197cc935263e9e48f56f8f4e88ccf3483fd2aa1442433d5028",
-      "taskId": "962160196841390080",
-      "status": "completed",
-      "createdAt": "2026-06-10T05:13:02.276Z",
-      "updatedAt": "2026-06-10T05:21:20.856Z"
-    },
-    {
-      "id": "c017d254-d59b-4ee1-9ce3-ab057cad33f5",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "15s vertical 9:16 handheld iPhone UGC TikTok fashion vlog, natural subtle walking camera shake, authentic real live-action, no CG or animation. Fully remove all on-screen text: subtitles, overlays, logos, watermarks, TikTok UI, readable signs and brand marks; blur all printed prop text completely unrecognizable.\nScene: Lively downtown outdoor café sidewalk under soft bright afternoon daylight. Maintain moderate natural depth of field with clear layered background details: metal tables, condensation-covered iced drinks, breeze-fluttering napkins, sidewalk chairs, casual passing pedestrians, distant bicycle, faint street traffic noise and relaxed café ambient chatter. No heavy background blur or empty solid wall backdrop, keep realistic daily street vitality.\nProduct: Slim fitted functional long-sleeve top with smooth matte breathable fabric, clean shoulder lines, tailored slim waist, soft stretch, instant cool skin touch, lightweight breathability, quick-dry performance and wrinkle-resistant finish. Core fabric balance: thin and fully opaque, fitted but non-restrictive, matte non-plastic surface, stretches freely and rebounds flat without sagging or wrinkling.\n1–2s Cool-touch core demo, continuous uncut push-in close-up on forearm sleeve. Responding to the doubt, the wearer strokes the sleeve from wrist to elbow, presses her palm to show its cool texture, gently pinches and pulls the cuff outward one inch before releasing. The elastic fabric snaps perfectly flat with no residual wrinkles. Wearer line: “Nope. It feels cool right when it touches my skin.”\n3–4s Anti-stick & water-resistant test, static tabletop close-up. The wearer touches condensation-covered iced drink, dampening her fingertips, then taps and rubs the wet tips on the sleeve cuff. No dark water stains appear, fabric never sticks or sags, staying neat and flat on the wrist. Wearer line: “And it doesn’t get sticky.”\n5–6s Interactive texture verification, side medium close-up. The friend steps closer, touches and rubs the shoulder fabric to feel its thickness and softness personally. Her skeptical expression turns to surprise, followed by approving nods, still holding the coffee steadily. Friend line: “Wait… it’s soft, and it’s not thick?”\n7–15s Closing emotional resolution, continuous walking shot till end. The two girls keep walking steadily. The wearer glances back at the camera, brushes her sleeve lightly with a satisfied smile. The friend fully approves the product and nods in agreement, completing the full persuasive arc. Friend line: “Okay, I need that.” Wearer line: “This is the long sleeve I can wear all day.”\nNegative Prompt: Text overlays, logos, watermarks, TikTok UI, readable labels, heavy background blur, empty street, studio backdrop, plastic fake skin, overdone beauty filters, deformed fingers/wrists/limbs, floating props, changing outfit/face/hair, transparent fabric, thick sweater texture, sweat stains, messy wrinkles, stiff posing, fast random cuts, abrupt emotion shifts, CG animation, oversaturated colors, harsh lighting, fabric deformation, blurry product, blocked view, lost background details",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_52/tasks/26/0610/03/962133074227761152/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T033112Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T03%253A31%253A09Z.mp4&x-id=GetObject&X-Amz-Signature=930804f36d69e350a60db9a220180eeea2de081f038d7c3cbc4be40fe66a2328",
-      "taskId": "962133074227761152",
-      "status": "completed",
-      "createdAt": "2026-06-10T03:25:15.752Z",
-      "updatedAt": "2026-06-10T03:31:12.522Z"
-    },
-    {
-      "id": "6241895a-4f87-4f76-abd8-da94d27aa3ce",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "15s vertical 9:16 handheld iPhone UGC TikTok fashion vlog, natural slight walking camera shake, real daily live-action, no CG, no animation. No subtitles, text overlays, logos, watermarks, TikTok UI, readable signs or brand text; all printed props text fully blurred.\nScene: Modern downtown café sidewalk, soft afternoon diffused daylight. Keep natural moderate depth of field, clear background details: metal tables, condensation iced drinks, wind-fluttering napkins, sidewalk chairs, passing pedestrians, distant bicycle, faint street noise and café chatter. No heavy blur, no empty solid background wall.\nTwo fixed female best friends with unchanged faces, hairstyles and body proportions throughout the video. Main wearer wears a single fitted long-sleeve top with fixed color, size and fabric texture. Supporting girl holds an iced coffee cup in her right hand at all times, no hand switching or dropping. Both have normal human limbs and fingers, no deformation. Stable emotion transition: friend from skeptical to curious and convinced; wearer from gentle smile to confident demonstration and final satisfaction. Background crowds never block the clothing product, which stays in central frame all the time.\nProduct: Slim fitted long-sleeve top, smooth matte breathable fabric, neat shoulder lines, natural waist shaping, soft stretch, cool skin touch, quick-dry and wrinkle-free. Fabric features: thin and opaque, fitted but not tight, non-plastic matte surface, rebounds flat without sagging or wrinkling after stretching.\n0–1s: Medium handheld walking shot. Two girls walk past café tables. Friend slows down, points at the wearer’s sleeve with left finger and shows doubt, holding coffee steady. Afternoon light hits the wearer’s sleeve and cheek; she squints slightly and smiles confidently while looking at her sleeve. A pedestrian passes behind, wearer subtly adjusts shoulder to avoid contact. Friend: “Girl, don’t you overheat in that?”\n1–2s: Uninterrupted close-up push-in shot, no jump cut. Wearer strokes sleeve from wrist to elbow, presses palm on fabric, pinches and pulls the sleeve 1 inch outward then releases. Fabric snaps back completely flat with no wrinkles. Wearer: “Nope. It feels cool right when it touches my skin.”\n2–3s: Front medium close-up. Wearer lifts forearm to show breathable air gap between fabric and skin, takes a relaxed breath. Breeze blows stray hair, she tucks hair behind ear, expression turns confident to camera. Wearer: “It lets my skin breathe. No trapped heat.”\n3–4s: Tabletop close-up. Wearer touches condensation iced drink with wet fingertips, taps and rubs sleeve cuff. No dark wet stains, no sticky clinging, fabric stays flat and neat. Wearer: “And it doesn’t get sticky.”\n4–5s: Walking tracking shot. Wearer walks fast, swings arms and stretches elbow to test sleeve elasticity. Fabric smooths out instantly without bunching or twisting. Wind blows napkins on nearby tables. Wearer: “It dries fast when I’m moving around.”\n5–6s: Side close-up. Friend approaches, touches and rubs the shoulder fabric, changes from doubtful to surprised, then nods in approval. Coffee remains in her right hand. Friend: “Wait… it’s soft, and it’s not thick?”\n6–7s: Upper body fit check shot. Wearer smooths the top from chest to waist, turns 45° to show slim side shaping, lifts and bends arm fully. No wrinkles on shoulder, waist, elbow and seams. Wearer: “Soft, fitted, and it stays smooth.”\n7–15s: Continuous walking shot till the end. Wearer glances back at camera, brushes sleeve with a satisfied smile. Friend fully approves and nods. Both walk forward steadily. Friend: “Okay, I need that.” Wearer: “This is the long sleeve I can wear all day.”\nCamera Rules: Strict 9:16 vertical framing, pure handheld slight shake, only slow smooth tracking and push movement. No fast jump cuts during all core fabric test actions. Keep product clear and centered in every frame. All characters, props, scene and clothing remain consistent with zero changes throughout the 15s video.\nNegative Prompt: No text, logos, watermarks, UI elements, readable labels, heavy background blur, studio backdrop, plastic skin, beauty filter distortion, deformed hands/limbs, floating props, changing outfit/face/hair, transparent fabric, thick sweater texture, sweat stains, messy wrinkles, stiff posing, random camera cuts, abrupt emotion changes, CG animation, oversaturated color, harsh lighting, fabric deformation, blocked product, blurry environmental details.",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_24/tasks/26/0610/02/962125927549005824/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T030356Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T03%253A03%253A51Z.mp4&x-id=GetObject&X-Amz-Signature=863f66dcdc94c561a5293f93b77131cd438fcf0194990c2362c7a8829e52a06f",
-      "taskId": "962125927549005824",
-      "status": "completed",
-      "createdAt": "2026-06-10T02:56:51.848Z",
-      "updatedAt": "2026-06-10T03:03:57.099Z"
-    },
-    {
-      "id": "675f3ec6-625f-444b-88ca-d4efa413381e",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "A pedestrian passes behind them, and the wearer shifts her shoulder half an inch inward to avoid brushing past.\nBest friend says:\n“Girl, don’t you overheat in that?”\n1-2s:\nClose-up on the wearer’s forearm and sleeve.\nThe wearer brushes the sleeve from wrist to elbow with three fingers, then presses her palm flat on the fabric for half a second, as if checking the cool surface.\nShe pinches the sleeve near the wrist, pulls it away from her skin about one inch, then releases it. The fabric snaps back smoothly without sagging or wrinkling.\nThe camera follows the hand movement in one continuous push-in. No jump cut during the pinch-and-release action.\nWearer says:\n“Nope. It feels cool right when it touches my skin.”\n2-3s:\nMedium close-up from front.\nThe wearer lifts her forearm slightly, bends her elbow, and opens the sleeve away from the skin for a second to show air space between fabric and arm.\nShe takes one visible relaxed breath, shoulders dropping slightly. A breeze moves a few strands of hair across her cheek. She tucks the hair behind her ear with the same hand, then returns that hand to the sleeve.\nHer face changes from amused to confident: eyebrow lifts, mouth corner rises, eyes return to the camera.\nWearer says:\n“It lets my skin breathe. No trapped heat.”\n3-4s:\nClose-up at the café table.\nThe wearer reaches for an iced drink. Condensation wets her fingertips.\nShe taps the damp fingertips lightly near the sleeve cuff, then rubs the fabric once with two fingers.\nThe sleeve should not darken into a big wet patch, should not cling to her arm, and should not droop.\nThe camera stays close enough to see the fabric staying flat against her wrist.\n\nWearer says:\n“And it doesn’t get sticky.”\n4-5s:\nTracking shot while walking.\nThe wearer takes three quick steps forward, swings her arm, then lifts her elbow as if adjusting her bag strap.\nThe sleeve stretches at the elbow, then smooths back out when her arm lowers.\nThe top stays flat across the shoulder and waist. No bunching at the armpit, no twisted sleeve, no sudden color change.\nA napkin on the café table flutters in the breeze as they pass.\nWearer says:\n“It dries fast when I’m moving around.”\n\n5-6s:\nThe best friend steps closer on the wearer’s right side.\nShe touches the shoulder fabric with two fingers, rubs it once between thumb and index finger, then presses the sleeve lightly and releases.\nHer expression changes in one continuous beat: skeptical squint, eyes widen slightly, lips part, then she nods twice.\nHer iced coffee remains in her right hand and never switches hands.\nBest friend says:\n“Wait… it’s soft, and it’s not thick?”\n6-7s:\nUpper-body fit-check shot.\nThe wearer faces the camera, smooths the front of the top downward with both hands from chest to waist, then turns 45 degrees to show the side shape.\nShe lifts one arm shoulder-high, bends the elbow, then lowers it.\nThe top remains fitted at the waist, flat at the front, smooth on the sleeve, and clean at the shoulder line.\nNo wrinkles should appear around the stomach, elbow, or side seam.\nWearer says:\n“Soft, fitted, and it stays smooth.”\n7-8s:\nFinal walking shot.\nThe wearer turns her head back to the camera while still walking, lightly brushes the sleeve once, then gives a small satisfied smile.\nThe best friend glances from the sleeve to the wearer’s face and nods like she has been convinced.\nBoth women continue forward past the café table. The product remains centered and clearly visible until the last frame.\nBest friend says:\n“Okay, I need that.”\nWearer says:\n“This is the long sleeve I can wear all day.”",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_08/tasks/26/0610/01/962110062153719808/creation-01/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260610%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260610T015703Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-10T01%253A57%253A02Z.mp4&x-id=GetObject&X-Amz-Signature=6a012735cfb31c79101bc8fcca969c0dde1835442880f8c2568acf227cfc3fa9",
-      "taskId": "962110062153719808",
-      "status": "completed",
-      "createdAt": "2026-06-10T01:53:49.231Z",
-      "updatedAt": "2026-06-10T01:57:03.513Z"
-    },
-    {
       "id": "bf8218f1-1673-4075-9e7c-53ec62eb89d2",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "video",
@@ -5035,17 +3426,6 @@
       "updatedAt": "2026-06-09T09:41:03.400Z"
     },
     {
-      "id": "ef10780b-5cb0-41be-8a53-25239cb006d7",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "prompt": "Create an 8-second vertical 9:16 handheld iPhone-style TikTok UGC fashion product video. \nNo subtitles, no captions, no text overlay, no logo, no watermark, no TikTok UI, no readable storefront signs, no readable cup labels, no brand names.\n\nLocation:\nA modern downtown sidewalk outside small cafés in soft afternoon daylight. \nThe sidewalk has round metal café tables, iced drinks with condensation, napkins moving slightly in the breeze, chairs close to the walking path, pedestrians passing behind the two women, a bicycle rolling by in the far background, low car noise from the street, coffee cups being placed on tables, and faint café chatter. \nThe background must stay clear enough to see tables, chairs, people, traffic, and sidewalk details. Do not blur the background into a soft empty wall.\n\nCharacters:\nTwo stylish women walking side by side like close friends.\nThe main wearer wears one fitted long-sleeve top. The top stays the same color, same sleeve length, same neckline, same fit, and same fabric texture for the entire video.\nThe best friend holds one iced coffee cup in her right hand during the whole video.\nBoth women keep the same face, same hairstyle, same outfit, and same body proportions from beginning to end.\n\nProduct:\nA fitted long-sleeve top with a smooth surface, close body fit, clean shoulder line, slim waist shape, soft stretch, cool-touch feel, breathable fabric, quick-dry behavior, and wrinkle-free finish.\nThe fabric should look thin but not transparent, fitted but not tight, smooth but not plastic, stretchy but not loose.\n\n0-1s:\nMedium handheld walking shot from chest height. \nThe two women walk past an outdoor café table. The best friend slows down, turns her head toward the wearer’s sleeve, raises one eyebrow, points at the long sleeve with her left index finger, and keeps the iced coffee steady in her right hand.\nThe wearer is hit by afternoon sunlight on her left cheek and sleeve, so she narrows her eyes slightly, then looks down at her sleeve with a small confident smile.\nA pedestrian passes behind them, and the wearer shifts her shoulder half an inch inward to avoid brushing past.\n\nBest friend says:\n“Girl, don’t you overheat in that?”\n\n1-2s:\nClose-up on the wearer’s forearm and sleeve.\nThe wearer brushes the sleeve from wrist to elbow with three fingers, then presses her palm flat on the fabric for half a second, as if checking the cool surface.\nShe pinches the sleeve near the wrist, pulls it away from her skin about one inch, then releases it. The fabric snaps back smoothly without sagging or wrinkling.\nThe camera follows the hand movement in one continuous push-in. No jump cut during the pinch-and-release action.\n\nWearer says:\n“Nope. It feels cool right when it touches my skin.”\n\n2-3s:\nMedium close-up from front.\nThe wearer lifts her forearm slightly, bends her elbow, and opens the sleeve away from the skin for a second to show air space between fabric and arm.\nShe takes one visible relaxed breath, shoulders dropping slightly. A breeze moves a few strands of hair across her cheek. She tucks the hair behind her ear with the same hand, then returns that hand to the sleeve.\nHer face changes from amused to confident: eyebrow lifts, mouth corner rises, eyes return to the camera.\n\nWearer says:\n“It lets my skin breathe. No trapped heat.”\n\n3-4s:\nClose-up at the café table.\nThe wearer reaches for an iced drink. Condensation wets her fingertips.\nShe taps the damp fingertips lightly near the sleeve cuff, then rubs the fabric once with two fingers.\nThe sleeve should not darken into a big wet patch, should not cling to her arm, and should not droop.\nThe camera stays close enough to see the fabric staying flat against her wrist.\n\nWearer says:\n“And it doesn’t get sticky.”\n\n4-5s:\nTracking shot while walking.\nThe wearer takes three quick steps forward, swings her arm, then lifts her elbow as if adjusting her bag strap.\nThe sleeve stretches at the elbow, then smooths back out when her arm lowers.\nThe top stays flat across the shoulder and waist. No bunching at the armpit, no twisted sleeve, no sudden color change.\nA napkin on the café table flutters in the breeze as they pass.\n\nWearer says:\n“It dries fast when I’m moving around.”\n\n5-6s:\nThe best friend steps closer on the wearer’s right side.\nShe touches the shoulder fabric with two fingers, rubs it once between thumb and index finger, then presses the sleeve lightly and releases.\nHer expression changes in one continuous beat: skeptical squint, eyes widen slightly, lips part, then she nods twice.\nHer iced coffee remains in her right hand and never switches hands.\n\nBest friend says:\n“Wait… it’s soft, and it’s not thick?”\n\n6-7s:\nUpper-body fit-check shot.\nThe wearer faces the camera, smooths the front of the top downward with both hands from chest to waist, then turns 45 degrees to show the side shape.\nShe lifts one arm shoulder-high, bends the elbow, then lowers it.\nThe top remains fitted at the waist, flat at the front, smooth on the sleeve, and clean at the shoulder line.\nNo wrinkles should appear around the stomach, elbow, or side seam.\n\nWearer says:\n“Soft, fitted, and it stays smooth.”\n\n7-8s:\nFinal walking shot.\nThe wearer turns her head back to the camera while still walking, lightly brushes the sleeve once, then gives a small satisfied smile.\nThe best friend glances from the sleeve to the wearer’s face and nods like she has been convinced.\nBoth women continue forward past the café table. The product remains centered and clearly visible until the last frame.\n\nBest friend says:\n“Okay, I need that.”\n\nWearer says:\n“This is the long sleeve I can wear all day.”\n\nCamera rules:\nUse vertical 9:16 framing.\nUse handheld phone movement with small walking shake.\nKeep the camera close enough to show sleeve texture, waist fit, shoulder line, and hand contact.\nDo not cut during important actions: sleeve pinch, fabric release, damp finger touch, best friend fabric touch, final fit check.\nKeep the top visible in every shot.\nKeep the same wearer, same best friend, same clothing, same café street, same cup, and same product from start to finish.\n\nContinuity rules:\nThe wearer’s top must not change color, neckline, sleeve length, fabric thickness, or fit.\nThe best friend must keep the iced coffee in the same hand.\nThe wearer’s hand movements must match the camera angle: brush sleeve, pinch sleeve, release fabric, touch damp fingers, smooth front, turn body.\nNo sudden emotional jumps. The best friend must move from skeptical to curious to impressed. The wearer must move from calm smile to confident demonstration to satisfied close.\nPedestrians stay in the background and never block the product.\nThe product must not stretch unnaturally, melt, twist, change shape, or become transparent.\nHands must have five fingers, normal joints, normal fingernails, and no fused fingers.\n\nNegative prompt:\nNo subtitles, no captions, no text overlay, no logo, no watermark, no TikTok interface, no readable signs, no readable labels, no brand names, no blurred background, no empty street, no studio backdrop, no plastic skin, no beauty filter, no warped hands, no extra fingers, no missing fingers, no twisted wrists, no broken elbows, no duplicated arms, no floating cup, no changing outfit, no changing face, no changing hairstyle, no product deformation, no fabric turning transparent, no heavy sweater texture, no sweat stains, no messy wrinkles, no stiff posing, no runway walk, no slow luxury ad pacing, no random camera cuts, no emotion jump, no object popping in or disappearing.",
-      "taskId": "task_RvxkPupbSYYLvYzS4qyUBRsZ6NMWfHdF",
-      "status": "failed",
-      "createdAt": "2026-06-09T09:24:53.001Z",
-      "updatedAt": "2026-06-09T09:41:58.884Z"
-    },
-    {
       "id": "89758604-faaa-41eb-9ace-c8969809c5a9",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "mode": "video",
@@ -5067,101 +3447,6 @@
       "status": "completed",
       "createdAt": "2026-06-09T09:10:58.193Z",
       "updatedAt": "2026-06-09T09:14:08.664Z"
-    },
-    {
-      "id": "bd7c0577-8bef-47b8-b7ba-dbd8b10f03cd",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
-      "taskId": "task_WWA1INFvvPazvSTqdoNzDdfGoVmAfixE",
-      "status": "failed",
-      "createdAt": "2026-06-09T08:00:03.929Z",
-      "updatedAt": "2026-06-09T09:06:22.880Z"
-    },
-    {
-      "id": "d51b4079-7903-4203-b8f8-f540975c0192",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-pro",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_28/tasks/26/0609/07/961838097731964928/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T075856Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T07%253A58%253A45Z.mp4&x-id=GetObject&X-Amz-Signature=9cd8e1f585fc14db938e135303e4cd50a165d22267a1bbfe172744bf901b7277",
-      "taskId": "961838097731964928",
-      "status": "completed",
-      "createdAt": "2026-06-09T07:53:07.878Z",
-      "updatedAt": "2026-06-09T07:58:56.624Z"
-    },
-    {
-      "id": "9c990057-877f-43f3-927d-b0e3a772196c",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_32/tasks/26/0609/07/961837311316754432/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T075229Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T07%253A52%253A21Z.mp4&x-id=GetObject&X-Amz-Signature=73b117d10e7715241a054dc6282335806f79fad4be28b34f0f556d5c0129f978",
-      "taskId": "961837311316754432",
-      "status": "completed",
-      "createdAt": "2026-06-09T07:50:00.382Z",
-      "updatedAt": "2026-06-09T07:52:29.460Z"
-    },
-    {
-      "id": "ea21d7d9-d379-4483-aa13-7702ba1409cd",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_48/tasks/26/0609/07/961836876048642048/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T074913Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-6-2026-06-09T07%253A49%253A01Z.mp4&x-id=GetObject&X-Amz-Signature=6f0148160ba00dd9510bcb082c1fd1f55b7577b340809c01d78b76f3383f08b0",
-      "taskId": "961836876048642048",
-      "status": "completed",
-      "createdAt": "2026-06-09T07:48:16.625Z",
-      "updatedAt": "2026-06-09T07:49:13.883Z"
-    },
-    {
-      "id": "ee4bb1f4-a1cb-4268-a8b9-57bc53038249",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "grok-imagine-1.0-video-ref-10s",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
-      "previewUrl": "https://ngrok2.zhoushurencz1.top/v1/files/video?id=video_e685438604fe4b66ab88c6eabadbead4",
-      "taskId": "task_b25xP24aEyCEPoiQD7k1iXLrScgkmN7Y",
-      "status": "completed",
-      "createdAt": "2026-06-09T07:46:28.763Z",
-      "updatedAt": "2026-06-09T07:47:40.787Z"
-    },
-    {
-      "id": "c7821968-dc1e-4ac6-9a38-1962843df298",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
-      "previewUrl": "https://file.yyhai.com/adobe/video/20260609/132863c0b1654b488560000fa7e6401c.mp4",
-      "taskId": "task_1KxBw5xRU2eFiBztJvxsyj7yTNR0vYbb",
-      "status": "completed",
-      "createdAt": "2026-06-09T07:39:40.088Z",
-      "updatedAt": "2026-06-09T07:44:18.743Z"
-    },
-    {
-      "id": "2a89e10c-61ea-4e6d-bbf5-30ca89a1ec61",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sy:veo-X-veo_3_1-fast-fl",
-      "prompt": "9:16 vertical,Location: Modern downtown street with cafés, soft afternoon daylight.\n\nOutfit:itted silhouette, cool-touch, breathable, quick-dry, wrinkle-free.\n\n0-3s: Bestie glances at the long-sleeve top.\nBestie: “Don’t you overheat in that?”\n\n3-7s: Wearer lightly brushes the sleeve.\nYou: “No, it feels cool and lets my skin breathe.”\n\n7-10s: Bestie touches the fabric and nods.",
-      "previewUrl": "https://oss-us.file-download.life/2026/06/09/1266d4b3f26ea95a087cca4b9f00d641.mp4",
-      "taskId": "task_JJ0QSOXQ1Z96Dq29DEDFvJXrGkUm0FdS",
-      "status": "completed",
-      "createdAt": "2026-06-09T07:34:30.090Z",
-      "updatedAt": "2026-06-09T07:36:42.262Z"
-    },
-    {
-      "id": "3eac1c20-f434-4ec7-95d4-c3ac442f4444",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sy:sora2-BB-api-12s",
-      "prompt": "9:16 vertical,Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\n\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
-      "previewUrl": "https://file.yyhai.com/adobe/video/20260609/d8e7645e59dc40829077a9237ee63c97.mp4",
-      "taskId": "task_E73SG9Wn0nJ677ZZRRH9zhMuPYfAFvSq",
-      "status": "completed",
-      "createdAt": "2026-06-09T07:26:09.271Z",
-      "updatedAt": "2026-06-09T07:30:45.963Z"
     },
     {
       "id": "e743ba2b-224c-4911-ab6a-6b42ac0415a5",
@@ -5200,29 +3485,6 @@
       "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_20/tasks/26/0609/06/961821163946782720/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T065346Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T06%253A53%253A39Z.mp4&x-id=GetObject&X-Amz-Signature=34679bee78fddec5e2140a4d75d3a567d7c6300ee14c32dd7318f27a2a49d01f"
     },
     {
-      "id": "fa6bd067-200e-49fc-a8a5-41c9347c8f1f",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "veo_3_1-fast-portrait-fl-hd",
-      "prompt": "9:16 vertical,Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\n\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
-      "taskId": "task_8dIjZM1g899Kn1n29U9hqSye3aKifaDG",
-      "status": "failed",
-      "createdAt": "2026-06-09T06:38:42.774Z",
-      "updatedAt": "2026-06-09T09:42:03.525Z"
-    },
-    {
-      "id": "4d446057-b416-478f-b6d2-685ef1baf6f5",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sora2-pro-12s-9x16",
-      "prompt": "9:16 vertical,Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\n\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”",
-      "previewUrl": "https://file.bandianwa.com/adobe/video/20260609/8db4407c82114b2fb474b5ba5a727d2d.mp4",
-      "taskId": "task_GVnrdAzQQWp0jlJVxftQBLZZmCLEXijr",
-      "status": "completed",
-      "createdAt": "2026-06-09T06:33:32.630Z",
-      "updatedAt": "2026-06-09T06:37:22.554Z"
-    },
-    {
       "id": "4385aeaf-c793-4c75-9321-fb630a6ba5b7",
       "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
       "mode": "video",
@@ -5257,17 +3519,6 @@
       "status": "completed",
       "createdAt": "2026-06-09T06:00:31.977Z",
       "updatedAt": "2026-06-09T06:04:22.643Z"
-    },
-    {
-      "id": "0fc5a79f-0b35-487a-aba6-2e86e9ab5954",
-      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
-      "mode": "video",
-      "model": "sora2-pro-12s-9x16",
-      "prompt": "9:16 vertical, Location: Downtown sidewalk with cafés, modern architecture, soft daylight. Casual post-yoga street vibe.\n\nOutfit:Buttery smooth fabric, cool-touch, breathable, quick-dry, flat matte surface, seamless fit, no logos, no patterns.\n\n0-3s (抓眼球)： Two friends step out of a yoga studio. Camera zooms slightly on the fresh, sweat-free look. Bestie: “Wait… you just finished yoga? You already look perfect!”\n\n3-7s (好奇)： Wearer lightly brushes the sleeve, showing smooth fabric. Close-up reveals matte, seamless texture. You: “That’s why I love this set—it feels cool and soft on the skin.”\n\n7-11s (确认优势)： Bestie leans in and touches the sleeve, eyes widening. Bestie: “Oh wow… it actually feels cool.”\n\n11-15s (行动号召)： Wearer gestures to the full outfit while walking confidently down the sidewalk. You: “Breathable, quick-dry, and so light for summer.” Bestie: “Okay… I need one before my next class.”natural hair movement, no logo, no text",
-      "taskId": "task_3S6sxfokZsbubyUbxF26L78EMR5qnPe2",
-      "status": "failed",
-      "createdAt": "2026-06-09T05:57:59.353Z",
-      "updatedAt": "2026-06-09T06:01:04.352Z"
     },
     {
       "id": "912603c8-c4f3-4c84-a3cc-a6a7b86fd5fd",
