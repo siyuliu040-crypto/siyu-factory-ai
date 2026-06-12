@@ -54,7 +54,8 @@ function normalizeProgress(progress: unknown, status: string) {
   if (status === "completed") return 100;
   if (status === "failed") return 100;
   if (status === "in_progress") return 72;
-  return 0;
+  if (status === "queued") return 8;
+  return 5;
 }
 
 export function extractVideoUrl(payload: unknown): string {
@@ -89,7 +90,7 @@ export function normalizeVideoStatusPayload(
         id: taskId,
         task_id: taskId,
         status: "queued",
-        progress: 0,
+        progress: 8,
         transient: true,
         upstream_status: upstreamStatus,
         message: "The upstream provider has not exposed this task status yet. Retrying is safe.",
