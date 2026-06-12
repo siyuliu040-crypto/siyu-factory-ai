@@ -275,6 +275,44 @@ export function toPublicUser(user: AccountUser): PublicAccountUser {
   };
 }
 
+export function getPrimaryAdminId(state: AccountState) {
+  return state.users[0]?.id || "";
+}
+
+export function setUserRole(state: AccountState, input: { actorId: string; userId: string; role: UserRole }) {
+  const primaryAdminId = getPrimaryAdminId(state);
+  if (!primaryAdminId || input.actorId !== primaryAdminId) {
+    throw new AccountError("primary_admin_required", "Only the main account can manage administrators.", 403);
+  }
+  if (input.userId === primaryAdminId) {
+    throw new AccountError("cannot_change_main_account", "The main account role cannot be changed.", 400);
+  }
+  const user = state.users.find((item) => item.id === input.userId);
+  if (!user) throw new AccountError("user_not_found", "User not found.", 404);
+  user.role = input.role;
+  user.updatedAt = nowIso();
+  return { user: toPublicUser(user), users: state.users.map(toPublicUser) };
+}
+
+export function deleteAccountUser(state: AccountState, input: { actorId: string; userId: string }) {
+  const primaryAdminId = getPrimaryAdminId(state);
+  if (!primaryAdminId || input.actorId !== primaryAdminId) {
+    throw new AccountError("primary_admin_required", "Only the main account can delete users.", 403);
+  }
+  if (input.userId === primaryAdminId || input.userId === input.actorId) {
+    throw new AccountError("cannot_delete_main_account", "The main account cannot be deleted.", 400);
+  }
+  const user = state.users.find((item) => item.id === input.userId);
+  if (!user) throw new AccountError("user_not_found", "User not found.", 404);
+
+  state.users = state.users.filter((item) => item.id !== input.userId);
+  state.sessions = state.sessions.filter((session) => session.userId !== input.userId);
+  state.ledger = state.ledger.filter((entry) => entry.userId !== input.userId && entry.adminId !== input.userId);
+  state.generationTasks = state.generationTasks.filter((task) => task.userId !== input.userId);
+  state.history = state.history.filter((item) => item.userId !== input.userId);
+  return { deletedUser: toPublicUser(user), users: state.users.map(toPublicUser) };
+}
+
 export function registerAccount(state: AccountState, input: RegisterInput) {
   const email = normalizeEmail(input.email);
   const password = input.password.trim();

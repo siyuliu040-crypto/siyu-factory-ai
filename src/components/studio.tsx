@@ -146,6 +146,7 @@ type AuthSession = {
   authenticated: boolean;
   user?: AccountUser | null;
   users?: AccountUser[];
+  adminId?: string;
   ledger?: LedgerEntry[];
   storage?: { persistent?: boolean; label?: string };
 };
@@ -269,7 +270,7 @@ const copy = {
     quotaErrorTitle: "上游账户余额不足",
     quotaErrorBody: "需要到 HellobabyGo 钱包充值后再生成。",
     memberQuotaErrorBody: "上游账户余额不足，请联系主账号处理充值后再生成。",
-    adminOnly: "只有主账号可以操作积分。",
+    adminOnly: "只有管理员可以操作积分。",
     imageFailed: "图片生成失败",
     videoFailed: "视频生成失败",
     videoStillProcessing: "视频任务还在处理中，系统会继续查询。",
@@ -306,6 +307,15 @@ const copy = {
     invalidCreditAmount: "请输入大于 0 的积分",
     grantSuccess: "积分已增加",
     subtractSuccess: "积分已扣减",
+    userDeleted: "用户已删除",
+    roleUpdated: "管理员权限已更新",
+    makeAdmin: "设为管理员",
+    removeAdmin: "取消管理员",
+    deleteUser: "删除用户",
+    primaryAdminOnly: "只有主账号可以管理用户。",
+    primaryAccount: "主账号",
+    adminRole: "管理员",
+    memberRole: "成员",
     name: "昵称",
     email: "邮箱"
   },
@@ -367,7 +377,7 @@ const copy = {
     quotaErrorTitle: "Upstream account balance is low",
     quotaErrorBody: "Top up the HellobabyGo wallet before generating again.",
     memberQuotaErrorBody: "The upstream balance is low. Contact the main account to top up before generating again.",
-    adminOnly: "Only the main account can adjust credits.",
+    adminOnly: "Only admins can adjust credits.",
     imageFailed: "Image generation failed",
     videoFailed: "Video generation failed",
     videoStillProcessing: "The video task is still processing. The system will keep checking.",
@@ -404,6 +414,15 @@ const copy = {
     invalidCreditAmount: "Enter credits greater than 0",
     grantSuccess: "Credits added",
     subtractSuccess: "Credits subtracted",
+    userDeleted: "User deleted",
+    roleUpdated: "Admin permission updated",
+    makeAdmin: "Make admin",
+    removeAdmin: "Remove admin",
+    deleteUser: "Delete user",
+    primaryAdminOnly: "Only the main account can manage users.",
+    primaryAccount: "Main account",
+    adminRole: "Admin",
+    memberRole: "Member",
     name: "Name",
     email: "Email"
   }
@@ -1069,6 +1088,7 @@ export default function Studio() {
   const downloadKind = activeImageUrl ? "image" : "video";
   const currentUser = session?.user || null;
   const isAdmin = currentUser?.role === "admin";
+  const isPrimaryAdmin = Boolean(currentUser?.id && session?.adminId === currentUser.id);
   const quotaValue = findQuotaValue(quota?.data, language);
   const quotaText = quotaValue ? formatQuotaText(quotaValue) : quota?.connected ? t.quotaUnavailable : t.quotaUnknown;
   const displayError = cleanErrorMessage(error, language);
@@ -1116,6 +1136,7 @@ export default function Studio() {
   const imageHistory = history.filter((item) => item.mode === "image");
   const videoHistory = history.filter((item) => item.mode === "video");
   const selectedGrantUser = (session?.users || []).find((user) => user.id === grantUserId);
+  const selectedGrantUserIsPrimary = Boolean(selectedGrantUser?.id && selectedGrantUser.id === session?.adminId);
   const grantInternalAmount = parseDisplayCredits(grantAmount);
   const addPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits + grantInternalAmount : undefined;
   const subtractPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits - grantInternalAmount : undefined;
@@ -1175,7 +1196,7 @@ export default function Studio() {
       const payload = (await response.json()) as AuthSession;
       setSession(payload);
       if (payload.authenticated) {
-        if (payload.user?.role === "admin") {
+        if (payload.user?.id && payload.adminId === payload.user.id) {
           void refreshQuota(false);
         } else {
           setQuota(null);
@@ -1262,6 +1283,63 @@ export default function Studio() {
       if (!response.ok) throw new Error(payload.message || payload.error || "Credit allocation failed");
       await refreshSession();
       setGrantMessage(operation === "subtract" ? tx("subtractSuccess", "积分已扣减") : tx("grantSuccess", "积分已增加"));
+    } catch (caught) {
+      setGrantMessage(cleanErrorMessage(stringifyError(caught), language));
+    }
+  }
+
+  async function updateUserRole(role: "admin" | "user") {
+    if (!isPrimaryAdmin) {
+      setGrantMessage(tx("primaryAdminOnly", "只有主账号可以管理用户。"));
+      return;
+    }
+    if (!selectedGrantUser || selectedGrantUserIsPrimary) {
+      setGrantMessage(tx("selectMember", "选择用户"));
+      return;
+    }
+    setGrantMessage("");
+    try {
+      const response = await fetch("/api/admin/users", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: selectedGrantUser.id, role })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.message || payload.error || "User role update failed");
+      await refreshSession();
+      setGrantMessage(tx("roleUpdated", "管理员权限已更新"));
+    } catch (caught) {
+      setGrantMessage(cleanErrorMessage(stringifyError(caught), language));
+    }
+  }
+
+  async function deleteSelectedUser() {
+    if (!isPrimaryAdmin) {
+      setGrantMessage(tx("primaryAdminOnly", "只有主账号可以管理用户。"));
+      return;
+    }
+    if (!selectedGrantUser || selectedGrantUserIsPrimary) {
+      setGrantMessage(tx("selectMember", "选择用户"));
+      return;
+    }
+    const confirmed = window.confirm(
+      language === "zh"
+        ? `确定删除 ${selectedGrantUser.email} 吗？该用户将无法登录，积分、任务和历史记录会一起删除。`
+        : `Delete ${selectedGrantUser.email}? This removes their access, credits, tasks, and history.`
+    );
+    if (!confirmed) return;
+    setGrantMessage("");
+    try {
+      const response = await fetch("/api/admin/users", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: selectedGrantUser.id })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.message || payload.error || "User deletion failed");
+      setGrantUserId("");
+      await refreshSession();
+      setGrantMessage(tx("userDeleted", "用户已删除"));
     } catch (caught) {
       setGrantMessage(cleanErrorMessage(stringifyError(caught), language));
     }
@@ -2049,22 +2127,26 @@ export default function Studio() {
 
           {isAdmin ? (
             <>
-              <div className="quota-card upstream-card">
-                <div>
-                  <span className="section-label compact"><CreditCard size={14} />{tx("upstreamQuota", "主账号上游额度")}</span>
-                  <strong>{quotaText}</strong>
-                  <small>{quota?.connected ? t.quotaConnected : quota?.message || t.quotaUnknown}</small>
-                </div>
-                <button className="icon-button" onClick={() => refreshQuota()} title={t.refreshQuota} type="button">
-                  {isQuotaLoading ? <Loader2 size={16} /> : <RefreshCw size={16} />}
-                </button>
-              </div>
+              {isPrimaryAdmin ? (
+                <>
+                  <div className="quota-card upstream-card">
+                    <div>
+                      <span className="section-label compact"><CreditCard size={14} />{tx("upstreamQuota", "主账号上游额度")}</span>
+                      <strong>{quotaText}</strong>
+                      <small>{quota?.connected ? t.quotaConnected : quota?.message || t.quotaUnknown}</small>
+                    </div>
+                    <button className="icon-button" onClick={() => refreshQuota()} title={t.refreshQuota} type="button">
+                      {isQuotaLoading ? <Loader2 size={16} /> : <RefreshCw size={16} />}
+                    </button>
+                  </div>
 
-              <a className="topup-button" href={TOPUP_URL} rel="noreferrer" target="_blank">
-                <CreditCard size={17} />
-                <span>{t.topUp}</span>
-                <small>{t.topUpHint}</small>
-              </a>
+                  <a className="topup-button" href={TOPUP_URL} rel="noreferrer" target="_blank">
+                    <CreditCard size={17} />
+                    <span>{t.topUp}</span>
+                    <small>{t.topUpHint}</small>
+                  </a>
+                </>
+              ) : null}
 
               <div className="admin-panel">
                 <div className="admin-panel-head">
@@ -2075,7 +2157,7 @@ export default function Studio() {
                   <option value="">{tx("selectMember", "选择用户")}</option>
                   {(session?.users || []).map((user) => (
                     <option key={user.id} value={user.id}>
-                      {user.name} · {formatDisplayCredits(user.credits)}
+                      {user.name} · {user.id === session?.adminId ? tx("primaryAccount", "主账号") : user.role === "admin" ? tx("adminRole", "管理员") : tx("memberRole", "成员")} · {formatDisplayCredits(user.credits)}
                     </option>
                   ))}
                 </select>
@@ -2125,6 +2207,21 @@ export default function Studio() {
                     <Minus size={16} />{tx("subtractCredits", "减积分")}
                   </button>
                 </div>
+                {isPrimaryAdmin && selectedGrantUser && !selectedGrantUserIsPrimary ? (
+                  <div className="user-admin-actions">
+                    <button
+                      className="secondary-button"
+                      onClick={() => void updateUserRole(selectedGrantUser.role === "admin" ? "user" : "admin")}
+                      type="button"
+                    >
+                      <Shield size={16} />
+                      {selectedGrantUser.role === "admin" ? tx("removeAdmin", "取消管理员") : tx("makeAdmin", "设为管理员")}
+                    </button>
+                    <button className="danger-button" onClick={() => void deleteSelectedUser()} type="button">
+                      <X size={16} />{tx("deleteUser", "删除用户")}
+                    </button>
+                  </div>
+                ) : null}
                 {grantMessage ? <small className="admin-message">{grantMessage}</small> : null}
               </div>
             </>

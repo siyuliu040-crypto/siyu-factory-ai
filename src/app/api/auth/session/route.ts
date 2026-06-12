@@ -1,6 +1,7 @@
 import {
   getUserBySessionToken,
   getAccountStorageInfo,
+  getPrimaryAdminId,
   parseSessionCookie,
   readAccountState,
   toPublicUser,
@@ -27,6 +28,7 @@ export async function GET(request: Request) {
         authenticated: Boolean(user),
         user,
         users,
+        adminId: getPrimaryAdminId(state),
         ledger,
         storage: getAccountStorageInfo()
       },
