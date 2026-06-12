@@ -3048,7 +3048,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-06-12T07:14:22.756Z",
-      "updatedAt": "2026-06-12T07:14:38.784Z"
+      "updatedAt": "2026-06-12T07:14:47.441Z"
     },
     {
       "id": "c7bed362f8b4475b8e825f85dffdd960",
@@ -4371,7 +4371,7 @@
       "status": "failed",
       "error": "\"sora2最多只支持1张参考图\"",
       "createdAt": "2026-06-12T07:14:22.756Z",
-      "updatedAt": "2026-06-12T07:14:38.784Z"
+      "updatedAt": "2026-06-12T07:14:47.441Z"
     },
     {
       "id": "c944e91f-4aa7-4599-bad6-c7f77baf1640",
