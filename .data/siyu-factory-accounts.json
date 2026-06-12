@@ -39,16 +39,6 @@
       "credits": 1500000,
       "createdAt": "2026-06-07T11:52:29.750Z",
       "updatedAt": "2026-06-09T05:36:16.198Z"
-    },
-    {
-      "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "email": "2109024912@qq.com",
-      "name": "温妮",
-      "passwordHash": "a4e1604a6383d8a558c588b8c971e103:0da8411d81ac7e48f83812b016aea193e5303a1c915f4a65c69d021d7efe08f8a481219aafed50b338515e7acecc7cc67b424f088d7b55506cee34202d533bc9",
-      "role": "user",
-      "credits": 6092000,
-      "createdAt": "2026-06-09T05:28:41.446Z",
-      "updatedAt": "2026-06-11T09:00:03.989Z"
     }
   ],
   "sessions": [
@@ -57,12 +47,6 @@
       "userId": "2d8ac096-a632-4290-8379-b80db80a3703",
       "expiresAt": "2026-06-14T11:52:29.983Z",
       "createdAt": "2026-06-07T11:52:29.983Z"
-    },
-    {
-      "token": "484110ecdfe0a46d2ceb8663f115c8f5a85f0bf2ae96842369e3948f788a6726",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "expiresAt": "2026-06-16T05:28:41.583Z",
-      "createdAt": "2026-06-09T05:28:41.583Z"
     },
     {
       "token": "0a05ea944983c534f08a1ec37d1ff085b3067fa768d6aa2fa6985a381be1c2d7",
@@ -478,18 +462,6 @@
       "metadata": {
         "model": "sora2-pro-12s-9x16",
         "size": "1080x1920"
-      }
-    },
-    {
-      "id": "497ea711-c2d1-4cfc-8b40-a28bd9ef35c7",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": -15008000,
-      "balanceAfter": 6092000,
-      "reason": "video generation",
-      "createdAt": "2026-06-11T09:00:03.989Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
       }
     },
     {
@@ -916,42 +888,6 @@
       }
     },
     {
-      "id": "823227fb-b2b4-4ced-a814-06e5c2a4e481",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": 30000,
-      "balanceAfter": 21100000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T09:13:30.830Z",
-      "metadata": {
-        "taskId": "task_wBkePbn3IJUWzBL96IVQLZPtTn8ZnRZr",
-        "model": "veo_3_1-fast-portrait-fl-hd"
-      }
-    },
-    {
-      "id": "74a3079f-81e6-4a05-81aa-8b653980a088",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": -30000,
-      "balanceAfter": 21070000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T09:12:06.679Z",
-      "metadata": {
-        "model": "veo_3_1-fast-portrait-fl-hd",
-        "size": "1080x1920"
-      }
-    },
-    {
-      "id": "d5bdb77e-4936-4bbb-a7c7-da2ace09e899",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": -300000,
-      "balanceAfter": 21100000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T09:10:54.809Z",
-      "metadata": {
-        "model": "vidu:viduq3-turbo",
-        "size": "720x1280"
-      }
-    },
-    {
       "id": "acfb7cc7-5129-4206-baf4-44bb0c25de1c",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": -1920000,
@@ -976,62 +912,6 @@
       }
     },
     {
-      "id": "ecc35e73-ebe1-4cfc-ae8c-f6352fd07b2f",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 20000000,
-      "balanceAfter": 21400000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-09T07:14:43.578Z"
-    },
-    {
-      "id": "dda974ee-8120-4169-9518-7c34dfbbeb05",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": -300000,
-      "balanceAfter": 1400000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T06:45:47.762Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "7b729c46-2484-44dc-88ac-1b0d76b16839",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": -300000,
-      "balanceAfter": 1700000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T06:30:36.177Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "a365e8d2-a000-42b9-bb97-df93704bc8aa",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": 300000,
-      "balanceAfter": 2000000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T06:28:27.143Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast"
-      }
-    },
-    {
-      "id": "963c72d2-b205-45d8-9292-70c364b73736",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": -300000,
-      "balanceAfter": 1700000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T06:28:24.880Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
-        "size": "720x1280"
-      }
-    },
-    {
       "id": "c3ebc4d2-53a6-4ed1-a0c4-72d606f3d4c6",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": -200000,
@@ -1040,29 +920,6 @@
       "createdAt": "2026-06-09T06:22:34.501Z",
       "metadata": {
         "model": "grok-imagine-1.0-video-ref-10s",
-        "size": "720x1280"
-      }
-    },
-    {
-      "id": "8c17310f-28e6-4034-bc48-8ccc9263a99d",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": 300000,
-      "balanceAfter": 2000000,
-      "reason": "video generation failed refund",
-      "createdAt": "2026-06-09T06:09:03.545Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast"
-      }
-    },
-    {
-      "id": "b7e59972-adf7-408d-9188-24c9013bacc8",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "amount": -300000,
-      "balanceAfter": 1700000,
-      "reason": "video generation",
-      "createdAt": "2026-06-09T06:09:01.467Z",
-      "metadata": {
-        "model": "vidu:viduq3-pro-fast",
         "size": "720x1280"
       }
     },
@@ -1110,15 +967,6 @@
       "balanceAfter": 1500000,
       "reason": "main account allocation",
       "createdAt": "2026-06-09T05:36:16.198Z"
-    },
-    {
-      "id": "051ee04e-d4ca-4a33-a587-2819359780df",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 2000000,
-      "balanceAfter": 2000000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-09T05:36:05.182Z"
     },
     {
       "id": "be59b8f3-3c06-4db3-851d-6579410ab26a",
@@ -2325,17 +2173,6 @@
       "updatedAt": "2026-06-11T09:07:11.229Z"
     },
     {
-      "id": "962579731532746752",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 15008000,
-      "status": "queued",
-      "refunded": false,
-      "createdAt": "2026-06-11T09:00:07.187Z",
-      "updatedAt": "2026-06-11T09:00:07.187Z"
-    },
-    {
       "id": "task_ETVsXpJfKCOduZHmeN971zOMtz8gXT6o",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -2468,28 +2305,6 @@
       "updatedAt": "2026-06-09T09:41:03.400Z"
     },
     {
-      "id": "task_wBkePbn3IJUWzBL96IVQLZPtTn8ZnRZr",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "type": "video",
-      "model": "veo_3_1-fast-portrait-fl-hd",
-      "amount": 30000,
-      "status": "failed",
-      "refunded": true,
-      "createdAt": "2026-06-09T09:12:08.716Z",
-      "updatedAt": "2026-06-09T09:42:01.335Z"
-    },
-    {
-      "id": "961857686469615616",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "type": "video",
-      "model": "vidu:viduq3-turbo",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T09:10:58.193Z",
-      "updatedAt": "2026-06-09T09:14:08.664Z"
-    },
-    {
       "id": "task_VRAsslenq79IuI0ucZABf0kMgKyHgvSz",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -2510,28 +2325,6 @@
       "refunded": false,
       "createdAt": "2026-06-09T07:15:31.547Z",
       "updatedAt": "2026-06-09T07:24:32.188Z"
-    },
-    {
-      "id": "961821163946782720",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T06:45:50.560Z",
-      "updatedAt": "2026-06-09T06:53:46.884Z"
-    },
-    {
-      "id": "961817340398301184",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "type": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "amount": 300000,
-      "status": "completed",
-      "refunded": false,
-      "createdAt": "2026-06-09T06:30:38.946Z",
-      "updatedAt": "2026-06-09T06:33:47.799Z"
     },
     {
       "id": "task_hPzDhiMmrkqdLI6qmPjiA8ryON06RHpb",
@@ -3272,17 +3065,6 @@
       "error": "{\"code\":\"upstream_generation_failed\",\"message\":\"内容违规，请调整提示词或者图片\"}"
     },
     {
-      "id": "baadb7a3-032a-4dd6-b4d4-58828e6ed18a",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "【夏季出游：拒绝闷汗，防晒自由】核心策略： 使用对比色调（室内稍微昏暗/沉闷 vs. 室外明亮/清爽），配合清脆的夏天音效（蝉鸣、冰块撞击玻璃的声音），增强感官体验。时间 (秒)画面内容 (Visuals)口播 (VO - English)字幕 (Text)0-4s【钩子】：闺蜜正对着风扇吹，一脸烦躁。你拿着套装递过去。\"Bestie, we're going out! Stop sweating and put this on.\"Beat the Summer Heat! ☀️5-9s【凉感对比】：两人快速换装。切入阳光下漫步的镜头，展示面料的垂坠感与呼吸感。\"It's UPF 50+ sun-safe, super cooling, and zero sweat.\"UPF 50+ & Cooling! ❄️10-12s【场景切换】：快速闪现：瑜伽垫上拉伸 -> 街头买冰咖啡 -> 公园漫步。\"From yoga flow to city strolls, it’s the ultimate summer set.\"Yoga to Street-ready! 🧘‍♀️13-15s【高光定格】：两人在阳光下自信对视，画面弹出价格与诱导语。\"Best $22.99 you’ll spend all summer!\"Just $22.99! Get Yours! 🛍️💡 针对“防晒与凉感”的视觉与执行升级：增加“凉感”视觉元素：在 5-9秒 两人切换镜头时，可以加一个“冰块化开”的叠化转场效果，或者在画面四周加一点点清透的冰晶装饰素材，强化“凉感 (Cooling)”的概念。强化“防晒”卖点：在 5-9秒 的阳光镜头中，使用色彩偏冷、饱和度略高的滤镜，让观众感觉到即使阳光很烈，你们穿上这套衣服依然显得清爽，而不是被阳光暴晒的燥热感。强调“不闷汗”：在展示瑜伽动作（10-12秒）时，动作幅度一定要稍微大一点，展现出即使在运动中，面料依然平整、干爽的状态。",
-      "taskId": "962579731532746752",
-      "status": "in_progress",
-      "createdAt": "2026-06-11T09:00:07.187Z",
-      "updatedAt": "2026-06-11T09:02:43.602Z"
-    },
-    {
       "id": "fec232a2-5be1-42d0-88f0-ab47b3d375fe",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "video",
@@ -3426,29 +3208,6 @@
       "updatedAt": "2026-06-09T09:41:03.400Z"
     },
     {
-      "id": "89758604-faaa-41eb-9ace-c8969809c5a9",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "mode": "video",
-      "model": "veo_3_1-fast-portrait-fl-hd",
-      "prompt": "腰腹遮肉·S曲线（BGM：Juice – Lizzo）\n\n0–3s 手撕快递袋，取出套装，镜头扫面料\n口播：Let’s unbox this curvy-friendly activewear!\n3–8s 上身正面+侧身，自然站姿\n口播：I have a little tummy and wide hips, most clothes look shapeless on me.\n8–15s 特写高腰腰头、侧腰线\n口播：Structured fabric hides belly fat and holds your figure perfectly.\n15–20s 手指指向链接位置，全身定格微笑\n口播：Creates a natural gorgeous hourglass curve! Tap the link below to get yours!\n",
-      "taskId": "task_wBkePbn3IJUWzBL96IVQLZPtTn8ZnRZr",
-      "status": "failed",
-      "createdAt": "2026-06-09T09:12:08.716Z",
-      "updatedAt": "2026-06-09T09:42:01.335Z"
-    },
-    {
-      "id": "ebbc1773-c77a-40bb-8946-8755c0142756",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "mode": "video",
-      "model": "vidu:viduq3-turbo",
-      "prompt": "百搭·新手沙漏（BGM：Watermelon Sugar 纯音乐）\n\n0–3s 轻快拆袋，拎起整套服饰\n口播：New unboxing! A must-have for all curvy ladies.\n3–8s 日常站姿，自然微笑\n口播：Hard to find clothes that hide flaws and show curves.\n8–15s 慢转身，展示腰臀流畅线条\n口播：This set balances everything, shaping an hourglass figure.\n15–20s 自信回眸，明确引导点击\n口播：Comfy, flattering and perfect for daily wear. Tap the link below!\n剪辑&运营补充\n\n1. 字幕：最后5秒同步弹出大字 Tap Link Below / Shop Now，醒目吸睛\n\n2. 画面：引导动作自然不生硬，北美用户偏好直白的手势指引\n\n3. BGM：结尾保持原节奏，无需降速，维持整体活力氛围\n",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_16/tasks/26/0609/09/961857686469615616/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T091408Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T09%253A13%253A48Z.mp4&x-id=GetObject&X-Amz-Signature=eea8a66c786bde1072dbfde3242ac2a3b1663f434820bb8eb0c61aa3632f71e7",
-      "taskId": "961857686469615616",
-      "status": "completed",
-      "createdAt": "2026-06-09T09:10:58.193Z",
-      "updatedAt": "2026-06-09T09:14:08.664Z"
-    },
-    {
       "id": "e743ba2b-224c-4911-ab6a-6b42ac0415a5",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "video",
@@ -3471,30 +3230,6 @@
       "createdAt": "2026-06-09T07:15:31.547Z",
       "updatedAt": "2026-06-09T07:24:32.188Z",
       "previewUrl": "https://oss-us.file-download.life/2026/06/09/291f16e91914c3bd789e2910150a5092.mp4"
-    },
-    {
-      "id": "3a9a8552-897e-488b-bbaf-f6165fc86485",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "轻奢简约风（高端瑜伽馆/成熟女性）\n\n定位：高级质感，精致优雅，适配成熟微胖群体\n0-2s 痛点吸睛\n穿搭：劣质普通健身服，面料粗糙、版型生硬臃肿\n画面：触摸粗糙面料，轻扯衣物，定格身形显短板\n转场：低头抬手柔和转场\n口播/字幕：Ordinary activewear looks dull & uncomfortable?\n\n2-8s 冰感+高弹+遮肉塑形\n穿搭：纯色高端冰感瑜伽服\n画面：慢镜头展示冰感肌理，轻拉面料显柔韧弹力；轻柔瑜伽动作，镜头扫全身，优雅收肉塑型\n口播/字幕：Luxury icy fabric, conceals flaws & shapes you elegantly!\n\n8-13s 透气+速干+长效舒适\n画面：慢动作吹气、洒水，展示透气瞬干；优雅舒展，衣物不变形\n口播/字幕：Always airy & dry, comfy for every moment!\n\n13-15s 下单引导\n画面：端庄微笑，轻柔指引链接\n口播/字幕：Click the link now!",
-      "taskId": "961821163946782720",
-      "status": "completed",
-      "createdAt": "2026-06-09T06:45:50.560Z",
-      "updatedAt": "2026-06-09T06:53:46.884Z",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_20/tasks/26/0609/06/961821163946782720/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T065346Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T06%253A53%253A39Z.mp4&x-id=GetObject&X-Amz-Signature=34679bee78fddec5e2140a4d75d3a567d7c6300ee14c32dd7318f27a2a49d01f"
-    },
-    {
-      "id": "4385aeaf-c793-4c75-9321-fb630a6ba5b7",
-      "userId": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
-      "mode": "video",
-      "model": "vidu:viduq3-pro-fast",
-      "prompt": "无惧骄阳 (The Effortless Sun-Set) 时长画面内容 (Visual)字幕 (Text) / 英文口播 (Voiceover)运镜与音效0-3s室内，对着衣橱纠结，转头看向窗外极其刺眼的阳光，遮眼。（模特穿白短袖睡裤） 字幕: 不知道穿什么？ 口播: Struggling to choose? 快速抓拍，焦距在衣橱与窗外强光间切换，伴随轻微纠结的叹气声。3-6s手部拿起叠放整齐的瑜伽服，镜头扫过平整袖口与无口袋设计。\n字幕: 防晒套装 口播: Meet your new sun-proof essential. 特写镜头，展示面料高级质感，背景音乐节奏起。6-9s转场： 模特侧身遮挡镜头（无缝变装），瞬间穿好套装，腰线利落（无前中缝）。 字幕: 变装出门！ 口播: Effortless, breathable, cool. “唰”的一声转场，干脆利落，不露脸，仅展示身体线条\n。9-12s户外阳光下，快速跑动/拉伸，展示面料的大弹力与凉感。衣服细节参考\n字幕: 高弹 透气 口播: Stretchy and cooling in the heat. 跟拍与慢动作特写结合，光影交错。12-15s阳光下定格，展示平整袖口与套装轮廓，文案定格。 字幕: 女生的衣橱里总需要这么一件！ 口播: Every wardrobe needs one. 结尾缩放定格，引导下单，伴随清脆的“咔哒”结束音。 核心创作要点： 不露脸策略： 在 6-12s 的展示环节，通过局部特写（袖口、腰线、后背线条）和动态跟拍（奔跑、拉伸）来替代面部展示，保留静奢感。衣服细节参考 设计细节植入： 在 3-6s 的拿取特写中，重点展示袖口无穿指设计和平整的缝线。 在 6-9s 的变装后，镜头扫过腹部（强调无前中缝）和侧面（强调无口袋），这是高品质瑜伽服的核心卖点。 色调滤镜： 保持您偏好的“Aesop 风格”，冷调的粉色（或原色），避开过度艳丽的色彩，突出面料在阳光下的自然光泽。 口播建议： 英文口播要语速轻快，带有美式活力的自信感。字幕为英文。",
-      "previewUrl": "https://prod-ss-vidu.s3.cn-northwest-1.amazonaws.com.cn/infer_84/tasks/26/0609/06/961817340398301184/creation-01/final_video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=AKIARRHG6JR7EMNHVUWT%2F20260609%2Fcn-northwest-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T063347Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D86400&response-content-disposition=attachment%3Bfilename%3Dgeneral-16-2026-06-09T06%253A33%253A33Z.mp4&x-id=GetObject&X-Amz-Signature=1f8b9662877b6a08ffec6bdab47866383b8a9e52fa8b2c5f87d4dc8076976a33",
-      "taskId": "961817340398301184",
-      "status": "completed",
-      "createdAt": "2026-06-09T06:30:38.946Z",
-      "updatedAt": "2026-06-09T06:33:47.799Z"
     },
     {
       "id": "a193b1fa-7fc1-4631-9d5a-06e06162eb0f",
