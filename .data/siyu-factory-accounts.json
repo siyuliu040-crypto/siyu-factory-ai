@@ -3060,7 +3060,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-06-12T07:14:37.667Z",
-      "updatedAt": "2026-06-12T07:28:38.163Z"
+      "updatedAt": "2026-06-12T07:28:41.001Z"
     },
     {
       "id": "b1f4caf305924a50a089c126dfd0a21d",
@@ -4395,7 +4395,7 @@
       "status": "failed",
       "error": "\"video poll failed: 451 {\\\"error_code\\\":\\\"video_unsafe\\\",\\\"message\\\":\\\"The generated video appears to be unsafe. Try modifying the prompts or the seeds.\\\"}\"",
       "createdAt": "2026-06-12T07:14:37.667Z",
-      "updatedAt": "2026-06-12T07:28:38.163Z"
+      "updatedAt": "2026-06-12T07:28:41.001Z"
     },
     {
       "id": "0190259d-5c9b-498d-97f3-6fcb3375239a",
