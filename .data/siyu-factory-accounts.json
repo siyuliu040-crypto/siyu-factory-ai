@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 28412880,
+      "credits": 30812880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-12T07:14:19.895Z"
+      "updatedAt": "2026-06-12T07:14:27.584Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -166,6 +166,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "182ef1a9-da42-47d6-8776-9f93afd91056",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 2400000,
+      "balanceAfter": 30812880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-12T07:14:27.584Z",
+      "metadata": {
+        "taskId": "b1f4caf305924a50a089c126dfd0a21d",
+        "model": "hfsy:sora-2"
+      }
+    },
     {
       "id": "8a70afbb-be9b-4b08-a7bd-f7dc1631114c",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2998,10 +3010,10 @@
       "type": "video",
       "model": "hfsy:sora-2",
       "amount": 2400000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-12T07:14:22.756Z",
-      "updatedAt": "2026-06-12T07:14:22.756Z"
+      "updatedAt": "2026-06-12T07:14:27.584Z"
     },
     {
       "id": "c7bed362f8b4475b8e825f85dffdd960",
@@ -4310,9 +4322,10 @@
       "model": "hfsy:sora-2",
       "prompt": "Create a vertical 9:16 TikTok UGC video continuing the same hot pink yoga set try-on.\r\n\r\nUse the same woman, same hot pink zip-up jacket, same high-waisted seamless leggings, same white sneakers, same outdoor café fitness studio location, and same natural morning light. Background stays clear and detailed, never blurred.\r\n\r\nNo subtitles, no text, no logo, no watermark, no brand names, no readable signs, no TikTok UI.\r\n\r\nCollar comfort:\r\nUpper-body close-up. She touches the stand collar, turns her neck left and right, and smiles.\r\nVoiceover:\r\n“The collar is simple and clean. It doesn’t choke my neck.”\r\n\r\nCamera close-up on the collar sitting comfortably below the jawline. No collar clipping, no zipper warping.\r\n\r\nOne-piece front:\r\nThree-quarter front angle. She steps forward and gently smooths the front thigh fabric.\r\nVoiceover:\r\n“One-piece smooth front, no awkward line.”\r\n\r\nCamera close-up from waistband to upper thigh. Show seamless front panel, no front seam, no camel-toe effect, no strange crease, no fabric distortion.\r\n\r\nSquat test:\r\nSide full-body view. She does one controlled squat, pauses, stands up, then turns to show side and back fit.\r\nVoiceover:\r\n“Stretchy, smooth, squat-ready, and still cute.”\r\n\r\nCamera close-up on thigh and knee fabric during the squat. Show opaque, smooth, high-stretch fabric with no see-through, no pulling, no weird wrinkles.\r\n\r\nFinal CTA:\r\nShe walks beside the café table, picks up a plain iced coffee cup with no readable label, turns back, smiles, and says:\r\n“If you want comfy, snatched, and still cute, this is the set.”\r\n\r\nAnti-error:\r\nNo穿模, no body deformation, no warped hands, no extra fingers, no broken knees, no floating shoes, no fabric clipping, no zipper changing sides, no extra seams, no visible front seam, no awkward front line, no see-through fabric, no color change, no background blur.",
       "taskId": "b1f4caf305924a50a089c126dfd0a21d",
-      "status": "IN_PROGRESS",
+      "status": "failed",
+      "error": "\"sora2最多只支持1张参考图\"",
       "createdAt": "2026-06-12T07:14:22.756Z",
-      "updatedAt": "2026-06-12T07:14:22.756Z"
+      "updatedAt": "2026-06-12T07:14:27.584Z"
     },
     {
       "id": "c944e91f-4aa7-4599-bad6-c7f77baf1640",
