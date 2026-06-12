@@ -791,6 +791,15 @@ function isVideoFailed(status?: string) {
   return ["failed", "error", "cancelled", "canceled"].includes(String(status || "").toLowerCase());
 }
 
+function getPendingVideoProgress(status?: string, progress?: number) {
+  const numeric = Number(progress || 0);
+  if (numeric > 0) return numeric;
+  const normalized = String(status || "").toLowerCase();
+  if (["in_progress", "processing", "running"].includes(normalized)) return 15;
+  if (["queued", "created", "pending", "submitted"].includes(normalized)) return 8;
+  return 5;
+}
+
 function stringifyError(error: unknown) {
   if (error instanceof Error) return error.message;
   if (typeof error === "string") return error;
@@ -1705,13 +1714,13 @@ export default function Studio() {
           if (transientAttempts >= VIDEO_MAX_TRANSIENT_ATTEMPTS) {
             throw new Error(getStaleVideoMessage(id, language));
           }
-          const pending = { id, task_id: id, status: "queued", progress: 0, transient: true };
+          const pending = { id, task_id: id, status: "queued", progress: 8, transient: true };
           onUpdate?.(pending);
           if (syncMainResult) setVideoResult((current) => current ?? pending);
           setGenerationStatus({
           label: tx("statusSyncing", "正在同步上游状态"),
             detail: id,
-            progress: 0,
+            progress: 8,
             tone: "running"
           });
           await new Promise((resolve) => setTimeout(resolve, VIDEO_POLL_INTERVAL_MS));
@@ -1724,7 +1733,7 @@ export default function Studio() {
         setGenerationStatus({
           label: payload.status || tx("statusProcessing", "生成中"),
           detail: id,
-          progress: payload.progress || 0,
+          progress: getPendingVideoProgress(payload.status, payload.progress),
           tone: "running"
         });
         if (isVideoDone(payload.status, payload)) {
@@ -1778,7 +1787,7 @@ export default function Studio() {
             setGenerationStatus({
               label: tx("statusQueued", "任务已排队"),
               detail: taskId,
-              progress: payload.progress || 0,
+              progress: getPendingVideoProgress(payload.status, payload.progress),
               tone: "running"
             });
             saveHistory({ mode: "video", model: effectiveModel, prompt, videoId: taskId, status: payload.status });
@@ -1861,13 +1870,13 @@ export default function Studio() {
             updateJob({ status: "submitting", progress: 0, attempts: attempt + 1, error: "" });
             const payload = await submitVideo(job.prompt, job.model, { references: slot.referenceFiles, referenceUrl: "" });
             const taskId = getVideoTaskId(payload);
-            updateJob({ taskId, status: payload.status || "queued", progress: payload.progress || 0 });
+            updateJob({ taskId, status: payload.status || "queued", progress: getPendingVideoProgress(payload.status, payload.progress) });
             if (!taskId) throw new Error(JSON.stringify(payload));
             saveHistory({ mode: "video", model: job.model, prompt: job.prompt, videoId: taskId, status: payload.status });
             finalPayload = await pollVideo(taskId, (next) => {
               updateJob({
                 status: next.status || "queued",
-                progress: next.progress || 0,
+                progress: getPendingVideoProgress(next.status, next.progress),
                 url: getVideoUrl(next) || undefined
               });
             }, false);
