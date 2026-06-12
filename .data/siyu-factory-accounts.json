@@ -66,9 +66,9 @@
       "name": "susu",
       "passwordHash": "d1bdc2ad7c94749d1380dc368c8ffeef:2997282d216db5d0332d43567982f4a3e99abe19d423fb0c5967ebca899b75f4edcd1743dd55831cf68da34499bae7b4242059535e23946d279e8c3c43a4c3b2",
       "role": "user",
-      "credits": 7760000,
+      "credits": 5360000,
       "createdAt": "2026-06-09T05:27:41.409Z",
-      "updatedAt": "2026-06-12T03:50:54.124Z"
+      "updatedAt": "2026-06-12T03:56:08.317Z"
     },
     {
       "id": "0ccbf3c0-68d1-493d-bbd5-e144ba4e699d",
@@ -186,6 +186,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "527b3c88-ea49-45cd-b877-bca2f058fdd7",
+      "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
+      "amount": -2400000,
+      "balanceAfter": 5360000,
+      "reason": "video generation",
+      "createdAt": "2026-06-12T03:56:08.317Z",
+      "metadata": {
+        "model": "hfsy:sora-2",
+        "size": "1080x1920"
+      }
+    },
     {
       "id": "339c6dec-0160-4b90-a2f6-5607af7a6848",
       "userId": "397bba98-7c81-45f5-a0b7-8c1d05338ed7",
