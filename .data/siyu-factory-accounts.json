@@ -4444,9 +4444,9 @@
       "model": "hfsy:sora-2",
       "prompt": "Outfit: hot pink two-piece activewear set. Fitted long-sleeve cropped zip-up jacket with a simple stand collar, front zipper, slim sleeves, and high-waisted seamless leggings. The leggings have a smooth one-piece front panel, no awkward front line. Fabric looks ice-cool, breathable, quick-dry, high-stretch, smooth, and body-shaping.\r\nLocation: real outdoor café sidewalk beside a boutique fitness studio, soft morning sunlight. Keep the background clear, detailed, and never blurred: glass doors, café tables, chairs, plants, sidewalk, people walking by, cars passing, yoga mat near a chair, plain iced coffee cups with no readable labels.\r\nMain character: confident American woman wearing the hot pink set and white sneakers. Handheld iPhone TikTok UGC style, natural movement, slight camera shake.\r\nNo subtitles, no text, no logo, no watermark, no brand names, no readable signs, no TikTok UI.\r\nOpening:\r\nExtreme close-up from chest to face. She touches the sleeve and zipper, looks at the camera, and says:\r\n“This set looks cute, but the fabric is the real reason I’m obsessed.”\r\nCamera close-up on sleeve, zipper, and smooth pink fabric in sunlight.\r\nBreathable + quick-dry:\r\nShe lifts one arm, lightly fans the sleeve, and shakes the cuff.\r\nVoiceover:\r\n“It feels cool, breathable, and it dries fast.”\r\nCamera close-up on sleeve and underarm fabric. Show lightweight movement, no sweat marks, no sticking, no heavy wrinkles.\r\nHigh-stretch + shaping:\r\nFull front view. She pulls the waistband slightly upward, turns her waist left and right, then raises both arms.\r\nVoiceover:\r\n“High stretch, but it still snatches the waist.”\r\nCamera close-up on flat waistband and side waist stretch. Show no rolling, no digging in, no slipping.\r\nContinuity:\r\nSame woman, same face, same outfit, same color, same zipper, same waistband, same shoes, same location. No穿模, no fabric clipping, no body deformation, no extra fingers, no see-through fabric, no background blur.",
       "taskId": "c3a99be9297d4e4d8869845985428223",
-      "status": "in_progress",
+      "status": "queued",
       "createdAt": "2026-06-12T08:18:37.783Z",
-      "updatedAt": "2026-06-12T08:18:57.306Z"
+      "updatedAt": "2026-06-12T08:19:06.673Z"
     },
     {
       "id": "5c10ba01-7c42-474d-b836-d42f885184ef",
