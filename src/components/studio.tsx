@@ -898,28 +898,82 @@ function getPromptTooLongMessage(length: number, limit: number, language: Langua
     : `Prompt is too long: ${length} characters, limit ${limit}. Shorten the prompt before submitting.`;
 }
 
+function extractReadableError(raw: string): string {
+  let message = String(raw || "").trim();
+  for (let index = 0; index < 3; index += 1) {
+    const trimmed = message.trim();
+    try {
+      const parsed = JSON.parse(trimmed) as unknown;
+      if (typeof parsed === "string") {
+        message = parsed;
+        continue;
+      }
+      if (parsed && typeof parsed === "object") {
+        const record = parsed as Record<string, unknown>;
+        const next =
+          record.message ||
+          record.errorMessage ||
+          record.error ||
+          record.detail ||
+          record.fail_reason ||
+          record.reason ||
+          record.data;
+        if (typeof next === "string" && next !== message) {
+          message = next;
+          continue;
+        }
+      }
+    } catch {
+      const jsonStart = trimmed.indexOf("{");
+      const jsonEnd = trimmed.lastIndexOf("}");
+      if (jsonStart >= 0 && jsonEnd > jsonStart) {
+        const embedded = trimmed.slice(jsonStart, jsonEnd + 1);
+        try {
+          const parsed = JSON.parse(embedded) as Record<string, unknown>;
+          const next = parsed.message || parsed.error || parsed.detail || parsed.fail_reason || parsed.reason;
+          if (typeof next === "string" && next !== message) {
+            message = next;
+            continue;
+          }
+        } catch {
+          // Fall through to return the original text.
+        }
+      }
+    }
+    break;
+  }
+  return message.replace(/^"+|"+$/g, "").trim();
+}
+
 function cleanErrorMessage(error: string, language: Language) {
-  if (!error) return "";
-  if (isTransientVideoStatusError(error)) return getTransientVideoMessage(language);
-  if (error.includes("prompt_too_long")) {
+  const readable = extractReadableError(error);
+  if (!readable) return "";
+  const lower = readable.toLowerCase();
+  if (isTransientVideoStatusError(readable)) return getTransientVideoMessage(language);
+  if (readable.includes("video_unsafe") || readable.includes("appears to be unsafe") || readable.includes("不安全") || readable.includes("安全")) {
+    return language === "zh"
+      ? "上游安全审核未通过：生成内容被判定可能不安全。请换参考图，减少真人身体/暴露/危险/敏感描述，改成普通商品展示或日常场景后重试。站内积分已退回。"
+      : "Upstream safety review failed. Change the reference image or prompt, avoid sensitive body/exposure/danger wording, then retry. Site credits have been refunded.";
+  }
+  if (readable.includes("最多只支持1张参考图") || readable.includes("最多只支持 1 张参考图") || lower.includes("only supports 1") || lower.includes("one reference")) {
+    return language === "zh"
+      ? "参考图数量过多：当前模型最多只支持 1 张参考图。请只上传 1 张参考图后重新生成。站内积分已退回。"
+      : "Too many reference images. This model supports only 1 reference image. Upload one image and retry. Site credits have been refunded.";
+  }
+  if (readable.includes("prompt_too_long")) {
     return language === "zh" ? "提示词超过当前模型上限，请精简后再提交。" : "The prompt exceeds this model's limit. Shorten it and submit again.";
   }
-  if (isInsufficientQuota(error)) {
+  if (isInsufficientQuota(readable)) {
     return language === "zh"
       ? "上游 VEO 供应商资源或额度不足，任务已失败。站内积分会退回；请稍后重试，或先用 Vidu/Grok 模型生成。"
       : "The upstream VEO provider is out of quota or resources. Site credits will be refunded; retry later or use Vidu/Grok.";
   }
-  if (isProviderInternalError(error)) {
+  if (isProviderInternalError(readable)) {
     return language === "zh"
       ? "上游 VEO 供应商内部错误，任务已失败。站内积分会退回；请换一张首帧图/简化提示词后重试，或先用 Vidu/Grok。"
       : "The upstream VEO provider returned an internal error. Site credits will be refunded; try another first frame, simplify the prompt, or use Vidu/Grok.";
   }
-  try {
-    const parsed = JSON.parse(error) as { message?: string; error?: string; detail?: unknown };
-    return parsed.message || parsed.error || (typeof parsed.detail === "string" ? parsed.detail : error);
-  } catch {
-    return error;
-  }
+  return readable;
 }
 
 async function compressImage(file: File): Promise<File> {
@@ -2762,7 +2816,7 @@ export default function Studio() {
                         </div>
                         <span>{task.model}</span>
                         <p>{task.prompt}</p>
-                        {task.error ? <em>{task.error}</em> : null}
+                        {task.error ? <em>{cleanErrorMessage(task.error, language)}</em> : null}
                         <div className="status-track compact-track">
                           <span style={{ width: `${Math.max(0, Math.min(100, task.progress || 0))}%` }} />
                         </div>
@@ -2796,7 +2850,7 @@ export default function Studio() {
                     <small>{job.prompt}</small>
                   </div>
                   {job.url ? <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer"><Download size={15} />{t.download}</a> : null}
-                  {job.error ? <p>{job.error}</p> : null}
+                  {job.error ? <p>{cleanErrorMessage(job.error, language)}</p> : null}
                 </div>
               ))}
             </div>
