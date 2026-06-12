@@ -196,6 +196,23 @@ function prepareViduVideoPrompt(prompt: string) {
   ].join("\n");
 }
 
+function prepareHfsyVideoPrompt(model: string, prompt: string) {
+  const hfsyModel = getHfsyModel(model);
+  if (hfsyModel?.upstreamModel !== "sora-2") return prompt;
+
+  return [
+    "IMPORTANT AUDIO REQUIREMENT:",
+    "This is a spoken commercial video. Generate synchronized spoken audio, not a silent video.",
+    "If the prompt contains dialogue, voiceover, Bestie:, You:, Narrator:, or quoted lines, the characters must speak those exact lines out loud.",
+    "Match mouth movement and timing to the spoken lines. Do not express the dialogue only as subtitles or on-screen text.",
+    "No logo, no watermark, no unrelated text.",
+    "",
+    "AUDIO MUST BE ENABLED. Dialogue and voiceover must be real audible speech.",
+    "",
+    prompt
+  ].join("\n");
+}
+
 async function postVideoPayload(
   payload: Record<string, unknown>,
   billing: { userId: string; amount: number; model: string }
@@ -262,10 +279,11 @@ async function postHfsyVideoPayload(
   const duration = Number(payload.duration || payload.seconds || hfsyModel?.durationOptions[0] || 10);
   const upstreamPayload = {
     model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, ""),
-    prompt: String(payload.prompt || ""),
+    prompt: prepareHfsyVideoPrompt(billing.model, String(payload.prompt || "")),
     duration,
     orientation,
     ...(referenceUrls.length ? { images: referenceUrls } : {}),
+    ...(hfsyModel?.upstreamModel === "sora-2" ? { audio: true } : {}),
     watermark: false,
     size: "large"
   };

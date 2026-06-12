@@ -27,7 +27,7 @@ export const HFSY_MODELS: HfsyModel[] = [
     resolution: "1080P",
     referenceMode: "optional",
     description:
-      "HFSY Sora 2 official transfer API. Supports prompt-only video and optional reference image input."
+      "HFSY Sora 2 official transfer API. Supports prompt-only video, optional reference image input, and spoken dialogue prompts."
   },
   {
     id: "hfsy:sd-2",

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   Activity,
@@ -568,9 +568,12 @@ function getModelDescription(model: string, language: Language) {
     const mode = hfsyModel.referenceMode === "required"
       ? language === "zh" ? "参考图必填" : "reference required"
       : language === "zh" ? "文字或参考图均可" : "prompt or reference image";
+    const audioHint = hfsyModel.upstreamModel === "sora-2"
+      ? language === "zh" ? "口播强化" : "spoken audio boosted"
+      : "";
     return language === "zh"
-      ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode} · HFSY 上游 · 上游价 ${hfsyModel.upstreamPrice}`
-      : `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode} · HFSY upstream · upstream ${hfsyModel.upstreamPrice}`;
+      ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY 上游 · 上游价 ${hfsyModel.upstreamPrice}`
+      : `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY upstream · upstream ${hfsyModel.upstreamPrice}`;
   }
   if (lower.startsWith("vidu:")) {
     const family = lower.includes("q2") ? "Q2" : "Q3";
