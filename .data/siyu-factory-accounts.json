@@ -11,16 +11,6 @@
       "updatedAt": "2026-06-12T03:38:24.668Z"
     },
     {
-      "id": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "email": "1608030992@qq.com",
-      "name": "lina",
-      "passwordHash": "e20d850461f444ee821edf54e5c035f3:1ff8e57afc2ee22aa4cdce153ef735e0bf6d3a79d046c40d398ad97a8b2386f3fe70ec9aae14db946614b661741f805c46c181eba40027176f7e308f68be1666",
-      "role": "user",
-      "credits": 20000000,
-      "createdAt": "2026-06-03T06:10:25.337Z",
-      "updatedAt": "2026-06-03T07:20:09.654Z"
-    },
-    {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
       "email": "wen54426@gmail.com",
       "name": "h",
@@ -2882,52 +2872,6 @@
       }
     },
     {
-      "id": "37a6b826-d11d-4c0b-be70-0eed694f8ad8",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 120000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:20:09.654Z",
-      "metadata": {
-        "path": "/v1/images/edits"
-      }
-    },
-    {
-      "id": "23df55e8-611f-4b40-8f8b-b8c229086e05",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -120000,
-      "balanceAfter": 19880000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:18:03.445Z",
-      "metadata": {
-        "model": "nano_banana_2-4K-portrait",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "2b91e7fe-9213-4b98-9e7e-94e527e94f8b",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 70000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:16:42.701Z",
-      "metadata": {
-        "path": "/v1/images/edits"
-      }
-    },
-    {
-      "id": "dcf782e8-971b-46e7-a613-17b4552281df",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -70000,
-      "balanceAfter": 19930000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:14:36.817Z",
-      "metadata": {
-        "model": "nano_banana_2-2K-portrait",
-        "size": "1024x1792"
-      }
-    },
-    {
       "id": "84604096-630a-4e68-83dc-5fa791d2e601",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "amount": 40000,
@@ -2936,17 +2880,6 @@
       "createdAt": "2026-06-03T07:13:37.607Z",
       "metadata": {
         "jobId": "img_1780470692394_1230bbc49bdec8"
-      }
-    },
-    {
-      "id": "7fc57ce5-b8e2-4b46-b0c7-9ff70fde939f",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 40000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:12:19.450Z",
-      "metadata": {
-        "path": "/v1/images/edits"
       }
     },
     {
@@ -2960,50 +2893,6 @@
         "model": "gpt-image-2",
         "size": "1024x1792"
       }
-    },
-    {
-      "id": "aa05a32b-d990-43a9-a420-f9853c590270",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -40000,
-      "balanceAfter": 19960000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:10:13.352Z",
-      "metadata": {
-        "model": "gpt-image-2",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "fdcb1922-8086-40d1-96cc-c44117485f4c",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": 40000,
-      "balanceAfter": 20000000,
-      "reason": "image generation failed refund",
-      "createdAt": "2026-06-03T07:09:37.410Z",
-      "metadata": {
-        "path": "/v1/images/edits"
-      }
-    },
-    {
-      "id": "365b717f-c4e8-43d1-9cf8-8b01e8c8da0b",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "amount": -40000,
-      "balanceAfter": 19960000,
-      "reason": "image generation",
-      "createdAt": "2026-06-03T07:07:31.183Z",
-      "metadata": {
-        "model": "gpt-image-2",
-        "size": "1024x1792"
-      }
-    },
-    {
-      "id": "b7284470-04d9-478f-bf31-d5be36ee3a87",
-      "userId": "1cc48c68-84ca-4cfd-9b5c-2847d66a207a",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 20000000,
-      "balanceAfter": 20000000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-03T06:11:08.153Z"
     },
     {
       "id": "33249698-ca7a-453e-bc00-d1abfa86c723",
