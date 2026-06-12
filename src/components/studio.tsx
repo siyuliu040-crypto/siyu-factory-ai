@@ -800,6 +800,16 @@ function getPendingVideoProgress(status?: string, progress?: number) {
   return 5;
 }
 
+function getPendingImageProgress(status?: string, progress?: number) {
+  const numeric = Number(progress || 0);
+  if (numeric > 0) return numeric;
+  const normalized = String(status || "").toLowerCase();
+  if (["completed", "succeeded", "success", "done"].includes(normalized)) return 100;
+  if (["in_progress", "processing", "running"].includes(normalized)) return 15;
+  if (["queued", "created", "pending", "submitted"].includes(normalized)) return 8;
+  return 5;
+}
+
 function stringifyError(error: unknown) {
   if (error instanceof Error) return error.message;
   if (typeof error === "string") return error;
@@ -1555,12 +1565,12 @@ export default function Studio() {
         if (!statusResponse.ok) throw new Error(JSON.stringify(status));
         updateImageTask(id, {
           status: status.status || "in_progress",
-          progress: status.progress || 0
+          progress: getPendingImageProgress(status.status, status.progress)
         });
         setGenerationStatus({
           label: status.status || tx("statusProcessing", "生成中"),
           detail: id,
-          progress: status.progress || 0,
+          progress: getPendingImageProgress(status.status, status.progress),
           tone: "running"
         });
         if (status.status === "completed" && status.result) {
@@ -1646,13 +1656,13 @@ export default function Studio() {
         prompt,
         model: imageModel,
         status: started.status || "queued",
-        progress: started.progress || 0
+        progress: getPendingImageProgress(started.status, started.progress)
       };
       setImageTasks((current) => [nextTask, ...current].slice(0, 20));
       setGenerationStatus({
         label: tx("imageSubmitted", "图片任务提交成功"),
         detail: tx("imageSubmittedHint", "系统正在后台生成，您可以继续提交下一张图片。"),
-        progress: Math.max(5, started.progress || 5),
+        progress: getPendingImageProgress(started.status, started.progress),
         tone: "running"
       });
       setIsLoading(false);
@@ -1852,7 +1862,7 @@ export default function Studio() {
       prompt: slot.value.trim(),
       model: getBatchSlotModel(slot),
       status: "queued",
-      progress: 0,
+      progress: 5,
       attempts: 0
     }));
     setBatchJobs(initialJobs);
@@ -1867,7 +1877,7 @@ export default function Studio() {
         let finalPayload: VideoResult | undefined;
         for (let attempt = 0; attempt < MAX_VIDEO_ATTEMPTS; attempt += 1) {
           try {
-            updateJob({ status: "submitting", progress: 0, attempts: attempt + 1, error: "" });
+            updateJob({ status: "submitting", progress: 5, attempts: attempt + 1, error: "" });
             const payload = await submitVideo(job.prompt, job.model, { references: slot.referenceFiles, referenceUrl: "" });
             const taskId = getVideoTaskId(payload);
             updateJob({ taskId, status: payload.status || "queued", progress: getPendingVideoProgress(payload.status, payload.progress) });
