@@ -243,6 +243,16 @@ async function writeGithubAccountState(state: AccountState) {
   if (!response.ok) throw new Error(`GitHub account storage write failed: ${response.status}`);
 }
 
+function isRetryableAccountWriteError(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error || "");
+  return (
+    message.includes("GitHub account storage write failed: 409") ||
+    message.includes("GitHub account storage write failed: 500") ||
+    message.includes("GitHub account storage write failed: 502") ||
+    message.includes("GitHub account storage write failed: 503")
+  );
+}
+
 function ensureShape(value: Partial<AccountState> | null | undefined): AccountState {
   return {
     users: Array.isArray(value?.users) ? value.users : [],
@@ -555,8 +565,8 @@ export function clearSessionCookieHeader() {
   return `${SESSION_COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`;
 }
 
-export async function readAccountState() {
-  if (globalForAccounts.siyuAccountState) return globalForAccounts.siyuAccountState;
+export async function readAccountState(forceReload = false) {
+  if (!forceReload && globalForAccounts.siyuAccountState) return globalForAccounts.siyuAccountState;
 
   const githubState = await readGithubAccountState();
   if (githubState) {
@@ -591,11 +601,23 @@ export async function withAccountState<T>(mutator: (state: AccountState) => T | 
 
   await previousWrite.catch(() => undefined);
   try {
-    const state = await readAccountState();
-    const result = await mutator(state);
-    await writeAccountState(state);
-    resolveNext!(result);
-    return result;
+    let result: T | undefined;
+    let lastError: unknown;
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const state = await readAccountState(attempt > 0);
+      try {
+        result = await mutator(state);
+        await writeAccountState(state);
+        resolveNext!(result);
+        return result;
+      } catch (error) {
+        lastError = error;
+        if (!isRetryableAccountWriteError(error) || attempt >= 2) throw error;
+        globalForAccounts.siyuAccountState = undefined;
+        await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
+      }
+    }
+    throw lastError;
   } catch (error) {
     rejectNext!(error);
     throw error;
