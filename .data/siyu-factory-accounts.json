@@ -3164,10 +3164,10 @@
       "type": "video",
       "model": "hfsy:sora-2",
       "amount": 2400000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-12T03:56:10.185Z",
-      "updatedAt": "2026-06-12T03:56:10.185Z"
+      "updatedAt": "2026-06-12T04:02:12.317Z"
     },
     {
       "id": "5c0415afba214101b21160d8a014f1e8",
@@ -4475,10 +4475,11 @@
       "mode": "video",
       "model": "hfsy:sora-2",
       "prompt": "画面风格：明亮、干净、现代运动生活感\n目标人群：美国 20-50 岁女性\n\n画面从白色极简室内开始，一位女性站在柔和自然光中，穿着一整套亮粉色瑜伽服。镜头从她的肩颈位置缓慢下移，展示上衣的立领设计、前中顺直的同色拉链，以及贴合身体曲线的长袖短款版型。上衣长度停在腰线附近，干净利落，不拖沓。\n\n她轻轻转身，镜头切到侧面，展示上衣贴合腰部线条，高腰九分瑜伽裤从腰腹到腿部自然延展，整体轮廓修长。瑜伽裤没有复杂装饰，只有简洁的同色缝线，视觉上干净统一。她穿着白色运动鞋，做一个轻松的站姿转换，整套粉色瑜伽服在动作中保持平整贴身。\n\n随后画面切换到户外咖啡店前的人行道，她自然向前走，粉色套装在阳光下明亮醒目但不夸张。镜头捕捉她从正面走来的状态：上衣的短款比例拉高腰线，高腰裤修饰腿部线条，整套造型简约、利落、有活力。\n\n英文旁白：\n“Clean lines. A sculpted fit. This matching pink yoga set is made to flatter your shape without overcomplicating your look.”",
+      "previewUrl": "http://img688.com/file/1781236900655_b8b0d50b50cb44c480e51d9cd97a1ed1.mp4",
       "taskId": "2b1917dfddf64beb80ad5d5bd69863f8",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-06-12T03:56:10.185Z",
-      "updatedAt": "2026-06-12T04:02:09.790Z"
+      "updatedAt": "2026-06-12T04:02:12.317Z"
     },
     {
       "id": "32f88211-cef8-4bb9-a14a-6bb7290cf71b",
