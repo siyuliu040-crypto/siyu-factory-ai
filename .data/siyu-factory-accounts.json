@@ -3029,6 +3029,17 @@
   ],
   "generationTasks": [
     {
+      "id": "bef36e8c43414db89c23788e4c57ffb5",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:sora-2",
+      "amount": 2400000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-12T07:14:48.550Z",
+      "updatedAt": "2026-06-12T07:14:48.550Z"
+    },
+    {
       "id": "078146d5c2954854b5b72f632d2ec800",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -4350,6 +4361,17 @@
     }
   ],
   "history": [
+    {
+      "id": "bb419344-0c7a-4eee-b13d-dec84436fffc",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:sora-2",
+      "prompt": "Create a vertical 9:16 TikTok UGC video continuing the same hot pink yoga set try-on.\r\n\r\nUse the same woman, same hot pink zip-up jacket, same high-waisted seamless leggings, same white sneakers, same outdoor café fitness studio location, and same natural morning light. Background stays clear and detailed, never blurred.\r\n\r\nNo subtitles, no text, no logo, no watermark, no brand names, no readable signs, no TikTok UI.\r\n\r\nCollar comfort:\r\nUpper-body close-up. She touches the stand collar, turns her neck left and right, and smiles.\r\nVoiceover:\r\n“The collar is simple and clean. It doesn’t choke my neck.”\r\n\r\nCamera close-up on the collar sitting comfortably below the jawline. No collar clipping, no zipper warping.\r\n\r\nOne-piece front:\r\nThree-quarter front angle. She steps forward and gently smooths the front thigh fabric.\r\nVoiceover:\r\n“One-piece smooth front, no awkward line.”\r\n\r\nCamera close-up from waistband to upper thigh. Show seamless front panel, no front seam, no camel-toe effect, no strange crease, no fabric distortion.\r\n\r\nSquat test:\r\nSide full-body view. She does one controlled squat, pauses, stands up, then turns to show side and back fit.\r\nVoiceover:\r\n“Stretchy, smooth, squat-ready, and still cute.”\r\n\r\nCamera close-up on thigh and knee fabric during the squat. Show opaque, smooth, high-stretch fabric with no see-through, no pulling, no weird wrinkles.\r\n\r\nFinal CTA:\r\nShe walks beside the café table, picks up a plain iced coffee cup with no readable label, turns back, smiles, and says:\r\n“If you want comfy, snatched, and still cute, this is the set.”\r\n\r\nAnti-error:\r\nNo穿模, no body deformation, no warped hands, no extra fingers, no broken knees, no floating shoes, no fabric clipping, no zipper changing sides, no extra seams, no visible front seam, no awkward front line, no see-through fabric, no color change, no background blur.",
+      "taskId": "bef36e8c43414db89c23788e4c57ffb5",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-06-12T07:14:48.550Z",
+      "updatedAt": "2026-06-12T07:14:48.550Z"
+    },
     {
       "id": "3bdf83e7-13fc-4506-a1aa-ff7fcf463b47",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
