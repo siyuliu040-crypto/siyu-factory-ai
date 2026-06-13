@@ -691,7 +691,8 @@ export async function POST(request: Request) {
           resolution: VIDU_SIZE_TO_RESOLUTION[String(size || "")] || "720p",
           movement_amplitude: "auto",
           watermark: false,
-          audio: true
+          audio: true,
+          voice_id: "professional_host"
         },
         billing
       );

@@ -98,10 +98,11 @@ export async function parseSyResponse(response: Response) {
 }
 
 function decodeMojibake(value: string) {
-  if (!/[脙脗脜脝脟脠脡氓忙莽猫茅盲枚眉茂录]/.test(value)) return value;
+  const mojibakeMarkers = ["鑴", "欒", "剹", "皳", "鐚", "寘", "鐩", "昡"];
+  if (!mojibakeMarkers.some((marker) => value.includes(marker))) return value;
   try {
     const decoded = Buffer.from(value, "latin1").toString("utf8");
-    return decoded.includes("锟?") ? value : decoded;
+    return decoded.includes("閿?") ? value : decoded;
   } catch {
     return value;
   }
