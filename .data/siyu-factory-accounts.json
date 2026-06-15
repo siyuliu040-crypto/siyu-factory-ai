@@ -29,16 +29,6 @@
       "credits": 50000000,
       "createdAt": "2026-06-05T06:35:20.237Z",
       "updatedAt": "2026-06-05T07:35:07.790Z"
-    },
-    {
-      "id": "2d8ac096-a632-4290-8379-b80db80a3703",
-      "email": "test@test.com",
-      "name": "Test User",
-      "passwordHash": "12b7e9328268ab2493bb88fa9052d5e1:c4e4fb7227d1f6c51a88bce4c6fd866d1c60a191a03b6217b1f4fcb9db0cbbfc21355681c7a4b29804c6181e6a776efcfa89146bddec5383eddb9c6ed7a25754",
-      "role": "user",
-      "credits": 1500000,
-      "createdAt": "2026-06-07T11:52:29.750Z",
-      "updatedAt": "2026-06-09T05:36:16.198Z"
     }
   ],
   "sessions": [
@@ -1006,15 +996,6 @@
         "model": "sora2-pro-12s-9x16",
         "size": "1080x1920"
       }
-    },
-    {
-      "id": "c9a93030-5116-4d83-ba3a-07509d1d97b7",
-      "userId": "2d8ac096-a632-4290-8379-b80db80a3703",
-      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "amount": 1500000,
-      "balanceAfter": 1500000,
-      "reason": "main account allocation",
-      "createdAt": "2026-06-09T05:36:16.198Z"
     },
     {
       "id": "be59b8f3-3c06-4db3-851d-6579410ab26a",
