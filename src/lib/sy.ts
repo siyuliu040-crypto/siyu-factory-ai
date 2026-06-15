@@ -26,17 +26,6 @@ export const SY_MODELS: SyModelConfig[] = [
     successHint: "SY 上游：首尾帧，当前通道可能波动"
   },
   {
-    id: "sy:veo-X-veo_3_1-fl",
-    videoType: "Veo",
-    videoChannel: "veo-X-veo_3_1-fl",
-    label: "SY VEO 3.1 首尾帧",
-    credits: 180,
-    duration: 8,
-    mode: "first-last",
-    resolution: "720P",
-    successHint: "SY 上游：首尾帧，当前通道可能波动"
-  },
-  {
     id: "sy:grok-Yun",
     videoType: "Grok",
     videoChannel: "grok-Yun",
@@ -98,11 +87,11 @@ export async function parseSyResponse(response: Response) {
 }
 
 function decodeMojibake(value: string) {
-  const mojibakeMarkers = ["鑴", "欒", "剹", "皳", "鐚", "寘", "鐩", "昡"];
+  const mojibakeMarkers = ["鑴", "欒", "剹", "皳", "鐚", "寘", "鐩", "昡", "閼", "闁"];
   if (!mojibakeMarkers.some((marker) => value.includes(marker))) return value;
   try {
     const decoded = Buffer.from(value, "latin1").toString("utf8");
-    return decoded.includes("閿?") ? value : decoded;
+    return decoded.includes("閿?") || decoded.includes("闁?") ? value : decoded;
   } catch {
     return value;
   }

@@ -32,7 +32,6 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "grok-imagine-1.0-video-ref-6s": siteCredits(80),
   "grok-imagine-1.0-video-ref-10s": siteCredits(120),
   "sy:veo-X-veo_3_1-fast-fl": siteCredits(120),
-  "sy:veo-X-veo_3_1-fl": siteCredits(180),
   "sy:grok-Yun": siteCredits(120),
   "hfsy:sora-2": siteCredits(240),
   "hfsy:sd-2": siteCredits(1350),
