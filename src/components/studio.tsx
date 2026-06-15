@@ -31,6 +31,7 @@ import {
   Wand2,
   X
 } from "lucide-react";
+import type { DragEvent } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
 import { getHfsyModel } from "@/lib/hfsy";
@@ -1336,6 +1337,7 @@ export default function Studio() {
   const [tiktokActiveCategory, setTiktokActiveCategory] = useState<TiktokCategory>("full-moon");
   const [tiktokMessage, setTiktokMessage] = useState("");
   const [isTiktokLoading, setIsTiktokLoading] = useState(false);
+  const [dragTarget, setDragTarget] = useState("");
   const [generationStatus, setGenerationStatus] = useState<GenerationStatus>({
     label: "等待生成",
     detail: "提交任务后会显示上传、排队、处理和完成状态。",
@@ -1424,6 +1426,7 @@ export default function Studio() {
   const displayError = cleanErrorMessage(error, language);
   const needsTopUp = isInsufficientQuota(error);
   const referenceInputId = `reference-images-${mode}`;
+  const referenceDropId = `reference-drop-${mode}`;
   const singleVideoHasReference = referenceFiles.length > 0 || imageUrl.trim().length > 0;
   const activeModel = mode === "image" ? imageModel : videoModel;
   const isBatchWorkspace = activeTool === "batch";
@@ -1576,6 +1579,35 @@ export default function Studio() {
       reader.readAsDataURL(optimized);
     });
     updateTiktokRow(category, rowId, "imageUrl", dataUrl);
+  }
+
+  function handleImageDragOver(event: DragEvent<HTMLElement>, target: string) {
+    event.preventDefault();
+    event.stopPropagation();
+    event.dataTransfer.dropEffect = "copy";
+    setDragTarget(target);
+  }
+
+  function handleImageDragLeave(event: DragEvent<HTMLElement>, target: string) {
+    event.preventDefault();
+    event.stopPropagation();
+    const relatedTarget = event.relatedTarget as Node | null;
+    if (!relatedTarget || !event.currentTarget.contains(relatedTarget)) {
+      setDragTarget((current) => (current === target ? "" : current));
+    }
+  }
+
+  function handleImageDrop(
+    event: DragEvent<HTMLElement>,
+    target: string,
+    upload: (files: FileList) => void | Promise<void>
+  ) {
+    event.preventDefault();
+    event.stopPropagation();
+    setDragTarget((current) => (current === target ? "" : current));
+    if (event.dataTransfer.files?.length) {
+      void upload(event.dataTransfer.files);
+    }
   }
 
   async function saveTiktokCategory(category: TiktokCategory) {
@@ -2874,10 +2906,18 @@ export default function Studio() {
                         </tr>
                       </thead>
                       <tbody>
-                        {(tiktokInventory[tiktokActiveCategory] || []).map((row) => (
+                        {(tiktokInventory[tiktokActiveCategory] || []).map((row) => {
+                          const tiktokDropId = `tiktok-image-drop-${row.id}`;
+                          return (
                           <tr key={row.id}>
                             <td className="smart-image-cell">
-                              <label className={isAdmin ? "smart-image-uploader editable" : "smart-image-uploader"} htmlFor={`tiktok-image-${row.id}`}>
+                              <label
+                                className={`${isAdmin ? "smart-image-uploader editable" : "smart-image-uploader"} ${dragTarget === tiktokDropId ? "drag-active" : ""}`}
+                                htmlFor={`tiktok-image-${row.id}`}
+                                onDragLeave={isAdmin ? (event) => handleImageDragLeave(event, tiktokDropId) : undefined}
+                                onDragOver={isAdmin ? (event) => handleImageDragOver(event, tiktokDropId) : undefined}
+                                onDrop={isAdmin ? (event) => handleImageDrop(event, tiktokDropId, (files) => uploadTiktokImage(tiktokActiveCategory, row.id, files)) : undefined}
+                              >
                                 {row.imageUrl ? (
                                   // eslint-disable-next-line @next/next/no-img-element
                                   <img alt={row.account || "TikTok account"} src={row.imageUrl} />
@@ -2916,7 +2956,8 @@ export default function Studio() {
                               </td>
                             ) : null}
                           </tr>
-                        ))}
+                          );
+                        })}
                       </tbody>
                     </table>
                   </div>
@@ -3069,7 +3110,9 @@ export default function Studio() {
                       <span>{t.batchLimit} · {t.batchEstimatedCost}: {formatCreditTotal(batchCreditTotal, language)}</span>
                     </div>
                     <div className="batch-grid">
-                      {batchPrompts.map((slot, index) => (
+                      {batchPrompts.map((slot, index) => {
+                        const batchDropId = `batch-reference-drop-${slot.id}`;
+                        return (
                         <div className="batch-card" key={slot.id}>
                           <div className="batch-card-head">
                             <strong>{tx("work", "作品")} {index + 1}</strong>
@@ -3093,7 +3136,13 @@ export default function Studio() {
                               <span>{tx("workReferences", "作品参考图")}</span>
                               <small>{slot.referenceFiles.length}/{MAX_REFERENCE_IMAGES}</small>
                             </div>
-                            <label className="batch-reference-drop" htmlFor={`batch-reference-${slot.id}`}>
+                            <label
+                              className={`batch-reference-drop ${dragTarget === batchDropId ? "drag-active" : ""}`}
+                              htmlFor={`batch-reference-${slot.id}`}
+                              onDragLeave={(event) => handleImageDragLeave(event, batchDropId)}
+                              onDragOver={(event) => handleImageDragOver(event, batchDropId)}
+                              onDrop={(event) => handleImageDrop(event, batchDropId, (files) => addBatchReferenceFiles(slot.id, files))}
+                            >
                               <ImagePlus size={16} />
                               <span>{slot.referenceFiles.length ? t.addReferences : t.uploadReferences}</span>
                             </label>
@@ -3136,7 +3185,8 @@ export default function Studio() {
                             ) : null}
                           </div>
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                     <button className="secondary-button" disabled={isLoading || isPolling || !canAffordBatch} onClick={generateBatchVideos} type="button">
                       {isLoading ? <Loader2 size={18} /> : <Clapperboard size={18} />}{t.generateBatch}
@@ -3158,7 +3208,13 @@ export default function Studio() {
                 </span>
               </div>
               <div className="reference-panel">
-                <label className="reference-drop" htmlFor={referenceInputId}>
+                <label
+                  className={`reference-drop ${dragTarget === referenceDropId ? "drag-active" : ""}`}
+                  htmlFor={referenceInputId}
+                  onDragLeave={(event) => handleImageDragLeave(event, referenceDropId)}
+                  onDragOver={(event) => handleImageDragOver(event, referenceDropId)}
+                  onDrop={(event) => handleImageDrop(event, referenceDropId, addReferenceFiles)}
+                >
                   <ImagePlus size={22} />
                   <strong>{referencePreviews.length ? t.addReferences : t.uploadReferences}</strong>
                   <span>{isOptimizingReferences ? "Optimizing..." : mode === "image" ? t.image : t.video}</span>

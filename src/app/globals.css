@@ -1164,6 +1164,16 @@ button.status-pill {
   cursor: pointer;
 }
 
+.reference-drop.drag-active,
+.batch-reference-drop.drag-active,
+.smart-image-uploader.drag-active {
+  border-color: #0877ff;
+  background: rgba(8, 119, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(8, 119, 255, 0.12);
+  color: #0f62c9;
+  transform: translateY(-1px);
+}
+
 .smart-image-uploader img {
   width: 100%;
   height: auto;
