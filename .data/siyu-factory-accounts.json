@@ -3367,5 +3367,20 @@
       "updatedAt": "2026-06-05T06:40:37.869Z"
     }
   ],
-  "tiktokInventory": {}
+  "tiktokInventory": {
+    "custom-followers": [
+      {
+        "id": "custom-followers-1781516116046-9c03d92a658ea",
+        "imageUrl": "",
+        "account": "自选号",
+        "price": "按账号定价",
+        "followers": "1000-5000",
+        "twoFa": "按账号情况",
+        "email": "可备注邮箱",
+        "status": "可选",
+        "notes": "支持按粉丝、地区、内容方向筛选",
+        "updatedAt": "2026-06-15T09:36:27.877Z"
+      }
+    ]
+  }
 }
