@@ -11,6 +11,8 @@ const CUSTOM_VIDEO_MODELS = [
 ];
 
 const VERIFIED_PORTRAIT_VIDEO_MODELS = new Set<string>([
+  "sora-2-4s-9x16",
+  "sora-2-8s-9x16"
 ]);
 
 function isAllowedModel(model: unknown) {

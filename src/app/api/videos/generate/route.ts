@@ -42,6 +42,8 @@ const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
 };
 const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
 const VERIFIED_VIDEO_MODELS = new Set([
+  "sora-2-4s-9x16",
+  "sora-2-8s-9x16",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",
@@ -144,6 +146,11 @@ function minimalReferencePayloadFields(referenceUrls: string[]) {
 
 function isGrokReferenceVideoModel(model: string) {
   return model === "grok-imagine-1.0-video-ref-6s" || model === "grok-imagine-1.0-video-ref-10s";
+}
+
+function isPromptOnlySoraModel(model: string) {
+  const lower = model.toLowerCase();
+  return lower.startsWith("sora-2-") || lower.startsWith("sora2-pro-") || lower.startsWith("ali-sora-");
 }
 
 function supportsStartEndFrames(model: string) {
@@ -709,28 +716,15 @@ export async function POST(request: Request) {
       );
     }
 
-    if (references.length === 0) {
-      return await postVideoPayload(
-        {
-          model: upstreamModel,
-          prompt,
-          ...(seconds ? { seconds: String(seconds) } : {}),
-          ...(size ? { size: String(size) } : {}),
-          ...(isGrokReferenceVideoModel(model)
-            ? minimalReferencePayloadFields(publicReferenceUrls)
-            : referencePayloadFields(publicReferenceUrls))
-        },
-        billing
-      );
-    }
-
     return await postVideoPayload(
       {
         model: upstreamModel,
         prompt,
         ...(seconds ? { seconds: String(seconds) } : {}),
         ...(size ? { size: String(size) } : {}),
-        ...(isGrokReferenceVideoModel(model)
+        ...(isPromptOnlySoraModel(model)
+          ? {}
+          : isGrokReferenceVideoModel(model)
           ? minimalReferencePayloadFields(publicReferenceUrls)
           : referencePayloadFields(publicReferenceUrls))
       },

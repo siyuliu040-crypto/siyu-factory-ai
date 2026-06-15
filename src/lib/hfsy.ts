@@ -17,6 +17,19 @@ export type HfsyModel = {
 
 export const HFSY_MODELS: HfsyModel[] = [
   {
+    id: "hfsy:sora-2",
+    upstreamModel: "sora-2",
+    label: "HFSY Sora 2 VIP",
+    media: "video",
+    credits: 240,
+    upstreamPrice: 0.8,
+    durationOptions: [4, 8, 10],
+    resolution: "1080P",
+    referenceMode: "optional",
+    description:
+      "HFSY Sora 2 official transfer API. Supports prompt-only video, optional reference image input, and spoken dialogue prompts."
+  },
+  {
     id: "hfsy:sd-2",
     upstreamModel: "sd-2",
     label: "HFSY SD 2",
