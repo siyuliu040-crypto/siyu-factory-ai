@@ -179,15 +179,29 @@ const VIDEO_RETRY_DELAY_MS = 30000;
 const VIDEO_POLL_INTERVAL_MS = 5000;
 const VIDEO_MAX_POLL_ATTEMPTS = 180;
 const VIDEO_MAX_TRANSIENT_ATTEMPTS = 36;
+const IMAGE_TASKS_STORAGE_KEY = "siyu-factory-image-tasks";
 
 const stableImageModels = [
   "gpt-image-2",
+  "auto-image",
+  "nano_banana_2-1K-auto",
   "nano_banana_2-1K-portrait",
+  "nano_banana_2-1K-square",
+  "nano_banana_2-2K-auto",
   "nano_banana_2-2K-portrait",
+  "nano_banana_2-2K-square",
+  "nano_banana_2-4K-auto",
   "nano_banana_2-4K-portrait",
+  "nano_banana_2-4K-square",
+  "nano_banana_pro-1K-auto",
   "nano_banana_pro-1K-portrait",
+  "nano_banana_pro-1K-square",
+  "nano_banana_pro-2K-auto",
   "nano_banana_pro-2K-portrait",
-  "nano_banana_pro-4K-portrait"
+  "nano_banana_pro-2K-square",
+  "nano_banana_pro-4K-auto",
+  "nano_banana_pro-4K-portrait",
+  "nano_banana_pro-4K-square"
 ];
 
 const stableVideoModels = [
@@ -542,8 +556,20 @@ function getModelTitle(model: string, language: Language) {
     if (lower.includes("-hd")) return language === "zh" ? "VEO 3.1 Fast HD" : "VEO 3.1 Fast HD";
     return language === "zh" ? "VEO 3.1 Fast 竖屏" : "VEO 3.1 Fast Portrait";
   }
-  if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro" : "Nano Banana Pro";
-  if (lower.includes("nano_banana")) return language === "zh" ? "Nano Banana" : "Nano Banana";
+  if (lower === "auto-image") return language === "zh" ? "智能生图" : "Auto Image";
+  if (lower === "gpt-image-2") return language === "zh" ? "GPT Image 2" : "GPT Image 2";
+  if (lower.includes("nano_banana")) {
+    const family = lower.includes("pro") ? "Nano Banana Pro" : "Nano Banana 2";
+    const resolution = lower.match(/-(1k|2k|4k)-/)?.[1]?.toUpperCase() || "";
+    const shape = lower.includes("-portrait")
+      ? language === "zh" ? "竖图" : "portrait"
+      : lower.includes("-square")
+        ? language === "zh" ? "方图" : "square"
+        : lower.includes("-auto")
+          ? language === "zh" ? "自动比例" : "auto aspect"
+          : "";
+    return [family, shape, resolution].filter(Boolean).join(" ");
+  }
   return model;
 }
 
@@ -613,6 +639,31 @@ function getModelDescription(model: string, language: Language) {
       ? `${aspect} · 4/8/12/15 秒可选 · 首帧必填，尾帧可选`
       : `${aspect} · 4/8/12/15s selectable · start required, end optional`;
   }
+  if (lower === "auto-image") {
+    return language === "zh"
+      ? "智能选择生图模型 · 适合快速出图 · 支持参考图生图"
+      : "Auto-routed image model · quick drafts · supports reference image edits";
+  }
+  if (lower === "gpt-image-2") {
+    return language === "zh"
+      ? "低成本通用生图 · 适合商品图、广告素材和提示词测试 · 支持参考图生图"
+      : "Low-cost general image generation for product images, ads, and prompt tests · supports reference edits";
+  }
+  if (lower.includes("nano_banana")) {
+    const family = lower.includes("pro") ? "Nano Banana Pro" : "Nano Banana 2";
+    const resolution = lower.match(/-(1k|2k|4k)-/)?.[1]?.toUpperCase() || "2K";
+    const shape = lower.includes("-portrait")
+      ? language === "zh" ? "竖图优先" : "portrait-first"
+      : lower.includes("-square")
+        ? language === "zh" ? "方图优先" : "square-first"
+        : language === "zh" ? "自动适配比例" : "auto aspect";
+    const proHint = lower.includes("pro")
+      ? language === "zh" ? "文字渲染和细节更强" : "stronger text rendering and detail"
+      : language === "zh" ? "速度和稳定性更均衡" : "balanced speed and stability";
+    return language === "zh"
+      ? `${family} · ${resolution} · ${shape} · ${proHint} · 支持参考图生图`
+      : `${family} · ${resolution} · ${shape} · ${proHint} · supports reference image edits`;
+  }
   const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
     : copy[language].modelTextOnly;
@@ -626,8 +677,9 @@ function getModelDescription(model: string, language: Language) {
 function getModelGroupLabel(model: string, mode: Mode, language: Language) {
   const lower = model.toLowerCase();
   if (mode === "image") {
-    if (lower.includes("nano")) return language === "zh" ? "Nano Banana 图片" : "Nano Banana images";
-    if (lower.includes("gpt")) return language === "zh" ? "GPT 图片" : "GPT images";
+    if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro 图片" : "Nano Banana Pro images";
+    if (lower.includes("nano_banana")) return language === "zh" ? "Nano Banana 2 图片" : "Nano Banana 2 images";
+    if (lower.includes("gpt") || lower.includes("auto-image")) return language === "zh" ? "通用图片模型" : "General image models";
     return language === "zh" ? "图片模型" : "Image models";
   }
   if (lower.startsWith("vidu:")) return "Vidu";
@@ -1144,6 +1196,37 @@ export default function Studio() {
     };
   }, [referencePreviews]);
 
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(IMAGE_TASKS_STORAGE_KEY);
+      if (!stored) return;
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed)) {
+        const restored = parsed
+          .filter((item): item is ImageTask => Boolean(item?.id && item?.prompt && item?.model))
+          .slice(0, 20);
+        setImageTasks(restored);
+        for (const task of restored) {
+          if (task.status !== "completed" && task.status !== "failed") {
+            setTimeout(() => void pollImageJob(task.id), 0);
+          }
+        }
+      }
+    } catch {
+      window.localStorage.removeItem(IMAGE_TASKS_STORAGE_KEY);
+    }
+    // Restore once on the client; pollImageJob reads current language/copy through closures.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(IMAGE_TASKS_STORAGE_KEY, JSON.stringify(imageTasks.slice(0, 20)));
+    } catch {
+      // Browser storage can be disabled; generation itself should keep working.
+    }
+  }, [imageTasks]);
+
   const imageModels = useMemo(() => {
     const liveIds = new Set(models.map((model) => model.id));
     const liveStable = stableImageModels.filter((id) => liveIds.has(id));
@@ -1185,7 +1268,7 @@ export default function Studio() {
   const activeWorkspaceCostText = isDeepSeekWorkspace
     ? formatCreditTotal(deepSeekCost, language)
     : formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
-  const activeModelDescription = mode === "video" ? getModelDescription(activeModel, language) : activeModel;
+  const activeModelDescription = getModelDescription(activeModel, language);
   const promptLimit = isDeepSeekWorkspace ? getPromptLimit(deepSeekModel, "text") : getModelPromptLimit(activeModel, mode);
   const promptLength = isDeepSeekWorkspace ? deepSeekInput.trim().length : prompt.trim().length;
   const promptOverLimit = promptLength > promptLimit;
