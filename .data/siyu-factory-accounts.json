@@ -2087,6 +2087,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_ooHU9GQuRT5mumMDbkIyWahO3FeXoGal",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "sora2-pro-12s-9x16",
+      "amount": 1600000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-06-15T06:16:28.577Z",
+      "updatedAt": "2026-06-15T06:16:28.577Z"
+    },
+    {
       "id": "task_g6NRyMt4isHXPi9HDFWTVTVSm3VRDhB7",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -2968,6 +2979,17 @@
     }
   ],
   "history": [
+    {
+      "id": "a39c2bcb-16ab-4a77-9793-35a8059d5e5e",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "sora2-pro-12s-9x16",
+      "prompt": "男生跑步",
+      "taskId": "task_ooHU9GQuRT5mumMDbkIyWahO3FeXoGal",
+      "status": "queued",
+      "createdAt": "2026-06-15T06:16:28.577Z",
+      "updatedAt": "2026-06-15T06:16:28.577Z"
+    },
     {
       "id": "943a21e3-a28f-444b-ad23-7cf947712d33",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
