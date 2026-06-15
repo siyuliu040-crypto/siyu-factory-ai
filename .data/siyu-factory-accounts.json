@@ -2963,9 +2963,9 @@
       "model": "sy:veo-X-veo_3_1-fast-fl",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "task_g6NRyMt4isHXPi9HDFWTVTVSm3VRDhB7",
-      "status": "success",
+      "status": "queued",
       "createdAt": "2026-06-15T06:12:01.451Z",
-      "updatedAt": "2026-06-15T06:12:05.240Z"
+      "updatedAt": "2026-06-15T06:12:07.150Z"
     },
     {
       "id": "18a321eb-8450-4378-b874-c32247d21895",
