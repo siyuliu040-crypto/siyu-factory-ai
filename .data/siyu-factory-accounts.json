@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 24412880,
+      "credits": 26012880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-06-15T06:18:48.073Z"
+      "updatedAt": "2026-06-15T06:19:32.338Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -134,6 +134,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "ca5e1d80-9deb-4906-91d0-0e45d26332df",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1600000,
+      "balanceAfter": 26012880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-06-15T06:19:32.338Z",
+      "metadata": {
+        "taskId": "task_ooHU9GQuRT5mumMDbkIyWahO3FeXoGal",
+        "model": "sora2-pro-12s-9x16"
+      }
+    },
     {
       "id": "d8ebcbd5-492b-4545-8754-ff45e0d8c3dc",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2104,10 +2116,10 @@
       "type": "video",
       "model": "sora2-pro-12s-9x16",
       "amount": 1600000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-15T06:16:28.577Z",
-      "updatedAt": "2026-06-15T06:16:28.577Z"
+      "updatedAt": "2026-06-15T06:19:32.338Z"
     },
     {
       "id": "task_g6NRyMt4isHXPi9HDFWTVTVSm3VRDhB7",
@@ -2998,9 +3010,10 @@
       "model": "sora2-pro-12s-9x16",
       "prompt": "男生跑步",
       "taskId": "task_ooHU9GQuRT5mumMDbkIyWahO3FeXoGal",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-06-15T06:16:28.577Z",
-      "updatedAt": "2026-06-15T06:19:29.235Z"
+      "updatedAt": "2026-06-15T06:19:32.338Z",
+      "error": "{\"code\":\"upstream_generation_failed\",\"message\":\"内容违规，请调整提示词或者图片\"}"
     },
     {
       "id": "943a21e3-a28f-444b-ad23-7cf947712d33",
