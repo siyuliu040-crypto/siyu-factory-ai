@@ -1060,6 +1060,15 @@ button.status-pill {
   align-items: flex-start;
 }
 
+.result-actions,
+.batch-job-actions,
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 .result-head h2 {
   margin: 0;
   font-size: 18px;
@@ -1307,6 +1316,7 @@ button.status-pill {
   background: rgba(255, 255, 255, 0.62);
   padding: 8px;
   color: var(--ink);
+  cursor: pointer;
   text-align: left;
 }
 
@@ -1369,6 +1379,36 @@ button.status-pill {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.history-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.history-action-text,
+.history-action-link {
+  width: auto;
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.history-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-weight: 900;
+}
+
+.history-action-link:hover,
+.history-action-link:focus-visible {
+  text-decoration: underline;
 }
 
 .history-empty {

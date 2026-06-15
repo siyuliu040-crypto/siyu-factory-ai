@@ -6,6 +6,7 @@ import {
   Clapperboard,
   CreditCard,
   Download,
+  ExternalLink,
   Film,
   FolderOpen,
   Home,
@@ -1753,6 +1754,11 @@ export default function Studio() {
     }
   }
 
+  function openAsset(url?: string) {
+    if (!url) return;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
   async function generateImage() {
     if (!currentUser) return;
     if (promptOverLimit) {
@@ -2823,7 +2829,14 @@ export default function Studio() {
               <p>{displayError ? t.resultError : t.resultIdle}</p>
             </div>
             {downloadUrl ? (
-              <button className="secondary-button" onClick={() => void downloadGeneratedAsset()} type="button"><Download size={16} />{t.download}</button>
+              <div className="result-actions">
+                <button className="secondary-button" onClick={() => openAsset(downloadUrl)} type="button">
+                  <ExternalLink size={16} />{t.viewResult}
+                </button>
+                <button className="secondary-button" onClick={() => void downloadGeneratedAsset()} type="button">
+                  <Download size={16} />{t.download}
+                </button>
+              </div>
             ) : null}
           </div>
 
@@ -2908,9 +2921,16 @@ export default function Studio() {
                       </div>
                       <div className="image-task-actions">
                         {task.result ? (
-                          <button className="text-button" onClick={() => setImageResult(task.result || null)} type="button">
-                            {tx("viewResult", "查看")}
-                          </button>
+                          <div className="task-actions">
+                            <button className="text-button" onClick={() => setImageResult(task.result || null)} type="button">
+                              {tx("viewResult", "查看")}
+                            </button>
+                            {task.url ? (
+                              <button className="text-button" onClick={() => openAsset(task.url)} type="button">
+                                {tx("openResult", language === "zh" ? "打开" : "Open")}
+                              </button>
+                            ) : null}
+                          </div>
                         ) : null}
                         {task.url ? (
                           <a className="text-button" download href={task.url} target="_blank" rel="noreferrer">
@@ -2934,7 +2954,12 @@ export default function Studio() {
                     <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language, seconds, normalizeResolutionForModel(job.model, videoSize, language))}</span>
                     <small>{job.prompt}</small>
                   </div>
-                  {job.url ? <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer"><Download size={15} />{t.download}</a> : null}
+                  {job.url ? (
+                    <div className="batch-job-actions">
+                      <a className="secondary-button" href={job.url} target="_blank" rel="noreferrer"><ExternalLink size={15} />{t.viewResult}</a>
+                      <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer"><Download size={15} />{t.download}</a>
+                    </div>
+                  ) : null}
                   {job.error ? <p>{cleanErrorMessage(job.error, language)}</p> : null}
                 </div>
               ))}
@@ -2970,7 +2995,19 @@ export default function Studio() {
                 <div className="history-section-title"><ImageIcon size={14} />{t.image}</div>
                 <div className="history-list">
                   {imageHistory.map((item) => (
-                    <button className="history-item" key={item.id} onClick={() => restoreHistory(item)} type="button">
+                    <div
+                      className="history-item"
+                      key={item.id}
+                      onClick={() => restoreHistory(item)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          restoreHistory(item);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                    >
                       <div className="history-thumb">
                         {item.previewUrl ? (
                           // eslint-disable-next-line @next/next/no-img-element
@@ -2982,8 +3019,31 @@ export default function Studio() {
                         <span>{item.prompt}</span>
                         {item.error ? <small className="history-error">{cleanErrorMessage(item.error, language)}</small> : null}
                         <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
+                        {item.previewUrl ? (
+                          <span className="history-actions">
+                            <span className="history-action-text">{tx("restoreResult", language === "zh" ? "恢复到结果区" : "Restore")}</span>
+                            <span
+                              className="history-action-link"
+                              onClick={(event) => {
+                                event.stopPropagation();
+                                openAsset(item.previewUrl);
+                              }}
+                              role="button"
+                              tabIndex={0}
+                              onKeyDown={(event) => {
+                                if (event.key === "Enter" || event.key === " ") {
+                                  event.preventDefault();
+                                  event.stopPropagation();
+                                  openAsset(item.previewUrl);
+                                }
+                              }}
+                            >
+                              <ExternalLink size={13} />{tx("openResult", language === "zh" ? "打开查看" : "Open")}
+                            </span>
+                          </span>
+                        ) : null}
                       </div>
-                    </button>
+                    </div>
                   ))}
                   {!imageHistory.length ? <p className="history-empty">{t.historyEmpty}</p> : null}
                 </div>
@@ -2992,7 +3052,19 @@ export default function Studio() {
                   {videoHistory.map((item) => {
                     const previewUrl = getHistoryVideoPreviewUrl(item);
                     return (
-                      <button className="history-item" key={item.id} onClick={() => restoreHistory(item)} type="button">
+                      <div
+                        className="history-item"
+                        key={item.id}
+                        onClick={() => restoreHistory(item)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Enter" || event.key === " ") {
+                            event.preventDefault();
+                            restoreHistory(item);
+                          }
+                        }}
+                        role="button"
+                        tabIndex={0}
+                      >
                         <div className="history-thumb video-thumb">
                           {previewUrl ? (
                             <video muted playsInline preload="metadata" src={previewUrl} />
@@ -3003,8 +3075,31 @@ export default function Studio() {
                           <span>{item.prompt}</span>
                           {item.error ? <small className="history-error">{cleanErrorMessage(item.error, language)}</small> : null}
                           <small>{new Date(item.createdAt).toLocaleString(language === "zh" ? "zh-CN" : "en-US")}</small>
+                          {previewUrl ? (
+                            <span className="history-actions">
+                              <span className="history-action-text">{tx("restoreResult", language === "zh" ? "恢复到结果区" : "Restore")}</span>
+                              <span
+                                className="history-action-link"
+                                onClick={(event) => {
+                                  event.stopPropagation();
+                                  openAsset(previewUrl);
+                                }}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(event) => {
+                                  if (event.key === "Enter" || event.key === " ") {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    openAsset(previewUrl);
+                                  }
+                                }}
+                              >
+                                <ExternalLink size={13} />{tx("openResult", language === "zh" ? "打开查看" : "Open")}
+                              </span>
+                            </span>
+                          ) : null}
                         </div>
-                      </button>
+                      </div>
                     );
                   })}
                   {!videoHistory.length ? <p className="history-empty">{t.historyEmpty}</p> : null}
