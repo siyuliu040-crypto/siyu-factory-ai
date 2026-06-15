@@ -2130,7 +2130,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-06-15T06:12:01.451Z",
-      "updatedAt": "2026-06-15T06:26:06.082Z"
+      "updatedAt": "2026-06-15T06:26:09.702Z"
     },
     {
       "id": "c3a99be9297d4e4d8869845985428223",
@@ -3024,7 +3024,7 @@
       "taskId": "task_g6NRyMt4isHXPi9HDFWTVTVSm3VRDhB7",
       "status": "failed",
       "createdAt": "2026-06-15T06:12:01.451Z",
-      "updatedAt": "2026-06-15T06:26:06.082Z",
+      "updatedAt": "2026-06-15T06:26:09.702Z",
       "error": "The provided prompt is considered unsafe and it cannot be used to generate content."
     },
     {
