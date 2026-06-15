@@ -42,8 +42,6 @@ const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
 };
 const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
 const VERIFIED_VIDEO_MODELS = new Set([
-  "sora-2-4s-9x16",
-  "sora2-pro-12s-9x16",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",

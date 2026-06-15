@@ -193,11 +193,8 @@ const stableImageModels = [
 const stableVideoModels = [
   "sy:veo-X-veo_3_1-fast-fl",
   "sy:grok-Yun",
-  "hfsy:sora-2",
   "hfsy:sd-2",
   "hfsy:sd-2-vip",
-  "sora-2-4s-9x16",
-  "sora2-pro-12s-9x16",
   "vidu:viduq3-pro-fast",
   "vidu:viduq3-turbo",
   "vidu:viduq3-pro",

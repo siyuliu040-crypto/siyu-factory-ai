@@ -20,12 +20,6 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "veo_3_1-fast-portrait": siteCredits(3),
   "veo_3_1-fast-portrait-hd": siteCredits(3),
   "veo_3_1-fast-portrait-fl-hd": siteCredits(3),
-  "ali-sora-video-portrait-official-4s": siteCredits(5),
-  "ali-sora-video-portrait-official-8s": siteCredits(8),
-  "sora-2-4s-9x16": siteCredits(60),
-  "sora-2-8s-9x16": siteCredits(110),
-  "sora-2-12s-9x16": siteCredits(160),
-  "sora2-pro-12s-9x16": siteCredits(160),
   "grok-imagine-1.0-video": siteCredits(15),
   "grok-imagine-1.0-video-6s": siteCredits(12),
   "grok-imagine-1.0-video-10s": siteCredits(18),
@@ -33,7 +27,6 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "grok-imagine-1.0-video-ref-10s": siteCredits(120),
   "sy:veo-X-veo_3_1-fast-fl": siteCredits(120),
   "sy:grok-Yun": siteCredits(120),
-  "hfsy:sora-2": siteCredits(240),
   "hfsy:sd-2": siteCredits(1350),
   "hfsy:sd-2-vip": siteCredits(1350),
   "deepseek-v4-flash": siteCredits(1),
@@ -47,12 +40,7 @@ export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
   "veo_3_1-fast-portrait": 0.12,
   "veo_3_1-fast-portrait-hd": 0.12,
   "veo_3_1-fast-portrait-fl-hd": 0.12,
-  "ali-sora-video-portrait-official-4s": 0.288,
-  "ali-sora-video-portrait-official-8s": 0.288,
-  "sora-2-4s-9x16": 0.384,
-  "sora-2-8s-9x16": 0.768,
-  "sora-2-12s-9x16": 1.152,
-  "sora2-pro-12s-9x16": 1.688
+  
 };
 
 const VIDU_CREDITS_PER_SECOND: Record<string, Record<string, number>> = {
