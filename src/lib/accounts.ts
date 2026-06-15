@@ -65,12 +65,26 @@ export type GenerationHistoryRecord = {
   error?: string;
 };
 
+export type TiktokInventoryRow = {
+  id: string;
+  imageUrl?: string;
+  account: string;
+  price: string;
+  followers: string;
+  twoFa: string;
+  email: string;
+  status: string;
+  notes: string;
+  updatedAt: string;
+};
+
 export type AccountState = {
   users: AccountUser[];
   sessions: AccountSession[];
   ledger: CreditLedgerEntry[];
   generationTasks: GenerationTaskRecord[];
   history: GenerationHistoryRecord[];
+  tiktokInventory: Record<string, TiktokInventoryRow[]>;
 };
 
 type RegisterInput = {
@@ -259,7 +273,8 @@ function ensureShape(value: Partial<AccountState> | null | undefined): AccountSt
     sessions: Array.isArray(value?.sessions) ? value.sessions : [],
     ledger: Array.isArray(value?.ledger) ? value.ledger : [],
     generationTasks: Array.isArray(value?.generationTasks) ? value.generationTasks : [],
-    history: Array.isArray(value?.history) ? value.history : []
+    history: Array.isArray(value?.history) ? value.history : [],
+    tiktokInventory: value?.tiktokInventory && typeof value.tiktokInventory === "object" ? value.tiktokInventory : {}
   };
 }
 
@@ -269,7 +284,8 @@ export function createEmptyAccountState(): AccountState {
     sessions: [],
     ledger: [],
     generationTasks: [],
-    history: []
+    history: [],
+    tiktokInventory: {}
   };
 }
 

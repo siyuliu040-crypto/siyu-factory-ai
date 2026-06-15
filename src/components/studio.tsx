@@ -12,6 +12,7 @@ import {
   Home,
   Image as ImageIcon,
   ImagePlus,
+  KeyRound,
   Languages,
   Layers3,
   Loader2,
@@ -21,7 +22,9 @@ import {
   Play,
   RefreshCw,
   Shield,
+  ShoppingBag,
   Sparkles,
+  Table2,
   User,
   Users,
   Wallet,
@@ -36,8 +39,9 @@ import { getPromptLimit } from "@/lib/prompt-limits";
 
 type Mode = "image" | "video";
 type Language = "zh" | "en";
-type WorkspaceTool = "home" | "image" | "video" | "deepseek" | "batch" | "library";
+type WorkspaceTool = "home" | "image" | "video" | "deepseek" | "batch" | "library" | "tiktok";
 type DeepSeekTask = "image_prompt" | "video_prompt" | "batch_shots" | "product_copy";
+type TiktokCategory = "full-moon" | "custom-followers" | "showcase";
 
 type ModelItem = {
   id: string;
@@ -168,6 +172,21 @@ type DeepSeekResult = {
   raw?: unknown;
 };
 
+type TiktokInventoryRow = {
+  id: string;
+  imageUrl?: string;
+  account: string;
+  price: string;
+  followers: string;
+  twoFa: string;
+  email: string;
+  status: string;
+  notes: string;
+  updatedAt?: string;
+};
+
+type TiktokInventory = Record<TiktokCategory, TiktokInventoryRow[]>;
+
 const TOPUP_URL = "https://api.hellobabygo.com/console/topup";
 const MAX_REFERENCE_IMAGES = 6;
 const MAX_REFERENCE_SIDE = 1280;
@@ -224,6 +243,88 @@ const stableDeepSeekModels = ["deepseek-v4-flash", "deepseek-v4-pro", "omni_flas
 const deepSeekTaskOptions: DeepSeekTask[] = ["image_prompt", "video_prompt", "batch_shots", "product_copy"];
 
 const modelCreditCosts: Record<string, number> = MODEL_CREDIT_COSTS;
+
+const tiktokProducts: Array<{
+  id: TiktokCategory;
+  title: string;
+  subtitle: string;
+  priceLine: string;
+  badge: string;
+}> = [
+  {
+    id: "full-moon",
+    title: "满月白号",
+    subtitle: "6 元 · 2FA 验证 · 首次登录包售后",
+    priceLine: "6 元固定价",
+    badge: "2FA"
+  },
+  {
+    id: "custom-followers",
+    title: "自选号",
+    subtitle: "1000-5000 粉丝 · 可按账号资料筛选",
+    priceLine: "按账号定价",
+    badge: "自选"
+  },
+  {
+    id: "showcase",
+    title: "橱窗号",
+    subtitle: "适合 TikTok Shop / 橱窗带货账号池",
+    priceLine: "按橱窗资质定价",
+    badge: "橱窗"
+  }
+];
+
+function createTiktokRow(category: TiktokCategory): TiktokInventoryRow {
+  const defaults: Record<TiktokCategory, Partial<TiktokInventoryRow>> = {
+    "full-moon": {
+      account: "满月白号",
+      price: "6",
+      followers: "0",
+      twoFa: "已开 2FA",
+      email: "首次登录包售后",
+      status: "现货",
+      notes: "可上传截图或账号资料图"
+    },
+    "custom-followers": {
+      account: "自选号",
+      price: "按账号定价",
+      followers: "1000-5000",
+      twoFa: "按账号情况",
+      email: "可备注邮箱",
+      status: "可选",
+      notes: "支持按粉丝、地区、内容方向筛选"
+    },
+    showcase: {
+      account: "橱窗号",
+      price: "按资质定价",
+      followers: "按账号情况",
+      twoFa: "按账号情况",
+      email: "可备注邮箱",
+      status: "可售",
+      notes: "备注橱窗状态、国家和类目"
+    }
+  };
+  return {
+    id: `${category}-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+    imageUrl: "",
+    account: defaults[category].account || "",
+    price: defaults[category].price || "",
+    followers: defaults[category].followers || "",
+    twoFa: defaults[category].twoFa || "",
+    email: defaults[category].email || "",
+    status: defaults[category].status || "",
+    notes: defaults[category].notes || "",
+    updatedAt: new Date().toISOString()
+  };
+}
+
+function createInitialTiktokInventory(): TiktokInventory {
+  return {
+    "full-moon": [createTiktokRow("full-moon")],
+    "custom-followers": [createTiktokRow("custom-followers")],
+    showcase: [createTiktokRow("showcase")]
+  };
+}
 
 const copy = {
   zh: {
@@ -331,7 +432,38 @@ const copy = {
     adminRole: "管理员",
     memberRole: "成员",
     name: "昵称",
-    email: "邮箱"
+    email: "邮箱",
+    premiumTiktok: "优质 TikTok 账号",
+    tiktokWorkspace: "优质 TikTok 账号",
+    tiktokAvatar: "T",
+    tiktokTitle: "TikTok 账号库存中心",
+    tiktokHint: "普通成员可以查看库存，管理员可以编辑表格、上传截图并保存。",
+    smartTable: "智能表格",
+    editable: "可编辑",
+    viewOnly: "仅查看",
+    rows: "条",
+    autoResize: "图片自动伸缩",
+    selected: "已选择",
+    select: "选择",
+    inventoryRows: "库存数量",
+    inventoryTable: "账号库存智能表格",
+    inventoryTableHint: "上传图片后会自动压缩并按比例预览；文本内容会随行高伸缩。",
+    addRow: "添加一行",
+    saveTable: "保存表格",
+    tiktokSaved: "TikTok 账号表格已保存。",
+    tiktokSaveFailed: "TikTok 表格保存失败。",
+    accountImage: "图片",
+    accountInfo: "账号/编号",
+    price: "价格",
+    followers: "粉丝",
+    twoFa: "2FA/验证",
+    emailInfo: "邮箱/售后",
+    status: "状态",
+    notes: "备注",
+    actions: "操作",
+    uploadImage: "上传图片",
+    delete: "删除",
+    noAiCost: "无需积分"
   },
   en: {
     mediaType: "Media type",
@@ -438,7 +570,38 @@ const copy = {
     adminRole: "Admin",
     memberRole: "Member",
     name: "Name",
-    email: "Email"
+    email: "Email",
+    premiumTiktok: "Premium TikTok Accounts",
+    tiktokWorkspace: "Premium TikTok Accounts",
+    tiktokAvatar: "T",
+    tiktokTitle: "TikTok account inventory",
+    tiktokHint: "Members can view inventory. Admins can edit tables, upload screenshots, and save.",
+    smartTable: "Smart table",
+    editable: "Editable",
+    viewOnly: "View only",
+    rows: "rows",
+    autoResize: "Auto image resize",
+    selected: "Selected",
+    select: "Select",
+    inventoryRows: "Inventory rows",
+    inventoryTable: "Smart account inventory table",
+    inventoryTableHint: "Uploaded images are compressed and previewed proportionally; text cells grow with the row.",
+    addRow: "Add row",
+    saveTable: "Save table",
+    tiktokSaved: "TikTok inventory saved.",
+    tiktokSaveFailed: "Failed to save TikTok inventory.",
+    accountImage: "Image",
+    accountInfo: "Account / ID",
+    price: "Price",
+    followers: "Followers",
+    twoFa: "2FA / verify",
+    emailInfo: "Email / after-sale",
+    status: "Status",
+    notes: "Notes",
+    actions: "Actions",
+    uploadImage: "Upload image",
+    delete: "Delete",
+    noAiCost: "No credits"
   }
 } satisfies Record<Language, Record<string, string>>;
 
@@ -1169,6 +1332,10 @@ export default function Studio() {
   const [grantUserId, setGrantUserId] = useState("");
   const [grantAmount, setGrantAmount] = useState("120");
   const [grantMessage, setGrantMessage] = useState("");
+  const [tiktokInventory, setTiktokInventory] = useState<TiktokInventory>(() => createInitialTiktokInventory());
+  const [tiktokActiveCategory, setTiktokActiveCategory] = useState<TiktokCategory>("full-moon");
+  const [tiktokMessage, setTiktokMessage] = useState("");
+  const [isTiktokLoading, setIsTiktokLoading] = useState(false);
   const [generationStatus, setGenerationStatus] = useState<GenerationStatus>({
     label: "等待生成",
     detail: "提交任务后会显示上传、排队、处理和完成状态。",
@@ -1221,6 +1388,10 @@ export default function Studio() {
   }, []);
 
   useEffect(() => {
+    void refreshTiktokInventory();
+  }, []);
+
+  useEffect(() => {
     try {
       window.localStorage.setItem(IMAGE_TASKS_STORAGE_KEY, JSON.stringify(imageTasks.slice(0, 20)));
     } catch {
@@ -1257,6 +1428,7 @@ export default function Studio() {
   const activeModel = mode === "image" ? imageModel : videoModel;
   const isBatchWorkspace = activeTool === "batch";
   const isDeepSeekWorkspace = activeTool === "deepseek";
+  const isTiktokWorkspace = activeTool === "tiktok";
   const visibleModels = mode === "image" ? imageModels : videoModels;
   const groupedVisibleModels = groupModelsForSelect(visibleModels, mode, language);
   const durationOptions = mode === "video" ? getDurationOptions(videoModel, language) : [];
@@ -1264,9 +1436,11 @@ export default function Studio() {
   const normalizedVideoSize = normalizeResolutionForModel(videoModel, videoSize, language);
   const activeModelCost = getCreditCost(activeModel, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
   const deepSeekCost = getCreditCost(deepSeekModel);
-  const activeWorkspaceModel = isDeepSeekWorkspace ? deepSeekModel : activeModel;
-  const activeWorkspaceCost = isDeepSeekWorkspace ? deepSeekCost : activeModelCost;
-  const activeWorkspaceCostText = isDeepSeekWorkspace
+  const activeWorkspaceModel = isTiktokWorkspace ? "TikTok Inventory" : isDeepSeekWorkspace ? deepSeekModel : activeModel;
+  const activeWorkspaceCost = isTiktokWorkspace ? 0 : isDeepSeekWorkspace ? deepSeekCost : activeModelCost;
+  const activeWorkspaceCostText = isTiktokWorkspace
+    ? tx("noAiCost", "无需积分")
+    : isDeepSeekWorkspace
     ? formatCreditTotal(deepSeekCost, language)
     : formatCreditCost(activeModel, language, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
   const activeModelDescription = getModelDescription(activeModel, language);
@@ -1299,18 +1473,20 @@ export default function Studio() {
   const grantInternalAmount = parseDisplayCredits(grantAmount);
   const addPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits + grantInternalAmount : undefined;
   const subtractPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits - grantInternalAmount : undefined;
-  const productionTotalCost = isDeepSeekWorkspace ? deepSeekCost : isBatchWorkspace ? batchCreditTotal || activeModelCost : activeModelCost;
-  const productionTotalLabel = isBatchWorkspace ? tx("batchTotal", "本批总计") : tx("currentTaskCost", "当前任务");
-  const workspaceCapacity = isBatchWorkspace ? MAX_BATCH_VIDEOS : 1;
+  const productionTotalCost = isTiktokWorkspace ? 0 : isDeepSeekWorkspace ? deepSeekCost : isBatchWorkspace ? batchCreditTotal || activeModelCost : activeModelCost;
+  const productionTotalLabel = isTiktokWorkspace ? tx("inventoryRows", "库存数量") : isBatchWorkspace ? tx("batchTotal", "本批总计") : tx("currentTaskCost", "当前任务");
+  const workspaceCapacity = isBatchWorkspace ? MAX_BATCH_VIDEOS : isTiktokWorkspace ? tiktokInventory[tiktokActiveCategory].length || 1 : 1;
   const workspaceAvatar =
     activeTool === "batch" ? tx("batchAvatar", "批")
     : activeTool === "deepseek" ? tx("deepSeekAvatar", "深")
+    : activeTool === "tiktok" ? tx("tiktokAvatar", "T")
     : activeTool === "video" ? tx("videoAvatar", "视")
     : activeTool === "library" ? tx("libraryAvatar", "库")
     : tx("imageAvatar", "图");
   const workspaceTitle =
     activeTool === "batch" ? tx("batchWorkspace", "批量生成")
     : activeTool === "deepseek" ? tx("deepSeekWorkspace", "DeepSeek 助手")
+    : activeTool === "tiktok" ? tx("tiktokWorkspace", "优质 TikTok 账号")
     : activeTool === "video" ? tx("videoWorkspace", "视频生产")
     : activeTool === "library" ? tx("libraryWorkspace", "资源库")
     : tx("imageWorkspace", "图片生产");
@@ -1322,6 +1498,8 @@ export default function Studio() {
   const failedCount = imageTasks.filter((item) => item.status === "failed").length + batchJobs.filter((item) => isVideoFailed(item.status)).length;
   const readyCount = isBatchWorkspace
     ? Math.min(MAX_BATCH_VIDEOS, filledBatchSlots.length)
+    : isTiktokWorkspace
+      ? tiktokInventory[tiktokActiveCategory].length
     : isDeepSeekWorkspace
       ? deepSeekInput.trim()
         ? 1
@@ -1329,6 +1507,11 @@ export default function Studio() {
     : prompt.trim()
       ? 1
       : 0;
+
+  useEffect(() => {
+    if (currentUser?.id) void refreshTiktokInventory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser?.id]);
 
   function switchWorkspace(tool: WorkspaceTool) {
     setActiveTool(tool);
@@ -1343,6 +1526,85 @@ export default function Studio() {
   function switchMedia(nextMode: Mode) {
     setMode(nextMode);
     setActiveTool(nextMode);
+  }
+
+  async function refreshTiktokInventory() {
+    try {
+      const response = await fetch("/api/tiktok-accounts", { cache: "no-store" });
+      if (!response.ok) return;
+      const payload = (await response.json()) as { inventory?: Partial<TiktokInventory> };
+      const fallback = createInitialTiktokInventory();
+      setTiktokInventory({
+        "full-moon": payload.inventory?.["full-moon"]?.length ? payload.inventory["full-moon"] : fallback["full-moon"],
+        "custom-followers": payload.inventory?.["custom-followers"]?.length ? payload.inventory["custom-followers"] : fallback["custom-followers"],
+        showcase: payload.inventory?.showcase?.length ? payload.inventory.showcase : fallback.showcase
+      });
+    } catch {
+      // Inventory is an auxiliary sales table; keep the default rows if loading fails.
+    }
+  }
+
+  function updateTiktokRow(category: TiktokCategory, rowId: string, field: keyof TiktokInventoryRow, value: string) {
+    setTiktokInventory((current) => ({
+      ...current,
+      [category]: current[category].map((row) => (row.id === rowId ? { ...row, [field]: value, updatedAt: new Date().toISOString() } : row))
+    }));
+  }
+
+  function addTiktokRow(category: TiktokCategory) {
+    setTiktokInventory((current) => ({
+      ...current,
+      [category]: [...current[category], createTiktokRow(category)]
+    }));
+  }
+
+  function deleteTiktokRow(category: TiktokCategory, rowId: string) {
+    setTiktokInventory((current) => ({
+      ...current,
+      [category]: current[category].filter((row) => row.id !== rowId)
+    }));
+  }
+
+  async function uploadTiktokImage(category: TiktokCategory, rowId: string, files: FileList | null) {
+    const file = files?.[0];
+    if (!file || !file.type.startsWith("image/")) return;
+    const optimized = await compressImage(file);
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ""));
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(optimized);
+    });
+    updateTiktokRow(category, rowId, "imageUrl", dataUrl);
+  }
+
+  async function saveTiktokCategory(category: TiktokCategory) {
+    if (!isAdmin) {
+      setTiktokMessage(tx("adminOnly", "只有管理员可以操作。"));
+      return;
+    }
+    setIsTiktokLoading(true);
+    setTiktokMessage("");
+    try {
+      const response = await fetch("/api/tiktok-accounts", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ category, rows: tiktokInventory[category] })
+      });
+      const payload = (await response.json()) as { inventory?: Partial<TiktokInventory>; error?: unknown; message?: unknown };
+      if (!response.ok) throw new Error(String(payload.message || payload.error || "save_failed"));
+      if (payload.inventory) {
+        setTiktokInventory((current) => ({
+          ...current,
+          ...payload.inventory
+        }));
+      }
+      setTiktokMessage(tx("tiktokSaved", "TikTok 账号表格已保存。"));
+    } catch (caught) {
+      setTiktokMessage(cleanErrorMessage(stringifyError(caught), language) || tx("tiktokSaveFailed", "TikTok 表格保存失败。"));
+    } finally {
+      setIsTiktokLoading(false);
+    }
   }
 
   function chooseVideoResolution(size: string) {
@@ -2253,6 +2515,10 @@ export default function Studio() {
               <Wand2 size={17} />
               <span>{tx("deepSeekAssistant", "DeepSeek 助手")}</span>
             </button>
+            <button className={`feature-nav-item ${activeTool === "tiktok" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("tiktok")}>
+              <ShoppingBag size={17} />
+              <span>{tx("premiumTiktok", "优质 TikTok 账号")}</span>
+            </button>
             <button className={`feature-nav-item ${activeTool === "batch" ? "active" : ""}`} type="button" onClick={() => switchWorkspace("batch")}>
               <Layers3 size={17} />
               <span>{tx("batchGenerate", "批量生成")}</span>
@@ -2413,7 +2679,9 @@ export default function Studio() {
             <div className="production-left">
               <span className="mini-pill"><Layers3 size={14} />{readyCount}/{workspaceCapacity}</span>
               <span className="mini-pill">{tx("singleTask", "单条任务")}: {activeWorkspaceCostText}</span>
-              <span className="mini-pill">{productionTotalLabel}: {formatCreditTotal(productionTotalCost, language)}</span>
+              <span className="mini-pill">
+                {productionTotalLabel}: {isTiktokWorkspace ? `${tiktokInventory[tiktokActiveCategory].length} ${tx("rows", "条")}` : formatCreditTotal(productionTotalCost, language)}
+              </span>
             </div>
             <div className="production-stats">
               <div>
@@ -2454,7 +2722,7 @@ export default function Studio() {
               </div>
             ) : null}
 
-            {!isDeepSeekWorkspace ? (
+            {!isDeepSeekWorkspace && !isTiktokWorkspace ? (
             <div className="model-picker-panel">
               <div className="model-compact-row">
                 <div className="segmented model-mode-tabs" aria-label="media type">
@@ -2507,7 +2775,7 @@ export default function Studio() {
             </div>
             ) : null}
 
-            {!isBatchWorkspace && !isDeepSeekWorkspace ? (
+            {!isBatchWorkspace && !isDeepSeekWorkspace && !isTiktokWorkspace ? (
               <div className="field prompt-field">
                 <div className="field-head">
                   <label htmlFor="prompt">{t.prompt}</label>
@@ -2520,7 +2788,141 @@ export default function Studio() {
               </div>
             ) : null}
 
-            {isDeepSeekWorkspace ? (
+            {isTiktokWorkspace ? (
+              <div className="tiktok-workspace">
+                <div className="tiktok-hero">
+                  <div>
+                    <p className="section-label compact"><ShoppingBag size={15} />{tx("premiumTiktok", "优质 TikTok 账号")}</p>
+                    <h2>{tx("tiktokTitle", "TikTok 账号库存中心")}</h2>
+                    <span>{tx("tiktokHint", "普通成员可以查看库存，管理员可以编辑表格、上传截图并保存。")}</span>
+                  </div>
+                  <div className="tiktok-hero-badges">
+                    <b><KeyRound size={14} />2FA</b>
+                    <b><Table2 size={14} />{tx("smartTable", "智能表格")}</b>
+                    <b>{isAdmin ? tx("editable", "可编辑") : tx("viewOnly", "仅查看")}</b>
+                  </div>
+                </div>
+
+                <div className="tiktok-product-list">
+                  {tiktokProducts.map((product) => {
+                    const rows = tiktokInventory[product.id] || [];
+                    return (
+                      <button
+                        className={`tiktok-product-card ${tiktokActiveCategory === product.id ? "active" : ""}`}
+                        key={product.id}
+                        onClick={() => setTiktokActiveCategory(product.id)}
+                        type="button"
+                      >
+                        <div className="tiktok-logo">♪</div>
+                        <div>
+                          <div className="tiktok-title-row">
+                            <span className="choice-badge">{product.badge}</span>
+                            <strong>{product.title}</strong>
+                          </div>
+                          <p>{product.subtitle}</p>
+                          <div className="tiktok-meta-row">
+                            <b>{product.priceLine}</b>
+                            <span><Table2 size={13} />{rows.length} {tx("rows", "条")}</span>
+                            <span>{tx("autoResize", "图片自动伸缩")}</span>
+                          </div>
+                        </div>
+                        <span className="tiktok-card-action">{tiktokActiveCategory === product.id ? tx("selected", "已选择") : tx("select", "选择")}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className="smart-table-panel">
+                  <div className="smart-table-head">
+                    <div>
+                      <p className="section-label compact"><Table2 size={15} />{tiktokProducts.find((item) => item.id === tiktokActiveCategory)?.title}</p>
+                      <h3>{tx("inventoryTable", "账号库存智能表格")}</h3>
+                      <span>{tx("inventoryTableHint", "上传图片后会自动压缩并按比例预览；文本内容会随行高伸缩。")}</span>
+                    </div>
+                    <div className="smart-table-actions">
+                      {isAdmin ? (
+                        <>
+                          <button className="secondary-button" onClick={() => addTiktokRow(tiktokActiveCategory)} type="button">
+                            <Plus size={16} />{tx("addRow", "添加一行")}
+                          </button>
+                          <button className="primary-button" disabled={isTiktokLoading} onClick={() => void saveTiktokCategory(tiktokActiveCategory)} type="button">
+                            {isTiktokLoading ? <Loader2 className="spin" size={16} /> : <Table2 size={16} />}
+                            {tx("saveTable", "保存表格")}
+                          </button>
+                        </>
+                      ) : (
+                        <span className="view-only-pill">{tx("viewOnly", "仅查看")}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {tiktokMessage ? <div className="admin-message">{tiktokMessage}</div> : null}
+
+                  <div className="smart-table-wrap">
+                    <table className="smart-table">
+                      <thead>
+                        <tr>
+                          <th>{tx("accountImage", "图片")}</th>
+                          <th>{tx("accountInfo", "账号/编号")}</th>
+                          <th>{tx("price", "价格")}</th>
+                          <th>{tx("followers", "粉丝")}</th>
+                          <th>{tx("twoFa", "2FA/验证")}</th>
+                          <th>{tx("emailInfo", "邮箱/售后")}</th>
+                          <th>{tx("status", "状态")}</th>
+                          <th>{tx("notes", "备注")}</th>
+                          {isAdmin ? <th>{tx("actions", "操作")}</th> : null}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {(tiktokInventory[tiktokActiveCategory] || []).map((row) => (
+                          <tr key={row.id}>
+                            <td className="smart-image-cell">
+                              <label className={isAdmin ? "smart-image-uploader editable" : "smart-image-uploader"} htmlFor={`tiktok-image-${row.id}`}>
+                                {row.imageUrl ? (
+                                  // eslint-disable-next-line @next/next/no-img-element
+                                  <img alt={row.account || "TikTok account"} src={row.imageUrl} />
+                                ) : (
+                                  <span><ImagePlus size={18} />{tx("uploadImage", "上传图片")}</span>
+                                )}
+                              </label>
+                              {isAdmin ? (
+                                <input
+                                  accept="image/*"
+                                  id={`tiktok-image-${row.id}`}
+                                  onChange={(event) => {
+                                    void uploadTiktokImage(tiktokActiveCategory, row.id, event.target.files);
+                                    event.target.value = "";
+                                  }}
+                                  type="file"
+                                />
+                              ) : null}
+                            </td>
+                            {(["account", "price", "followers", "twoFa", "email", "status", "notes"] as Array<keyof TiktokInventoryRow>).map((field) => (
+                              <td key={field}>
+                                <textarea
+                                  className="smart-cell-input"
+                                  onChange={(event) => updateTiktokRow(tiktokActiveCategory, row.id, field, event.target.value)}
+                                  readOnly={!isAdmin}
+                                  rows={1}
+                                  value={String(row[field] || "")}
+                                />
+                              </td>
+                            ))}
+                            {isAdmin ? (
+                              <td>
+                                <button className="danger-button compact-danger" onClick={() => deleteTiktokRow(tiktokActiveCategory, row.id)} type="button">
+                                  <X size={15} />{tx("delete", "删除")}
+                                </button>
+                              </td>
+                            ) : null}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            ) : isDeepSeekWorkspace ? (
               <div className="deepseek-panel">
                 <div className="field-head">
                   <label>{tx("deepSeekAssistant", "DeepSeek 助手")}</label>
@@ -2745,7 +3147,7 @@ export default function Studio() {
               </>
             )}
 
-            {!isBatchWorkspace && !isDeepSeekWorkspace ? (
+            {!isBatchWorkspace && !isDeepSeekWorkspace && !isTiktokWorkspace ? (
             <div className="field reference-field">
               <div className="field-head">
                 <label htmlFor={referenceInputId}>{t.referenceImages}</label>
@@ -2814,7 +3216,7 @@ export default function Studio() {
             </div>
             ) : null}
 
-            {videoId && !isDeepSeekWorkspace ? (
+            {videoId && !isDeepSeekWorkspace && !isTiktokWorkspace ? (
               <button className="secondary-button" onClick={() => void pollVideo(videoId)} type="button">
                 <RefreshCw size={17} />{t.refreshStatus}
               </button>
@@ -2887,7 +3289,7 @@ export default function Studio() {
           ) : null}
           {displayError ? <div className="status-alert">{displayError}</div> : null}
 
-          {mode === "image" && !isDeepSeekWorkspace ? (
+          {mode === "image" && !isDeepSeekWorkspace && !isTiktokWorkspace ? (
             <div className="image-task-panel">
               <div className="history-head">
                 <h3>{tx("imageTasks", "图片任务")}</h3>
