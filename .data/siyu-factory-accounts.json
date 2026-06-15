@@ -2119,7 +2119,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-06-15T06:16:28.577Z",
-      "updatedAt": "2026-06-15T06:26:10.697Z"
+      "updatedAt": "2026-06-15T06:26:14.256Z"
     },
     {
       "id": "task_g6NRyMt4isHXPi9HDFWTVTVSm3VRDhB7",
@@ -3012,7 +3012,7 @@
       "taskId": "task_ooHU9GQuRT5mumMDbkIyWahO3FeXoGal",
       "status": "failed",
       "createdAt": "2026-06-15T06:16:28.577Z",
-      "updatedAt": "2026-06-15T06:26:10.697Z",
+      "updatedAt": "2026-06-15T06:26:14.256Z",
       "error": "{\"code\":\"upstream_generation_failed\",\"message\":\"内容违规，请调整提示词或者图片\"}"
     },
     {
