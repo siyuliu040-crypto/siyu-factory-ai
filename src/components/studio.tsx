@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import {
   Activity,
@@ -226,6 +226,9 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
+  "veo_3_1-fast-portrait",
+  "veo_3_1-fast-portrait-hd",
+  "veo_3_1-fast-portrait-fl-hd",
   "sy:veo-X-veo_3_1-fast-fl",
   "sy:grok-Yun",
   "hfsy:sora-2",
@@ -801,8 +804,18 @@ function getModelDescription(model: string, language: Language) {
   }
   if (lower.includes("veo_3_1") && lower.includes("fl-hd")) {
     return language === "zh"
-      ? `${aspect} · 4/8/12/15 秒可选 · 首帧必填，尾帧可选`
-      : `${aspect} · 4/8/12/15s selectable · start required, end optional`;
+      ? `${aspect} · 4/8/12/15 秒可选 · 1080P · 首帧必填，尾帧可选 · 已实测完成`
+      : `${aspect} · 4/8/12/15s selectable · 1080P · start required, end optional · completion tested`;
+  }
+  if (lower.includes("veo_3_1-fast-portrait-hd")) {
+    return language === "zh"
+      ? `${aspect} · 4/8/12/15 秒可选 · 1080P · 纯提示词视频 · 已实测完成`
+      : `${aspect} · 4/8/12/15s selectable · 1080P · prompt-only video · completion tested`;
+  }
+  if (lower.includes("veo_3_1-fast-portrait")) {
+    return language === "zh"
+      ? `${aspect} · 4/8/12/15 秒可选 · 720P · 纯提示词视频 · 已实测完成`
+      : `${aspect} · 4/8/12/15s selectable · 720P · prompt-only video · completion tested`;
   }
   if (lower === "auto-image") {
     return language === "zh"
@@ -850,6 +863,7 @@ function getModelGroupLabel(model: string, mode: Mode, language: Language) {
   if (lower.startsWith("vidu:")) return "Vidu";
   if (lower.startsWith("sy:")) return "SY";
   if (lower.startsWith("hfsy:")) return "HFSY";
+  if (lower.includes("veo_3_1")) return "VEO";
   if (lower.includes("sora")) return "Sora";
   if (lower.includes("grok")) return "Grok";
   return language === "zh" ? "其他视频模型" : "Other video models";

@@ -42,6 +42,9 @@ const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
 };
 const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
 const VERIFIED_VIDEO_MODELS = new Set([
+  "veo_3_1-fast-portrait",
+  "veo_3_1-fast-portrait-hd",
+  "veo_3_1-fast-portrait-fl-hd",
   "sora-2-4s-9x16",
   "sora-2-8s-9x16",
   "vidu:viduq3-pro-fast",
@@ -183,7 +186,7 @@ function prepareSyVideoPrompt(model: string, prompt: string) {
     "If the prompt contains dialogue, the characters must speak those exact lines out loud in natural English, with matching mouth movement and timing.",
     "Do not express the dialogue only as subtitles or on-screen text. No logo, no watermark, no unrelated text.",
     "",
-    "【重要】必须生成带声音的口播视频，不要静音。对白和旁白必须真实说出来，并尽量匹配人物嘴型和动作。不要只用字幕表达对白。",
+    "銆愰噸瑕併€戝繀椤荤敓鎴愬甫澹伴煶鐨勫彛鎾棰戯紝涓嶈闈欓煶銆傚鐧藉拰鏃佺櫧蹇呴』鐪熷疄璇村嚭鏉ワ紝骞跺敖閲忓尮閰嶄汉鐗╁槾鍨嬪拰鍔ㄤ綔銆備笉瑕佸彧鐢ㄥ瓧骞曡〃杈惧鐧姐€?,
     "",
     prompt
   ].join("\n");
@@ -195,7 +198,7 @@ function prepareViduVideoPrompt(prompt: string) {
     "Generate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.",
     "All dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.",
     "",
-    "【重要】如果提示词包含口播、对白或旁白，必须生成带声音的视频，不要静音。口播要真实说出来，不要只做字幕。",
+    "銆愰噸瑕併€戝鏋滄彁绀鸿瘝鍖呭惈鍙ｆ挱銆佸鐧芥垨鏃佺櫧锛屽繀椤荤敓鎴愬甫澹伴煶鐨勮棰戯紝涓嶈闈欓煶銆傚彛鎾鐪熷疄璇村嚭鏉ワ紝涓嶈鍙仛瀛楀箷銆?,
     "",
     prompt
   ].join("\n");
@@ -491,7 +494,7 @@ async function postSyPayload(
   const credentials = getSyCredentials();
   const upstreamPrompt = prepareSyVideoPrompt(payload.model, payload.prompt);
   const formData = new URLSearchParams();
-  formData.set("currentVideoType", "图生视频");
+  formData.set("currentVideoType", "鍥剧敓瑙嗛");
   formData.set("cardNo", credentials.cardNo);
   formData.set("video_prompt", upstreamPrompt);
   formData.set("video_count", "1");

@@ -11,6 +11,9 @@ const CUSTOM_VIDEO_MODELS = [
 ];
 
 const VERIFIED_PORTRAIT_VIDEO_MODELS = new Set<string>([
+  "veo_3_1-fast-portrait",
+  "veo_3_1-fast-portrait-hd",
+  "veo_3_1-fast-portrait-fl-hd",
   "sora-2-4s-9x16",
   "sora-2-8s-9x16"
 ]);
