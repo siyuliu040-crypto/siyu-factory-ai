@@ -186,7 +186,7 @@ function prepareSyVideoPrompt(model: string, prompt: string) {
     "If the prompt contains dialogue, the characters must speak those exact lines out loud in natural English, with matching mouth movement and timing.",
     "Do not express the dialogue only as subtitles or on-screen text. No logo, no watermark, no unrelated text.",
     "",
-    "銆愰噸瑕併€戝繀椤荤敓鎴愬甫澹伴煶鐨勫彛鎾棰戯紝涓嶈闈欓煶銆傚鐧藉拰鏃佺櫧蹇呴』鐪熷疄璇村嚭鏉ワ紝骞跺敖閲忓尮閰嶄汉鐗╁槾鍨嬪拰鍔ㄤ綔銆備笉瑕佸彧鐢ㄥ瓧骞曡〃杈惧鐧姐€?,
+    "Important: spoken dialogue and narration must be audible, synchronized, and not replaced by subtitles.",
     "",
     prompt
   ].join("\n");
@@ -198,7 +198,7 @@ function prepareViduVideoPrompt(prompt: string) {
     "Generate synchronized spoken audio when dialogue or voiceover is included. Do not make a silent video.",
     "All dialogue/voiceover lines in the prompt must be spoken out loud with natural timing. Do not express dialogue only as subtitles.",
     "",
-    "銆愰噸瑕併€戝鏋滄彁绀鸿瘝鍖呭惈鍙ｆ挱銆佸鐧芥垨鏃佺櫧锛屽繀椤荤敓鎴愬甫澹伴煶鐨勮棰戯紝涓嶈闈欓煶銆傚彛鎾鐪熷疄璇村嚭鏉ワ紝涓嶈鍙仛瀛楀箷銆?,
+    "Important: when the prompt includes dialogue, voiceover, or narration, generate audible speech instead of subtitles only.",
     "",
     prompt
   ].join("\n");
@@ -744,3 +744,4 @@ export async function POST(request: Request) {
     });
   }
 }
+

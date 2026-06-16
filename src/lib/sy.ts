@@ -18,23 +18,23 @@ export const SY_MODELS: SyModelConfig[] = [
     id: "sy:veo-X-veo_3_1-fast-fl",
     videoType: "Veo",
     videoChannel: "veo-X-veo_3_1-fast-fl",
-    label: "SY VEO 3.1 Fast 棣栧熬甯?,
+    label: "SY VEO 3.1 Fast Start-End",
     credits: 120,
     duration: 8,
     mode: "first-last",
     resolution: "720P",
-    successHint: "SY 涓婃父锛氶灏惧抚锛屽綋鍓嶉€氶亾鍙兘娉㈠姩"
+    successHint: "SY upstream start/end-frame channel; availability may fluctuate."
   },
   {
     id: "sy:grok-Yun",
     videoType: "Grok",
     videoChannel: "grok-Yun",
-    label: "SY Grok 10绉掑弬鑰冨浘",
+    label: "SY Grok 10s Reference",
     credits: 120,
     duration: 10,
     mode: "reference",
     resolution: "1080P",
-    successHint: "SY 瀹炴椂缁熻锛氫粖鏃ョ害 100%"
+    successHint: "SY upstream reference-video channel."
   }
 ];
 
@@ -87,11 +87,11 @@ export async function parseSyResponse(response: Response) {
 }
 
 function decodeMojibake(value: string) {
-  const mojibakeMarkers = ["闁?, "濞?, "閸?, "閻?, "闁?, "鐎?, "閺?, "闂?, "闂?, "缁?, "寮?, "閼?];
+  const mojibakeMarkers = ["\u95bc", "\u5a06", "\u934a", "\u9428", "\u95bb", "\u7035", "\u93c4", "\u95c1", "\u95c2"];
   if (!mojibakeMarkers.some((marker) => value.includes(marker))) return value;
   try {
     const decoded = Buffer.from(value, "latin1").toString("utf8");
-    return decoded.includes("闂?) || decoded.includes("闂?) ? value : decoded;
+    return decoded.includes("\u95c1") || decoded.includes("\u95c2") ? value : decoded;
   } catch {
     return value;
   }
