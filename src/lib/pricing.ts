@@ -45,7 +45,6 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "grok-imagine-1.0-video-10s": siteCredits(18),
   "grok-imagine-1.0-video-ref-6s": siteCredits(80),
   "grok-imagine-1.0-video-ref-10s": siteCredits(120),
-  "sy:veo-X-veo_3_1-fast-fl": siteCredits(120),
   "sy:grok-Yun": siteCredits(120),
   "hfsy:sora-2": siteCredits(240),
   "hfsy:sd-2": siteCredits(1350),
@@ -57,7 +56,7 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
 
 export const MODEL_UPSTREAM_PRECHARGE_USD: Record<string, number> = {
   "firefly-veo31-fast-8s-9x16-1080p": 0.888,
-  "firefly-veo31-ref-8s-9x16-1080p": 1.152,
+  "firefly-veo31-ref-8s-9x16-1080p": 0.888,
   "veo_3_1-fast-portrait": 0.12,
   "veo_3_1-fast-portrait-hd": 0.12,
   "veo_3_1-fast-portrait-fl-hd": 0.12,

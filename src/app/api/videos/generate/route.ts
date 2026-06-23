@@ -494,7 +494,7 @@ async function postSyPayload(
   const credentials = getSyCredentials();
   const upstreamPrompt = prepareSyVideoPrompt(payload.model, payload.prompt);
   const formData = new URLSearchParams();
-  formData.set("currentVideoType", "鍥剧敓瑙嗛");
+  formData.set("currentVideoType", "图生视频");
   formData.set("cardNo", credentials.cardNo);
   formData.set("video_prompt", upstreamPrompt);
   formData.set("video_count", "1");
