@@ -29,16 +29,6 @@
       "credits": 50000000,
       "createdAt": "2026-06-05T06:35:20.237Z",
       "updatedAt": "2026-06-05T07:35:07.790Z"
-    },
-    {
-      "id": "943d3379-831c-453f-b943-d075c497fc98",
-      "email": "mark.bd.tiktok@gmail.com",
-      "name": "MKT",
-      "passwordHash": "60c1e2c860ad2a9d5cedbd55941bfc8b:ffb2e9393133922cc18cd256f5408c027332a3deaeb66993d5577da28a98b9b71f043461649965a6a92b66d474f3be662d1ae2023bcdae4269c0c36438f91c9f",
-      "role": "user",
-      "credits": 0,
-      "createdAt": "2026-06-15T10:54:04.102Z",
-      "updatedAt": "2026-06-15T10:54:04.102Z"
     }
   ],
   "sessions": [
