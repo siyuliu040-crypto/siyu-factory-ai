@@ -25,10 +25,10 @@
       "email": "511693553@qq.com",
       "name": "future",
       "passwordHash": "3d406d6cd7b51797b764bf7f945289ce:5d43dce08c4b591f9f59c7e0784e0c1627bc313e731e0dbb7fbaa9d835142a43a74b00c01efc416b7dfe0b009e1bfb37130c46cb0cb039339ed1bec32c618fa9",
-      "role": "user",
+      "role": "admin",
       "credits": 50000000,
       "createdAt": "2026-06-05T06:35:20.237Z",
-      "updatedAt": "2026-06-05T07:35:07.790Z"
+      "updatedAt": "2026-06-24T06:07:19.739Z"
     }
   ],
   "sessions": [
