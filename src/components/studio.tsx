@@ -202,6 +202,22 @@ const VIDEO_MAX_POLL_ATTEMPTS = 180;
 const VIDEO_MAX_TRANSIENT_ATTEMPTS = 36;
 const IMAGE_TASKS_STORAGE_KEY = "siyu-factory-image-tasks";
 
+function readStoredImageTasks() {
+  if (typeof window === "undefined") return [];
+  try {
+    const stored = window.localStorage.getItem(IMAGE_TASKS_STORAGE_KEY);
+    if (!stored) return [];
+    const parsed = JSON.parse(stored);
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((item): item is ImageTask => Boolean(item?.id && item?.prompt && item?.model))
+      .slice(0, 20);
+  } catch {
+    window.localStorage.removeItem(IMAGE_TASKS_STORAGE_KEY);
+    return [];
+  }
+}
+
 const stableImageModels = [
   "gpt-image-2",
   "auto-image",
@@ -1331,7 +1347,7 @@ export default function Studio() {
   const [isPolling, setIsPolling] = useState(false);
   const [imageResult, setImageResult] = useState<ImageResult | null>(null);
   const [videoResult, setVideoResult] = useState<VideoResult | null>(null);
-  const [imageTasks, setImageTasks] = useState<ImageTask[]>([]);
+  const [imageTasks, setImageTasks] = useState<ImageTask[]>(readStoredImageTasks);
   const [batchJobs, setBatchJobs] = useState<BatchJob[]>([]);
   const [quota, setQuota] = useState<QuotaResult | null>(null);
   const [isQuotaLoading, setIsQuotaLoading] = useState(true);
@@ -1380,23 +1396,10 @@ export default function Studio() {
   }, [referencePreviews]);
 
   useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(IMAGE_TASKS_STORAGE_KEY);
-      if (!stored) return;
-      const parsed = JSON.parse(stored);
-      if (Array.isArray(parsed)) {
-        const restored = parsed
-          .filter((item): item is ImageTask => Boolean(item?.id && item?.prompt && item?.model))
-          .slice(0, 20);
-        setImageTasks(restored);
-        for (const task of restored) {
-          if (task.status !== "completed" && task.status !== "failed") {
-            setTimeout(() => void pollImageJob(task.id), 0);
-          }
-        }
+    for (const task of imageTasks) {
+      if (task.status !== "completed" && task.status !== "failed") {
+        setTimeout(() => void pollImageJob(task.id), 0);
       }
-    } catch {
-      window.localStorage.removeItem(IMAGE_TASKS_STORAGE_KEY);
     }
     // Restore once on the client; pollImageJob reads current language/copy through closures.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1526,7 +1529,6 @@ export default function Studio() {
 
   useEffect(() => {
     if (currentUser?.id) void refreshTiktokInventory();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser?.id]);
 
   function switchWorkspace(tool: WorkspaceTool) {

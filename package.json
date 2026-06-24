@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node scripts/start.mjs",
-    "lint": "eslint .",
+    "lint": "eslint src scripts next.config.mjs eslint.config.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
