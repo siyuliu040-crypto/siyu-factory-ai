@@ -33,12 +33,6 @@
   ],
   "sessions": [
     {
-      "token": "22f616fd215a53386942c030a2c8251dcffca541a1826b627a1d7c71e31768f1",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "expiresAt": "2026-06-26T14:12:19.403Z",
-      "createdAt": "2026-06-19T14:12:19.404Z"
-    },
-    {
       "token": "3be34efeaad41f54075271419535f60424fac4e93f38ce7125e948b546b11b42",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-07-01T06:05:57.707Z",
