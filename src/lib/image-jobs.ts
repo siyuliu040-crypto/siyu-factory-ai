@@ -1,5 +1,11 @@
 import { HELLOBABYGO_BASE_URL, authHeaders } from "@/lib/hellobabygo";
-import { recordGenerationHistory, refundCreditsForUser, withAccountState } from "@/lib/accounts";
+import {
+  recordGenerationHistory,
+  refundCreditsForUser,
+  settleGenerationTask,
+  updateHistoryByTaskId,
+  withAccountState
+} from "@/lib/accounts";
 
 export type ImageJobRequest = {
   model: string;
@@ -96,9 +102,43 @@ async function saveImageHistory(record: ImageJobRecord, result: unknown) {
       model: record.request.model,
       prompt: record.request.prompt,
       previewUrl: imageUrl || undefined,
+      taskId: record.id,
       status: "completed"
     })
   );
+}
+
+async function markImageJobCompleted(record: ImageJobRecord, result: unknown) {
+  const imageUrl = extractImageUrl(result);
+  await withAccountState((state) => {
+    settleGenerationTask(state, record.id, "completed");
+    updateHistoryByTaskId(state, record.id, {
+      status: "completed",
+      previewUrl: imageUrl || undefined
+    });
+  });
+  await saveImageHistory(record, result);
+}
+
+async function markImageJobFailed(record: ImageJobRecord, error: unknown) {
+  const errorText = typeof error === "string" ? error : JSON.stringify(error);
+  if (record.billing) {
+    let foundPersistedTask = false;
+    await withAccountState((state) => {
+      const task = settleGenerationTask(state, record.id, "failed");
+      foundPersistedTask = Boolean(task);
+      if (!task) {
+        updateHistoryByTaskId(state, record.id, { status: "failed", error: errorText });
+      } else {
+        updateHistoryByTaskId(state, record.id, { status: "failed", error: errorText });
+      }
+    });
+    if (!foundPersistedTask) {
+      await refundImageJob(record, "image generation failed refund");
+    }
+  } else {
+    await refundImageJob(record, "image generation failed refund");
+  }
 }
 
 function extractImageUrl(result: unknown) {
@@ -126,7 +166,7 @@ async function runImageJob(id: string) {
 
       const payload = parsePayload(await response.text());
       if (response.ok) {
-        await saveImageHistory(record, payload);
+        await markImageJobCompleted(record, payload);
         save({ ...record, status: "completed", progress: 100, result: payload, upstream_status: response.status });
         return;
       }
@@ -143,7 +183,7 @@ async function runImageJob(id: string) {
         continue;
       }
 
-      await refundImageJob(record, "image generation failed refund");
+      await markImageJobFailed(record, payload);
       save({
         ...record,
         status: "failed",
@@ -154,7 +194,7 @@ async function runImageJob(id: string) {
       return;
     }
   } catch (error) {
-    await refundImageJob(record, "image generation failed refund");
+    await markImageJobFailed(record, error);
     save({
       ...record,
       status: "failed",

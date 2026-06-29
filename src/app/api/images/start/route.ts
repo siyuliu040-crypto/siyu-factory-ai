@@ -1,6 +1,12 @@
 import { jsonError } from "@/lib/hellobabygo";
 import { startImageJob, type ImageJobRequest } from "@/lib/image-jobs";
-import { AccountError, chargeUserCredits } from "@/lib/accounts";
+import {
+  AccountError,
+  chargeUserCredits,
+  recordGenerationHistory,
+  recordGenerationTask,
+  withAccountState
+} from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
 import { getGenerationCost } from "@/lib/pricing";
 import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
@@ -39,6 +45,23 @@ export async function POST(request: Request) {
     }, {
       userId: charge.user.id,
       amount
+    });
+    await withAccountState((state) => {
+      recordGenerationTask(state, {
+        id: job.id,
+        userId: charge.user.id,
+        type: "image",
+        model,
+        amount
+      });
+      recordGenerationHistory(state, {
+        userId: charge.user.id,
+        type: "image",
+        model,
+        prompt,
+        taskId: job.id,
+        status: "queued"
+      });
     });
 
     return Response.json(
