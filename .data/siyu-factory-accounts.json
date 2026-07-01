@@ -3106,9 +3106,9 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "根据 Image 1 Image 2视频脚本，参考 Image 3 Image 4 bodywave 图片，生成 TikTok 美区黑人女性真实感 4K 超清实拍带货视频",
       "taskId": "ef83623084ae492b8e83a16b5a2cd3ee",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-01T08:09:22.662Z",
-      "updatedAt": "2026-07-01T08:09:25.720Z"
+      "updatedAt": "2026-07-01T08:09:26.652Z"
     },
     {
       "id": "ea5602bf-0c75-4927-bdd1-e4b3415e4bd3",
