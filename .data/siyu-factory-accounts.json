@@ -3025,9 +3025,9 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "根据 Image 1  Image 2视频脚本，参考 Image 3 Image 4 deepwave 图片，生成 TikTok 美区黑人女性真实感 4K 超清实拍带货视频",
       "taskId": "25b73a4b2de84d59a34bf6898ef69607",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-01T07:50:20.879Z",
-      "updatedAt": "2026-07-01T07:50:20.879Z"
+      "updatedAt": "2026-07-01T07:50:25.951Z"
     },
     {
       "id": "85cad45d-97b8-45ec-8296-2d04c49e739f",
