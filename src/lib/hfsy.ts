@@ -30,12 +30,25 @@ export const HFSY_MODELS: HfsyModel[] = [
       "HFSY Sora 2 official transfer API. Supports prompt-only video, optional reference image input, and spoken dialogue prompts."
   },
   {
+    id: "hfsy:sd-2-fast",
+    upstreamModel: "sd-2-fast",
+    label: "HFSY SD 2 Fast",
+    media: "video",
+    credits: 900,
+    upstreamPrice: 3,
+    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    resolution: "1080P",
+    referenceMode: "optional",
+    description:
+      "HFSY SD 2 Fast is the economical fast video model. It supports text-to-video and image-to-video, with optional reference images."
+  },
+  {
     id: "hfsy:sd-2",
     upstreamModel: "sd-2",
     label: "HFSY SD 2",
     media: "video",
     credits: 1350,
-    upstreamPrice: 0,
+    upstreamPrice: 4.5,
     durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     resolution: "1080P",
     referenceMode: "optional",

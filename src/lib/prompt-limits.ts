@@ -37,6 +37,7 @@ export const MODEL_PROMPT_LIMITS: Record<string, number> = {
   "vidu:viduq3-pro": 5000,
   "sy:grok-Yun": 1600,
   "hfsy:sora-2": 2000,
+  "hfsy:sd-2-fast": 1600,
   "hfsy:sd-2": 1600,
   "hfsy:sd-2-vip": 1600,
   "deepseek-v4-flash": 3000,
