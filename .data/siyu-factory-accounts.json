@@ -2146,10 +2146,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-01T08:09:22.662Z",
-      "updatedAt": "2026-07-01T08:09:22.662Z"
+      "updatedAt": "2026-07-01T08:24:12.359Z"
     },
     {
       "id": "c959cb415d77494398fb216187133049",
@@ -3106,9 +3106,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "根据 Image 1 Image 2视频脚本，参考 Image 3 Image 4 bodywave 图片，生成 TikTok 美区黑人女性真实感 4K 超清实拍带货视频",
       "taskId": "ef83623084ae492b8e83a16b5a2cd3ee",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-01T08:09:22.662Z",
-      "updatedAt": "2026-07-01T08:24:06.879Z"
+      "updatedAt": "2026-07-01T08:24:12.359Z",
+      "previewUrl": "http://sd2oss-american.oss-us-west-1.aliyuncs.com/2026-07-01%2F7ae238fd-c337-4459-838d-67fd61432158.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1782980644&Signature=3YdKi630t8%2Fw%2FKLB4SjZHoFt3H0%3D"
     },
     {
       "id": "ea5602bf-0c75-4927-bdd1-e4b3415e4bd3",
