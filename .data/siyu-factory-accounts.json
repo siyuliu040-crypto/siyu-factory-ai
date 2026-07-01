@@ -2153,6 +2153,17 @@
   ],
   "generationTasks": [
     {
+      "id": "80c89712b3114846b01b4cf48708af66",
+      "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
+      "type": "video",
+      "model": "hfsy:sd-2-fast",
+      "amount": 9000000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-01T08:29:16.675Z",
+      "updatedAt": "2026-07-01T08:29:16.675Z"
+    },
+    {
       "id": "ef83623084ae492b8e83a16b5a2cd3ee",
       "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
       "type": "video",
@@ -3111,6 +3122,17 @@
     }
   ],
   "history": [
+    {
+      "id": "958cefc9-ec05-43ee-981a-49a511c2b65e",
+      "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
+      "mode": "video",
+      "model": "hfsy:sd-2-fast",
+      "prompt": "根据 Image 1 Image 2视频脚本，参考 Image 3 Image 4 bodywave 图片，生成 TikTok 美区黑人女性真实感 4K 超清实拍带货视频",
+      "taskId": "80c89712b3114846b01b4cf48708af66",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-01T08:29:16.675Z",
+      "updatedAt": "2026-07-01T08:29:16.675Z"
+    },
     {
       "id": "14039fd6-b34f-4f04-9e34-5fa45e5a2158",
       "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
