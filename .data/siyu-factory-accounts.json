@@ -36,9 +36,9 @@
       "name": "卞雨晴",
       "passwordHash": "c026a115c299f8f20467099212c9fb9a:4efdf52053f4f89557630c0b56af91919b40e649ad8d71fe8280e101e97b9fa649bd6a98a09328e8d523b182357e13bd04865946ca4c664abd2f06f5938ad345",
       "role": "user",
-      "credits": 73000000,
+      "credits": 82000000,
       "createdAt": "2026-07-01T06:29:46.443Z",
-      "updatedAt": "2026-07-01T08:08:24.262Z"
+      "updatedAt": "2026-07-01T08:09:18.153Z"
     }
   ],
   "sessions": [
@@ -80,6 +80,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "860595fe-6ff3-4960-b0d6-da62f80b8792",
+      "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
+      "amount": 9000000,
+      "balanceAfter": 82000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-01T08:09:18.153Z",
+      "metadata": {
+        "taskId": "c959cb415d77494398fb216187133049",
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "2a649d38-d201-49c7-9373-e35ea79475b4",
       "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
@@ -2122,10 +2134,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-01T08:08:26.339Z",
-      "updatedAt": "2026-07-01T08:08:26.339Z"
+      "updatedAt": "2026-07-01T08:09:18.153Z"
     },
     {
       "id": "f786200a1bdb445da73c94cec728f166",
@@ -3071,9 +3083,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "根据 Image 1 Image 2视频脚本，参考 Image 3 Image 4 bodywave 图片，生成 TikTok 美区黑人女性真实感 4K 超清实拍带货视频",
       "taskId": "c959cb415d77494398fb216187133049",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-01T08:08:26.340Z",
-      "updatedAt": "2026-07-01T08:09:08.461Z"
+      "updatedAt": "2026-07-01T08:09:18.153Z",
+      "error": "\"代理不可用: ProxyError: HTTPSConnectionPool(host='服务.ai', port=443): Max retries exceeded with url: /suite/api/upload/sign (Caused by ProxyError('Unable to connect to proxy', ConnectTimeoutError(<HTTPSConnection(host='137.59.4.102', port=5971) at 0x7f88c05ad520>, 'Connection to 137.59.4.102 timed out. (c\""
     },
     {
       "id": "93240fac-d3a5-47bd-b644-4ee7347478bc",
