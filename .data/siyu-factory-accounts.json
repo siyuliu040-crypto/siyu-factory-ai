@@ -36,9 +36,9 @@
       "name": "卞雨晴",
       "passwordHash": "c026a115c299f8f20467099212c9fb9a:4efdf52053f4f89557630c0b56af91919b40e649ad8d71fe8280e101e97b9fa649bd6a98a09328e8d523b182357e13bd04865946ca4c664abd2f06f5938ad345",
       "role": "user",
-      "credits": 55000000,
+      "credits": 64000000,
       "createdAt": "2026-07-01T06:29:46.443Z",
-      "updatedAt": "2026-07-01T08:47:49.983Z"
+      "updatedAt": "2026-07-01T08:47:52.068Z"
     }
   ],
   "sessions": [
@@ -80,6 +80,17 @@
     }
   ],
   "ledger": [
+    {
+      "id": "b75f7069-57fb-427e-a34e-b8fcaa2b7476",
+      "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
+      "amount": 9000000,
+      "balanceAfter": 64000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-01T08:47:52.068Z",
+      "metadata": {
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "60149d5a-9a73-477c-a24e-31ed66c65977",
       "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
