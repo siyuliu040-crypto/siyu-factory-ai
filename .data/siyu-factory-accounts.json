@@ -36,9 +36,9 @@
       "name": "卞雨晴",
       "passwordHash": "c026a115c299f8f20467099212c9fb9a:4efdf52053f4f89557630c0b56af91919b40e649ad8d71fe8280e101e97b9fa649bd6a98a09328e8d523b182357e13bd04865946ca4c664abd2f06f5938ad345",
       "role": "user",
-      "credits": 0,
+      "credits": 100000000,
       "createdAt": "2026-07-01T06:29:46.443Z",
-      "updatedAt": "2026-07-01T06:29:46.443Z"
+      "updatedAt": "2026-07-01T06:30:32.415Z"
     }
   ],
   "sessions": [
@@ -74,6 +74,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "89241199-5343-4451-a2ee-5e3a97ecbafe",
+      "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 100000000,
+      "balanceAfter": 100000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-01T06:30:32.416Z"
+    },
     {
       "id": "4abc6fde-525e-4a93-90e1-2e3ae721bbbb",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
