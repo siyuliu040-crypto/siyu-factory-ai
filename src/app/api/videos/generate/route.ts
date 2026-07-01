@@ -725,7 +725,7 @@ export async function POST(request: Request) {
       return postViduPayload(
         {
           model: toViduModel(upstreamModel),
-          images: [firstImage],
+          images: dataReferenceUrls,
           prompt: prepareViduVideoPrompt(enhancedPrompt),
           ...(seconds ? { duration: Number(seconds) } : {}),
           resolution: VIDU_SIZE_TO_RESOLUTION[String(size || "")] || "720p",
