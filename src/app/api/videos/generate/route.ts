@@ -60,6 +60,7 @@ const IMAGE_EXTENSION_BY_TYPE: Record<string, string> = {
   "image/png": "png",
   "image/webp": "webp"
 };
+type VideoBilling = { userId: string; amount: number; model: string; originalPrompt?: string };
 
 function getImageExtension(file: File) {
   const extensionFromType = IMAGE_EXTENSION_BY_TYPE[file.type];
@@ -147,6 +148,28 @@ function minimalReferencePayloadFields(referenceUrls: string[]) {
   return { image_url: referenceUrls[0] };
 }
 
+function cleanReferenceLabel(label: string, index: number) {
+  const cleaned = label.replace(/\s+/g, " ").trim().slice(0, 40);
+  return cleaned || `Image ${index + 1}`;
+}
+
+function buildReferenceImagePrompt(prompt: string, referenceLabels: string[]) {
+  if (!referenceLabels.length) return prompt;
+  const labels = referenceLabels.map(cleanReferenceLabel);
+  return [
+    "REFERENCE IMAGE MAP:",
+    "Use the uploaded reference images according to the user's labels below. These labels are intentional and may not match upload order.",
+    ...labels.map((label, index) => `${label}: uploaded reference image ${index + 1}. When the prompt mentions ${label}, use this exact image as the visual source.`),
+    "",
+    "COMMERCIAL VIDEO STYLE:",
+    "If the user requests a TikTok US-market product ad, create an ultra-realistic live-action 9:16 vertical video with a Black female model, product consistency from the labeled product images, natural skin texture, real camera movement, premium ecommerce lighting, spoken selling points when dialogue is present, no logo, no watermark, and no unrelated on-screen text.",
+    "If one labeled image contains a script, follow that script as the shot/dialogue structure. If other labeled images show product, hair texture, body wave style, outfit, or packaging, preserve those product details across the video.",
+    "",
+    "USER PROMPT:",
+    prompt
+  ].join("\n");
+}
+
 function isGrokReferenceVideoModel(model: string) {
   return model === "grok-imagine-1.0-video-ref-6s" || model === "grok-imagine-1.0-video-ref-10s";
 }
@@ -223,7 +246,7 @@ function prepareHfsyVideoPrompt(model: string, prompt: string) {
 
 async function postVideoPayload(
   payload: Record<string, unknown>,
-  billing: { userId: string; amount: number; model: string }
+  billing: VideoBilling
 ) {
   const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/videos`, {
     method: "POST",
@@ -254,7 +277,7 @@ async function postVideoPayload(
         userId: billing.userId,
         type: "video",
         model: billing.model,
-        prompt: String(payload.prompt || ""),
+        prompt: billing.originalPrompt || String(payload.prompt || ""),
         taskId,
         status: String((data as { status?: unknown })?.status || "queued"),
         previewUrl: extractVideoUrl(data) || undefined
@@ -273,7 +296,7 @@ async function postVideoPayload(
 
 async function postHfsyVideoPayload(
   payload: Record<string, unknown>,
-  billing: { userId: string; amount: number; model: string }
+  billing: VideoBilling
 ) {
   const hfsyModel = getHfsyModel(billing.model);
   const referenceUrls = [
@@ -324,7 +347,7 @@ async function postHfsyVideoPayload(
         userId: billing.userId,
         type: "video",
         model: billing.model,
-        prompt: String(payload.prompt || ""),
+        prompt: billing.originalPrompt || String(payload.prompt || ""),
         taskId,
         status: String((data as { status?: unknown })?.status || "queued"),
         previewUrl: extractVideoUrl(data) || undefined
@@ -355,7 +378,7 @@ async function postFrameVideoPayload(
     lastImage?: Blob;
     lastFileName?: string;
   },
-  billing: { userId: string; amount: number; model: string }
+  billing: VideoBilling
 ) {
   const formData = new FormData();
   formData.set("model", payload.model);
@@ -396,7 +419,7 @@ async function postFrameVideoPayload(
         userId: billing.userId,
         type: "video",
         model: billing.model,
-        prompt: payload.prompt,
+        prompt: billing.originalPrompt || payload.prompt,
         taskId,
         status: String((data as { status?: unknown })?.status || "queued"),
         previewUrl: extractVideoUrl(data) || undefined
@@ -426,7 +449,7 @@ async function imageUrlToBlob(imageUrl: string) {
 
 async function postViduPayload(
   payload: Record<string, unknown>,
-  billing: { userId: string; amount: number; model: string }
+  billing: VideoBilling
 ) {
   const response = await fetch(`${VIDU_BASE_URL}/ent/v2/img2video`, {
     method: "POST",
@@ -456,7 +479,7 @@ async function postViduPayload(
       userId: billing.userId,
       type: "video",
       model: billing.model,
-      prompt: String(payload.prompt || ""),
+      prompt: billing.originalPrompt || String(payload.prompt || ""),
       taskId,
       status: String((data as { state?: unknown })?.state || "queued")
     });
@@ -481,7 +504,7 @@ async function postSyPayload(
     prompt: string;
     imageUrls: string[];
   },
-  billing: { userId: string; amount: number; model: string }
+  billing: VideoBilling
 ) {
   const syModel = getSyModel(payload.model);
   if (!syModel) {
@@ -558,7 +581,7 @@ async function postSyPayload(
       userId: billing.userId,
       type: "video",
       model: billing.model,
-      prompt: payload.prompt,
+      prompt: billing.originalPrompt || payload.prompt,
       taskId,
       status: String((data as { status?: unknown })?.status || "queued")
     });
@@ -607,6 +630,10 @@ export async function POST(request: Request) {
     const references = incoming
       .getAll("input_reference")
       .filter((value): value is File => value instanceof File && value.size > 0);
+    const uploadedReferenceLabels = incoming
+      .getAll("reference_label")
+      .map((value, index) => cleanReferenceLabel(String(value), index))
+      .slice(0, references.length);
     const uploadedReferenceInputs = await Promise.all(references.map((reference) => fileToReferenceInput(reference, origin)));
     const dataReferenceUrls = [
       ...(imageUrl ? [String(imageUrl)] : []),
@@ -616,6 +643,11 @@ export async function POST(request: Request) {
       ...(imageUrl ? [String(imageUrl)] : []),
       ...uploadedReferenceInputs.map((input) => input.publicUrl)
     ].filter(Boolean);
+    const referenceLabels = [
+      ...(imageUrl ? ["Image URL"] : []),
+      ...uploadedReferenceInputs.map((_, index) => uploadedReferenceLabels[index] || `Image ${index + 1}`)
+    ];
+    const enhancedPrompt = buildReferenceImagePrompt(prompt, referenceLabels);
 
     if (isGrokReferenceVideoModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This model requires one reference image." }, 400);
@@ -650,13 +682,13 @@ export async function POST(request: Request) {
 
     const amount = getVideoGenerationCost(model, String(seconds || ""), String(size || ""));
     const charge = await chargeUserCredits(request, amount, "video generation", { model, size: String(size || "") });
-    const billing = { userId: charge.user.id, amount, model };
+    const billing = { userId: charge.user.id, amount, model, originalPrompt: prompt };
 
     if (supportsStartEndFrames(model)) {
       return postFrameVideoPayload(
         {
           model: upstreamModel,
-          prompt,
+          prompt: enhancedPrompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
           image: preparedFrameImages!.first.blob,
@@ -676,7 +708,7 @@ export async function POST(request: Request) {
       return postSyPayload(
         {
           model,
-          prompt,
+          prompt: enhancedPrompt,
           imageUrls: publicReferenceUrls
         },
         billing
@@ -694,7 +726,7 @@ export async function POST(request: Request) {
         {
           model: toViduModel(upstreamModel),
           images: [firstImage],
-          prompt: prepareViduVideoPrompt(prompt),
+          prompt: prepareViduVideoPrompt(enhancedPrompt),
           ...(seconds ? { duration: Number(seconds) } : {}),
           resolution: VIDU_SIZE_TO_RESOLUTION[String(size || "")] || "720p",
           movement_amplitude: "auto",
@@ -710,7 +742,7 @@ export async function POST(request: Request) {
       return postHfsyVideoPayload(
         {
           model,
-          prompt,
+          prompt: enhancedPrompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
           ...(publicReferenceUrls.length ? { images: publicReferenceUrls } : {})
@@ -722,7 +754,7 @@ export async function POST(request: Request) {
     return await postVideoPayload(
       {
         model: upstreamModel,
-        prompt,
+        prompt: enhancedPrompt,
         ...(seconds ? { seconds: String(seconds) } : {}),
         ...(size ? { size: String(size) } : {}),
         ...(isPromptOnlySoraModel(model)

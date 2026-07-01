@@ -85,6 +85,7 @@ type QuotaResult = {
 type ReferencePreview = {
   name: string;
   url: string;
+  label: string;
 };
 
 type HistoryItem = {
@@ -376,7 +377,9 @@ const copy = {
     referenceImages: "参考图",
     uploadReferences: "上传参考图",
     addReferences: "添加更多",
-    referenceLimit: `最多 ${MAX_REFERENCE_IMAGES} 张`,
+    referenceLimit: `最多 ${MAX_REFERENCE_IMAGES} 张，可按你的顺序标注 Image 1 / Image 2`,
+    referenceLabel: "图片编号",
+    referenceLabelHint: "提示词里写 Image 3 时，会对应标注为 Image 3 的图片。",
     optionalReferenceUrl: "可选：粘贴一张参考图 URL",
     clearAll: "清空全部",
     removeReference: "删除参考图",
@@ -514,7 +517,9 @@ const copy = {
     referenceImages: "Reference images",
     uploadReferences: "Upload references",
     addReferences: "Add more",
-    referenceLimit: `Up to ${MAX_REFERENCE_IMAGES} images`,
+    referenceLimit: `Up to ${MAX_REFERENCE_IMAGES} images. Label them as Image 1 / Image 2 in your own order.`,
+    referenceLabel: "Image label",
+    referenceLabelHint: "When the prompt says Image 3, it uses the image labeled Image 3.",
     optionalReferenceUrl: "Optional: paste one reference image URL",
     clearAll: "Clear all",
     removeReference: "Remove reference",
@@ -934,6 +939,10 @@ function getDeepSeekModelDescription(model: string, language: Language) {
     return language === "zh" ? "更强推理，适合复杂分镜和长文案" : "Stronger reasoning for complex shots and long copy";
   }
   return language === "zh" ? "速度快，适合日常提示词优化" : "Fast model for everyday prompt polishing";
+}
+
+function defaultReferenceLabel(index: number) {
+  return `Image ${index + 1}`;
 }
 
 function getDurationOptions(model: string, language: Language) {
@@ -1838,7 +1847,11 @@ export default function Studio() {
       setReferenceFiles((current) => [...current, ...optimized]);
       setReferencePreviews((current) => [
         ...current,
-        ...optimized.map((file) => ({ name: file.name, url: URL.createObjectURL(file) }))
+        ...optimized.map((file, index) => ({
+          name: file.name,
+          url: URL.createObjectURL(file),
+          label: defaultReferenceLabel(current.length + index)
+        }))
       ]);
     } finally {
       setIsOptimizingReferences(false);
@@ -1851,6 +1864,12 @@ export default function Studio() {
     const nextFiles = referenceFiles.filter((_, itemIndex) => itemIndex !== index);
     setReferenceFiles(nextFiles);
     setReferencePreviews((current) => current.filter((_, itemIndex) => itemIndex !== index));
+  }
+
+  function updateReferenceLabel(index: number, label: string) {
+    setReferencePreviews((current) =>
+      current.map((preview, itemIndex) => (itemIndex === index ? { ...preview, label } : preview))
+    );
   }
 
   function clearReferences() {
@@ -1892,8 +1911,27 @@ export default function Studio() {
               referenceFiles: [...item.referenceFiles, ...optimized],
               referencePreviews: [
                 ...item.referencePreviews,
-                ...optimized.map((file) => ({ name: file.name, url: URL.createObjectURL(file) }))
+                ...optimized.map((file, index) => ({
+                  name: file.name,
+                  url: URL.createObjectURL(file),
+                  label: defaultReferenceLabel(item.referencePreviews.length + index)
+                }))
               ]
+            }
+          : item
+      )
+    );
+  }
+
+  function updateBatchReferenceLabel(id: string, index: number, label: string) {
+    setBatchPrompts((current) =>
+      current.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              referencePreviews: item.referencePreviews.map((preview, itemIndex) =>
+                itemIndex === index ? { ...preview, label } : preview
+              )
             }
           : item
       )
@@ -2148,16 +2186,20 @@ export default function Studio() {
     return fetch("/api/images/start", { method: "POST", body: formData });
   }
 
-  async function submitVideo(videoPrompt: string, model: string, options?: { references?: File[]; referenceUrl?: string }) {
+  async function submitVideo(videoPrompt: string, model: string, options?: { references?: File[]; referenceUrl?: string; referenceLabels?: string[] }) {
     const references = options?.references ?? referenceFiles;
     const referenceUrl = options?.referenceUrl ?? imageUrl;
+    const referenceLabels = options?.referenceLabels ?? referencePreviews.map((preview, index) => preview.label.trim() || defaultReferenceLabel(index));
     const formData = new FormData();
     formData.set("model", model);
     formData.set("prompt", videoPrompt);
     formData.set("seconds", normalizeDurationForModel(model, seconds, language));
     formData.set("size", normalizeResolutionForModel(model, videoSize, language));
     if (referenceUrl) formData.set("image_url", referenceUrl);
-    for (const reference of references) formData.append("input_reference", reference, reference.name);
+    references.forEach((reference, index) => {
+      formData.append("input_reference", reference, reference.name);
+      formData.append("reference_label", referenceLabels[index] || defaultReferenceLabel(index));
+    });
 
     const response = await fetch("/api/videos/generate", { method: "POST", body: formData });
     const payload = await readJsonResponse<VideoResult>(response);
@@ -2333,7 +2375,11 @@ export default function Studio() {
         for (let attempt = 0; attempt < MAX_VIDEO_ATTEMPTS; attempt += 1) {
           try {
             updateJob({ status: "submitting", progress: 5, attempts: attempt + 1, error: "" });
-            const payload = await submitVideo(job.prompt, job.model, { references: slot.referenceFiles, referenceUrl: "" });
+            const payload = await submitVideo(job.prompt, job.model, {
+              references: slot.referenceFiles,
+              referenceLabels: slot.referencePreviews.map((preview, previewIndex) => preview.label.trim() || defaultReferenceLabel(previewIndex)),
+              referenceUrl: ""
+            });
             const taskId = getVideoTaskId(payload);
             updateJob({ taskId, status: payload.status || "queued", progress: getPendingVideoProgress(payload.status, payload.progress) });
             if (!taskId) throw new Error(JSON.stringify(payload));
@@ -3181,6 +3227,13 @@ export default function Studio() {
                                     {getReferenceRoleLabel(previewIndex, videoModel, language) ? (
                                       <span className="frame-role-badge">{getReferenceRoleLabel(previewIndex, videoModel, language)}</span>
                                     ) : null}
+                                    <input
+                                      aria-label={`${t.referenceLabel} ${previewIndex + 1}`}
+                                      className="reference-label-input"
+                                      onChange={(event) => updateBatchReferenceLabel(slot.id, previewIndex, event.target.value)}
+                                      title={t.referenceLabelHint}
+                                      value={preview.label}
+                                    />
                                     <button
                                       aria-label={t.removeReference}
                                       className="thumb-remove"
@@ -3255,6 +3308,13 @@ export default function Studio() {
                         {getReferenceRoleLabel(index, videoModel, language) ? (
                           <span className="frame-role-badge">{getReferenceRoleLabel(index, videoModel, language)}</span>
                         ) : null}
+                        <input
+                          aria-label={`${t.referenceLabel} ${index + 1}`}
+                          className="reference-label-input"
+                          onChange={(event) => updateReferenceLabel(index, event.target.value)}
+                          title={t.referenceLabelHint}
+                          value={preview.label}
+                        />
                         <button aria-label={t.removeReference} className="thumb-remove" onClick={() => removeReference(index)} title={t.removeReference} type="button">
                           <X size={14} />
                         </button>

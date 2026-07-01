@@ -1950,7 +1950,7 @@ button.status-pill {
 .frame-role-badge {
   position: absolute;
   left: 6px;
-  bottom: 6px;
+  bottom: 34px;
   max-width: calc(100% - 12px);
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 999px;
@@ -1964,6 +1964,31 @@ button.status-pill {
   text-overflow: ellipsis;
   white-space: nowrap;
   pointer-events: none;
+}
+
+.reference-label-input {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  left: 6px;
+  min-width: 0;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  outline: none;
+  padding: 0 6px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+.reference-label-input:focus {
+  border-color: var(--accent);
+  background: #fff;
 }
 
 .thumb-remove {
