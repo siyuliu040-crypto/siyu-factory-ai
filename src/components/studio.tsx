@@ -1105,11 +1105,24 @@ function isProviderInternalError(message: string) {
   );
 }
 
+function isUpstreamProxyError(message: string) {
+  const lower = message.toLowerCase();
+  return (
+    message.includes("代理不可用") ||
+    lower.includes("proxyerror") ||
+    lower.includes("unable to connect to proxy") ||
+    lower.includes("connecttimeouterror") ||
+    lower.includes("upload/sign") ||
+    lower.includes("httpsconnectionpool")
+  );
+}
+
 function isUpstreamBusyError(message: string) {
   return (
     message.includes("upstream_generation_failed") ||
     message.includes("生成服务暂时繁忙") ||
-    message.toLowerCase().includes("temporarily busy")
+    message.toLowerCase().includes("temporarily busy") ||
+    isUpstreamProxyError(message)
   );
 }
 
@@ -1220,6 +1233,11 @@ function cleanErrorMessage(error: string, language: Language) {
   }
   if (readable.includes("prompt_too_long")) {
     return language === "zh" ? "提示词超过当前模型上限，请精简后再提交。" : "The prompt exceeds this model's limit. Shorten it and submit again.";
+  }
+  if (isUpstreamProxyError(readable)) {
+    return language === "zh"
+      ? "上游图片上传代理不可用，任务没有成功创建。站内积分会退回；请稍后重试，或先切换 Vidu / Grok 参考图模型生成。"
+      : "The upstream image upload proxy is unavailable, so the task was not created. Site credits will be refunded; retry later or use a Vidu/Grok reference-image model.";
   }
   if (isInsufficientQuota(readable)) {
     return language === "zh"

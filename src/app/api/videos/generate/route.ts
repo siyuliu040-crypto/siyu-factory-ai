@@ -153,13 +153,26 @@ function cleanReferenceLabel(label: string, index: number) {
   return cleaned || `Image ${index + 1}`;
 }
 
+function getReferenceAliases(label: string, index: number) {
+  const aliases = new Set<string>();
+  aliases.add(label);
+  aliases.add(`Image ${index + 1}`);
+  aliases.add(`@${index + 1}`);
+  aliases.add(`第${index + 1}张图`);
+  aliases.add(`第 ${index + 1} 张图`);
+  return Array.from(aliases).filter(Boolean);
+}
+
 function buildReferenceImagePrompt(prompt: string, referenceLabels: string[]) {
   if (!referenceLabels.length) return prompt;
   const labels = referenceLabels.map(cleanReferenceLabel);
   return [
     "REFERENCE IMAGE MAP:",
     "Use the uploaded reference images according to the user's labels below. These labels are intentional and may not match upload order.",
-    ...labels.map((label, index) => `${label}: uploaded reference image ${index + 1}. When the prompt mentions ${label}, use this exact image as the visual source.`),
+    ...labels.map((label, index) => {
+      const aliases = getReferenceAliases(label, index).join(" / ");
+      return `${aliases}: uploaded reference image ${index + 1}. When the prompt mentions any of these aliases, use this exact image as the visual source.`;
+    }),
     "",
     "COMMERCIAL VIDEO STYLE:",
     "If the user requests a TikTok US-market product ad, create an ultra-realistic live-action 9:16 vertical video with a Black female model, product consistency from the labeled product images, natural skin texture, real camera movement, premium ecommerce lighting, spoken selling points when dialogue is present, no logo, no watermark, and no unrelated on-screen text.",
