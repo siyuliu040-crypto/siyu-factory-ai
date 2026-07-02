@@ -81,6 +81,7 @@ function isRetryableImageError(status: number, payload: unknown) {
     message.includes("代理不可用") ||
     message.includes("Unable to connect to proxy") ||
     message.includes("ConnectTimeoutError") ||
+    message.includes("HTTPSConnectionPool") ||
     message.includes("upload/sign") ||
     message.includes("origin_response_timeout") ||
     message.includes("retryable")
