@@ -1,0 +1,42 @@
+name: Trigger Render Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - src/**
+      - scripts/**
+      - package.json
+      - package-lock.json
+      - next.config.mjs
+      - render.yaml
+      - .github/workflows/render-redeploy.yml
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Render CLI
+        run: |
+          curl -fsSL -o render-cli.zip https://github.com/render-oss/cli/releases/download/v2.21.0/cli_2.21.0_linux_amd64.zip
+          unzip -q render-cli.zip
+          chmod +x render
+
+      - name: Configure Render CLI
+        run: |
+          mkdir -p ~/.render
+          cat > ~/.render/cli.yaml <<EOF
+          version: 1
+          workspace: ${{ secrets.RENDER_CLI_WORKSPACE }}
+          api:
+              key: ${{ secrets.RENDER_CLI_KEY }}
+              expires_at: ${{ secrets.RENDER_CLI_EXPIRES_AT }}
+              host: https://api.render.com/v1/
+              refreshtoken: ${{ secrets.RENDER_CLI_REFRESH_TOKEN }}
+          dashboard_url: https://dashboard.render.com
+          EOF
+
+      - name: Trigger deploy
+        run: ./render deploys create srv-d8chgomk1jcs738tu1q0 --confirm --output text
