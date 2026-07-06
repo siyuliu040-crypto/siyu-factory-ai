@@ -21,8 +21,16 @@ jobs:
       - name: Install Render CLI
         run: |
           curl -fsSL -o render-cli.zip https://github.com/render-oss/cli/releases/download/v2.21.0/cli_2.21.0_linux_amd64.zip
-          unzip -q render-cli.zip
-          chmod +x render
+          mkdir -p render-cli
+          unzip -q render-cli.zip -d render-cli
+          find render-cli -maxdepth 2 -type f -print
+          cli_path="$(find render-cli -maxdepth 2 -type f -name 'render*' -o -name 'cli*' | head -n 1)"
+          if [ -z "$cli_path" ]; then
+            echo "Render CLI binary not found"
+            exit 1
+          fi
+          chmod +x "$cli_path"
+          echo "RENDER_BIN=$cli_path" >> "$GITHUB_ENV"
 
       - name: Configure Render CLI
         run: |
@@ -39,4 +47,4 @@ jobs:
           EOF
 
       - name: Trigger deploy
-        run: ./render deploys create srv-d8chgomk1jcs738tu1q0 --confirm --output text
+        run: "$RENDER_BIN" deploys create srv-d8chgomk1jcs738tu1q0 --confirm --output text
