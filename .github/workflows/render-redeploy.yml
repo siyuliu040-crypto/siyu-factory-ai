@@ -13,7 +13,7 @@ jobs:
           mkdir -p render-cli
           unzip -q render-cli.zip -d render-cli
           find render-cli -maxdepth 2 -type f -print
-          cli_path="$(find render-cli -maxdepth 2 -type f \( -name 'render*' -o -name 'cli*' \) | head -n 1)"
+          cli_path="$(find render-cli -maxdepth 2 -type f -name 'render*' -o -name 'cli*' | head -n 1)"
           if [ -z "$cli_path" ]; then
             echo "Render CLI binary not found"
             exit 1
@@ -24,16 +24,17 @@ jobs:
       - name: Configure Render CLI
         run: |
           mkdir -p ~/.render
-          cat > ~/.render/cli.yaml <<EOF
-          version: 1
-          workspace: ${{ secrets.RENDER_CLI_WORKSPACE }}
-          api:
-              key: ${{ secrets.RENDER_CLI_KEY }}
-              expires_at: ${{ secrets.RENDER_CLI_EXPIRES_AT }}
-              host: https://api.render.com/v1/
-              refreshtoken: ${{ secrets.RENDER_CLI_REFRESH_TOKEN }}
-          dashboard_url: https://dashboard.render.com
-          EOF
+          {
+            printf '%s\n' 'version: 1'
+            printf 'workspace: %s\n' '${{ secrets.RENDER_CLI_WORKSPACE }}'
+            printf '%s\n' 'api:'
+            printf '    key: %s\n' '${{ secrets.RENDER_CLI_KEY }}'
+            printf '    expires_at: %s\n' '${{ secrets.RENDER_CLI_EXPIRES_AT }}'
+            printf '%s\n' '    host: https://api.render.com/v1/'
+            printf '    refreshtoken: %s\n' '${{ secrets.RENDER_CLI_REFRESH_TOKEN }}'
+            printf '%s\n' 'dashboard_url: https://dashboard.render.com'
+          } > ~/.render/cli.yaml
 
       - name: Trigger deploy
-        run: "$RENDER_BIN" deploys create srv-d8chgomk1jcs738tu1q0 --confirm --output text
+        run: |
+          "$RENDER_BIN" deploys create srv-d8chgomk1jcs738tu1q0 --confirm --output text
