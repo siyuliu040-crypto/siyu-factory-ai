@@ -23,15 +23,44 @@ jobs:
 
       - name: Configure Render CLI
         run: |
+          refresh_json="$(
+            curl -fsS -X POST https://api.render.com/v1/token/refresh/ \
+              -H 'Content-Type: application/json' \
+              -d "{\"refresh_token\":\"${{ secrets.RENDER_CLI_REFRESH_TOKEN }}\"}" \
+            || curl -fsS -X POST https://api.render.com/v1/token/refresh/ \
+              -H 'Content-Type: application/json' \
+              -d "{\"refreshToken\":\"${{ secrets.RENDER_CLI_REFRESH_TOKEN }}\"}"
+          )"
+          export REFRESH_JSON="$refresh_json"
+          python3 - <<'PY' > /tmp/render-token.env
+          import json, os, time
+          data = json.loads(os.environ["REFRESH_JSON"])
+          key = data.get("key") or data.get("access_token") or data.get("authToken") or data.get("token")
+          refresh = data.get("refresh_token") or data.get("refreshToken") or data.get("refreshtoken")
+          expires = data.get("expires_at") or data.get("expiresAt") or data.get("expires_in")
+          if isinstance(expires, (int, float)) and expires < 200000000:
+              expires = int(time.time() + expires)
+          if not key:
+              raise SystemExit("Render token refresh did not return an access token")
+          print(f"RENDER_REFRESHED_KEY={key}")
+          print(f"RENDER_REFRESHED_REFRESH={refresh or os.environ['RENDER_FALLBACK_REFRESH']}")
+          print(f"RENDER_REFRESHED_EXPIRES={expires or int(time.time() + 3600)}")
+          PY
+        env:
+          RENDER_FALLBACK_REFRESH: ${{ secrets.RENDER_CLI_REFRESH_TOKEN }}
+
+      - name: Write Render CLI config
+        run: |
+          source /tmp/render-token.env
           mkdir -p ~/.render
           {
             printf '%s\n' 'version: 1'
             printf 'workspace: %s\n' '${{ secrets.RENDER_CLI_WORKSPACE }}'
             printf '%s\n' 'api:'
-            printf '    key: %s\n' '${{ secrets.RENDER_CLI_KEY }}'
-            printf '    expires_at: %s\n' '${{ secrets.RENDER_CLI_EXPIRES_AT }}'
+            printf '    key: %s\n' "$RENDER_REFRESHED_KEY"
+            printf '    expires_at: %s\n' "$RENDER_REFRESHED_EXPIRES"
             printf '%s\n' '    host: https://api.render.com/v1/'
-            printf '    refreshtoken: %s\n' '${{ secrets.RENDER_CLI_REFRESH_TOKEN }}'
+            printf '    refreshtoken: %s\n' "$RENDER_REFRESHED_REFRESH"
             printf '%s\n' 'dashboard_url: https://dashboard.render.com'
           } > ~/.render/cli.yaml
 
