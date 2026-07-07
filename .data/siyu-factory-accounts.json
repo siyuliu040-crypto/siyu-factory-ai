@@ -3430,10 +3430,10 @@
       "type": "video",
       "model": "vidu:viduq3-turbo",
       "amount": 350000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-05T07:19:41.898Z",
-      "updatedAt": "2026-06-05T07:19:41.898Z"
+      "updatedAt": "2026-07-07T08:34:48.383Z"
     },
     {
       "id": "task_VPsVf9Eq0yOJIcHGsu2bDuytS2LBMixR",
