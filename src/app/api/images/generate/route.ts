@@ -7,6 +7,7 @@ import {
   withAccountState
 } from "@/lib/accounts";
 import { accountErrorResponse } from "@/lib/account-api";
+import { normalizeImageRequestForUpstream } from "@/lib/image-models";
 import { getGenerationCost } from "@/lib/pricing";
 import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
 
@@ -125,6 +126,11 @@ export async function POST(request: Request) {
         }, 400);
       }
       const amount = getGenerationCost(model, Number(incoming.get("n") || 1));
+      const upstream = normalizeImageRequestForUpstream({
+        model,
+        size: String(incoming.get("size") || "1024x1024"),
+        aspect_ratio: incoming.get("aspect_ratio") ? String(incoming.get("aspect_ratio")) : undefined
+      });
       const charge = await chargeUserCredits(request, amount, "image generation", {
         model,
         size: String(incoming.get("size") || "1024x1024")
@@ -137,11 +143,11 @@ export async function POST(request: Request) {
 
       if (references.length > 0) {
         const formData = new FormData();
-        formData.set("model", model);
+        formData.set("model", upstream.model);
         formData.set("prompt", prompt);
         formData.set("n", String(incoming.get("n") || "1"));
-        formData.set("size", String(incoming.get("size") || "1024x1024"));
-        if (incoming.get("aspect_ratio")) formData.set("aspect_ratio", String(incoming.get("aspect_ratio")));
+        formData.set("size", upstream.size || "1024x1024");
+        if (upstream.aspect_ratio) formData.set("aspect_ratio", upstream.aspect_ratio);
         formData.set("response_format", String(incoming.get("response_format") || "url"));
 
         for (const [index, reference] of references.entries()) {
@@ -162,11 +168,11 @@ export async function POST(request: Request) {
           Accept: "application/json"
         }),
         body: JSON.stringify({
-          model,
+          model: upstream.model,
           prompt,
           n: Number(incoming.get("n") || 1),
-          size: String(incoming.get("size") || "1024x1024"),
-          ...(incoming.get("aspect_ratio") ? { aspect_ratio: String(incoming.get("aspect_ratio")) } : {}),
+          size: upstream.size || "1024x1024",
+          ...(upstream.aspect_ratio ? { aspect_ratio: upstream.aspect_ratio } : {}),
           response_format: String(incoming.get("response_format") || "url")
         })
       }, billing, { model, prompt });
@@ -184,6 +190,11 @@ export async function POST(request: Request) {
       }, 400);
     }
     const amount = getGenerationCost(body.model, body.n ?? 1);
+    const upstream = normalizeImageRequestForUpstream({
+      model: body.model,
+      size: body.size,
+      aspect_ratio: body.aspect_ratio
+    });
     const charge = await chargeUserCredits(request, amount, "image generation", {
       model: body.model,
       size: body.size
@@ -196,11 +207,11 @@ export async function POST(request: Request) {
         Accept: "application/json"
       }),
       body: JSON.stringify({
-        model: body.model,
+        model: upstream.model,
         prompt: body.prompt.trim(),
         n: body.n ?? 1,
-        size: body.size ?? "1024x1024",
-        ...(body.aspect_ratio ? { aspect_ratio: body.aspect_ratio } : {}),
+        size: upstream.size ?? "1024x1024",
+        ...(upstream.aspect_ratio ? { aspect_ratio: upstream.aspect_ratio } : {}),
         response_format: body.response_format ?? "url"
       })
     }, { userId: charge.user.id, amount }, { model: body.model, prompt: body.prompt.trim() });
