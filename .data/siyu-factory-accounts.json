@@ -49,6 +49,16 @@
       "credits": 0,
       "createdAt": "2026-07-07T06:54:44.291Z",
       "updatedAt": "2026-07-07T06:54:44.291Z"
+    },
+    {
+      "id": "a19865ba-3d59-4ebf-bb88-76da60780a9d",
+      "email": "168556033@qq.com",
+      "name": "xue717",
+      "passwordHash": "b56f87d7d263968f3a6aece88d222303:733f4066e8a966039bc53a11ecbfbbf78592942f6b0a45637887052123f5c141182bbed1e223a20abf97ad47d4ee5bb7ba67f66219520c98606ffe0f9737c755",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-07T06:57:28.704Z",
+      "updatedAt": "2026-07-07T06:57:28.704Z"
     }
   ],
   "sessions": [
@@ -75,6 +85,12 @@
       "userId": "daee1d49-2c54-4d6b-9ccd-2b9852cfb7a6",
       "expiresAt": "2026-07-14T06:54:44.542Z",
       "createdAt": "2026-07-07T06:54:44.542Z"
+    },
+    {
+      "token": "0bf0028580ddef55eb23b26437858eedbdb554478ead3dd17853d77b3133aad4",
+      "userId": "a19865ba-3d59-4ebf-bb88-76da60780a9d",
+      "expiresAt": "2026-07-14T06:57:28.938Z",
+      "createdAt": "2026-07-07T06:57:28.938Z"
     }
   ],
   "ledger": [
