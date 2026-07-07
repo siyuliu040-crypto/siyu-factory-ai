@@ -23,6 +23,7 @@ import {
 export const dynamic = "force-dynamic";
 
 const HFSY_STUCK_TIMEOUT_MS = Number(process.env.HFSY_STUCK_TIMEOUT_MS || 30 * 60 * 1000);
+const VIDEO_STUCK_TIMEOUT_MS = Number(process.env.VIDEO_STUCK_TIMEOUT_MS || 2 * 60 * 60 * 1000);
 
 async function fetchVideoStatus(path: string, id: string) {
   const response = await fetch(
@@ -106,17 +107,20 @@ function isPendingVideoStatus(status: string) {
   return status === "queued" || status === "in_progress";
 }
 
-function isStuckHfsyTask(task: { createdAt: string; model: string }, normalized: NormalizedVideoStatus) {
-  if (!isPendingVideoStatus(normalized.payload.status)) return false;
-  if (!task.model.toLowerCase().startsWith("hfsy:")) return false;
-  const createdAt = Date.parse(task.createdAt);
-  if (!Number.isFinite(createdAt)) return false;
-  return Date.now() - createdAt >= HFSY_STUCK_TIMEOUT_MS;
+function getVideoStuckTimeoutMs(model: string) {
+  return model.toLowerCase().startsWith("hfsy:") ? HFSY_STUCK_TIMEOUT_MS : VIDEO_STUCK_TIMEOUT_MS;
 }
 
-async function settleStuckHfsyTask(id: string, task: { model: string }) {
+function isStuckVideoTask(task: { createdAt: string; model: string }, status: string) {
+  if (!isPendingVideoStatus(status)) return false;
+  const createdAt = Date.parse(task.createdAt);
+  if (!Number.isFinite(createdAt)) return false;
+  return Date.now() - createdAt >= getVideoStuckTimeoutMs(task.model);
+}
+
+async function settleStuckVideoTask(id: string, task: { model: string }) {
   const error =
-    "HFSY 上游任务长时间停留在生成中，系统已判定为卡住并自动退回本次站内积分。请换用其他可用模型重新提交。";
+    "上游任务长时间停留在生成中，系统已判定为卡住并自动退回本次站内积分。请换用其他可用模型重新提交。";
 
   await withAccountState((state) => {
     settleGenerationTask(state, id, "failed");
@@ -131,11 +135,10 @@ async function settleStuckHfsyTask(id: string, task: { model: string }) {
     task_id: id,
     status: "failed",
     progress: 100,
-    provider: "hfsy",
     model: task.model,
     error,
     message: error,
-    stuck_timeout_ms: HFSY_STUCK_TIMEOUT_MS
+    stuck_timeout_ms: getVideoStuckTimeoutMs(task.model)
   };
 }
 
@@ -155,6 +158,10 @@ export async function GET(
     if (task && isViduModel(task.model)) {
       const vidu = await fetchViduVideoStatus(id);
       const payload = normalizeViduStatus(id, vidu.data, vidu.response.status);
+      if (isStuckVideoTask(task, payload.status)) {
+        const stuckPayload = await settleStuckVideoTask(id, task);
+        return Response.json({ ...stuckPayload, provider: "vidu" });
+      }
       await withAccountState((state) => {
         settleGenerationTask(state, id, payload.status);
         if (payload.video_url || payload.status) {
@@ -172,6 +179,10 @@ export async function GET(
     if (task && isSyModel(task.model)) {
       const sy = await fetchSyVideoStatus(id);
       const payload = normalizeSyStatusPayload(id, sy.data, sy.response.status);
+      if (isStuckVideoTask(task, payload.status)) {
+        const stuckPayload = await settleStuckVideoTask(id, task);
+        return Response.json({ ...stuckPayload, provider: "sy" });
+      }
       await withAccountState((state) => {
         settleGenerationTask(state, id, payload.status);
         if (payload.video_url || payload.status) {
@@ -202,9 +213,9 @@ export async function GET(
         if (!legacyNormalized.transient) normalized = legacyNormalized;
       }
 
-      if (isStuckHfsyTask(task, normalized)) {
-        const payload = await settleStuckHfsyTask(id, task);
-        return Response.json(payload);
+      if (isStuckVideoTask(task, normalized.payload.status)) {
+        const payload = await settleStuckVideoTask(id, task);
+        return Response.json({ ...payload, provider: "hfsy" });
       }
 
       if (!normalized.transient) {
@@ -223,6 +234,11 @@ export async function GET(
       const legacy = await fetchVideoStatus("/v1/video/generations/:id", id);
       const legacyNormalized = normalizeVideoStatusPayload(id, legacy.data, legacy.response.status);
       if (!legacyNormalized.transient) normalized = legacyNormalized;
+    }
+
+    if (task && isStuckVideoTask(task, normalized.payload.status)) {
+      const payload = await settleStuckVideoTask(id, task);
+      return Response.json({ ...payload, provider: "hellobabygo" });
     }
 
     if (!normalized.transient) {
