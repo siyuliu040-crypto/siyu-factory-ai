@@ -75,11 +75,18 @@ export function normalizeViduStatus(taskId: string, payload: unknown, upstreamSt
         ? "in_progress"
         : "queued";
   const videoUrl = extractViduVideoUrl(record);
+  const progress = status === "completed"
+    ? 100
+    : status === "failed"
+      ? 100
+      : status === "in_progress"
+        ? 60
+        : 8;
   return {
     id: taskId,
     task_id: taskId,
     status,
-    progress: status === "completed" ? 100 : status === "failed" ? 100 : status === "in_progress" ? 60 : 0,
+    progress,
     upstream_status: upstreamStatus,
     provider: "vidu",
     video_url: videoUrl || undefined,
