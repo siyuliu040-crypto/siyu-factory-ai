@@ -2424,6 +2424,17 @@
   ],
   "generationTasks": [
     {
+      "id": "47c95ec6f5de4e69b3e65adc0beb412a",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:sora-2",
+      "amount": 2400000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-07T07:28:07.090Z",
+      "updatedAt": "2026-07-07T07:28:07.090Z"
+    },
+    {
       "id": "img_1783409207145_4b4e430b3455c8",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "image",
@@ -3437,6 +3448,17 @@
     }
   ],
   "history": [
+    {
+      "id": "75b14fd5-3999-436a-93cf-8a7843b2146a",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:sora-2",
+      "prompt": "9:16 vertical, 4 second realistic product ad, Black woman smiling and showing a soft black lace wig in a clean studio, natural movement, no logo, no text",
+      "taskId": "47c95ec6f5de4e69b3e65adc0beb412a",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-07T07:28:07.091Z",
+      "updatedAt": "2026-07-07T07:28:07.091Z"
+    },
     {
       "id": "042e12a2-e3a5-48e4-9742-0d4e929ff91e",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
