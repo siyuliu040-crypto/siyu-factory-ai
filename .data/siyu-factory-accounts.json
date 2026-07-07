@@ -3403,10 +3403,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait",
       "amount": 300000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-06-05T07:05:35.455Z",
-      "updatedAt": "2026-06-05T07:05:35.455Z"
+      "updatedAt": "2026-07-07T08:31:39.543Z"
     },
     {
       "id": "960370072830885888",
