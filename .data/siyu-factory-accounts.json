@@ -39,6 +39,16 @@
       "credits": 64000000,
       "createdAt": "2026-07-01T06:29:46.443Z",
       "updatedAt": "2026-07-01T09:03:52.636Z"
+    },
+    {
+      "id": "daee1d49-2c54-4d6b-9ccd-2b9852cfb7a6",
+      "email": "18503749680@163.com",
+      "name": "丁宁",
+      "passwordHash": "fc9b9325b6a5dad276eb81d53608fd79:41ff6c62dda82af6e7d87765ab072413bdd70f490b91cbf7265893eb432f2c9b9683d06b4aef71ac32bec5b00ab73ae2ae9136c74bb8a7a20ec6f7bcc5b110e8",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-07T06:54:44.291Z",
+      "updatedAt": "2026-07-07T06:54:44.291Z"
     }
   ],
   "sessions": [
@@ -59,6 +69,12 @@
       "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
       "expiresAt": "2026-07-08T06:31:35.726Z",
       "createdAt": "2026-07-01T06:31:35.726Z"
+    },
+    {
+      "token": "1f087bf54d6878df65745a034857c68f0d121ffe0445e82c7b72eed4a619a2af",
+      "userId": "daee1d49-2c54-4d6b-9ccd-2b9852cfb7a6",
+      "expiresAt": "2026-07-14T06:54:44.542Z",
+      "createdAt": "2026-07-07T06:54:44.542Z"
     }
   ],
   "ledger": [
