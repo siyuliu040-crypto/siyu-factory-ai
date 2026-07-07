@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 21292880,
+      "credits": 21312880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-07T07:00:26.766Z"
+      "updatedAt": "2026-07-07T07:01:16.808Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -94,6 +94,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "9a8d1b9e-3db8-41c1-8a94-1643ec7a85b8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 20000,
+      "balanceAfter": 21312880,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-07T07:01:16.808Z",
+      "metadata": {
+        "taskId": "img_1783407431687_b4883fe9dc6dd",
+        "model": "nano_banana_2-1K-auto"
+      }
+    },
     {
       "id": "bb026320-3580-4857-9660-6dfd8d7c05bb",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2392,10 +2404,10 @@
       "type": "image",
       "model": "nano_banana_2-1K-auto",
       "amount": 20000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-07T06:57:11.689Z",
-      "updatedAt": "2026-07-07T06:57:11.689Z"
+      "updatedAt": "2026-07-07T07:01:16.807Z"
     },
     {
       "id": "img_1783407191468_5120c88caed018",
@@ -3396,9 +3408,10 @@
       "model": "nano_banana_2-1K-auto",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "img_1783407431687_b4883fe9dc6dd",
-      "status": "queued",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"参数 'auto' 不存在（traceid: 3ed8ba47d5efbf18f1420f2e82eca1a0）\",\"type\":\"invalid_request_error\",\"param\":\"\",\"code\":null}}",
       "createdAt": "2026-07-07T06:57:11.689Z",
-      "updatedAt": "2026-07-07T06:57:11.689Z"
+      "updatedAt": "2026-07-07T07:01:16.808Z"
     },
     {
       "id": "54f35bb5-1584-44ca-bd87-a409ff7fbe05",
