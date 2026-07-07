@@ -2408,7 +2408,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-07-07T07:00:30.436Z",
-      "updatedAt": "2026-07-07T07:04:58.119Z"
+      "updatedAt": "2026-07-07T07:05:05.097Z"
     },
     {
       "id": "img_1783407431687_b4883fe9dc6dd",
@@ -3411,7 +3411,7 @@
       "taskId": "da96d7a91c4849d699a824e6208487de",
       "status": "failed",
       "createdAt": "2026-07-07T07:00:30.436Z",
-      "updatedAt": "2026-07-07T07:04:58.119Z",
+      "updatedAt": "2026-07-07T07:05:05.097Z",
       "error": "\"[SY_ERR:S] upstream async session error: Failed to perform, curl: (28) Connection timed out after 60001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.\""
     },
     {
