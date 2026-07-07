@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 23682880,
+      "credits": 23692880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-07T06:57:10.705Z"
+      "updatedAt": "2026-07-07T06:58:52.230Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -94,6 +94,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "aa63e345-400c-4ccd-bfd7-e136036da5ac",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000,
+      "balanceAfter": 23692880,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-07T06:58:52.230Z",
+      "metadata": {
+        "taskId": "img_1783407191468_5120c88caed018",
+        "model": "gpt-image-2"
+      }
+    },
     {
       "id": "4960fe71-2651-4577-b2c2-5075d5a101dd",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2368,10 +2380,10 @@
       "type": "image",
       "model": "gpt-image-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-07T06:53:12.238Z",
-      "updatedAt": "2026-07-07T06:53:12.238Z"
+      "updatedAt": "2026-07-07T06:58:52.230Z"
     },
     {
       "id": "80c89712b3114846b01b4cf48708af66",
@@ -3361,9 +3373,10 @@
       "model": "gpt-image-2",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "img_1783407191468_5120c88caed018",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-07-07T06:53:12.238Z",
-      "updatedAt": "2026-07-07T06:53:12.238Z"
+      "updatedAt": "2026-07-07T06:58:52.230Z",
+      "error": "{\"error\":{\"message\":\"没有按照预期生成图片，请重新调整提示词后重试（traceid: 30e503aba9efbf18a7a8f0415f8b07fe）\",\"type\":\"invalid_request_error\",\"param\":\"\",\"code\":null}}"
     },
     {
       "id": "958cefc9-ec05-43ee-981a-49a511c2b65e",
