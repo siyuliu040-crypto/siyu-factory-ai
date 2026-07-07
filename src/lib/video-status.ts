@@ -59,6 +59,13 @@ function normalizeProgress(progress: unknown, status: string) {
 }
 
 export function extractVideoUrl(payload: unknown): string {
+  if (Array.isArray(payload)) {
+    for (const item of payload) {
+      const found = typeof item === "string" ? item : extractVideoUrl(item);
+      if (typeof found === "string" && /\.(mp4|mov|webm)(\?|$)/i.test(found)) return found;
+    }
+    return "";
+  }
   if (!isRecord(payload)) return "";
   const direct = payload.video_url || payload.url || payload.result_url || payload.output_url;
   if (typeof direct === "string" && direct) return direct;
@@ -73,6 +80,15 @@ export function extractVideoUrl(payload: unknown): string {
 
   const result = payload.result;
   if (isRecord(result)) return extractVideoUrl(result);
+  if (Array.isArray(result)) return extractVideoUrl(result);
+
+  for (const key of ["videos", "output", "outputs", "urls", "video_urls", "creations"]) {
+    const value = payload[key];
+    if (Array.isArray(value)) {
+      const found = extractVideoUrl(value);
+      if (found) return found;
+    }
+  }
 
   return "";
 }
