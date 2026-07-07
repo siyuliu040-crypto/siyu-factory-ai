@@ -2476,10 +2476,10 @@
       "type": "image",
       "model": "nano_banana_2-1K-auto",
       "amount": 20000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-07T07:49:16.608Z",
-      "updatedAt": "2026-07-07T07:49:16.608Z"
+      "updatedAt": "2026-07-07T07:50:10.782Z"
     },
     {
       "id": "img_1783410549035_5881a45c6adb38",
@@ -3535,9 +3535,10 @@
       "model": "nano_banana_2-1K-auto",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "img_1783410555629_681df4f7a434a",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-07-07T07:49:16.608Z",
-      "updatedAt": "2026-07-07T07:49:16.608Z"
+      "updatedAt": "2026-07-07T07:50:10.782Z",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/82a5c6d7-58b1-4f75-941e-27f15f1ea357.jpg"
     },
     {
       "id": "b81ca128-a1b2-4654-a3a1-eae7d13dc71f",
