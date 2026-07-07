@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 23652880,
+      "credits": 24852880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-07T08:13:38.437Z"
+      "updatedAt": "2026-07-07T08:34:33.299Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -94,6 +94,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "ef1c048b-da79-4a43-a795-99566fbed7f8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1200000,
+      "balanceAfter": 24852880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-07T08:34:33.299Z",
+      "metadata": {
+        "taskId": "task_xAaioCLb4sF6ZrgGKs5XXYQAwtSR5Apy",
+        "model": "sy:veo-X-veo_3_1-fast-fl"
+      }
+    },
     {
       "id": "7ed8f6af-f4a2-4924-8168-dfb3920750e6",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2666,10 +2678,10 @@
       "type": "video",
       "model": "sy:veo-X-veo_3_1-fast-fl",
       "amount": 1200000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-06-15T09:36:55.574Z",
-      "updatedAt": "2026-06-15T09:36:55.574Z"
+      "updatedAt": "2026-07-07T08:34:33.299Z"
     },
     {
       "id": "task_ooHU9GQuRT5mumMDbkIyWahO3FeXoGal",
