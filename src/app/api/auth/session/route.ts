@@ -18,7 +18,8 @@ export async function GET(request: Request) {
       ? await withAccountState((state) => getUserBySessionToken(state, token))
       : null;
     const state = await readAccountState();
-    const users = user?.role === "admin" ? state.users.map(toPublicUser) : undefined;
+    const isAdmin = user?.role === "admin";
+    const users = isAdmin ? state.users.map(toPublicUser) : undefined;
     const ledger = user?.role === "admin"
       ? state.ledger.slice(0, 60)
       : state.ledger.filter((entry) => entry.userId === user?.id).slice(0, 30);
@@ -28,7 +29,7 @@ export async function GET(request: Request) {
         authenticated: Boolean(user),
         user,
         users,
-        adminId: getPrimaryAdminId(state),
+        adminId: isAdmin ? getPrimaryAdminId(state) : undefined,
         ledger,
         storage: getAccountStorageInfo()
       },
