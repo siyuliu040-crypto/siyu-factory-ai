@@ -2417,10 +2417,10 @@
       "type": "image",
       "model": "nano_banana_2-1K-auto",
       "amount": 20000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-07T07:26:47.148Z",
-      "updatedAt": "2026-07-07T07:26:47.148Z"
+      "updatedAt": "2026-07-07T07:27:37.077Z"
     },
     {
       "id": "da96d7a91c4849d699a824e6208487de",
@@ -3431,10 +3431,11 @@
       "mode": "image",
       "model": "nano_banana_2-1K-auto",
       "prompt": "9:16 vertical product photo, realistic black lace front wig on model, clean studio lighting, no logo, no text",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/9685991c-d47c-428f-b72a-72612c2bd9a8.jpg",
       "taskId": "img_1783409207145_4b4e430b3455c8",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-07-07T07:26:47.148Z",
-      "updatedAt": "2026-07-07T07:26:47.148Z"
+      "updatedAt": "2026-07-07T07:27:37.078Z"
     },
     {
       "id": "c215d7ce-cce8-454d-a09b-daa3175c2349",
