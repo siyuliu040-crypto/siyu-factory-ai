@@ -22,6 +22,8 @@ import {
 
 export const dynamic = "force-dynamic";
 
+const HFSY_STUCK_TIMEOUT_MS = Number(process.env.HFSY_STUCK_TIMEOUT_MS || 30 * 60 * 1000);
+
 async function fetchVideoStatus(path: string, id: string) {
   const response = await fetch(
     `${HELLOBABYGO_BASE_URL}${path.replace(":id", encodeURIComponent(id))}`,
@@ -100,6 +102,43 @@ async function settleNormalizedStatus(id: string, normalized: NormalizedVideoSta
   });
 }
 
+function isPendingVideoStatus(status: string) {
+  return status === "queued" || status === "in_progress";
+}
+
+function isStuckHfsyTask(task: { createdAt: string; model: string }, normalized: NormalizedVideoStatus) {
+  if (!isPendingVideoStatus(normalized.payload.status)) return false;
+  if (!task.model.toLowerCase().startsWith("hfsy:")) return false;
+  const createdAt = Date.parse(task.createdAt);
+  if (!Number.isFinite(createdAt)) return false;
+  return Date.now() - createdAt >= HFSY_STUCK_TIMEOUT_MS;
+}
+
+async function settleStuckHfsyTask(id: string, task: { model: string }) {
+  const error =
+    "HFSY 上游任务长时间停留在生成中，系统已判定为卡住并自动退回本次站内积分。请换用其他可用模型重新提交。";
+
+  await withAccountState((state) => {
+    settleGenerationTask(state, id, "failed");
+    updateHistoryByTaskId(state, id, {
+      status: "failed",
+      error
+    });
+  });
+
+  return {
+    id,
+    task_id: id,
+    status: "failed",
+    progress: 100,
+    provider: "hfsy",
+    model: task.model,
+    error,
+    message: error,
+    stuck_timeout_ms: HFSY_STUCK_TIMEOUT_MS
+  };
+}
+
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -161,6 +200,11 @@ export async function GET(
         const legacy = await fetchHfsyVideoStatus("/v1/videos/:id", id);
         const legacyNormalized = normalizeVideoStatusPayload(id, legacy.data, legacy.response.status);
         if (!legacyNormalized.transient) normalized = legacyNormalized;
+      }
+
+      if (isStuckHfsyTask(task, normalized)) {
+        const payload = await settleStuckHfsyTask(id, task);
+        return Response.json(payload);
       }
 
       if (!normalized.transient) {
