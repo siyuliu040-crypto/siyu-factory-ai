@@ -1,6 +1,7 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
 import { withAccountState } from "@/lib/accounts";
 import { extractVideoUrl } from "@/lib/video-status";
+import { hfsyHeaders, HFSY_BASE_URL, isHfsyModel, parseHfsyResponse } from "@/lib/hfsy";
 import { extractSyVideoUrl, getSyCredentials, isSyModel, parseSyResponse, SY_BASE_URL } from "@/lib/sy";
 import { extractViduVideoUrl, isViduModel, parseViduResponse, VIDU_BASE_URL, viduHeaders } from "@/lib/vidu";
 
@@ -20,6 +21,17 @@ async function fetchViduVideoMetadata(id: string) {
     cache: "no-store"
   });
   return parseViduResponse(response);
+}
+
+async function fetchHfsyVideoMetadata(path: string, id: string) {
+  const resolvedPath = path.includes(":id")
+    ? path.replace(":id", encodeURIComponent(id))
+    : `${path}${path.includes("?") ? "&" : "?"}id=${encodeURIComponent(id)}`;
+  const response = await fetch(`${HFSY_BASE_URL}${resolvedPath}`, {
+    headers: hfsyHeaders({ Accept: "application/json" }),
+    cache: "no-store"
+  });
+  return parseHfsyResponse(response);
 }
 
 async function fetchSyVideoMetadata(id: string) {
@@ -81,6 +93,22 @@ export async function GET(
       const syUrl = extractSyVideoUrl(syMetadata);
       if (syUrl) return streamRemoteVideo(syUrl, id);
       return jsonError({ error: "Unable to download generated SY video" }, 404);
+    }
+
+    if (task && isHfsyModel(task.model)) {
+      const primaryMetadata = await fetchHfsyVideoMetadata("/v1/video/query", id);
+      const primaryUrl = extractVideoUrl(primaryMetadata);
+      if (primaryUrl) return streamRemoteVideo(primaryUrl, id);
+
+      const legacyMetadata = await fetchHfsyVideoMetadata("/pg/videos/async-generations/:id", id);
+      const legacyUrl = extractVideoUrl(legacyMetadata);
+      if (legacyUrl) return streamRemoteVideo(legacyUrl, id);
+
+      const videosMetadata = await fetchHfsyVideoMetadata("/v1/videos/:id", id);
+      const videosUrl = extractVideoUrl(videosMetadata);
+      if (videosUrl) return streamRemoteVideo(videosUrl, id);
+
+      return jsonError({ error: "Unable to download generated HFSY video" }, 404);
     }
 
     const primaryMetadata = await fetchVideoMetadata("/v1/videos/:id", id);
