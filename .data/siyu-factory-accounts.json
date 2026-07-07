@@ -3455,9 +3455,9 @@
       "model": "hfsy:sora-2",
       "prompt": "9:16 vertical, 4 second realistic product ad, Black woman smiling and showing a soft black lace wig in a clean studio, natural movement, no logo, no text",
       "taskId": "47c95ec6f5de4e69b3e65adc0beb412a",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-07T07:28:07.091Z",
-      "updatedAt": "2026-07-07T07:28:07.091Z"
+      "updatedAt": "2026-07-07T07:28:28.497Z"
     },
     {
       "id": "042e12a2-e3a5-48e4-9742-0d4e929ff91e",
