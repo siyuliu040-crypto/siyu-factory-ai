@@ -32,6 +32,27 @@ function isAllowedModel(model: unknown) {
   return true;
 }
 
+function isVideoModelId(id: string) {
+  const lower = id.toLowerCase();
+  return (
+    lower.includes("video") ||
+    lower.includes("veo") ||
+    lower.includes("sora") ||
+    lower.includes("grok-imagine")
+  );
+}
+
+function normalizeUpstreamModel(model: unknown) {
+  if (!model || typeof model !== "object") return model;
+  const record = model as Record<string, unknown>;
+  const id = String(record.id || "");
+  if (!isVideoModelId(id)) return model;
+  return {
+    ...record,
+    supported_endpoint_types: ["openai-video"]
+  };
+}
+
 export async function GET() {
   try {
     const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/models`, {
@@ -41,7 +62,9 @@ export async function GET() {
     });
     const data = await parseUpstreamResponse(response);
     if (data && typeof data === "object" && Array.isArray((data as { data?: unknown }).data)) {
-      const filtered = ((data as { data: unknown[] }).data).filter(isAllowedModel);
+      const filtered = ((data as { data: unknown[] }).data)
+        .filter(isAllowedModel)
+        .map(normalizeUpstreamModel);
       const liveIds = new Set(filtered.map((item) => String((item as { id?: unknown })?.id || "")));
       const viduModels = VIDU_MODELS
         .filter((id) => !liveIds.has(id))
