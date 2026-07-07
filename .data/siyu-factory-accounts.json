@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 21242880,
+      "credits": 21252880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-07T07:49:20.880Z"
+      "updatedAt": "2026-07-07T07:54:40.940Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -94,6 +94,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "afb36a4c-012d-48d9-9abc-9256eacf384c",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000,
+      "balanceAfter": 21252880,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-07T07:54:40.940Z",
+      "metadata": {
+        "taskId": "img_1783410561876_1ad7be5497ed5",
+        "model": "gpt-image-2"
+      }
+    },
     {
       "id": "4c704f47-5c8a-49a1-b51e-75828efe44b2",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2465,10 +2477,10 @@
       "type": "image",
       "model": "gpt-image-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-07T07:49:24.649Z",
-      "updatedAt": "2026-07-07T07:49:24.649Z"
+      "updatedAt": "2026-07-07T07:54:40.939Z"
     },
     {
       "id": "img_1783410555629_681df4f7a434a",
