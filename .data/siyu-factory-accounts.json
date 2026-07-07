@@ -59,6 +59,16 @@
       "credits": 0,
       "createdAt": "2026-07-07T06:57:28.704Z",
       "updatedAt": "2026-07-07T06:57:28.704Z"
+    },
+    {
+      "id": "d0202670-2e5b-4cd2-aefc-156e9f75a09b",
+      "email": "reginaaloveee@gmail.com",
+      "name": "nini",
+      "passwordHash": "fc13f50a6e9965e6c9dda5a4675094cd:3fa768c045a065b6766dbaa2177756c57e91f16842626c5fb5c4477e41d4c13a7024dac264cf5b62eee7a0c765a30a38770b45bf3b016f28795de977bf05f5d1",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-07T10:53:59.446Z",
+      "updatedAt": "2026-07-07T10:53:59.446Z"
     }
   ],
   "sessions": [
@@ -127,6 +137,12 @@
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
       "expiresAt": "2026-07-14T10:53:50.707Z",
       "createdAt": "2026-07-07T10:53:50.707Z"
+    },
+    {
+      "token": "3abf7b883c2cb74e785de936157bb5b0e5cc006ef3bf48059103ccd9248ca463",
+      "userId": "d0202670-2e5b-4cd2-aefc-156e9f75a09b",
+      "expiresAt": "2026-07-14T10:53:59.613Z",
+      "createdAt": "2026-07-07T10:53:59.613Z"
     }
   ],
   "ledger": [
