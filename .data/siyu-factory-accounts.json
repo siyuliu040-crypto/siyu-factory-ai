@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 21252880,
+      "credits": 21242880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-07T07:49:14.509Z"
+      "updatedAt": "2026-07-07T07:49:20.880Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -94,6 +94,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "4c704f47-5c8a-49a1-b51e-75828efe44b2",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -10000,
+      "balanceAfter": 21242880,
+      "reason": "image generation",
+      "createdAt": "2026-07-07T07:49:20.880Z",
+      "metadata": {
+        "model": "gpt-image-2",
+        "size": "1024x1792"
+      }
+    },
     {
       "id": "0d8b4048-9e2f-4166-8769-ffcb910db8dc",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
