@@ -1,4 +1,4 @@
-import { HELLOBABYGO_BASE_URL, authHeaders } from "@/lib/hellobabygo";
+﻿import { HELLOBABYGO_BASE_URL, authHeaders } from "@/lib/hellobabygo";
 import {
   recordGenerationHistory,
   refundCreditsForUser,
@@ -6,6 +6,7 @@ import {
   updateHistoryByTaskId,
   withAccountState
 } from "@/lib/accounts";
+import { normalizeImageRequestForUpstream } from "@/lib/image-models";
 
 export type ImageJobRequest = {
   model: string;
@@ -211,15 +212,16 @@ async function runImageJob(id: string) {
 }
 
 function postImageGeneration(record: ImageJobRecord) {
+  const upstream = normalizeImageRequestForUpstream(record.request);
   return fetch(`${HELLOBABYGO_BASE_URL}/v1/images/generations`, {
     method: "POST",
     headers: authHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
     body: JSON.stringify({
-      model: record.request.model,
+      model: upstream.model,
       prompt: record.request.prompt.trim(),
       n: record.request.n ?? 1,
-      size: record.request.size ?? "1024x1024",
-      ...(record.request.aspect_ratio ? { aspect_ratio: record.request.aspect_ratio } : {}),
+      size: upstream.size ?? "1024x1024",
+      ...(upstream.aspect_ratio ? { aspect_ratio: upstream.aspect_ratio } : {}),
       response_format: record.request.response_format ?? "url"
     }),
     cache: "no-store"
@@ -230,12 +232,13 @@ async function postImageEdit(
   record: ImageJobRecord,
   references: NonNullable<ImageJobRequest["references"]>
 ) {
+  const upstream = normalizeImageRequestForUpstream(record.request);
   const formData = new FormData();
-  formData.set("model", record.request.model);
+  formData.set("model", upstream.model);
   formData.set("prompt", record.request.prompt.trim());
   formData.set("n", String(record.request.n ?? 1));
-  formData.set("size", record.request.size ?? "1024x1024");
-  if (record.request.aspect_ratio) formData.set("aspect_ratio", record.request.aspect_ratio);
+  formData.set("size", upstream.size ?? "1024x1024");
+  if (upstream.aspect_ratio) formData.set("aspect_ratio", upstream.aspect_ratio);
   formData.set("response_format", record.request.response_format ?? "url");
 
   for (const [index, reference] of references.entries()) {
