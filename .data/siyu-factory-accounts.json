@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 21312880,
+      "credits": 23712880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-07T07:01:16.808Z"
+      "updatedAt": "2026-07-07T07:04:58.119Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -94,6 +94,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c032f0f3-6c16-408f-9ccb-8105d6a9806f",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 2400000,
+      "balanceAfter": 23712880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-07T07:04:58.119Z",
+      "metadata": {
+        "taskId": "da96d7a91c4849d699a824e6208487de",
+        "model": "hfsy:sora-2"
+      }
+    },
     {
       "id": "9a8d1b9e-3db8-41c1-8a94-1643ec7a85b8",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2393,10 +2405,10 @@
       "type": "video",
       "model": "hfsy:sora-2",
       "amount": 2400000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-07T07:00:30.436Z",
-      "updatedAt": "2026-07-07T07:00:30.436Z"
+      "updatedAt": "2026-07-07T07:04:58.119Z"
     },
     {
       "id": "img_1783407431687_b4883fe9dc6dd",
@@ -3397,9 +3409,10 @@
       "model": "hfsy:sora-2",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "da96d7a91c4849d699a824e6208487de",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-07T07:00:30.436Z",
-      "updatedAt": "2026-07-07T07:04:55.201Z"
+      "updatedAt": "2026-07-07T07:04:58.119Z",
+      "error": "\"[SY_ERR:S] upstream async session error: Failed to perform, curl: (28) Connection timed out after 60001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.\""
     },
     {
       "id": "40c27036-1318-4a72-a909-0de0ca429a90",
