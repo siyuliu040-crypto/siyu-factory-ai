@@ -2412,6 +2412,17 @@
   ],
   "generationTasks": [
     {
+      "id": "img_1783409207145_4b4e430b3455c8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "image",
+      "model": "nano_banana_2-1K-auto",
+      "amount": 20000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-07T07:26:47.148Z",
+      "updatedAt": "2026-07-07T07:26:47.148Z"
+    },
+    {
       "id": "da96d7a91c4849d699a824e6208487de",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3414,6 +3425,17 @@
     }
   ],
   "history": [
+    {
+      "id": "042e12a2-e3a5-48e4-9742-0d4e929ff91e",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "image",
+      "model": "nano_banana_2-1K-auto",
+      "prompt": "9:16 vertical product photo, realistic black lace front wig on model, clean studio lighting, no logo, no text",
+      "taskId": "img_1783409207145_4b4e430b3455c8",
+      "status": "queued",
+      "createdAt": "2026-07-07T07:26:47.148Z",
+      "updatedAt": "2026-07-07T07:26:47.148Z"
+    },
     {
       "id": "c215d7ce-cce8-454d-a09b-daa3175c2349",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
