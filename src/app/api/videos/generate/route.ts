@@ -1,4 +1,4 @@
-import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+﻿import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
 import {
   AccountError,
   chargeUserCredits,
@@ -317,6 +317,9 @@ async function postHfsyVideoPayload(
     ...(Array.isArray(payload.image_urls) ? payload.image_urls : []),
     ...(Array.isArray(payload.reference_images) ? payload.reference_images : [])
   ].map(String).filter(Boolean);
+  const acceptedReferenceUrls = hfsyModel?.upstreamModel === "sora-2"
+    ? referenceUrls.slice(0, 1)
+    : referenceUrls;
   const size = String(payload.size || "");
   const [width, height] = size.split("x").map((value) => Number(value));
   const orientation = Number.isFinite(width) && Number.isFinite(height) && width > height ? "landscape" : "portrait";
@@ -326,7 +329,7 @@ async function postHfsyVideoPayload(
     prompt: prepareHfsyVideoPrompt(billing.model, String(payload.prompt || "")),
     duration,
     orientation,
-    ...(referenceUrls.length ? { images: referenceUrls } : {}),
+    ...(acceptedReferenceUrls.length ? { images: acceptedReferenceUrls } : {}),
     ...(hfsyModel?.upstreamModel === "sora-2" ? { audio: true } : {}),
     watermark: false,
     size: "large"
