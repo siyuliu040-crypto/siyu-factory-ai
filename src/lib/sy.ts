@@ -149,7 +149,7 @@ export function normalizeSyStatusPayload(taskId: string, payload: unknown, upstr
       ? Math.max(0, Math.min(100, Math.round(parsedProgress)))
       : status === "in_progress"
         ? 60
-        : 0;
+        : 8;
 
   return {
     id: taskId,
