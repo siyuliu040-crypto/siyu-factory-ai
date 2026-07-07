@@ -30,7 +30,11 @@ export function isTransientVideoStatusPayload(payload: unknown) {
     message.includes("fail_to_fetch_task") ||
     message.includes("Internal Server Error") ||
     message.includes("Not Found") ||
-    message.includes("\"detail\":\"Not Found\"")
+    message.includes("\"detail\":\"Not Found\"") ||
+    message.includes("upstream async session error") ||
+    message.includes("Connection timed out") ||
+    message.includes("curl: (28)") ||
+    message.includes("[SY_ERR:S]")
   );
 }
 
