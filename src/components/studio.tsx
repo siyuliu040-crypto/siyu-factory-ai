@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   Activity,
@@ -783,7 +783,7 @@ function getModelDescription(model: string, language: Language) {
       ? language === "zh" ? "参考图必填" : "reference required"
       : language === "zh" ? "文字或参考图均可" : "prompt or reference image";
     const audioHint = hfsyModel.upstreamModel === "sora-2"
-      ? language === "zh" ? "口播强化" : "spoken audio boosted"
+      ? language === "zh" ? "含口播时启用音频" : "audio when speech is requested"
       : "";
     return language === "zh"
       ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY 上游 · 上游价 ${hfsyModel.upstreamPrice}`
