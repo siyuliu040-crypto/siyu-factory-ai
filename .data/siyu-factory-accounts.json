@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 21252880,
+      "credits": 23652880,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-07T07:54:40.940Z"
+      "updatedAt": "2026-07-07T08:11:26.425Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -94,6 +94,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "a3abdd41-5595-4b8d-a9c8-157ad7b7df43",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 2400000,
+      "balanceAfter": 23652880,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-07T08:11:26.425Z",
+      "metadata": {
+        "taskId": "47c95ec6f5de4e69b3e65adc0beb412a",
+        "model": "hfsy:sora-2"
+      }
+    },
     {
       "id": "afb36a4c-012d-48d9-9abc-9256eacf384c",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -2510,10 +2522,10 @@
       "type": "video",
       "model": "hfsy:sora-2",
       "amount": 2400000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-07T07:28:07.090Z",
-      "updatedAt": "2026-07-07T07:28:07.090Z"
+      "updatedAt": "2026-07-07T08:11:26.425Z"
     },
     {
       "id": "img_1783409207145_4b4e430b3455c8",
