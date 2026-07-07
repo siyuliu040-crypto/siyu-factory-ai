@@ -240,9 +240,14 @@ function prepareViduVideoPrompt(prompt: string) {
   ].join("\n");
 }
 
+function promptRequestsSpokenAudio(prompt: string) {
+  return /["“”]|(?:^|\n)\s*(Bestie|You|Narrator|Wearer|Friend|Host|Speaker|Model|Customer)\s*:|voiceover|dialogue|spoken|narration|talking|口播|旁白|对话|台词|说话/i.test(prompt);
+}
+
 function prepareHfsyVideoPrompt(model: string, prompt: string) {
   const hfsyModel = getHfsyModel(model);
   if (hfsyModel?.upstreamModel !== "sora-2") return prompt;
+  if (!promptRequestsSpokenAudio(prompt)) return prompt;
 
   return [
     "IMPORTANT AUDIO REQUIREMENT:",
@@ -324,13 +329,15 @@ async function postHfsyVideoPayload(
   const [width, height] = size.split("x").map((value) => Number(value));
   const orientation = Number.isFinite(width) && Number.isFinite(height) && width > height ? "landscape" : "portrait";
   const duration = Number(payload.duration || payload.seconds || hfsyModel?.durationOptions[0] || 10);
+  const originalPrompt = String(payload.prompt || "");
+  const wantsSpokenAudio = hfsyModel?.upstreamModel === "sora-2" && promptRequestsSpokenAudio(originalPrompt);
   const upstreamPayload = {
     model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, ""),
-    prompt: prepareHfsyVideoPrompt(billing.model, String(payload.prompt || "")),
+    prompt: prepareHfsyVideoPrompt(billing.model, originalPrompt),
     duration,
     orientation,
     ...(acceptedReferenceUrls.length ? { images: acceptedReferenceUrls } : {}),
-    ...(hfsyModel?.upstreamModel === "sora-2" ? { audio: true } : {}),
+    ...(wantsSpokenAudio ? { audio: true } : {}),
     watermark: false,
     size: "large"
   };
