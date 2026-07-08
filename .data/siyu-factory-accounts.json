@@ -16,9 +16,9 @@
       "name": "h",
       "passwordHash": "26ef75d62b39b24c2836fe24a1829c10:4f610fc60f56cb700e120616669061b0fe9d5f527cc74a02fdee207037a7b33dfb8f2161b1c17c55a01950b0a567581bae8848d2785300ab5d894a0211629d93",
       "role": "user",
-      "credits": 40100000,
+      "credits": 49100000,
       "createdAt": "2026-06-05T06:35:19.123Z",
-      "updatedAt": "2026-07-08T03:10:38.424Z"
+      "updatedAt": "2026-07-08T03:30:42.963Z"
     },
     {
       "id": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -152,6 +152,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "94e0258f-9c66-44e9-a645-283cd8a2e445",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "amount": 9000000,
+      "balanceAfter": 49100000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-08T03:30:42.963Z",
+      "metadata": {
+        "taskId": "a1eee15e689e4815901fd6c97dd9d3b0",
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "d26bb3fe-76b6-42db-87c6-9c5f8516f0c1",
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -2714,10 +2726,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-08T03:10:40.259Z",
-      "updatedAt": "2026-07-08T03:10:40.259Z"
+      "updatedAt": "2026-07-08T03:30:42.963Z"
     },
     {
       "id": "b19cdad7e9144b99ab9005e1f84b185e",
@@ -3817,9 +3829,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "通过图4的脚本@4，参考@1@2@3的产品图生成Tiktok美区黑人带货视频",
       "taskId": "a1eee15e689e4815901fd6c97dd9d3b0",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-08T03:10:40.259Z",
-      "updatedAt": "2026-07-08T03:30:38.993Z"
+      "updatedAt": "2026-07-08T03:30:42.963Z",
+      "error": "The upstream task stayed in generation for too long. Site credits were refunded automatically. Please submit again with another model."
     },
     {
       "id": "24a59902-85b1-4ceb-8442-51e1619007a9",
