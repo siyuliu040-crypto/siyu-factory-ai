@@ -2681,7 +2681,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T02:57:07.927Z"
+      "updatedAt": "2026-07-08T03:00:13.867Z"
     },
     {
       "id": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
@@ -3761,7 +3761,7 @@
       "taskId": "e9e245e8a57a4c0795b55933dd9917c4",
       "status": "failed",
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T02:57:07.928Z",
+      "updatedAt": "2026-07-08T03:00:13.867Z",
       "error": "The upstream task stayed in generation for too long. Site credits were refunded automatically. Please submit again with another model."
     },
     {
