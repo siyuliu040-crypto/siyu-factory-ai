@@ -248,6 +248,7 @@ const stableVideoModels = [
   "veo_3_1-fast-portrait-fl-hd",
   "sy:grok-Yun",
   "hfsy:sora-2",
+  "hfsy:sd-2-fast",
   "hfsy:sd-2",
   "hfsy:sd-2-vip",
   "sora-2-4s-9x16",
