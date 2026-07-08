@@ -16,9 +16,9 @@
       "name": "h",
       "passwordHash": "26ef75d62b39b24c2836fe24a1829c10:4f610fc60f56cb700e120616669061b0fe9d5f527cc74a02fdee207037a7b33dfb8f2161b1c17c55a01950b0a567581bae8848d2785300ab5d894a0211629d93",
       "role": "user",
-      "credits": 40100000,
+      "credits": 49100000,
       "createdAt": "2026-06-05T06:35:19.123Z",
-      "updatedAt": "2026-07-08T02:33:02.720Z"
+      "updatedAt": "2026-07-08T02:56:00.500Z"
     },
     {
       "id": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -152,6 +152,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "dcaab117-d79f-4671-9359-61ca754c0fec",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "amount": 9000000,
+      "balanceAfter": 49100000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-08T02:56:00.500Z",
+      "metadata": {
+        "taskId": "e9e245e8a57a4c0795b55933dd9917c4",
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "c00e3d8c-34bf-4055-a996-ff9d87b8856d",
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -2666,10 +2678,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T02:33:05.456Z"
+      "updatedAt": "2026-07-08T02:56:00.499Z"
     },
     {
       "id": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
@@ -3747,9 +3759,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "9:16 vertical,10s vertical commercial wig video,3 reference images as key frames,1080P photorealistic,soft studio fill light,clean light gray background,Shopify hair ad style.Fully retain reference details:model face,ombre gradient hair color,hairline,curl density,hair volume,real human hair texture,hair length unchanged.10s timeline shot logic:0-3s front close-up,model slowly turn front to 45°side,hands gently comb top & side hair,fingers tug roots to let curls bounce,slow slight push camera;3-7s full side shot,show side curl volume,fingers stroke curls to display softness with natural bounce;7-10s back view,show full rear layered curls,slightly lift hair,slow pull-back camera,shallow depth of field.Real skin texture,natural finger motion,clear hair strand luster,soft shadow,smooth frame transition,60fps smooth motion.ugly,distorted face/fingers,plastic fake wig shine,hair discoloration,twisted hairline,messy background,overexposure,blurry,low res,cartoon,anime,3D render,AI distortion,stiff rigid hair/robotic movement,broken patchy hair,frame color flicker,text,logo,watermark",
       "taskId": "e9e245e8a57a4c0795b55933dd9917c4",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T02:55:54.803Z"
+      "updatedAt": "2026-07-08T02:56:00.500Z",
+      "error": "The upstream task stayed in generation for too long. Site credits were refunded automatically. Please submit again with another model."
     },
     {
       "id": "94f5fb5e-6567-48df-8c7c-dafa7849d48c",
