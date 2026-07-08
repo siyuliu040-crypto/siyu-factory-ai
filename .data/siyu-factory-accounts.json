@@ -2751,7 +2751,7 @@
       "status": "completed",
       "refunded": true,
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T03:38:31.362Z"
+      "updatedAt": "2026-07-08T03:40:04.382Z"
     },
     {
       "id": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
@@ -3855,9 +3855,8 @@
       "taskId": "e9e245e8a57a4c0795b55933dd9917c4",
       "status": "completed",
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T03:38:31.362Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/08/a72a28e0841f4092a8ebdc9f6f73a06b.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1783566001&Signature=Qe40jpjew%2B9g4RWwXlk0%2BA%2BnREM%3D",
-      "error": "The upstream task stayed in generation for too long. Site credits were refunded automatically. Please submit again with another model."
+      "updatedAt": "2026-07-08T03:40:04.382Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/08/a72a28e0841f4092a8ebdc9f6f73a06b.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1783566001&Signature=Qe40jpjew%2B9g4RWwXlk0%2BA%2BnREM%3D"
     },
     {
       "id": "94f5fb5e-6567-48df-8c7c-dafa7849d48c",
