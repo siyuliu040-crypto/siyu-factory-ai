@@ -123,7 +123,7 @@ type RecordHistoryInput = {
 type HistoryPatch = {
   previewUrl?: string;
   status?: string;
-  error?: string;
+  error?: string | null;
 };
 
 const SESSION_DAYS = 7;
@@ -519,7 +519,10 @@ export function updateHistoryByTaskId(state: AccountState, taskId: string, patch
     if (item.taskId !== taskId) continue;
     item.previewUrl = patch.previewUrl || item.previewUrl;
     item.status = patch.status || item.status;
-    item.error = patch.error || item.error;
+    if ("error" in patch) {
+      if (patch.error === null) delete item.error;
+      else item.error = patch.error || item.error;
+    }
     item.updatedAt = updatedAt;
     updated.push(item);
   }
