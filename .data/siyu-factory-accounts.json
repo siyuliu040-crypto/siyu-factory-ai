@@ -2637,6 +2637,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-08T01:56:47.091Z",
+      "updatedAt": "2026-07-08T01:56:47.091Z"
+    },
+    {
       "id": "img_1783410561876_1ad7be5497ed5",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "image",
@@ -3694,6 +3705,17 @@
     }
   ],
   "history": [
+    {
+      "id": "94f5fb5e-6567-48df-8c7c-dafa7849d48c",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait",
+      "prompt": "9:16 vertical, 三张图片作为关键帧，生成真实假发产品展示视频。保持原图假模特头、发型、发色、发际线、卷度、发量和真人发质感完全不变。主体缓慢从正面转到侧面，再展示背面发量和卷度。手部轻轻整理头顶、发际线和两侧卷发，用手指自然拨开发根，轻托发尾，让卷发自然回弹。镜头竖版近景，轻微推进，背景干净浅色，柔和光影，高清真实，Shopify假发产品展示风格。避免发型重做、发色变深、头发塑料感、模特脸反光、手指变形、背景杂乱、AI感。",
+      "taskId": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
+      "status": "queued",
+      "createdAt": "2026-07-08T01:56:47.091Z",
+      "updatedAt": "2026-07-08T01:56:47.091Z"
+    },
     {
       "id": "958cefc9-ec05-43ee-981a-49a511c2b65e",
       "userId": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
