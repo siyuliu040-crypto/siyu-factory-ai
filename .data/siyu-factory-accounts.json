@@ -3747,9 +3747,9 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "9:16 vertical,10s vertical commercial wig video,3 reference images as key frames,1080P photorealistic,soft studio fill light,clean light gray background,Shopify hair ad style.Fully retain reference details:model face,ombre gradient hair color,hairline,curl density,hair volume,real human hair texture,hair length unchanged.10s timeline shot logic:0-3s front close-up,model slowly turn front to 45°side,hands gently comb top & side hair,fingers tug roots to let curls bounce,slow slight push camera;3-7s full side shot,show side curl volume,fingers stroke curls to display softness with natural bounce;7-10s back view,show full rear layered curls,slightly lift hair,slow pull-back camera,shallow depth of field.Real skin texture,natural finger motion,clear hair strand luster,soft shadow,smooth frame transition,60fps smooth motion.ugly,distorted face/fingers,plastic fake wig shine,hair discoloration,twisted hairline,messy background,overexposure,blurry,low res,cartoon,anime,3D render,AI distortion,stiff rigid hair/robotic movement,broken patchy hair,frame color flicker,text,logo,watermark",
       "taskId": "e9e245e8a57a4c0795b55933dd9917c4",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T02:33:09.168Z"
+      "updatedAt": "2026-07-08T02:33:11.132Z"
     },
     {
       "id": "94f5fb5e-6567-48df-8c7c-dafa7849d48c",
