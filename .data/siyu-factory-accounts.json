@@ -16,9 +16,9 @@
       "name": "h",
       "passwordHash": "26ef75d62b39b24c2836fe24a1829c10:4f610fc60f56cb700e120616669061b0fe9d5f527cc74a02fdee207037a7b33dfb8f2161b1c17c55a01950b0a567581bae8848d2785300ab5d894a0211629d93",
       "role": "user",
-      "credits": 49070000,
+      "credits": 49100000,
       "createdAt": "2026-06-05T06:35:19.123Z",
-      "updatedAt": "2026-07-08T01:56:44.883Z"
+      "updatedAt": "2026-07-08T01:58:19.606Z"
     },
     {
       "id": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -152,6 +152,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "4c043bbe-8083-468f-a618-a0deb27af3ac",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "amount": 30000,
+      "balanceAfter": 49100000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-08T01:58:19.606Z",
+      "metadata": {
+        "taskId": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
+        "model": "veo_3_1-fast-portrait"
+      }
+    },
     {
       "id": "268e7125-2559-4a50-b613-0fd78e69222a",
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -2642,10 +2654,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait",
       "amount": 30000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-08T01:56:47.091Z",
-      "updatedAt": "2026-07-08T01:56:47.091Z"
+      "updatedAt": "2026-07-08T01:58:19.606Z"
     },
     {
       "id": "img_1783410561876_1ad7be5497ed5",
@@ -3712,9 +3724,10 @@
       "model": "veo_3_1-fast-portrait",
       "prompt": "9:16 vertical, 三张图片作为关键帧，生成真实假发产品展示视频。保持原图假模特头、发型、发色、发际线、卷度、发量和真人发质感完全不变。主体缓慢从正面转到侧面，再展示背面发量和卷度。手部轻轻整理头顶、发际线和两侧卷发，用手指自然拨开发根，轻托发尾，让卷发自然回弹。镜头竖版近景，轻微推进，背景干净浅色，柔和光影，高清真实，Shopify假发产品展示风格。避免发型重做、发色变深、头发塑料感、模特脸反光、手指变形、背景杂乱、AI感。",
       "taskId": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
-      "status": "queued",
+      "status": "failed",
+      "error": "{\"code\":\"upstream_generation_failed\",\"message\":\"{\\n  \\\"error\\\": {\\n    \\\"code\\\": 500,\\n    \\\"message\\\": \\\"Internal error encountered.\\\",\\n    \\\"status\\\": \\\"INTERNAL\\\"\\n  }\\n}\"}",
       "createdAt": "2026-07-08T01:56:47.091Z",
-      "updatedAt": "2026-07-08T01:58:12.377Z"
+      "updatedAt": "2026-07-08T01:58:19.606Z"
     },
     {
       "id": "958cefc9-ec05-43ee-981a-49a511c2b65e",
