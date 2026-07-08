@@ -16,9 +16,9 @@
       "name": "h",
       "passwordHash": "26ef75d62b39b24c2836fe24a1829c10:4f610fc60f56cb700e120616669061b0fe9d5f527cc74a02fdee207037a7b33dfb8f2161b1c17c55a01950b0a567581bae8848d2785300ab5d894a0211629d93",
       "role": "user",
-      "credits": 49100000,
+      "credits": 40100000,
       "createdAt": "2026-06-05T06:35:19.123Z",
-      "updatedAt": "2026-07-08T01:58:19.606Z"
+      "updatedAt": "2026-07-08T02:33:02.720Z"
     },
     {
       "id": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -152,6 +152,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c00e3d8c-34bf-4055-a996-ff9d87b8856d",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "amount": -9000000,
+      "balanceAfter": 40100000,
+      "reason": "video generation",
+      "createdAt": "2026-07-08T02:33:02.720Z",
+      "metadata": {
+        "model": "hfsy:sd-2-fast",
+        "size": "1080x1920"
+      }
+    },
     {
       "id": "4c043bbe-8083-468f-a618-a0deb27af3ac",
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
