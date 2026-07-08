@@ -1,4 +1,4 @@
-import {
+﻿import {
   HELLOBABYGO_BASE_URL,
   authHeaders,
   jsonError,
@@ -23,6 +23,7 @@ import {
 export const dynamic = "force-dynamic";
 
 const HFSY_STUCK_TIMEOUT_MS = Number(process.env.HFSY_STUCK_TIMEOUT_MS || 30 * 60 * 1000);
+const HFSY_FINAL_STAGE_TIMEOUT_MS = Number(process.env.HFSY_FINAL_STAGE_TIMEOUT_MS || 20 * 60 * 1000);
 const VIDEO_STUCK_TIMEOUT_MS = Number(process.env.VIDEO_STUCK_TIMEOUT_MS || 2 * 60 * 60 * 1000);
 
 async function fetchVideoStatus(path: string, id: string) {
@@ -111,16 +112,25 @@ function getVideoStuckTimeoutMs(model: string) {
   return model.toLowerCase().startsWith("hfsy:") ? HFSY_STUCK_TIMEOUT_MS : VIDEO_STUCK_TIMEOUT_MS;
 }
 
-function isStuckVideoTask(task: { createdAt: string; model: string }, status: string) {
-  if (!isPendingVideoStatus(status)) return false;
+function getTaskAgeMs(task: { createdAt: string }) {
   const createdAt = Date.parse(task.createdAt);
-  if (!Number.isFinite(createdAt)) return false;
-  return Date.now() - createdAt >= getVideoStuckTimeoutMs(task.model);
+  if (!Number.isFinite(createdAt)) return 0;
+  return Date.now() - createdAt;
+}
+
+function isStuckVideoTask(task: { createdAt: string; model: string }, status: string, progress = 0) {
+  if (!isPendingVideoStatus(status)) return false;
+  const ageMs = getTaskAgeMs(task);
+  if (!ageMs) return false;
+  if (task.model.toLowerCase().startsWith("hfsy:") && progress >= 90) {
+    return ageMs >= HFSY_FINAL_STAGE_TIMEOUT_MS;
+  }
+  return ageMs >= getVideoStuckTimeoutMs(task.model);
 }
 
 async function settleStuckVideoTask(id: string, task: { model: string }) {
   const error =
-    "上游任务长时间停留在生成中，系统已判定为卡住并自动退回本次站内积分。请换用其他可用模型重新提交。";
+    "The upstream task stayed in generation for too long. Site credits were refunded automatically. Please submit again with another model.";
 
   await withAccountState((state) => {
     settleGenerationTask(state, id, "failed");
@@ -158,7 +168,7 @@ export async function GET(
     if (task && isViduModel(task.model)) {
       const vidu = await fetchViduVideoStatus(id);
       const payload = normalizeViduStatus(id, vidu.data, vidu.response.status);
-      if (isStuckVideoTask(task, payload.status)) {
+      if (isStuckVideoTask(task, payload.status, payload.progress)) {
         const stuckPayload = await settleStuckVideoTask(id, task);
         return Response.json({ ...stuckPayload, provider: "vidu" });
       }
@@ -179,7 +189,7 @@ export async function GET(
     if (task && isSyModel(task.model)) {
       const sy = await fetchSyVideoStatus(id);
       const payload = normalizeSyStatusPayload(id, sy.data, sy.response.status);
-      if (isStuckVideoTask(task, payload.status)) {
+      if (isStuckVideoTask(task, payload.status, payload.progress)) {
         const stuckPayload = await settleStuckVideoTask(id, task);
         return Response.json({ ...stuckPayload, provider: "sy" });
       }
@@ -213,7 +223,7 @@ export async function GET(
         if (!legacyNormalized.transient) normalized = legacyNormalized;
       }
 
-      if (isStuckVideoTask(task, normalized.payload.status)) {
+      if (isStuckVideoTask(task, normalized.payload.status, normalized.payload.progress)) {
         const payload = await settleStuckVideoTask(id, task);
         return Response.json({ ...payload, provider: "hfsy" });
       }
@@ -236,7 +246,7 @@ export async function GET(
       if (!legacyNormalized.transient) normalized = legacyNormalized;
     }
 
-    if (task && isStuckVideoTask(task, normalized.payload.status)) {
+    if (task && isStuckVideoTask(task, normalized.payload.status, normalized.payload.progress)) {
       const payload = await settleStuckVideoTask(id, task);
       return Response.json({ ...payload, provider: "hellobabygo" });
     }
