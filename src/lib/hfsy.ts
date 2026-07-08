@@ -36,7 +36,7 @@ export const HFSY_MODELS: HfsyModel[] = [
     media: "video",
     credits: 900,
     upstreamPrice: 3,
-    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    durationOptions: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     resolution: "1080P",
     referenceMode: "optional",
     description:
