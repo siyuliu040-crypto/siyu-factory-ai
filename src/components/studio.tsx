@@ -1234,6 +1234,15 @@ function cleanErrorMessage(error: string, language: Language) {
   if (readable.includes("prompt_too_long")) {
     return language === "zh" ? "提示词超过当前模型上限，请精简后再提交。" : "The prompt exceeds this model's limit. Shorten it and submit again.";
   }
+  if (
+    readable.includes("stayed in generation for too long") ||
+    readable.includes("Site credits were refunded automatically") ||
+    readable.includes("上游任务长时间停留")
+  ) {
+    return language === "zh"
+      ? "上游任务卡在最终生成阶段，站内积分已自动退回。请换用更稳定模型，或减少参考图、缩短提示词后重新提交。"
+      : "The upstream task got stuck near the final stage. Site credits were refunded automatically. Try a more stable model or simplify the prompt/reference images.";
+  }
   if (isUpstreamProxyError(readable)) {
     return language === "zh"
       ? "上游图片上传代理不可用，任务没有成功创建。站内积分会退回；请稍后重试，或先切换 Vidu / Grok 参考图模型生成。"
