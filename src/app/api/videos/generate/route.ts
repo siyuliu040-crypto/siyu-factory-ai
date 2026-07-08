@@ -331,12 +331,14 @@ async function postHfsyVideoPayload(
   const duration = Number(payload.duration || payload.seconds || hfsyModel?.durationOptions[0] || 10);
   const originalPrompt = String(payload.prompt || "");
   const wantsSpokenAudio = hfsyModel?.upstreamModel === "sora-2" && promptRequestsSpokenAudio(originalPrompt);
+  const isHfsySdFamily = Boolean(hfsyModel?.upstreamModel.startsWith("sd-2"));
   const upstreamPayload = {
     model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, ""),
     prompt: prepareHfsyVideoPrompt(billing.model, originalPrompt),
     duration,
     orientation,
     ...(acceptedReferenceUrls.length ? { images: acceptedReferenceUrls } : {}),
+    ...(isHfsySdFamily ? { ratio: orientation === "portrait" ? "9:16" : "16:9" } : {}),
     ...(wantsSpokenAudio ? { audio: true } : {}),
     watermark: false,
     size: "large"
