@@ -1658,9 +1658,12 @@ button.status-pill {
 
 .history-item .history-error {
   color: #a33a3a;
+  display: -webkit-box;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.4;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .history-actions {
