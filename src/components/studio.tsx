@@ -248,7 +248,6 @@ const stableVideoModels = [
   "veo_3_1-fast-portrait-fl-hd",
   "sy:grok-Yun",
   "hfsy:sora-2",
-  "hfsy:sd-2-fast",
   "hfsy:sd-2",
   "hfsy:sd-2-vip",
   "sora-2-4s-9x16",
@@ -2278,13 +2277,20 @@ export default function Studio() {
             tone: "done"
           });
           updateVideoHistory(id, payload);
+          void refreshSession();
+          void refreshHistory();
           return payload;
         }
-        if (isVideoFailed(payload.status)) throw new Error(JSON.stringify(payload));
+        if (isVideoFailed(payload.status)) {
+          void refreshSession();
+          void refreshHistory();
+          throw new Error(JSON.stringify(payload));
+        }
         await new Promise((resolve) => setTimeout(resolve, VIDEO_POLL_INTERVAL_MS));
       }
       throw new Error(t.videoStillProcessing);
     } finally {
+      void refreshSession();
       setIsPolling(false);
     }
   }
