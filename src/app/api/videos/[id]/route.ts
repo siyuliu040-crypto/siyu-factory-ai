@@ -94,7 +94,11 @@ async function fetchSyVideoStatus(id: string) {
 async function settleNormalizedStatus(id: string, normalized: NormalizedVideoStatus) {
   const status = normalized.payload.status;
   const previewUrl = extractVideoUrl(normalized.payload);
-  const error = normalized.payload.error ? JSON.stringify(normalized.payload.error) : undefined;
+  const error = status === "completed"
+    ? null
+    : normalized.payload.error
+      ? JSON.stringify(normalized.payload.error)
+      : undefined;
 
   await withAccountState((state) => {
     settleGenerationTask(state, id, status);
