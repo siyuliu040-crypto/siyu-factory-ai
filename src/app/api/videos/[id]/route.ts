@@ -23,7 +23,7 @@ import {
 export const dynamic = "force-dynamic";
 
 const HFSY_STUCK_TIMEOUT_MS = Number(process.env.HFSY_STUCK_TIMEOUT_MS || 30 * 60 * 1000);
-const HFSY_FINAL_STAGE_TIMEOUT_MS = Number(process.env.HFSY_FINAL_STAGE_TIMEOUT_MS || 20 * 60 * 1000);
+const HFSY_FINAL_STAGE_TIMEOUT_MS = Number(process.env.HFSY_FINAL_STAGE_TIMEOUT_MS || 45 * 60 * 1000);
 const VIDEO_STUCK_TIMEOUT_MS = Number(process.env.VIDEO_STUCK_TIMEOUT_MS || 2 * 60 * 60 * 1000);
 
 async function fetchVideoStatus(path: string, id: string) {
