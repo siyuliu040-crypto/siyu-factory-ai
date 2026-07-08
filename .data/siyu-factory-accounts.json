@@ -2678,10 +2678,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "failed",
+      "status": "completed",
       "refunded": true,
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T03:00:13.867Z"
+      "updatedAt": "2026-07-08T03:00:27.635Z"
     },
     {
       "id": "task_v6DTmlyAvWgOQnljjrFoTovPA7lDr8mF",
@@ -3759,9 +3759,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "9:16 vertical,10s vertical commercial wig video,3 reference images as key frames,1080P photorealistic,soft studio fill light,clean light gray background,Shopify hair ad style.Fully retain reference details:model face,ombre gradient hair color,hairline,curl density,hair volume,real human hair texture,hair length unchanged.10s timeline shot logic:0-3s front close-up,model slowly turn front to 45°side,hands gently comb top & side hair,fingers tug roots to let curls bounce,slow slight push camera;3-7s full side shot,show side curl volume,fingers stroke curls to display softness with natural bounce;7-10s back view,show full rear layered curls,slightly lift hair,slow pull-back camera,shallow depth of field.Real skin texture,natural finger motion,clear hair strand luster,soft shadow,smooth frame transition,60fps smooth motion.ugly,distorted face/fingers,plastic fake wig shine,hair discoloration,twisted hairline,messy background,overexposure,blurry,low res,cartoon,anime,3D render,AI distortion,stiff rigid hair/robotic movement,broken patchy hair,frame color flicker,text,logo,watermark",
       "taskId": "e9e245e8a57a4c0795b55933dd9917c4",
-      "status": "failed",
+      "status": "completed",
       "createdAt": "2026-07-08T02:33:05.456Z",
-      "updatedAt": "2026-07-08T03:00:13.867Z",
+      "updatedAt": "2026-07-08T03:00:27.635Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/08/a72a28e0841f4092a8ebdc9f6f73a06b.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1783566001&Signature=Qe40jpjew%2B9g4RWwXlk0%2BA%2BnREM%3D",
       "error": "The upstream task stayed in generation for too long. Site credits were refunded automatically. Please submit again with another model."
     },
     {
