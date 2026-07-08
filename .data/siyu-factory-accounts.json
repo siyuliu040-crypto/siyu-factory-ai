@@ -2709,6 +2709,17 @@
   ],
   "generationTasks": [
     {
+      "id": "a1eee15e689e4815901fd6c97dd9d3b0",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "type": "video",
+      "model": "hfsy:sd-2-fast",
+      "amount": 9000000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-08T03:10:40.259Z",
+      "updatedAt": "2026-07-08T03:10:40.259Z"
+    },
+    {
       "id": "b19cdad7e9144b99ab9005e1f84b185e",
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
       "type": "video",
@@ -3799,6 +3810,17 @@
     }
   ],
   "history": [
+    {
+      "id": "cb7a84aa-d36e-4a70-a33a-ead22d379c11",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "mode": "video",
+      "model": "hfsy:sd-2-fast",
+      "prompt": "通过图4的脚本@4，参考@1@2@3的产品图生成Tiktok美区黑人带货视频",
+      "taskId": "a1eee15e689e4815901fd6c97dd9d3b0",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-08T03:10:40.259Z",
+      "updatedAt": "2026-07-08T03:10:40.259Z"
+    },
     {
       "id": "24a59902-85b1-4ceb-8442-51e1619007a9",
       "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
