@@ -2880,10 +2880,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-09T07:43:17.509Z",
-      "updatedAt": "2026-07-09T07:43:17.509Z"
+      "updatedAt": "2026-07-09T07:45:26.014Z"
     },
     {
       "id": "ff424f28c1494af5bf2234d53f74b3d0",
@@ -4049,9 +4049,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "她从门廊台子上拿起一个快递盒——盒子放在门廊木地板上靠墙的位置，深棕色瓦楞纸盒，侧面贴着一张白色快递单，单子一角撕过有残胶痕迹。她用拇指甲划开胶带，打开盒盖，从里面取出一层白色薄纸包裹的东西。她揭开薄纸——假发第一次出镜，折叠状态，能看到深酒红色的deep wave从纸里露出来。\n\n她双手捏住假发肩部位置从盒子里拎出来，在门廊自然光下抖开——发丝在空气中弹开，卷度从折叠状态恢复到自然形态。她拎着假发顶部让它自然垂落，发尾在膝盖位置轻微晃动。她低头看了一眼发尾，又抬眼看镜头，眼睛比打开之前亮了一些——但不夸张，是\"嗯，还行\"的微表情。\n\n她的身体重心在右脚，左脚微曲，展示假发的手悬在半空没有晃动。背景：门廊木地板、深色木门、门牌号、门垫。\n\n光线：下午自然光，右前方照来。假发表面有柔和的自然光反射，无刻意打光。禁止广告棚拍感。\n口播：\n\"Just got this in the mail and I'm opening it on my porch right now——'cause if it don't look good in this light, it's going back. But look at that color already.\"",
       "taskId": "20bfeeca532f4523a0432e8ad4022822",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-09T07:43:17.509Z",
-      "updatedAt": "2026-07-09T07:45:18.381Z"
+      "updatedAt": "2026-07-09T07:45:26.014Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/09/11e3f4ef7e7d4fd48a82c239244797a7.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1783669510&Signature=qpRs%2BJBPAZ9wTEI7tAAkYIJ3uK0%3D"
     },
     {
       "id": "95e90256-9fbe-47fa-94b5-52ae492aee43",
