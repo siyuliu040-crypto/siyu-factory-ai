@@ -16,9 +16,9 @@
       "name": "h",
       "passwordHash": "26ef75d62b39b24c2836fe24a1829c10:4f610fc60f56cb700e120616669061b0fe9d5f527cc74a02fdee207037a7b33dfb8f2161b1c17c55a01950b0a567581bae8848d2785300ab5d894a0211629d93",
       "role": "user",
-      "credits": 49100000,
+      "credits": 35600000,
       "createdAt": "2026-06-05T06:35:19.123Z",
-      "updatedAt": "2026-07-08T07:26:33.467Z"
+      "updatedAt": "2026-07-09T08:14:29.895Z"
     },
     {
       "id": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -140,6 +140,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "2e947e6b-8e43-423d-a82b-09d70a3bf214",
+      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
+      "amount": -13500000,
+      "balanceAfter": 35600000,
+      "reason": "video generation",
+      "createdAt": "2026-07-09T08:14:29.895Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "1c80a81b-cfcc-42fd-bdd2-dc444fa9a546",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
