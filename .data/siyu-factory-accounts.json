@@ -2976,10 +2976,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-09T08:59:10.664Z",
-      "updatedAt": "2026-07-09T08:59:10.664Z"
+      "updatedAt": "2026-07-09T09:02:13.696Z"
     },
     {
       "id": "5260b495080e4e6ab5cd6ac969693b0b",
@@ -4232,10 +4232,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "她站在路灯杆旁的街道上，把假发戴回头上。戴上后双手沿发际线从太阳穴向中间按压一圈，中指调整鬓角边缘使其贴合耳前轮廓。然后她站直身体，对着手机镜头展示完整效果。\n\n她先正面面对镜头站立——双脚与肩同宽，手臂自然垂在身体两侧，整头Deep Wave长卷发从头顶自然垂落到腰部下方，发际线处没有翘边或凸起，深酒红色在自然光下呈现均匀的底色，卷度从发根到发尾连续一致。她的视线正对镜头，下巴水平，表情是\"看清楚了\"的淡定。\n\n然后她开始原地缓慢转圈——先从正面转向右侧面，身体转动的过程中发丝因惯性从一侧甩向另一侧，发尾在空气中画出一道弧线后垂落；转到背面时能看到发丝从头顶向两侧自然分落覆盖整个后颈区域，发尾垂到后腰位置，整体覆盖均匀没有稀疏区域；继续转到左侧面时发丝再次甩动；最后回到正面。整个转圈用时约4秒，匀速不晃。\n\n回到正面后她双手手指同时从头顶的头发分缝两侧插入发丝，向上托起一捧发量展示头顶的蓬松度——手掌心里的发丝堆成饱满的一捧，然后松手让发丝自然落回。她侧身站立面向右侧，头转向镜头，展示发丝从头顶垂落到胸前的垂坠感——发丝贴着身体外侧自然落下，不蓬乱不炸毛。\n\n然后她朝镜头方向走两步，画面从全身自然过渡到中近景——她停在镜头前约一臂距离。靠近镜头时能看到发丝表面的自然光泽、每根发丝的独立性、发尾的厚实程度。她看着镜头，嘴角带着完成展示的微微笑意——不是刻意摆拍，是\"展示完了，看到了吧\"的自然反应。\n\n全程光线一致，背景不变。发型在整个过程中保持结构完整——即使甩动和转圈后也回到原来的形态。禁止跳帧、人物变形、发型变化或动作断裂。\n口播：\n\"And this is what it looks like on. 26 inches of Deep Wave 99J——full density from the crown to the ends, the melt is blended, the color is consistent. This is what's coming in your box. No surprises.\"",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/09/12ed0aa454874009982e1684aaecd254.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1783674120&Signature=Xk5ctMcCRU39THthfZ88Y9SJ9ZM%3D",
       "taskId": "74d27bedffec4017acbe33f674ff68ab",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-09T08:59:10.664Z",
-      "updatedAt": "2026-07-09T09:02:04.941Z"
+      "updatedAt": "2026-07-09T09:02:13.696Z"
     },
     {
       "id": "67ec56db-dabb-4e4b-9b59-eca763cb4cf4",
