@@ -50,6 +50,7 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "hfsy:sd-2-fast": siteCredits(900),
   "hfsy:sd-2": siteCredits(1350),
   "hfsy:sd-2-vip": siteCredits(1350),
+  "hfsy:kling-o3": siteCredits(1350),
   "deepseek-v4-flash": siteCredits(1),
   "deepseek-v4-pro": siteCredits(2),
   "omni_flash": siteCredits(2)
