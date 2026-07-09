@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 9984357680,
+      "credits": 1000009984357680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-09T07:25:26.490Z"
+      "updatedAt": "2026-07-09T07:27:38.592Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -140,6 +140,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "022b8a4e-13be-4eed-bbe3-d722e93db253",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 1000000000000000,
+      "balanceAfter": 1000009984357680,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-09T07:27:38.592Z"
+    },
     {
       "id": "bddc7932-00d6-47b0-931e-7ea35f582690",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
