@@ -2959,6 +2959,17 @@
   ],
   "generationTasks": [
     {
+      "id": "5260b495080e4e6ab5cd6ac969693b0b",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 13500000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-09T08:55:26.515Z",
+      "updatedAt": "2026-07-09T08:55:26.515Z"
+    },
+    {
       "id": "0858b101033a422f86983c9a7f641a8a",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -4192,6 +4203,17 @@
     }
   ],
   "history": [
+    {
+      "id": "67ec56db-dabb-4e4b-9b59-eca763cb4cf4",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "她拎着假发举到胸前高度，双手各抓一束发丝向两侧轻轻拉开，展示Deep Wave的S形卷纹走向——卷度从顶部发根位置开始，沿着发干连续蜿蜒到发尾结束，中间没有任何一段变直或变松，卷幅大小一致。\r\n\r\n她换右手单独抓住一束发丝，拇指和食指捏住发根位置，中指和无名指夹住发丝中段，顺着头发的自然卷曲方向慢慢向下捋——捋的过程中卷度被拉直，能看到发丝在手指通过后自动恢复到原来的S形。她停在半路让手指保持不动——发丝在手指上方已经回卷，手指下方还呈拉直状态，形成一半卷一半直的对比效果。然后她完全松开手指，发丝整段回弹到完整的卷度。整个回弹过程耗时约半秒到一秒——比合成发慢，是真人发有重量的回弹。\r\n\r\n她重复这个动作在另一束发丝上——抓、捋、停、松、回弹——手指经过的区域都能看到同样的回弹节奏。她然后用整个手掌压住一束发丝的发干中部向下推——手掌经过后发丝被压扁，两三秒后卷度自己重新立起来恢复原来的形态。风从侧面吹过时表面发丝小幅度飘动，但卷度结构保持完整。\r\n\r\n背景：路灯杆、人行道、街道。镜头中近景，能清楚看到发丝纹理和每根发丝的独立运动。手部动作精准流畅。\r\n口播：\r\n\"Deep Wave means the curl pattern goes from the root all the way down to the end——and it stays. Look how it bounces back when I stretch it. That's human hair memory. Synthetic would stay stretched or snap back too fast like plastic. This moves natural.\"",
+      "taskId": "5260b495080e4e6ab5cd6ac969693b0b",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-09T08:55:26.515Z",
+      "updatedAt": "2026-07-09T08:55:26.515Z"
+    },
     {
       "id": "8f11aed4-8bad-428a-a518-bab6eea17100",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
