@@ -10,7 +10,7 @@ export type HfsyModel = {
   credits: number;
   upstreamPrice: number;
   durationOptions: number[];
-  resolution: "720P" | "1080P";
+  resolution: "480P" | "720P" | "1080P";
   referenceMode: "optional" | "required";
   description: string;
 };
@@ -67,6 +67,19 @@ export const HFSY_MODELS: HfsyModel[] = [
     referenceMode: "optional",
     description:
       "Stable Diffusion 2.0 VIP video model. Supports 4-15 second text-to-video and image-to-video generation."
+  },
+  {
+    id: "hfsy:kling-o3",
+    upstreamModel: "kling-o3",
+    label: "HFSY Kling O3",
+    media: "video",
+    credits: 1350,
+    upstreamPrice: 4.5,
+    durationOptions: [5, 6, 7, 8, 9, 10],
+    resolution: "480P",
+    referenceMode: "optional",
+    description:
+      "HFSY Kling O3 video model. Supports 9:16 prompt-to-video and optional reference-image generation."
   }
 ];
 
