@@ -251,6 +251,7 @@ const stableVideoModels = [
   "hfsy:sd-2-fast",
   "hfsy:sd-2",
   "hfsy:sd-2-vip",
+  "hfsy:kling-o3",
   "sora-2-4s-9x16",
   "sora-2-8s-9x16",
   "vidu:viduq3-pro-fast",
@@ -1007,7 +1008,12 @@ function getResolutionOptions(model: string, language: Language) {
   }
   const hfsyModel = getHfsyModel(model);
   if (hfsyModel) {
-    return [{ value: hfsyModel.resolution === "1080P" ? "1080x1920" : "720x1280", label: hfsyModel.resolution }];
+    const value = hfsyModel.resolution === "1080P"
+      ? "1080x1920"
+      : hfsyModel.resolution === "720P"
+        ? "720x1280"
+        : "480x854";
+    return [{ value, label: hfsyModel.resolution }];
   }
   if (lower === "vidu:viduq3-pro-fast") {
     return [
