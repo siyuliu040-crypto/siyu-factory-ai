@@ -40,6 +40,7 @@ export const MODEL_PROMPT_LIMITS: Record<string, number> = {
   "hfsy:sd-2-fast": 1600,
   "hfsy:sd-2": 1600,
   "hfsy:sd-2-vip": 1600,
+  "hfsy:kling-o3": 1600,
   "deepseek-v4-flash": 3000,
   "deepseek-v4-pro": 3000,
   "omni_flash": 3000
