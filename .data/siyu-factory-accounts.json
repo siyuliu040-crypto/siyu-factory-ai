@@ -3875,9 +3875,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "视频比例9:16，真实手机实拍质感，美区TikTok Shop UGC自拍视频。场景参考图一：美国女性站在真实衣帽间/开放式衣柜前，黑色连体衣或黑色拉链外套，背景有收纳格、衣架、外套、鞋盒、帽子、包包，但所有品牌字和logo必须转开、遮挡或不可读。背景清晰，不能虚化。\n\n总控防穿帮：\n同一位美国黑人/混血女性贯穿全片，同一套黑色穿搭，同一个衣帽间场景，同一顶427 Deep Wave假发。产品必须是427 Deep Wave：深棕底色加27号蜂蜜金挑染，Deep Wave卷纹清晰，长发量饱满，发尾厚实，发丝有真实分离感。发际线必须干净融化，自然侧分，不露蕾丝边，不露假发帽。不要过度美化产品，不要假亮、塑料感、广告棚拍感。保留真实皮肤纹理、毛孔、轻微瑕疵和正常肤色。头发移动时符合重力和惯性，顺发、抓发尾、抖动时要有真实回弹。手指不能畸形、断裂、融合、穿模。禁止字幕、屏幕文字、logo、水印、品牌字、TikTok UI、可读标签、背景虚化。\n\n镜头1｜0:00-0:04\n衣帽间暖白顶灯照在她脸和427挑染卷发上，开放柜里有折叠衣服、挂着的西装外套、鞋盒、帽子，柜门半开，地上有一只没合上的抽屉。她一只手撑腰，一只手拿手机自拍，眼睛半眯，眉毛压低，嘴唇微张，像在警告观众别再买廉价高光假发。\nVO: “Hold up—if your highlight wig looks crunchy, fake, or cheap as hell, take it off.”\n\n镜头2｜0:04-0:08\n她往衣柜灯下走半步，侧头让427蜂蜜金挑染被光照到。她用两根手指轻轻拨开侧分前区，展示融化发际线和自然分缝。她眉毛突然抬起，眼睛变亮，嘴角出现“你看吧”的得意表情。\nVO: “This 427 Deep Wave? Babe, the color is blended, the front is melted, and it’s laying clean.”\n\n镜头3｜0:08-0:12\n她把两侧卷发全部拨到胸前，用双手从肩膀位置顺到发尾，再轻轻抖一下发尾。深棕与蜂蜜金挑染在卷纹里自然交错，发尾不稀疏。她低头看发尾，眼睛睁大，鼻翼轻动，嘴角上扬。\nVO: “Look at the waves, look at the fullness—no thin ends, no stiff wig mess.”\n\n镜头4｜0:12-0:16\n她转身拿起一件外套又放回衣架，像准备出门，卷发跟着身体自然摆动。然后她突然靠近镜头，挑眉，手指向下点两下，语速变快，逼单感强。\nVO: “Tap the cart now. Don’t screenshot it, don’t think too long—get this 427 before it sells out.”",
       "taskId": "91ae9f067d28489ab4216739b9bf6818",
-      "status": "IN_PROGRESS",
+      "status": "queued",
       "createdAt": "2026-07-09T03:45:31.399Z",
-      "updatedAt": "2026-07-09T03:45:31.399Z"
+      "updatedAt": "2026-07-09T03:45:32.201Z"
     },
     {
       "id": "cb7a84aa-d36e-4a70-a33a-ead22d379c11",
