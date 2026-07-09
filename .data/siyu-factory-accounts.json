@@ -2851,6 +2851,17 @@
   ],
   "generationTasks": [
     {
+      "id": "bebd0e0189c54b9b89f6b1e76d9995e8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 13500000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-09T07:33:55.286Z",
+      "updatedAt": "2026-07-09T07:33:55.286Z"
+    },
+    {
       "id": "33522c2f3c824406896d6195a112add0",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -3985,6 +3996,17 @@
     }
   ],
   "history": [
+    {
+      "id": "a86c7a81-361f-44dd-affc-208c858c4d73",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "她从门廊台子上拿起一个快递盒——盒子放在门廊木地板上靠墙的位置，深棕色瓦楞纸盒，侧面贴着一张白色快递单，单子一角撕过有残胶痕迹。她用拇指甲划开胶带，打开盒盖，从里面取出一层白色薄纸包裹的东西。她揭开薄纸——假发第一次出镜，折叠状态，能看到深酒红色的发丝从纸里露出来。\r\n\r\n她双手捏住假发肩部位置从盒子里拎出来，在门廊自然光下抖开——发丝在空气中弹开，卷度从折叠状态恢复到自然形态。她拎着假发顶部让它自然垂落，发尾在膝盖位置轻微晃动。她低头看了一眼发尾，又抬眼看镜头，眼睛比打开之前亮了一些——但不夸张，是\"嗯，还行\"的微表情。\r\n\r\n她的身体重心在右脚，左脚微曲，展示假发的手悬在半空没有晃动。背景：门廊木地板、深色木门、门牌号、门垫。\r\n\r\n光线：下午自然光，右前方照来。假发表面有柔和的自然光反射，无刻意打光。禁止广告棚拍感。\r\n口播：\r\n\"Just got this in the mail and I'm opening it on my porch right now——'cause if it don't look good in this light, it's going back. But look at that color already.\"",
+      "taskId": "bebd0e0189c54b9b89f6b1e76d9995e8",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-09T07:33:55.286Z",
+      "updatedAt": "2026-07-09T07:33:55.286Z"
+    },
     {
       "id": "0c153cb9-34b5-48b3-9dc7-3c8abb5e0b64",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
