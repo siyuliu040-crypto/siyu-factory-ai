@@ -26,6 +26,18 @@ const HFSY_STUCK_TIMEOUT_MS = Number(process.env.HFSY_STUCK_TIMEOUT_MS || 30 * 6
 const HFSY_FINAL_STAGE_TIMEOUT_MS = Number(process.env.HFSY_FINAL_STAGE_TIMEOUT_MS || 45 * 60 * 1000);
 const VIDEO_STUCK_TIMEOUT_MS = Number(process.env.VIDEO_STUCK_TIMEOUT_MS || 2 * 60 * 60 * 1000);
 
+type TrackedVideoTask = {
+  id: string;
+  userId: string;
+  type: "video";
+  model: string;
+  amount: number;
+  status: "queued" | "in_progress" | "completed" | "failed";
+  refunded: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
 async function fetchVideoStatus(path: string, id: string) {
   const response = await fetch(
     `${HELLOBABYGO_BASE_URL}${path.replace(":id", encodeURIComponent(id))}`,
@@ -168,7 +180,23 @@ export async function GET(
       return jsonError({ error: "video id is required" }, 400);
     }
 
-    const task = await withAccountState((state) => state.generationTasks.find((item) => item.id === id) || null);
+    const task = await withAccountState((state): TrackedVideoTask | null => {
+      const generationTask = state.generationTasks.find((item) => item.id === id);
+      if (generationTask?.type === "video") return { ...generationTask, type: "video" };
+      const history = state.history.find((item) => item.taskId === id && item.mode === "video");
+      if (!history) return null;
+      return {
+        id,
+        userId: history.userId,
+        type: "video",
+        model: history.model,
+        amount: 0,
+        status: "queued",
+        refunded: false,
+        createdAt: history.createdAt,
+        updatedAt: history.updatedAt
+      };
+    });
     if (task && isViduModel(task.model)) {
       const vidu = await fetchViduVideoStatus(id);
       const payload = normalizeViduStatus(id, vidu.data, vidu.response.status);
