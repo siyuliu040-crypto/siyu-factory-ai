@@ -2887,6 +2887,17 @@
   ],
   "generationTasks": [
     {
+      "id": "f0ceb227cc7e4b1395f6adab579c7e4b",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 13500000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-09T07:52:41.808Z",
+      "updatedAt": "2026-07-09T07:52:41.808Z"
+    },
+    {
       "id": "20bfeeca532f4523a0432e8ad4022822",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -4054,6 +4065,17 @@
     }
   ],
   "history": [
+    {
+      "id": "39c31cd6-3dcf-409e-90c7-2188a81f01b7",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "她走下一级门廊台阶站在人行道上，举着假发让它自然垂落。她先把假发正面朝镜头展示——发丝在自然光下呈现深酒红色，底调偏紫红不偏橘。\r\n\r\n然后她把假发缓缓转向左侧45度——光从侧前方照在发丝上形成一层暖棕色光泽但底色保持深红。她再转向右侧45度——同样的颜色稳定性。接着她把假发举过头顶，让阳光从背面穿透发丝——逆光中发丝呈现半透明的暖红棕色，但没有出现橘色调。\r\n\r\n她手指拨开一束发丝让镜头看里面的底层颜色——外层和底层颜色一致，没有表面深色内层浅色的染色不均问题。她把假发放低到胸口高度，用右手捏住一小束发丝在指尖搓捻了一下，然后松开。搓捻时能看到发丝表面的自然光反射不是塑料那种刺眼的反光。\r\n\r\n她全程表情稳定，不说话时嘴唇微张带着注意力集中的神态。光线保持自然阳光，不额外打光。背景：她身后是人行道和街道、对面邻居的白色篱笆、一棵树的树冠。\r\n口播：\r\n\"99J Burgundy——that's the color name. But let me show you what that actually means. No orange undertone. No purple mess. Just deep red that stays deep red in any light. And look——the color is consistent all the way through, not just on the surface.\"",
+      "taskId": "f0ceb227cc7e4b1395f6adab579c7e4b",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-09T07:52:41.808Z",
+      "updatedAt": "2026-07-09T07:52:41.808Z"
+    },
     {
       "id": "50684b5f-94fc-44c1-a48e-b6d0864bbc11",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
