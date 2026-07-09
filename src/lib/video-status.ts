@@ -82,6 +82,9 @@ export function extractVideoUrl(payload: unknown): string {
   const data = payload.data;
   if (isRecord(data)) return extractVideoUrl(data);
 
+  const detail = payload.detail;
+  if (isRecord(detail)) return extractVideoUrl(detail);
+
   const result = payload.result;
   if (isRecord(result)) return extractVideoUrl(result);
   if (Array.isArray(result)) return extractVideoUrl(result);
