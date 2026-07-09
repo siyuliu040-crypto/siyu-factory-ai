@@ -2805,10 +2805,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-09T07:25:28.086Z",
-      "updatedAt": "2026-07-09T07:25:28.086Z"
+      "updatedAt": "2026-07-09T07:27:30.566Z"
     },
     {
       "id": "409bf281db0f447088883e485369216c",
@@ -3930,9 +3930,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "9:16竖屏，真实手机前置摄像头自拍质感。美国黑人/混血女性，25-30岁，真实皮肤纹理保留，无磨皮美白。\n\n场景：住宅区街道，她站在家门口门廊位置，还没开始走动。手机举在胸口高度自拍。她的表情是那种\"我有话要说\"的状态——眉头微微压低但不是生气，眼睛直视镜头带着分享秘密的认真感。嘴唇微张，说话前先吸了一口气。风轻轻吹动她自己的碎发在额前飘动但她没有拨开——注意力完全在要说的话上。\n\n背景：门廊地面有门垫，门口有一双脱下的拖鞋，她身后是深色木门，门上有金属门牌号码。\n\n光线：下午自然光，偏暖，从右前方照来。\n口播：\n\"You already know red wigs been doing people dirty——orange undertones, thin ends, lace that don't blend. So when I tell you I found the one, I mean it.\"",
       "taskId": "11059ad1f24c49e8a5cb563480077d10",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-09T07:25:28.086Z",
-      "updatedAt": "2026-07-09T07:27:28.125Z"
+      "updatedAt": "2026-07-09T07:27:30.566Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/09/1c356d0e027e45e4ae5f5cbdf1363fa0.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1783668436&Signature=qynW4jLpJDm1bVeG6wgFMKs8AxI%3D"
     },
     {
       "id": "39107619-38fb-4546-8f28-8b79f5e217aa",
