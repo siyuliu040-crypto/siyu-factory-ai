@@ -76,7 +76,7 @@ export const HFSY_MODELS: HfsyModel[] = [
     credits: 1350,
     upstreamPrice: 4.5,
     durationOptions: [5, 6, 7, 8, 9, 10],
-    resolution: "480P",
+    resolution: "720P",
     referenceMode: "optional",
     description:
       "HFSY Kling O3 video model. Supports 9:16 prompt-to-video and optional reference-image generation."
