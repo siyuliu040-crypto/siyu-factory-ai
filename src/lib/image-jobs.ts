@@ -89,6 +89,17 @@ function isRetryableImageError(status: number, payload: unknown) {
   );
 }
 
+function shouldRetryImageJob(record: ImageJobRecord, status: number, payload: unknown) {
+  const message = typeof payload === "string" ? payload : JSON.stringify(payload);
+  if (
+    record.request.model.toLowerCase() === "gpt-image-2" &&
+    (status === 524 || message.includes("origin_response_timeout") || message.includes("Proxy Read Timeout"))
+  ) {
+    return false;
+  }
+  return isRetryableImageError(status, payload);
+}
+
 function save(record: ImageJobRecord) {
   jobs.set(record.id, { ...record, updated_at: new Date().toISOString() });
 }
@@ -204,7 +215,7 @@ async function runImageJob(id: string) {
         return;
       }
 
-      if (attempt < IMAGE_JOB_MAX_ATTEMPTS && isRetryableImageError(response.status, payload)) {
+      if (attempt < IMAGE_JOB_MAX_ATTEMPTS && shouldRetryImageJob(record, response.status, payload)) {
         save({
           ...record,
           status: "in_progress",

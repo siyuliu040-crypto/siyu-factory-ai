@@ -1284,6 +1284,16 @@ function cleanErrorMessage(error: string, language: Language) {
     return language === "zh" ? "提示词超过当前模型上限，请精简后再提交。" : "The prompt exceeds this model's limit. Shorten it and submit again.";
   }
   if (
+    readable.includes("Error 524") ||
+    readable.includes("origin_response_timeout") ||
+    readable.includes("Proxy Read Timeout") ||
+    readable.includes("120-second Proxy Read Timeout")
+  ) {
+    return language === "zh"
+      ? "上游图片生成超时，任务已失败且站内积分已退回。请优先切换 Nano Banana 2 / Nano Banana Pro 重新生成，或稍后再试。"
+      : "The upstream image service timed out. The task failed and site credits have been refunded. Try Nano Banana 2 / Nano Banana Pro or retry later.";
+  }
+  if (
     readable.includes("stayed in generation for too long") ||
     readable.includes("Site credits were refunded automatically") ||
     readable.includes("上游任务长时间停留")
