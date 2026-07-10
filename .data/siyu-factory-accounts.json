@@ -3054,7 +3054,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-07-09T08:52:57.266Z",
-      "updatedAt": "2026-07-10T05:55:49.066Z"
+      "updatedAt": "2026-07-10T06:00:32.113Z"
     },
     {
       "id": "d11129f3122440658c91a83c3cca607f",
@@ -4324,7 +4324,7 @@
       "taskId": "0858b101033a422f86983c9a7f641a8a",
       "status": "failed",
       "createdAt": "2026-07-09T08:52:57.266Z",
-      "updatedAt": "2026-07-10T05:55:49.066Z",
+      "updatedAt": "2026-07-10T06:00:32.113Z",
       "error": "\"任务失败: Post \\\"http://***/v1/universal/json\\\": dial tcp 146.71.85.7:8001: connect: connection refused\""
     },
     {
