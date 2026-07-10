@@ -151,10 +151,36 @@ async function markImageJobFailed(record: ImageJobRecord, error: unknown) {
 function extractImageUrl(result: unknown) {
   if (!result || typeof result !== "object") return "";
   const data = (result as { data?: unknown }).data;
-  if (!Array.isArray(data)) return "";
-  const item = data[0] as { url?: unknown; b64_json?: unknown } | undefined;
+  const item = Array.isArray(data) ? data[0] as { url?: unknown; b64_json?: unknown } | undefined : undefined;
   if (typeof item?.url === "string") return item.url;
   if (typeof item?.b64_json === "string") return `data:image/png;base64,${item.b64_json}`;
+  const fallback = findImageUrl(result);
+  if (fallback) return fallback;
+  return "";
+}
+
+function findImageUrl(value: unknown, seen = new Set<unknown>()): string {
+  if (!value) return "";
+  if (typeof value === "string") {
+    if (/^https?:\/\/.+\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(value)) return value;
+    if (/^data:image\//i.test(value)) return value;
+    return "";
+  }
+  if (typeof value !== "object") return "";
+  if (seen.has(value)) return "";
+  seen.add(value);
+
+  const record = value as Record<string, unknown>;
+  for (const key of ["url", "image_url", "output_url", "result_url", "previewUrl"]) {
+    const found = findImageUrl(record[key], seen);
+    if (found) return found;
+  }
+  const b64 = record.b64_json || record.base64 || record.image_base64;
+  if (typeof b64 === "string" && b64.length > 100) return `data:image/png;base64,${b64}`;
+  for (const nested of Object.values(record)) {
+    const found = findImageUrl(nested, seen);
+    if (found) return found;
+  }
   return "";
 }
 

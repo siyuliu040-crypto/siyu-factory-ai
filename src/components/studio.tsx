@@ -203,6 +203,13 @@ const VIDEO_MAX_POLL_ATTEMPTS = 180;
 const VIDEO_MAX_TRANSIENT_ATTEMPTS = 36;
 const IMAGE_TASKS_STORAGE_KEY = "siyu-factory-image-tasks";
 
+function getBaseImageModelId(model: string) {
+  const match = model.match(/^(nano_banana(?:_2|_pro)?)-(?:1K|2K|4K)-(?:auto|portrait|square)$/i);
+  if (!match) return model;
+  const family = match[1].toLowerCase();
+  return family === "nano_banana" ? "nano_banana_2" : family;
+}
+
 function readStoredImageTasks() {
   if (typeof window === "undefined") return [];
   try {
@@ -220,8 +227,6 @@ function readStoredImageTasks() {
 }
 
 const stableImageModels = [
-  "gpt-image-2",
-  "auto-image",
   "nano_banana_2-1K-auto",
   "nano_banana_2-1K-portrait",
   "nano_banana_2-1K-square",
@@ -239,7 +244,9 @@ const stableImageModels = [
   "nano_banana_pro-2K-square",
   "nano_banana_pro-4K-auto",
   "nano_banana_pro-4K-portrait",
-  "nano_banana_pro-4K-square"
+  "nano_banana_pro-4K-square",
+  "auto-image",
+  "gpt-image-2"
 ];
 
 const stableVideoModels = [
@@ -633,9 +640,35 @@ const copy = {
 
 function extractImageUrl(result: ImageResult | null) {
   const item = result?.data?.[0];
-  if (!item) return "";
-  if (item.url) return item.url;
-  if (item.b64_json) return `data:image/png;base64,${item.b64_json}`;
+  if (item?.url) return item.url;
+  if (item?.b64_json) return `data:image/png;base64,${item.b64_json}`;
+  const fallback = findImageUrl(result);
+  if (fallback) return fallback;
+  return "";
+}
+
+function findImageUrl(value: unknown, seen = new Set<unknown>()): string {
+  if (!value) return "";
+  if (typeof value === "string") {
+    if (/^https?:\/\/.+\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(value)) return value;
+    if (/^data:image\//i.test(value)) return value;
+    return "";
+  }
+  if (typeof value !== "object") return "";
+  if (seen.has(value)) return "";
+  seen.add(value);
+
+  const record = value as Record<string, unknown>;
+  for (const key of ["url", "image_url", "output_url", "result_url", "previewUrl"]) {
+    const found = findImageUrl(record[key], seen);
+    if (found) return found;
+  }
+  const b64 = record.b64_json || record.base64 || record.image_base64;
+  if (typeof b64 === "string" && b64.length > 100) return `data:image/png;base64,${b64}`;
+  for (const nested of Object.values(record)) {
+    const found = findImageUrl(nested, seen);
+    if (found) return found;
+  }
   return "";
 }
 
@@ -1477,7 +1510,7 @@ export default function Studio() {
 
   const imageModels = useMemo(() => {
     const liveIds = new Set(models.map((model) => model.id));
-    const liveStable = stableImageModels.filter((id) => liveIds.has(id));
+    const liveStable = stableImageModels.filter((id) => liveIds.has(id) || liveIds.has(getBaseImageModelId(id)));
     return liveStable.length ? liveStable : stableImageModels;
   }, [models]);
 
