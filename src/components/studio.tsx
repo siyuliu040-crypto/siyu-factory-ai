@@ -1123,6 +1123,16 @@ function isUpstreamProxyError(message: string) {
   );
 }
 
+function isUpstreamNodeConnectionError(message: string) {
+  const lower = message.toLowerCase();
+  return (
+    lower.includes("connection refused") ||
+    lower.includes("connect: connection refused") ||
+    lower.includes("dial tcp") ||
+    lower.includes("econnrefused")
+  );
+}
+
 function isUpstreamBusyError(message: string) {
   return (
     message.includes("upstream_generation_failed") ||
@@ -1253,6 +1263,11 @@ function cleanErrorMessage(error: string, language: Language) {
     return language === "zh"
       ? "上游图片上传代理不可用，任务没有成功创建。站内积分会退回；请稍后重试，或先切换 Vidu / Grok 参考图模型生成。"
       : "The upstream image upload proxy is unavailable, so the task was not created. Site credits will be refunded; retry later or use a Vidu/Grok reference-image model.";
+  }
+  if (isUpstreamNodeConnectionError(readable)) {
+    return language === "zh"
+      ? "上游生成节点连接失败，任务已失败且站内积分已退回。请稍后重试，或先切换其他稳定模型生成。"
+      : "The upstream generation node refused the connection. The task failed and site credits have been refunded. Retry later or switch to another stable model.";
   }
   if (isInsufficientQuota(readable)) {
     return language === "zh"
