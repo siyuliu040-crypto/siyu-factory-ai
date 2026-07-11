@@ -26,9 +26,9 @@
       "name": "future",
       "passwordHash": "3d406d6cd7b51797b764bf7f945289ce:5d43dce08c4b591f9f59c7e0784e0c1627bc313e731e0dbb7fbaa9d835142a43a74b00c01efc416b7dfe0b009e1bfb37130c46cb0cb039339ed1bec32c618fa9",
       "role": "admin",
-      "credits": 50000000,
+      "credits": 49970000,
       "createdAt": "2026-06-05T06:35:20.237Z",
-      "updatedAt": "2026-07-11T02:54:13.372Z"
+      "updatedAt": "2026-07-11T13:41:25.124Z"
     },
     {
       "id": "c6bc726a-ef3c-4821-8fa6-b2c55d43b4d0",
@@ -176,6 +176,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "ff1f12f9-36c5-441d-b2a4-42fedc44ef46",
+      "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
+      "amount": -30000,
+      "balanceAfter": 49970000,
+      "reason": "video generation",
+      "createdAt": "2026-07-11T13:41:25.125Z",
+      "metadata": {
+        "model": "veo_3_1-fast-portrait",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "f592e6e0-7968-4aa5-ae2b-1d73c5fc99c1",
       "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
