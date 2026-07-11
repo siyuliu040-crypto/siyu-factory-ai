@@ -3067,6 +3067,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_IG9july94chZwC5wbQffFfxdCl3je4X5",
+      "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-11T02:51:54.252Z",
+      "updatedAt": "2026-07-11T02:51:54.252Z"
+    },
+    {
       "id": "img_1783671792140_85be5096bbf998",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "image",
@@ -4355,6 +4366,17 @@
     }
   ],
   "history": [
+    {
+      "id": "927dd67f-6100-428b-bffe-ded5682ac7be",
+      "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait",
+      "prompt": "参考@Image 1（把图一还原成写实照片风格，超写实人像摄影风格）特征，根据@Image 2视频脚本，（参考@Image 3 straight bundles ，参考@Image 4 body bundles）生成美区tiktok真实感带货视频",
+      "taskId": "task_IG9july94chZwC5wbQffFfxdCl3je4X5",
+      "status": "queued",
+      "createdAt": "2026-07-11T02:51:54.252Z",
+      "updatedAt": "2026-07-11T02:51:54.252Z"
+    },
     {
       "id": "815e8bb6-06ec-4ac9-b678-707425bd76bf",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
