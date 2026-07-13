@@ -197,6 +197,14 @@ export async function GET(
         updatedAt: history.updatedAt
       };
     });
+    if (!task) {
+      return jsonError({
+        error: "video task not found",
+        status: 404,
+        message: "This video task is not in the site history. It may have expired or belonged to another account."
+      }, 404);
+    }
+
     if (task && isViduModel(task.model)) {
       const vidu = await fetchViduVideoStatus(id);
       const payload = normalizeViduStatus(id, vidu.data, vidu.response.status);
