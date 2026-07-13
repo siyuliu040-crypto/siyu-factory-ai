@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019826847680,
+      "credits": 2000019835847680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-13T03:01:25.428Z"
+      "updatedAt": "2026-07-13T03:02:00.274Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -176,6 +176,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "a3ebbf48-81f3-4b77-afc8-96070da24a80",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 9000000,
+      "balanceAfter": 2000019835847680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-13T03:02:00.274Z",
+      "metadata": {
+        "taskId": "c261ab054f334014a978d863a472c0c2",
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "9c57caa6-ba0c-4768-98e0-b99784ed11c5",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -3120,10 +3132,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-13T03:01:28.121Z",
-      "updatedAt": "2026-07-13T03:01:28.121Z"
+      "updatedAt": "2026-07-13T03:02:00.273Z"
     },
     {
       "id": "task_EXKdiUk14spLqsBXJL470kNip6ZMJQGM",
@@ -4443,9 +4455,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "c261ab054f334014a978d863a472c0c2",
-      "status": "IN_PROGRESS",
+      "status": "failed",
+      "error": "\"Account access is restricted\"",
       "createdAt": "2026-07-13T03:01:28.122Z",
-      "updatedAt": "2026-07-13T03:01:36.489Z"
+      "updatedAt": "2026-07-13T03:02:00.274Z"
     },
     {
       "id": "f353a6bb-9568-46a2-9242-e09fcb30ee1a",
