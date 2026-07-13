@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019822347680,
+      "credits": 2000019835847680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-13T03:14:50.112Z"
+      "updatedAt": "2026-07-13T03:15:25.017Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -176,6 +176,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "e633caa0-6fd8-4fbc-9279-605a3140bb4e",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 13500000,
+      "balanceAfter": 2000019835847680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-13T03:15:25.017Z",
+      "metadata": {
+        "taskId": "3153c4034f1f4036836388f520156175",
+        "model": "hfsy:sd-2"
+      }
+    },
     {
       "id": "69dec56a-7631-4b61-95aa-3a04709db68b",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -3168,10 +3180,10 @@
       "type": "video",
       "model": "hfsy:sd-2",
       "amount": 13500000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-13T03:14:52.621Z",
-      "updatedAt": "2026-07-13T03:14:52.621Z"
+      "updatedAt": "2026-07-13T03:15:25.017Z"
     },
     {
       "id": "6003563bab03411abc9dcd61298ad63c",
@@ -4513,9 +4525,10 @@
       "model": "hfsy:sd-2",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "3153c4034f1f4036836388f520156175",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-13T03:14:52.621Z",
-      "updatedAt": "2026-07-13T03:15:12.634Z"
+      "updatedAt": "2026-07-13T03:15:25.017Z",
+      "error": "\"Account access is restricted\""
     },
     {
       "id": "ba5548bc-42e7-426e-bd63-1db93aed5b92",
