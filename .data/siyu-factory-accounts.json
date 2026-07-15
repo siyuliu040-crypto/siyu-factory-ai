@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019808847680,
+      "credits": 2000019822347680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-15T01:38:07.714Z"
+      "updatedAt": "2026-07-15T01:38:23.354Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -134,6 +134,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "e1232494-4877-4caf-b746-5c469f9a9430",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 13500000,
+      "balanceAfter": 2000019822347680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-15T01:38:23.354Z",
+      "metadata": {
+        "taskId": "a6538eae3ac640e09048a6f298bd1512",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "533e4a35-e9cf-4492-bf34-edad4743cd05",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -3210,10 +3222,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-15T01:38:09.592Z",
-      "updatedAt": "2026-07-15T01:38:09.592Z"
+      "updatedAt": "2026-07-15T01:38:23.354Z"
     },
     {
       "id": "b9652cd00c0f4abb8dbc7b4c4a3feb27",
@@ -4599,9 +4611,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "分镜一（0-4秒）\n口播台词：\n\n“Three bundles, and not one of these ends looks weak.”\n\n完整中文提示词：\n\n高角度手机自拍中近景，年轻美国黑人女性，中深棕肤色，纤细偏运动型身材，穿棕色修身背心和宽松灰棕色迷彩纹长裤，银色圆环耳环，鼻环，自然卷曲安装发型。坐在真实户外绿色草地上，草叶高低不一，有细小杂草和真实泥土纹理。右手紧握3束Natural Black Body Wave Bundle Hair真人发发帘，三束整齐并排，宽松S形波纹，发尾饱满厚实。她将三束发帘从肩侧快速但受控地推近镜头，产品占画面约75%，停留半秒后拉回胸前。她轻嘟嘴、半眯眼，随后挑眉，露出俏皮自信表情。她正对着手机镜头说出英文台词“Three bundles, and not one of these ends looks weak.”，嘴型与发音完全同步，语气自信带点挑衅。 自然柔和的日光，轻微户外风，草叶微动，背景清晰不虚化。可听到鸟叫、远处车辆声和草叶摩擦声。照片级写实，4K，电影质感，手部不穿透发帘，发帘不穿透身体，严格保持3束数量不变。无字幕无文字无水印。\n\n分镜二（4-8秒）\n口播台词：\n\n“Clean wefts, real length, and full from top to bottom.”\n\n完整中文提示词：\n\n同一人物，同一服装，同一草地场景。右手继续紧握同一3束发帘。左手轻轻将三个发帘展开成扇形，手指分别拨开三束中段，使三束产品保持独立可见，不重叠不融合。随后让三束发帘自然垂落到大腿上。镜头从发帘顶部向下跟随到完整发尾，清晰展示整齐的长度层次和饱满厚实的发尾。她低头认真检查发帘长度，看到整齐层次后抬眼看向镜头，对着镜头说出英文台词“Clean wefts, real length, and full from top to bottom.”，嘴型与发音完全同步，语气认真且带着认可，说完后满意地点头。 自然风吹动草叶和发丝轻微摆动，背景清晰。可听到草叶摩擦声和产品轻微摆动声。照片级写实，物理真实，发丝不漂浮，严格保持3束不变。无字幕无文字无水印。\n\n分镜三（8-12秒）\n口播台词：\n\n“Damn—my fingers glide through, and the wave pops right back.”\n\n完整中文提示词：\n\n同一场景延续。她将其中两束发帘整齐平放在腿部，两个发帘和部分长度始终清晰可见。右手继续握住第三束发帘，左手五指从发束中段连续顺滑到发尾，一次到底，动作流畅。随后右手轻微受控抖动一下，让宽松S形波纹自然回弹恢复。她抿嘴审视发质，手指顺到底后眼睛睁大，嘴角明显上扬，对着镜头说出英文台词“Damn—my fingers glide through, and the wave pops right back.”，语气略带惊叹和得意，嘴型与发音完全同步，尤其“Damn”一词要清晰对应嘴型。 草地纹理真实，发束放在腿上不穿透衣物，发帘密度饱满不稀薄。可听到产品轻微摆动声。照片级写实，严格保持3束，无复制无融合。无字幕无文字无水印。\n\n分镜四（12-15秒）\n口播台词：\n\n“Quit playing—tap the cart before somebody takes your set.”\n\n完整中文提示词：\n\n最后一镜，时长3秒。她右手重新抓稳全部3束发帘。左手掌从下方托住三束厚实的发尾，将饱满的底部推近镜头，清晰展示发帘的宽度和厚实密度。停留一秒后，左手自然离开发尾，先直接指向观众，再快速指向画面下方两次。三束发帘始终稳稳握在右手中，不掉落不位移。她的笑容迅速收住，头部轻微前倾，目光变得坚定直接，对着镜头说出英文台词“Quit playing—tap the cart before somebody takes your set.”，语速加快，嘴型与发音完全同步，语气带紧迫感和催促感，目光始终直视镜头不躲闪。 自然光线下发尾厚实不透明，草地清晰。可听到远处车辆声和轻微风声。照片级写实，紧迫的引导感，无字幕无文字无水印无LOGO无价格标签。严格保持3束发帘始终在右手。\n\n全局负面提示词（全分镜通用）\n低画质，模糊，畸形手部，多余手指，缺少手指，手指穿透发帘，发帘融合成一块，发束复制，出现4束或2束，漂浮发丝，塑料感反光，油腻湿亮，直发，Deep Wave小卷，不自然的回弹，背景虚化，过度虚化，假草地，人工草皮，换脸，服装变化，耳环变化，鼻环消失，机器人表情，嘴型与台词不同步，口型错位，字幕，自动字幕，文字，水印，LOGO，TikTok UI，价格标签，品牌文字，产品数量变化，发束消失，产品穿透身体，产品穿透草地。",
       "taskId": "a6538eae3ac640e09048a6f298bd1512",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 400\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"94c6e09f-46fd-4723-9e40-83af4bd65cdc\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"bad_request\\\",\\n  \\\"message\\\": \\\"Validation error for field 'prompt': String should have at most 2500 characters\\\"\\n}\"",
       "createdAt": "2026-07-15T01:38:09.592Z",
-      "updatedAt": "2026-07-15T01:38:14.191Z"
+      "updatedAt": "2026-07-15T01:38:23.354Z"
     },
     {
       "id": "aada36d3-9016-4b35-8843-a4a38985c7af",
