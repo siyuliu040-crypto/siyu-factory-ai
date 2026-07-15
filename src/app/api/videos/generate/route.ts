@@ -18,7 +18,7 @@ import {
   parseHfsyResponse
 } from "@/lib/hfsy";
 import { getVideoGenerationCost } from "@/lib/pricing";
-import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
+import { getPromptLimit } from "@/lib/prompt-limits";
 import {
   getSyCredentials,
   getSyModel,
@@ -179,6 +179,17 @@ function buildReferenceImagePrompt(prompt: string, referenceLabels: string[]) {
     "If one labeled image contains a script, follow that script as the shot/dialogue structure. If other labeled images show product, hair texture, body wave style, outfit, or packaging, preserve those product details across the video.",
     "",
     "USER PROMPT:",
+    prompt
+  ].join("\n");
+}
+
+function buildCompactReferencePrompt(prompt: string, referenceLabels: string[]) {
+  if (!referenceLabels.length) return prompt;
+  const labels = referenceLabels.map(cleanReferenceLabel);
+  return [
+    `Reference images: ${labels.map((label, index) => `${label}/@${index + 1}=image ${index + 1}`).join("; ")}.`,
+    "Follow the @ image references exactly when mentioned.",
+    "",
     prompt
   ].join("\n");
 }
@@ -634,10 +645,11 @@ export async function POST(request: Request) {
     if (!model || !prompt) {
       return jsonError({ error: "model and prompt are required" }, 400);
     }
-    if (isPromptTooLong(model, prompt, "video")) {
+    const initialPromptLimit = getPromptLimit(model, "video");
+    if (prompt.length > initialPromptLimit) {
       return jsonError({
         error: "prompt_too_long",
-        message: `This model supports up to ${getPromptLimit(model, "video")} prompt characters. Shorten the prompt and try again.`
+        message: `This model supports up to ${initialPromptLimit} prompt characters. Shorten the prompt and try again.`
       }, 400);
     }
     if (!VERIFIED_VIDEO_MODELS.has(model)) {
@@ -672,7 +684,17 @@ export async function POST(request: Request) {
       ...(imageUrl ? ["Image URL"] : []),
       ...uploadedReferenceInputs.map((_, index) => uploadedReferenceLabels[index] || `Image ${index + 1}`)
     ];
-    const enhancedPrompt = buildReferenceImagePrompt(prompt, referenceLabels);
+    const hfsyModel = getHfsyModel(model);
+    const enhancedPrompt = hfsyModel
+      ? buildCompactReferencePrompt(prompt, referenceLabels)
+      : buildReferenceImagePrompt(prompt, referenceLabels);
+    const finalPromptLimit = getPromptLimit(model, "video");
+    if (enhancedPrompt.length > finalPromptLimit) {
+      return jsonError({
+        error: "prompt_too_long",
+        message: `This model supports up to ${finalPromptLimit} prompt characters after reference labels are added. Shorten the prompt and try again.`
+      }, 400);
+    }
 
     if (isGrokReferenceVideoModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This model requires one reference image." }, 400);
@@ -680,7 +702,6 @@ export async function POST(request: Request) {
     if (isSyModel(model) && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This SY model requires one reference image." }, 400);
     }
-    const hfsyModel = getHfsyModel(model);
     if (hfsyModel?.referenceMode === "required" && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This HFSY model requires one reference image." }, 400);
     }
