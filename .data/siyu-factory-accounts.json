@@ -3354,10 +3354,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-15T03:31:41.623Z",
-      "updatedAt": "2026-07-15T03:31:41.623Z"
+      "updatedAt": "2026-07-15T03:35:32.564Z"
     },
     {
       "id": "4e0a9d87699f4039bf681a72dd416ca3",
@@ -4819,10 +4819,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "根据@1的实拍脚本，参考@2人物模型，生成tiktok美区高清带货视频",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/15/ed1411f336744ba5ad5872b6829cb017.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784172908&Signature=cpxQ%2FJwn%2FjAK1L1gABhNymHS2zk%3D",
       "taskId": "3a5a6a4658e74c3b90b7aa8da078bd30",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-15T03:31:41.623Z",
-      "updatedAt": "2026-07-15T03:35:24.363Z"
+      "updatedAt": "2026-07-15T03:35:32.564Z"
     },
     {
       "id": "e7dc1108-a26c-44d1-8800-366dc078ab62",
