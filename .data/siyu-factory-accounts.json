@@ -73,66 +73,6 @@
   ],
   "sessions": [
     {
-      "token": "1f087bf54d6878df65745a034857c68f0d121ffe0445e82c7b72eed4a619a2af",
-      "userId": "daee1d49-2c54-4d6b-9ccd-2b9852cfb7a6",
-      "expiresAt": "2026-07-14T06:54:44.542Z",
-      "createdAt": "2026-07-07T06:54:44.542Z"
-    },
-    {
-      "token": "0bf0028580ddef55eb23b26437858eedbdb554478ead3dd17853d77b3133aad4",
-      "userId": "a19865ba-3d59-4ebf-bb88-76da60780a9d",
-      "expiresAt": "2026-07-14T06:57:28.938Z",
-      "createdAt": "2026-07-07T06:57:28.938Z"
-    },
-    {
-      "token": "742ea07e1d4245a6a09bb68e2b69c0595e9653e701932c7bf2d3b89844908e96",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:53:41.203Z",
-      "createdAt": "2026-07-07T10:53:41.204Z"
-    },
-    {
-      "token": "2d8953663581acdc1b64b942c4704700b9c8cd6c5391102b78b7b80ffadc340a",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:53:45.604Z",
-      "createdAt": "2026-07-07T10:53:45.604Z"
-    },
-    {
-      "token": "416e2ac3886fea687e8542930a558bbb3c75096b35184cd7ed1c82749d23a29d",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:53:46.805Z",
-      "createdAt": "2026-07-07T10:53:46.805Z"
-    },
-    {
-      "token": "12b2493dfc3840c56237c44bddf50763aa3156914814ed779ef81afe6dd697e6",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:53:49.707Z",
-      "createdAt": "2026-07-07T10:53:49.707Z"
-    },
-    {
-      "token": "8888c8bb8d932d726cbc0b8173d6fbd013cbe37efd410e61c1474a05de6e28fa",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:53:50.707Z",
-      "createdAt": "2026-07-07T10:53:50.707Z"
-    },
-    {
-      "token": "451cd3f5e37cba569ea058d6dab18384fdf4ba4b913dd4010e6459ddf627a30f",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:56:48.604Z",
-      "createdAt": "2026-07-07T10:56:48.604Z"
-    },
-    {
-      "token": "39ce77208092735c9d08c53ec0cf71265adc9da1bc6b5167cf1fcbc26454dcf1",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:56:51.109Z",
-      "createdAt": "2026-07-07T10:56:51.109Z"
-    },
-    {
-      "token": "451ef8153235f92582ee3d4e4766894565ef24fcc1d4ad2e1e845230ab302975",
-      "userId": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
-      "expiresAt": "2026-07-14T10:56:54.905Z",
-      "createdAt": "2026-07-07T10:56:54.905Z"
-    },
-    {
       "token": "e20d7e2deb49083e0b8e586dd2a13b7720380fc1d01facdd5f588d39083c74a3",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-07-16T03:44:44.621Z",
