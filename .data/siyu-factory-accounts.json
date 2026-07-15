@@ -3193,6 +3193,17 @@
   ],
   "generationTasks": [
     {
+      "id": "b9652cd00c0f4abb8dbc7b4c4a3feb27",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 13500000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-15T01:14:07.069Z",
+      "updatedAt": "2026-07-15T01:14:07.069Z"
+    },
+    {
       "id": "c80f14b1e7b5479ca39897776290cc62",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -4558,6 +4569,17 @@
     }
   ],
   "history": [
+    {
+      "id": "aada36d3-9016-4b35-8843-a4a38985c7af",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "9:16 vertical, 5-second ultra-realistic product showcase video based on the reference image. Gentle camera push-in, natural motion, clean bright studio, no text, no logo, no watermark.",
+      "taskId": "b9652cd00c0f4abb8dbc7b4c4a3feb27",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-15T01:14:07.069Z",
+      "updatedAt": "2026-07-15T01:14:07.069Z"
+    },
     {
       "id": "509663fc-32b0-4e92-a81d-618ed5c878b4",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
