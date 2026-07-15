@@ -1288,6 +1288,11 @@ function cleanErrorMessage(error: string, language: Language) {
   if (readable.includes("prompt_too_long")) {
     return language === "zh" ? "提示词超过当前模型上限，请精简后再提交。" : "The prompt exceeds this model's limit. Shorten it and submit again.";
   }
+  if (lower.includes("field 'prompt'") && lower.includes("at most 2500")) {
+    return language === "zh"
+      ? "上游限制：Kling O3 提示词最多 2500 字符。请精简分镜、口播和参考图说明后重新提交，站内积分已退回。"
+      : "Upstream limit: Kling O3 supports at most 2500 prompt characters. Shorten the script and reference notes, then submit again. Site credits have been refunded.";
+  }
   if (lower.includes("account access is restricted") || lower.includes("access is restricted")) {
     return language === "zh"
       ? "上游账号或模型权限受限，任务已失败且站内积分已退回。请联系主账号检查 HFSY 权限，或先切换 Vidu / Grok / Nano Banana 等稳定模型。"
