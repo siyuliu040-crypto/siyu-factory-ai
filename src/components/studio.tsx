@@ -1275,6 +1275,11 @@ function cleanErrorMessage(error: string, language: Language) {
       ? "上游安全审核未通过：生成内容被判定可能不安全。请换参考图，减少真人身体/暴露/危险/敏感描述，改成普通商品展示或日常场景后重试。站内积分已退回。"
       : "Upstream safety review failed. Change the reference image or prompt, avoid sensitive body/exposure/danger wording, then retry. Site credits have been refunded.";
   }
+  if (readable.includes("至少需要1张参考图") || readable.includes("至少需要 1 张参考图") || lower.includes("requires one reference") || lower.includes("requires 1 reference")) {
+    return language === "zh"
+      ? "当前模型必须上传 1 张参考图。请上传参考图后重新生成，站内积分已退回。"
+      : "This model requires one reference image. Upload a reference image and try again. Site credits have been refunded.";
+  }
   if (readable.includes("最多只支持1张参考图") || readable.includes("最多只支持 1 张参考图") || lower.includes("only supports 1") || lower.includes("one reference")) {
     return language === "zh"
       ? "参考图数量过多：当前模型最多只支持 1 张参考图。请只上传 1 张参考图后重新生成。站内积分已退回。"
