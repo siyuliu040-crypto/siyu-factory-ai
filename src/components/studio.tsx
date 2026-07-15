@@ -1270,7 +1270,15 @@ function cleanErrorMessage(error: string, language: Language) {
   if (!readable) return "";
   const lower = readable.toLowerCase();
   if (isTransientVideoStatusError(readable)) return getTransientVideoMessage(language);
-  if (readable.includes("video_unsafe") || readable.includes("appears to be unsafe") || readable.includes("不安全") || readable.includes("安全")) {
+  if (
+    readable.includes("video_unsafe") ||
+    lower.includes("prompt_unsafe") ||
+    lower.includes("http 451") ||
+    lower.includes("considered unsafe") ||
+    readable.includes("appears to be unsafe") ||
+    readable.includes("不安全") ||
+    readable.includes("安全")
+  ) {
     return language === "zh"
       ? "上游安全审核未通过：生成内容被判定可能不安全。请换参考图，减少真人身体/暴露/危险/敏感描述，改成普通商品展示或日常场景后重试。站内积分已退回。"
       : "Upstream safety review failed. Change the reference image or prompt, avoid sensitive body/exposure/danger wording, then retry. Site credits have been refunded.";
