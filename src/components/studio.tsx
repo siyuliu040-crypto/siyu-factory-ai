@@ -1283,6 +1283,11 @@ function cleanErrorMessage(error: string, language: Language) {
   if (readable.includes("prompt_too_long")) {
     return language === "zh" ? "提示词超过当前模型上限，请精简后再提交。" : "The prompt exceeds this model's limit. Shorten it and submit again.";
   }
+  if (lower.includes("account access is restricted") || lower.includes("access is restricted")) {
+    return language === "zh"
+      ? "上游账号或模型权限受限，任务已失败且站内积分已退回。请联系主账号检查 HFSY 权限，或先切换 Vidu / Grok / Nano Banana 等稳定模型。"
+      : "The upstream account or model access is restricted. The task failed and site credits have been refunded. Check HFSY access or switch to Vidu/Grok/Nano Banana.";
+  }
   if (
     readable.includes("Error 524") ||
     readable.includes("origin_response_timeout") ||
