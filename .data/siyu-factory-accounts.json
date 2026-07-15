@@ -4774,9 +4774,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "【分镜一｜0至3.5秒｜双纹理展示】\n\n胸部中近景，手机正面自拍视角。她站在大橡树前。左手握住Body Wave发帘，右手握住Deep Wave发帘，两组自然垂在身体两侧。她同时将两组发帘向镜头方向抬高靠近，两种纹理占画面约70%。一阵风吹动Body Wave发尾，她自然收紧左手手指稳定发帘（非僵硬抓握）。她先平静看向镜头，随后眉毛明显抬起、眼睛睁大，嘴角出现挑衅式轻笑。阳光照眼产生自然眯眼。环境音：风声、树叶摩擦声。\n\n英文口播（嘴型精确同步）：\n\"Same length, two completely different moods. Which one are you taking?\"\n\n【分镜二｜3.5至7秒｜Body Wave顺滑验证】\n\nDeep Wave自然搭在右侧前臂上，卷度清晰可见。左手握住Body Wave发帘，右手五指从发束中段连续顺到发尾，一次到底，动作流畅不跳跃。镜头跟随右手向下移动，清晰展示S形波纹、发丝分离状态、完整长度和厚实发尾。阳光扫过产品，呈现柔和棕黑色真人发自然反光。顺发前她轻微眯眼，手指顺到底后右眉挑起，满意点头。\n\n英文口播（嘴型精确同步）：\n\"Body Wave is smooth as hell—soft, full, and thick all the way down.\"\n\n【分镜三｜7至11秒｜Deep Wave回弹验证】\n\nBody Wave自然搭在左前臂上，右手重新垂直提起Deep Wave发帘。左手掌从发尾下方托起卷度，向上轻压约十厘米后完整松开一次。Deep Wave自然下落并恢复清晰卷曲纹理。树叶突然发出较明显摩擦声，她自然停顿半拍，眼睛短暂向上看，再重新锁定镜头。看到回弹后眼睛变亮，轻笑并快速点头。\n\n英文口播（嘴型精确同步）：\n\"Deep Wave gives that bounce without the stiff, crunchy-looking mess.\"\n\n【分镜四｜11至15秒｜选择式强成交】\n\n左右手重新分别握住两组发帘，完整长度自然垂下。她向镜头迈近半步，先将Body Wave送近镜头，再将Deep Wave送近镜头，最后将两组并排放在胸前。先用下巴示意左侧，再示意右侧，随后腾出食指直接指向观众一次，再指向购物车区域两次。笑容快速收住，下颌微收，眼神变得坚定强势。\n\n英文口播（嘴型精确同步）：\n\"Pick your texture now. Your length can sell out while you're still deciding.\"\n\n【全局负面限制】\n\n不要字幕，不要自动字幕，不要画面文字，不要LOGO，不要水印，不要价格标签，不要TikTok UI元素，不要可读的衣服文字，不要可读的建筑标识，不要背景虚化，不要散景虚化，不要浅景深，不要人物换脸，不要服装变化，不要饰品变化，不要发型变化，不要产品数量变化（始终保持左手1束Body Wave、右手1束Deep Wave），不要Body Wave变成Deep Wave，不要Deep Wave变成Body Wave，不要产品融合，不要产品复制，不要产品消失，不要发尾变薄，不要塑料反光，不要油腻湿亮，不要漂浮发丝，不要手指穿过发帘，不要手部畸形，不要多余手指，不要肩膀扭曲，不要机器人口播感，不要嘴型不同步，不要动作瞬移，不要镜头断裂。",
       "taskId": "5cae50a13b164b17bbbe64bbf71698f4",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-15T02:28:17.025Z",
-      "updatedAt": "2026-07-15T02:28:22.705Z"
+      "updatedAt": "2026-07-15T02:28:29.511Z"
     },
     {
       "id": "ff8367e1-ccb8-4afe-96bf-97bf67ae3c7a",
