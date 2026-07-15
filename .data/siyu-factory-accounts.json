@@ -3198,10 +3198,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-15T01:14:07.069Z",
-      "updatedAt": "2026-07-15T01:14:07.069Z"
+      "updatedAt": "2026-07-15T01:15:36.536Z"
     },
     {
       "id": "c80f14b1e7b5479ca39897776290cc62",
@@ -4575,10 +4575,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "9:16 vertical, 5-second ultra-realistic product showcase video based on the reference image. Gentle camera push-in, natural motion, clean bright studio, no text, no logo, no watermark.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/15/cadf2e4ac5134b1ab716f2357db16ffe.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784164533&Signature=JLL9AbmnmQNNdTrcruc0pd%2BVUew%3D",
       "taskId": "b9652cd00c0f4abb8dbc7b4c4a3feb27",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-15T01:14:07.069Z",
-      "updatedAt": "2026-07-15T01:15:13.619Z"
+      "updatedAt": "2026-07-15T01:15:36.536Z"
     },
     {
       "id": "509663fc-32b0-4e92-a81d-618ed5c878b4",
