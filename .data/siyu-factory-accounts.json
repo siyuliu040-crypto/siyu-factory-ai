@@ -3925,7 +3925,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-07-16T09:51:34.305Z",
-      "updatedAt": "2026-07-16T09:56:08.714Z"
+      "updatedAt": "2026-07-16T09:56:13.817Z"
     },
     {
       "id": "7839cdc94b5a4396a3afe9acb6d0f40e",
@@ -5567,7 +5567,7 @@
       "taskId": "1a3d191d67ae46a4b2179722c25b393b",
       "status": "failed",
       "createdAt": "2026-07-16T09:51:34.305Z",
-      "updatedAt": "2026-07-16T09:56:08.714Z",
+      "updatedAt": "2026-07-16T09:56:13.817Z",
       "error": "\"Fusion 提交失败 [ErrCode=500044]: Reached the limit for concurrent generations.\""
     },
     {
