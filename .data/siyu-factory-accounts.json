@@ -5539,11 +5539,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:sd-2-fast",
-      "prompt": "Use the uploaded adult Black woman as the exact character and beach reference.\r\n\r\nCreate a realistic vertical beach video, 1080 × 1920, 9:16.\r\n\r\nThe woman stays seated on the towel, looks at the camera, turns toward the ocean, then looks back. She gently adjusts her curls, touches her sunglasses and slightly changes her posture.\r\n\r\nHer shoulders, chest, waist, arms, hair and swimsuit fabric move naturally with breathing and the sea breeze. Use normal speed, soft connected movement and no slow motion.\r\n\r\nEye-level three-quarter shot, natural distance, subtle handheld phone movement, soft focus and low sharpening. Keep natural pores and matte skin; no glossy, plastic or overly smooth skin.\r\n\r\nAdd soft summer R&B instrumental music with ocean and wind ambience.\r\n\r\nKeep her face, body, outfit and beach consistent.\r\n\r\nNo standing, full turn, exaggerated shaking, face change, deformed hands, subtitles, logos or watermark.",
+      "prompt": "Use the uploaded adult Black woman as the exact character and beach reference.\n\nCreate a realistic vertical beach video, 1080 × 1920, 9:16.\n\nThe woman stays seated on the towel, looks at the camera, turns toward the ocean, then looks back. She gently adjusts her curls, touches her sunglasses and slightly changes her posture.\n\nHer shoulders, chest, waist, arms, hair and swimsuit fabric move naturally with breathing and the sea breeze. Use normal speed, soft connected movement and no slow motion.\n\nEye-level three-quarter shot, natural distance, subtle handheld phone movement, soft focus and low sharpening. Keep natural pores and matte skin; no glossy, plastic or overly smooth skin.\n\nAdd soft summer R&B instrumental music with ocean and wind ambience.\n\nKeep her face, body, outfit and beach consistent.\n\nNo standing, full turn, exaggerated shaking, face change, deformed hands, subtitles, logos or watermark.",
       "taskId": "198c58b2479a478d9cc5d2110fd91375",
-      "status": "queued",
+      "status": "IN_PROGRESS",
       "createdAt": "2026-07-16T09:53:58.177Z",
-      "updatedAt": "2026-07-16T09:54:02.620Z"
+      "updatedAt": "2026-07-16T09:54:04.709Z"
     },
     {
       "id": "ce8b62d6-6863-4946-8d32-5ecf12d2f07b",
