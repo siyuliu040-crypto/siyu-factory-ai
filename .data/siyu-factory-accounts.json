@@ -119,6 +119,16 @@
       "credits": 0,
       "createdAt": "2026-07-16T09:11:31.620Z",
       "updatedAt": "2026-07-16T09:11:31.620Z"
+    },
+    {
+      "id": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
+      "email": "fmidkouhair006@outlook.com",
+      "name": "王晨",
+      "passwordHash": "93384bc0fea794e6692f78d35e279b64:de8ddc275996c9fe0ef733c6ec8e7bc386241f394e419bca97430d651736573c556d237e10e80b9f066ff8ff26d720db69c803fc4e68f1dd9c004148ef5f1944",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-16T09:11:46.539Z",
+      "updatedAt": "2026-07-16T09:11:46.539Z"
     }
   ],
   "sessions": [
@@ -211,6 +221,12 @@
       "userId": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
       "expiresAt": "2026-07-23T09:11:31.820Z",
       "createdAt": "2026-07-16T09:11:31.820Z"
+    },
+    {
+      "token": "b61744204fd6aeae499357ef5d454e26dc7fc43b2355328071311bc04b7031f6",
+      "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
+      "expiresAt": "2026-07-23T09:11:46.719Z",
+      "createdAt": "2026-07-16T09:11:46.719Z"
     }
   ],
   "ledger": [
