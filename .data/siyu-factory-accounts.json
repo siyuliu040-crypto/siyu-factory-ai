@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 0,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-16T09:11:01.355Z"
+      "updatedAt": "2026-07-16T09:13:46.534Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -234,6 +234,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "567355ae-4bf1-4a12-b8fd-31917c44ca58",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-16T09:13:46.535Z"
+    },
     {
       "id": "88824ce5-4800-47e9-a139-8c2840e0b4bd",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
