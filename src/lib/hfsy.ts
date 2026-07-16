@@ -71,7 +71,7 @@ export const HFSY_MODELS: HfsyModel[] = [
   {
     id: "hfsy:kling-o3",
     upstreamModel: "kling-o3",
-    label: "HFSY Kling O3",
+    label: "HFSY KL3.0 / Kling O3",
     media: "video",
     credits: 1350,
     upstreamPrice: 4.5,
@@ -79,7 +79,7 @@ export const HFSY_MODELS: HfsyModel[] = [
     resolution: "720P",
     referenceMode: "required",
     description:
-      "HFSY Kling O3 video model. Supports 5-15 second 9:16 reference-image video generation. A reference image is required. Recent failures can indicate upstream account access restrictions."
+      "HFSY KL3.0 / Kling O3 video model. Supports 5-15 second 9:16 reference-image video generation at 720P. A reference image is required. Recent failures can indicate upstream account access restrictions."
   }
 ];
 
