@@ -86,9 +86,9 @@
       "name": "阎重谋",
       "passwordHash": "0e30990e4f959a54184bd9246f792997:f3f916313ffd31235fd3edb32eca97bae6fa80cfeb300f5baf34e1c28dab837b08bcae9468991094cfeeed82644fd0400d70571f8d748892f39dda40e816d81b",
       "role": "user",
-      "credits": 9986500000,
+      "credits": 9986480000,
       "createdAt": "2026-07-16T09:10:25.215Z",
-      "updatedAt": "2026-07-16T09:20:24.479Z"
+      "updatedAt": "2026-07-16T09:31:09.043Z"
     },
     {
       "id": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -300,6 +300,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "441ac830-2eaf-4e44-8962-df8efc106d17",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "amount": -20000,
+      "balanceAfter": 9986480000,
+      "reason": "image generation",
+      "createdAt": "2026-07-16T09:31:09.043Z",
+      "metadata": {
+        "model": "nano_banana_2-1K-auto",
+        "size": "1024x1792"
+      }
+    },
     {
       "id": "2cfbe02c-c661-474e-a6a8-68fe15211d74",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
