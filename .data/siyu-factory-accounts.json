@@ -3653,6 +3653,17 @@
   ],
   "generationTasks": [
     {
+      "id": "32e7de1dd3b246788b93c8ce04a26204",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 13500000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-16T09:20:36.217Z",
+      "updatedAt": "2026-07-16T09:20:36.217Z"
+    },
+    {
       "id": "f3416418288c49468da73a2baa69cba2",
       "userId": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
       "type": "video",
@@ -5161,6 +5172,17 @@
     }
   ],
   "history": [
+    {
+      "id": "79544265-62a2-4b77-bec0-e14bed705b61",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "超写实电影级人物肖像，一位圣经时代的长发男子站在古老圣地的浅水中。\r\n\r\n男子拥有深棕色长发和浓密胡须，面容温和慈祥，带着平静而充满智慧的微笑，眼神直视镜头，散发神圣、仁慈的气质。\r\n\r\n他穿着古代粗麻亚麻长袍，外披一件绿色手工编织披风，披风具有复杂的纤维纹理、自然褶皱和旧时代布料质感。\r\n\r\n男子双手托着一个大型浅色木制或藤编托盘，托盘中摆放：\r\n刚烤好的圆形面包，\r\n新鲜绿色蔬菜，\r\n胡萝卜，\r\n以及大量真实美元纸币，他走向旁边的人群发送盘中的食物\r\n\r\n背景是一片圣经时代的古老山谷和岩石环境，远处有穿着长袍的人群，古老石墙和自然岩壁，营造历史宗教场景。\r\n\r\n温暖的阳光从侧面照射人物，形成金色光晕。\r\n背景轻微虚化，突出人物、食物和托盘。\r\n\r\n摄影风格：\r\n圣经历史电影场景，\r\n史诗级宗教电影画面，\r\n真实人物摄影，\r\n纪录片写实风格。\r\n\r\n细节：\r\n真实皮肤纹理，\r\n真实头发丝，\r\n真实胡须细节，\r\n真实绿色织物纹理，\r\n真实面包质感，\r\n真实美元纸张细节，\r\n真实手部结构。\r\n\r\n85mm电影镜头，\r\n浅景深，\r\n自然光，\r\nHDR，\r\n8K超高清，\r\nphotorealistic，\r\nHollywood biblical movie style。",
+      "taskId": "32e7de1dd3b246788b93c8ce04a26204",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-16T09:20:36.218Z",
+      "updatedAt": "2026-07-16T09:20:36.218Z"
+    },
     {
       "id": "7515fb38-9f42-49b4-9a75-2a45c307a14a",
       "userId": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
