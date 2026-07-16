@@ -43,6 +43,7 @@ const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
 };
 const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
 const VERIFIED_VIDEO_MODELS = new Set([
+  "veo_3_1-fast",
   "veo_3_1-fast-portrait",
   "veo_3_1-fast-portrait-hd",
   "veo_3_1-fast-portrait-fl-hd",

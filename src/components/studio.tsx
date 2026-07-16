@@ -277,6 +277,7 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
+  "veo_3_1-fast",
   "veo_3_1-fast-portrait",
   "veo_3_1-fast-portrait-hd",
   "veo_3_1-fast-portrait-fl-hd",
@@ -827,6 +828,7 @@ function getModelTitle(model: string, language: Language) {
     return language === "zh" ? "Sora 2 竖屏" : "Sora 2 Portrait";
   }
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
+  if (lower === "veo_3_1-fast") return language === "zh" ? "HBG VEO 3.1 Fast 竖屏" : "HBG VEO 3.1 Fast Portrait";
   if (lower.includes("veo_3_1")) {
     if (lower.includes("fl-hd")) return language === "zh" ? "VEO 3.1 Fast 首尾帧 HD" : "VEO 3.1 Fast Start-End HD";
     if (lower.includes("-hd")) return language === "zh" ? "VEO 3.1 Fast HD" : "VEO 3.1 Fast HD";
@@ -910,6 +912,11 @@ function getModelDescription(model: string, language: Language) {
     return language === "zh"
       ? `${aspect} · ${fixedDuration} 秒固定 · ${family} 纯提示词视频`
       : `${aspect} · fixed ${fixedDuration}s · ${family} prompt-only video`;
+  }
+  if (lower === "veo_3_1-fast") {
+    return language === "zh"
+      ? `${aspect} · 4/8/12/15 秒可选 · 720P · HellobabyGo 上游 · 纯提示词或参考图`
+      : `${aspect} · 4/8/12/15s selectable · 720P · HellobabyGo upstream · prompt or reference image`;
   }
   if (lower.includes("veo_3_1") && lower.includes("fl-hd")) {
     return language === "zh"

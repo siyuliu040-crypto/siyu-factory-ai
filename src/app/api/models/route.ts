@@ -11,6 +11,7 @@ const CUSTOM_VIDEO_MODELS = [
 ];
 
 const VERIFIED_PORTRAIT_VIDEO_MODELS = new Set<string>([
+  "veo_3_1-fast",
   "veo_3_1-fast-portrait",
   "veo_3_1-fast-portrait-hd",
   "veo_3_1-fast-portrait-fl-hd",
@@ -23,7 +24,7 @@ function isAllowedModel(model: unknown) {
   const id = String((model as { id?: unknown }).id || "").toLowerCase();
   if (!id) return true;
   if (id.includes("16x9") || id.includes("landscape")) return false;
-  if (id.includes("sora") || id.includes("veo_3_1-fast-portrait") || id.includes("firefly-veo31-fast")) {
+  if (id.includes("sora") || id.includes("veo_3_1-fast") || id.includes("firefly-veo31-fast")) {
     return VERIFIED_PORTRAIT_VIDEO_MODELS.has(id);
   }
   if (id.includes("firefly-veo31-ref")) return false;
