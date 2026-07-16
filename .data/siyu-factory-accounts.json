@@ -116,9 +116,9 @@
       "name": "3cc",
       "passwordHash": "35c133450134f17118d01b10e9e81ca4:d410cc2946f69fdd389e17da020d373e96f84c64c26709a8785c549fcc4dcbf0df8836e079ce64c1226dfbcf091b6a024d85b4b90bd8580eb1ca711fa7e4be9e",
       "role": "user",
-      "credits": 10000000000,
+      "credits": 9986500000,
       "createdAt": "2026-07-16T09:11:31.620Z",
-      "updatedAt": "2026-07-16T09:15:00.295Z"
+      "updatedAt": "2026-07-16T09:24:19.043Z"
     },
     {
       "id": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
@@ -288,6 +288,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "4c609d72-2144-470a-815a-53aa5a8021ff",
+      "userId": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
+      "amount": -13500000,
+      "balanceAfter": 9986500000,
+      "reason": "video generation",
+      "createdAt": "2026-07-16T09:24:19.043Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "e20cc1ea-19aa-4411-bbdb-94695600f0f1",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
