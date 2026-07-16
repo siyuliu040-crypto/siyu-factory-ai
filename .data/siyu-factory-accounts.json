@@ -106,9 +106,9 @@
       "name": "赵凯磊",
       "passwordHash": "3e12efe3b023edcca8a284fedca0d3a3:e252007a0264556d02c1fb33e0bf53a610b137e10922eea4fdbf2044eeecc216d5bf27390c8b4142dde3eaad8c3b46cfd6c07371d34be73a234065f25765dd48",
       "role": "user",
-      "credits": 0,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:11:07.487Z",
-      "updatedAt": "2026-07-16T09:11:07.487Z"
+      "updatedAt": "2026-07-16T09:13:52.001Z"
     },
     {
       "id": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
@@ -234,6 +234,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "b71b2822-f475-4649-9090-944948e95b74",
+      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-16T09:13:52.001Z"
+    },
     {
       "id": "567355ae-4bf1-4a12-b8fd-31917c44ca58",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
