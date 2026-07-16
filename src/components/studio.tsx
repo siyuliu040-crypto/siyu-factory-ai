@@ -277,8 +277,6 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
-  "veo_3_1-fast-portrait",
-  "veo_3_1-fast-portrait-hd",
   "veo_3_1-fast-portrait-fl-hd",
   "sy:grok-Yun",
   "hfsy:sora-2",

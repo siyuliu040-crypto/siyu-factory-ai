@@ -11,17 +11,12 @@ const CUSTOM_VIDEO_MODELS = [
 ];
 
 const VERIFIED_PORTRAIT_VIDEO_MODELS = new Set<string>([
-  "veo_3_1-fast",
-  "veo_3_1-fast-portrait",
-  "veo_3_1-fast-portrait-hd",
   "veo_3_1-fast-portrait-fl-hd",
   "sora-2-4s-9x16",
   "sora-2-8s-9x16"
 ]);
 
 const HBG_VERIFIED_VIDEO_MODELS = [
-  { id: "veo_3_1-fast-portrait", name: "HBG VEO 3.1 Fast 竖屏" },
-  { id: "veo_3_1-fast-portrait-hd", name: "HBG VEO 3.1 Fast HD" },
   { id: "veo_3_1-fast-portrait-fl-hd", name: "HBG VEO 3.1 Fast 首尾帧 HD" }
 ];
 
