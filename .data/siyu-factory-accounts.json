@@ -66,9 +66,9 @@
       "name": "nini",
       "passwordHash": "fc13f50a6e9965e6c9dda5a4675094cd:3fa768c045a065b6766dbaa2177756c57e91f16842626c5fb5c4477e41d4c13a7024dac264cf5b62eee7a0c765a30a38770b45bf3b016f28795de977bf05f5d1",
       "role": "user",
-      "credits": 0,
+      "credits": 10000000000,
       "createdAt": "2026-07-07T10:53:59.446Z",
-      "updatedAt": "2026-07-07T10:53:59.446Z"
+      "updatedAt": "2026-07-16T09:13:28.816Z"
     },
     {
       "id": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
@@ -240,6 +240,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "b6a0442e-b768-414a-822d-c486df6c5979",
+      "userId": "d0202670-2e5b-4cd2-aefc-156e9f75a09b",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-16T09:13:28.816Z"
+    },
     {
       "id": "dbf7cc63-a73b-46f8-8839-8043196c6091",
       "userId": "a19865ba-3d59-4ebf-bb88-76da60780a9d",
