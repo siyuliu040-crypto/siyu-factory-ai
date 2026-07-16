@@ -139,6 +139,16 @@
       "credits": 9986500000,
       "createdAt": "2026-07-16T09:12:09.707Z",
       "updatedAt": "2026-07-16T09:20:05.013Z"
+    },
+    {
+      "id": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "email": "2251782497@qq.com",
+      "name": "于",
+      "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-16T09:32:44.535Z",
+      "updatedAt": "2026-07-16T09:32:44.535Z"
     }
   ],
   "sessions": [
@@ -297,6 +307,12 @@
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
       "expiresAt": "2026-07-23T09:29:06.621Z",
       "createdAt": "2026-07-16T09:29:06.621Z"
+    },
+    {
+      "token": "112ee04a85904e6a9ebb62197f62d72703499bcb1455cc0eecfdd55060acde9f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "expiresAt": "2026-07-23T09:32:44.720Z",
+      "createdAt": "2026-07-16T09:32:44.720Z"
     }
   ],
   "ledger": [
