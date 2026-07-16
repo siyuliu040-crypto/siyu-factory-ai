@@ -126,9 +126,9 @@
       "name": "王晨",
       "passwordHash": "93384bc0fea794e6692f78d35e279b64:de8ddc275996c9fe0ef733c6ec8e7bc386241f394e419bca97430d651736573c556d237e10e80b9f066ff8ff26d720db69c803fc4e68f1dd9c004148ef5f1944",
       "role": "user",
-      "credits": 30000000000,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:11:46.539Z",
-      "updatedAt": "2026-07-16T09:14:20.574Z"
+      "updatedAt": "2026-07-16T09:14:51.978Z"
     },
     {
       "id": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
@@ -252,6 +252,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c3604c9e-91a1-407e-b9bf-5f154d8b9cfd",
+      "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -20000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account deduction",
+      "createdAt": "2026-07-16T09:14:51.978Z"
+    },
     {
       "id": "27e20076-2e88-4573-bf47-14ca8934f4d9",
       "userId": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
