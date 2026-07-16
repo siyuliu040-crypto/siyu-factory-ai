@@ -2,6 +2,7 @@
 import {
   AccountError,
   chargeUserCredits,
+  readAccountState,
   refundCreditsForUser,
   recordGenerationHistory,
   recordGenerationTask,
@@ -115,6 +116,22 @@ function isImmediateFailure(payload: unknown) {
   const record = payload as Record<string, unknown>;
   const code = String(record.code || record.error || "");
   return Boolean(code && !getTaskId(payload));
+}
+
+function isHfsyFusionModel(model: string) {
+  return model === "hfsy:sd-2-fast" || model === "hfsy:sd-2" || model === "hfsy:sd-2-vip";
+}
+
+async function getActiveHfsyFusionTask(model: string) {
+  if (!isHfsyFusionModel(model)) return null;
+  const state = await readAccountState(true);
+  const cutoff = Date.now() - 20 * 60 * 1000;
+  return state.generationTasks.find((task) => {
+    if (!isHfsyFusionModel(task.model)) return false;
+    if (task.status !== "queued" && task.status !== "in_progress") return false;
+    const createdAt = Date.parse(task.createdAt);
+    return Number.isFinite(createdAt) && createdAt >= cutoff;
+  }) || null;
 }
 
 function referencePayloadFields(referenceUrls: string[]) {
@@ -710,6 +727,17 @@ export async function POST(request: Request) {
         error: "hfsy_not_configured",
         message: "This HFSY model is not enabled because HFSY_API_KEY is not configured."
       }, 503);
+    }
+    const activeFusionTask = await getActiveHfsyFusionTask(model);
+    if (activeFusionTask) {
+      return jsonError({
+        error: "hfsy_fusion_concurrency_limit",
+        message: "[ErrCode=500044] Fusion upstream has reached the concurrent generation limit. Wait for the current SD/Fusion task to finish, then submit again. No site credits were deducted.",
+        detail: {
+          active_task_id: activeFusionTask.id,
+          active_model: activeFusionTask.model
+        }
+      }, 429);
     }
     if (supportsStartEndFrames(model) && publicReferenceUrls.length === 0) {
       return jsonError({

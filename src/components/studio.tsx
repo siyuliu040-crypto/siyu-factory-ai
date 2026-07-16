@@ -1325,6 +1325,17 @@ function cleanErrorMessage(error: string, language: Language) {
   const lower = readable.toLowerCase();
   if (isTransientVideoStatusError(readable)) return getTransientVideoMessage(language);
   if (
+    lower.includes("500044") ||
+    lower.includes("concurrent generation") ||
+    lower.includes("reached the limit for concurrent") ||
+    lower.includes("hfsy_fusion_concurrency_limit") ||
+    lower.includes("fusion")
+  ) {
+    return language === "zh"
+      ? "HFSY SD/Fusion 上游同时生成名额已满。请等当前 SD2 Fast / SD2 任务完成后再提交；本次没有扣站内积分，已扣的失败任务会自动返还。"
+      : "The HFSY SD/Fusion upstream concurrent generation limit is full. Wait for the current SD2 Fast / SD2 task to finish, then submit again. No site credits were deducted; failed charged attempts are refunded.";
+  }
+  if (
     readable.includes("video_unsafe") ||
     lower.includes("prompt_unsafe") ||
     lower.includes("http 451") ||
