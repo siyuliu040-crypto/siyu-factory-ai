@@ -5471,9 +5471,9 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "Use the uploaded adult Black woman as the exact character, swimsuit and beach reference.\n\nCreate a realistic vertical beach video.\n\nSize: 1080 × 1920 pixels.\nAspect ratio: 9:16.\n\nThe woman stays seated on the towel, looks at the camera, turns her head toward the ocean, then looks back. She gently adjusts a few curls and lightly touches the sunglasses on her head. She lowers her hand, shifts her posture slightly and settles into a relaxed pose.\n\nHer shoulders, chest, waist, arms, curls and swimsuit fabric should show subtle natural secondary motion from breathing, posture changes and the sea breeze. Keep all movement soft, connected and realistic.\n\nUse normal real-life speed. No slow motion, delayed reactions or long pauses.\n\nUse an eye-level medium-full shot from a natural distance. Add subtle handheld smartphone movement and slightly imperfect framing.\n\nUse soft beach daylight, slightly soft focus, reduced sharpening and mild phone-camera compression. Preserve pores, natural skin variation and matte shadows. No glossy, reflective, overly smooth or plastic skin.\n\nAdd relaxed summer R&B instrumental music with smooth bass, light percussion and no vocals. Keep soft ocean waves and gentle wind underneath.\n\nKeep the same face, skin tone, curls, body proportions, white swimsuit, sunglasses, towel and beach setting consistent.\n\nNo standing up, no full-body turn, no dramatic hair flip, no exaggerated shaking, no distorted hands, no extra fingers, no face change, no body deformation, no subtitles, no logos and no watermark.",
       "taskId": "7839cdc94b5a4396a3afe9acb6d0f40e",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-16T09:45:08.460Z",
-      "updatedAt": "2026-07-16T09:45:13.213Z"
+      "updatedAt": "2026-07-16T09:45:20.221Z"
     },
     {
       "id": "78d0de5f-0109-493d-ae14-6f51d6605fe3",
