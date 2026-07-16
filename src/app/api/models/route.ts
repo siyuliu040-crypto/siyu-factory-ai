@@ -19,6 +19,12 @@ const VERIFIED_PORTRAIT_VIDEO_MODELS = new Set<string>([
   "sora-2-8s-9x16"
 ]);
 
+const HBG_VERIFIED_VIDEO_MODELS = [
+  { id: "veo_3_1-fast-portrait", name: "HBG VEO 3.1 Fast 竖屏" },
+  { id: "veo_3_1-fast-portrait-hd", name: "HBG VEO 3.1 Fast HD" },
+  { id: "veo_3_1-fast-portrait-fl-hd", name: "HBG VEO 3.1 Fast 首尾帧 HD" }
+];
+
 function isAllowedModel(model: unknown) {
   if (!model || typeof model !== "object") return true;
   const id = String((model as { id?: unknown }).id || "").toLowerCase();
@@ -67,6 +73,15 @@ export async function GET() {
         .filter(isAllowedModel)
         .map(normalizeUpstreamModel);
       const liveIds = new Set(filtered.map((item) => String((item as { id?: unknown })?.id || "")));
+      const hbgVideoModels = HBG_VERIFIED_VIDEO_MODELS
+        .filter((model) => !liveIds.has(model.id))
+        .map((model) => ({
+          id: model.id,
+          object: "model",
+          owned_by: "hellobabygo",
+          supported_endpoint_types: ["openai-video"],
+          name: model.name
+        }));
       const viduModels = VIDU_MODELS
         .filter((id) => !liveIds.has(id))
         .map((id) => ({
@@ -100,7 +115,7 @@ export async function GET() {
       return Response.json(
         {
           ...(data as Record<string, unknown>),
-          data: [...syModels, ...hfsyModels, ...viduModels, ...customVideoModels, ...filtered]
+          data: [...syModels, ...hfsyModels, ...hbgVideoModels, ...viduModels, ...customVideoModels, ...filtered]
         },
         { status: response.status }
       );

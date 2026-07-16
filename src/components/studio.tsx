@@ -277,7 +277,6 @@ const stableImageModels = [
 ];
 
 const stableVideoModels = [
-  "veo_3_1-fast",
   "veo_3_1-fast-portrait",
   "veo_3_1-fast-portrait-hd",
   "veo_3_1-fast-portrait-fl-hd",
@@ -747,17 +746,21 @@ function isViduModelId(model: string) {
   return model.toLowerCase().startsWith("vidu:");
 }
 
+function isHellobabyGoVeoFrameModel(model: string) {
+  return model.toLowerCase() === "veo_3_1-fast-portrait-fl-hd";
+}
+
 function modelRequiresReference(model: string) {
   const lower = model.toLowerCase();
-  return Boolean(getSyModel(model)) || isViduModelId(model) || lower.includes("-ref-") || lower.includes("_ref_") || lower.includes("fl-hd");
+  return Boolean(getSyModel(model)) || isViduModelId(model) || isHellobabyGoVeoFrameModel(model) || lower.includes("-ref-") || lower.includes("_ref_") || lower.includes("fl-hd");
 }
 
 function modelRequiresFirstFrame(model: string) {
-  return syModelSupportsEndFrame(model) || model.toLowerCase().includes("fl-hd");
+  return syModelSupportsEndFrame(model) || isHellobabyGoVeoFrameModel(model) || model.toLowerCase().includes("fl-hd");
 }
 
 function modelSupportsEndFrame(model: string) {
-  return syModelSupportsEndFrame(model) || model.toLowerCase().includes("fl-hd");
+  return syModelSupportsEndFrame(model) || isHellobabyGoVeoFrameModel(model) || model.toLowerCase().includes("fl-hd");
 }
 
 function getReferenceRoleLabel(index: number, model: string, language: Language) {
@@ -828,11 +831,11 @@ function getModelTitle(model: string, language: Language) {
     return language === "zh" ? "Sora 2 竖屏" : "Sora 2 Portrait";
   }
   if (lower.includes("firefly")) return language === "zh" ? "Firefly VEO" : "Firefly VEO";
-  if (lower === "veo_3_1-fast") return language === "zh" ? "HBG VEO 3.1 Fast 竖屏" : "HBG VEO 3.1 Fast Portrait";
+  if (lower === "veo_3_1-fast") return language === "zh" ? "HBG VEO 3.1 Fast 竖屏（纯提示词）" : "HBG VEO 3.1 Fast Portrait Prompt";
   if (lower.includes("veo_3_1")) {
-    if (lower.includes("fl-hd")) return language === "zh" ? "VEO 3.1 Fast 首尾帧 HD" : "VEO 3.1 Fast Start-End HD";
-    if (lower.includes("-hd")) return language === "zh" ? "VEO 3.1 Fast HD" : "VEO 3.1 Fast HD";
-    return language === "zh" ? "VEO 3.1 Fast 竖屏" : "VEO 3.1 Fast Portrait";
+    if (lower.includes("fl-hd")) return language === "zh" ? "HBG VEO 3.1 Fast 首尾帧 HD" : "HBG VEO 3.1 Fast Start-End HD";
+    if (lower.includes("-hd")) return language === "zh" ? "HBG VEO 3.1 Fast HD" : "HBG VEO 3.1 Fast HD";
+    return language === "zh" ? "HBG VEO 3.1 Fast 竖屏" : "HBG VEO 3.1 Fast Portrait";
   }
   if (lower === "auto-image") return language === "zh" ? "智能生图" : "Auto Image";
   if (lower === "gpt-image-2") return language === "zh" ? "GPT Image 2" : "GPT Image 2";
@@ -915,8 +918,8 @@ function getModelDescription(model: string, language: Language) {
   }
   if (lower === "veo_3_1-fast") {
     return language === "zh"
-      ? `${aspect} · 4/8/12/15 秒可选 · 720P · HellobabyGo 上游 · 纯提示词或参考图`
-      : `${aspect} · 4/8/12/15s selectable · 720P · HellobabyGo upstream · prompt or reference image`;
+      ? `${aspect} · 4/8/12/15 秒可选 · 720P · HellobabyGo 上游 · 纯提示词视频`
+      : `${aspect} · 4/8/12/15s selectable · 720P · HellobabyGo upstream · prompt-only video`;
   }
   if (lower.includes("veo_3_1") && lower.includes("fl-hd")) {
     return language === "zh"
