@@ -5376,9 +5376,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "基础参数：60 帧丝滑慢动作，运镜幅度 0.2，低抖动林间溪流纪实镜头，清冷阴天灰调柔光调色\n镜头 1｜0–4s 木屋溪流纵深远景缓慢推入\n镜头从堆叠木柴的原木木屋沿平缓溪流向前慢推，完整展示浅溪碎石岸、枯木、初春稀疏草木，微风拂动水面，溪水缓缓流动泛起细碎波纹\n运镜指令：wide slow push shot, full woodland stream scenery, old log cabin with stacked firewood, shallow rocky stream, driftwood and thin grass bank, soft cool overcast natural daylight\n镜头 2｜4–9s 人物全身中景锁定\n镜头定格耶稣全身，微凉林间微风轻微吹动浅灰竖纹亚麻披衫与长卷发，身后木屋、木柴、溪流柔和虚化冷调散景，阴天柔光均匀铺在双层亚麻衣料\n运镜指令：full medium shot lock on calm downcast gentle facial expression, light grey striped linen shawl sway softly in forest breeze, blurry cabin firewood stream bokeh background\n镜头 3｜9–14s 水面木浮板丰收食材缓慢平移特写\n镜头缓缓贴近漂浮实木浮板，依次扫过藤篮面包、木桶、陶制点心盘、多彩葡萄，阴天冷柔光在面包、实木、果蔬表面形成哑光温润反光，清晰还原谷物、木器、果蔬细微纹理\n运镜指令：slow horizontal close-up pan, ultra detailed shot of rustic bread, wooden bucket and mixed fruit on floating solid wood raft, soft cool woodland overcast light reflect on all natural rustic textures\n镜头 4｜14–18s 小幅环绕收尾定格\n以蹲坐的耶稣与水面木浮板为中心轻微向右半环绕，完整带出整条浅溪、原木木屋、堆叠木柴与初春树林，画面边缘叠加浅冷灰复古暗角，静谧治愈林间水岸氛围定格收尾\n运镜指令：gentle slight half-orbit camera centered on squatting figure and floating wood raft, fully display shallow rocky stream, log cabin stacked firewood and early spring woodland background, soft cool muted vintage vignette fade to static frame",
       "taskId": "7747e29ae4f24b4cadc78e559de4c844",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-16T09:24:36.771Z",
-      "updatedAt": "2026-07-16T09:25:00.205Z"
+      "updatedAt": "2026-07-16T09:25:02.185Z"
     },
     {
       "id": "63185022-e575-4fb9-80ea-ef22ca5d5871",
