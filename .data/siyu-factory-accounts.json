@@ -79,6 +79,16 @@
       "credits": 0,
       "createdAt": "2026-07-16T09:10:01.615Z",
       "updatedAt": "2026-07-16T09:10:01.615Z"
+    },
+    {
+      "id": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "email": "1135361453@qq.com",
+      "name": "阎重谋",
+      "passwordHash": "0e30990e4f959a54184bd9246f792997:f3f916313ffd31235fd3edb32eca97bae6fa80cfeb300f5baf34e1c28dab837b08bcae9468991094cfeeed82644fd0400d70571f8d748892f39dda40e816d81b",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-16T09:10:25.215Z",
+      "updatedAt": "2026-07-16T09:10:25.215Z"
     }
   ],
   "sessions": [
@@ -147,6 +157,12 @@
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
       "expiresAt": "2026-07-23T09:10:01.919Z",
       "createdAt": "2026-07-16T09:10:01.919Z"
+    },
+    {
+      "token": "7d42e30c138c3ff29a6493b4cacb3569ecd6891d0c069b114bf70537df5199e7",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "expiresAt": "2026-07-23T09:10:25.426Z",
+      "createdAt": "2026-07-16T09:10:25.426Z"
     }
   ],
   "ledger": [
