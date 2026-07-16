@@ -116,9 +116,9 @@
       "name": "3cc",
       "passwordHash": "35c133450134f17118d01b10e9e81ca4:d410cc2946f69fdd389e17da020d373e96f84c64c26709a8785c549fcc4dcbf0df8836e079ce64c1226dfbcf091b6a024d85b4b90bd8580eb1ca711fa7e4be9e",
       "role": "user",
-      "credits": 0,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:11:31.620Z",
-      "updatedAt": "2026-07-16T09:11:31.620Z"
+      "updatedAt": "2026-07-16T09:14:00.875Z"
     },
     {
       "id": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
@@ -246,6 +246,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "579774e1-5872-4cf0-9475-dcc35de75aed",
+      "userId": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-16T09:14:00.875Z"
+    },
     {
       "id": "b71b2822-f475-4649-9090-944948e95b74",
       "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
