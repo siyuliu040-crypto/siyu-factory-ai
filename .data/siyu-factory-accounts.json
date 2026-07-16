@@ -5385,11 +5385,11 @@
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Create a 5-second natural cinematic animation from this image.\r\nThe woman should keep a calm, gentle, graceful presence, with her gaze softly lowered toward the basket of bread and fruit.\r\nHer movements should be subtle and realistic:\r\n\r\na slight downward head movement\r\nher eyes gently shift down and rest on the food in the basket\r\nthe hand placed on her chest shows subtle breathing movement, with tiny natural finger motion\r\nthe other hand near the basket remains relaxed, with slight natural wrist and finger adjustment\r\nher veil softly moves in a gentle breeze\r\na few loose strands of hair move slightly\r\nthe surrounding flowers and plants sway naturally in the wind\r\nthe halo behind her head glows softly with a very subtle shimmer\r\nthe grapes and bread remain stable and realistic, with soft sunlight reflections only\r\n\r\nCamera movement: a slow cinematic push-in toward her upper body and face.\r\nLighting should stay warm, soft, and golden, enhancing the peaceful emotional mood.\r\nStyle should be realistic, elegant, serene, and emotionally rich.\r\nAvoid exaggerated motion, dramatic expression changes, cartoon effects, or sudden scene changes.",
+      "prompt": "Create a 5-second natural cinematic animation from this image.\nThe woman should keep a calm, gentle, graceful presence, with her gaze softly lowered toward the basket of bread and fruit.\nHer movements should be subtle and realistic:\n\na slight downward head movement\nher eyes gently shift down and rest on the food in the basket\nthe hand placed on her chest shows subtle breathing movement, with tiny natural finger motion\nthe other hand near the basket remains relaxed, with slight natural wrist and finger adjustment\nher veil softly moves in a gentle breeze\na few loose strands of hair move slightly\nthe surrounding flowers and plants sway naturally in the wind\nthe halo behind her head glows softly with a very subtle shimmer\nthe grapes and bread remain stable and realistic, with soft sunlight reflections only\n\nCamera movement: a slow cinematic push-in toward her upper body and face.\nLighting should stay warm, soft, and golden, enhancing the peaceful emotional mood.\nStyle should be realistic, elegant, serene, and emotionally rich.\nAvoid exaggerated motion, dramatic expression changes, cartoon effects, or sudden scene changes.",
       "taskId": "e4f3e1a7c3e541cca3b0121f05c4c52b",
-      "status": "in_progress",
+      "status": "IN_PROGRESS",
       "createdAt": "2026-07-16T09:24:27.452Z",
-      "updatedAt": "2026-07-16T09:24:53.564Z"
+      "updatedAt": "2026-07-16T09:24:54.475Z"
     },
     {
       "id": "ca7529ab-ddc3-4da4-9bbc-f64399765a09",
