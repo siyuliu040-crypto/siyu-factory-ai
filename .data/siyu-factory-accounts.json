@@ -3778,10 +3778,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-16T09:24:49.638Z",
-      "updatedAt": "2026-07-16T09:24:49.638Z"
+      "updatedAt": "2026-07-16T09:28:06.227Z"
     },
     {
       "id": "7747e29ae4f24b4cadc78e559de4c844",
@@ -5365,9 +5365,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Photorealistic, cinematic, emotional, healing atmosphere, soft golden-hour lighting, subtle spiritual backlight, realistic skin texture, realistic hand movement, gentle breeze, no scene cuts, no subtitles, no text, no watermark.cartoon, anime, fake face, plastic skin, deformed hand, extra fingers, broken fingers, distorted face, stiff movement, unnatural reaching gesture, aggressive expression, evil eyes, shaky camera, blurry image, low resolution, flickering light, overexposed glow, too much halo, multiple people, duplicate body parts, text, subtitles, watermark, logo\n",
       "taskId": "516ee993c2964d04a493a79cf1972a4a",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-16T09:24:49.638Z",
-      "updatedAt": "2026-07-16T09:27:56.482Z"
+      "updatedAt": "2026-07-16T09:28:06.227Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/b958f414ec6a4ef0a0103e28d39d868e.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280469&Signature=YtXiGbcc2Plmiem83Vuz8jvN0V0%3D"
     },
     {
       "id": "28df4de0-1a10-447f-916e-aaa335725feb",
