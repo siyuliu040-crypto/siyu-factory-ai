@@ -3665,6 +3665,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_hodFltFF9UVTjs5WCaSn4L0uxw6qvwpN",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-16T09:21:24.218Z",
+      "updatedAt": "2026-07-16T09:21:24.218Z"
+    },
+    {
       "id": "32e7de1dd3b246788b93c8ce04a26204",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
       "type": "video",
@@ -5184,6 +5195,17 @@
     }
   ],
   "history": [
+    {
+      "id": "04bc04c0-b3dc-4ea9-8cb8-47244b43ecc4",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait",
+      "prompt": "Photorealistic, cinematic, emotional, healing atmosphere, soft golden-hour lighting, subtle spiritual backlight, realistic skin texture, realistic hand movement, gentle breeze, no scene cuts, no subtitles, no text, no watermark.cartoon, anime, fake face, plastic skin, deformed hand, extra fingers, broken fingers, distorted face, stiff movement, unnatural reaching gesture, aggressive expression, evil eyes, shaky camera, blurry image, low resolution, flickering light, overexposed glow, too much halo, multiple people, duplicate body parts, text, subtitles, watermark, logo",
+      "taskId": "task_hodFltFF9UVTjs5WCaSn4L0uxw6qvwpN",
+      "status": "queued",
+      "createdAt": "2026-07-16T09:21:24.218Z",
+      "updatedAt": "2026-07-16T09:21:24.218Z"
+    },
     {
       "id": "79544265-62a2-4b77-bec0-e14bed705b61",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
