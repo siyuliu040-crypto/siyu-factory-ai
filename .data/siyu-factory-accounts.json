@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 10000000000,
+      "credits": 9999970000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-16T09:13:46.534Z"
+      "updatedAt": "2026-07-16T09:21:03.853Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -252,6 +252,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "920545b2-0c75-421c-8850-9144f11aaf5b",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "amount": -30000,
+      "balanceAfter": 9999970000,
+      "reason": "video generation",
+      "createdAt": "2026-07-16T09:21:03.853Z",
+      "metadata": {
+        "model": "veo_3_1-fast-portrait",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "c51c046c-936f-44d8-9413-d50110bf7882",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
