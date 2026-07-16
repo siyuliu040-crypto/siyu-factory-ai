@@ -215,12 +215,6 @@
       "createdAt": "2026-07-16T09:10:25.426Z"
     },
     {
-      "token": "8d3434e635d877043869346163e5e6ab313a1f63fe8d39d3639573c8966556b6",
-      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
-      "expiresAt": "2026-07-23T09:11:01.520Z",
-      "createdAt": "2026-07-16T09:11:01.520Z"
-    },
-    {
       "token": "abdf7b38ba1b4a2b18486259f5091dbe8fbbdedefdced78e8320bd43b24a88bb",
       "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
       "expiresAt": "2026-07-23T09:11:07.618Z",
