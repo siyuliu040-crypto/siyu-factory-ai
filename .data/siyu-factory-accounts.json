@@ -3839,10 +3839,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-16T09:37:29.292Z",
-      "updatedAt": "2026-07-16T09:37:29.292Z"
+      "updatedAt": "2026-07-16T09:40:29.439Z"
     },
     {
       "id": "img_1784194270740_0b864e87ab56a",
@@ -5447,10 +5447,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate an 8-second vertical 9:16 cinematic photorealistic video.\n\nA compassionate adult man with shoulder-length dark wavy hair, a full beard, and a light beige robe stands in a peaceful golden field at sunset. He faces the camera with a soft, emotional, caring expression. His eyes are full of kindness, empathy, and comfort, as if he sees someone who is hurting and wants to help them.\n\nAt the beginning, he slowly extends one hand toward the camera, reaching out naturally as if inviting someone to come closer or offering help. His gesture should feel sincere, gentle, and comforting.\n\nHis eyes remain emotional and expressive. He looks directly into the viewer’s eyes with warmth and compassion. A soft radiant glow shines behind his back and shoulders, creating a subtle heavenly backlight. The glow should be warm, gentle, and spiritual, not too strong.\n\nA light breeze softly moves his hair and robe. The camera slowly pushes in for a more intimate and emotional feeling. The background is softly blurred with warm sunset tones and golden grass.\n\nHe speaks gently and clearly with natural lip movement, saying:\n“If you are tired, come closer. Help one another with love, and never turn away from someone in need. A kind hand can bring hope.”\n\nThe speaking should feel calm, warm, sincere, and comforting. His facial expression should match the meaning of the words.\n\nPhotorealistic skin texture, realistic hand anatomy, natural body movement, emotional eye expression, cinematic lighting, soft depth of field, stable camera, high detail, no subtitles, no text, no watermark, no extra people.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/6b2cba086cb644c9a064290dc2d90a5b.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784281216&Signature=KX4ukYhFj4smJA3CqunKnELcisQ%3D",
       "taskId": "46a68df682234165ae1e2fa916cc708b",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-16T09:37:29.292Z",
-      "updatedAt": "2026-07-16T09:40:20.266Z"
+      "updatedAt": "2026-07-16T09:40:29.439Z"
     },
     {
       "id": "e20baadc-518b-43c4-aaae-d88c4294c19b",
