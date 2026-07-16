@@ -116,9 +116,9 @@
       "name": "3cc",
       "passwordHash": "35c133450134f17118d01b10e9e81ca4:d410cc2946f69fdd389e17da020d373e96f84c64c26709a8785c549fcc4dcbf0df8836e079ce64c1226dfbcf091b6a024d85b4b90bd8580eb1ca711fa7e4be9e",
       "role": "user",
-      "credits": 20000000000,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:11:31.620Z",
-      "updatedAt": "2026-07-16T09:14:08.792Z"
+      "updatedAt": "2026-07-16T09:15:00.295Z"
     },
     {
       "id": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
@@ -252,6 +252,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "8247f021-0a1c-4284-8d27-7baaf6972645",
+      "userId": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": -10000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account deduction",
+      "createdAt": "2026-07-16T09:15:00.295Z"
+    },
     {
       "id": "c3604c9e-91a1-407e-b9bf-5f154d8b9cfd",
       "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
