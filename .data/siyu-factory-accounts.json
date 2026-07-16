@@ -86,9 +86,9 @@
       "name": "阎重谋",
       "passwordHash": "0e30990e4f959a54184bd9246f792997:f3f916313ffd31235fd3edb32eca97bae6fa80cfeb300f5baf34e1c28dab837b08bcae9468991094cfeeed82644fd0400d70571f8d748892f39dda40e816d81b",
       "role": "user",
-      "credits": 9977480000,
+      "credits": 9986480000,
       "createdAt": "2026-07-16T09:10:25.215Z",
-      "updatedAt": "2026-07-16T09:51:32.320Z"
+      "updatedAt": "2026-07-16T09:51:57.105Z"
     },
     {
       "id": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "17c994e4-588b-4675-98c4-bec437986219",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "amount": 9000000,
+      "balanceAfter": 9986480000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-16T09:51:57.105Z",
+      "metadata": {
+        "taskId": "1a3d191d67ae46a4b2179722c25b393b",
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "e3308269-461a-4114-a0b5-2a428f0d6849",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -3875,10 +3887,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-16T09:51:34.305Z",
-      "updatedAt": "2026-07-16T09:51:34.305Z"
+      "updatedAt": "2026-07-16T09:51:57.105Z"
     },
     {
       "id": "7839cdc94b5a4396a3afe9acb6d0f40e",
@@ -5506,9 +5518,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "将这张图片制作成8秒超写实电影视频。\n\n保持人物脸部、服装、场景完全一致。\n\n一个穿白色长袍的圣经人物站在巨大竞技场中。\n一个巨大的红色恶魔站在他身后，用强大的手臂控制并威胁他。\n\n开场：\n恶魔慢慢收紧手臂，靠近白衣男子。\n恶魔的红色皮肤、巨大犄角、肌肉纹理真实可见。\n黑色烟雾和红色能量围绕恶魔。\n\n白衣男子虽然害怕，但眼神坚定。\n他呼吸急促，表现出勇气和信仰。\n\n镜头缓慢推进到男子脸部。\n竞技场灯光闪烁，背景观众虚化。\n\n随后：\n男子慢慢抬头，看向镜头。\n\n嘴型同步说：\n\n\"If you want me to win, say amen and share this with your friends.\"\n\n最后：\n男子闭上眼睛祈祷。\n身体周围出现温暖金色光芒，与恶魔的黑红能量形成对比。\n恶魔露出震惊表情。\n\n真实人物动作，\n真实嘴型同步，\n电影级灯光，\n黑暗奇幻大片风格。",
       "taskId": "1a3d191d67ae46a4b2179722c25b393b",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-16T09:51:34.305Z",
-      "updatedAt": "2026-07-16T09:51:49.115Z"
+      "updatedAt": "2026-07-16T09:51:57.105Z",
+      "error": "\"Fusion 提交失败 [ErrCode=500044]: Reached the limit for concurrent generations.\""
     },
     {
       "id": "338eef7e-00f1-4fd2-9eea-20924aa097bf",
