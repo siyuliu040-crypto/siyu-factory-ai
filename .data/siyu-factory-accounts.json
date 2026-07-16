@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9991000000,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-16T09:53:56.392Z"
+      "updatedAt": "2026-07-16T09:54:38.083Z"
     }
   ],
   "sessions": [
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "060599f0-68c5-4431-b1a9-2e66ddd35661",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 9000000,
+      "balanceAfter": 10000000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-16T09:54:38.083Z",
+      "metadata": {
+        "taskId": "198c58b2479a478d9cc5d2110fd91375",
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "94c01a2f-49cf-49af-b0d5-8baafb656877",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -3899,10 +3911,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 9000000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-16T09:53:58.177Z",
-      "updatedAt": "2026-07-16T09:53:58.177Z"
+      "updatedAt": "2026-07-16T09:54:38.083Z"
     },
     {
       "id": "1a3d191d67ae46a4b2179722c25b393b",
@@ -5541,9 +5553,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "Use the uploaded adult Black woman as the exact character and beach reference.\n\nCreate a realistic vertical beach video, 1080 × 1920, 9:16.\n\nThe woman stays seated on the towel, looks at the camera, turns toward the ocean, then looks back. She gently adjusts her curls, touches her sunglasses and slightly changes her posture.\n\nHer shoulders, chest, waist, arms, hair and swimsuit fabric move naturally with breathing and the sea breeze. Use normal speed, soft connected movement and no slow motion.\n\nEye-level three-quarter shot, natural distance, subtle handheld phone movement, soft focus and low sharpening. Keep natural pores and matte skin; no glossy, plastic or overly smooth skin.\n\nAdd soft summer R&B instrumental music with ocean and wind ambience.\n\nKeep her face, body, outfit and beach consistent.\n\nNo standing, full turn, exaggerated shaking, face change, deformed hands, subtitles, logos or watermark.",
       "taskId": "198c58b2479a478d9cc5d2110fd91375",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"Fusion 提交失败 [ErrCode=500044]: Reached the limit for concurrent generations.\"",
       "createdAt": "2026-07-16T09:53:58.177Z",
-      "updatedAt": "2026-07-16T09:54:29.143Z"
+      "updatedAt": "2026-07-16T09:54:38.083Z"
     },
     {
       "id": "ce8b62d6-6863-4946-8d32-5ecf12d2f07b",
