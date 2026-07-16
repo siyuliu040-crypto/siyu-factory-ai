@@ -115,10 +115,10 @@
       "email": "474907219@qq.com",
       "name": "3cc",
       "passwordHash": "35c133450134f17118d01b10e9e81ca4:d410cc2946f69fdd389e17da020d373e96f84c64c26709a8785c549fcc4dcbf0df8836e079ce64c1226dfbcf091b6a024d85b4b90bd8580eb1ca711fa7e4be9e",
-      "role": "admin",
+      "role": "user",
       "credits": 9986500000,
       "createdAt": "2026-07-16T09:11:31.620Z",
-      "updatedAt": "2026-07-16T09:33:16.877Z"
+      "updatedAt": "2026-07-16T09:33:26.165Z"
     },
     {
       "id": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
