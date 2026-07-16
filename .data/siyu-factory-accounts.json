@@ -86,9 +86,9 @@
       "name": "阎重谋",
       "passwordHash": "0e30990e4f959a54184bd9246f792997:f3f916313ffd31235fd3edb32eca97bae6fa80cfeb300f5baf34e1c28dab837b08bcae9468991094cfeeed82644fd0400d70571f8d748892f39dda40e816d81b",
       "role": "user",
-      "credits": 0,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:10:25.215Z",
-      "updatedAt": "2026-07-16T09:10:25.215Z"
+      "updatedAt": "2026-07-16T09:13:40.969Z"
     },
     {
       "id": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -234,6 +234,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "88824ce5-4800-47e9-a139-8c2840e0b4bd",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-16T09:13:40.969Z"
+    },
     {
       "id": "921e50c7-b844-4f78-88ac-0dad968760b7",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
