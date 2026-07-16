@@ -5365,9 +5365,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Photorealistic, cinematic, emotional, healing atmosphere, soft golden-hour lighting, subtle spiritual backlight, realistic skin texture, realistic hand movement, gentle breeze, no scene cuts, no subtitles, no text, no watermark.cartoon, anime, fake face, plastic skin, deformed hand, extra fingers, broken fingers, distorted face, stiff movement, unnatural reaching gesture, aggressive expression, evil eyes, shaky camera, blurry image, low resolution, flickering light, overexposed glow, too much halo, multiple people, duplicate body parts, text, subtitles, watermark, logo",
       "taskId": "516ee993c2964d04a493a79cf1972a4a",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-16T09:24:49.638Z",
-      "updatedAt": "2026-07-16T09:24:49.638Z"
+      "updatedAt": "2026-07-16T09:25:05.127Z"
     },
     {
       "id": "28df4de0-1a10-447f-916e-aaa335725feb",
