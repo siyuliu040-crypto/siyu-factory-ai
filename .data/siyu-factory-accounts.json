@@ -69,6 +69,16 @@
       "credits": 0,
       "createdAt": "2026-07-07T10:53:59.446Z",
       "updatedAt": "2026-07-07T10:53:59.446Z"
+    },
+    {
+      "id": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
+      "email": "2220280037@qq.com",
+      "name": "LYB",
+      "passwordHash": "be74a5320d8effba4a36c7eba93e5267:3360b6905c609fd00b239e1e6b389c34762d748171e21492ace5dfd6c8b435e6a0f20464a8de07bfc753331a8f1126720a9b34ba620445bcfb4f3beff3e73b6b",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-16T09:10:01.615Z",
+      "updatedAt": "2026-07-16T09:10:01.615Z"
     }
   ],
   "sessions": [
@@ -131,6 +141,12 @@
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-07-23T08:59:38.472Z",
       "createdAt": "2026-07-16T08:59:38.472Z"
+    },
+    {
+      "token": "0c1ccc4898370de0c60ba82da57e1868ddca7c1b4b7e0ec75cf8a26dff9245ce",
+      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
+      "expiresAt": "2026-07-23T09:10:01.919Z",
+      "createdAt": "2026-07-16T09:10:01.919Z"
     }
   ],
   "ledger": [
