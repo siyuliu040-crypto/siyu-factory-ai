@@ -478,6 +478,122 @@ button:disabled {
   font-weight: 800;
 }
 
+.account-info-block {
+  min-width: 0;
+}
+
+.profile-name-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.profile-name-input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 8px 10px;
+}
+
+.profile-name-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(91, 82, 232, 0.12);
+}
+
+.profile-message {
+  color: var(--accent-dark) !important;
+  font-weight: 800;
+}
+
+.usage-panel {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid #e5eaf2;
+  padding-top: 12px;
+}
+
+.usage-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.usage-total-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.usage-total-grid > div {
+  border: 1px solid #e4e9f2;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+}
+
+.usage-total-grid span,
+.usage-row span,
+.usage-row small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.usage-total-grid strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.15;
+}
+
+.usage-list {
+  display: grid;
+  gap: 8px;
+  max-height: 280px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.usage-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  border: 1px solid #e8edf5;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 10px;
+}
+
+.usage-row strong,
+.usage-row small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.usage-row strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.usage-empty {
+  color: var(--muted);
+}
+
 .quota-card strong {
   display: block;
   font-size: 20px;
@@ -509,6 +625,11 @@ button:disabled {
 .icon-button:hover {
   border-color: var(--accent);
   color: var(--accent-dark);
+}
+
+.icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.46;
 }
 
 .topup-button {
@@ -2424,7 +2545,9 @@ button.status-pill {
 
   .credit-preview-grid,
   .grant-actions,
-  .user-admin-actions {
+  .user-admin-actions,
+  .usage-total-grid,
+  .usage-row {
     grid-template-columns: 1fr;
   }
 

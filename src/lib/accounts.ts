@@ -339,6 +339,16 @@ export function deleteAccountUser(state: AccountState, input: { actorId: string;
   return { deletedUser: toPublicUser(user), users: state.users.map(toPublicUser) };
 }
 
+export function updateAccountName(state: AccountState, input: { userId: string; name: string }) {
+  const name = input.name.trim().slice(0, 32);
+  if (name.length < 1) throw new AccountError("invalid_name", "Name cannot be empty.", 400);
+  const user = state.users.find((item) => item.id === input.userId);
+  if (!user) throw new AccountError("user_not_found", "User not found.", 404);
+  user.name = name;
+  user.updatedAt = nowIso();
+  return { user: toPublicUser(user) };
+}
+
 export function registerAccount(state: AccountState, input: RegisterInput) {
   const email = normalizeEmail(input.email);
   const password = input.password.trim();

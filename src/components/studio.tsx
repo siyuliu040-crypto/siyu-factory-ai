@@ -6,6 +6,7 @@ import {
   Clapperboard,
   CreditCard,
   Download,
+  Edit3,
   ExternalLink,
   Film,
   FolderOpen,
@@ -21,6 +22,7 @@ import {
   Plus,
   Play,
   RefreshCw,
+  Save,
   Shield,
   ShoppingBag,
   Sparkles,
@@ -156,6 +158,31 @@ type AuthSession = {
   adminId?: string;
   ledger?: LedgerEntry[];
   storage?: { persistent?: boolean; label?: string };
+};
+
+type UsageSummary = {
+  date: string;
+  totals: {
+    spent: number;
+    refunded: number;
+    netSpent: number;
+    tasks: number;
+  };
+  users: Array<{
+    user: AccountUser;
+    date: string;
+    spent: number;
+    refunded: number;
+    netSpent: number;
+    adminAdded: number;
+    adminSubtracted: number;
+    tasks: {
+      total: number;
+      completed: number;
+      failed: number;
+      running: number;
+    };
+  }>;
 };
 
 type GenerationStatus = {
@@ -464,6 +491,19 @@ const copy = {
     memberRole: "成员",
     name: "昵称",
     email: "邮箱",
+    editName: "修改昵称",
+    saveName: "保存昵称",
+    nameSaved: "昵称已更新",
+    namePlaceholder: "输入新昵称",
+    usageToday: "今日积分使用",
+    spentToday: "今日消耗",
+    refundedToday: "失败返还",
+    netSpentToday: "实际消耗",
+    tasksToday: "今日任务",
+    usageEmpty: "今日暂无使用记录",
+    completedTasks: "完成",
+    failedTasks: "失败",
+    runningTasks: "进行中",
     premiumTiktok: "优质 TikTok 账号",
     tiktokWorkspace: "优质 TikTok 账号",
     tiktokAvatar: "T",
@@ -604,6 +644,19 @@ const copy = {
     memberRole: "Member",
     name: "Name",
     email: "Email",
+    editName: "Edit name",
+    saveName: "Save name",
+    nameSaved: "Name updated",
+    namePlaceholder: "Enter a new name",
+    usageToday: "Today's credit usage",
+    spentToday: "Spent today",
+    refundedToday: "Failed refunds",
+    netSpentToday: "Net spent",
+    tasksToday: "Tasks today",
+    usageEmpty: "No usage today",
+    completedTasks: "Completed",
+    failedTasks: "Failed",
+    runningTasks: "Running",
     premiumTiktok: "Premium TikTok Accounts",
     tiktokWorkspace: "Premium TikTok Accounts",
     tiktokAvatar: "T",
@@ -819,9 +872,10 @@ function getModelDescription(model: string, language: Language) {
     const audioHint = hfsyModel.upstreamModel === "sora-2"
       ? language === "zh" ? "含口播时启用音频" : "audio when speech is requested"
       : "";
+    const siteCredits = Math.round(hfsyModel.upstreamPrice * 10);
     return language === "zh"
-      ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY 上游 · 上游价 ${hfsyModel.upstreamPrice}`
-      : `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY upstream · upstream ${hfsyModel.upstreamPrice}`;
+      ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY 上游 · 上游价 ¥${hfsyModel.upstreamPrice} · ${siteCredits} 积分`
+      : `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY upstream · upstream ¥${hfsyModel.upstreamPrice} · ${siteCredits} credits`;
   }
   if (lower.startsWith("vidu:")) {
     const family = lower.includes("q2") ? "Q2" : "Q3";
@@ -1483,9 +1537,13 @@ export default function Studio() {
   const [authMode, setAuthMode] = useState<"login" | "register">("login");
   const [authForm, setAuthForm] = useState({ email: "", name: "", password: "" });
   const [authError, setAuthError] = useState("");
+  const [profileName, setProfileName] = useState("");
+  const [profileMessage, setProfileMessage] = useState("");
+  const [isSavingProfile, setIsSavingProfile] = useState(false);
   const [grantUserId, setGrantUserId] = useState("");
   const [grantAmount, setGrantAmount] = useState("120");
   const [grantMessage, setGrantMessage] = useState("");
+  const [usageSummary, setUsageSummary] = useState<UsageSummary | null>(null);
   const [tiktokInventory, setTiktokInventory] = useState<TiktokInventory>(() => createInitialTiktokInventory());
   const [tiktokActiveCategory, setTiktokActiveCategory] = useState<TiktokCategory>("full-moon");
   const [tiktokMessage, setTiktokMessage] = useState("");
@@ -1578,6 +1636,7 @@ export default function Studio() {
   const resolutionOptions = mode === "video" ? getResolutionOptions(videoModel, language) : [];
   const normalizedVideoSize = normalizeResolutionForModel(videoModel, videoSize, language);
   const activeModelCost = getCreditCost(activeModel, mode === "video" ? seconds : undefined, mode === "video" ? normalizedVideoSize : undefined);
+
   const deepSeekCost = getCreditCost(deepSeekModel);
   const activeWorkspaceModel = isTiktokWorkspace ? "TikTok Inventory" : isDeepSeekWorkspace ? deepSeekModel : activeModel;
   const activeWorkspaceCost = isTiktokWorkspace ? 0 : isDeepSeekWorkspace ? deepSeekCost : activeModelCost;
@@ -1616,6 +1675,9 @@ export default function Studio() {
   const grantInternalAmount = parseDisplayCredits(grantAmount);
   const addPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits + grantInternalAmount : undefined;
   const subtractPreviewCredits = selectedGrantUser && grantInternalAmount ? selectedGrantUser.credits - grantInternalAmount : undefined;
+  const usageRows = (usageSummary?.users || [])
+    .filter((item) => item.spent || item.refunded || item.tasks.total)
+    .sort((left, right) => right.spent - left.spent || right.refunded - left.refunded || right.tasks.total - left.tasks.total);
   const productionTotalCost = isTiktokWorkspace ? 0 : isDeepSeekWorkspace ? deepSeekCost : isBatchWorkspace ? batchCreditTotal || activeModelCost : activeModelCost;
   const productionTotalLabel = isTiktokWorkspace ? tx("inventoryRows", "库存数量") : isBatchWorkspace ? tx("batchTotal", "本批总计") : tx("currentTaskCost", "当前任务");
   const workspaceCapacity = isBatchWorkspace ? MAX_BATCH_VIDEOS : isTiktokWorkspace ? tiktokInventory[tiktokActiveCategory].length || 1 : 1;
@@ -1787,15 +1849,22 @@ export default function Studio() {
       const response = await fetch("/api/auth/session", { cache: "no-store" });
       const payload = (await response.json()) as AuthSession;
       setSession(payload);
+      setProfileName(payload.user?.name || "");
       if (payload.authenticated) {
         if (payload.user?.id && payload.adminId === payload.user.id) {
           void refreshQuota(false);
         } else {
           setQuota(null);
         }
+        if (payload.user?.role === "admin") {
+          void refreshUsageSummary();
+        } else {
+          setUsageSummary(null);
+        }
         void refreshHistory();
       } else {
         setHistory([]);
+        setUsageSummary(null);
       }
     } catch {
       setSession({ authenticated: false });
@@ -1846,6 +1915,42 @@ export default function Studio() {
     }
   }
 
+  async function refreshUsageSummary() {
+    try {
+      const response = await fetch("/api/admin/usage", { cache: "no-store" });
+      const payload = (await response.json()) as UsageSummary;
+      if (!response.ok) throw new Error(JSON.stringify(payload));
+      setUsageSummary(payload);
+    } catch {
+      setUsageSummary(null);
+    }
+  }
+
+  async function saveProfileName() {
+    const nextName = profileName.trim();
+    if (!nextName) {
+      setProfileMessage(tx("namePlaceholder", "输入新昵称"));
+      return;
+    }
+    setIsSavingProfile(true);
+    setProfileMessage("");
+    try {
+      const response = await fetch("/api/account/profile", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: nextName })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.message || payload.error || "Profile update failed");
+      await refreshSession();
+      setProfileMessage(tx("nameSaved", "昵称已更新"));
+    } catch (caught) {
+      setProfileMessage(cleanErrorMessage(stringifyError(caught), language));
+    } finally {
+      setIsSavingProfile(false);
+    }
+  }
+
   async function adjustUserCredits(operation: "add" | "subtract") {
     if (!isAdmin) {
       setGrantMessage(tx("adminOnly", "只有主账号可以操作积分。"));
@@ -1874,6 +1979,7 @@ export default function Studio() {
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.message || payload.error || "Credit allocation failed");
       await refreshSession();
+      void refreshUsageSummary();
       setGrantMessage(operation === "subtract" ? tx("subtractSuccess", "积分已扣减") : tx("grantSuccess", "积分已增加"));
     } catch (caught) {
       setGrantMessage(cleanErrorMessage(stringifyError(caught), language));
@@ -2746,13 +2852,32 @@ export default function Studio() {
           </nav>
 
           <div className="account-card">
-            <div>
+            <div className="account-info-block">
               <span className="section-label compact">
                 {isAdmin ? <Shield size={14} /> : <User size={14} />}
                 {isAdmin ? tx("adminAccount", "管理员") : tx("memberAccount", "成员账号")}
               </span>
-              <strong>{currentUser.name}</strong>
+              <div className="profile-name-row">
+                <input
+                  aria-label={tx("editName", "修改昵称")}
+                  className="profile-name-input"
+                  maxLength={32}
+                  onChange={(event) => setProfileName(event.target.value)}
+                  placeholder={tx("namePlaceholder", "输入新昵称")}
+                  value={profileName}
+                />
+                <button
+                  className="icon-button"
+                  disabled={isSavingProfile || !profileName.trim() || profileName.trim() === currentUser.name}
+                  onClick={() => void saveProfileName()}
+                  title={tx("saveName", "保存昵称")}
+                  type="button"
+                >
+                  {isSavingProfile ? <Loader2 size={15} /> : profileName.trim() === currentUser.name ? <Edit3 size={15} /> : <Save size={15} />}
+                </button>
+              </div>
               <small>{currentUser.email}</small>
+              {profileMessage ? <small className="profile-message">{profileMessage}</small> : null}
             </div>
             <button className="icon-button" onClick={() => void logout()} title={tx("logout", "退出登录")} type="button">
               <LogOut size={16} />
@@ -2841,6 +2966,47 @@ export default function Studio() {
                           ? tx("insufficientAfterSubtract", "积分不足")
                           : formatDisplayCredits(subtractPreviewCredits)}
                     </strong>
+                  </div>
+                </div>
+
+                <div className="usage-panel">
+                  <div className="usage-panel-head">
+                    <span className="section-label compact"><Activity size={14} />{tx("usageToday", "今日积分使用")}</span>
+                    <button className="text-button" onClick={() => void refreshUsageSummary()} type="button">{tx("refreshAccount", "刷新账号")}</button>
+                  </div>
+                  {usageSummary ? (
+                    <div className="usage-total-grid">
+                      <div>
+                        <span>{tx("spentToday", "今日消耗")}</span>
+                        <strong>{formatDisplayCredits(usageSummary.totals.spent)}</strong>
+                      </div>
+                      <div>
+                        <span>{tx("refundedToday", "失败返还")}</span>
+                        <strong>{formatDisplayCredits(usageSummary.totals.refunded)}</strong>
+                      </div>
+                      <div>
+                        <span>{tx("netSpentToday", "实际消耗")}</span>
+                        <strong>{formatDisplayCredits(usageSummary.totals.netSpent)}</strong>
+                      </div>
+                    </div>
+                  ) : null}
+                  <div className="usage-list">
+                    {usageRows.length ? usageRows.map((item) => (
+                      <div className="usage-row" key={item.user.id}>
+                        <div>
+                          <strong>{item.user.name}</strong>
+                          <small>{item.user.email}</small>
+                        </div>
+                        <span>{tx("spentToday", "今日消耗")} {formatDisplayCredits(item.spent)}</span>
+                        <span>{tx("refundedToday", "失败返还")} {formatDisplayCredits(item.refunded)}</span>
+                        <span>
+                          {tx("tasksToday", "今日任务")} {item.tasks.total}
+                          <small>{tx("completedTasks", "完成")} {item.tasks.completed} / {tx("failedTasks", "失败")} {item.tasks.failed} / {tx("runningTasks", "进行中")} {item.tasks.running}</small>
+                        </span>
+                      </div>
+                    )) : (
+                      <small className="usage-empty">{tx("usageEmpty", "今日暂无使用记录")}</small>
+                    )}
                   </div>
                 </div>
 
