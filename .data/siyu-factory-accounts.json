@@ -4010,7 +4010,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-07-16T11:12:25.604Z",
-      "updatedAt": "2026-07-16T11:13:24.975Z"
+      "updatedAt": "2026-07-16T11:13:38.915Z"
     },
     {
       "id": "task_fviX4dYPhyBh523fc6k0nnEbzJkcYWHA",
@@ -5706,7 +5706,7 @@
       "taskId": "task_9t6sCw8HQpr0aDmOGzxREKY3fpnqhYnp",
       "status": "failed",
       "createdAt": "2026-07-16T11:12:25.604Z",
-      "updatedAt": "2026-07-16T11:13:24.976Z",
+      "updatedAt": "2026-07-16T11:13:38.915Z",
       "error": "{\"message\":\"{\\n  \\\"error\\\": {\\n    \\\"code\\\": 500,\\n    \\\"message\\\": \\\"Internal error encountered.\\\",\\n    \\\"status\\\": \\\"INTERNAL\\\"\\n  }\\n}\\n\"}"
     },
     {
