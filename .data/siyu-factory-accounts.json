@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019741017680,
+      "credits": 2000019741047680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-16T11:10:38.922Z"
+      "updatedAt": "2026-07-16T11:11:24.329Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "b1f11abc-e2f7-4316-a246-695f30a2d481",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 30000,
+      "balanceAfter": 2000019741047680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-16T11:11:24.329Z",
+      "metadata": {
+        "taskId": "task_fviX4dYPhyBh523fc6k0nnEbzJkcYWHA",
+        "model": "veo_3_1-fast-portrait"
+      }
+    },
     {
       "id": "5d44730f-02c2-4a82-83d3-f2be6fcb7848",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -3971,10 +3983,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait",
       "amount": 30000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-16T11:10:40.474Z",
-      "updatedAt": "2026-07-16T11:10:40.474Z"
+      "updatedAt": "2026-07-16T11:11:24.329Z"
     },
     {
       "id": "task_0kiutd2Tl3AgOyjJyMrOX4Kz54fJNQCK",
@@ -5657,9 +5669,10 @@
       "model": "veo_3_1-fast-portrait",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "task_fviX4dYPhyBh523fc6k0nnEbzJkcYWHA",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-07-16T11:10:40.474Z",
-      "updatedAt": "2026-07-16T11:11:16.074Z"
+      "updatedAt": "2026-07-16T11:11:24.329Z",
+      "error": "{\"message\":\"{\\n  \\\"error\\\": {\\n    \\\"code\\\": 500,\\n    \\\"message\\\": \\\"Internal error encountered.\\\",\\n    \\\"status\\\": \\\"INTERNAL\\\"\\n  }\\n}\\n\"}"
     },
     {
       "id": "f968307e-519d-41fa-b9d4-39f8714ce2e5",
