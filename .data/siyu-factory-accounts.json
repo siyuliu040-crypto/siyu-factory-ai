@@ -3773,6 +3773,17 @@
   ],
   "generationTasks": [
     {
+      "id": "516ee993c2964d04a493a79cf1972a4a",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 13500000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-16T09:24:49.638Z",
+      "updatedAt": "2026-07-16T09:24:49.638Z"
+    },
+    {
       "id": "7747e29ae4f24b4cadc78e559de4c844",
       "userId": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
       "type": "video",
@@ -5347,6 +5358,17 @@
     }
   ],
   "history": [
+    {
+      "id": "2cb4aafb-f720-434a-a93c-8a168844e434",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Photorealistic, cinematic, emotional, healing atmosphere, soft golden-hour lighting, subtle spiritual backlight, realistic skin texture, realistic hand movement, gentle breeze, no scene cuts, no subtitles, no text, no watermark.cartoon, anime, fake face, plastic skin, deformed hand, extra fingers, broken fingers, distorted face, stiff movement, unnatural reaching gesture, aggressive expression, evil eyes, shaky camera, blurry image, low resolution, flickering light, overexposed glow, too much halo, multiple people, duplicate body parts, text, subtitles, watermark, logo",
+      "taskId": "516ee993c2964d04a493a79cf1972a4a",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-16T09:24:49.638Z",
+      "updatedAt": "2026-07-16T09:24:49.638Z"
+    },
     {
       "id": "28df4de0-1a10-447f-916e-aaa335725feb",
       "userId": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
