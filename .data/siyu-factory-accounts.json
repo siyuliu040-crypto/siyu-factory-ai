@@ -56,9 +56,9 @@
       "name": "xue717",
       "passwordHash": "b56f87d7d263968f3a6aece88d222303:733f4066e8a966039bc53a11ecbfbbf78592942f6b0a45637887052123f5c141182bbed1e223a20abf97ad47d4ee5bb7ba67f66219520c98606ffe0f9737c755",
       "role": "user",
-      "credits": 0,
+      "credits": 10000000000,
       "createdAt": "2026-07-07T06:57:28.704Z",
-      "updatedAt": "2026-07-07T06:57:28.704Z"
+      "updatedAt": "2026-07-16T09:13:23.403Z"
     },
     {
       "id": "d0202670-2e5b-4cd2-aefc-156e9f75a09b",
@@ -240,6 +240,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "dbf7cc63-a73b-46f8-8839-8043196c6091",
+      "userId": "a19865ba-3d59-4ebf-bb88-76da60780a9d",
+      "adminId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000000000,
+      "balanceAfter": 10000000000,
+      "reason": "main account allocation",
+      "createdAt": "2026-07-16T09:13:23.403Z"
+    },
     {
       "id": "f4750c7a-f2c2-4370-8a5b-e6cf275b3f95",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
