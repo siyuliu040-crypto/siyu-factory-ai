@@ -76,9 +76,9 @@
       "name": "LYB",
       "passwordHash": "be74a5320d8effba4a36c7eba93e5267:3360b6905c609fd00b239e1e6b389c34762d748171e21492ace5dfd6c8b435e6a0f20464a8de07bfc753331a8f1126720a9b34ba620445bcfb4f3beff3e73b6b",
       "role": "user",
-      "credits": 9986500000,
+      "credits": 9973000000,
       "createdAt": "2026-07-16T09:10:01.615Z",
-      "updatedAt": "2026-07-16T09:22:09.396Z"
+      "updatedAt": "2026-07-16T09:24:07.851Z"
     },
     {
       "id": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -288,6 +288,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "e20cc1ea-19aa-4411-bbdb-94695600f0f1",
+      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
+      "amount": -13500000,
+      "balanceAfter": 9973000000,
+      "reason": "video generation",
+      "createdAt": "2026-07-16T09:24:07.851Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "611b12bc-15df-4c4d-92e1-a32aad8f887e",
       "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
