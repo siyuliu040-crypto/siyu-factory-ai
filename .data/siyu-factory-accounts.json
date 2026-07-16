@@ -129,6 +129,16 @@
       "credits": 0,
       "createdAt": "2026-07-16T09:11:46.539Z",
       "updatedAt": "2026-07-16T09:11:46.539Z"
+    },
+    {
+      "id": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
+      "email": "1269706474@qq.com",
+      "name": "我是王晨",
+      "passwordHash": "98f6d182dd95ad1a8df0bd7b2f404526:e77d04ef7bae0725ece521dd755470148e730fd14c316b0db1f9ad0b5e87ebbb6fb891087493447537ccd2e5b0dce16be0ef79c126882280f33f29455cd26a60",
+      "role": "user",
+      "credits": 0,
+      "createdAt": "2026-07-16T09:12:09.707Z",
+      "updatedAt": "2026-07-16T09:12:09.707Z"
     }
   ],
   "sessions": [
@@ -227,6 +237,12 @@
       "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
       "expiresAt": "2026-07-23T09:11:46.719Z",
       "createdAt": "2026-07-16T09:11:46.719Z"
+    },
+    {
+      "token": "4f8cb7ed1fd52e9130ca1ce4698f8f8b061101c4f11cfab01b20a689336aedaa",
+      "userId": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
+      "expiresAt": "2026-07-23T09:12:09.825Z",
+      "createdAt": "2026-07-16T09:12:09.825Z"
     }
   ],
   "ledger": [
