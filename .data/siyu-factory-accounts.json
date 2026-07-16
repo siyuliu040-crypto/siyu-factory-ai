@@ -3786,10 +3786,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 13500000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-16T09:20:08.796Z",
-      "updatedAt": "2026-07-16T09:20:08.796Z"
+      "updatedAt": "2026-07-16T09:23:54.529Z"
     },
     {
       "id": "85b7c672465845fdb8b45673a8d3be9e",
@@ -5342,9 +5342,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "镜头规格：腰部以上中景、平视机位固定，全程一镜到底，人物样貌、发型、背景光影色调保持不变，无道具无麦克风，\n硬性要求General 设置（全视频）：时长8秒，宽高比9:16，分辨率1080×1920，帧率30fps。严格保留参考图中的人物脸部特征、五官比例、背景环境、光影关系、色调风格、画面层次、分辨率和整体氛围，不改变人物长相与发型，不改变场景，不改变构图！\n画面：腰部以上中景，平视固定机位，一镜到底。女子佩戴长款卷发假发，起初背对镜头，快速 180 度转身面向镜头，发丝飘逸，面带自信笑容。随后手指梳理卷发，侧身展现灵动神态，抬手捧起并晃动发丝，再快速甩动头部。最后缓缓转身，卷发随动作轻盈摆动、以完整的背部发型作为收尾画面。整体光线明亮柔和且均匀，人物样貌、发型、背景全程保持不变，活力短视频风格，写实高清画质，无麦克风、无额外道具，重点突出发丝动态，人物说话时口型自然。\n\n动作：背身入场→快速转身亮相→手梳卷发→侧身展示→捧发晃动→快速甩头→慢转身体，发丝随风飘动，定格背部造型\n\n模特全部口播台词：（对着镜头挑眉，手抓着卷发甩一下，超自信）Hey my ladies,y'all see this hair?! gorgeous!(语气带点又气又好笑的得意）yesterday, All the girls were swarmin' me like, 'GIRL, WHO DID YOUR HAIR?!'\n模特正对镜头，眼睛亮晶晶的，语气直接拉高，带着点小兴奋,边拨弄头发边侧身，模仿别人围过来搭话的样子，语气越来越夸张\n\n提示词：\nMedium shot, eye-level fixed camera, one continuous shot, same woman with long curly wig. She starts with her back to the camera, quickly turning 180 degrees to face forward with flowing hair and a confident smile. Then she runs fingers through curls, leans sideward with vivid expression, holds and shakes hair strands, and does a fast head toss. Finally she turns around slowly, long curls billow and swirl gracefully with the movement, creating strong dynamic hair effects while showing a full back view of the hairstyle as the ending shot. Bright soft even lighting, unchanged background, original facial features and hairstyle, energetic vlog style, realistic high resolution, no microphone and props, focus on dynamic hair movement, natural lip movement, vivid hair motion throughout the whole scene while speaking.\n\n",
       "taskId": "f3416418288c49468da73a2baa69cba2",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-16T09:20:08.796Z",
-      "updatedAt": "2026-07-16T09:23:31.754Z"
+      "updatedAt": "2026-07-16T09:23:54.529Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/e37f79a20b794fde9ec18930d1cafdd9.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280190&Signature=NTv5HV9OrtnDJHYHG%2FOZ5DunZV4%3D"
     },
     {
       "id": "8c5a9f3c-b1ae-44ef-b452-7a2af332dbd0",
