@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 9999970000,
+      "credits": 10000000000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-16T09:21:03.853Z"
+      "updatedAt": "2026-07-16T09:23:03.477Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -288,6 +288,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "063c236c-cd27-447b-bf42-b2c476f203aa",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "amount": 30000,
+      "balanceAfter": 10000000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-16T09:23:03.477Z",
+      "metadata": {
+        "taskId": "task_hodFltFF9UVTjs5WCaSn4L0uxw6qvwpN",
+        "model": "veo_3_1-fast-portrait"
+      }
+    },
     {
       "id": "9b0eab91-9d96-4472-9226-b2a4d0b9595f",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
@@ -3729,10 +3741,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait",
       "amount": 30000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-16T09:21:24.218Z",
-      "updatedAt": "2026-07-16T09:21:24.218Z"
+      "updatedAt": "2026-07-16T09:23:03.477Z"
     },
     {
       "id": "32e7de1dd3b246788b93c8ce04a26204",
@@ -5272,9 +5284,10 @@
       "model": "veo_3_1-fast-portrait",
       "prompt": "Photorealistic, cinematic, emotional, healing atmosphere, soft golden-hour lighting, subtle spiritual backlight, realistic skin texture, realistic hand movement, gentle breeze, no scene cuts, no subtitles, no text, no watermark.cartoon, anime, fake face, plastic skin, deformed hand, extra fingers, broken fingers, distorted face, stiff movement, unnatural reaching gesture, aggressive expression, evil eyes, shaky camera, blurry image, low resolution, flickering light, overexposed glow, too much halo, multiple people, duplicate body parts, text, subtitles, watermark, logo\n",
       "taskId": "task_hodFltFF9UVTjs5WCaSn4L0uxw6qvwpN",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-07-16T09:21:24.218Z",
-      "updatedAt": "2026-07-16T09:22:16.329Z"
+      "updatedAt": "2026-07-16T09:23:03.477Z",
+      "error": "{\"message\":\"{\\n  \\\"error\\\": {\\n    \\\"code\\\": 500,\\n    \\\"message\\\": \\\"Internal error encountered.\\\",\\n    \\\"status\\\": \\\"INTERNAL\\\"\\n  }\\n}\\n\"}"
     },
     {
       "id": "79544265-62a2-4b77-bec0-e14bed705b61",
