@@ -8446,65 +8446,6 @@
   ],
   "history": [
     {
-      "id": "9b130a88-d07e-479c-908c-79afc59393d4",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 TikTok UGC lifestyle selfie video.\n\nKeep:\nsame woman identity,\nsame face features,\nsame hairstyle,\nsame white lace tank top,\nsame denim shorts,\nsame outdoor cafe environment,\nsame body proportions.\n\nA young woman is sitting at an outdoor cafe on a sunny day, casually recording a selfie video.\n\nMotion:\nAt the beginning, she looks away from the camera toward the cafe surroundings, enjoying the moment.\nA gentle breeze moves a few loose strands of her hair.\nShe slowly turns her face back toward the phone camera,\nsmiles naturally,\nslightly adjusts her hair with one hand,\nthen takes a small sip from her drink.\n\nHer expression should feel natural:\nrelaxed eyes,\nsoft smile,\nconfident but casual,\nlike a real vacation daily vlog.\n\nAdd realistic details:\nnatural blinking,\nsmall breathing movement,\nsubtle shoulder movement,\nhair moving from outdoor breeze,\nsmall hand movements,\nreal skin texture,\nnatural sunlight reflection.\n\nCamera:\nhandheld smartphone selfie camera,\nslight natural phone shake,\ncasual Instagram/TikTok recording style,\nnot professional photography.\n\nEnvironment:\noutdoor cafe,\npalm trees in background,\nwarm sunlight,\nsummer lifestyle atmosphere,\nreal people lifestyle feeling.\n\nStyle:\nauthentic social media content,\nbeautiful but realistic,\nyoung woman's daily life,\ntravel cafe aesthetic.\n\nAvoid:\nAI generated face,\nperfect model posing,\nplastic skin,\nbody reshaping,\nchanging clothes,\nchanging hairstyle,\nover cinematic effects,\nunnatural movements,\nextra fingers.",
-      "taskId": "7c16fb61b62c4b83b6b9bc58c3923b8f",
-      "status": "in_progress",
-      "createdAt": "2026-07-17T07:54:45.488Z",
-      "updatedAt": "2026-07-17T07:55:09.136Z"
-    },
-    {
-      "id": "5e1b138c-4272-40ac-926c-33dcad484b2f",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 smartphone mirror selfie video.\n\nKeep:\nsame woman,\nsame face,\nsame messy bun hairstyle,\nsame beige dress,\nsame bedroom,\nsame mirror selfie composition.\n\nA young woman sits casually on her bed taking a mirror selfie video.\n\nMotion:\nAt the beginning she looks at her phone screen,\nthen slightly tilts her head,\nsmiles softly,\nmoves her free hand naturally on the bed,\nadjusts her posture and relaxes.\n\nHer expression changes naturally:\nserious look,\nsmall smile,\ncomfortable confident expression.\n\nAdd:\nnatural blinking,\nbreathing movement,\nhair loose strands moving,\ndress fabric subtle movement,\nrealistic body posture adjustment.\n\nCamera:\nreal smartphone mirror selfie,\nhandheld feeling,\nslight phone movement.\n\nEnvironment:\nwarm bedroom lighting,\nclean realistic room,\ndaily life atmosphere.\n\nStyle:\nauthentic TikTok girl daily vlog,\nnot professional photography.\n\nAvoid:\nperfect model pose,\nfake smile,\nAI face,\nsmooth plastic skin,\nbody reshaping,\nunreal movement.",
-      "taskId": "4c74dfb8ecdb4f2cb1a2646c98a025ee",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"7461f31d-2887-41bc-9e87-cc1497b5598a\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T07:54:12.925Z",
-      "updatedAt": "2026-07-17T07:54:37.949Z"
-    },
-    {
-      "id": "3227ce43-7d44-4f6a-b942-c6ef2d41fe5a",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 TikTok UGC selfie video.\n\nKeep:\nsame face identity,\nsame hairstyle,\nsame glasses,\nsame black top,\nsame white cardigan,\nsame body proportions,\nsame car interior.\n\nA young woman is sitting naturally inside a car during daytime, recording a casual selfie video.\n\nMotion:\nShe slightly adjusts her glasses with one hand,\nthen gently turns her head toward the window,\nsunlight moves naturally across her face,\nshe looks back at the phone camera and gives a small relaxed smile.\n\nAdd realistic details:\nnatural blinking,\nsoft breathing,\nsmall shoulder movement,\nhair strands moving slightly,\nnatural hand movement,\nsubtle expression changes.\n\nCamera:\nhandheld smartphone selfie camera,\nslight natural shaking,\nclose-up casual recording,\nreal phone camera quality.\n\nLighting:\nnatural daylight from car window,\nreal skin texture,\nsoft shadows.\n\nMood:\nconfident,\ncasual everyday girl,\nmorning drive vibe,\nTikTok lifestyle aesthetic.\n\nAvoid:\nAI beauty filter,\nplastic skin,\nface change,\ndifferent hairstyle,\nbody distortion,\nunnatural movement,\nextra fingers,\ncinematic camera movement,\nover posing.",
-      "taskId": "95c3934ba926402baca12ae4249e0fdd",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"64467893-6604-4b6d-a720-d041e1f7ccc7\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T07:53:35.731Z",
-      "updatedAt": "2026-07-17T07:54:06.871Z"
-    },
-    {
-      "id": "656fefa1-7eab-4a7b-b85c-ed48cd78d6ec",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference.\n\nKeep:\nsame face identity,\nsame hairstyle,\nsame skin tone,\nsame body proportions,\nsame grey tank top,\nsame white sweatpants,\nsame bedroom environment.\n\nCreate a realistic vertical 9:16 smartphone mirror selfie video.\n\nA young woman is sitting casually on the floor beside her bed, recording a relaxed bedroom selfie video. The video should feel like a real TikTok daily life moment, not a professional shoot.\n\nMotion:\nAt the beginning, she looks at herself in the mirror while holding the phone.\nShe slightly adjusts her sitting position, relaxes her shoulders, and changes her expression naturally.\nShe briefly looks away from the mirror, then looks back at the camera with a soft confident smile.\n\nAdd subtle human movements:\nnatural blinking,\ngentle breathing,\nsmall shoulder movement,\nslight body weight shift while sitting,\nsmall hand movement holding the phone,\nnatural hair movement,\nrealistic fabric movement on clothes.\n\nBody realism:\nKeep original body shape.\nNatural sitting posture.\nRealistic gravity.\nSubtle soft-body response when changing position.\nNatural movement caused by breathing and posture adjustment.\n\nCamera:\nvertical 9:16,\nsmartphone mirror selfie camera,\nslight handheld movement,\nreal phone camera quality,\ncasual bedroom recording style.\n\nLighting:\nkeep original warm bedroom lighting,\nsoft purple ambient light in background,\nnatural shadows,\nreal skin texture.\n\nMusic:\nsoft chill R&B,\ncozy bedroom night vibe,\nrelaxed TikTok lifestyle background music.\n\nSTRICT LIMITATIONS:\nDo not change face.\nDo not change hairstyle.\nDo not change outfit.\nDo not change body shape.\nDo not add accessories.\nDo not change room background.\n\nAvoid:\nface morphing,\ndifferent person,\nAI beauty filter,\nplastic skin,\nperfect model pose,\nexaggerated movement,\nfast motion,\nslow motion,\ncamera rotation,\nzoom effect,\nbody distortion,\nextra fingers,\nunnatural hands,\nwatermark,\nsubtitles.",
-      "taskId": "1bdc46a339be4042bf8825ee8853cf17",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 400\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"a0751008-6ea7-42db-812c-a0a1f36684af\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"bad_request\\\",\\n  \\\"message\\\": \\\"Validation error for field 'prompt': String should have at most 2500 characters\\\"\\n}\"",
-      "createdAt": "2026-07-17T07:52:59.466Z",
-      "updatedAt": "2026-07-17T07:53:29.657Z"
-    },
-    {
-      "id": "68a3ad61-440d-4a8e-a031-52f27094a944",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference.\n\nKeep identical:\nsame face,\nsame hairstyle,\nsame skin tone,\nsame body proportions,\nsame black bikini outfit,\nsame beach background,\nsame golden hour lighting.\n\nCreate a realistic vertical 9:16 smartphone selfie video.\n\nA young woman is sitting on the beach during sunset, recording a casual vacation selfie video. The video should feel like a real TikTok lifestyle moment captured on a phone.\n\nMotion:\nShe starts looking directly into the camera with a soft natural smile.\nAfter a few seconds, she slightly turns her head toward the ocean, enjoying the sunset breeze.\nShe then looks back at the camera and gives a relaxed confident expression.\n\nAdd subtle realistic movements:\nnatural breathing,\nsmall shoulder movement,\nslight body weight adjustment while sitting,\ngentle hair movement from ocean wind,\nsmall changes in facial expression,\nnatural blinking,\nrealistic swimsuit fabric movement.\n\nBody realism:\nKeep the original body shape.\nNatural posture while sitting.\nRealistic gravity.\nSubtle soft-body movement caused by breathing and shifting position.\nNo exaggerated movement.\n\nCamera:\nvertical 9:16,\nfront smartphone selfie camera,\nclose handheld distance,\nslight natural phone shake,\ncasual vacation recording style.\n\nLighting:\nkeep warm sunset sunlight,\nnatural skin texture,\nrealistic shadows,\nsoft beach atmosphere.\n\nMusic:\nsoft summer R&B,\nwarm sunset beach vibe,\nrelaxed female vocal background,\nTikTok aesthetic lifestyle music.\n\nSTRICT LIMITATIONS:\nDo not change face.\nDo not change hairstyle.\nDo not change body proportions.\nDo not change outfit.\nDo not add accessories.\nDo not change background.\n\nAvoid:\nface morphing,\ndifferent person,\nAI beauty effect,\nplastic skin,\nfake smile,\nover posing,\nfast movement,\nslow motion,\ncamera rotation,\nzoom effect,\nbody distortion,\nunnatural joints,\nextra fingers,\nwatermark,\nsubtitles.",
-      "taskId": "9da8af3b60234d6ca95f88afde637d60",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"2878a83e-29b0-4073-bfde-651a0fdb3352\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T07:52:28.810Z",
-      "updatedAt": "2026-07-17T07:52:49.234Z"
-    },
-    {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "image",
