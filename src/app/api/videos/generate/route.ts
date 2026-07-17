@@ -1,4 +1,4 @@
-﻿import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
 import {
   AccountError,
   chargeUserCredits,
@@ -114,6 +114,15 @@ function isImmediateFailure(payload: unknown) {
   const record = payload as Record<string, unknown>;
   const code = String(record.code || record.error || "");
   return Boolean(code && !getTaskId(payload));
+}
+
+function stringifyPayload(payload: unknown) {
+  if (typeof payload === "string") return payload;
+  try {
+    return JSON.stringify(payload);
+  } catch {
+    return String(payload);
+  }
 }
 
 function isHfsyFusionModel(model: string) {
@@ -346,14 +355,14 @@ async function postHfsyVideoPayload(
   billing: VideoBilling
 ) {
   const hfsyModel = getHfsyModel(billing.model);
-  const referenceUrls = [
+  const publicReferenceUrls = [
     ...(Array.isArray(payload.images) ? payload.images : []),
     ...(Array.isArray(payload.image_urls) ? payload.image_urls : []),
     ...(Array.isArray(payload.reference_images) ? payload.reference_images : [])
   ].map(String).filter(Boolean);
-  const acceptedReferenceUrls = hfsyModel?.upstreamModel === "sora-2"
-    ? referenceUrls.slice(0, 1)
-    : referenceUrls;
+  const dataReferenceUrls = Array.isArray(payload.data_images)
+    ? payload.data_images.map(String).filter(Boolean)
+    : [];
   const size = String(payload.size || "");
   const [width, height] = size.split("x").map((value) => Number(value));
   const orientation = Number.isFinite(width) && Number.isFinite(height) && width > height ? "landscape" : "portrait";
@@ -361,24 +370,55 @@ async function postHfsyVideoPayload(
   const originalPrompt = String(payload.prompt || "");
   const wantsSpokenAudio = hfsyModel?.upstreamModel === "sora-2" && promptRequestsSpokenAudio(originalPrompt);
   const isHfsySdFamily = Boolean(hfsyModel?.upstreamModel.startsWith("sd-2"));
-  const upstreamPayload = {
+
+  const trimReferencesForModel = (references: string[]) =>
+    hfsyModel?.upstreamModel === "sora-2" ? references.slice(0, 1) : references;
+  const preferredReferences = isHfsySdFamily && dataReferenceUrls.length
+    ? trimReferencesForModel(dataReferenceUrls)
+    : trimReferencesForModel(publicReferenceUrls);
+  const fallbackReferences = isHfsySdFamily && dataReferenceUrls.length
+    ? trimReferencesForModel(publicReferenceUrls)
+    : trimReferencesForModel(dataReferenceUrls);
+
+  const basePayload = {
     model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, ""),
     prompt: prepareHfsyVideoPrompt(billing.model, originalPrompt),
     duration,
     orientation,
-    ...(acceptedReferenceUrls.length ? { images: acceptedReferenceUrls } : {}),
     ...(isHfsySdFamily ? { ratio: orientation === "portrait" ? "9:16" : "16:9" } : {}),
     ...(wantsSpokenAudio ? { audio: true } : {}),
     watermark: false,
     size: "large"
   };
-  const response = await fetch(`${HFSY_BASE_URL}/v1/video/create`, {
-    method: "POST",
-    headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
-    body: JSON.stringify(upstreamPayload),
-    cache: "no-store"
-  });
-  const data = await parseHfsyResponse(response);
+
+  const submit = async (images: string[]) => {
+    const upstreamPayload = {
+      ...basePayload,
+      ...(images.length ? { images } : {})
+    };
+    const response = await fetch(`${HFSY_BASE_URL}/v1/video/create`, {
+      method: "POST",
+      headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+      body: JSON.stringify(upstreamPayload),
+      cache: "no-store"
+    });
+    return {
+      response,
+      data: await parseHfsyResponse(response),
+      usedImages: images
+    };
+  };
+
+  let result = await submit(preferredReferences);
+  if (
+    fallbackReferences.length &&
+    fallbackReferences.join("\n") !== preferredReferences.join("\n") &&
+    isHfsyReferenceUploadFailure(result.response.status, result.data)
+  ) {
+    result = await submit(fallbackReferences);
+  }
+
+  const { response, data } = result;
   const taskId = getHfsyTaskId(data);
 
   if (!response.ok || isImmediateFailure(data) || !taskId) {
@@ -418,6 +458,19 @@ async function postHfsyVideoPayload(
       charged: billing.amount
     },
     { status: response.status }
+  );
+}
+
+function isHfsyReferenceUploadFailure(status: number, payload: unknown) {
+  const message = stringifyPayload(payload);
+  return (
+    status === 502 ||
+    status === 503 ||
+    status === 504 ||
+    message.includes("参考图上传失败") ||
+    message.includes("上传接口返回") ||
+    message.includes("upload") ||
+    message.includes("Bad Gateway")
   );
 }
 
@@ -820,7 +873,8 @@ export async function POST(request: Request) {
           prompt: enhancedPrompt,
           ...(seconds ? { seconds: String(seconds) } : {}),
           ...(size ? { size: String(size) } : {}),
-          ...(publicReferenceUrls.length ? { images: publicReferenceUrls } : {})
+          ...(publicReferenceUrls.length ? { images: publicReferenceUrls } : {}),
+          ...(dataReferenceUrls.length ? { data_images: dataReferenceUrls } : {})
         },
         billing
       );
