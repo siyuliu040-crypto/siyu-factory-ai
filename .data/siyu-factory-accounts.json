@@ -126,9 +126,9 @@
       "name": "王晨",
       "passwordHash": "93384bc0fea794e6692f78d35e279b64:de8ddc275996c9fe0ef733c6ec8e7bc386241f394e419bca97430d651736573c556d237e10e80b9f066ff8ff26d720db69c803fc4e68f1dd9c004148ef5f1944",
       "role": "user",
-      "credits": 956950000,
+      "credits": 956930000,
       "createdAt": "2026-07-16T09:11:46.539Z",
-      "updatedAt": "2026-07-17T02:22:50.874Z"
+      "updatedAt": "2026-07-17T02:41:02.750Z"
     },
     {
       "id": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "81788e22-fddd-4f6e-950f-071fc3e4eb10",
+      "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
+      "amount": -20000,
+      "balanceAfter": 956930000,
+      "reason": "image generation",
+      "createdAt": "2026-07-17T02:41:02.750Z",
+      "metadata": {
+        "model": "nano_banana_2-2K-portrait",
+        "size": "1024x1792"
+      }
+    },
     {
       "id": "b9e7b532-f745-4567-84f6-1c790be859a4",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
