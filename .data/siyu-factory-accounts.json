@@ -5133,6 +5133,17 @@
   ],
   "generationTasks": [
     {
+      "id": "6877cc68f9184f27a9d56a90fe871bbb",
+      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "type": "video",
+      "model": "hfsy:sd-2-fast",
+      "amount": 300000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T02:16:41.793Z",
+      "updatedAt": "2026-07-17T02:16:41.793Z"
+    },
+    {
       "id": "3d14efbf1c384d1bb3dae5b1f7664222",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
       "type": "video",
@@ -7070,6 +7081,17 @@
     }
   ],
   "history": [
+    {
+      "id": "383d01d9-c13a-4630-957e-4e892057b02a",
+      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "mode": "video",
+      "model": "hfsy:sd-2-fast",
+      "prompt": "A realistic cinematic TikTok video featuring a cute French bulldog wearing a stylish short brown human hair bob wig.\r\n\r\nScene starts in a luxury modern apartment with warm sunlight coming through the window.\r\n\r\nThe French bulldog sits on a soft velvet chair like a little fashion model. \r\nA stylish Black woman gently adjusts the dog's realistic human hair wig, carefully fixing the bangs and making the hairstyle look perfect.\r\n\r\nThe dog looks slightly confused at first, then slowly turns its head toward the camera with a confident and adorable expression.\r\n\r\nClose-up camera shots show the detailed hair strands, natural wig texture, smooth bangs, realistic hair movement, and the dog's expressive eyes.\r\n\r\nThe woman laughs happily and takes photos of the dog like a professional fashion photographer.\r\n\r\nFinal shot: the French bulldog proudly poses like a celebrity pet model.\r\n\r\nUltra realistic pet photography, luxury beauty lifestyle, natural emotions, cinematic lighting, shallow depth of field, high detail, viral TikTok pet transformation style.\r\n\r\nNo text, no subtitles, no watermark.",
+      "taskId": "6877cc68f9184f27a9d56a90fe871bbb",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T02:16:41.793Z",
+      "updatedAt": "2026-07-17T02:16:41.793Z"
+    },
     {
       "id": "641d5257-66bf-4521-bb2a-8aed525b4ea3",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
