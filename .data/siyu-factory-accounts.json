@@ -6194,10 +6194,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T08:47:25.381Z",
-      "updatedAt": "2026-07-17T08:47:25.381Z"
+      "updatedAt": "2026-07-17T08:50:40.469Z"
     },
     {
       "id": "cdb9d1c874f94095b6006488082db2ad",
@@ -8748,10 +8748,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use the image as exact reference.\n\nCreate a realistic vertical 9:16 TikTok pet video.\n\nThis puppy's name is Coco.\n\nCoco, a small gray puppy, sits on a chair looking serious and curious.\n\nAt the beginning, Coco looks directly into the camera with a calm face.\nAfter a few seconds, Coco slowly tilts its head, moves its ears, blinks softly, and looks around like it is trying to understand something.\n\nCoco then slightly moves its paws, leans closer to the camera, and gives a cute curious expression.\n\nKeep realistic puppy behavior:\nnatural breathing,\nsoft fur movement,\nnose twitching,\nsmall ear movement,\nreal puppy eyes.\n\nCamera:\nhandheld phone camera,\nclose-up pet vlog style,\nreal home video feeling.\n\nMusic:\ncute happy puppy music,\nsoft playful melody.\n\nMood:\nCoco's daily life,\nfunny and adorable,\nreal pet moment.\n\nAvoid:\ncartoon style,\nhuman actions,\nfake expressions,\nchanging Coco's appearance,\nunreal movement.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/1a798bb1c5fe45e9a29a57f4fb5db282.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784364630&Signature=SzwMbNYVtT1i4UMaev5yD6t%2BmLU%3D",
       "taskId": "7a2f9e8819c3489b92ae389c2aefa1f6",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T08:47:25.381Z",
-      "updatedAt": "2026-07-17T08:50:31.368Z"
+      "updatedAt": "2026-07-17T08:50:40.470Z"
     },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
