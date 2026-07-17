@@ -5157,6 +5157,17 @@
   ],
   "generationTasks": [
     {
+      "id": "4614f152ce0f4df2b59856ccc23455ca",
+      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T02:20:27.269Z",
+      "updatedAt": "2026-07-17T02:20:27.269Z"
+    },
+    {
       "id": "6877cc68f9184f27a9d56a90fe871bbb",
       "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
       "type": "video",
@@ -7105,6 +7116,17 @@
     }
   ],
   "history": [
+    {
+      "id": "976584ca-fcd5-4a85-821a-c19b57f3f75e",
+      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "A realistic cinematic TikTok video featuring a cute French bulldog wearing a stylish short brown human hair bob wig.\r\n\r\nScene starts in a luxury modern apartment with warm sunlight coming through the window.\r\n\r\nThe French bulldog sits on a soft velvet chair like a little fashion model. \r\nA stylish Black woman gently adjusts the dog's realistic human hair wig, carefully fixing the bangs and making the hairstyle look perfect.\r\n\r\nThe dog looks slightly confused at first, then slowly turns its head toward the camera with a confident and adorable expression.\r\n\r\nClose-up camera shots show the detailed hair strands, natural wig texture, smooth bangs, realistic hair movement, and the dog's expressive eyes.\r\n\r\nThe woman laughs happily and takes photos of the dog like a professional fashion photographer.\r\n\r\nFinal shot: the French bulldog proudly poses like a celebrity pet model.\r\n\r\nUltra realistic pet photography, luxury beauty lifestyle, natural emotions, cinematic lighting, shallow depth of field, high detail, viral TikTok pet transformation style.\r\n\r\nNo text, no subtitles, no watermark.",
+      "taskId": "4614f152ce0f4df2b59856ccc23455ca",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T02:20:27.269Z",
+      "updatedAt": "2026-07-17T02:20:27.269Z"
+    },
     {
       "id": "641d5257-66bf-4521-bb2a-8aed525b4ea3",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
