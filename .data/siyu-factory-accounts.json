@@ -7843,9 +7843,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a 15-second realistic beach video from this image.\nA confident adult woman stands on the beach in a bikini, filmed from a low-angle perspective against a bright blue sky with soft clouds.\nShe looks relaxed, confident, and natural, not overly posed.\nAt the beginning, she gently adjusts both sides of her bikini bottom with subtle, natural hand movement.\nShe shifts her body weight slightly from one side to the other, naturally highlighting her waist, hips, and legs.\nHer head slowly turns upward and to the side, looking into the distance with a calm, confident expression.\nA light breeze softly moves her hair and the edge of her cap.\nHer skin has a natural sunlit glow with a slightly wet beach look.\nMidway through the video, she slightly straightens her posture, relaxes her shoulders, and subtly engages her core, creating an elegant body line.\nNear the end, she briefly lowers her gaze toward the camera area, then looks away naturally.\nEnd with a relaxed standing pose.\nUse slow push-in camera movement, realistic handheld smartphone feel, natural body motion, soft golden sunlight, and a casual sensual summer vibe.\nAvoid exaggerated movement, avoid vulgar behavior, avoid distortion, keep it realistic and tasteful.",
       "taskId": "db3d0cd71ceb4c638e1c25b50662f2af",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T03:53:56.425Z",
-      "updatedAt": "2026-07-17T03:54:07.633Z"
+      "updatedAt": "2026-07-17T03:54:12.950Z"
     },
     {
       "id": "02c46a8a-4d9f-4573-a0c3-f86d46a13f8d",
