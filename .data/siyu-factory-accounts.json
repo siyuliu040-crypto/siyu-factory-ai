@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 9973000000,
+      "credits": 9972550000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-17T02:30:45.948Z"
+      "updatedAt": "2026-07-17T02:34:00.284Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "db0fdb3e-b378-4fea-9a6a-e081b315aa41",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "amount": -450000,
+      "balanceAfter": 9972550000,
+      "reason": "video generation",
+      "createdAt": "2026-07-17T02:34:00.284Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "11f934d5-3e4c-45f1-813c-1792141793ef",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
