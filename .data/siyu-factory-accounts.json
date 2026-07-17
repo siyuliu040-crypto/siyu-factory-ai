@@ -5763,6 +5763,17 @@
   ],
   "generationTasks": [
     {
+      "id": "275d72be2f144773998a5e4bdd747aa5",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T07:16:11.323Z",
+      "updatedAt": "2026-07-17T07:16:11.323Z"
+    },
+    {
       "id": "bc1b24f2b4c34cafa44a19231bfd8b1f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8085,6 +8096,17 @@
     }
   ],
   "history": [
+    {
+      "id": "fe7cd875-decc-455e-ba21-2bcd5dc30e13",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Create a realistic vertical 9:16 TikTok selfie video.\r\n\r\nA beautiful adult woman is sitting casually on a bed in a cozy bedroom. Keep the same face, hairstyle, skin tone, body proportions and outfit.\r\n\r\nThe video should look like a real smartphone recording, not a professional photoshoot.\r\n\r\nAction:\r\nAt the beginning, she looks into the phone camera quietly for a moment, with a natural relaxed expression. The sunlight moves across her face as she slightly turns toward the window.\r\n\r\nShe notices the light, looks back at the camera, gives a small genuine smile, and slightly changes her sitting position. She casually pulls the blanket closer, adjusts her posture, and continues recording a natural lifestyle moment.\r\n\r\nMotion details:\r\nnatural blinking,\r\nsmall facial expression changes,\r\nreal breathing movement,\r\nsubtle shoulder movement,\r\nslight body weight shift,\r\nrealistic hair movement,\r\nnatural fabric movement.\r\n\r\nCamera:\r\nfront smartphone selfie camera,\r\nclose casual angle,\r\nslight handheld shake,\r\nsmall autofocus adjustment,\r\nreal phone exposure change,\r\nTikTok UGC lifestyle style.\r\n\r\nLighting:\r\nwarm morning sunlight,\r\nreal shadows,\r\nnatural skin texture,\r\nrealistic phone camera quality.\r\n\r\nMusic:\r\ndreamy bedroom R&B,\r\nsoft female vocal,\r\ncozy morning TikTok vibe.\r\n\r\nRestrictions:\r\nKeep the same identity.\r\nDo not change face.\r\nDo not change hairstyle.\r\nDo not change body shape.\r\nNo beauty filter.\r\nNo plastic skin.\r\nNo face morphing.\r\nNo AI look.\r\nNo exaggerated movement.\r\nNo slow motion.\r\nNo subtitles.\r\nNo watermark.",
+      "taskId": "275d72be2f144773998a5e4bdd747aa5",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T07:16:11.323Z",
+      "updatedAt": "2026-07-17T07:16:11.323Z"
+    },
     {
       "id": "d2e39bc4-f75f-4041-b944-89950c634332",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
