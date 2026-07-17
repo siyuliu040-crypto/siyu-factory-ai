@@ -5780,10 +5780,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T07:19:22.740Z",
-      "updatedAt": "2026-07-17T07:19:22.740Z"
+      "updatedAt": "2026-07-17T07:22:20.275Z"
     },
     {
       "id": "275d72be2f144773998a5e4bdd747aa5",
@@ -8125,10 +8125,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 TikTok mirror selfie video.\n\nA beautiful adult woman is filming herself in a bathroom mirror. Keep the same face, hairstyle, skin texture, body proportions and black outfit.\n\nThe video should feel like a real daily fitness lifestyle post.\n\nAction:\nShe looks at herself in the mirror while holding her phone. At first she slightly adjusts the phone angle, then looks back at her reflection with a confident natural expression.\n\nShe takes a small step closer to the mirror, slightly changes her pose, relaxes her shoulders, and gives a subtle smile. She briefly looks away as if checking her outfit, then returns her eyes to the camera.\n\nMotion details:\nnatural breathing,\nsmall arm movement,\nrealistic hand holding phone,\nsubtle posture adjustment,\nnatural hair movement,\nreal fabric response.\n\nCamera:\nreal smartphone mirror recording,\nhandheld phone movement,\nslight imperfect framing,\nnatural autofocus,\nauthentic TikTok creator style.\n\nLighting:\nreal bathroom lighting,\nsoft shadows,\nnatural skin details,\nno artificial beauty effect.\n\nMusic:\nclean girl lifestyle pop,\nsoft confident R&B beat,\nmodern TikTok background sound.\n\nRestrictions:\nKeep identity unchanged.\nDo not modify face.\nDo not modify body.\nDo not change clothes.\nNo fake smile.\nNo unrealistic pose.\nNo extra fingers.\nNo body distortion.\nNo AI beauty effect.\nNo subtitles.\nNo watermark.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/0affa03c41bb4a0e86076480a6b7d48e.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784359334&Signature=NgnAJjyTi9XAuKfjP%2B6RDXuSBzQ%3D",
       "taskId": "2b3e05206ce949839200f257af7d5c2e",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T07:19:22.740Z",
-      "updatedAt": "2026-07-17T07:22:11.581Z"
+      "updatedAt": "2026-07-17T07:22:20.275Z"
     },
     {
       "id": "fe7cd875-decc-455e-ba21-2bcd5dc30e13",
