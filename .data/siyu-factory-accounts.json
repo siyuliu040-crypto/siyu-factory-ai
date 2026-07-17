@@ -5967,6 +5967,17 @@
   ],
   "generationTasks": [
     {
+      "id": "4c74dfb8ecdb4f2cb1a2646c98a025ee",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T07:54:12.925Z",
+      "updatedAt": "2026-07-17T07:54:12.925Z"
+    },
+    {
       "id": "95c3934ba926402baca12ae4249e0fdd",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8399,6 +8410,17 @@
     }
   ],
   "history": [
+    {
+      "id": "5e1b138c-4272-40ac-926c-33dcad484b2f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference.\r\n\r\nCreate a realistic vertical 9:16 smartphone mirror selfie video.\r\n\r\nKeep:\r\nsame woman,\r\nsame face,\r\nsame messy bun hairstyle,\r\nsame beige dress,\r\nsame bedroom,\r\nsame mirror selfie composition.\r\n\r\nA young woman sits casually on her bed taking a mirror selfie video.\r\n\r\nMotion:\r\nAt the beginning she looks at her phone screen,\r\nthen slightly tilts her head,\r\nsmiles softly,\r\nmoves her free hand naturally on the bed,\r\nadjusts her posture and relaxes.\r\n\r\nHer expression changes naturally:\r\nserious look,\r\nsmall smile,\r\ncomfortable confident expression.\r\n\r\nAdd:\r\nnatural blinking,\r\nbreathing movement,\r\nhair loose strands moving,\r\ndress fabric subtle movement,\r\nrealistic body posture adjustment.\r\n\r\nCamera:\r\nreal smartphone mirror selfie,\r\nhandheld feeling,\r\nslight phone movement.\r\n\r\nEnvironment:\r\nwarm bedroom lighting,\r\nclean realistic room,\r\ndaily life atmosphere.\r\n\r\nStyle:\r\nauthentic TikTok girl daily vlog,\r\nnot professional photography.\r\n\r\nAvoid:\r\nperfect model pose,\r\nfake smile,\r\nAI face,\r\nsmooth plastic skin,\r\nbody reshaping,\r\nunreal movement.",
+      "taskId": "4c74dfb8ecdb4f2cb1a2646c98a025ee",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T07:54:12.925Z",
+      "updatedAt": "2026-07-17T07:54:12.925Z"
+    },
     {
       "id": "3227ce43-7d44-4f6a-b942-c6ef2d41fe5a",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
