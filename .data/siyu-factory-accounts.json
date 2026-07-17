@@ -5301,6 +5301,17 @@
   ],
   "generationTasks": [
     {
+      "id": "7f798ea9b3bf41a8844b8429bd0db1b3",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T02:36:35.782Z",
+      "updatedAt": "2026-07-17T02:36:35.782Z"
+    },
+    {
       "id": "af4b14fe30c24ceeb52d4b867bddfd60",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "type": "video",
@@ -7348,6 +7359,17 @@
     }
   ],
   "history": [
+    {
+      "id": "6fc42450-5c97-4ff5-8aec-4c4544527815",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom environment.\r\n\r\nCreate a realistic vertical smartphone selfie video with a natural TikTok lifestyle feeling.\r\n\r\nA beautiful adult woman is relaxing on a bed in a warm bedroom at night. She is filming a casual personal selfie video, looking comfortable and natural.\r\n\r\nAt the beginning, she looks directly into the camera for a moment, slightly raises her eyebrows and gives a small playful expression, as if reacting to something on her phone.\r\n\r\nShe then slowly moves closer to the camera, gently adjusts her pillow position with one arm, changes her resting pose naturally, and slightly turns her body toward the light.\r\n\r\nShe briefly looks away from the camera, smiles softly, then looks back into the lens. Her expression changes naturally from calm to a subtle confident smile.\r\n\r\nInclude realistic small movements:\r\nnatural blinking,\r\nsoft breathing,\r\nslight shoulder movement,\r\nsmall body adjustment on the bed,\r\nnatural fabric movement,\r\nhair moving slightly when she changes position.\r\n\r\nHer body should not remain frozen. Add realistic human motion caused by gravity, breathing and posture changes. Keep natural soft-body movement and subtle compression from leaning on the bed, but avoid exaggerated motion.\r\n\r\nCamera:\r\nvertical smartphone selfie,\r\nhandheld front camera,\r\nslight accidental phone movement,\r\nrealistic bedroom vlog style.\r\n\r\nLighting:\r\nwarm bedside lamp,\r\nsoft shadows,\r\nnatural nighttime atmosphere.\r\n\r\nMusic:\r\nmodern chill R&B beat,\r\nsoft bass,\r\nlate-night relaxing mood,\r\nsimilar to viral TikTok lifestyle videos.\r\n\r\nSkin:\r\nreal skin texture,\r\nnatural pores,\r\nminimal editing,\r\nno plastic beauty filter,\r\nno excessive smoothing,\r\nno artificial shine.\r\n\r\nStyle:\r\nauthentic girlfriend-style selfie,\r\nreal person feeling,\r\ncasual lifestyle content.\r\n\r\nAvoid:\r\nrepeated hair touching,\r\nover-posed movements,\r\nslow motion,\r\nfake expressions,\r\nAI beauty look,\r\nface change,\r\nbody distortion,\r\nextra fingers,\r\nwatermark,\r\nsubtitles.",
+      "taskId": "7f798ea9b3bf41a8844b8429bd0db1b3",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T02:36:35.782Z",
+      "updatedAt": "2026-07-17T02:36:35.782Z"
+    },
     {
       "id": "8b9f599d-1df9-4d24-9140-dd9785dc6544",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
