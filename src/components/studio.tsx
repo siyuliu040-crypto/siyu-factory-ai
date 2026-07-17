@@ -2198,6 +2198,30 @@ export default function Studio() {
     setImageTasks((current) => current.map((item) => (item.id === id ? { ...item, ...patch } : item)));
   }
 
+  function previewImageTask(task: ImageTask) {
+    if (!task.result && !task.url) return;
+    setMode("image");
+    setImageModel(task.model);
+    setImageResult(task.result || { data: [{ url: task.url || "" }] });
+    setVideoResult(null);
+    setError("");
+  }
+
+  function previewBatchJob(job: BatchJob) {
+    if (!job.url && !job.taskId) return;
+    setMode("video");
+    chooseVideoModel(job.model);
+    setImageResult(null);
+    setVideoResult({
+      id: job.taskId || job.id,
+      task_id: job.taskId || job.id,
+      status: job.status || "completed",
+      progress: job.progress || 100,
+      video_url: job.url
+    });
+    setError("");
+  }
+
   function clearHistory() {
     setHistory([]);
     void fetch("/api/history", { method: "DELETE" }).catch(() => undefined);
@@ -3697,12 +3721,27 @@ export default function Studio() {
               </div>
               {imageTasks.length ? (
                 <div className="image-task-list">
-                  {imageTasks.map((task) => (
-                    <div className={`image-task-card ${task.status === "completed" ? "done" : ""} ${task.status === "failed" ? "failed" : ""}`} key={task.id}>
+                  {imageTasks.map((task) => {
+                    const taskViewUrl = getViewableImageUrl(task.url || extractImageUrl(task.result || null));
+                    const isSelected = Boolean(taskViewUrl && activeImageViewUrl === taskViewUrl);
+                    return (
+                    <div
+                      className={`image-task-card ${task.status === "completed" ? "done" : ""} ${task.status === "failed" ? "failed" : ""} ${isSelected ? "selected" : ""} ${task.result || task.url ? "clickable" : ""}`}
+                      key={task.id}
+                      onClick={() => previewImageTask(task)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          previewImageTask(task);
+                        }
+                      }}
+                      role={task.result || task.url ? "button" : undefined}
+                      tabIndex={task.result || task.url ? 0 : undefined}
+                    >
                       <div className="image-task-thumb">
-                        {task.url ? (
+                        {taskViewUrl ? (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img alt={task.prompt} src={getViewableImageUrl(task.url)} />
+                          <img alt={task.prompt} src={taskViewUrl} />
                         ) : task.status === "failed" ? (
                           <X size={22} />
                         ) : (
@@ -3722,26 +3761,27 @@ export default function Studio() {
                         </div>
                       </div>
                       <div className="image-task-actions">
-                        {task.result ? (
+                        {task.result || task.url ? (
                           <div className="task-actions">
-                            <button className="text-button" onClick={() => setImageResult(task.result || null)} type="button">
+                            <button className="text-button" onClick={(event) => { event.stopPropagation(); previewImageTask(task); }} type="button">
                               {tx("viewResult", "查看")}
                             </button>
-                            {task.url ? (
-                              <button className="text-button" onClick={() => openAsset(getViewableImageUrl(task.url))} type="button">
+                            {taskViewUrl ? (
+                              <button className="text-button" onClick={(event) => { event.stopPropagation(); openAsset(taskViewUrl); }} type="button">
                                 {tx("openResult", language === "zh" ? "打开" : "Open")}
                               </button>
                             ) : null}
                           </div>
                         ) : null}
-                        {task.url ? (
-                          <a className="text-button" download href={getViewableImageUrl(task.url)} target="_blank" rel="noreferrer">
+                        {taskViewUrl ? (
+                          <a className="text-button" download href={taskViewUrl} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>
                             {t.download}
                           </a>
                         ) : null}
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               ) : null}
             </div>
@@ -3749,8 +3789,22 @@ export default function Studio() {
 
           {batchJobs.length ? (
             <div className="batch-results">
-              {batchJobs.map((job, index) => (
-                <div className="batch-job" key={job.id}>
+              {batchJobs.map((job, index) => {
+                const isSelected = Boolean(job.url && videoSrc === job.url);
+                return (
+                <div
+                  className={`batch-job ${job.url || job.taskId ? "clickable" : ""} ${isSelected ? "selected" : ""}`}
+                  key={job.id}
+                  onClick={() => previewBatchJob(job)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      previewBatchJob(job);
+                    }
+                  }}
+                  role={job.url || job.taskId ? "button" : undefined}
+                  tabIndex={job.url || job.taskId ? 0 : undefined}
+                >
                   <div>
                     <strong>#{index + 1} {job.status}</strong>
                     <span>{job.progress}% · {job.model} · {formatCreditCost(job.model, language, seconds, normalizeResolutionForModel(job.model, videoSize, language))}</span>
@@ -3758,13 +3812,15 @@ export default function Studio() {
                   </div>
                   {job.url ? (
                     <div className="batch-job-actions">
-                      <a className="secondary-button" href={job.url} target="_blank" rel="noreferrer"><ExternalLink size={15} />{t.viewResult}</a>
-                      <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer"><Download size={15} />{t.download}</a>
+                      <button className="secondary-button" onClick={(event) => { event.stopPropagation(); previewBatchJob(job); }} type="button"><Play size={15} />{tx("previewResult", language === "zh" ? "预览" : "Preview")}</button>
+                      <a className="secondary-button" href={job.url} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}><ExternalLink size={15} />{t.viewResult}</a>
+                      <a className="secondary-button" download href={job.url} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}><Download size={15} />{t.download}</a>
                     </div>
                   ) : null}
                   {job.error ? <p>{cleanErrorMessage(job.error, language)}</p> : null}
                 </div>
-              ))}
+                );
+              })}
             </div>
           ) : null}
 
