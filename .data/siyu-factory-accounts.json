@@ -6471,10 +6471,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "根据图@1实拍脚本，参考图@2人物生成tiktok美区高清带货视频",
       "taskId": "5e2aee9067f84dcba7268324f7d23a73",
-      "status": "failed",
+      "status": "IN_PROGRESS",
       "error": "\"参考图上传失败: 上传接口返回 status=502\"",
       "createdAt": "2026-07-17T01:17:49.071Z",
-      "updatedAt": "2026-07-17T01:17:52.871Z"
+      "updatedAt": "2026-07-17T01:17:54.945Z"
     },
     {
       "id": "1fc398c5-c04e-4e40-a6f2-19ecb136cc90",
