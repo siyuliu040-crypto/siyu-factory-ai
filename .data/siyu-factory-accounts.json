@@ -7918,9 +7918,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nKeep the same face, hairstyle, skin tone, body proportions, outfit and background.\n\nCreate a realistic vertical 9:16 smartphone lifestyle video.\n\nA woman is recording a peaceful vacation selfie on a sunny balcony. She looks naturally into the camera, gives a soft smile, slowly changes her pose and enjoys the moment.\n\nShe gently touches the edge of her hair, turns slightly toward the ocean view, then returns her attention to the camera. Her expression remains natural, confident and relaxed.\n\nAdd subtle realistic movement:\nnatural breathing,\nsmall head movement,\nsoft shoulder movement,\nslight posture adjustment,\nnatural curly hair motion,\nrealistic clothing movement.\n\nThe motion should feel like a real person casually recording a TikTok vacation video. Keep normal speed, smooth and realistic.\n\nCamera:\nvertical 9:16,\nphone selfie camera,\nclose distance,\nslight handheld movement,\nreal smartphone quality.\n\nLighting:\nwarm natural sunlight,\nsoft shadows,\nrealistic skin texture,\nnatural exposure.\n\nMusic:\nluxury vacation R&B,\nsoft summer melody,\ncalm tropical lifestyle sound.\n\nNo:\nface morphing,\nidentity change,\ndifferent person,\nbody distortion,\nfake smile,\nexaggerated movement,\nslow motion,\ncamera rotation,\nAI beauty filter,\nheavy smoothing,\nwatermark,\nsubtitles.",
       "taskId": "6cc5ddc4dd7d40afaf3aa451aa13956e",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T06:03:45.638Z",
-      "updatedAt": "2026-07-17T06:03:48.701Z"
+      "updatedAt": "2026-07-17T06:03:49.968Z"
     },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
