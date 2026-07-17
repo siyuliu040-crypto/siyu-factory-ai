@@ -368,7 +368,7 @@ const copy = {
     video: "视频",
     stableModels: "稳定模型",
     note: "只展示当前验证过的稳定模型。API Key 保存在服务端，不会暴露给浏览器。",
-    title: "思雨的工厂",
+    title: "luo",
     subtitle: "图片、视频、批量视频统一生产台。",
     prompt: "提示词",
     batchPrompt: "批量视频作品",
@@ -521,7 +521,7 @@ const copy = {
     video: "Video",
     stableModels: "Stable models",
     note: "Only verified models are shown. API keys stay on the server.",
-    title: "Siyu Factory",
+    title: "luo",
     subtitle: "Image, video, and batch video production desk.",
     prompt: "Prompt",
     batchPrompt: "Batch video works",
@@ -2736,7 +2736,7 @@ export default function Studio() {
       <main className="app-shell auth-shell">
         <section className="auth-card">
           <div className="brand-mark"><Sparkles size={24} /></div>
-          <h1>{tx("authLoading", "正在进入思雨的工厂")}</h1>
+          <h1>{tx("authLoading", "您好！")}</h1>
           <p>{tx("authLoadingHint", "正在检查登录状态和账户积分。")}</p>
           <Loader2 className="spin" size={28} />
         </section>
@@ -2749,7 +2749,7 @@ export default function Studio() {
       <main className="app-shell auth-shell">
         <section className="auth-card">
           <div className="brand-mark"><Sparkles size={24} /></div>
-          <h1>{tx("welcomeFactory", "欢迎来到思雨的工厂")}</h1>
+          <h1>{tx("welcomeFactory", "您好！")}</h1>
           <p>{tx("authIntro", "注册或登录后进入工作台。账号会长期保留，不需要重复注册。")}</p>
 
           <div className="segmented auth-tabs">
@@ -2802,7 +2802,7 @@ export default function Studio() {
       {showWelcome ? (
         <div className="welcome-screen" role="status">
           <div className="welcome-mark"><Sparkles size={30} /></div>
-          <h1>欢迎来到思雨的工厂！</h1>
+          <h1>您好！</h1>
         </div>
       ) : null}
 
