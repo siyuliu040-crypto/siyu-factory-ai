@@ -5402,10 +5402,10 @@
       "type": "image",
       "model": "nano_banana_2-2K-portrait",
       "amount": 20000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T02:41:19.647Z",
-      "updatedAt": "2026-07-17T02:41:19.647Z"
+      "updatedAt": "2026-07-17T02:42:03.479Z"
     },
     {
       "id": "f2dff1aad96340e1a958e7955d53bea9",
@@ -7516,10 +7516,11 @@
       "mode": "image",
       "model": "nano_banana_2-2K-portrait",
       "prompt": "9:16 竖版，8K 超写实油画质感，柔和清晨金色自然光，葡萄藤木质凉亭场景，远处山谷葡萄园山峦背景，石墙与木质露台；耶稣身穿纯白色亚麻束腰长袍，深浅棕灰波浪中长发，浓密棕黑胡须，左手紧握发光木质十字架，右手食指向前轻点指向镜头，嘴巴微张似正在说话，周身柔和金色圣光光晕，葡萄藤蔓与紫葡萄垂落在画面上方，光影细腻通透，布料褶皱纹理清晰，氛围感温暖治愈，高清细节，无水印无界面弹窗，电影级柔光画质",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/c7697827-83cc-43aa-9512-3ac2fba16061.jpg",
       "taskId": "img_1784256063839_51a754ab9d9ae8",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-07-17T02:41:19.648Z",
-      "updatedAt": "2026-07-17T02:41:19.648Z"
+      "updatedAt": "2026-07-17T02:42:03.479Z"
     },
     {
       "id": "db6b4ef3-5a73-4b1e-983a-a4655063b17a",
