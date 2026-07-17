@@ -5666,10 +5666,10 @@
       "type": "image",
       "model": "hfsy:gpt-image-2",
       "amount": 10000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T04:03:55.776Z",
-      "updatedAt": "2026-07-17T04:03:55.776Z"
+      "updatedAt": "2026-07-17T04:04:22.529Z"
     },
     {
       "id": "img_1784260746115_3a5d038b90e3a8",
@@ -7912,10 +7912,11 @@
       "mode": "image",
       "model": "hfsy:gpt-image-2",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "previewUrl": "http://sd2oss-american.oss-us-west-1.aliyuncs.com/chatgpt2api%2Fimages%2F2026%2F07%2F17%2F1784261062_8e8596d62a0b958c1f45f4ccc2298d4b.jpg?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784347462&Signature=Mi%2BHB3HHwd5MTkokUsgj1YD%2F4r4%3D",
       "taskId": "img_1784261035774_dcfa132b348ab",
-      "status": "queued",
+      "status": "completed",
       "createdAt": "2026-07-17T04:03:55.776Z",
-      "updatedAt": "2026-07-17T04:03:55.776Z"
+      "updatedAt": "2026-07-17T04:04:22.529Z"
     },
     {
       "id": "b346a189-3acf-41bc-baf4-13ee42fca8cf",
