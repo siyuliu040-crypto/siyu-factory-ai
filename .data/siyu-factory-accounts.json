@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9997000000,
+      "credits": 9997450000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T03:36:12.232Z"
+      "updatedAt": "2026-07-17T03:36:50.028Z"
     }
   ],
   "sessions": [
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "10255531-17d2-4316-afe8-3cec76d31a02",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9997450000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T03:36:50.028Z",
+      "metadata": {
+        "taskId": "85f430d9608642e8a1622e0a848ede4a",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "12dac5b5-4c29-48d7-b585-50257dcb973b",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -5486,10 +5498,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T03:36:14.752Z",
-      "updatedAt": "2026-07-17T03:36:14.752Z"
+      "updatedAt": "2026-07-17T03:36:50.027Z"
     },
     {
       "id": "1966e7ed26784ebabe4fd82d1a358f88",
@@ -7645,9 +7657,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and environment.\n\nCreate a realistic vertical smartphone selfie video with authentic TikTok lifestyle style.\n\nA beautiful adult woman is relaxing in a natural private environment, recording a casual selfie video with her phone. The video should feel like a real personal moment, not a professional photoshoot.\n\nAt the beginning, she looks directly into the camera with a calm natural expression. She slightly adjusts her position, blinks softly, and gives a subtle confident look as if she just noticed the camera recording.\n\nShe slowly changes her posture, gently moves her shoulder and adjusts her sitting or resting position. She briefly looks away from the camera, interacts naturally with the environment, then turns her eyes back to the lens with a small relaxed smile.\n\nThe movement should be realistic and connected:\nnatural breathing,\nsmall facial expressions,\nsoft blinking,\nslight head movement,\ngentle shoulder movement,\nnatural body weight shift,\nrealistic hair movement,\nsubtle clothing movement.\n\nHer body should not look frozen. Add realistic human motion caused by breathing, gravity and posture changes. Keep natural soft-body response and slight compression when changing position, but keep it subtle and realistic.\n\nCamera:\nvertical front phone camera,\nclose selfie framing,\nslight handheld shake,\nnatural imperfect smartphone angle,\nauthentic social media video quality.\n\nLighting:\nnatural everyday lighting,\nsoft shadows,\nrealistic skin tones,\nreal phone camera exposure.\n\nSkin:\nnatural texture,\nvisible realistic details,\nminimal beauty filter,\nno plastic skin,\nno excessive smoothing,\nno artificial shine.\n\nMusic:\nsoft chill R&B,\nrelaxed lifestyle beat,\nwarm emotional atmosphere,\nviral TikTok selfie background sound.\n\nStyle:\nreal girlfriend-style selfie,\ncasual daily life moment,\nhigh retention social media video.\n\nAvoid:\nstiff movements,\noveracting,\nrepeated hair touching,\nslow motion,\nfake facial expressions,\nAI beauty look,\nface change,\nbody distortion,\nextra fingers,\nwatermark,\nsubtitles.",
       "taskId": "85f430d9608642e8a1622e0a848ede4a",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 400\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"9132cb54-877f-4f40-89a8-0dbb1ca7cd2a\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"bad_request\\\",\\n  \\\"message\\\": \\\"Validation error for field 'prompt': String should have at most 2500 characters\\\"\\n}\"",
       "createdAt": "2026-07-17T03:36:14.753Z",
-      "updatedAt": "2026-07-17T03:36:42.020Z"
+      "updatedAt": "2026-07-17T03:36:50.028Z"
     },
     {
       "id": "00707ef4-41cb-49a5-a9b8-4a758bb2f907",
