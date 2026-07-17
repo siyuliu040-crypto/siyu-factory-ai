@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9992950000,
+      "credits": 9993400000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T07:56:17.262Z"
+      "updatedAt": "2026-07-17T07:56:35.191Z"
     }
   ],
   "sessions": [
@@ -298,6 +298,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "6239e1d3-c680-435b-a9ab-f31139ad480b",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9993400000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T07:56:35.191Z",
+      "metadata": {
+        "taskId": "9ab60789bf1045d8aa4962de3181bad1",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "481aa163-4115-475e-a2b1-24f7e8ff3b59",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6044,10 +6056,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T07:56:21.388Z",
-      "updatedAt": "2026-07-17T07:56:21.388Z"
+      "updatedAt": "2026-07-17T07:56:35.190Z"
     },
     {
       "id": "c4e63509b8d84bf4a15d59343dde28ea",
@@ -8522,9 +8534,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nKeep:\nsame face identity,\nsame hairstyle,\nsame skin tone,\nsame body proportions,\nsame grey tank top,\nsame white sweatpants,\nsame bedroom environment.\n\nCreate a realistic vertical 9:16 smartphone mirror selfie video.\n\nA young woman is sitting casually on the floor beside her bed, recording a relaxed bedroom selfie video. The video should feel like a real TikTok daily life moment, not a professional shoot.\n\nMotion:\nAt the beginning, she looks at herself in the mirror while holding the phone.\nShe slightly adjusts her sitting position, relaxes her shoulders, and changes her expression naturally.\nShe briefly looks away from the mirror, then looks back at the camera with a soft confident smile.\n\nAdd subtle human movements:\nnatural blinking,\ngentle breathing,\nsmall shoulder movement,\nslight body weight shift while sitting,\nsmall hand movement holding the phone,\nnatural hair movement,\nrealistic fabric movement on clothes.\n\nBody realism:\nKeep original body shape.\nNatural sitting posture.\nRealistic gravity.\nSubtle soft-body response when changing position.\nNatural movement caused by breathing and posture adjustment.\n\nCamera:\nvertical 9:16,\nsmartphone mirror selfie camera,\nslight handheld movement,\nreal phone camera quality,\ncasual bedroom recording style.\n\nLighting:\nkeep original warm bedroom lighting,\nsoft purple ambient light in background,\nnatural shadows,\nreal skin texture.\n\nMusic:\nsoft chill R&B,\ncozy bedroom night vibe,\nrelaxed TikTok lifestyle background music.\n\nSTRICT LIMITATIONS:\nDo not change face.\nDo not change hairstyle.\nDo not change outfit.\nDo not change body shape.\nDo not add accessories.\nDo not change room background.\n\nAvoid:\nface morphing,\ndifferent person,\nAI beauty filter,\nplastic skin,\nperfect model pose,\nexaggerated movement,\nfast motion,\nslow motion,\ncamera rotation,\nzoom effect,\nbody distortion,\nextra fingers,\nunnatural hands,\nwatermark,\nsubtitles.",
       "taskId": "9ab60789bf1045d8aa4962de3181bad1",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"7a7166e2-8184-44c5-b606-b6240e809752\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T07:56:21.388Z",
-      "updatedAt": "2026-07-17T07:56:26.943Z"
+      "updatedAt": "2026-07-17T07:56:35.191Z"
     },
     {
       "id": "2cac929e-a188-4203-a407-62df33d098ab",
