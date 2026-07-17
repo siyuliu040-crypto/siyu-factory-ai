@@ -6564,9 +6564,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "fbadab2ec53a4ef2b2afc6690637fecf",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T01:50:49.716Z",
-      "updatedAt": "2026-07-17T01:50:49.716Z"
+      "updatedAt": "2026-07-17T01:50:53.806Z"
     },
     {
       "id": "5081b079-73fc-4f66-91a6-941d73aaaa0b",
