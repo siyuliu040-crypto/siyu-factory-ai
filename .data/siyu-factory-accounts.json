@@ -76,9 +76,9 @@
       "name": "LYB",
       "passwordHash": "be74a5320d8effba4a36c7eba93e5267:3360b6905c609fd00b239e1e6b389c34762d748171e21492ace5dfd6c8b435e6a0f20464a8de07bfc753331a8f1126720a9b34ba620445bcfb4f3beff3e73b6b",
       "role": "user",
-      "credits": 9939700000,
+      "credits": 9940150000,
       "createdAt": "2026-07-16T09:10:01.615Z",
-      "updatedAt": "2026-07-17T02:38:15.426Z"
+      "updatedAt": "2026-07-17T02:38:49.363Z"
     },
     {
       "id": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c7daa8b1-cb67-4082-a6d5-ab1ad1fa7bd8",
+      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
+      "amount": 450000,
+      "balanceAfter": 9940150000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T02:38:49.363Z",
+      "metadata": {
+        "taskId": "cb47d1a5f4284dc49876aae513f44d13",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "830fa9d6-6c8b-41b8-af40-6f732bee6ea6",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
@@ -5342,10 +5354,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T02:38:18.850Z",
-      "updatedAt": "2026-07-17T02:38:18.850Z"
+      "updatedAt": "2026-07-17T02:38:49.363Z"
     },
     {
       "id": "f2523ce4bca44b358f034c3c3effa6c0",
@@ -7424,9 +7436,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "保持相同的面部五官、长卷发、胡须、米白色长袍和木制十字架，不改变人物身份与服装主体。\n9:16竖版、照片级写实的电影感TikTok短视频。\n场景位于夕阳照耀的荒野山谷。耶稣双手轻轻抱着木制十字架，眼神温柔而坚定，脸上带着对世人的怜悯与关怀。金色阳光从他的背后照射，在头发和肩膀周围形成柔和的神圣光晕。\n镜头从胸部中近景缓慢向前推进。耶稣安静地看向远方，随后转头看向镜头，眼睛中带着悲悯、安慰和希望。微风轻轻吹动他的长发与长袍。\n他缓慢放下一只手，向镜头前方伸出，像是在邀请一个疲惫、受伤的人来到身边。背后的金色光芒逐渐增强，柔和的白金色光粒从肩膀周围升起。光芒在他的背后凝聚成一双半透明、洁白而宽大的天使翅膀，翅膀自然展开，动作庄重而温柔，不夸张，不刺眼。\n画面背景中出现几位需要帮助的人，有疲惫的老人、饥饿的家庭和受伤后虚弱休息的人。化作天使形态的耶稣缓慢走向他们，轻轻扶起一位老人，并把面包递给一个需要帮助的人。众人的表情从悲伤逐渐变得安心和充满希望。\n耶稣看向众人，用温柔、平静、有感情的中文说道：\n“不要害怕，我看见你们的痛苦。用爱彼此帮助，希望就不会离开。”\n人物嘴型与中文台词自然同步，声音温暖、沉稳、充满慈爱。真实皮肤纹理，真实手部动作，真实布料与头发运动，电影级夕阳光线，柔和散景，镜头稳定，情感自然，神圣但不过度夸张。\n禁止：人物变脸、五官漂移、翅膀穿过身体、翅膀突然闪烁、手指错误、额外肢体、暴力场面、恐怖表情、过度曝光、夸张魔法特效、卡通风格、字幕、文字、标志、水印。",
       "taskId": "cb47d1a5f4284dc49876aae513f44d13",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"11bc4044-a230-4a09-a18b-6c3b5d28ebbb\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
       "createdAt": "2026-07-17T02:38:18.851Z",
-      "updatedAt": "2026-07-17T02:38:38.945Z"
+      "updatedAt": "2026-07-17T02:38:49.363Z"
     },
     {
       "id": "f37c01a5-d01b-498d-bd57-ead8cea4dfe0",
