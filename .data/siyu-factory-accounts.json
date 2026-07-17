@@ -6342,6 +6342,17 @@
   ],
   "generationTasks": [
     {
+      "id": "ad78c96f3e5d402dad06bc0698dd9491",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T09:55:20.694Z",
+      "updatedAt": "2026-07-17T09:55:20.694Z"
+    },
+    {
       "id": "ef510b91de5d43268e03d06371aa436e",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8994,6 +9005,17 @@
     }
   ],
   "history": [
+    {
+      "id": "905ce438-379c-4dc6-91cd-7e5dabfbf98c",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "场景进入真实美容沙龙。\r\n\r\n人物坐在黑色沙龙椅上，展示安装完成后的Straight Human Hair。\r\n\r\n重点展示：\r\n\r\n自然发际线\r\n头顶平整度\r\n发丝顺滑\r\n沙龙效果\r\n人物展示动作：\r\n00:12–00:13.5\r\n\r\n人物坐姿侧向镜头。\r\n\r\n状态：\r\n\r\n背部靠椅\r\n双腿自然摆放\r\n左手放在米色包上\r\n\r\n人物先低头观察自己的头发。\r\n\r\n00:13.5–00:15\r\n\r\n右手抬起。\r\n\r\n动作：\r\n\r\n从耳侧进入。\r\n\r\n轻轻托起一层头发。\r\n\r\n让发丝自然落在手掌上。\r\n\r\n手指慢慢松开。\r\n\r\n头发自然滑落。\r\n\r\n00:15–00:16.5\r\n\r\n人物缓慢转头。\r\n\r\n动作：\r\n\r\n看向镜子方向。\r\n\r\n停顿。\r\n\r\n再看回镜头。\r\n\r\n头发随着动作轻轻移动。\r\n\r\n00:16.5–00:18\r\n\r\n人物微笑。\r\n\r\n右手放回包上。\r\n\r\n保持侧脸和发型展示。\r\n\r\n镜头类型：\r\n\r\n中近景。\r\n\r\n镜头角度：\r\n\r\n45度侧面平视。\r\n\r\n镜头运动：\r\n\r\n固定手机拍摄。\r\n\r\n构图方式：\r\n\r\n人物居中，头发覆盖肩膀和胸前。\r\n\r\n光线和色彩：\r\n\r\n沙龙柔光，突出发丝质感。\r\n\r\nAI视频生成提示词：\r\n\r\n9:16竖屏，真实美国黑人女性美容沙龙UGC视频。\r\n\r\n同一人物坐在真实美容沙龙黑色椅子上。\r\n\r\n佩戴Natural Black Straight Human Hair。\r\n\r\n头发保持：\r\n\r\n超长\r\n顺直\r\n自然黑色\r\n低光泽\r\n厚实发尾\r\n\r\n人物自然坐姿。\r\n\r\n右手轻轻托起耳侧头发，让发丝从手掌滑落。\r\n\r\n随后缓慢转头，让头发随着动作自然移动。\r\n\r\n展示：\r\n\r\n自然发际线、平整头顶、顺滑发丝和真实安装效果。\r\n\r\n禁止蕾丝外露、假发帽、塑料头发、过度磨皮、字幕、Logo、水印。",
+      "taskId": "ad78c96f3e5d402dad06bc0698dd9491",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T09:55:20.694Z",
+      "updatedAt": "2026-07-17T09:55:20.694Z"
+    },
     {
       "id": "b673504b-2443-40b6-a97a-b480059411e4",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
