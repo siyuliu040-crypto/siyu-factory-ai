@@ -8772,9 +8772,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use image as exact reference.\n\nCreate a realistic vertical 9:16 TikTok lifestyle video.\n\nKeep same girl, face, hair, outfit and cafe background.\n\nGirl sits at an outdoor cafe in sunlight.\nShe naturally looks to the side, slightly smiles, and gently moves her hair with one hand.\n\nOnly subtle movements:\nnatural blinking,\nsoft breathing,\nsmall shoulder movement,\nslight hair movement from the breeze,\nreal skin texture with natural light reflection.\n\nCamera:\nhandheld phone camera,\ncasual lifestyle video,\nslight natural shake.\n\nMusic:\nsoft summer cafe music,\nrelaxed acoustic melody,\nwarm afternoon vibe.\n\nStyle:\nreal person daily life,\nnatural beauty,\nauthentic TikTok UGC.\n\nAvoid:\nAI face,\nplastic skin,\nover posing,\nfast movements,\nchanging clothes,\nchanging background.",
       "taskId": "e37f6ff69a024ac1ae0384609162dfb9",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T08:52:31.020Z",
-      "updatedAt": "2026-07-17T08:52:35.331Z"
+      "updatedAt": "2026-07-17T08:52:42.707Z"
     },
     {
       "id": "14eb1e6b-45a8-49d3-8b22-00b52d8b73f0",
