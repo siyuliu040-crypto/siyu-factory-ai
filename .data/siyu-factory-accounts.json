@@ -6213,6 +6213,17 @@
   ],
   "generationTasks": [
     {
+      "id": "060c6db2dd624803a5427f1b43ac5239",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T08:55:56.003Z",
+      "updatedAt": "2026-07-17T08:55:56.003Z"
+    },
+    {
       "id": "e37f6ff69a024ac1ae0384609162dfb9",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8777,6 +8788,17 @@
     }
   ],
   "history": [
+    {
+      "id": "2ad90c23-c87f-46af-b7b3-73a5006ee0a7",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use image as exact reference.\r\n\r\nKeep same girl, face, glasses, hairstyle, outfit and car background.\r\n\r\nRealistic TikTok UGC selfie video.\r\nGirl sits in the car. She looks at the camera naturally, blinks softly, slightly tilts her head, and gives a small relaxed smile.\r\n\r\nSubtle movements:\r\nnatural breathing,\r\nsmall shoulder movement,\r\nslight hair movement,\r\nreal skin texture and natural light changes.\r\n\r\nCamera:\r\nhandheld phone selfie,\r\ncasual daily vlog style.\r\n\r\nMusic:\r\nsoft chill pop music, calm morning vibe.\r\n\r\nAvoid:\r\nAI face,\r\nplastic skin,\r\nchanging clothes,\r\nchanging background,\r\nexaggerated movement.",
+      "taskId": "060c6db2dd624803a5427f1b43ac5239",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T08:55:56.003Z",
+      "updatedAt": "2026-07-17T08:55:56.003Z"
+    },
     {
       "id": "388d6bbd-9021-4f11-8ee6-17f9bb17eeca",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
