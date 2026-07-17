@@ -6039,6 +6039,17 @@
   ],
   "generationTasks": [
     {
+      "id": "9ab60789bf1045d8aa4962de3181bad1",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T07:56:21.388Z",
+      "updatedAt": "2026-07-17T07:56:21.388Z"
+    },
+    {
       "id": "c4e63509b8d84bf4a15d59343dde28ea",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8504,6 +8515,17 @@
     }
   ],
   "history": [
+    {
+      "id": "16ab52f5-42a9-417f-8f9c-a3d328cc18df",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference.\r\n\r\nKeep:\r\nsame face identity,\r\nsame hairstyle,\r\nsame skin tone,\r\nsame body proportions,\r\nsame grey tank top,\r\nsame white sweatpants,\r\nsame bedroom environment.\r\n\r\nCreate a realistic vertical 9:16 smartphone mirror selfie video.\r\n\r\nA young woman is sitting casually on the floor beside her bed, recording a relaxed bedroom selfie video. The video should feel like a real TikTok daily life moment, not a professional shoot.\r\n\r\nMotion:\r\nAt the beginning, she looks at herself in the mirror while holding the phone.\r\nShe slightly adjusts her sitting position, relaxes her shoulders, and changes her expression naturally.\r\nShe briefly looks away from the mirror, then looks back at the camera with a soft confident smile.\r\n\r\nAdd subtle human movements:\r\nnatural blinking,\r\ngentle breathing,\r\nsmall shoulder movement,\r\nslight body weight shift while sitting,\r\nsmall hand movement holding the phone,\r\nnatural hair movement,\r\nrealistic fabric movement on clothes.\r\n\r\nBody realism:\r\nKeep original body shape.\r\nNatural sitting posture.\r\nRealistic gravity.\r\nSubtle soft-body response when changing position.\r\nNatural movement caused by breathing and posture adjustment.\r\n\r\nCamera:\r\nvertical 9:16,\r\nsmartphone mirror selfie camera,\r\nslight handheld movement,\r\nreal phone camera quality,\r\ncasual bedroom recording style.\r\n\r\nLighting:\r\nkeep original warm bedroom lighting,\r\nsoft purple ambient light in background,\r\nnatural shadows,\r\nreal skin texture.\r\n\r\nMusic:\r\nsoft chill R&B,\r\ncozy bedroom night vibe,\r\nrelaxed TikTok lifestyle background music.\r\n\r\nSTRICT LIMITATIONS:\r\nDo not change face.\r\nDo not change hairstyle.\r\nDo not change outfit.\r\nDo not change body shape.\r\nDo not add accessories.\r\nDo not change room background.\r\n\r\nAvoid:\r\nface morphing,\r\ndifferent person,\r\nAI beauty filter,\r\nplastic skin,\r\nperfect model pose,\r\nexaggerated movement,\r\nfast motion,\r\nslow motion,\r\ncamera rotation,\r\nzoom effect,\r\nbody distortion,\r\nextra fingers,\r\nunnatural hands,\r\nwatermark,\r\nsubtitles.",
+      "taskId": "9ab60789bf1045d8aa4962de3181bad1",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T07:56:21.388Z",
+      "updatedAt": "2026-07-17T07:56:21.388Z"
+    },
     {
       "id": "2cac929e-a188-4203-a407-62df33d098ab",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
