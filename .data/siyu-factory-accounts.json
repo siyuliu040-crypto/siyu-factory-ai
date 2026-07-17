@@ -6015,6 +6015,17 @@
   ],
   "generationTasks": [
     {
+      "id": "c4e63509b8d84bf4a15d59343dde28ea",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T07:55:41.217Z",
+      "updatedAt": "2026-07-17T07:55:41.217Z"
+    },
+    {
       "id": "7c16fb61b62c4b83b6b9bc58c3923b8f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8469,6 +8480,17 @@
     }
   ],
   "history": [
+    {
+      "id": "2cac929e-a188-4203-a407-62df33d098ab",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference.\r\n\r\nKeep identical:\r\nsame face,\r\nsame hairstyle,\r\nsame skin tone,\r\nsame body proportions,\r\nsame black bikini outfit,\r\nsame beach background,\r\nsame golden hour lighting.\r\n\r\nCreate a realistic vertical 9:16 smartphone selfie video.\r\n\r\nA young woman is sitting on the beach during sunset, recording a casual vacation selfie video. The video should feel like a real TikTok lifestyle moment captured on a phone.\r\n\r\nMotion:\r\nShe starts looking directly into the camera with a soft natural smile.\r\nAfter a few seconds, she slightly turns her head toward the ocean, enjoying the sunset breeze.\r\nShe then looks back at the camera and gives a relaxed confident expression.\r\n\r\nAdd subtle realistic movements:\r\nnatural breathing,\r\nsmall shoulder movement,\r\nslight body weight adjustment while sitting,\r\ngentle hair movement from ocean wind,\r\nsmall changes in facial expression,\r\nnatural blinking,\r\nrealistic swimsuit fabric movement.\r\n\r\nBody realism:\r\nKeep the original body shape.\r\nNatural posture while sitting.\r\nRealistic gravity.\r\nSubtle soft-body movement caused by breathing and shifting position.\r\nNo exaggerated movement.\r\n\r\nCamera:\r\nvertical 9:16,\r\nfront smartphone selfie camera,\r\nclose handheld distance,\r\nslight natural phone shake,\r\ncasual vacation recording style.\r\n\r\nLighting:\r\nkeep warm sunset sunlight,\r\nnatural skin texture,\r\nrealistic shadows,\r\nsoft beach atmosphere.\r\n\r\nMusic:\r\nsoft summer R&B,\r\nwarm sunset beach vibe,\r\nrelaxed female vocal background,\r\nTikTok aesthetic lifestyle music.\r\n\r\nSTRICT LIMITATIONS:\r\nDo not change face.\r\nDo not change hairstyle.\r\nDo not change body proportions.\r\nDo not change outfit.\r\nDo not add accessories.\r\nDo not change background.\r\n\r\nAvoid:\r\nface morphing,\r\ndifferent person,\r\nAI beauty effect,\r\nplastic skin,\r\nfake smile,\r\nover posing,\r\nfast movement,\r\nslow motion,\r\ncamera rotation,\r\nzoom effect,\r\nbody distortion,\r\nunnatural joints,\r\nextra fingers,\r\nwatermark,\r\nsubtitles.",
+      "taskId": "c4e63509b8d84bf4a15d59343dde28ea",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T07:55:41.217Z",
+      "updatedAt": "2026-07-17T07:55:41.217Z"
+    },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
