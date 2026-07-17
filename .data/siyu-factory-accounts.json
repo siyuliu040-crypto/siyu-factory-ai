@@ -6159,6 +6159,17 @@
   ],
   "generationTasks": [
     {
+      "id": "211c14b317b942ca8245c822d6aab9a6",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T08:03:38.814Z",
+      "updatedAt": "2026-07-17T08:03:38.814Z"
+    },
+    {
       "id": "fcfd7439de1646f0b9a038f427cb2449",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8679,6 +8690,17 @@
     }
   ],
   "history": [
+    {
+      "id": "9159ffb8-9585-4406-8fbc-67830eb1f942",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use image as exact reference. Keep same girl, face, hair, outfit and cafe background.\r\n\r\nRealistic TikTok UGC lifestyle video.\r\nGirl sits at outdoor cafe. She looks away naturally, hair moves in the breeze. She touches her hair, picks up the drink, takes a small sip, then looks at camera with a soft smile.\r\n\r\nHandheld phone camera, natural sunlight, realistic skin texture.\r\n\r\nMusic: soft summer chill music, relaxing cafe vibe, light acoustic melody.\r\n\r\nAvoid: AI face, changing clothes, changing background, unnatural movement.",
+      "taskId": "211c14b317b942ca8245c822d6aab9a6",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T08:03:38.814Z",
+      "updatedAt": "2026-07-17T08:03:38.814Z"
+    },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
