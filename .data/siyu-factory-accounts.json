@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 9972550000,
+      "credits": 9973000000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-17T02:30:02.880Z"
+      "updatedAt": "2026-07-17T02:30:45.948Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "11f934d5-3e4c-45f1-813c-1792141793ef",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "amount": 450000,
+      "balanceAfter": 9973000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T02:30:45.948Z",
+      "metadata": {
+        "taskId": "46fdd670f67b4ace81928eff042bcf7d",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "3c0dca40-f776-4b23-bc2f-660b97e48121",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -5222,10 +5234,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T02:30:06.284Z",
-      "updatedAt": "2026-07-17T02:30:06.284Z"
+      "updatedAt": "2026-07-17T02:30:45.947Z"
     },
     {
       "id": "bd15875713944a5f9e9674bdf863ebb2",
@@ -7227,9 +7239,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Preserve the same face, shoulder-length wavy brown hair, beard, beige biblical robes, wooden cross, body proportions and realistic appearance.\n\nCreate an 8-second vertical 9:16 photorealistic cinematic TikTok video in one continuous shot.\n\n0–2 seconds:\nJesus stands quietly on a sunlit hillside, holding the wooden cross close to his chest. He looks toward a group of tired and struggling people in the distance. His eyes are emotional, compassionate and slightly tearful, showing deep concern rather than sadness. A gentle breeze naturally moves his hair and robe.\n\n2–5 seconds:\nWarm golden light slowly grows behind his shoulders. Two large, elegant white angel wings gradually appear from the light, unfolding smoothly and naturally. The feathers are highly detailed and softly illuminated, with a subtle heavenly glow. The transformation feels peaceful, sacred and realistic, never dramatic or frightening.\n\n5–8 seconds:\nNow appearing as a compassionate angel, he walks toward the people and extends one hand to help an elderly man stand up. With his other hand, he gently reaches toward a mother and her child. Several people gather around him with hopeful, emotional expressions. Soft golden light surrounds the group, symbolizing comfort, kindness and protection.\n\nHe looks directly toward the people and speaks gently with natural lip movementDo not be afraid. Help one another with love. No one should suffer alone.\n\nWarm sunset backlight, subtle halo behind his head, realistic angel wings, natural human movement, emotional eyes, detailed skin texture, realistic hands, authentic fabric movement, peaceful spiritual atmosphere, cinematic depth of field, stable camera, 4K-level detail, no scene cuts, no subtitles, no text, no logo, no watermark.",
       "taskId": "46fdd670f67b4ace81928eff042bcf7d",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"714a50f2-eabc-4b52-9ee2-cd5f7e433f8c\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
       "createdAt": "2026-07-17T02:30:06.284Z",
-      "updatedAt": "2026-07-17T02:30:37.537Z"
+      "updatedAt": "2026-07-17T02:30:45.948Z"
     },
     {
       "id": "5fedaa38-5daa-4171-a20c-388f26b48fc9",
