@@ -8627,9 +8627,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 TikTok UGC lifestyle selfie video.\n\nKeep:\nsame woman identity,\nsame face features,\nsame hairstyle,\nsame white lace tank top,\nsame denim shorts,\nsame outdoor cafe environment,\nsame body proportions.\n\nA young woman is sitting at an outdoor cafe on a sunny day, casually recording a selfie video.\n\nMotion:\nAt the beginning, she looks away from the camera toward the cafe surroundings, enjoying the moment.\nA gentle breeze moves a few loose strands of her hair.\nShe slowly turns her face back toward the phone camera,\nsmiles naturally,\nslightly adjusts her hair with one hand,\nthen takes a small sip from her drink.\n\nHer expression should feel natural:\nrelaxed eyes,\nsoft smile,\nconfident but casual,\nlike a real vacation daily vlog.\n\nAdd realistic details:\nnatural blinking,\nsmall breathing movement,\nsubtle shoulder movement,\nhair moving from outdoor breeze,\nsmall hand movements,\nreal skin texture,\nnatural sunlight reflection.\n\nCamera:\nhandheld smartphone selfie camera,\nslight natural phone shake,\ncasual Instagram/TikTok recording style,\nnot professional photography.\n\nEnvironment:\noutdoor cafe,\npalm trees in background,\nwarm sunlight,\nsummer lifestyle atmosphere,\nreal people lifestyle feeling.\n\nStyle:\nauthentic social media content,\nbeautiful but realistic,\nyoung woman's daily life,\ntravel cafe aesthetic.\n\nAvoid:\nAI generated face,\nperfect model posing,\nplastic skin,\nbody reshaping,\nchanging clothes,\nchanging hairstyle,\nover cinematic effects,\nunnatural movements,\nextra fingers.",
       "taskId": "60409381b951473080f4b72130ee95ef",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T07:57:41.239Z",
-      "updatedAt": "2026-07-17T07:57:45.773Z"
+      "updatedAt": "2026-07-17T07:57:46.615Z"
     },
     {
       "id": "fa3609fd-e4f7-4f0f-bacd-29b6b1861907",
