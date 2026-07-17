@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "UGC AI Studio",
-  description: "AI image and video generation workspace powered by HellobabyGo."
+  title: "luo",
+  description: "AI image and video generation workspace."
 };
 
 export default function RootLayout({
