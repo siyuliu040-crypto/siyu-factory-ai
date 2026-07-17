@@ -6182,10 +6182,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T08:41:31.406Z",
-      "updatedAt": "2026-07-17T08:41:31.406Z"
+      "updatedAt": "2026-07-17T08:45:00.968Z"
     },
     {
       "id": "211c14b317b942ca8245c822d6aab9a6",
@@ -8725,10 +8725,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use image as exact reference. Keep same girl, face, hair, outfit and cafe background.\n\nRealistic TikTok UGC lifestyle video.\nGirl sits at outdoor cafe. She looks away naturally, hair moves in the breeze. She touches her hair, picks up the drink, takes a small sip, then looks at camera with a soft smile.\n\nHandheld phone camera, natural sunlight, realistic skin texture.\n\nMusic: soft summer chill music, relaxing cafe vibe, light acoustic melody.\n\nAvoid: AI face, changing clothes, changing background, unnatural movement.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/c7b246c1a61744ab98bee010a59b2078.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784364279&Signature=7tc2kfAHoMD%2BcqUtlrd5VJUZDOo%3D",
       "taskId": "cdb9d1c874f94095b6006488082db2ad",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T08:41:31.407Z",
-      "updatedAt": "2026-07-17T08:44:51.298Z"
+      "updatedAt": "2026-07-17T08:45:00.968Z"
     },
     {
       "id": "9159ffb8-9585-4406-8fbc-67830eb1f942",
