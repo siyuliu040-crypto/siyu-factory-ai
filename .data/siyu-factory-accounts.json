@@ -106,9 +106,9 @@
       "name": "赵凯磊",
       "passwordHash": "3e12efe3b023edcca8a284fedca0d3a3:e252007a0264556d02c1fb33e0bf53a610b137e10922eea4fdbf2044eeecc216d5bf27390c8b4142dde3eaad8c3b46cfd6c07371d34be73a234065f25765dd48",
       "role": "admin",
-      "credits": 9986200000,
+      "credits": 9986500000,
       "createdAt": "2026-07-16T09:11:07.487Z",
-      "updatedAt": "2026-07-17T02:16:40.513Z"
+      "updatedAt": "2026-07-17T02:17:05.712Z"
     },
     {
       "id": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "19cfa015-4270-437e-8fb3-febcbfa0c958",
+      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "amount": 300000,
+      "balanceAfter": 9986500000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T02:17:05.712Z",
+      "metadata": {
+        "taskId": "6877cc68f9184f27a9d56a90fe871bbb",
+        "model": "hfsy:sd-2-fast"
+      }
+    },
     {
       "id": "e55b9ab4-f0f4-4ac2-9596-49c465787d94",
       "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -5138,10 +5150,10 @@
       "type": "video",
       "model": "hfsy:sd-2-fast",
       "amount": 300000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T02:16:41.793Z",
-      "updatedAt": "2026-07-17T02:16:41.793Z"
+      "updatedAt": "2026-07-17T02:17:05.711Z"
     },
     {
       "id": "3d14efbf1c384d1bb3dae5b1f7664222",
@@ -7088,9 +7100,10 @@
       "model": "hfsy:sd-2-fast",
       "prompt": "A realistic cinematic TikTok video featuring a cute French bulldog wearing a stylish short brown human hair bob wig.\n\nScene starts in a luxury modern apartment with warm sunlight coming through the window.\n\nThe French bulldog sits on a soft velvet chair like a little fashion model. \nA stylish Black woman gently adjusts the dog's realistic human hair wig, carefully fixing the bangs and making the hairstyle look perfect.\n\nThe dog looks slightly confused at first, then slowly turns its head toward the camera with a confident and adorable expression.\n\nClose-up camera shots show the detailed hair strands, natural wig texture, smooth bangs, realistic hair movement, and the dog's expressive eyes.\n\nThe woman laughs happily and takes photos of the dog like a professional fashion photographer.\n\nFinal shot: the French bulldog proudly poses like a celebrity pet model.\n\nUltra realistic pet photography, luxury beauty lifestyle, natural emotions, cinematic lighting, shallow depth of field, high detail, viral TikTok pet transformation style.\n\nNo text, no subtitles, no watermark.",
       "taskId": "6877cc68f9184f27a9d56a90fe871bbb",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-17T02:16:41.793Z",
-      "updatedAt": "2026-07-17T02:16:58.238Z"
+      "updatedAt": "2026-07-17T02:17:05.712Z",
+      "error": "\"Fusion 提交失败 [ErrCode=10001]: account is blocked,exit\""
     },
     {
       "id": "641d5257-66bf-4521-bb2a-8aed525b4ea3",
