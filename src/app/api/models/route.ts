@@ -1,5 +1,5 @@
 import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
-import { HFSY_MODELS } from "@/lib/hfsy";
+import { HFSY_IMAGE_MODELS, HFSY_MODELS } from "@/lib/hfsy";
 import { SY_MODELS } from "@/lib/sy";
 import { VIDU_MODELS } from "@/lib/vidu";
 
@@ -44,6 +44,19 @@ function isVideoModelId(id: string) {
   );
 }
 
+function isImageModelId(id: string) {
+  const lower = id.toLowerCase();
+  return (
+    lower.includes("image") ||
+    lower.includes("banana") ||
+    lower.includes("dall") ||
+    lower.includes("flux") ||
+    lower.includes("midjourney") ||
+    lower.includes("stable-diffusion") ||
+    lower.includes("sdxl")
+  );
+}
+
 function normalizeUpstreamModel(model: unknown) {
   if (!model || typeof model !== "object") return model;
   const record = model as Record<string, unknown>;
@@ -66,6 +79,7 @@ export async function GET() {
     if (data && typeof data === "object" && Array.isArray((data as { data?: unknown }).data)) {
       const filtered = ((data as { data: unknown[] }).data)
         .filter(isAllowedModel)
+        .filter((model) => !isImageModelId(String((model as { id?: unknown })?.id || "")))
         .map(normalizeUpstreamModel);
       const liveIds = new Set(filtered.map((item) => String((item as { id?: unknown })?.id || "")));
       const hbgVideoModels = HBG_VERIFIED_VIDEO_MODELS
@@ -107,10 +121,19 @@ export async function GET() {
             name: model.label
           }))
         : [];
+      const hfsyImageModels = process.env.HFSY_API_KEY
+        ? HFSY_IMAGE_MODELS.map((model) => ({
+            id: model.id,
+            object: "model",
+            owned_by: "hfsy",
+            supported_endpoint_types: ["image-generation"],
+            name: model.label
+          }))
+        : [];
       return Response.json(
         {
           ...(data as Record<string, unknown>),
-          data: [...syModels, ...hfsyModels, ...hbgVideoModels, ...viduModels, ...customVideoModels, ...filtered]
+          data: [...syModels, ...hfsyModels, ...hfsyImageModels, ...hbgVideoModels, ...viduModels, ...customVideoModels, ...filtered]
         },
         { status: response.status }
       );
