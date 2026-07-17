@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019740107680,
+      "credits": 2000019740557680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-17T09:55:13.435Z"
+      "updatedAt": "2026-07-17T09:55:30.347Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c402c30a-edd6-487d-aeb3-21060e8dbbd7",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 450000,
+      "balanceAfter": 2000019740557680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T09:55:30.347Z",
+      "metadata": {
+        "taskId": "ad78c96f3e5d402dad06bc0698dd9491",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "959ae0a5-2541-4f25-8e98-d1652cdbf6d3",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6370,10 +6382,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T09:55:20.694Z",
-      "updatedAt": "2026-07-17T09:55:20.694Z"
+      "updatedAt": "2026-07-17T09:55:30.347Z"
     },
     {
       "id": "ef510b91de5d43268e03d06371aa436e",
@@ -9046,9 +9058,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "场景进入真实美容沙龙。\n\n人物坐在黑色沙龙椅上，展示安装完成后的Straight Human Hair。\n\n重点展示：\n\n自然发际线\n头顶平整度\n发丝顺滑\n沙龙效果\n人物展示动作：\n00:12–00:13.5\n\n人物坐姿侧向镜头。\n\n状态：\n\n背部靠椅\n双腿自然摆放\n左手放在米色包上\n\n人物先低头观察自己的头发。\n\n00:13.5–00:15\n\n右手抬起。\n\n动作：\n\n从耳侧进入。\n\n轻轻托起一层头发。\n\n让发丝自然落在手掌上。\n\n手指慢慢松开。\n\n头发自然滑落。\n\n00:15–00:16.5\n\n人物缓慢转头。\n\n动作：\n\n看向镜子方向。\n\n停顿。\n\n再看回镜头。\n\n头发随着动作轻轻移动。\n\n00:16.5–00:18\n\n人物微笑。\n\n右手放回包上。\n\n保持侧脸和发型展示。\n\n镜头类型：\n\n中近景。\n\n镜头角度：\n\n45度侧面平视。\n\n镜头运动：\n\n固定手机拍摄。\n\n构图方式：\n\n人物居中，头发覆盖肩膀和胸前。\n\n光线和色彩：\n\n沙龙柔光，突出发丝质感。\n\nAI视频生成提示词：\n\n9:16竖屏，真实美国黑人女性美容沙龙UGC视频。\n\n同一人物坐在真实美容沙龙黑色椅子上。\n\n佩戴Natural Black Straight Human Hair。\n\n头发保持：\n\n超长\n顺直\n自然黑色\n低光泽\n厚实发尾\n\n人物自然坐姿。\n\n右手轻轻托起耳侧头发，让发丝从手掌滑落。\n\n随后缓慢转头，让头发随着动作自然移动。\n\n展示：\n\n自然发际线、平整头顶、顺滑发丝和真实安装效果。\n\n禁止蕾丝外露、假发帽、塑料头发、过度磨皮、字幕、Logo、水印。",
       "taskId": "ad78c96f3e5d402dad06bc0698dd9491",
-      "status": "IN_PROGRESS",
+      "status": "failed",
       "createdAt": "2026-07-17T09:55:20.694Z",
-      "updatedAt": "2026-07-17T09:55:29.333Z"
+      "updatedAt": "2026-07-17T09:55:30.347Z",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"8faebb47-f03a-4fc4-a26f-bbe5395a4900\\\",\\n  \\\"date\\\": \\\"Fri, 17 Jul 2026 09:55:20 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\""
     },
     {
       "id": "b673504b-2443-40b6-a97a-b480059411e4",
