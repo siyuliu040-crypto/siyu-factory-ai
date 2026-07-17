@@ -5373,6 +5373,17 @@
   ],
   "generationTasks": [
     {
+      "id": "f2dff1aad96340e1a958e7955d53bea9",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T02:40:21.387Z",
+      "updatedAt": "2026-07-17T02:40:21.387Z"
+    },
+    {
       "id": "fc5eceaae9104668a86435964c8b177d",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "type": "video",
@@ -7464,6 +7475,17 @@
     }
   ],
   "history": [
+    {
+      "id": "db6b4ef3-5a73-4b1e-983a-a4655063b17a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom.\r\n\r\nCreate a realistic vertical TikTok selfie video.\r\n\r\nA beautiful adult woman is relaxing on a bed in a warm dim bedroom at night. The video should feel like authentic smartphone footage, casual lifestyle content, not a studio shoot.\r\n\r\nShe looks into the camera naturally, slightly changes her expression, gives a small confident smile, then adjusts her pillow and changes her resting position. She briefly looks away, then returns her eyes to the camera.\r\n\r\nNatural movement:\r\nrealistic blinking,\r\nsoft breathing,\r\nsmall shoulder movement,\r\nsubtle body shift,\r\nnatural fabric movement,\r\nrealistic hair movement.\r\n\r\nHer body should move naturally with gravity and posture changes. Add subtle realistic soft-body movement and natural compression from leaning on the bed. Keep it realistic, restrained and human, not exaggerated.\r\n\r\nCamera:\r\nfront phone camera,\r\nclose selfie angle,\r\nslight handheld movement,\r\nrealistic TikTok UGC style.\r\n\r\nLighting:\r\nwarm bedroom lamp,\r\nsoft shadows,\r\nnatural skin tones.\r\n\r\nSkin:\r\nreal texture,\r\nnatural pores,\r\nminimal retouching,\r\nno plastic skin,\r\nno excessive smoothing,\r\nno fake shine.\r\n\r\nMusic:\r\nchill R&B,\r\nsoft bass,\r\nlate night mood,\r\nrelaxed feminine vibe,\r\nTikTok viral lifestyle sound.\r\n\r\nAvoid:\r\nstiff movement,\r\nslow motion,\r\nrepeated hair touching,\r\nfake expressions,\r\nAI face,\r\nbody distortion,\r\nextra fingers,\r\nwatermark,\r\nsubtitles.",
+      "taskId": "f2dff1aad96340e1a958e7955d53bea9",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T02:40:21.387Z",
+      "updatedAt": "2026-07-17T02:40:21.387Z"
+    },
     {
       "id": "17c51120-c7d1-4e73-ab90-4388eba2d19e",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
