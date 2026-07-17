@@ -146,18 +146,12 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9993400000,
+      "credits": 9992950000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T08:04:14.911Z"
+      "updatedAt": "2026-07-17T08:41:27.116Z"
     }
   ],
   "sessions": [
-    {
-      "token": "107eae35e93d1f8c63b928732e232147489d42dfd785c2c55d23aebdee0f0245",
-      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
-      "expiresAt": "2026-07-17T08:22:47.900Z",
-      "createdAt": "2026-07-10T08:22:47.900Z"
-    },
     {
       "token": "595c68bc39087230971c87109bec521950a9f90764e1d9230567c0af2745aa1b",
       "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
@@ -298,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "0f33929c-fdd1-4996-87d4-6de7d86b7945",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": -450000,
+      "balanceAfter": 9992950000,
+      "reason": "video generation",
+      "createdAt": "2026-07-17T08:41:27.117Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "f5e2f232-11e8-469d-9dc2-28dddf00233b",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
