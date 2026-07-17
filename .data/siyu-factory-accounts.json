@@ -5577,6 +5577,17 @@
   ],
   "generationTasks": [
     {
+      "id": "76e2d6e9e7c24e7898b3b9c70c8369a6",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T03:43:08.703Z",
+      "updatedAt": "2026-07-17T03:43:08.703Z"
+    },
+    {
       "id": "d2bc9779839548d08cce905889f422e0",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -7767,6 +7778,17 @@
     }
   ],
   "history": [
+    {
+      "id": "bac8c0b4-290a-421d-9662-4d75ed085cad",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and background.\r\n\r\nCreate a realistic vertical 9:16 smartphone selfie video, TikTok UGC style.\r\n\r\nShe looks naturally at the camera, blinks softly, slightly changes her expression, gives a small relaxed smile, briefly looks away, then looks back. She makes a subtle posture adjustment with natural breathing, slight shoulder movement, small head movement, minor body weight shift, realistic hair movement and soft fabric movement.\r\n\r\nHer body should respond naturally to breathing, gravity and posture changes, with subtle soft-body movement and slight natural compression. Keep all movement smooth, restrained and at normal real-life speed. No slow motion.\r\n\r\nCamera: front phone camera, close selfie distance, slight handheld movement, natural imperfect framing, authentic phone quality.\r\n\r\nLighting: keep the original lighting, natural shadows, realistic exposure, soft everyday atmosphere.\r\n\r\nSkin: natural texture, visible pores, minimal editing, no beauty filter, no plastic skin, no glossy shine.\r\n\r\nMusic: soft chill R&B, warm lifestyle mood, relaxed TikTok sound.\r\n\r\nDo not change the person, hairstyle, body shape, clothing or background.\r\n\r\nNo face morphing, no identity change, no body distortion, no deformed hands, no extra fingers, no fake expressions, no exaggerated movement, no camera rotation, no zoom effect, no over-sharpening, no heavy smoothing, no watermark, no subtitles.",
+      "taskId": "76e2d6e9e7c24e7898b3b9c70c8369a6",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T03:43:08.704Z",
+      "updatedAt": "2026-07-17T03:43:08.704Z"
+    },
     {
       "id": "22bfdb52-ddc0-4a57-afff-16ef78a1ca6f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
