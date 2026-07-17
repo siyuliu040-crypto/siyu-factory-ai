@@ -1,4 +1,4 @@
-import { HELLOBABYGO_BASE_URL, authHeaders, jsonError } from "@/lib/hellobabygo";
+import { jsonError } from "@/lib/hellobabygo";
 import {
   AccountError,
   chargeUserCredits,
@@ -10,6 +10,7 @@ import { accountErrorResponse } from "@/lib/account-api";
 import { normalizeImageRequestForUpstream } from "@/lib/image-models";
 import { getGenerationCost } from "@/lib/pricing";
 import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
+import { getHfsyImageModel, HFSY_BASE_URL, hfsyHeaders, isHfsyImageModel } from "@/lib/hfsy";
 
 type ImageGeneratePayload = {
   model: string;
@@ -63,9 +64,9 @@ async function waitForImageCompletion(initialPayload: unknown) {
   let lastPayload = initialPayload;
   for (let attempt = 0; attempt < IMAGE_STATUS_MAX_ATTEMPTS; attempt += 1) {
     await wait(IMAGE_STATUS_POLL_INTERVAL_MS);
-    const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/images/${encodeURIComponent(taskId)}`, {
+    const response = await fetch(`${HFSY_BASE_URL}/v1/images/${encodeURIComponent(taskId)}`, {
       method: "GET",
-      headers: authHeaders({ Accept: "application/json" }),
+      headers: hfsyHeaders({ Accept: "application/json" }),
       cache: "no-store"
     });
     const payload = parseUpstreamText(await response.text(), response.status);
@@ -135,7 +136,7 @@ function streamUpstream(
       }, 5000);
 
       try {
-        const response = await fetch(`${HELLOBABYGO_BASE_URL}${path}`, {
+        const response = await fetch(`${HFSY_BASE_URL}${path}`, {
           ...init,
           cache: "no-store"
         });
@@ -200,6 +201,12 @@ export async function POST(request: Request) {
       if (!model || !prompt) {
         return jsonError({ error: "model and prompt are required" }, 400);
       }
+      if (!isHfsyImageModel(model)) {
+        return jsonError({
+          error: "unsupported_image_model",
+          message: "Only HFSY image models are enabled on this site."
+        }, 400);
+      }
       if (isPromptTooLong(model, prompt, "image")) {
         return jsonError({
           error: "prompt_too_long",
@@ -221,6 +228,14 @@ export async function POST(request: Request) {
       const references = incoming
         .getAll("image")
         .filter((value): value is File => value instanceof File && value.size > 0);
+      const hfsyImageModel = getHfsyImageModel(model);
+
+      if (references.length > 0 && hfsyImageModel?.referenceMode === "text-only") {
+        return jsonError({
+          error: "reference_not_supported",
+          message: "This HFSY image model only supports prompt-only image generation. Use Nano Banana for reference-image generation."
+        }, 400);
+      }
 
       if (references.length > 0) {
         const formData = new FormData();
@@ -237,14 +252,14 @@ export async function POST(request: Request) {
 
         return streamUpstream("/v1/images/edits", {
           method: "POST",
-          headers: authHeaders({ Accept: "application/json" }),
+          headers: hfsyHeaders({ Accept: "application/json" }),
           body: formData
         }, billing, { model, prompt });
       }
 
       return streamUpstream("/v1/images/generations", {
         method: "POST",
-        headers: authHeaders({
+        headers: hfsyHeaders({
           "Content-Type": "application/json",
           Accept: "application/json"
         }),
@@ -263,6 +278,12 @@ export async function POST(request: Request) {
 
     if (!body.model || !body.prompt?.trim()) {
       return jsonError({ error: "model and prompt are required" }, 400);
+    }
+    if (!isHfsyImageModel(body.model)) {
+      return jsonError({
+        error: "unsupported_image_model",
+        message: "Only HFSY image models are enabled on this site."
+      }, 400);
     }
     if (isPromptTooLong(body.model, body.prompt.trim(), "image")) {
       return jsonError({
@@ -283,7 +304,7 @@ export async function POST(request: Request) {
 
     return streamUpstream("/v1/images/generations", {
       method: "POST",
-      headers: authHeaders({
+      headers: hfsyHeaders({
         "Content-Type": "application/json",
         Accept: "application/json"
       }),
