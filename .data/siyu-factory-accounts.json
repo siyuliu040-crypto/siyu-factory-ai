@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9989350000,
+      "credits": 9989800000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T10:07:14.909Z"
+      "updatedAt": "2026-07-17T10:07:34.725Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "a07e16ea-d2a0-44a7-9ef1-95ae56c1b60d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9989800000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T10:07:34.725Z",
+      "metadata": {
+        "taskId": "e402777b402e4b92b541f4181206ddc5",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "5c726862-2d20-4ff3-addb-be4795258e6d",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6419,10 +6431,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T10:07:18.380Z",
-      "updatedAt": "2026-07-17T10:07:18.380Z"
+      "updatedAt": "2026-07-17T10:07:34.725Z"
     },
     {
       "id": "e0f3e160569f4b4988fdacac4824e422",
@@ -9117,9 +9129,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic TikTok outdoor lifestyle selfie video using the reference image.\n\nKeep the same woman, same face, same hairstyle, same beige top, denim shorts and outdoor street environment.\n\nShe is taking a casual selfie video outside on a sunny day. She slightly turns her head, looks at the phone camera, gently smiles, and adjusts her posture naturally.\n\nHer movement is relaxed and realistic, like a real person recording a daily moment. The camera has small natural handheld movement, slight body movement from breathing, and authentic phone camera feeling.\n\nShow realistic details:\nnatural skin texture,\nvisible pores,\nsoft sunlight on skin,\nreal body proportions,\nnatural curves,\nrealistic fabric texture on clothes.\n\nThe mood is confident, comfortable and positive.\nShe looks happy and relaxed in her everyday life.\n\nAdd background music:\ntrendy TikTok lifestyle music,\nsoft upbeat summer vibe,\nconfident and warm feeling.\n\nStyle:\nultra realistic smartphone video,\nauthentic street selfie,\nnatural influencer lifestyle content.\n\nAvoid:\nAI face,\nplastic skin,\nunreal body shape,\nexaggerated posing,\nover edited beauty filter,\nchanging clothes or hairstyle.",
       "taskId": "e402777b402e4b92b541f4181206ddc5",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"8eaa6f4e-f90f-4828-8df0-d8eb1dbcac86\\\",\\n  \\\"date\\\": \\\"Fri, 17 Jul 2026 10:07:27 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T10:07:18.380Z",
-      "updatedAt": "2026-07-17T10:07:24.929Z"
+      "updatedAt": "2026-07-17T10:07:34.725Z"
     },
     {
       "id": "74ad4cf2-fbd3-45d7-b25c-78acb1015ad8",
