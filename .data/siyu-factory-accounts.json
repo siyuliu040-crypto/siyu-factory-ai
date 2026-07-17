@@ -4857,6 +4857,17 @@
   ],
   "generationTasks": [
     {
+      "id": "97954a95395f49fd94996d8b387bcc23",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T01:55:15.310Z",
+      "updatedAt": "2026-07-17T01:55:15.310Z"
+    },
+    {
       "id": "2dfa0c6ff41448a0850f6bfb7a286655",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "type": "video",
@@ -6651,6 +6662,17 @@
     }
   ],
   "history": [
+    {
+      "id": "63f006c3-7b59-45ba-b2f8-519013da7e68",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Create an 8-second vertical 9:16 photorealistic viral TikTok pet video.\r\n\r\nA cute cream-colored French Bulldog walks confidently along a lively American city sidewalk. The dog wears a soft pastel-pink bob wig with neat bangs and a small pearl necklace. The wig fits naturally around its ears and moves gently with every step.\r\n\r\nThe camera tracks backward at the dog’s eye level while the French Bulldog walks naturally on all four legs. People in the softly blurred background smile and turn their heads to look at the fashionable dog.\r\n\r\nA gentle breeze moves the pink wig slightly. The dog briefly stops beside a shop window, looks at its reflection, tilts its head proudly, and continues walking with a playful confident expression.\r\n\r\nPhotorealistic dog fur, realistic four-legged walking, natural wig movement, cute luxury street-fashion atmosphere, stable camera, warm daylight, no dialogue, no subtitles, no logos, no watermark.",
+      "taskId": "97954a95395f49fd94996d8b387bcc23",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T01:55:15.310Z",
+      "updatedAt": "2026-07-17T01:55:15.310Z"
+    },
     {
       "id": "4049cd09-305c-4799-a0c2-0d81df5ed1d6",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
