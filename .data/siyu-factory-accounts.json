@@ -86,9 +86,9 @@
       "name": "阎重谋",
       "passwordHash": "0e30990e4f959a54184bd9246f792997:f3f916313ffd31235fd3edb32eca97bae6fa80cfeb300f5baf34e1c28dab837b08bcae9468991094cfeeed82644fd0400d70571f8d748892f39dda40e816d81b",
       "role": "user",
-      "credits": 9970430000,
+      "credits": 9970880000,
       "createdAt": "2026-07-16T09:10:25.215Z",
-      "updatedAt": "2026-07-17T01:50:47.602Z"
+      "updatedAt": "2026-07-17T01:51:10.048Z"
     },
     {
       "id": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "281f565c-9f07-4059-b864-eca9825ab90a",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "amount": 450000,
+      "balanceAfter": 9970880000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T01:51:10.048Z",
+      "metadata": {
+        "taskId": "fbadab2ec53a4ef2b2afc6690637fecf",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "e4f7007d-f2a9-4b66-bc5a-8dc570456201",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -4790,10 +4802,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T01:50:49.715Z",
-      "updatedAt": "2026-07-17T01:50:49.715Z"
+      "updatedAt": "2026-07-17T01:51:10.048Z"
     },
     {
       "id": "1af64bd2ccd04f938b3ad5c0025fbe58",
@@ -6564,9 +6576,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "fbadab2ec53a4ef2b2afc6690637fecf",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"ad16f099-ff9b-4c1f-b477-50b5fefd1223\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T01:50:49.716Z",
-      "updatedAt": "2026-07-17T01:51:02.051Z"
+      "updatedAt": "2026-07-17T01:51:10.048Z"
     },
     {
       "id": "5081b079-73fc-4f66-91a6-941d73aaaa0b",
