@@ -5351,10 +5351,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T02:34:10.482Z",
-      "updatedAt": "2026-07-17T02:34:10.482Z"
+      "updatedAt": "2026-07-17T02:37:21.509Z"
     },
     {
       "id": "b44173b6a22a4bbd8d746803a100be57",
@@ -7412,9 +7412,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "A hyper realistic cinematic video of a cute French bulldog wearing a natural short brown human hair bob wig.\n\nThe video begins inside a modern luxury apartment with soft morning sunlight coming through the window.\n\nThe French bulldog is sitting calmly on a comfortable cream-colored sofa. \nThe dog is breathing naturally, blinking slowly, and looking around curiously.\n\nA stylish Black woman enters the scene and sits beside the dog.\n\nShe gently touches the dog's head with one hand, calming the dog before adjusting the wig.\n\nHer fingers carefully move through the wig strands, fixing the bangs, smoothing the sides, and making sure the hair sits naturally around the dog's ears.\n\nThe dog slightly tilts its head, blinks, and looks confused but comfortable.\n\nThe camera slowly moves closer, capturing detailed realistic textures:\nthe soft fur around the dog's face, the individual human hair strands, the natural shine of the wig, and the connection between the wig and the dog's head.\n\nThe woman gently turns the dog's face toward the camera.\n\nThe French bulldog slowly looks into the lens with big expressive eyes, then slightly raises its chin and becomes confident like a little fashion model.\n\nThe woman smiles naturally and softly laughs.\n\nFinal shot:\nThe dog sits proudly on the sofa, slowly turning its head left and right while the wig moves naturally.\n\nUltra realistic pet photography, real human interaction, natural body movement, realistic facial expressions, cinematic depth of field, professional TikTok lifestyle video, 4K realistic details.\n\nNo text, no subtitles, no watermark.\nrealistic animal movement,\nnatural physics,\nno artificial motion,\nreal camera footage,\ndocumentary style,\nreal pet behavior,\nnatural blinking,\nsubtle breathing,\nrealistic hair movement,\ncinematic handheld camera",
       "taskId": "4adbab5f9c6147a393b16524e450de2c",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T02:34:10.482Z",
-      "updatedAt": "2026-07-17T02:37:10.688Z"
+      "updatedAt": "2026-07-17T02:37:21.509Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/dd97725fafdc4d04bd8e39cfdd13e47c.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342211&Signature=rJNTxr69nEUKSDtdFInkiR%2BdqF8%3D"
     },
     {
       "id": "aa1a3eb0-6919-45ac-b1ab-4f43149f8b4c",
