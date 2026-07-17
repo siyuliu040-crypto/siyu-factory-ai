@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9999250000,
+      "credits": 9999700000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T02:05:29.186Z"
+      "updatedAt": "2026-07-17T02:06:01.946Z"
     }
   ],
   "sessions": [
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "06522d1a-2d84-49df-ae85-429ab1d4aec6",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9999700000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T02:06:01.946Z",
+      "metadata": {
+        "taskId": "3c93468a17fc429ab2fa3a4876fd09fd",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "ff450eb6-3ec6-4456-a84f-b9fbb53fb7b1",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -5030,10 +5042,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T02:05:33.082Z",
-      "updatedAt": "2026-07-17T02:05:33.082Z"
+      "updatedAt": "2026-07-17T02:06:01.945Z"
     },
     {
       "id": "9e5da7779cb0440e87003693db172264",
@@ -6914,9 +6926,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Keep the same face, curly hair, skin tone, body proportions, outfit and tropical hotel setting.\n\nCreate a realistic vertical lifestyle selfie video.\n\nA confident adult woman stands near a tropical balcony, filming a casual travel selfie. She gently runs her fingers through her curly hair, softly adjusts hair near her shoulder, then looks back at the camera with a calm confident expression.\n\nShe makes small natural movements: slight body sway, gentle shoulder motion, natural breathing, subtle posture changes, realistic hair movement and soft fabric motion.\n\nBecause of the body sway and posture shifts, include subtle natural soft-tissue movement and light body compression in the chest, torso and waist area. The movement should follow gravity and real body mechanics, with slight natural bounce and compression only, never exaggerated or artificial.\n\nUse a vertical smartphone selfie shot, medium-close framing, slight handheld movement and authentic travel-vlog feeling.\n\nLighting should be soft natural daylight with a warm tropical atmosphere. Keep natural skin texture, no excessive retouching, no plastic skin and no strong artificial shine.\n\nNo face change, no frozen pose, no unnatural turning, no distorted hands, no extra fingers, no subtitles and no watermark.",
       "taskId": "3c93468a17fc429ab2fa3a4876fd09fd",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"052d6c00-d07b-46e9-b678-9e771be98167\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T02:05:33.082Z",
-      "updatedAt": "2026-07-17T02:05:53.705Z"
+      "updatedAt": "2026-07-17T02:06:01.946Z"
     },
     {
       "id": "82bc703d-5c92-4abf-98e7-3ef219a7e3ca",
