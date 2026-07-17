@@ -5655,6 +5655,17 @@
   ],
   "generationTasks": [
     {
+      "id": "6cc5ddc4dd7d40afaf3aa451aa13956e",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T06:03:45.637Z",
+      "updatedAt": "2026-07-17T06:03:45.637Z"
+    },
+    {
       "id": "img_1784261035774_dcfa132b348ab",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "image",
@@ -7900,6 +7911,17 @@
     }
   ],
   "history": [
+    {
+      "id": "07c0b39f-140a-4e1f-b5ad-d2f822b883b6",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference.\r\n\r\nKeep the same face, hairstyle, skin tone, body proportions, outfit and background.\r\n\r\nCreate a realistic vertical 9:16 smartphone lifestyle video.\r\n\r\nA woman is recording a peaceful vacation selfie on a sunny balcony. She looks naturally into the camera, gives a soft smile, slowly changes her pose and enjoys the moment.\r\n\r\nShe gently touches the edge of her hair, turns slightly toward the ocean view, then returns her attention to the camera. Her expression remains natural, confident and relaxed.\r\n\r\nAdd subtle realistic movement:\r\nnatural breathing,\r\nsmall head movement,\r\nsoft shoulder movement,\r\nslight posture adjustment,\r\nnatural curly hair motion,\r\nrealistic clothing movement.\r\n\r\nThe motion should feel like a real person casually recording a TikTok vacation video. Keep normal speed, smooth and realistic.\r\n\r\nCamera:\r\nvertical 9:16,\r\nphone selfie camera,\r\nclose distance,\r\nslight handheld movement,\r\nreal smartphone quality.\r\n\r\nLighting:\r\nwarm natural sunlight,\r\nsoft shadows,\r\nrealistic skin texture,\r\nnatural exposure.\r\n\r\nMusic:\r\nluxury vacation R&B,\r\nsoft summer melody,\r\ncalm tropical lifestyle sound.\r\n\r\nNo:\r\nface morphing,\r\nidentity change,\r\ndifferent person,\r\nbody distortion,\r\nfake smile,\r\nexaggerated movement,\r\nslow motion,\r\ncamera rotation,\r\nAI beauty filter,\r\nheavy smoothing,\r\nwatermark,\r\nsubtitles.",
+      "taskId": "6cc5ddc4dd7d40afaf3aa451aa13956e",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T06:03:45.638Z",
+      "updatedAt": "2026-07-17T06:03:45.638Z"
+    },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
