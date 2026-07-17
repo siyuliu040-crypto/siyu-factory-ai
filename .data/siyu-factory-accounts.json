@@ -6218,10 +6218,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T08:55:56.003Z",
-      "updatedAt": "2026-07-17T08:55:56.003Z"
+      "updatedAt": "2026-07-17T08:58:59.351Z"
     },
     {
       "id": "e37f6ff69a024ac1ae0384609162dfb9",
@@ -8794,10 +8794,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use image as exact reference.\n\nKeep same girl, face, glasses, hairstyle, outfit and car background.\n\nRealistic TikTok UGC selfie video.\nGirl sits in the car. She looks at the camera naturally, blinks softly, slightly tilts her head, and gives a small relaxed smile.\n\nSubtle movements:\nnatural breathing,\nsmall shoulder movement,\nslight hair movement,\nreal skin texture and natural light changes.\n\nCamera:\nhandheld phone selfie,\ncasual daily vlog style.\n\nMusic:\nsoft chill pop music, calm morning vibe.\n\nAvoid:\nAI face,\nplastic skin,\nchanging clothes,\nchanging background,\nexaggerated movement.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/f355afe57f37424ca841c9e4c7e0ffcb.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784365121&Signature=AsFm6TcZFwD%2B2T4JkWZdmJZ3%2FsI%3D",
       "taskId": "060c6db2dd624803a5427f1b43ac5239",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T08:55:56.003Z",
-      "updatedAt": "2026-07-17T08:58:51.068Z"
+      "updatedAt": "2026-07-17T08:58:59.352Z"
     },
     {
       "id": "388d6bbd-9021-4f11-8ee6-17f9bb17eeca",
