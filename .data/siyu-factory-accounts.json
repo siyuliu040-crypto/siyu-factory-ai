@@ -4737,6 +4737,17 @@
   ],
   "generationTasks": [
     {
+      "id": "e0fb29043798437ea17bb3e9cc7bdb82",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:sd-2-fast",
+      "amount": 300000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T01:21:01.009Z",
+      "updatedAt": "2026-07-17T01:21:01.009Z"
+    },
+    {
       "id": "5e2aee9067f84dcba7268324f7d23a73",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -6476,6 +6487,17 @@
     }
   ],
   "history": [
+    {
+      "id": "34c3bcce-ec65-4ad1-92ce-72472e5b9cbf",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:sd-2-fast",
+      "prompt": "根据@1实拍脚本，参考@2人物生成tiktok美区高清带货视频",
+      "taskId": "e0fb29043798437ea17bb3e9cc7bdb82",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T01:21:01.010Z",
+      "updatedAt": "2026-07-17T01:21:01.010Z"
+    },
     {
       "id": "2df74439-2471-473d-b6f9-08fea6d7bb51",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
