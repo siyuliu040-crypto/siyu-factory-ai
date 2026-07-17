@@ -6189,6 +6189,17 @@
   ],
   "generationTasks": [
     {
+      "id": "7a2f9e8819c3489b92ae389c2aefa1f6",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T08:47:25.381Z",
+      "updatedAt": "2026-07-17T08:47:25.381Z"
+    },
+    {
       "id": "cdb9d1c874f94095b6006488082db2ad",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8731,6 +8742,17 @@
     }
   ],
   "history": [
+    {
+      "id": "14eb1e6b-45a8-49d3-8b22-00b52d8b73f0",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the image as exact reference.\r\n\r\nCreate a realistic vertical 9:16 TikTok pet video.\r\n\r\nThis puppy's name is Coco.\r\n\r\nCoco, a small gray puppy, sits on a chair looking serious and curious.\r\n\r\nAt the beginning, Coco looks directly into the camera with a calm face.\r\nAfter a few seconds, Coco slowly tilts its head, moves its ears, blinks softly, and looks around like it is trying to understand something.\r\n\r\nCoco then slightly moves its paws, leans closer to the camera, and gives a cute curious expression.\r\n\r\nKeep realistic puppy behavior:\r\nnatural breathing,\r\nsoft fur movement,\r\nnose twitching,\r\nsmall ear movement,\r\nreal puppy eyes.\r\n\r\nCamera:\r\nhandheld phone camera,\r\nclose-up pet vlog style,\r\nreal home video feeling.\r\n\r\nMusic:\r\ncute happy puppy music,\r\nsoft playful melody.\r\n\r\nMood:\r\nCoco's daily life,\r\nfunny and adorable,\r\nreal pet moment.\r\n\r\nAvoid:\r\ncartoon style,\r\nhuman actions,\r\nfake expressions,\r\nchanging Coco's appearance,\r\nunreal movement.",
+      "taskId": "7a2f9e8819c3489b92ae389c2aefa1f6",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T08:47:25.381Z",
+      "updatedAt": "2026-07-17T08:47:25.381Z"
+    },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
