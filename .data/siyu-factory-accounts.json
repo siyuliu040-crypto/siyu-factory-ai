@@ -6249,6 +6249,17 @@
   ],
   "generationTasks": [
     {
+      "id": "f81b5ea1486749c0a88f45dca551b65b",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T09:06:15.735Z",
+      "updatedAt": "2026-07-17T09:06:15.735Z"
+    },
+    {
       "id": "39118d43e9c54797932913e901c0730f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8846,6 +8857,17 @@
     }
   ],
   "history": [
+    {
+      "id": "ffa14495-620a-4a97-842e-16595fc8b0d0",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the image as exact reference.\r\n\r\nCreate a realistic gym lifestyle video.\r\n\r\nKeep the same girl, face, hairstyle, black workout outfit and gym environment.\r\n\r\nShe is sitting on the gym bench after training.\r\nShe slowly adjusts her sitting position, gently fixes her hair with one hand, takes a natural breath, and looks at the phone camera with a confident relaxed smile.\r\n\r\nHer body moves naturally with breathing.\r\nShow realistic fitness shape:\r\ndefined shoulders, natural waistline, toned legs and authentic post-workout feeling.\r\n\r\nCamera feels like a real phone selfie:\r\nslight handheld movement,\r\nnatural mirror reflection,\r\nsmall changes in lighting,\r\nreal gym atmosphere.\r\n\r\nSkin:\r\nnatural pores, realistic texture, slight sweat after workout, no beauty filter.\r\n\r\nMusic:\r\ntrendy TikTok fitness beat,\r\nconfident female gym vibe,\r\nsmooth motivational rhythm.\r\n\r\nAvoid:\r\nAI face,\r\nfake body proportions,\r\nover exaggerated muscles,\r\nplastic skin,\r\ndramatic poses,\r\nchanging clothes.",
+      "taskId": "f81b5ea1486749c0a88f45dca551b65b",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T09:06:15.735Z",
+      "updatedAt": "2026-07-17T09:06:15.735Z"
+    },
     {
       "id": "ee377017-05e2-4452-a343-e7cf72f9541a",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
