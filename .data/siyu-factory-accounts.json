@@ -5097,6 +5097,17 @@
   ],
   "generationTasks": [
     {
+      "id": "ccd51428a2414169a1ccde7dc2e612b2",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T02:11:25.155Z",
+      "updatedAt": "2026-07-17T02:11:25.155Z"
+    },
+    {
       "id": "ce9ccde7062b4658a6ccb3d0a5dea77d",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -7001,6 +7012,17 @@
     }
   ],
   "history": [
+    {
+      "id": "e18694cf-70c0-419f-8414-b36cb170e21c",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no textUse the uploaded image as the exact character reference. Maintain the same face, curly hairstyle, outfit, body proportions and outdoor background.\r\n\r\nCreate a realistic vertical TikTok-style selfie video.\r\n\r\nA confident adult woman is outdoors under a bright blue sky, filming a casual summer selfie. She gently touches her curly hair with one hand, slightly lifts the curls, then lets them fall naturally. She slowly turns her head toward the camera and keeps a relaxed confident expression.\r\n\r\nHer motion should include soft breathing, slight shoulder movement, small posture adjustment, natural arm movement and realistic hair bounce from the breeze.\r\n\r\nAs her posture shifts, include subtle natural body response: slight soft-tissue movement and gentle compression in the chest, waist and upper torso caused by breathing, arm position, gravity and body weight distribution. Keep the movement realistic and restrained, with light natural jiggle only, never exaggerated.\r\n\r\nUse a front phone camera with a slightly low selfie angle, subtle handheld movement and a realistic outdoor perspective.\r\n\r\nLighting should be natural sunlight with real shadows, balanced exposure and no over-bright glossy highlights. Keep real skin texture, natural pores and slightly imperfect phone-camera quality.\r\n\r\nAvoid stiff body motion, fake hair physics, face change, body deformation, extra fingers, subtitles and watermark.",
+      "taskId": "ccd51428a2414169a1ccde7dc2e612b2",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T02:11:25.155Z",
+      "updatedAt": "2026-07-17T02:11:25.155Z"
+    },
     {
       "id": "1b031dcc-d99b-4975-988a-eb33332ae1cc",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
