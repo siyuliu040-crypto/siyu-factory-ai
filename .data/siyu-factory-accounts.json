@@ -5684,10 +5684,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T06:39:09.935Z",
-      "updatedAt": "2026-07-17T06:39:09.935Z"
+      "updatedAt": "2026-07-17T06:42:27.276Z"
     },
     {
       "id": "436c927c92c54bd2a021fec7e703f427",
@@ -7963,10 +7963,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and environment.\n\nCreate a realistic vertical 9:16 smartphone selfie video.\n\nThe woman is walking outdoors and recording a casual lifestyle selfie. The video begins with her looking directly into the camera with a confident but relaxed expression.\n\nShe slightly changes her walking pace, turns her head toward the surroundings, then returns her eyes to the camera. She gives a natural small smile and continues moving casually.\n\nAdd realistic movement:\nnatural walking rhythm,\nsoft breathing,\nsmall shoulder movement,\nslight body weight transfer,\nrealistic hair movement,\nnatural clothing response.\n\nThe body movement should follow real human physics. Include subtle natural soft-body response caused by walking and posture changes. Keep everything realistic and comfortable.\n\nCamera:\nhandheld phone selfie,\nvertical 9:16,\nslight movement,\nnatural smartphone quality,\nreal social media recording.\n\nLighting:\nnatural daylight,\nrealistic shadows,\nno overexposure.\n\nMusic:\nchill pop R&B,\nmodern lifestyle TikTok sound,\nconfident summer mood.\n\nNo face morphing, no identity change, no body distortion, no fake expression, no AI beauty effect, no heavy smoothing, no slow motion, no watermark, no subtitles.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/500e8c85be514cea8216a1b384ac76c2.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784356925&Signature=SqxoFXGFlGBp%2BTLOJ53HssL5ZOQ%3D",
       "taskId": "07860701b17f4ac390e4acc6cfa0b01d",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T06:39:09.935Z",
-      "updatedAt": "2026-07-17T06:42:17.317Z"
+      "updatedAt": "2026-07-17T06:42:27.276Z"
     },
     {
       "id": "fc283a31-7a46-4a3f-9e85-6d6781e677b2",
