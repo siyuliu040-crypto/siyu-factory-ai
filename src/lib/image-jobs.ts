@@ -1,4 +1,4 @@
-﻿import { HFSY_BASE_URL, hfsyHeaders } from "@/lib/hfsy";
+﻿import { getHfsyImageModel, HFSY_BASE_URL, hfsyHeaders } from "@/lib/hfsy";
 import {
   recordGenerationHistory,
   refundCreditsForUser,
@@ -177,12 +177,45 @@ async function markImageJobFailed(record: ImageJobRecord, error: unknown) {
 
 function extractImageUrl(result: unknown) {
   if (!result || typeof result !== "object") return "";
+  const inlineImage = findGeminiInlineImage(result);
+  if (inlineImage) return inlineImage;
   const data = (result as { data?: unknown }).data;
   const item = Array.isArray(data) ? data[0] as { url?: unknown; b64_json?: unknown } | undefined : undefined;
   if (typeof item?.url === "string") return item.url;
   if (typeof item?.b64_json === "string") return `data:image/png;base64,${item.b64_json}`;
   const fallback = findImageUrl(result);
   if (fallback) return fallback;
+  return "";
+}
+
+function findGeminiInlineImage(value: unknown, seen = new Set<unknown>()): string {
+  if (!value || typeof value !== "object") return "";
+  if (seen.has(value)) return "";
+  seen.add(value);
+
+  const record = value as Record<string, unknown>;
+  const inline = isRecord(record.inlineData)
+    ? record.inlineData
+    : isRecord(record.inline_data)
+      ? record.inline_data
+      : null;
+  const data = inline ? inline.data : undefined;
+  const mimeType = inline ? inline.mimeType || inline.mime_type : undefined;
+  if (typeof data === "string" && data.length > 100) {
+    return `data:${typeof mimeType === "string" ? mimeType : "image/png"};base64,${data}`;
+  }
+
+  for (const nested of Object.values(record)) {
+    if (Array.isArray(nested)) {
+      for (const item of nested) {
+        const found = findGeminiInlineImage(item, seen);
+        if (found) return found;
+      }
+      continue;
+    }
+    const found = findGeminiInlineImage(nested, seen);
+    if (found) return found;
+  }
   return "";
 }
 
@@ -347,6 +380,10 @@ async function waitForImageCompletion(record: ImageJobRecord, initialPayload: un
 
 function postImageGeneration(record: ImageJobRecord) {
   const upstream = normalizeImageRequestForUpstream(record.request);
+  const hfsyImageModel = getHfsyImageModel(record.request.model);
+  if (hfsyImageModel?.endpoint === "gemini") {
+    return postGeminiImageGeneration(record);
+  }
   return fetch(`${HFSY_BASE_URL}/v1/images/generations`, {
     method: "POST",
     headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
@@ -367,6 +404,10 @@ async function postImageEdit(
   references: NonNullable<ImageJobRequest["references"]>
 ) {
   const upstream = normalizeImageRequestForUpstream(record.request);
+  const hfsyImageModel = getHfsyImageModel(record.request.model);
+  if (hfsyImageModel?.endpoint === "gemini") {
+    return postGeminiImageGeneration(record, references);
+  }
   const formData = new FormData();
   formData.set("model", upstream.model);
   formData.set("prompt", record.request.prompt.trim());
@@ -384,6 +425,39 @@ async function postImageEdit(
     method: "POST",
     headers: hfsyHeaders({ Accept: "application/json" }),
     body: formData,
+    cache: "no-store"
+  });
+}
+
+function postGeminiImageGeneration(
+  record: ImageJobRecord,
+  references: NonNullable<ImageJobRequest["references"]> = []
+) {
+  const upstream = normalizeImageRequestForUpstream(record.request);
+  const parts: Array<Record<string, unknown>> = [{ text: record.request.prompt.trim() }];
+  for (const reference of references.slice(0, 6)) {
+    parts.push({
+      inline_data: {
+        mime_type: reference.type || "image/png",
+        data: reference.data
+      }
+    });
+  }
+
+  return fetch(`${HFSY_BASE_URL}/v1beta/models/${encodeURIComponent(upstream.model)}:generateContent`, {
+    method: "POST",
+    headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+    body: JSON.stringify({
+      contents: [
+        {
+          role: "user",
+          parts
+        }
+      ],
+      generationConfig: {
+        responseModalities: ["TEXT", "IMAGE"]
+      }
+    }),
     cache: "no-store"
   });
 }
