@@ -36,11 +36,11 @@ export const HFSY_MODELS: HfsyModel[] = [
     media: "video",
     credits: 30,
     upstreamPrice: 3,
-    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    durationOptions: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     resolution: "720P",
     referenceMode: "optional",
     description:
-      "HFSY SD 2 Fast is the economical fast 720P video model. It supports 4-15 second text-to-video and image-to-video generation, with optional reference images."
+      "HFSY SD 2 Fast is the economical fast 720P video model. It supports 5-15 second text-to-video and image-to-video generation, with optional reference images."
   },
   {
     id: "hfsy:sd-2",
