@@ -8656,17 +8656,6 @@
   ],
   "history": [
     {
-      "id": "d9004065-c854-4044-b5aa-3bd24d3a6a30",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use image as exact reference. Keep same girl, face, hair, outfit and cafe background.\n\nRealistic TikTok UGC lifestyle video.\nGirl sits at outdoor cafe. She looks away naturally, hair moves in the breeze. She touches her hair, picks up the drink, takes a small sip, then looks at camera with a soft smile.\n\nHandheld phone camera, natural sunlight, realistic skin texture.\n\nMusic: soft summer chill music, relaxing cafe vibe, light acoustic melody.\n\nAvoid: AI face, changing clothes, changing background, unnatural movement.",
-      "taskId": "fcfd7439de1646f0b9a038f427cb2449",
-      "status": "in_progress",
-      "createdAt": "2026-07-17T08:02:14.934Z",
-      "updatedAt": "2026-07-17T08:02:28.550Z"
-    },
-    {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "mode": "image",
