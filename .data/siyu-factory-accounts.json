@@ -5605,10 +5605,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T03:43:08.703Z",
-      "updatedAt": "2026-07-17T03:43:08.703Z"
+      "updatedAt": "2026-07-17T03:46:21.371Z"
     },
     {
       "id": "d2bc9779839548d08cce905889f422e0",
@@ -7818,10 +7818,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and background.\n\nCreate a realistic vertical 9:16 smartphone selfie video, TikTok UGC style.\n\nShe looks naturally at the camera, blinks softly, slightly changes her expression, gives a small relaxed smile, briefly looks away, then looks back. She makes a subtle posture adjustment with natural breathing, slight shoulder movement, small head movement, minor body weight shift, realistic hair movement and soft fabric movement.\n\nHer body should respond naturally to breathing, gravity and posture changes, with subtle soft-body movement and slight natural compression. Keep all movement smooth, restrained and at normal real-life speed. No slow motion.\n\nCamera: front phone camera, close selfie distance, slight handheld movement, natural imperfect framing, authentic phone quality.\n\nLighting: keep the original lighting, natural shadows, realistic exposure, soft everyday atmosphere.\n\nSkin: natural texture, visible pores, minimal editing, no beauty filter, no plastic skin, no glossy shine.\n\nMusic: soft chill R&B, warm lifestyle mood, relaxed TikTok sound.\n\nDo not change the person, hairstyle, body shape, clothing or background.\n\nNo face morphing, no identity change, no body distortion, no deformed hands, no extra fingers, no fake expressions, no exaggerated movement, no camera rotation, no zoom effect, no over-sharpening, no heavy smoothing, no watermark, no subtitles.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/685b112a570849e19789c07722fc0d19.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784346353&Signature=4EtLCsUkxqEzn5cH4dyVWE5EqH8%3D",
       "taskId": "76e2d6e9e7c24e7898b3b9c70c8369a6",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T03:43:12.522Z",
-      "updatedAt": "2026-07-17T03:46:11.869Z"
+      "updatedAt": "2026-07-17T03:46:21.371Z"
     },
     {
       "id": "00707ef4-41cb-49a5-a9b8-4a758bb2f907",
