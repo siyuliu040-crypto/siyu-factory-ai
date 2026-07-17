@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019741007680,
+      "credits": 2000019741017680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-17T03:38:53.137Z"
+      "updatedAt": "2026-07-17T03:42:56.469Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "d0f33b4f-24d2-41e4-af34-623cda58504d",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000,
+      "balanceAfter": 2000019741017680,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-17T03:42:56.469Z",
+      "metadata": {
+        "taskId": "img_1784259534131_3d09753cb52ad8",
+        "model": "hfsy:nano-banana-2"
+      }
+    },
     {
       "id": "603f1ead-c773-44d4-b225-1769e3fa085a",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -5569,10 +5581,10 @@
       "type": "image",
       "model": "hfsy:nano-banana-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T03:38:54.230Z",
-      "updatedAt": "2026-07-17T03:38:54.230Z"
+      "updatedAt": "2026-07-17T03:42:56.469Z"
     },
     {
       "id": "45b9c8de567f4420a9d551bdd41da048",
@@ -7762,9 +7774,10 @@
       "model": "hfsy:nano-banana-2",
       "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
       "taskId": "img_1784259534131_3d09753cb52ad8",
-      "status": "queued",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"not supported model for image generation, only imagen models are supported (request id: 202607170342563525825188268d9d69CUyCTES)\",\"type\":\"new_api_error\",\"param\":\"\",\"code\":\"convert_request_failed\"}}",
       "createdAt": "2026-07-17T03:38:54.230Z",
-      "updatedAt": "2026-07-17T03:38:54.230Z"
+      "updatedAt": "2026-07-17T03:42:56.469Z"
     },
     {
       "id": "1dbd6ba7-ee15-417a-982b-0dfd8a3690dd",
