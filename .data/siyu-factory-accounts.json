@@ -5185,10 +5185,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T02:20:27.269Z",
-      "updatedAt": "2026-07-17T02:20:27.269Z"
+      "updatedAt": "2026-07-17T02:24:07.555Z"
     },
     {
       "id": "6877cc68f9184f27a9d56a90fe871bbb",
@@ -7156,10 +7156,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "A realistic cinematic TikTok video featuring a cute French bulldog wearing a stylish short brown human hair bob wig.\n\nScene starts in a luxury modern apartment with warm sunlight coming through the window.\n\nThe French bulldog sits on a soft velvet chair like a little fashion model. \nA stylish Black woman gently adjusts the dog's realistic human hair wig, carefully fixing the bangs and making the hairstyle look perfect.\n\nThe dog looks slightly confused at first, then slowly turns its head toward the camera with a confident and adorable expression.\n\nClose-up camera shots show the detailed hair strands, natural wig texture, smooth bangs, realistic hair movement, and the dog's expressive eyes.\n\nThe woman laughs happily and takes photos of the dog like a professional fashion photographer.\n\nFinal shot: the French bulldog proudly poses like a celebrity pet model.\n\nUltra realistic pet photography, luxury beauty lifestyle, natural emotions, cinematic lighting, shallow depth of field, high detail, viral TikTok pet transformation style.\n\nNo text, no subtitles, no watermark.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/acab7ac6f6384aeb965ec83d35c53b97.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784341431&Signature=32PBgngwDpR8qakjIK1DC03qsP8%3D",
       "taskId": "4614f152ce0f4df2b59856ccc23455ca",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T02:20:27.269Z",
-      "updatedAt": "2026-07-17T02:23:59.693Z"
+      "updatedAt": "2026-07-17T02:24:07.555Z"
     },
     {
       "id": "641d5257-66bf-4521-bb2a-8aed525b4ea3",
