@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9997000000,
+      "credits": 9997450000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T03:40:41.762Z"
+      "updatedAt": "2026-07-17T03:41:20.492Z"
     }
   ],
   "sessions": [
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "603f1ead-c773-44d4-b225-1769e3fa085a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9997450000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T03:41:20.492Z",
+      "metadata": {
+        "taskId": "d2bc9779839548d08cce905889f422e0",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "7c64008f-cd5b-42ef-b3d9-e2efb59fe283",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -5546,10 +5558,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T03:40:43.861Z",
-      "updatedAt": "2026-07-17T03:40:43.861Z"
+      "updatedAt": "2026-07-17T03:41:20.492Z"
     },
     {
       "id": "img_1784259534131_3d09753cb52ad8",
@@ -7738,9 +7750,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nKeep identical:\nsame face, same hairstyle, same skin tone, same body proportions, same outfit and same background.\n\nCreate a realistic vertical 9:16 TikTok smartphone selfie video.\n\nThe video should feel like a real personal lifestyle recording, not a professional photoshoot. Keep the original personality and atmosphere of the image.\n\nShe looks naturally into the camera, blinks softly, slightly changes her expression, makes a small relaxed smile, and subtly adjusts her posture. She briefly looks away and returns her eyes to the camera, creating a natural human interaction.\n\nAdd realistic small movements:\nnatural breathing,\nsoft shoulder movement,\nslight head movement,\nsmall body weight shift,\nrealistic hair motion,\nnatural fabric movement.\n\nHer body should respond naturally to gravity and posture changes. Include subtle realistic soft-body movement caused by breathing, sitting position and body weight. Keep it natural and restrained, never exaggerated.\n\nMovement speed:\nnormal real-life speed.\nSmooth and natural motion.\nNo slow motion or unnatural pauses.\n\nCamera:\nvertical 9:16,\nfront smartphone camera,\nclose selfie distance,\nslight handheld movement,\nauthentic phone camera quality,\nnatural imperfect framing.\n\nLighting:\nkeep the original lighting style,\nnatural shadows,\nrealistic exposure,\nsoft everyday atmosphere.\n\nSkin:\nnatural skin texture,\nvisible pores,\nrealistic details,\nminimal editing,\nno beauty filter,\nno plastic skin,\nno glossy or artificial shine.\n\nMusic:\nsoft chill R&B,\nwarm lifestyle mood,\nrelaxed TikTok background sound.\n\nSTRICT LIMITATIONS:\nKeep the same person throughout.\nDo not change face, hairstyle, body shape, clothing or background.\nDo not add new objects or accessories.\n\nAvoid:\nface morphing,\nidentity change,\ndifferent person,\nbody distortion,\ndeformed hands,\nextra fingers,\nunnatural joints,\nfake expressions,\nexaggerated movement,\nfast motion,\nslow motion,\ncamera rotation,\nzoom effect,\nAI beauty effect,\nover sharpening,\nheavy skin smoothing,\nwatermark,\nsubtitles.",
       "taskId": "d2bc9779839548d08cce905889f422e0",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 400\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"4882c236-f4a6-4446-84c5-ae6f173c8810\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"bad_request\\\",\\n  \\\"message\\\": \\\"Validation error for field 'prompt': String should have at most 2500 characters\\\"\\n}\"",
       "createdAt": "2026-07-17T03:40:43.861Z",
-      "updatedAt": "2026-07-17T03:41:12.355Z"
+      "updatedAt": "2026-07-17T03:41:20.492Z"
     },
     {
       "id": "995b314a-6cbd-4251-986b-55a90b00ddee",
