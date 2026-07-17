@@ -86,12 +86,45 @@ async function waitForImageCompletion(initialPayload: unknown) {
 
 function extractImageUrl(result: unknown) {
   if (!result || typeof result !== "object") return "";
+  const inlineImage = findGeminiInlineImage(result);
+  if (inlineImage) return inlineImage;
   const data = (result as { data?: unknown }).data;
   const item = Array.isArray(data) ? data[0] as { url?: unknown; b64_json?: unknown } | undefined : undefined;
   if (typeof item?.url === "string") return item.url;
   if (typeof item?.b64_json === "string") return `data:image/png;base64,${item.b64_json}`;
   const fallback = findImageUrl(result);
   if (fallback) return fallback;
+  return "";
+}
+
+function findGeminiInlineImage(value: unknown, seen = new Set<unknown>()): string {
+  if (!value || typeof value !== "object") return "";
+  if (seen.has(value)) return "";
+  seen.add(value);
+
+  const record = value as Record<string, unknown>;
+  const inline = isRecord(record.inlineData)
+    ? record.inlineData
+    : isRecord(record.inline_data)
+      ? record.inline_data
+      : null;
+  const data = inline ? inline.data : undefined;
+  const mimeType = inline ? inline.mimeType || inline.mime_type : undefined;
+  if (typeof data === "string" && data.length > 100) {
+    return `data:${typeof mimeType === "string" ? mimeType : "image/png"};base64,${data}`;
+  }
+
+  for (const nested of Object.values(record)) {
+    if (Array.isArray(nested)) {
+      for (const item of nested) {
+        const found = findGeminiInlineImage(item, seen);
+        if (found) return found;
+      }
+      continue;
+    }
+    const found = findGeminiInlineImage(nested, seen);
+    if (found) return found;
+  }
   return "";
 }
 
@@ -189,6 +222,33 @@ function streamUpstream(
   });
 }
 
+function buildGeminiImageBody(parts: Array<Record<string, unknown>>) {
+  return {
+    contents: [
+      {
+        role: "user",
+        parts
+      }
+    ],
+    generationConfig: {
+      responseModalities: ["TEXT", "IMAGE"]
+    }
+  };
+}
+
+async function buildGeminiPartsFromFiles(prompt: string, references: File[]) {
+  const parts: Array<Record<string, unknown>> = [{ text: prompt }];
+  for (const reference of references.slice(0, 6)) {
+    parts.push({
+      inline_data: {
+        mime_type: reference.type || "image/png",
+        data: Buffer.from(await reference.arrayBuffer()).toString("base64")
+      }
+    });
+  }
+  return parts;
+}
+
 export async function POST(request: Request) {
   try {
     const contentType = request.headers.get("content-type") || "";
@@ -238,6 +298,18 @@ export async function POST(request: Request) {
       }
 
       if (references.length > 0) {
+        if (hfsyImageModel?.endpoint === "gemini") {
+          const parts = await buildGeminiPartsFromFiles(prompt, references);
+          return streamUpstream(`/v1beta/models/${encodeURIComponent(upstream.model)}:generateContent`, {
+            method: "POST",
+            headers: hfsyHeaders({
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            }),
+            body: JSON.stringify(buildGeminiImageBody(parts))
+          }, billing, { model, prompt });
+        }
+
         const formData = new FormData();
         formData.set("model", upstream.model);
         formData.set("prompt", prompt);
@@ -254,6 +326,17 @@ export async function POST(request: Request) {
           method: "POST",
           headers: hfsyHeaders({ Accept: "application/json" }),
           body: formData
+        }, billing, { model, prompt });
+      }
+
+      if (hfsyImageModel?.endpoint === "gemini") {
+        return streamUpstream(`/v1beta/models/${encodeURIComponent(upstream.model)}:generateContent`, {
+          method: "POST",
+          headers: hfsyHeaders({
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          }),
+          body: JSON.stringify(buildGeminiImageBody([{ text: prompt }]))
         }, billing, { model, prompt });
       }
 
@@ -301,6 +384,18 @@ export async function POST(request: Request) {
       model: body.model,
       size: body.size
     });
+
+    const hfsyImageModel = getHfsyImageModel(body.model);
+    if (hfsyImageModel?.endpoint === "gemini") {
+      return streamUpstream(`/v1beta/models/${encodeURIComponent(upstream.model)}:generateContent`, {
+        method: "POST",
+        headers: hfsyHeaders({
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }),
+        body: JSON.stringify(buildGeminiImageBody([{ text: body.prompt.trim() }]))
+      }, { userId: charge.user.id, amount }, { model: body.model, prompt: body.prompt.trim() });
+    }
 
     return streamUpstream("/v1/images/generations", {
       method: "POST",
