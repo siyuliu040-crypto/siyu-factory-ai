@@ -8592,9 +8592,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 smartphone mirror selfie video.\n\nKeep:\nsame woman,\nsame face,\nsame messy bun hairstyle,\nsame beige dress,\nsame bedroom,\nsame mirror selfie composition.\n\nA young woman sits casually on her bed taking a mirror selfie video.\n\nMotion:\nAt the beginning she looks at her phone screen,\nthen slightly tilts her head,\nsmiles softly,\nmoves her free hand naturally on the bed,\nadjusts her posture and relaxes.\n\nHer expression changes naturally:\nserious look,\nsmall smile,\ncomfortable confident expression.\n\nAdd:\nnatural blinking,\nbreathing movement,\nhair loose strands moving,\ndress fabric subtle movement,\nrealistic body posture adjustment.\n\nCamera:\nreal smartphone mirror selfie,\nhandheld feeling,\nslight phone movement.\n\nEnvironment:\nwarm bedroom lighting,\nclean realistic room,\ndaily life atmosphere.\n\nStyle:\nauthentic TikTok girl daily vlog,\nnot professional photography.\n\nAvoid:\nperfect model pose,\nfake smile,\nAI face,\nsmooth plastic skin,\nbody reshaping,\nunreal movement.",
       "taskId": "b81caa9692d94174b766c71a7d370f46",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T07:57:12.148Z",
-      "updatedAt": "2026-07-17T07:57:18.250Z"
+      "updatedAt": "2026-07-17T07:57:26.547Z"
     },
     {
       "id": "6f8e212a-2af8-45b0-99e0-1c93b0530245",
