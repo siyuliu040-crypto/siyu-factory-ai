@@ -7664,18 +7664,6 @@
       "updatedAt": "2026-07-17T02:42:05.410Z"
     },
     {
-      "id": "db6b4ef3-5a73-4b1e-983a-a4655063b17a",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom.\n\nCreate a realistic vertical TikTok selfie video.\n\nA beautiful adult woman is relaxing on a bed in a warm dim bedroom at night. The video should feel like authentic smartphone footage, casual lifestyle content, not a studio shoot.\n\nShe looks into the camera naturally, slightly changes her expression, gives a small confident smile, then adjusts her pillow and changes her resting position. She briefly looks away, then returns her eyes to the camera.\n\nNatural movement:\nrealistic blinking,\nsoft breathing,\nsmall shoulder movement,\nsubtle body shift,\nnatural fabric movement,\nrealistic hair movement.\n\nHer body should move naturally with gravity and posture changes. Add subtle realistic soft-body movement and natural compression from leaning on the bed. Keep it realistic, restrained and human, not exaggerated.\n\nCamera:\nfront phone camera,\nclose selfie angle,\nslight handheld movement,\nrealistic TikTok UGC style.\n\nLighting:\nwarm bedroom lamp,\nsoft shadows,\nnatural skin tones.\n\nSkin:\nreal texture,\nnatural pores,\nminimal retouching,\nno plastic skin,\nno excessive smoothing,\nno fake shine.\n\nMusic:\nchill R&B,\nsoft bass,\nlate night mood,\nrelaxed feminine vibe,\nTikTok viral lifestyle sound.\n\nAvoid:\nstiff movement,\nslow motion,\nrepeated hair touching,\nfake expressions,\nAI face,\nbody distortion,\nextra fingers,\nwatermark,\nsubtitles.",
-      "taskId": "f2dff1aad96340e1a958e7955d53bea9",
-      "status": "completed",
-      "createdAt": "2026-07-17T02:40:21.387Z",
-      "updatedAt": "2026-07-17T02:43:28.200Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/6685074033764c61abcd0514802b0a83.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342575&Signature=p2CrG%2F94%2BqbfFi4%2B3VMMdK8pqvo%3D"
-    },
-    {
       "id": "17c51120-c7d1-4e73-ab90-4388eba2d19e",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "mode": "video",
@@ -7712,18 +7700,6 @@
       "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/bde804d3a6ac46d6a1f821b9bdb79996.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342413&Signature=mLjVXVRTIetYaA0GENCggEJfPHI%3D"
     },
     {
-      "id": "6fc42450-5c97-4ff5-8aec-4c4544527815",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom environment.\n\nCreate a realistic vertical smartphone selfie video with a natural TikTok lifestyle feeling.\n\nA beautiful adult woman is relaxing on a bed in a warm bedroom at night. She is filming a casual personal selfie video, looking comfortable and natural.\n\nAt the beginning, she looks directly into the camera for a moment, slightly raises her eyebrows and gives a small playful expression, as if reacting to something on her phone.\n\nShe then slowly moves closer to the camera, gently adjusts her pillow position with one arm, changes her resting pose naturally, and slightly turns her body toward the light.\n\nShe briefly looks away from the camera, smiles softly, then looks back into the lens. Her expression changes naturally from calm to a subtle confident smile.\n\nInclude realistic small movements:\nnatural blinking,\nsoft breathing,\nslight shoulder movement,\nsmall body adjustment on the bed,\nnatural fabric movement,\nhair moving slightly when she changes position.\n\nHer body should not remain frozen. Add realistic human motion caused by gravity, breathing and posture changes. Keep natural soft-body movement and subtle compression from leaning on the bed, but avoid exaggerated motion.\n\nCamera:\nvertical smartphone selfie,\nhandheld front camera,\nslight accidental phone movement,\nrealistic bedroom vlog style.\n\nLighting:\nwarm bedside lamp,\nsoft shadows,\nnatural nighttime atmosphere.\n\nMusic:\nmodern chill R&B beat,\nsoft bass,\nlate-night relaxing mood,\nsimilar to viral TikTok lifestyle videos.\n\nSkin:\nreal skin texture,\nnatural pores,\nminimal editing,\nno plastic beauty filter,\nno excessive smoothing,\nno artificial shine.\n\nStyle:\nauthentic girlfriend-style selfie,\nreal person feeling,\ncasual lifestyle content.\n\nAvoid:\nrepeated hair touching,\nover-posed movements,\nslow motion,\nfake expressions,\nAI beauty look,\nface change,\nbody distortion,\nextra fingers,\nwatermark,\nsubtitles.",
-      "taskId": "7f798ea9b3bf41a8844b8429bd0db1b3",
-      "status": "completed",
-      "createdAt": "2026-07-17T02:36:35.782Z",
-      "updatedAt": "2026-07-17T02:40:08.375Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/419128e48ec541e8bf257738f0d35f95.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342364&Signature=MG452ayMT5uV6%2FQU48Got09gzAM%3D"
-    },
-    {
       "id": "8b9f599d-1df9-4d24-9140-dd9785dc6544",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "mode": "video",
@@ -7734,18 +7710,6 @@
       "createdAt": "2026-07-17T02:36:14.005Z",
       "updatedAt": "2026-07-17T02:36:56.998Z",
       "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"f63caa84-9abc-4ea5-9f2c-1676dfd41124\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\""
-    },
-    {
-      "id": "5e97c439-903c-4492-9f25-34944cfd6dff",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom environment.\n\nCreate a realistic vertical smartphone selfie video with a natural TikTok lifestyle feeling.\n\nA beautiful adult woman is relaxing on a bed in a warm bedroom at night. She is filming a casual personal selfie video, looking comfortable and natural.\n\nAt the beginning, she looks directly into the camera for a moment, slightly raises her eyebrows and gives a small playful expression, as if reacting to something on her phone.\n\nShe then slowly moves closer to the camera, gently adjusts her pillow position with one arm, changes her resting pose naturally, and slightly turns her body toward the light.\n\nShe briefly looks away from the camera, smiles softly, then looks back into the lens. Her expression changes naturally from calm to a subtle confident smile.\n\nInclude realistic small movements:\nnatural blinking,\nsoft breathing,\nslight shoulder movement,\nsmall body adjustment on the bed,\nnatural fabric movement,\nhair moving slightly when she changes position.\n\nHer body should not remain frozen. Add realistic human motion caused by gravity, breathing and posture changes. Keep natural soft-body movement and subtle compression from leaning on the bed, but avoid exaggerated motion.\n\nCamera:\nvertical smartphone selfie,\nhandheld front camera,\nslight accidental phone movement,\nrealistic bedroom vlog style.\n\nLighting:\nwarm bedside lamp,\nsoft shadows,\nnatural nighttime atmosphere.\n\nMusic:\nmodern chill R&B beat,\nsoft bass,\nlate-night relaxing mood,\nsimilar to viral TikTok lifestyle videos.\n\nSkin:\nreal skin texture,\nnatural pores,\nminimal editing,\nno plastic beauty filter,\nno excessive smoothing,\nno artificial shine.\n\nStyle:\nauthentic girlfriend-style selfie,\nreal person feeling,\ncasual lifestyle content.\n\nAvoid:\nrepeated hair touching,\nover-posed movements,\nslow motion,\nfake expressions,\nAI beauty look,\nface change,\nbody distortion,\nextra fingers,\nwatermark,\nsubtitles.",
-      "taskId": "e35492004f354b5c883a80d141ebffb7",
-      "status": "completed",
-      "createdAt": "2026-07-17T02:35:20.532Z",
-      "updatedAt": "2026-07-17T02:41:10.206Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/65a2598096a9431d9e0f248505fca8a4.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342404&Signature=CSxaDQZORYtmdS%2FzJgdPWOJj8jY%3D"
     },
     {
       "id": "c32bc221-2638-460e-8994-fb9439ad0f47",
@@ -7830,114 +7794,6 @@
       "createdAt": "2026-07-17T02:15:35.056Z",
       "updatedAt": "2026-07-17T02:18:38.700Z",
       "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/5c39fa3503904d1a88f5d14be86fb89f.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784341113&Signature=1erAvV9ZqM66YgaHynsU%2BYgCt5w%3D"
-    },
-    {
-      "id": "8c173418-3c75-4726-a2a9-977fb4ef6de8",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, curly hair, skin tone, body proportions, outfit and tropical hotel setting.\n\nCreate a realistic vertical lifestyle selfie video.\n\nA confident adult woman stands near a tropical balcony, filming a casual travel selfie. She gently runs her fingers through her curly hair, softly adjusts hair near her shoulder, then looks back at the camera with a calm confident expression.\n\nShe makes small natural movements: slight body sway, gentle shoulder motion, natural breathing, subtle posture changes, realistic hair movement and soft fabric motion.\n\nBecause of the body sway and posture shifts, include subtle natural soft-tissue movement and light body compression in the chest, torso and waist area. The movement should follow gravity and real body mechanics, with slight natural bounce and compression only, never exaggerated or artificial.\n\nUse a vertical smartphone selfie shot, medium-close framing, slight handheld movement and authentic travel-vlog feeling.\n\nLighting should be soft natural daylight with a warm tropical atmosphere. Keep natural skin texture, no excessive retouching, no plastic skin and no strong artificial shine.\n\nNo face change, no frozen pose, no unnatural turning, no distorted hands, no extra fingers, no subtitles and no watermark.",
-      "taskId": "223d9693eccd4184b0ce60e9fb935ae6",
-      "status": "completed",
-      "createdAt": "2026-07-17T02:14:53.922Z",
-      "updatedAt": "2026-07-17T02:18:26.612Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/fbb9ce4ee5034a3d936c192cfb6393a3.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784341086&Signature=Gt3WAmwaSrR7Ejj6QC1wBcYWxN8%3D"
-    },
-    {
-      "id": "e18694cf-70c0-419f-8414-b36cb170e21c",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no textUse the uploaded image as the exact character reference. Maintain the same face, curly hairstyle, outfit, body proportions and outdoor background.\n\nCreate a realistic vertical TikTok-style selfie video.\n\nA confident adult woman is outdoors under a bright blue sky, filming a casual summer selfie. She gently touches her curly hair with one hand, slightly lifts the curls, then lets them fall naturally. She slowly turns her head toward the camera and keeps a relaxed confident expression.\n\nHer motion should include soft breathing, slight shoulder movement, small posture adjustment, natural arm movement and realistic hair bounce from the breeze.\n\nAs her posture shifts, include subtle natural body response: slight soft-tissue movement and gentle compression in the chest, waist and upper torso caused by breathing, arm position, gravity and body weight distribution. Keep the movement realistic and restrained, with light natural jiggle only, never exaggerated.\n\nUse a front phone camera with a slightly low selfie angle, subtle handheld movement and a realistic outdoor perspective.\n\nLighting should be natural sunlight with real shadows, balanced exposure and no over-bright glossy highlights. Keep real skin texture, natural pores and slightly imperfect phone-camera quality.\n\nAvoid stiff body motion, fake hair physics, face change, body deformation, extra fingers, subtitles and watermark.",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/2686dad4034d4655bc4a2d657b331d89.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784340853&Signature=jvXofAn05ZHQP5GU9zyV%2F3nDMxs%3D",
-      "taskId": "ccd51428a2414169a1ccde7dc2e612b2",
-      "status": "completed",
-      "createdAt": "2026-07-17T02:11:25.155Z",
-      "updatedAt": "2026-07-17T02:14:50.390Z"
-    },
-    {
-      "id": "1b031dcc-d99b-4975-988a-eb33332ae1cc",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "9:16 vertical, ultra-realistic beauty commercial, woman slowly turns to show short curly pixie wig, warm studio light, no textUse the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom setting.\n\nCreate a realistic vertical smartphone selfie video with a cozy late-night bedroom atmosphere.\n\nA confident adult woman is lying casually on a bed, filming herself with a front phone camera. She slowly adjusts her hair with one hand, lightly brushes hair away from her face, slightly tilts her head and looks into the camera with a soft confident expression.\n\nHer movement should feel natural and connected: small head movement, gentle shoulder movement, soft breathing, slight upper-body shift on the bed, subtle hair motion and realistic fabric response.\n\nBecause she is leaning on the bed and slightly changing posture, include subtle natural soft-tissue movement and gentle body compression in the chest, shoulders and upper torso. The body should respond realistically to gravity, breathing and support from the arms, with slight natural bounce and compression, never exaggerated.\n\nUse close selfie framing, mild handheld phone shake, soft warm bedroom lighting and realistic shadows.\n\nKeep natural skin texture, visible pores and authentic social-media quality. No heavy beauty filter, no plastic skin, no excessive smoothing, no unnatural shine.\n\nNo face change, no body distortion, no extra fingers, no stiff movement, no subtitles, no watermark.",
-      "taskId": "ce9ccde7062b4658a6ccb3d0a5dea77d",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"0397d371-b1f9-46f7-8155-cb7df41a15ff\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:10:57.541Z",
-      "updatedAt": "2026-07-17T02:11:17.293Z"
-    },
-    {
-      "id": "3f2b099d-f785-4e4b-8fb6-f3087052419c",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, curly hair, skin tone, body proportions, outfit and tropical hotel setting.\n\nCreate a realistic vertical lifestyle selfie video.\n\nA confident adult woman stands near a tropical balcony, filming a casual travel selfie. She gently runs her fingers through her curly hair, softly adjusts hair near her shoulder, then looks back at the camera with a calm confident expression.\n\nShe makes small natural movements: slight body sway, gentle shoulder motion, natural breathing, subtle posture changes, realistic hair movement and soft fabric motion.\n\nBecause of the body sway and posture shifts, include subtle natural soft-tissue movement and light body compression in the chest, torso and waist area. The movement should follow gravity and real body mechanics, with slight natural bounce and compression only, never exaggerated or artificial.\n\nUse a vertical smartphone selfie shot, medium-close framing, slight handheld movement and authentic travel-vlog feeling.\n\nLighting should be soft natural daylight with a warm tropical atmosphere. Keep natural skin texture, no excessive retouching, no plastic skin and no strong artificial shine.\n\nNo face change, no frozen pose, no unnatural turning, no distorted hands, no extra fingers, no subtitles and no watermark.",
-      "taskId": "3c93468a17fc429ab2fa3a4876fd09fd",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"052d6c00-d07b-46e9-b678-9e771be98167\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:05:33.082Z",
-      "updatedAt": "2026-07-17T02:06:01.946Z"
-    },
-    {
-      "id": "82bc703d-5c92-4abf-98e7-3ef219a7e3ca",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no textUse the uploaded image as the exact character reference. Maintain the same face, curly hairstyle, outfit, body proportions and outdoor background.\n\nCreate a realistic vertical TikTok-style selfie video.\n\nA confident adult woman is outdoors under a bright blue sky, filming a casual summer selfie. She gently touches her curly hair with one hand, slightly lifts the curls, then lets them fall naturally. She slowly turns her head toward the camera and keeps a relaxed confident expression.\n\nHer motion should include soft breathing, slight shoulder movement, small posture adjustment, natural arm movement and realistic hair bounce from the breeze.\n\nAs her posture shifts, include subtle natural body response: slight soft-tissue movement and gentle compression in the chest, waist and upper torso caused by breathing, arm position, gravity and body weight distribution. Keep the movement realistic and restrained, with light natural jiggle only, never exaggerated.\n\nUse a front phone camera with a slightly low selfie angle, subtle handheld movement and a realistic outdoor perspective.\n\nLighting should be natural sunlight with real shadows, balanced exposure and no over-bright glossy highlights. Keep real skin texture, natural pores and slightly imperfect phone-camera quality.\n\nAvoid stiff body motion, fake hair physics, face change, body deformation, extra fingers, subtitles and watermark.",
-      "taskId": "9e5da7779cb0440e87003693db172264",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"3e729c70-dabf-4d22-b9af-c9f067115668\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:04:57.176Z",
-      "updatedAt": "2026-07-17T02:05:25.559Z"
-    },
-    {
-      "id": "94790b64-a3a3-4b73-a1de-86dd5b947b01",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "9:16 vertical, ultra-realistic beauty commercial, woman slowly turns to show short curly pixie wig, warm studio light, no textUse the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom setting.\n\nCreate a realistic vertical smartphone selfie video with a cozy late-night bedroom atmosphere.\n\nA confident adult woman is lying casually on a bed, filming herself with a front phone camera. She slowly adjusts her hair with one hand, lightly brushes hair away from her face, slightly tilts her head and looks into the camera with a soft confident expression.\n\nHer movement should feel natural and connected: small head movement, gentle shoulder movement, soft breathing, slight upper-body shift on the bed, subtle hair motion and realistic fabric response.\n\nBecause she is leaning on the bed and slightly changing posture, include subtle natural soft-tissue movement and gentle body compression in the chest, shoulders and upper torso. The body should respond realistically to gravity, breathing and support from the arms, with slight natural bounce and compression, never exaggerated.\n\nUse close selfie framing, mild handheld phone shake, soft warm bedroom lighting and realistic shadows.\n\nKeep natural skin texture, visible pores and authentic social-media quality. No heavy beauty filter, no plastic skin, no excessive smoothing, no unnatural shine.\n\nNo face change, no body distortion, no extra fingers, no stiff movement, no subtitles, no watermark.",
-      "taskId": "ce47e1d7d9554d72b76be90ce00be524",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"1e6032d4-9f42-4d2e-94d5-24d0c9e62842\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:04:22.214Z",
-      "updatedAt": "2026-07-17T02:04:49.811Z"
-    },
-    {
-      "id": "98f860fd-978b-4390-bc19-0d53be19d240",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, curly hair, skin tone, body proportions, outfit and tropical hotel setting.\n\nCreate a realistic vertical lifestyle selfie video.\n\nA confident adult woman stands near a tropical balcony, filming a casual travel selfie. She gently runs her fingers through her curly hair, softly adjusts hair near her shoulder, then looks back at the camera with a calm confident expression.\n\nShe makes small natural movements: slight body sway, gentle shoulder motion, natural breathing, subtle posture changes, realistic hair movement and soft fabric motion.\n\nBecause of the body sway and posture shifts, include subtle natural soft-tissue movement and light body compression in the chest, torso and waist area. The movement should follow gravity and real body mechanics, with slight natural bounce and compression only, never exaggerated or artificial.\n\nUse a vertical smartphone selfie shot, medium-close framing, slight handheld movement and authentic travel-vlog feeling.\n\nLighting should be soft natural daylight with a warm tropical atmosphere. Keep natural skin texture, no excessive retouching, no plastic skin and no strong artificial shine.\n\nNo face change, no frozen pose, no unnatural turning, no distorted hands, no extra fingers, no subtitles and no watermark.",
-      "taskId": "60ddf1bf29054defa0e6498625d16193",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"7e6f167a-b434-4a9d-96e3-93998b728fbd\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:02:09.565Z",
-      "updatedAt": "2026-07-17T02:03:08.494Z"
-    },
-    {
-      "id": "43d576be-cafa-4408-829f-33f045dad69c",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no textUse the uploaded image as the exact character reference. Maintain the same face, curly hairstyle, outfit, body proportions and outdoor background.\n\nCreate a realistic vertical TikTok-style selfie video.\n\nA confident adult woman is outdoors under a bright blue sky, filming a casual summer selfie. She gently touches her curly hair with one hand, slightly lifts the curls, then lets them fall naturally. She slowly turns her head toward the camera and keeps a relaxed confident expression.\n\nHer motion should include soft breathing, slight shoulder movement, small posture adjustment, natural arm movement and realistic hair bounce from the breeze.\n\nAs her posture shifts, include subtle natural body response: slight soft-tissue movement and gentle compression in the chest, waist and upper torso caused by breathing, arm position, gravity and body weight distribution. Keep the movement realistic and restrained, with light natural jiggle only, never exaggerated.\n\nUse a front phone camera with a slightly low selfie angle, subtle handheld movement and a realistic outdoor perspective.\n\nLighting should be natural sunlight with real shadows, balanced exposure and no over-bright glossy highlights. Keep real skin texture, natural pores and slightly imperfect phone-camera quality.\n\nAvoid stiff body motion, fake hair physics, face change, body deformation, extra fingers, subtitles and watermark.",
-      "taskId": "775cf5bd6aa3471194e53a3e1b4f00dd",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"5d17852d-c1d4-4682-889c-545ba854dfde\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:01:49.238Z",
-      "updatedAt": "2026-07-17T02:02:04.280Z"
-    },
-    {
-      "id": "81b1a185-4871-4a06-8920-0b6185fc77e9",
-      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "9:16 vertical, ultra-realistic beauty commercial, woman slowly turns to show short curly pixie wig, warm studio light, no textUse the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom setting.\n\nCreate a realistic vertical smartphone selfie video with a cozy late-night bedroom atmosphere.\n\nA confident adult woman is lying casually on a bed, filming herself with a front phone camera. She slowly adjusts her hair with one hand, lightly brushes hair away from her face, slightly tilts her head and looks into the camera with a soft confident expression.\n\nHer movement should feel natural and connected: small head movement, gentle shoulder movement, soft breathing, slight upper-body shift on the bed, subtle hair motion and realistic fabric response.\n\nBecause she is leaning on the bed and slightly changing posture, include subtle natural soft-tissue movement and gentle body compression in the chest, shoulders and upper torso. The body should respond realistically to gravity, breathing and support from the arms, with slight natural bounce and compression, never exaggerated.\n\nUse close selfie framing, mild handheld phone shake, soft warm bedroom lighting and realistic shadows.\n\nKeep natural skin texture, visible pores and authentic social-media quality. No heavy beauty filter, no plastic skin, no excessive smoothing, no unnatural shine.\n\nNo face change, no body distortion, no extra fingers, no stiff movement, no subtitles, no watermark.",
-      "taskId": "cf4f6d84f9d64ff7ac054773509134ab",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"94ea73a3-7d5e-42c0-a635-98b12671c115\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:01:21.310Z",
-      "updatedAt": "2026-07-17T02:01:48.180Z"
     },
     {
       "id": "e505c99f-42cc-4dfe-b81f-ab8c031b4997",
