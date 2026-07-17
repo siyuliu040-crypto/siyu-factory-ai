@@ -76,9 +76,9 @@
       "name": "LYB",
       "passwordHash": "be74a5320d8effba4a36c7eba93e5267:3360b6905c609fd00b239e1e6b389c34762d748171e21492ace5dfd6c8b435e6a0f20464a8de07bfc753331a8f1126720a9b34ba620445bcfb4f3beff3e73b6b",
       "role": "user",
-      "credits": 9959800000,
+      "credits": 9958600000,
       "createdAt": "2026-07-16T09:10:01.615Z",
-      "updatedAt": "2026-07-17T01:11:37.301Z"
+      "updatedAt": "2026-07-17T01:12:02.557Z"
     },
     {
       "id": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -316,6 +316,15 @@
     }
   ],
   "ledger": [
+    {
+      "id": "cff1481c-34d6-4b65-b325-0cc74a6a3754",
+      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
+      "adminId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "amount": -1200000,
+      "balanceAfter": 9958600000,
+      "reason": "main account deduction",
+      "createdAt": "2026-07-17T01:12:02.558Z"
+    },
     {
       "id": "bac30a11-19de-44c1-aeac-462e44ba64f1",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
