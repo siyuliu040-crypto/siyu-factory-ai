@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 9972550000,
+      "credits": 9973000000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-17T02:43:56.086Z"
+      "updatedAt": "2026-07-17T02:44:29.167Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "2c3d6acb-6d4c-4658-8ddd-ea26df8ac5aa",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "amount": 450000,
+      "balanceAfter": 9973000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T02:44:29.167Z",
+      "metadata": {
+        "taskId": "3d4bf4408584436ab122c839501f811c",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "c21383a5-e209-4286-829e-e930286a8e45",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -5438,10 +5450,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T02:43:57.990Z",
-      "updatedAt": "2026-07-17T02:43:57.990Z"
+      "updatedAt": "2026-07-17T02:44:29.166Z"
     },
     {
       "id": "6cc740ef170c4718bf9d777fc88419ca",
@@ -7575,9 +7587,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "使用上传图片中的人物作为唯一角色参考，保持相同的面部五官、长卷发、胡须、米白色长袍和木制十字架，不改变人物身份与服装主体。\n镜头从胸部中近景缓慢向前推进。耶稣安静地看向远方，随后转头看向镜头，眼睛中带着悲悯、安慰和希望。微风轻轻吹动他的长发与长袍。\n\n他缓慢放下一只手，向镜头前方伸出，像是在邀请一个疲惫、受伤的人来到身边。背后的金色光芒逐渐增强，柔和的白金色光粒从肩膀周围升起。光芒在他的背后凝聚成一双半透明、洁白而宽大的天使翅膀，翅膀自然展开，动作庄重而温柔，不夸张，不刺眼。\n\n画面背景中出现几位需要帮助的人，有疲惫的老人、饥饿的家庭和受伤后虚弱休息的人。化作天使形态的耶稣缓慢走向他们，轻轻扶起一位老人，并把面包递给一个需要帮助的人。众人的表情从悲伤逐渐变得安心和充满希望。\n\n耶稣看向众人，用温柔、平静、有感情的中文说道：\n“不要害怕，我看见你们的痛苦。用爱彼此帮助，希望就不会离开。”\n\n人物嘴型与中文台词自然同步，声音温暖、沉稳、充满慈爱。真实皮肤纹理，真实手部动作，真实布料与头发运动，电影级夕阳光线，柔和散景，镜头稳定，情感自然，神圣但不过度夸张。\n\n\n",
       "taskId": "3d4bf4408584436ab122c839501f811c",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"db48566f-0066-44a6-b952-8ff04f1e616f\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
       "createdAt": "2026-07-17T02:43:57.990Z",
-      "updatedAt": "2026-07-17T02:44:20.523Z"
+      "updatedAt": "2026-07-17T02:44:29.167Z"
     },
     {
       "id": "5af7df78-3d88-4a92-9566-f597818194bd",
