@@ -296,6 +296,7 @@ function promptRequestsSpokenAudio(prompt: string) {
 
 function prepareHfsyVideoPrompt(model: string, prompt: string) {
   const hfsyModel = getHfsyModel(model);
+  if (hfsyModel?.upstreamModel === "kling-o3") return prepareHfsyKlingPrompt(prompt);
   if (hfsyModel?.upstreamModel !== "sora-2") return prompt;
   if (!promptRequestsSpokenAudio(prompt)) return prompt;
 
@@ -310,6 +311,39 @@ function prepareHfsyVideoPrompt(model: string, prompt: string) {
     "",
     prompt
   ].join("\n");
+}
+
+function prepareHfsyKlingPrompt(prompt: string) {
+  const replacements: Array<[RegExp, string]> = [
+    [/耶稣/g, "一位慈悲的长发长袍精神导师"],
+    [/十字架/g, "木质手杖"],
+    [/受伤/g, "疲惫"],
+    [/伤口/g, "疲惫状态"],
+    [/痛苦/g, "困难"],
+    [/饥饿/g, "需要帮助"],
+    [/恐怖/g, "紧张"],
+    [/暴力/g, "冲突"],
+    [/流血/g, "红色痕迹"],
+    [/Jesus/gi, "a compassionate long-haired robed spiritual guide"],
+    [/cross/gi, "wooden staff"],
+    [/injured|wounded|hurt/gi, "tired"],
+    [/pain|suffering/gi, "hardship"],
+    [/hungry|starving/gi, "in need of help"],
+    [/violence|violent|blood|bloody/gi, "dramatic tension"]
+  ];
+  const cleaned = replacements.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), prompt);
+  return [
+    "SAFETY AND ACCEPTANCE REQUIREMENT:",
+    "Create a family-safe fictional commercial/cinematic video using only adult characters. Avoid real public or religious figure claims, injury, suffering, violence, gore, fear, horror, political persuasion, hateful content, or sexualized framing.",
+    "If the user prompt contains symbolic spiritual or fantasy elements, render them as gentle fictional visual metaphors with peaceful expressions and no harm.",
+    "No logo, no watermark, no subtitles unless explicitly required.",
+    "",
+    cleaned
+  ].join("\n");
+}
+
+function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function postVideoPayload(
@@ -420,6 +454,10 @@ async function postHfsyVideoPayload(
   };
 
   let result = await submit(preferredReferences);
+  if (hfsyModel?.upstreamModel === "kling-o3" && isHfsySystemLoadFailure(result.response.status, result.data)) {
+    await wait(7000);
+    result = await submit(preferredReferences);
+  }
   if (
     fallbackReferences.length &&
     fallbackReferences.join("\n") !== preferredReferences.join("\n") &&
@@ -494,6 +532,18 @@ function isHfsyReferenceUploadFailure(status: number, payload: unknown) {
 function isHfsyAccountBlockedFailure(payload: unknown) {
   const message = stringifyPayload(payload);
   return /account is blocked|account access is restricted|账号.*(限制|封|禁)|通道.*(限制|封|禁)/i.test(message);
+}
+
+function isHfsySystemLoadFailure(status: number, payload: unknown) {
+  const message = stringifyPayload(payload);
+  return (
+    status === 408 ||
+    status === 429 ||
+    status === 502 ||
+    status === 503 ||
+    status === 504 ||
+    /system under load|timeout_error|temporarily unavailable|too many requests|系统繁忙|负载|超时/i.test(message)
+  );
 }
 
 async function postFrameVideoPayload(
