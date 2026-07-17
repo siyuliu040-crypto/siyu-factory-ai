@@ -6378,6 +6378,17 @@
   ],
   "generationTasks": [
     {
+      "id": "e0f3e160569f4b4988fdacac4824e422",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T09:55:48.236Z",
+      "updatedAt": "2026-07-17T09:55:48.236Z"
+    },
+    {
       "id": "9593ecf553a249c59f95d435712ae223",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -9052,6 +9063,17 @@
     }
   ],
   "history": [
+    {
+      "id": "74ad4cf2-fbd3-45d7-b25c-78acb1015ad8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "描述：\r\n\r\n最终展示镜头。\r\n\r\n人物正面坐在沙龙椅上。\r\n\r\n通过整理头发、展开长度、展示侧面完成最终成交展示。\r\n\r\n人物展示动作：\r\n00:18–00:20\r\n\r\n人物双手进入画面。\r\n\r\n左手整理左侧头发。\r\n\r\n右手整理右侧头发。\r\n\r\n将两侧直发同时拉到胸前。\r\n\r\n停顿展示整体长度。\r\n\r\n00:20–00:21.5\r\n\r\n双手分别握住中下段头发。\r\n\r\n向外轻轻展开。\r\n\r\n展示：\r\n\r\n发量\r\n宽度\r\n厚度\r\n00:21.5–00:23\r\n\r\n右手整理侧分位置。\r\n\r\n动作：\r\n\r\n指腹沿：\r\n\r\n头顶分缝\r\n\r\n↓\r\n\r\n太阳穴\r\n\r\n↓\r\n\r\n耳后\r\n\r\n慢慢滑动。\r\n\r\n展示自然发际线。\r\n\r\n00:23–00:24\r\n\r\n人物缓慢转头45度。\r\n\r\n头发跟随移动。\r\n\r\n最后看向镜头。\r\n\r\n保持：\r\n\r\n自信微笑。\r\n\r\n镜头类型：\r\n\r\n近景。\r\n\r\n镜头角度：\r\n\r\n正面平视。\r\n\r\n镜头运动：\r\n\r\n固定镜头。\r\n\r\n构图方式：\r\n\r\n人物脸部和头发占据主要画面。\r\n\r\n光线和色彩：\r\n\r\n柔和室内光，突出黑发质感。\r\n\r\nAI视频生成提示词：\r\n\r\n9:16竖屏，真实TikTok Shop买家分享风格。\r\n\r\n美国黑人女性坐在美容沙龙椅上。\r\n\r\n佩戴Natural Black Straight Human Hair。\r\n\r\n人物双手将两侧长直发拉到胸前。\r\n\r\n展示：\r\n\r\n超长长度、厚实发尾、顺滑纹理和真实真人发效果。\r\n\r\n随后右手轻轻整理侧分发际线。\r\n\r\n手指沿头顶分缝移动到耳后。\r\n\r\n展示自然贴合效果。\r\n\r\n人物缓慢转头45度。\r\n\r\n头发随着动作自然滑动。\r\n\r\n最后看向镜头，自信微笑。\r\n\r\n真实手机拍摄感。\r\n\r\n禁止发型变化、禁止头发变卷、禁止蕾丝外露、禁止人物变化、禁止字幕、Logo、水印、背景虚化。",
+      "taskId": "e0f3e160569f4b4988fdacac4824e422",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T09:55:48.236Z",
+      "updatedAt": "2026-07-17T09:55:48.236Z"
+    },
     {
       "id": "22941f09-7b4c-482c-884d-6b20c7f19a06",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
