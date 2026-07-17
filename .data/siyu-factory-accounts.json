@@ -8149,9 +8149,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 beach vacation selfie video.\n\nA beautiful adult woman is sitting on the beach during golden hour. Keep the same face, hairstyle, skin tone, body proportions and black beach outfit.\n\nThe video should feel like a real TikTok travel vlog.\n\nAction:\nShe holds the phone naturally and looks into the camera. A gentle ocean breeze moves her hair across her face. She smiles slightly, laughs naturally, fixes a few strands of hair, then looks toward the ocean for a moment.\n\nShe adjusts her sitting position on the beach towel, turns back to the camera, and captures a relaxed vacation moment.\n\nMotion details:\nwind moving hair,\nnatural blinking,\nsmall smile changes,\nreal breathing,\nsubtle body movement,\nnatural sitting adjustment,\nrealistic sunlight interaction.\n\nCamera:\nfront smartphone camera,\nhandheld selfie style,\nslight phone shake,\nnatural framing,\nreal travel vlog feeling.\n\nLighting:\ngolden hour sunlight,\nwarm skin tone,\nnatural shadows,\nreal beach atmosphere.\n\nMusic:\nsummer afrobeat,\ntropical chill rhythm,\nsunset TikTok travel vibe.\n\nRestrictions:\nDo not change face.\nDo not change hairstyle.\nDo not change body shape.\nNo artificial skin.\nNo glamour filter.\nNo unrealistic movement.\nNo slow motion.\nNo camera rotation.\nNo subtitles.\nNo watermark.",
       "taskId": "8abfffd7317d4301905af6dd4e2fd732",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T07:22:26.916Z",
-      "updatedAt": "2026-07-17T07:22:32.278Z"
+      "updatedAt": "2026-07-17T07:22:34.432Z"
     },
     {
       "id": "46383232-2687-4445-bf5d-ebe815900bf7",
