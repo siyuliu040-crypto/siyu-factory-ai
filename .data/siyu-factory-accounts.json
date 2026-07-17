@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9992950000,
+      "credits": 9993400000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T08:02:12.013Z"
+      "updatedAt": "2026-07-17T08:02:36.829Z"
     }
   ],
   "sessions": [
@@ -298,6 +298,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "225eac07-11af-487f-990f-dd1dc063a553",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9993400000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T08:02:36.829Z",
+      "metadata": {
+        "taskId": "fcfd7439de1646f0b9a038f427cb2449",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "ef1e030b-7e22-4e4c-8677-d7732d8041e6",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6140,10 +6152,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T08:02:14.934Z",
-      "updatedAt": "2026-07-17T08:02:14.934Z"
+      "updatedAt": "2026-07-17T08:02:36.829Z"
     },
     {
       "id": "60409381b951473080f4b72130ee95ef",
