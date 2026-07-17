@@ -5811,6 +5811,17 @@
   ],
   "generationTasks": [
     {
+      "id": "6c99941be8314ca28a8c24c629b02c3a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T07:25:50.277Z",
+      "updatedAt": "2026-07-17T07:25:50.277Z"
+    },
+    {
       "id": "8abfffd7317d4301905af6dd4e2fd732",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8166,6 +8177,17 @@
     }
   ],
   "history": [
+    {
+      "id": "0ac4dd87-2322-467b-ba82-29c73647ea85",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference.\r\n\r\nCreate a realistic vertical 9:16 beach vacation selfie video.\r\n\r\nA beautiful adult woman is sitting on the beach during golden hour. Keep the same face, hairstyle, skin tone, body proportions and black beach outfit.\r\n\r\nThe video should feel like a real TikTok travel vlog.\r\n\r\nAction:\r\nShe holds the phone naturally and looks into the camera. A gentle ocean breeze moves her hair across her face. She smiles slightly, laughs naturally, fixes a few strands of hair, then looks toward the ocean for a moment.\r\n\r\nShe adjusts her sitting position on the beach towel, turns back to the camera, and captures a relaxed vacation moment.\r\n\r\nMotion details:\r\nwind moving hair,\r\nnatural blinking,\r\nsmall smile changes,\r\nreal breathing,\r\nsubtle body movement,\r\nnatural sitting adjustment,\r\nrealistic sunlight interaction.\r\n\r\nCamera:\r\nfront smartphone camera,\r\nhandheld selfie style,\r\nslight phone shake,\r\nnatural framing,\r\nreal travel vlog feeling.\r\n\r\nLighting:\r\ngolden hour sunlight,\r\nwarm skin tone,\r\nnatural shadows,\r\nreal beach atmosphere.\r\n\r\nMusic:\r\nsummer afrobeat,\r\ntropical chill rhythm,\r\nsunset TikTok travel vibe.\r\n\r\nRestrictions:\r\nDo not change face.\r\nDo not change hairstyle.\r\nDo not change body shape.\r\nNo artificial skin.\r\nNo glamour filter.\r\nNo unrealistic movement.\r\nNo slow motion.\r\nNo camera rotation.\r\nNo subtitles.\r\nNo watermark.",
+      "taskId": "6c99941be8314ca28a8c24c629b02c3a",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T07:25:50.277Z",
+      "updatedAt": "2026-07-17T07:25:50.277Z"
+    },
     {
       "id": "9d0e5f47-990e-4e28-b722-39d303787200",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
