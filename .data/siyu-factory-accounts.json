@@ -5768,10 +5768,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T07:16:11.323Z",
-      "updatedAt": "2026-07-17T07:16:11.323Z"
+      "updatedAt": "2026-07-17T07:19:16.614Z"
     },
     {
       "id": "bc1b24f2b4c34cafa44a19231bfd8b1f",
@@ -8103,9 +8103,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic vertical 9:16 TikTok selfie video.\n\nA beautiful adult woman is sitting casually on a bed in a cozy bedroom. Keep the same face, hairstyle, skin tone, body proportions and outfit.\n\nThe video should look like a real smartphone recording, not a professional photoshoot.\n\nAction:\nAt the beginning, she looks into the phone camera quietly for a moment, with a natural relaxed expression. The sunlight moves across her face as she slightly turns toward the window.\n\nShe notices the light, looks back at the camera, gives a small genuine smile, and slightly changes her sitting position. She casually pulls the blanket closer, adjusts her posture, and continues recording a natural lifestyle moment.\n\nMotion details:\nnatural blinking,\nsmall facial expression changes,\nreal breathing movement,\nsubtle shoulder movement,\nslight body weight shift,\nrealistic hair movement,\nnatural fabric movement.\n\nCamera:\nfront smartphone selfie camera,\nclose casual angle,\nslight handheld shake,\nsmall autofocus adjustment,\nreal phone exposure change,\nTikTok UGC lifestyle style.\n\nLighting:\nwarm morning sunlight,\nreal shadows,\nnatural skin texture,\nrealistic phone camera quality.\n\nMusic:\ndreamy bedroom R&B,\nsoft female vocal,\ncozy morning TikTok vibe.\n\nRestrictions:\nKeep the same identity.\nDo not change face.\nDo not change hairstyle.\nDo not change body shape.\nNo beauty filter.\nNo plastic skin.\nNo face morphing.\nNo AI look.\nNo exaggerated movement.\nNo slow motion.\nNo subtitles.\nNo watermark.",
       "taskId": "275d72be2f144773998a5e4bdd747aa5",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T07:16:11.323Z",
-      "updatedAt": "2026-07-17T07:19:07.644Z"
+      "updatedAt": "2026-07-17T07:19:16.615Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/15e1d509031548c1bbe5498375114ca2.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784359146&Signature=kz4nmHLV8%2FIFl56zeoLRMRNBbjM%3D"
     },
     {
       "id": "d2e39bc4-f75f-4041-b944-89950c634332",
