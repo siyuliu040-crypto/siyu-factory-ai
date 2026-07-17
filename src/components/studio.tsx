@@ -921,8 +921,8 @@ function getModelDescription(model: string, language: Language) {
   }
   if (lower.includes("veo_3_1") && lower.includes("fl-hd")) {
     return language === "zh"
-      ? `${aspect} · 4/8/12/15 秒可选 · 1080P · 首帧必填，尾帧可选 · 已实测完成`
-      : `${aspect} · 4/8/12/15s selectable · 1080P · start required, end optional · completion tested`;
+      ? `${aspect} · 8 秒固定 · 1080P · 首帧必填，尾帧可选 · 已实测完成`
+      : `${aspect} · fixed 8s · 1080P · start required, end optional · completion tested`;
   }
   if (lower.includes("veo_3_1-fast-portrait-hd")) {
     return language === "zh"
@@ -1076,6 +1076,9 @@ function getDurationOptions(model: string, language: Language) {
   }
   if (lower.includes("firefly-veo31")) {
     return [{ value: "8", label: language === "zh" ? "8 秒（模型固定）" : "8 seconds fixed" }];
+  }
+  if (lower === "veo_3_1-fast-portrait-fl-hd") {
+    return [{ value: "8", label: language === "zh" ? "8 秒（已实测）" : "8 seconds tested" }];
   }
   if (lower.includes("veo_3_1")) {
     return [

@@ -223,6 +223,9 @@ function supportsStartEndFrames(model: string) {
 }
 
 function normalizeUpstreamVideoRequest(model: string, seconds: FormDataEntryValue | null) {
+  if (model === "veo_3_1-fast-portrait-fl-hd") {
+    return { upstreamModel: model, seconds: "8" };
+  }
   if (model === "grok-imagine-1.0-video-ref-6s") {
     return { upstreamModel: "grok-imagine-1.0-video", seconds: "6" };
   }
