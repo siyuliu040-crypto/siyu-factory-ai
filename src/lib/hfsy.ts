@@ -15,6 +15,64 @@ export type HfsyModel = {
   description: string;
 };
 
+export type HfsyImageModel = {
+  id: string;
+  upstreamModel: string;
+  label: string;
+  media: "image";
+  credits: number;
+  upstreamPrice: number;
+  referenceMode: "optional" | "text-only";
+  description: string;
+};
+
+export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
+  {
+    id: "hfsy:nano-banana-2",
+    upstreamModel: "nano-banana-2",
+    label: "HFSY Nano Banana 2",
+    media: "image",
+    credits: 1,
+    upstreamPrice: 0.06,
+    referenceMode: "optional",
+    description:
+      "HFSY light image model. Supports text-to-image and image-to-image with up to 6 reference images; best for fast product images and high-frequency drafts."
+  },
+  {
+    id: "hfsy:nano-banana-pro",
+    upstreamModel: "nano-banana-pro",
+    label: "HFSY Nano Banana Pro",
+    media: "image",
+    credits: 2,
+    upstreamPrice: 0.12,
+    referenceMode: "optional",
+    description:
+      "HFSY flagship Nano Banana image model. Higher detail, richer color and commercial-grade reference-image fusion."
+  },
+  {
+    id: "hfsy:gpt-image-2",
+    upstreamModel: "gpt-image-2",
+    label: "HFSY GPT Image 2",
+    media: "image",
+    credits: 1,
+    upstreamPrice: 0.03,
+    referenceMode: "text-only",
+    description:
+      "HFSY GPT Image 2 image-generation model. Strong prompt understanding and text rendering for product images, ads and creative drafts."
+  },
+  {
+    id: "hfsy:gpt-image-2pro",
+    upstreamModel: "gpt-image-2pro",
+    label: "HFSY GPT Image 2 Pro",
+    media: "image",
+    credits: 2,
+    upstreamPrice: 0.2,
+    referenceMode: "text-only",
+    description:
+      "HFSY GPT Image 2 Pro image-generation model. Supports native high-resolution image creation with stronger detail and scene consistency."
+  }
+];
+
 export const HFSY_MODELS: HfsyModel[] = [
   {
     id: "hfsy:sora-2",
@@ -93,6 +151,14 @@ export function toHfsyModel(model: string) {
 
 export function getHfsyModel(model: string) {
   return HFSY_MODELS.find((item) => item.id === model || item.upstreamModel === model);
+}
+
+export function isHfsyImageModel(model: string) {
+  return Boolean(getHfsyImageModel(model));
+}
+
+export function getHfsyImageModel(model: string) {
+  return HFSY_IMAGE_MODELS.find((item) => item.id === model || item.upstreamModel === model);
 }
 
 export function getHfsyApiKey() {
