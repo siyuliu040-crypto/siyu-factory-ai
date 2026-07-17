@@ -5637,6 +5637,17 @@
   ],
   "generationTasks": [
     {
+      "id": "img_1784260746115_3a5d038b90e3a8",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "type": "image",
+      "model": "hfsy:nano-banana-2",
+      "amount": 10000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T03:59:06.117Z",
+      "updatedAt": "2026-07-17T03:59:06.117Z"
+    },
+    {
       "id": "db3d0cd71ceb4c638e1c25b50662f2af",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
       "type": "video",
@@ -7860,6 +7871,17 @@
     }
   ],
   "history": [
+    {
+      "id": "b346a189-3acf-41bc-baf4-13ee42fca8cf",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "mode": "image",
+      "model": "hfsy:nano-banana-2",
+      "prompt": "9:16 vertical, ultra-realistic beauty commercial, young Black woman wearing a short curly pixie wig, soft warm studio light, clean luxury background, natural hair movement, no logo, no text",
+      "taskId": "img_1784260746115_3a5d038b90e3a8",
+      "status": "queued",
+      "createdAt": "2026-07-17T03:59:06.117Z",
+      "updatedAt": "2026-07-17T03:59:06.117Z"
+    },
     {
       "id": "bb9f9c3a-9d99-46c6-b63e-8bb6d0979baf",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
