@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9994300000,
+      "credits": 9994750000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T06:51:36.655Z"
+      "updatedAt": "2026-07-17T06:53:57.127Z"
     }
   ],
   "sessions": [
@@ -298,6 +298,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "026356e4-b49a-4782-9202-57a588d1247e",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9994750000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T06:53:57.127Z",
+      "metadata": {
+        "taskId": "f6b7d54d064f4777b1e9fad20b85aeef",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "37b94983-bdfc-4384-bdf4-0543a40c4341",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -5720,10 +5732,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T06:51:42.033Z",
-      "updatedAt": "2026-07-17T06:51:42.033Z"
+      "updatedAt": "2026-07-17T06:53:57.126Z"
     },
     {
       "id": "3955ea231f2a414fa8a2ef5c36f13008",
@@ -8033,9 +8045,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom setting.\n\nCreate a realistic vertical 9:16 smartphone selfie video.\n\nA woman is relaxing in a cozy bedroom. The video starts with a close selfie shot. She looks into the camera quietly, blinks naturally, and slightly changes her expression.\n\nShe adjusts her resting position comfortably, slightly moves her shoulders, changes her angle on the bed, and gives a soft relaxed smile. She briefly looks away like she is thinking, then looks back at the camera.\n\nAdd realistic details:\nnatural breathing,\nsubtle facial expressions,\nsmall body movement,\nsoft shoulder motion,\nrealistic hair movement,\nnatural fabric movement.\n\nHer body should naturally react to the bed support and posture changes, with realistic gravity and subtle compression. No exaggerated motion.\n\nCamera:\nfront phone camera,\nclose selfie distance,\nslight handheld movement,\nauthentic bedroom vlog feeling.\n\nLighting:\nwarm indoor light,\nsoft shadows,\nnatural skin texture.\n\nMusic:\nslow chill R&B,\nlate night cozy atmosphere,\nsoft emotional vibe.\n\nNo face change, no body change, no plastic skin, no over smoothing, no exaggerated actions, no slow motion, no watermark, no subtitles.",
       "taskId": "f6b7d54d064f4777b1e9fad20b85aeef",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"28687d18-a59a-4b1f-9bef-beb25d527ab6\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T06:51:42.033Z",
-      "updatedAt": "2026-07-17T06:53:47.928Z"
+      "updatedAt": "2026-07-17T06:53:57.127Z"
     },
     {
       "id": "06bf753e-2a78-40c1-82e5-3a6afe6e476d",
