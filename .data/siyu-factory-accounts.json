@@ -6346,10 +6346,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T09:48:56.174Z",
-      "updatedAt": "2026-07-17T09:48:56.174Z"
+      "updatedAt": "2026-07-17T09:55:08.644Z"
     },
     {
       "id": "e3d3321a073949c9a98610bc5ed46691",
@@ -9001,10 +9001,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "人物继续在户外展示头发。\n\n她从背影慢慢转向侧面，再转为四分之三角度。\n\n重点展示：\n\n侧面长度\n头发贴合头型效果\n发丝流动感\n自然垂坠\n人物展示动作：\n00:06–00:07.5\n\n人物停止移动。\n\n身体保持背对镜头。\n\n动作：\n\n左肩向后打开\n头部慢慢转向左侧\n眼睛先看远处\n\n准备转身。\n\n00:07.5–00:09\n\n人物缓慢转身。\n\n动作顺序：\n\n肩膀 → 身体 → 头部\n\n不要快速旋转。\n\n头发运动：\n\n身体转动后：\n\n背后的头发先停留\n随后滑向一侧\n最后落到肩前\n\n体现真实重量。\n\n00:09–00:10.5\n\n人物形成四分之三侧面。\n\n右手抬起。\n\n手掌贴近头发。\n\n从：\n\n肩膀\n\n↓\n\n胸口\n\n↓\n\n腰部\n\n↓\n\n发尾\n\n缓慢滑动。\n\n展示顺滑度。\n\n00:10.5–00:12\n\n人物轻轻打开肩膀。\n\n下巴微微抬起。\n\n看向镜头。\n\n一侧头发在胸前。\n\n另一侧留在背后。\n\n形成自然展示姿态。\n\n镜头类型：\n\n中远景。\n\n镜头角度：\n\n平视侧面角度。\n\n镜头运动：\n\n轻微跟随移动。\n\n构图方式：\n\n人物偏右，背景住宅环境形成空间层次。\n\n光线和色彩：\n\n阳光形成头发边缘轮廓光。\n\nAI视频生成提示词：\n\n真实美国户外TikTok UGC视频。\n\n同一位黑人女性，同一黑色服装，同一Natural Black Straight Human Hair。\n\n人物从背影缓慢转向侧面。\n\n身体先转动，头发后跟随移动。\n\n超长直发具有真实惯性：\n\n不会瞬间移动，而是先停留，再自然滑动。\n\n人物用手掌从肩膀位置顺着头发滑到发尾。\n\n展示直发长度、柔软度和厚实发尾。\n\n动作自然生活化，不快速甩头。\n\n保持人物、发型、服装、背景一致。\n\n禁止卷发、波浪发、发型变化、人物闪烁、头发穿模。",
       "taskId": "132c8bcf846b48cb8a77bcc946184a5f",
-      "status": "in_progress",
-      "error": "\"invalid_hfsy_response\"",
+      "status": "completed",
       "createdAt": "2026-07-17T09:48:56.174Z",
-      "updatedAt": "2026-07-17T09:54:57.761Z"
+      "updatedAt": "2026-07-17T09:55:08.644Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/3fd701071401469c9a2b94482b778250.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784368491&Signature=FOJ%2BRFzosCjMgdrCeBXGl86TZhA%3D"
     },
     {
       "id": "db81f4a5-c1b5-4809-ae3c-30558f025399",
