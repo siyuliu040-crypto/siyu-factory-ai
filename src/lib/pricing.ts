@@ -1,5 +1,5 @@
 import { getSyModel } from "@/lib/sy";
-import { getHfsyModel } from "@/lib/hfsy";
+import { getHfsyImageModel, getHfsyModel } from "@/lib/hfsy";
 
 const INTERNAL_CREDIT_SCALE = 10000;
 
@@ -8,29 +8,10 @@ function siteCredits(value: number) {
 }
 
 export const MODEL_CREDIT_COSTS: Record<string, number> = {
-  "gpt-image-2": siteCredits(1),
-  "auto-image": siteCredits(1),
-  "nano_banana": siteCredits(2),
-  "nano_banana_2": siteCredits(2),
-  "nano_banana_pro": siteCredits(2),
-  "nano_banana_2-1K-auto": siteCredits(2),
-  "nano_banana_2-1K-portrait": siteCredits(2),
-  "nano_banana_2-1K-square": siteCredits(2),
-  "nano_banana_2-2K-auto": siteCredits(2),
-  "nano_banana_2-2K-portrait": siteCredits(2),
-  "nano_banana_2-2K-square": siteCredits(2),
-  "nano_banana_2-4K-auto": siteCredits(4),
-  "nano_banana_2-4K-portrait": siteCredits(4),
-  "nano_banana_2-4K-square": siteCredits(4),
-  "nano_banana_pro-1K-auto": siteCredits(2),
-  "nano_banana_pro-1K-portrait": siteCredits(2),
-  "nano_banana_pro-1K-square": siteCredits(2),
-  "nano_banana_pro-2K-auto": siteCredits(2),
-  "nano_banana_pro-2K-portrait": siteCredits(2),
-  "nano_banana_pro-2K-square": siteCredits(2),
-  "nano_banana_pro-4K-auto": siteCredits(4),
-  "nano_banana_pro-4K-portrait": siteCredits(4),
-  "nano_banana_pro-4K-square": siteCredits(4),
+  "hfsy:nano-banana-2": siteCredits(1),
+  "hfsy:nano-banana-pro": siteCredits(2),
+  "hfsy:gpt-image-2": siteCredits(1),
+  "hfsy:gpt-image-2pro": siteCredits(2),
   "firefly-veo31-fast-8s-9x16-1080p": siteCredits(12),
   "firefly-veo31-ref-8s-9x16-1080p": siteCredits(15),
   "veo_3_1-fast-portrait-fl-hd": siteCredits(3),
@@ -100,6 +81,8 @@ export function getViduDisplayCreditCost(model: string, duration?: string | numb
 }
 
 export function getModelCreditCost(model: string) {
+  const hfsyImageModel = getHfsyImageModel(model);
+  if (hfsyImageModel) return siteCredits(hfsyImageModel.credits);
   if (MODEL_CREDIT_COSTS[model]) return MODEL_CREDIT_COSTS[model];
   const lower = model.toLowerCase();
   if (lower.includes("15s")) return siteCredits(30);
