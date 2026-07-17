@@ -2340,6 +2340,33 @@ button.status-pill {
   border-radius: 8px;
   background: rgba(249, 251, 253, 0.82);
   padding: 9px;
+  transition: border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.image-task-card.clickable,
+.batch-job.clickable {
+  cursor: pointer;
+}
+
+.image-task-card.clickable:hover,
+.batch-job.clickable:hover {
+  border-color: rgba(8, 119, 255, 0.36);
+  background: rgba(248, 251, 255, 0.94);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.image-task-card:focus-visible,
+.batch-job:focus-visible {
+  outline: 3px solid rgba(8, 119, 255, 0.16);
+  outline-offset: 2px;
+}
+
+.image-task-card.selected,
+.batch-job.selected {
+  border-color: rgba(8, 119, 255, 0.52);
+  background: #f7fbff;
+  box-shadow: inset 3px 0 0 #0877ff, 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
 .image-task-card.done {
@@ -2432,6 +2459,7 @@ button.status-pill {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.64);
   padding: 10px;
+  transition: border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
 }
 
 .batch-job strong,
