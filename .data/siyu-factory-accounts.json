@@ -5399,10 +5399,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T02:36:35.782Z",
-      "updatedAt": "2026-07-17T02:36:35.782Z"
+      "updatedAt": "2026-07-17T02:39:40.581Z"
     },
     {
       "id": "af4b14fe30c24ceeb52d4b867bddfd60",
@@ -7493,9 +7493,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom environment.\n\nCreate a realistic vertical smartphone selfie video with a natural TikTok lifestyle feeling.\n\nA beautiful adult woman is relaxing on a bed in a warm bedroom at night. She is filming a casual personal selfie video, looking comfortable and natural.\n\nAt the beginning, she looks directly into the camera for a moment, slightly raises her eyebrows and gives a small playful expression, as if reacting to something on her phone.\n\nShe then slowly moves closer to the camera, gently adjusts her pillow position with one arm, changes her resting pose naturally, and slightly turns her body toward the light.\n\nShe briefly looks away from the camera, smiles softly, then looks back into the lens. Her expression changes naturally from calm to a subtle confident smile.\n\nInclude realistic small movements:\nnatural blinking,\nsoft breathing,\nslight shoulder movement,\nsmall body adjustment on the bed,\nnatural fabric movement,\nhair moving slightly when she changes position.\n\nHer body should not remain frozen. Add realistic human motion caused by gravity, breathing and posture changes. Keep natural soft-body movement and subtle compression from leaning on the bed, but avoid exaggerated motion.\n\nCamera:\nvertical smartphone selfie,\nhandheld front camera,\nslight accidental phone movement,\nrealistic bedroom vlog style.\n\nLighting:\nwarm bedside lamp,\nsoft shadows,\nnatural nighttime atmosphere.\n\nMusic:\nmodern chill R&B beat,\nsoft bass,\nlate-night relaxing mood,\nsimilar to viral TikTok lifestyle videos.\n\nSkin:\nreal skin texture,\nnatural pores,\nminimal editing,\nno plastic beauty filter,\nno excessive smoothing,\nno artificial shine.\n\nStyle:\nauthentic girlfriend-style selfie,\nreal person feeling,\ncasual lifestyle content.\n\nAvoid:\nrepeated hair touching,\nover-posed movements,\nslow motion,\nfake expressions,\nAI beauty look,\nface change,\nbody distortion,\nextra fingers,\nwatermark,\nsubtitles.",
       "taskId": "7f798ea9b3bf41a8844b8429bd0db1b3",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T02:36:35.782Z",
-      "updatedAt": "2026-07-17T02:39:34.673Z"
+      "updatedAt": "2026-07-17T02:39:40.581Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/419128e48ec541e8bf257738f0d35f95.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342364&Signature=MG452ayMT5uV6%2FQU48Got09gzAM%3D"
     },
     {
       "id": "8b9f599d-1df9-4d24-9140-dd9785dc6544",
