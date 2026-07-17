@@ -5448,10 +5448,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T02:40:21.387Z",
-      "updatedAt": "2026-07-17T02:40:21.387Z"
+      "updatedAt": "2026-07-17T02:43:28.200Z"
     },
     {
       "id": "fc5eceaae9104668a86435964c8b177d",
@@ -7576,9 +7576,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom.\n\nCreate a realistic vertical TikTok selfie video.\n\nA beautiful adult woman is relaxing on a bed in a warm dim bedroom at night. The video should feel like authentic smartphone footage, casual lifestyle content, not a studio shoot.\n\nShe looks into the camera naturally, slightly changes her expression, gives a small confident smile, then adjusts her pillow and changes her resting position. She briefly looks away, then returns her eyes to the camera.\n\nNatural movement:\nrealistic blinking,\nsoft breathing,\nsmall shoulder movement,\nsubtle body shift,\nnatural fabric movement,\nrealistic hair movement.\n\nHer body should move naturally with gravity and posture changes. Add subtle realistic soft-body movement and natural compression from leaning on the bed. Keep it realistic, restrained and human, not exaggerated.\n\nCamera:\nfront phone camera,\nclose selfie angle,\nslight handheld movement,\nrealistic TikTok UGC style.\n\nLighting:\nwarm bedroom lamp,\nsoft shadows,\nnatural skin tones.\n\nSkin:\nreal texture,\nnatural pores,\nminimal retouching,\nno plastic skin,\nno excessive smoothing,\nno fake shine.\n\nMusic:\nchill R&B,\nsoft bass,\nlate night mood,\nrelaxed feminine vibe,\nTikTok viral lifestyle sound.\n\nAvoid:\nstiff movement,\nslow motion,\nrepeated hair touching,\nfake expressions,\nAI face,\nbody distortion,\nextra fingers,\nwatermark,\nsubtitles.",
       "taskId": "f2dff1aad96340e1a958e7955d53bea9",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T02:40:21.387Z",
-      "updatedAt": "2026-07-17T02:43:16.683Z"
+      "updatedAt": "2026-07-17T02:43:28.200Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/6685074033764c61abcd0514802b0a83.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342575&Signature=p2CrG%2F94%2BqbfFi4%2B3VMMdK8pqvo%3D"
     },
     {
       "id": "17c51120-c7d1-4e73-ab90-4388eba2d19e",
