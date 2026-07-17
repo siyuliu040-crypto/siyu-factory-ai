@@ -1,4 +1,4 @@
-﻿import { HELLOBABYGO_BASE_URL, authHeaders } from "@/lib/hellobabygo";
+import { HELLOBABYGO_BASE_URL, authHeaders } from "@/lib/hellobabygo";
 import {
   recordGenerationHistory,
   refundCreditsForUser,
@@ -31,6 +31,7 @@ export type ImageJobRecord = {
   request: ImageJobRequest;
   result?: unknown;
   error?: unknown;
+  upstream_id?: string;
   upstream_status?: number;
   billing?: {
     userId: string;
@@ -49,6 +50,8 @@ const jobs = globalForImageJobs.siyuImageJobs ?? new Map<string, ImageJobRecord>
 globalForImageJobs.siyuImageJobs = jobs;
 const IMAGE_JOB_MAX_ATTEMPTS = 3;
 const IMAGE_JOB_RETRY_DELAY_MS = 120000;
+const IMAGE_STATUS_POLL_INTERVAL_MS = 5000;
+const IMAGE_STATUS_MAX_ATTEMPTS = 180;
 
 function createJobId() {
   return `img_${Date.now()}_${Math.random().toString(16).slice(2)}`;
@@ -64,6 +67,25 @@ function parsePayload(text: string) {
 
 function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value));
+}
+
+function getImageTaskId(payload: unknown) {
+  if (!isRecord(payload)) return "";
+  const data = isRecord(payload.data) ? payload.data : {};
+  return String(payload.task_id || payload.id || data.task_id || data.id || "");
+}
+
+function normalizeImageStatus(payload: unknown) {
+  if (!isRecord(payload)) return "completed";
+  const raw = String(payload.status || "").toLowerCase();
+  if (["completed", "succeeded", "success", "done"].includes(raw)) return "completed";
+  if (["failed", "fail", "error", "cancelled", "canceled"].includes(raw)) return "failed";
+  if (["queued", "pending", "processing", "running", "in_progress", "generating"].includes(raw)) return "in_progress";
+  return extractImageUrl(payload) ? "completed" : "in_progress";
 }
 
 function isRetryableImageError(status: number, payload: unknown) {
@@ -210,8 +232,29 @@ async function runImageJob(id: string) {
 
       const payload = parsePayload(await response.text());
       if (response.ok) {
-        await markImageJobCompleted(record, payload);
-        save({ ...record, status: "completed", progress: 100, result: payload, upstream_status: response.status });
+        const finalPayload = await waitForImageCompletion(record, payload, response.status);
+        if (normalizeImageStatus(finalPayload) === "failed") {
+          await markImageJobFailed(record, finalPayload);
+          save({
+            ...record,
+            status: "failed",
+            progress: 0,
+            error: finalPayload,
+            upstream_id: getImageTaskId(finalPayload) || getImageTaskId(payload) || undefined,
+            upstream_status: response.status
+          });
+          return;
+        }
+
+        await markImageJobCompleted(record, finalPayload);
+        save({
+          ...record,
+          status: "completed",
+          progress: 100,
+          result: finalPayload,
+          upstream_id: getImageTaskId(finalPayload) || getImageTaskId(payload) || undefined,
+          upstream_status: response.status
+        });
         return;
       }
 
@@ -246,6 +289,66 @@ async function runImageJob(id: string) {
       error: error instanceof Error ? error.message : error
     });
   }
+}
+
+async function waitForImageCompletion(record: ImageJobRecord, initialPayload: unknown, upstreamStatus: number) {
+  const initialStatus = normalizeImageStatus(initialPayload);
+  const taskId = getImageTaskId(initialPayload);
+  if (initialStatus === "completed" || initialStatus === "failed" || !taskId) return initialPayload;
+
+  save({
+    ...record,
+    status: "in_progress",
+    progress: 20,
+    result: initialPayload,
+    upstream_id: taskId,
+    upstream_status: upstreamStatus
+  });
+
+  let lastPayload = initialPayload;
+  for (let attempt = 0; attempt < IMAGE_STATUS_MAX_ATTEMPTS; attempt += 1) {
+    await wait(IMAGE_STATUS_POLL_INTERVAL_MS);
+    const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/images/${encodeURIComponent(taskId)}`, {
+      method: "GET",
+      headers: authHeaders({ Accept: "application/json" }),
+      cache: "no-store"
+    });
+    const payload = parsePayload(await response.text());
+    lastPayload = payload;
+
+    if (!response.ok) {
+      if (isRetryableImageError(response.status, payload)) {
+        save({
+          ...record,
+          status: "in_progress",
+          progress: Math.min(95, 20 + attempt),
+          result: payload,
+          upstream_id: taskId,
+          upstream_status: response.status
+        });
+        continue;
+      }
+      return payload;
+    }
+
+    const status = normalizeImageStatus(payload);
+    if (status === "completed" || status === "failed") return payload;
+    save({
+      ...record,
+      status: "in_progress",
+      progress: Math.min(95, Number((payload as { progress?: unknown }).progress || 20 + attempt) || 20),
+      result: payload,
+      upstream_id: taskId,
+      upstream_status: response.status
+    });
+  }
+
+  return {
+    error: "Image task is still processing after the site polling window.",
+    status: "failed",
+    task_id: taskId,
+    upstream: lastPayload
+  };
 }
 
 function postImageGeneration(record: ImageJobRecord) {
