@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import {
   Activity,
@@ -696,6 +696,12 @@ function extractImageUrl(result: ImageResult | null) {
   const fallback = findImageUrl(result);
   if (fallback) return fallback;
   return "";
+}
+
+function getViewableImageUrl(url?: string) {
+  if (!url) return "";
+  if (url.startsWith("data:image/") || url.startsWith("/")) return url;
+  return `/api/images/proxy?url=${encodeURIComponent(url)}`;
 }
 
 function findImageUrl(value: unknown, seen = new Set<unknown>()): string {
@@ -1634,9 +1640,10 @@ export default function Studio() {
   }, [models]);
 
   const activeImageUrl = extractImageUrl(imageResult);
+  const activeImageViewUrl = getViewableImageUrl(activeImageUrl);
   const videoId = getVideoTaskId(videoResult);
   const videoSrc = isVideoDone(videoResult?.status, videoResult) ? getVideoUrl(videoResult) || (videoId ? `/api/videos/${videoId}/content` : "") : "";
-  const downloadUrl = activeImageUrl || videoSrc;
+  const downloadUrl = activeImageViewUrl || videoSrc;
   const downloadKind = activeImageUrl ? "image" : "video";
   const currentUser = session?.user || null;
   const isAdmin = currentUser?.role === "admin";
@@ -3699,9 +3706,9 @@ export default function Studio() {
               <div className="deepseek-result-preview">
                 <pre>{deepSeekResult.text}</pre>
               </div>
-            ) : activeImageUrl ? (
+            ) : activeImageViewUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img alt="Generated result" src={activeImageUrl} />
+              <img alt="Generated result" src={activeImageViewUrl} />
             ) : videoSrc ? (
               <video controls src={videoSrc} />
             ) : videoResult && !isVideoDone(videoResult.status, videoResult) ? (
@@ -3743,7 +3750,7 @@ export default function Studio() {
                       <div className="image-task-thumb">
                         {task.url ? (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img alt={task.prompt} src={task.url} />
+                          <img alt={task.prompt} src={getViewableImageUrl(task.url)} />
                         ) : task.status === "failed" ? (
                           <X size={22} />
                         ) : (
@@ -3769,14 +3776,14 @@ export default function Studio() {
                               {tx("viewResult", "查看")}
                             </button>
                             {task.url ? (
-                              <button className="text-button" onClick={() => openAsset(task.url)} type="button">
+                              <button className="text-button" onClick={() => openAsset(getViewableImageUrl(task.url))} type="button">
                                 {tx("openResult", language === "zh" ? "打开" : "Open")}
                               </button>
                             ) : null}
                           </div>
                         ) : null}
                         {task.url ? (
-                          <a className="text-button" download href={task.url} target="_blank" rel="noreferrer">
+                          <a className="text-button" download href={getViewableImageUrl(task.url)} target="_blank" rel="noreferrer">
                             {t.download}
                           </a>
                         ) : null}
@@ -3854,7 +3861,7 @@ export default function Studio() {
                       <div className="history-thumb">
                         {item.previewUrl ? (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img alt={item.prompt} src={item.previewUrl} />
+                          <img alt={item.prompt} src={getViewableImageUrl(item.previewUrl)} />
                         ) : <ImageIcon size={22} />}
                       </div>
                       <div>
@@ -3869,7 +3876,7 @@ export default function Studio() {
                               className="history-action-link"
                               onClick={(event) => {
                                 event.stopPropagation();
-                                openAsset(item.previewUrl);
+                                openAsset(getViewableImageUrl(item.previewUrl));
                               }}
                               role="button"
                               tabIndex={0}
@@ -3877,7 +3884,7 @@ export default function Studio() {
                                 if (event.key === "Enter" || event.key === " ") {
                                   event.preventDefault();
                                   event.stopPropagation();
-                                  openAsset(item.previewUrl);
+                                  openAsset(getViewableImageUrl(item.previewUrl));
                                 }
                               }}
                             >
