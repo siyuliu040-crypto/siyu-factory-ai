@@ -6111,6 +6111,17 @@
   ],
   "generationTasks": [
     {
+      "id": "60409381b951473080f4b72130ee95ef",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T07:57:41.239Z",
+      "updatedAt": "2026-07-17T07:57:41.239Z"
+    },
+    {
       "id": "b81caa9692d94174b766c71a7d370f46",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8609,6 +8620,17 @@
     }
   ],
   "history": [
+    {
+      "id": "751dd6d7-3e8f-4edc-b8ac-61565f8fe0a0",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference.\r\n\r\nCreate a realistic vertical 9:16 TikTok UGC lifestyle selfie video.\r\n\r\nKeep:\r\nsame woman identity,\r\nsame face features,\r\nsame hairstyle,\r\nsame white lace tank top,\r\nsame denim shorts,\r\nsame outdoor cafe environment,\r\nsame body proportions.\r\n\r\nA young woman is sitting at an outdoor cafe on a sunny day, casually recording a selfie video.\r\n\r\nMotion:\r\nAt the beginning, she looks away from the camera toward the cafe surroundings, enjoying the moment.\r\nA gentle breeze moves a few loose strands of her hair.\r\nShe slowly turns her face back toward the phone camera,\r\nsmiles naturally,\r\nslightly adjusts her hair with one hand,\r\nthen takes a small sip from her drink.\r\n\r\nHer expression should feel natural:\r\nrelaxed eyes,\r\nsoft smile,\r\nconfident but casual,\r\nlike a real vacation daily vlog.\r\n\r\nAdd realistic details:\r\nnatural blinking,\r\nsmall breathing movement,\r\nsubtle shoulder movement,\r\nhair moving from outdoor breeze,\r\nsmall hand movements,\r\nreal skin texture,\r\nnatural sunlight reflection.\r\n\r\nCamera:\r\nhandheld smartphone selfie camera,\r\nslight natural phone shake,\r\ncasual Instagram/TikTok recording style,\r\nnot professional photography.\r\n\r\nEnvironment:\r\noutdoor cafe,\r\npalm trees in background,\r\nwarm sunlight,\r\nsummer lifestyle atmosphere,\r\nreal people lifestyle feeling.\r\n\r\nStyle:\r\nauthentic social media content,\r\nbeautiful but realistic,\r\nyoung woman's daily life,\r\ntravel cafe aesthetic.\r\n\r\nAvoid:\r\nAI generated face,\r\nperfect model posing,\r\nplastic skin,\r\nbody reshaping,\r\nchanging clothes,\r\nchanging hairstyle,\r\nover cinematic effects,\r\nunnatural movements,\r\nextra fingers.",
+      "taskId": "60409381b951473080f4b72130ee95ef",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T07:57:41.239Z",
+      "updatedAt": "2026-07-17T07:57:41.239Z"
+    },
     {
       "id": "fa3609fd-e4f7-4f0f-bacd-29b6b1861907",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
