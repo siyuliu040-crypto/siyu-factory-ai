@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 9972550000,
+      "credits": 9973000000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-17T02:06:24.633Z"
+      "updatedAt": "2026-07-17T02:06:56.711Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "db41b2f8-4384-4aa3-91e9-ac98899e6a30",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "amount": 450000,
+      "balanceAfter": 9973000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T02:06:56.711Z",
+      "metadata": {
+        "taskId": "526af4c161b347ee85df7d20302a7227",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "ac9cb321-ebeb-4446-95a4-773733e1b44f",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -5054,10 +5066,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T02:06:26.307Z",
-      "updatedAt": "2026-07-17T02:06:26.307Z"
+      "updatedAt": "2026-07-17T02:06:56.711Z"
     },
     {
       "id": "3c93468a17fc429ab2fa3a4876fd09fd",
@@ -6949,9 +6961,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create an 8-second vertical 9:16 photorealistic viral TikTok pet video.\n\nA cute cream-colored French Bulldog walks confidently along a lively American city sidewalk. The dog wears a soft pastel-pink bob wig with neat bangs and a small pearl necklace. The wig fits naturally around its ears and moves gently with every step.\n\nThe camera tracks backward at the dog’s eye level while the French Bulldog walks naturally on all four legs. People in the softly blurred background smile and turn their heads to look at the fashionable dog.\n\nA gentle breeze moves the pink wig slightly. The dog briefly stops beside a shop window, looks at its reflection, tilts its head proudly, and continues walking with a playful confident expression.\n\nPhotorealistic dog fur, realistic four-legged walking, natural wig movement, cute luxury street-fashion atmosphere, stable camera, warm daylight, no dialogue, no subtitles, no logos, no watermark.",
       "taskId": "526af4c161b347ee85df7d20302a7227",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-17T02:06:26.307Z",
-      "updatedAt": "2026-07-17T02:06:48.635Z"
+      "updatedAt": "2026-07-17T02:06:56.711Z",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"015f6ef5-6686-43c4-b28c-b88c04cb9985\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\""
     },
     {
       "id": "3f2b099d-f785-4e4b-8fb6-f3087052419c",
