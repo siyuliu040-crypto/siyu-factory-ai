@@ -126,9 +126,9 @@
       "name": "王晨",
       "passwordHash": "93384bc0fea794e6692f78d35e279b64:de8ddc275996c9fe0ef733c6ec8e7bc386241f394e419bca97430d651736573c556d237e10e80b9f066ff8ff26d720db69c803fc4e68f1dd9c004148ef5f1944",
       "role": "user",
-      "credits": 957400000,
+      "credits": 956950000,
       "createdAt": "2026-07-16T09:11:46.539Z",
-      "updatedAt": "2026-07-17T01:14:13.640Z"
+      "updatedAt": "2026-07-17T02:22:50.874Z"
     },
     {
       "id": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "006dd8b8-e4ee-47cb-b77b-86300f63bfbf",
+      "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
+      "amount": -450000,
+      "balanceAfter": 956950000,
+      "reason": "video generation",
+      "createdAt": "2026-07-17T02:22:50.874Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "96325336-03eb-4c6f-a394-6f192fcf7db2",
       "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
