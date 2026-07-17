@@ -126,7 +126,7 @@ export async function GET() {
             id: model.id,
             object: "model",
             owned_by: "hfsy",
-            supported_endpoint_types: ["image-generation"],
+            supported_endpoint_types: model.endpoint === "gemini" ? ["gemini", "openai"] : ["image-generation"],
             name: model.label
           }))
         : [];
