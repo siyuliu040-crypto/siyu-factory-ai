@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9992950000,
+      "credits": 9993400000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T07:52:25.588Z"
+      "updatedAt": "2026-07-17T07:52:49.234Z"
     }
   ],
   "sessions": [
@@ -298,6 +298,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "d2fb3bf1-afc6-452d-b8da-839f578649cc",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9993400000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T07:52:49.234Z",
+      "metadata": {
+        "taskId": "9da8af3b60234d6ca95f88afde637d60",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "16b2b8f7-efc4-408b-882f-bc1e8fc43f90",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -5900,10 +5912,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T07:52:28.810Z",
-      "updatedAt": "2026-07-17T07:52:28.810Z"
+      "updatedAt": "2026-07-17T07:52:49.234Z"
     },
     {
       "id": "519515d34b97423c833b75a6cb98a8d2",
@@ -8312,9 +8324,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nKeep identical:\nsame face,\nsame hairstyle,\nsame skin tone,\nsame body proportions,\nsame black bikini outfit,\nsame beach background,\nsame golden hour lighting.\n\nCreate a realistic vertical 9:16 smartphone selfie video.\n\nA young woman is sitting on the beach during sunset, recording a casual vacation selfie video. The video should feel like a real TikTok lifestyle moment captured on a phone.\n\nMotion:\nShe starts looking directly into the camera with a soft natural smile.\nAfter a few seconds, she slightly turns her head toward the ocean, enjoying the sunset breeze.\nShe then looks back at the camera and gives a relaxed confident expression.\n\nAdd subtle realistic movements:\nnatural breathing,\nsmall shoulder movement,\nslight body weight adjustment while sitting,\ngentle hair movement from ocean wind,\nsmall changes in facial expression,\nnatural blinking,\nrealistic swimsuit fabric movement.\n\nBody realism:\nKeep the original body shape.\nNatural posture while sitting.\nRealistic gravity.\nSubtle soft-body movement caused by breathing and shifting position.\nNo exaggerated movement.\n\nCamera:\nvertical 9:16,\nfront smartphone selfie camera,\nclose handheld distance,\nslight natural phone shake,\ncasual vacation recording style.\n\nLighting:\nkeep warm sunset sunlight,\nnatural skin texture,\nrealistic shadows,\nsoft beach atmosphere.\n\nMusic:\nsoft summer R&B,\nwarm sunset beach vibe,\nrelaxed female vocal background,\nTikTok aesthetic lifestyle music.\n\nSTRICT LIMITATIONS:\nDo not change face.\nDo not change hairstyle.\nDo not change body proportions.\nDo not change outfit.\nDo not add accessories.\nDo not change background.\n\nAvoid:\nface morphing,\ndifferent person,\nAI beauty effect,\nplastic skin,\nfake smile,\nover posing,\nfast movement,\nslow motion,\ncamera rotation,\nzoom effect,\nbody distortion,\nunnatural joints,\nextra fingers,\nwatermark,\nsubtitles.",
       "taskId": "9da8af3b60234d6ca95f88afde637d60",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"2878a83e-29b0-4073-bfde-651a0fdb3352\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T07:52:28.810Z",
-      "updatedAt": "2026-07-17T07:52:39.518Z"
+      "updatedAt": "2026-07-17T07:52:49.234Z"
     },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
