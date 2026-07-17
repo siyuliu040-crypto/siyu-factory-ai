@@ -5221,10 +5221,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T02:24:20.744Z",
-      "updatedAt": "2026-07-17T02:24:20.744Z"
+      "updatedAt": "2026-07-17T02:27:09.051Z"
     },
     {
       "id": "608354be738246e0ad221b14984b98c1",
@@ -7215,10 +7215,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "A realistic viral TikTok style video featuring a French bulldog wearing a long natural body wave human hair wig.\n\nThe scene takes place in a beautiful American backyard garden during golden hour.\n\nA fashionable Black woman wearing a stylish outfit walks with her French bulldog like a pet fashion influencer.\n\nThe dog wears a long dark brown wavy wig that moves naturally with the wind.\n\nThe French bulldog slowly walks toward the camera with confidence, turning its head left and right like a runway model.\n\nThe camera follows the dog with smooth cinematic movement.\n\nClose-up shots capture the flowing body wave hair, realistic human hair strands, soft curls, and the cute serious expression of the French bulldog.\n\nThe woman kneels beside the dog and smiles proudly, showing their special friendship.\n\nFinal scene: the dog sits on green grass wearing the beautiful wig, looking like a famous fashion star.\n\nRealistic outdoor photography, American lifestyle, pet fashion trend, cinematic golden sunlight, ultra detailed, natural movement, viral TikTok aesthetic.\n\nNo text, no subtitles, no watermark.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/70763619a98e4679827197adae02cbda.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784341627&Signature=hc7zfR55opvw8Ka0qkAKJVaIE30%3D",
       "taskId": "fae263a8ea3a4243952bd6ccb62147c5",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T02:24:20.744Z",
-      "updatedAt": "2026-07-17T02:27:06.699Z"
+      "updatedAt": "2026-07-17T02:27:09.051Z"
     },
     {
       "id": "703e0f0c-b04d-405d-845e-8abc51f077b3",
