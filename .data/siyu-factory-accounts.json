@@ -8382,9 +8382,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 TikTok UGC selfie video.\n\nKeep:\nsame face identity,\nsame hairstyle,\nsame glasses,\nsame black top,\nsame white cardigan,\nsame body proportions,\nsame car interior.\n\nA young woman is sitting naturally inside a car during daytime, recording a casual selfie video.\n\nMotion:\nShe slightly adjusts her glasses with one hand,\nthen gently turns her head toward the window,\nsunlight moves naturally across her face,\nshe looks back at the phone camera and gives a small relaxed smile.\n\nAdd realistic details:\nnatural blinking,\nsoft breathing,\nsmall shoulder movement,\nhair strands moving slightly,\nnatural hand movement,\nsubtle expression changes.\n\nCamera:\nhandheld smartphone selfie camera,\nslight natural shaking,\nclose-up casual recording,\nreal phone camera quality.\n\nLighting:\nnatural daylight from car window,\nreal skin texture,\nsoft shadows.\n\nMood:\nconfident,\ncasual everyday girl,\nmorning drive vibe,\nTikTok lifestyle aesthetic.\n\nAvoid:\nAI beauty filter,\nplastic skin,\nface change,\ndifferent hairstyle,\nbody distortion,\nunnatural movement,\nextra fingers,\ncinematic camera movement,\nover posing.",
       "taskId": "95c3934ba926402baca12ae4249e0fdd",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T07:53:35.731Z",
-      "updatedAt": "2026-07-17T07:53:40.272Z"
+      "updatedAt": "2026-07-17T07:53:41.180Z"
     },
     {
       "id": "656fefa1-7eab-4a7b-b85c-ed48cd78d6ec",
