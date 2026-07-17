@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9992950000,
+      "credits": 9993400000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T08:03:35.400Z"
+      "updatedAt": "2026-07-17T08:04:14.911Z"
     }
   ],
   "sessions": [
@@ -298,6 +298,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "f5e2f232-11e8-469d-9dc2-28dddf00233b",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9993400000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T08:04:14.911Z",
+      "metadata": {
+        "taskId": "211c14b317b942ca8245c822d6aab9a6",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "70c53b5c-6ccd-4a1c-967e-4036b775786e",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6164,10 +6176,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T08:03:38.814Z",
-      "updatedAt": "2026-07-17T08:03:38.814Z"
+      "updatedAt": "2026-07-17T08:04:14.911Z"
     },
     {
       "id": "fcfd7439de1646f0b9a038f427cb2449",
@@ -8697,9 +8709,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use image as exact reference. Keep same girl, face, hair, outfit and cafe background.\n\nRealistic TikTok UGC lifestyle video.\nGirl sits at outdoor cafe. She looks away naturally, hair moves in the breeze. She touches her hair, picks up the drink, takes a small sip, then looks at camera with a soft smile.\n\nHandheld phone camera, natural sunlight, realistic skin texture.\n\nMusic: soft summer chill music, relaxing cafe vibe, light acoustic melody.\n\nAvoid: AI face, changing clothes, changing background, unnatural movement.",
       "taskId": "211c14b317b942ca8245c822d6aab9a6",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"75e82522-7c56-4bc6-bad1-4afac2124d39\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T08:03:38.814Z",
-      "updatedAt": "2026-07-17T08:04:06.942Z"
+      "updatedAt": "2026-07-17T08:04:14.911Z"
     },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
