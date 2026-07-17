@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9992950000,
+      "credits": 9993400000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T07:54:09.831Z"
+      "updatedAt": "2026-07-17T07:54:37.948Z"
     }
   ],
   "sessions": [
@@ -298,6 +298,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "49399862-f81f-4ffc-9556-616bc92f77ba",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9993400000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T07:54:37.949Z",
+      "metadata": {
+        "taskId": "4c74dfb8ecdb4f2cb1a2646c98a025ee",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "a3f3cfb3-72ad-442d-8a80-791fd5aba857",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -5972,10 +5984,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T07:54:12.925Z",
-      "updatedAt": "2026-07-17T07:54:12.925Z"
+      "updatedAt": "2026-07-17T07:54:37.948Z"
     },
     {
       "id": "95c3934ba926402baca12ae4249e0fdd",
@@ -8417,9 +8429,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 smartphone mirror selfie video.\n\nKeep:\nsame woman,\nsame face,\nsame messy bun hairstyle,\nsame beige dress,\nsame bedroom,\nsame mirror selfie composition.\n\nA young woman sits casually on her bed taking a mirror selfie video.\n\nMotion:\nAt the beginning she looks at her phone screen,\nthen slightly tilts her head,\nsmiles softly,\nmoves her free hand naturally on the bed,\nadjusts her posture and relaxes.\n\nHer expression changes naturally:\nserious look,\nsmall smile,\ncomfortable confident expression.\n\nAdd:\nnatural blinking,\nbreathing movement,\nhair loose strands moving,\ndress fabric subtle movement,\nrealistic body posture adjustment.\n\nCamera:\nreal smartphone mirror selfie,\nhandheld feeling,\nslight phone movement.\n\nEnvironment:\nwarm bedroom lighting,\nclean realistic room,\ndaily life atmosphere.\n\nStyle:\nauthentic TikTok girl daily vlog,\nnot professional photography.\n\nAvoid:\nperfect model pose,\nfake smile,\nAI face,\nsmooth plastic skin,\nbody reshaping,\nunreal movement.",
       "taskId": "4c74dfb8ecdb4f2cb1a2646c98a025ee",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"7461f31d-2887-41bc-9e87-cc1497b5598a\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T07:54:12.925Z",
-      "updatedAt": "2026-07-17T07:54:28.578Z"
+      "updatedAt": "2026-07-17T07:54:37.949Z"
     },
     {
       "id": "3227ce43-7d44-4f6a-b942-c6ef2d41fe5a",
