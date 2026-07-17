@@ -9059,9 +9059,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic TikTok outdoor lifestyle selfie video using the reference image.\n\nKeep the same woman, same face, same hairstyle, same beige top, denim shorts and outdoor street environment.\n\nShe is taking a casual selfie video outside on a sunny day. She slightly turns her head, looks at the phone camera, gently smiles, and adjusts her posture naturally.\n\nHer movement is relaxed and realistic, like a real person recording a daily moment. The camera has small natural handheld movement, slight body movement from breathing, and authentic phone camera feeling.\n\nShow realistic details:\nnatural skin texture,\nvisible pores,\nsoft sunlight on skin,\nreal body proportions,\nnatural curves,\nrealistic fabric texture on clothes.\n\nThe mood is confident, comfortable and positive.\nShe looks happy and relaxed in her everyday life.\n\nAdd background music:\ntrendy TikTok lifestyle music,\nsoft upbeat summer vibe,\nconfident and warm feeling.\n\nStyle:\nultra realistic smartphone video,\nauthentic street selfie,\nnatural influencer lifestyle content.\n\nAvoid:\nAI face,\nplastic skin,\nunreal body shape,\nexaggerated posing,\nover edited beauty filter,\nchanging clothes or hairstyle.",
       "taskId": "9593ecf553a249c59f95d435712ae223",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T09:55:28.161Z",
-      "updatedAt": "2026-07-17T09:55:40.429Z"
+      "updatedAt": "2026-07-17T09:55:44.263Z"
     },
     {
       "id": "905ce438-379c-4dc6-91cd-7e5dabfbf98c",
