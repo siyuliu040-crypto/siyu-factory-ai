@@ -5679,6 +5679,17 @@
   ],
   "generationTasks": [
     {
+      "id": "07860701b17f4ac390e4acc6cfa0b01d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T06:39:09.935Z",
+      "updatedAt": "2026-07-17T06:39:09.935Z"
+    },
+    {
       "id": "436c927c92c54bd2a021fec7e703f427",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -7946,6 +7957,17 @@
     }
   ],
   "history": [
+    {
+      "id": "e45a6bf7-1852-41b7-9823-03ea8c492c52",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and environment.\r\n\r\nCreate a realistic vertical 9:16 smartphone selfie video.\r\n\r\nThe woman is walking outdoors and recording a casual lifestyle selfie. The video begins with her looking directly into the camera with a confident but relaxed expression.\r\n\r\nShe slightly changes her walking pace, turns her head toward the surroundings, then returns her eyes to the camera. She gives a natural small smile and continues moving casually.\r\n\r\nAdd realistic movement:\r\nnatural walking rhythm,\r\nsoft breathing,\r\nsmall shoulder movement,\r\nslight body weight transfer,\r\nrealistic hair movement,\r\nnatural clothing response.\r\n\r\nThe body movement should follow real human physics. Include subtle natural soft-body response caused by walking and posture changes. Keep everything realistic and comfortable.\r\n\r\nCamera:\r\nhandheld phone selfie,\r\nvertical 9:16,\r\nslight movement,\r\nnatural smartphone quality,\r\nreal social media recording.\r\n\r\nLighting:\r\nnatural daylight,\r\nrealistic shadows,\r\nno overexposure.\r\n\r\nMusic:\r\nchill pop R&B,\r\nmodern lifestyle TikTok sound,\r\nconfident summer mood.\r\n\r\nNo face morphing, no identity change, no body distortion, no fake expression, no AI beauty effect, no heavy smoothing, no slow motion, no watermark, no subtitles.",
+      "taskId": "07860701b17f4ac390e4acc6cfa0b01d",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T06:39:09.935Z",
+      "updatedAt": "2026-07-17T06:39:09.935Z"
+    },
     {
       "id": "fc283a31-7a46-4a3f-9e85-6d6781e677b2",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
