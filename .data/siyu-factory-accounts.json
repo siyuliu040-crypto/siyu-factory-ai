@@ -6230,10 +6230,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T08:59:06.237Z",
-      "updatedAt": "2026-07-17T08:59:06.237Z"
+      "updatedAt": "2026-07-17T09:02:00.721Z"
     },
     {
       "id": "060c6db2dd624803a5427f1b43ac5239",
@@ -8817,10 +8817,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use image as exact reference.\n\nKeep same girl, face, hairstyle, clothes and bedroom.\n\nRealistic mirror selfie TikTok video.\nGirl sits on the bed and records a casual moment.\n\nShe slightly moves her phone, looks at the screen, blinks naturally, then gently changes her sitting posture.\n\nSubtle movements:\nnatural breathing,\nsoft skin movement,\nsmall hair movement,\nrealistic body posture.\n\nCamera:\nphone mirror selfie,\nreal home video feeling.\n\nMusic:\nsoft lofi bedroom music, relaxing vibe.\n\nAvoid:\nAI look,\nbeauty filter,\nface change,\nunnatural pose.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/d047132bbff547c7a6cb7cc0109ee1d7.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784365306&Signature=T7HKyHCLQ%2FToquoHlrPjOHVbUmo%3D",
       "taskId": "78f4903973014cef9728dc48fcf95658",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T08:59:06.237Z",
-      "updatedAt": "2026-07-17T09:01:52.520Z"
+      "updatedAt": "2026-07-17T09:02:00.721Z"
     },
     {
       "id": "2ad90c23-c87f-46af-b7b3-73a5006ee0a7",
