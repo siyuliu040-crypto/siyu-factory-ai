@@ -6414,6 +6414,17 @@
   ],
   "generationTasks": [
     {
+      "id": "e402777b402e4b92b541f4181206ddc5",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T10:07:18.380Z",
+      "updatedAt": "2026-07-17T10:07:18.380Z"
+    },
+    {
       "id": "e0f3e160569f4b4988fdacac4824e422",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "type": "video",
@@ -9099,6 +9110,17 @@
     }
   ],
   "history": [
+    {
+      "id": "e4deaa40-0134-44ed-8069-7c8b89ec078f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Create a realistic TikTok outdoor lifestyle selfie video using the reference image.\r\n\r\nKeep the same woman, same face, same hairstyle, same beige top, denim shorts and outdoor street environment.\r\n\r\nShe is taking a casual selfie video outside on a sunny day. She slightly turns her head, looks at the phone camera, gently smiles, and adjusts her posture naturally.\r\n\r\nHer movement is relaxed and realistic, like a real person recording a daily moment. The camera has small natural handheld movement, slight body movement from breathing, and authentic phone camera feeling.\r\n\r\nShow realistic details:\r\nnatural skin texture,\r\nvisible pores,\r\nsoft sunlight on skin,\r\nreal body proportions,\r\nnatural curves,\r\nrealistic fabric texture on clothes.\r\n\r\nThe mood is confident, comfortable and positive.\r\nShe looks happy and relaxed in her everyday life.\r\n\r\nAdd background music:\r\ntrendy TikTok lifestyle music,\r\nsoft upbeat summer vibe,\r\nconfident and warm feeling.\r\n\r\nStyle:\r\nultra realistic smartphone video,\r\nauthentic street selfie,\r\nnatural influencer lifestyle content.\r\n\r\nAvoid:\r\nAI face,\r\nplastic skin,\r\nunreal body shape,\r\nexaggerated posing,\r\nover edited beauty filter,\r\nchanging clothes or hairstyle.",
+      "taskId": "e402777b402e4b92b541f4181206ddc5",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T10:07:18.380Z",
+      "updatedAt": "2026-07-17T10:07:18.380Z"
+    },
     {
       "id": "74ad4cf2-fbd3-45d7-b25c-78acb1015ad8",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
