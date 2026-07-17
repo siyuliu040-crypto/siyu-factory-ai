@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019740107680,
+      "credits": 2000019740557680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-17T09:55:37.415Z"
+      "updatedAt": "2026-07-17T09:56:11.209Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c23e00a7-24c8-4438-8072-09fe67f4ec99",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 450000,
+      "balanceAfter": 2000019740557680,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T09:56:11.209Z",
+      "metadata": {
+        "taskId": "e0f3e160569f4b4988fdacac4824e422",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "888762c3-8861-49c3-8d22-ed1f6483f1f6",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6395,10 +6407,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T09:55:48.236Z",
-      "updatedAt": "2026-07-17T09:55:48.236Z"
+      "updatedAt": "2026-07-17T09:56:11.209Z"
     },
     {
       "id": "9593ecf553a249c59f95d435712ae223",
@@ -9082,9 +9094,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "描述：\n\n最终展示镜头。\n\n人物正面坐在沙龙椅上。\n\n通过整理头发、展开长度、展示侧面完成最终成交展示。\n\n人物展示动作：\n00:18–00:20\n\n人物双手进入画面。\n\n左手整理左侧头发。\n\n右手整理右侧头发。\n\n将两侧直发同时拉到胸前。\n\n停顿展示整体长度。\n\n00:20–00:21.5\n\n双手分别握住中下段头发。\n\n向外轻轻展开。\n\n展示：\n\n发量\n宽度\n厚度\n00:21.5–00:23\n\n右手整理侧分位置。\n\n动作：\n\n指腹沿：\n\n头顶分缝\n\n↓\n\n太阳穴\n\n↓\n\n耳后\n\n慢慢滑动。\n\n展示自然发际线。\n\n00:23–00:24\n\n人物缓慢转头45度。\n\n头发跟随移动。\n\n最后看向镜头。\n\n保持：\n\n自信微笑。\n\n镜头类型：\n\n近景。\n\n镜头角度：\n\n正面平视。\n\n镜头运动：\n\n固定镜头。\n\n构图方式：\n\n人物脸部和头发占据主要画面。\n\n光线和色彩：\n\n柔和室内光，突出黑发质感。\n\nAI视频生成提示词：\n\n9:16竖屏，真实TikTok Shop买家分享风格。\n\n美国黑人女性坐在美容沙龙椅上。\n\n佩戴Natural Black Straight Human Hair。\n\n人物双手将两侧长直发拉到胸前。\n\n展示：\n\n超长长度、厚实发尾、顺滑纹理和真实真人发效果。\n\n随后右手轻轻整理侧分发际线。\n\n手指沿头顶分缝移动到耳后。\n\n展示自然贴合效果。\n\n人物缓慢转头45度。\n\n头发随着动作自然滑动。\n\n最后看向镜头，自信微笑。\n\n真实手机拍摄感。\n\n禁止发型变化、禁止头发变卷、禁止蕾丝外露、禁止人物变化、禁止字幕、Logo、水印、背景虚化。",
       "taskId": "e0f3e160569f4b4988fdacac4824e422",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-17T09:55:48.236Z",
-      "updatedAt": "2026-07-17T09:55:58.659Z"
+      "updatedAt": "2026-07-17T09:56:11.209Z",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"cc5dcce8-c5d4-4898-8f3f-44b496b329de\\\",\\n  \\\"date\\\": \\\"Fri, 17 Jul 2026 09:55:41 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\""
     },
     {
       "id": "22941f09-7b4c-482c-884d-6b20c7f19a06",
