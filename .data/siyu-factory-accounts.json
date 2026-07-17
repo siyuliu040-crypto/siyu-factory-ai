@@ -5423,10 +5423,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T02:37:36.118Z",
-      "updatedAt": "2026-07-17T02:37:36.118Z"
+      "updatedAt": "2026-07-17T02:40:59.765Z"
     },
     {
       "id": "7f798ea9b3bf41a8844b8429bd0db1b3",
@@ -7529,9 +7529,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "A hyper realistic cinematic TikTok video featuring a French bulldog wearing a long natural dark brown body wave human hair wig.\n\nThe scene takes place in a beautiful American backyard garden during late afternoon golden sunlight.\n\nThe French bulldog is sitting on green grass naturally, looking around and sniffing the environment.\n\nA stylish Black woman walks into the frame wearing a fashionable casual outfit.\n\nShe kneels down beside the dog and gently adjusts the dog's long wavy wig.\n\nHer fingers slowly separate the waves, smooth the hair, and place the wig naturally around the dog's face.\n\nThe dog reacts naturally by blinking, moving its ears slightly, and looking up at the woman.\n\nThe woman smiles and softly says something to the dog while touching its chin.\n\nThe dog slowly stands up and begins walking forward.\n\nThe camera follows at a low angle like a professional pet fashion photographer.\n\nThe body wave hair moves naturally with each step, with realistic gravity, soft bouncing motion, and individual hair strands moving in the wind.\n\nThe dog pauses, turns its head toward the camera, and gives a serious confident expression like a runway model.\n\nThe woman walks beside the dog proudly.\n\nFinal shot:\nThe French bulldog sits on the grass while the sunlight highlights the realistic wig texture and the dog's adorable face.\n\nRealistic American lifestyle, authentic pet behavior, cinematic golden hour lighting, natural camera movement, realistic hair physics, professional fashion video style.\n\nNo text, no subtitles, no watermark.\nrealistic animal movement,\nnatural physics,\nno artificial motion,\nreal camera footage,\ndocumentary style,\nreal pet behavior,\nnatural blinking,\nsubtle breathing,\nrealistic hair movement,\ncinematic handheld camera",
       "taskId": "f2523ce4bca44b358f034c3c3effa6c0",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T02:37:36.118Z",
-      "updatedAt": "2026-07-17T02:40:25.009Z"
+      "updatedAt": "2026-07-17T02:40:59.765Z",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/bde804d3a6ac46d6a1f821b9bdb79996.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784342413&Signature=mLjVXVRTIetYaA0GENCggEJfPHI%3D"
     },
     {
       "id": "6fc42450-5c97-4ff5-8aec-4c4544527815",
