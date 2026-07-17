@@ -20,6 +20,9 @@ type ImageGeneratePayload = {
   response_format?: "url" | "b64_json";
 };
 
+const IMAGE_STATUS_POLL_INTERVAL_MS = 5000;
+const IMAGE_STATUS_MAX_ATTEMPTS = 180;
+
 function parseUpstreamText(text: string, status: number) {
   try {
     const parsed = JSON.parse(text) as Record<string, unknown>;
@@ -27,6 +30,57 @@ function parseUpstreamText(text: string, status: number) {
   } catch {
     return { error: "Image upstream request failed", upstream_status: status, detail: text };
   }
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value));
+}
+
+function getImageTaskId(payload: unknown) {
+  if (!isRecord(payload)) return "";
+  const data = isRecord(payload.data) ? payload.data : {};
+  return String(payload.task_id || payload.id || data.task_id || data.id || "");
+}
+
+function normalizeImageStatus(payload: unknown) {
+  if (!isRecord(payload)) return "completed";
+  const raw = String(payload.status || "").toLowerCase();
+  if (["completed", "succeeded", "success", "done"].includes(raw)) return "completed";
+  if (["failed", "fail", "error", "cancelled", "canceled"].includes(raw)) return "failed";
+  if (["queued", "pending", "processing", "running", "in_progress", "generating"].includes(raw)) return "in_progress";
+  return extractImageUrl(payload) ? "completed" : "in_progress";
+}
+
+function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function waitForImageCompletion(initialPayload: unknown) {
+  const taskId = getImageTaskId(initialPayload);
+  const initialStatus = normalizeImageStatus(initialPayload);
+  if (!taskId || initialStatus === "completed" || initialStatus === "failed") return initialPayload;
+
+  let lastPayload = initialPayload;
+  for (let attempt = 0; attempt < IMAGE_STATUS_MAX_ATTEMPTS; attempt += 1) {
+    await wait(IMAGE_STATUS_POLL_INTERVAL_MS);
+    const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/images/${encodeURIComponent(taskId)}`, {
+      method: "GET",
+      headers: authHeaders({ Accept: "application/json" }),
+      cache: "no-store"
+    });
+    const payload = parseUpstreamText(await response.text(), response.status);
+    lastPayload = payload;
+    if (!response.ok) return payload;
+    const status = normalizeImageStatus(payload);
+    if (status === "completed" || status === "failed") return payload;
+  }
+
+  return {
+    error: "Image task is still processing after the site polling window.",
+    status: "failed",
+    task_id: taskId,
+    upstream: lastPayload
+  };
 }
 
 function extractImageUrl(result: unknown) {
@@ -86,12 +140,13 @@ function streamUpstream(
           cache: "no-store"
         });
         const text = await response.text();
-        const payload = parseUpstreamText(text, response.status);
+        const parsedPayload = parseUpstreamText(text, response.status);
+        const payload = response.ok ? await waitForImageCompletion(parsedPayload) : parsedPayload;
         clearInterval(keepAlive);
-        if (!response.ok && billing) {
+        if ((!response.ok || normalizeImageStatus(payload) === "failed") && billing) {
           await refundCreditsForUser(billing.userId, billing.amount, "image generation failed refund", { path });
         }
-        if (response.ok && billing && history) {
+        if (response.ok && normalizeImageStatus(payload) === "completed" && billing && history) {
           await withAccountState((state) =>
             recordGenerationHistory(state, {
               userId: billing.userId,
