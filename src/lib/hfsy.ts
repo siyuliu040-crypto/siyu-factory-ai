@@ -20,6 +20,7 @@ export type HfsyImageModel = {
   upstreamModel: string;
   label: string;
   media: "image";
+  endpoint: "gemini" | "image-generation";
   credits: number;
   upstreamPrice: number;
   referenceMode: "optional" | "text-only";
@@ -32,6 +33,7 @@ export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
     upstreamModel: "nano-banana-2",
     label: "HFSY Nano Banana 2",
     media: "image",
+    endpoint: "gemini",
     credits: 1,
     upstreamPrice: 0.06,
     referenceMode: "optional",
@@ -43,6 +45,7 @@ export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
     upstreamModel: "nano-banana-pro",
     label: "HFSY Nano Banana Pro",
     media: "image",
+    endpoint: "gemini",
     credits: 2,
     upstreamPrice: 0.12,
     referenceMode: "optional",
@@ -54,6 +57,7 @@ export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
     upstreamModel: "gpt-image-2",
     label: "HFSY GPT Image 2",
     media: "image",
+    endpoint: "image-generation",
     credits: 1,
     upstreamPrice: 0.03,
     referenceMode: "text-only",
@@ -65,6 +69,7 @@ export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
     upstreamModel: "gpt-image-2pro",
     label: "HFSY GPT Image 2 Pro",
     media: "image",
+    endpoint: "image-generation",
     credits: 2,
     upstreamPrice: 0.2,
     referenceMode: "text-only",
