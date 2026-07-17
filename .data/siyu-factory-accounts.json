@@ -106,9 +106,9 @@
       "name": "赵凯磊",
       "passwordHash": "3e12efe3b023edcca8a284fedca0d3a3:e252007a0264556d02c1fb33e0bf53a610b137e10922eea4fdbf2044eeecc216d5bf27390c8b4142dde3eaad8c3b46cfd6c07371d34be73a234065f25765dd48",
       "role": "admin",
-      "credits": 9986050000,
+      "credits": 9985600000,
       "createdAt": "2026-07-16T09:11:07.487Z",
-      "updatedAt": "2026-07-17T02:20:25.587Z"
+      "updatedAt": "2026-07-17T02:24:12.822Z"
     },
     {
       "id": "e9b09779-f5e8-4449-9a9a-5a4efabd98c6",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "6db708c6-fc41-4463-9c72-d8ea3d44f604",
+      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
+      "amount": -450000,
+      "balanceAfter": 9985600000,
+      "reason": "video generation",
+      "createdAt": "2026-07-17T02:24:12.823Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "006dd8b8-e4ee-47cb-b77b-86300f63bfbf",
       "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
