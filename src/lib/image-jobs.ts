@@ -1,4 +1,4 @@
-import { HELLOBABYGO_BASE_URL, authHeaders } from "@/lib/hellobabygo";
+﻿import { HFSY_BASE_URL, hfsyHeaders } from "@/lib/hfsy";
 import {
   recordGenerationHistory,
   refundCreditsForUser,
@@ -112,13 +112,7 @@ function isRetryableImageError(status: number, payload: unknown) {
 }
 
 function shouldRetryImageJob(record: ImageJobRecord, status: number, payload: unknown) {
-  const message = typeof payload === "string" ? payload : JSON.stringify(payload);
-  if (
-    record.request.model.toLowerCase() === "gpt-image-2" &&
-    (status === 524 || message.includes("origin_response_timeout") || message.includes("Proxy Read Timeout"))
-  ) {
-    return false;
-  }
+  void record;
   return isRetryableImageError(status, payload);
 }
 
@@ -308,9 +302,9 @@ async function waitForImageCompletion(record: ImageJobRecord, initialPayload: un
   let lastPayload = initialPayload;
   for (let attempt = 0; attempt < IMAGE_STATUS_MAX_ATTEMPTS; attempt += 1) {
     await wait(IMAGE_STATUS_POLL_INTERVAL_MS);
-    const response = await fetch(`${HELLOBABYGO_BASE_URL}/v1/images/${encodeURIComponent(taskId)}`, {
+    const response = await fetch(`${HFSY_BASE_URL}/v1/images/${encodeURIComponent(taskId)}`, {
       method: "GET",
-      headers: authHeaders({ Accept: "application/json" }),
+      headers: hfsyHeaders({ Accept: "application/json" }),
       cache: "no-store"
     });
     const payload = parsePayload(await response.text());
@@ -353,9 +347,9 @@ async function waitForImageCompletion(record: ImageJobRecord, initialPayload: un
 
 function postImageGeneration(record: ImageJobRecord) {
   const upstream = normalizeImageRequestForUpstream(record.request);
-  return fetch(`${HELLOBABYGO_BASE_URL}/v1/images/generations`, {
+  return fetch(`${HFSY_BASE_URL}/v1/images/generations`, {
     method: "POST",
-    headers: authHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
+    headers: hfsyHeaders({ "Content-Type": "application/json", Accept: "application/json" }),
     body: JSON.stringify({
       model: upstream.model,
       prompt: record.request.prompt.trim(),
@@ -386,9 +380,9 @@ async function postImageEdit(
     formData.append("image", new Blob([bytes], { type: reference.type || "image/png" }), reference.name || `reference-${index + 1}.png`);
   }
 
-  return fetch(`${HELLOBABYGO_BASE_URL}/v1/images/edits`, {
+  return fetch(`${HFSY_BASE_URL}/v1/images/edits`, {
     method: "POST",
-    headers: authHeaders({ Accept: "application/json" }),
+    headers: hfsyHeaders({ Accept: "application/json" }),
     body: formData,
     cache: "no-store"
   });
