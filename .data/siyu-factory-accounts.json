@@ -6599,9 +6599,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create an 8-second vertical 9:16 photorealistic viral TikTok pet video.\n\nA cute cream-colored French Bulldog walks confidently along a lively American city sidewalk. The dog wears a soft pastel-pink bob wig with neat bangs and a small pearl necklace. The wig fits naturally around its ears and moves gently with every step.\n\nThe camera tracks backward at the dog’s eye level while the French Bulldog walks naturally on all four legs. People in the softly blurred background smile and turn their heads to look at the fashionable dog.\n\nA gentle breeze moves the pink wig slightly. The dog briefly stops beside a shop window, looks at its reflection, tilts its head proudly, and continues walking with a playful confident expression.\n\nPhotorealistic dog fur, realistic four-legged walking, natural wig movement, cute luxury street-fashion atmosphere, stable camera, warm daylight, no dialogue, no subtitles, no logos, no watermark.",
       "taskId": "0de673190c3e48249b69ae3f78db949a",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T01:52:43.703Z",
-      "updatedAt": "2026-07-17T01:52:48.564Z"
+      "updatedAt": "2026-07-17T01:52:55.450Z"
     },
     {
       "id": "e505c99f-42cc-4dfe-b81f-ab8c031b4997",
