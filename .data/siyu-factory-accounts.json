@@ -8660,11 +8660,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Use image as exact reference. Keep same girl, face, hair, outfit and cafe background.\r\n\r\nRealistic TikTok UGC lifestyle video.\r\nGirl sits at outdoor cafe. She looks away naturally, hair moves in the breeze. She touches her hair, picks up the drink, takes a small sip, then looks at camera with a soft smile.\r\n\r\nHandheld phone camera, natural sunlight, realistic skin texture.\r\n\r\nMusic: soft summer chill music, relaxing cafe vibe, light acoustic melody.\r\n\r\nAvoid: AI face, changing clothes, changing background, unnatural movement.",
+      "prompt": "Use image as exact reference. Keep same girl, face, hair, outfit and cafe background.\n\nRealistic TikTok UGC lifestyle video.\nGirl sits at outdoor cafe. She looks away naturally, hair moves in the breeze. She touches her hair, picks up the drink, takes a small sip, then looks at camera with a soft smile.\n\nHandheld phone camera, natural sunlight, realistic skin texture.\n\nMusic: soft summer chill music, relaxing cafe vibe, light acoustic melody.\n\nAvoid: AI face, changing clothes, changing background, unnatural movement.",
       "taskId": "fcfd7439de1646f0b9a038f427cb2449",
       "status": "IN_PROGRESS",
       "createdAt": "2026-07-17T08:02:14.934Z",
-      "updatedAt": "2026-07-17T08:02:14.934Z"
+      "updatedAt": "2026-07-17T08:02:18.246Z"
     },
     {
       "id": "3ba1bc92-fc07-4a32-baca-8d9a09347908",
