@@ -4833,6 +4833,17 @@
   ],
   "generationTasks": [
     {
+      "id": "2dfa0c6ff41448a0850f6bfb7a286655",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T01:53:36.103Z",
+      "updatedAt": "2026-07-17T01:53:36.103Z"
+    },
+    {
       "id": "0de673190c3e48249b69ae3f78db949a",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "type": "video",
@@ -6616,6 +6627,17 @@
     }
   ],
   "history": [
+    {
+      "id": "4049cd09-305c-4799-a0c2-0d81df5ed1d6",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Create an 8-second vertical 9:16 photorealistic emotional and heartwarming TikTok pet video.\r\n\r\nInside a warm cozy bedroom, a gentle Corgi wearing a short chestnut-brown curly wig carefully looks after its sick Beagle friend.\r\n\r\nThe Beagle rests comfortably in a small pet bed under a soft blanket. It looks tired but safe, with no visible injury or distress. The Corgi walks over on all four legs carrying a small plush toy gently in its mouth.\r\n\r\nThe Corgi places the toy beside the Beagle, nudges a small bowl of water closer with its nose, and then lies down beside its friend. It gently rests its head near the Beagle’s paw.\r\n\r\nThe Beagle slowly opens its eyes and softly touches noses with the Corgi. Their expressions feel calm, loving, and emotionally sincere.\r\n\r\nWarm home lighting, realistic animal behavior, detailed fur, subtle emotional storytelling, gentle movements, wholesome friendship, no medical procedures, no subtitles, no text, no watermark.",
+      "taskId": "2dfa0c6ff41448a0850f6bfb7a286655",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T01:53:36.104Z",
+      "updatedAt": "2026-07-17T01:53:36.104Z"
+    },
     {
       "id": "11e41b56-f7ab-418b-8be7-07c1516a0868",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
