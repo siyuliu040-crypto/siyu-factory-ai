@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   Activity,
@@ -36,7 +36,7 @@ import {
 import type { DragEvent } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { MODEL_CREDIT_COSTS, getVideoGenerationCost } from "@/lib/pricing";
-import { getHfsyModel } from "@/lib/hfsy";
+import { getHfsyImageModel, getHfsyModel } from "@/lib/hfsy";
 import { getSyModel, syModelSupportsEndFrame } from "@/lib/sy";
 import { getPromptLimit } from "@/lib/prompt-limits";
 
@@ -231,10 +231,7 @@ const VIDEO_MAX_TRANSIENT_ATTEMPTS = 36;
 const IMAGE_TASKS_STORAGE_KEY = "siyu-factory-image-tasks";
 
 function getBaseImageModelId(model: string) {
-  const match = model.match(/^(nano_banana(?:_2|_pro)?)-(?:1K|2K|4K)-(?:auto|portrait|square)$/i);
-  if (!match) return model;
-  const family = match[1].toLowerCase();
-  return family === "nano_banana" ? "nano_banana_2" : family;
+  return getHfsyImageModel(model)?.id || model;
 }
 
 function readStoredImageTasks() {
@@ -254,26 +251,10 @@ function readStoredImageTasks() {
 }
 
 const stableImageModels = [
-  "nano_banana_2-1K-auto",
-  "nano_banana_2-1K-portrait",
-  "nano_banana_2-1K-square",
-  "nano_banana_2-2K-auto",
-  "nano_banana_2-2K-portrait",
-  "nano_banana_2-2K-square",
-  "nano_banana_2-4K-auto",
-  "nano_banana_2-4K-portrait",
-  "nano_banana_2-4K-square",
-  "nano_banana_pro-1K-auto",
-  "nano_banana_pro-1K-portrait",
-  "nano_banana_pro-1K-square",
-  "nano_banana_pro-2K-auto",
-  "nano_banana_pro-2K-portrait",
-  "nano_banana_pro-2K-square",
-  "nano_banana_pro-4K-auto",
-  "nano_banana_pro-4K-portrait",
-  "nano_banana_pro-4K-square",
-  "auto-image",
-  "gpt-image-2"
+  "hfsy:nano-banana-2",
+  "hfsy:nano-banana-pro",
+  "hfsy:gpt-image-2",
+  "hfsy:gpt-image-2pro"
 ];
 
 const stableVideoModels = [
@@ -743,7 +724,7 @@ function getModelCreditCost(model: string) {
 
 function isVideoModel(model: string) {
   const lower = model.toLowerCase();
-  return lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:") || lower.startsWith("sy:") || lower.startsWith("hfsy:");
+  return Boolean(getHfsyModel(model)) || lower.includes("video") || lower.includes("veo") || lower.includes("sora") || lower.startsWith("vidu:") || lower.startsWith("sy:");
 }
 
 function isViduModelId(model: string) {
@@ -841,20 +822,8 @@ function getModelTitle(model: string, language: Language) {
     if (lower.includes("-hd")) return language === "zh" ? "HBG VEO 3.1 Fast HD" : "HBG VEO 3.1 Fast HD";
     return language === "zh" ? "HBG VEO 3.1 Fast 竖屏" : "HBG VEO 3.1 Fast Portrait";
   }
-  if (lower === "auto-image") return language === "zh" ? "智能生图" : "Auto Image";
-  if (lower === "gpt-image-2") return language === "zh" ? "GPT Image 2" : "GPT Image 2";
-  if (lower.includes("nano_banana")) {
-    const family = lower.includes("pro") ? "Nano Banana Pro" : "Nano Banana 2";
-    const resolution = lower.match(/-(1k|2k|4k)-/)?.[1]?.toUpperCase() || "";
-    const shape = lower.includes("-portrait")
-      ? language === "zh" ? "竖图" : "portrait"
-      : lower.includes("-square")
-        ? language === "zh" ? "方图" : "square"
-        : lower.includes("-auto")
-          ? language === "zh" ? "自动比例" : "auto aspect"
-          : "";
-    return [family, shape, resolution].filter(Boolean).join(" ");
-  }
+  const hfsyImageModel = getHfsyImageModel(model);
+  if (hfsyImageModel) return hfsyImageModel.label;
   return model;
 }
 
@@ -940,30 +909,14 @@ function getModelDescription(model: string, language: Language) {
       ? `${aspect} · 4/8/12/15 秒可选 · 720P · 纯提示词视频 · 已实测完成`
       : `${aspect} · 4/8/12/15s selectable · 720P · prompt-only video · completion tested`;
   }
-  if (lower === "auto-image") {
+  const hfsyImageModel = getHfsyImageModel(model);
+  if (hfsyImageModel) {
+    const mode = hfsyImageModel.referenceMode === "optional"
+      ? language === "zh" ? "文字或参考图均可" : "prompt or reference image"
+      : language === "zh" ? "纯提示词生图" : "prompt-only image";
     return language === "zh"
-      ? "智能选择生图模型 · 适合快速出图 · 支持参考图生图"
-      : "Auto-routed image model · quick drafts · supports reference image edits";
-  }
-  if (lower === "gpt-image-2") {
-    return language === "zh"
-      ? "低成本通用生图 · 适合商品图、广告素材和提示词测试 · 支持参考图生图"
-      : "Low-cost general image generation for product images, ads, and prompt tests · supports reference edits";
-  }
-  if (lower.includes("nano_banana")) {
-    const family = lower.includes("pro") ? "Nano Banana Pro" : "Nano Banana 2";
-    const resolution = lower.match(/-(1k|2k|4k)-/)?.[1]?.toUpperCase() || "2K";
-    const shape = lower.includes("-portrait")
-      ? language === "zh" ? "竖图优先" : "portrait-first"
-      : lower.includes("-square")
-        ? language === "zh" ? "方图优先" : "square-first"
-        : language === "zh" ? "自动适配比例" : "auto aspect";
-    const proHint = lower.includes("pro")
-      ? language === "zh" ? "文字渲染和细节更强" : "stronger text rendering and detail"
-      : language === "zh" ? "速度和稳定性更均衡" : "balanced speed and stability";
-    return language === "zh"
-      ? `${family} · ${resolution} · ${shape} · ${proHint} · 支持参考图生图`
-      : `${family} · ${resolution} · ${shape} · ${proHint} · supports reference image edits`;
+      ? `${mode} · HFSY 上游 · 上游价 ¥${hfsyImageModel.upstreamPrice} · ${hfsyImageModel.credits} 积分 · ${hfsyImageModel.description}`
+      : `${mode} · HFSY upstream · upstream ¥${hfsyImageModel.upstreamPrice} · ${hfsyImageModel.credits} credits · ${hfsyImageModel.description}`;
   }
   const reference = lower.startsWith("vidu:") || lower.includes("ref")
     ? copy[language].modelCanReference
@@ -978,9 +931,8 @@ function getModelDescription(model: string, language: Language) {
 function getModelGroupLabel(model: string, mode: Mode, language: Language) {
   const lower = model.toLowerCase();
   if (mode === "image") {
-    if (lower.includes("nano_banana_pro")) return language === "zh" ? "Nano Banana Pro 图片" : "Nano Banana Pro images";
-    if (lower.includes("nano_banana")) return language === "zh" ? "Nano Banana 2 图片" : "Nano Banana 2 images";
-    if (lower.includes("gpt") || lower.includes("auto-image")) return language === "zh" ? "通用图片模型" : "General image models";
+    if (lower.includes("nano-banana")) return language === "zh" ? "HFSY Nano Banana" : "HFSY Nano Banana";
+    if (lower.includes("gpt-image")) return language === "zh" ? "HFSY GPT Image" : "HFSY GPT Image";
     return language === "zh" ? "图片模型" : "Image models";
   }
   if (lower.startsWith("vidu:")) return "Vidu";
@@ -1385,8 +1337,8 @@ function cleanErrorMessage(error: string, language: Language) {
   }
   if (lower.includes("account access is restricted") || lower.includes("access is restricted")) {
     return language === "zh"
-      ? "上游账号或模型权限受限，任务已失败且站内积分已退回。请联系主账号检查 HFSY 权限，或先切换 Vidu / Grok / Nano Banana 等稳定模型。"
-      : "The upstream account or model access is restricted. The task failed and site credits have been refunded. Check HFSY access or switch to Vidu/Grok/Nano Banana.";
+      ? "上游账号或模型权限受限，任务已失败且站内积分已退回。请联系主账号检查上游权限，或先切换其它稳定模型。"
+      : "The upstream account or model access is restricted. The task failed and site credits have been refunded. Check upstream access or switch to another stable model.";
   }
   if (
     readable.includes("Error 524") ||
@@ -1395,8 +1347,8 @@ function cleanErrorMessage(error: string, language: Language) {
     readable.includes("120-second Proxy Read Timeout")
   ) {
     return language === "zh"
-      ? "上游图片生成超时，任务已失败且站内积分已退回。请优先切换 Nano Banana 2 / Nano Banana Pro 重新生成，或稍后再试。"
-      : "The upstream image service timed out. The task failed and site credits have been refunded. Try Nano Banana 2 / Nano Banana Pro or retry later.";
+      ? "上游图片生成超时，任务已失败且站内积分已退回。请优先切换 HFSY Nano Banana 2 / Pro 重新生成，或稍后再试。"
+      : "The upstream image service timed out. The task failed and site credits have been refunded. Try HFSY Nano Banana 2 / Pro or retry later.";
   }
   if (
     readable.includes("stayed in generation for too long") ||
