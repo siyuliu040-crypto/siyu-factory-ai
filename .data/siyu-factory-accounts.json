@@ -5840,10 +5840,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T07:26:54.719Z",
-      "updatedAt": "2026-07-17T07:26:54.719Z"
+      "updatedAt": "2026-07-17T07:30:23.562Z"
     },
     {
       "id": "6c99941be8314ca28a8c24c629b02c3a",
@@ -8218,10 +8218,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference.\n\nCreate a realistic vertical 9:16 beach vacation selfie video.\n\nA beautiful adult woman is sitting on the beach during golden hour. Keep the same face, hairstyle, skin tone, body proportions and black beach outfit.\n\nThe video should feel like a real TikTok travel vlog.\n\nAction:\nShe holds the phone naturally and looks into the camera. A gentle ocean breeze moves her hair across her face. She smiles slightly, laughs naturally, fixes a few strands of hair, then looks toward the ocean for a moment.\n\nShe adjusts her sitting position on the beach towel, turns back to the camera, and captures a relaxed vacation moment.\n\nMotion details:\nwind moving hair,\nnatural blinking,\nsmall smile changes,\nreal breathing,\nsubtle body movement,\nnatural sitting adjustment,\nrealistic sunlight interaction.\n\nCamera:\nfront smartphone camera,\nhandheld selfie style,\nslight phone shake,\nnatural framing,\nreal travel vlog feeling.\n\nLighting:\ngolden hour sunlight,\nwarm skin tone,\nnatural shadows,\nreal beach atmosphere.\n\nMusic:\nsummer afrobeat,\ntropical chill rhythm,\nsunset TikTok travel vibe.\n\nRestrictions:\nDo not change face.\nDo not change hairstyle.\nDo not change body shape.\nNo artificial skin.\nNo glamour filter.\nNo unrealistic movement.\nNo slow motion.\nNo camera rotation.\nNo subtitles.\nNo watermark.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/5e6e8252001a4bf68f8137801d6a0c05.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784359804&Signature=nwPxMy%2F%2BhXISQbYsWrSG5Y1sK7o%3D",
       "taskId": "7bb978b1049a472993e0b225d0c0d1f8",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T07:26:54.719Z",
-      "updatedAt": "2026-07-17T07:30:14.226Z"
+      "updatedAt": "2026-07-17T07:30:23.562Z"
     },
     {
       "id": "0ac4dd87-2322-467b-ba82-29c73647ea85",
