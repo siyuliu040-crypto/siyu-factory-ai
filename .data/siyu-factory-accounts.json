@@ -5715,6 +5715,17 @@
   ],
   "generationTasks": [
     {
+      "id": "f6b7d54d064f4777b1e9fad20b85aeef",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T06:51:42.033Z",
+      "updatedAt": "2026-07-17T06:51:42.033Z"
+    },
+    {
       "id": "3955ea231f2a414fa8a2ef5c36f13008",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -8015,6 +8026,17 @@
     }
   ],
   "history": [
+    {
+      "id": "24e309bc-da12-4177-b2bb-b2535f750cc5",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and bedroom setting.\r\n\r\nCreate a realistic vertical 9:16 smartphone selfie video.\r\n\r\nA woman is relaxing in a cozy bedroom. The video starts with a close selfie shot. She looks into the camera quietly, blinks naturally, and slightly changes her expression.\r\n\r\nShe adjusts her resting position comfortably, slightly moves her shoulders, changes her angle on the bed, and gives a soft relaxed smile. She briefly looks away like she is thinking, then looks back at the camera.\r\n\r\nAdd realistic details:\r\nnatural breathing,\r\nsubtle facial expressions,\r\nsmall body movement,\r\nsoft shoulder motion,\r\nrealistic hair movement,\r\nnatural fabric movement.\r\n\r\nHer body should naturally react to the bed support and posture changes, with realistic gravity and subtle compression. No exaggerated motion.\r\n\r\nCamera:\r\nfront phone camera,\r\nclose selfie distance,\r\nslight handheld movement,\r\nauthentic bedroom vlog feeling.\r\n\r\nLighting:\r\nwarm indoor light,\r\nsoft shadows,\r\nnatural skin texture.\r\n\r\nMusic:\r\nslow chill R&B,\r\nlate night cozy atmosphere,\r\nsoft emotional vibe.\r\n\r\nNo face change, no body change, no plastic skin, no over smoothing, no exaggerated actions, no slow motion, no watermark, no subtitles.",
+      "taskId": "f6b7d54d064f4777b1e9fad20b85aeef",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T06:51:42.033Z",
+      "updatedAt": "2026-07-17T06:51:42.033Z"
+    },
     {
       "id": "06bf753e-2a78-40c1-82e5-3a6afe6e476d",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
