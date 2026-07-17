@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9999250000,
+      "credits": 9999700000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-17T02:01:45.632Z"
+      "updatedAt": "2026-07-17T02:02:04.280Z"
     }
   ],
   "sessions": [
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "23ae58d0-08f5-47cf-a217-ca215fe1790f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9999700000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T02:02:04.280Z",
+      "metadata": {
+        "taskId": "775cf5bd6aa3471194e53a3e1b4f00dd",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "d74a8d71-5d42-42e2-bd61-43ab373a25a7",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -4934,10 +4946,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T02:01:49.238Z",
-      "updatedAt": "2026-07-17T02:01:49.238Z"
+      "updatedAt": "2026-07-17T02:02:04.280Z"
     },
     {
       "id": "cf4f6d84f9d64ff7ac054773509134ab",
@@ -6774,9 +6786,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "9:16 vertical, macro close-up of short curly pixie wig texture, fingers lift and release curls, soft highlights, no textUse the uploaded image as the exact character reference. Maintain the same face, curly hairstyle, outfit, body proportions and outdoor background.\n\nCreate a realistic vertical TikTok-style selfie video.\n\nA confident adult woman is outdoors under a bright blue sky, filming a casual summer selfie. She gently touches her curly hair with one hand, slightly lifts the curls, then lets them fall naturally. She slowly turns her head toward the camera and keeps a relaxed confident expression.\n\nHer motion should include soft breathing, slight shoulder movement, small posture adjustment, natural arm movement and realistic hair bounce from the breeze.\n\nAs her posture shifts, include subtle natural body response: slight soft-tissue movement and gentle compression in the chest, waist and upper torso caused by breathing, arm position, gravity and body weight distribution. Keep the movement realistic and restrained, with light natural jiggle only, never exaggerated.\n\nUse a front phone camera with a slightly low selfie angle, subtle handheld movement and a realistic outdoor perspective.\n\nLighting should be natural sunlight with real shadows, balanced exposure and no over-bright glossy highlights. Keep real skin texture, natural pores and slightly imperfect phone-camera quality.\n\nAvoid stiff body motion, fake hair physics, face change, body deformation, extra fingers, subtitles and watermark.",
       "taskId": "775cf5bd6aa3471194e53a3e1b4f00dd",
-      "status": "IN_PROGRESS",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"5d17852d-c1d4-4682-889c-545ba854dfde\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T02:01:49.238Z",
-      "updatedAt": "2026-07-17T02:01:56.749Z"
+      "updatedAt": "2026-07-17T02:02:04.280Z"
     },
     {
       "id": "81b1a185-4871-4a06-8920-0b6185fc77e9",
