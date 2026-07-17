@@ -8841,9 +8841,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use image as exact reference.\n\nKeep same girl, face, hair, swimsuit and beach background.\n\nRealistic summer TikTok selfie video.\nGirl sits by the beach in warm sunlight.\n\nShe looks at the camera softly, slightly turns her head, hair moves gently in the wind, and she gives a natural small smile.\n\nSubtle movements:\nnatural breathing,\nskin light reflection,\nhair movement,\nsmall shoulder movement.\n\nCamera:\nhandheld phone selfie,\nvacation lifestyle vlog.\n\nMusic:\nsummer chill music, soft tropical melody.\n\nAvoid:\nAI face,\nover posing,\nbody change,\nchanging outfit,\nfake cinematic effects.",
       "taskId": "39118d43e9c54797932913e901c0730f",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-17T09:02:06.953Z",
-      "updatedAt": "2026-07-17T09:02:13.008Z"
+      "updatedAt": "2026-07-17T09:02:20.116Z"
     },
     {
       "id": "63623a32-5379-4d64-a246-3c84bc38ff82",
