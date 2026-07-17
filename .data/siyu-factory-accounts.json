@@ -5633,7 +5633,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-07-17T03:53:56.425Z",
-      "updatedAt": "2026-07-17T03:54:54.580Z"
+      "updatedAt": "2026-07-17T03:55:04.382Z"
     },
     {
       "id": "c29a52393d0f4cc389a64cfdf3bd26a0",
@@ -7858,7 +7858,7 @@
       "status": "failed",
       "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"1180c1b8-2e24-4ee7-a405-cb4c10960317\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
       "createdAt": "2026-07-17T03:53:56.425Z",
-      "updatedAt": "2026-07-17T03:54:54.581Z"
+      "updatedAt": "2026-07-17T03:55:04.382Z"
     },
     {
       "id": "02c46a8a-4d9f-4573-a0c3-f86d46a13f8d",
