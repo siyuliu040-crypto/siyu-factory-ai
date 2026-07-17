@@ -141,6 +141,18 @@ async function getActiveHfsyFusionTask(model: string) {
   }) || null;
 }
 
+async function getRecentHfsyFusionAccountBlock(model: string) {
+  if (!isHfsyFusionModel(model)) return null;
+  const state = await readAccountState(true);
+  const cutoff = Date.now() - 30 * 60 * 1000;
+  return state.history.find((item) => {
+    if (!isHfsyFusionModel(item.model)) return false;
+    const updatedAt = Date.parse(item.updatedAt || item.createdAt);
+    if (!Number.isFinite(updatedAt) || updatedAt < cutoff) return false;
+    return /account is blocked|account access is restricted|账号.*(限制|封|禁)|通道.*(限制|封|禁)/i.test(String(item.error || ""));
+  }) || null;
+}
+
 function referencePayloadFields(referenceUrls: string[]) {
   if (!referenceUrls.length) return {};
   const first = referenceUrls[0];
@@ -373,12 +385,10 @@ async function postHfsyVideoPayload(
 
   const trimReferencesForModel = (references: string[]) =>
     hfsyModel?.upstreamModel === "sora-2" ? references.slice(0, 1) : references;
-  const preferredReferences = isHfsySdFamily && dataReferenceUrls.length
-    ? trimReferencesForModel(dataReferenceUrls)
-    : trimReferencesForModel(publicReferenceUrls);
+  const preferredReferences = trimReferencesForModel(publicReferenceUrls);
   const fallbackReferences = isHfsySdFamily && dataReferenceUrls.length
-    ? trimReferencesForModel(publicReferenceUrls)
-    : trimReferencesForModel(dataReferenceUrls);
+    ? trimReferencesForModel(dataReferenceUrls)
+    : [];
 
   const basePayload = {
     model: hfsyModel?.upstreamModel || String(payload.model || billing.model).replace(/^hfsy:/i, ""),
@@ -425,6 +435,13 @@ async function postHfsyVideoPayload(
     await refundCreditsForUser(billing.userId, billing.amount, "video generation failed refund", {
       model: billing.model
     });
+    if (isHfsyAccountBlockedFailure(data)) {
+      return Response.json({
+        error: "hfsy_account_blocked",
+        message: "HFSY 上游 Fusion/SD 通道账号受限，当前无法创建 SD2Fast 任务。站内积分已自动退回，请先换用 HFSY KL3.0 / Kling O3 或其他模型，等上游账号恢复后再用 SD2Fast。",
+        upstream: data
+      }, { status: 503 });
+    }
     return Response.json(data, { status: response.status });
   }
 
@@ -472,6 +489,11 @@ function isHfsyReferenceUploadFailure(status: number, payload: unknown) {
     message.includes("upload") ||
     message.includes("Bad Gateway")
   );
+}
+
+function isHfsyAccountBlockedFailure(payload: unknown) {
+  const message = stringifyPayload(payload);
+  return /account is blocked|account access is restricted|账号.*(限制|封|禁)|通道.*(限制|封|禁)/i.test(message);
 }
 
 async function postFrameVideoPayload(
@@ -780,6 +802,17 @@ export async function POST(request: Request) {
       return jsonError({
         error: "hfsy_not_configured",
         message: "This HFSY model is not enabled because HFSY_API_KEY is not configured."
+      }, 503);
+    }
+    const recentHfsyBlock = await getRecentHfsyFusionAccountBlock(model);
+    if (recentHfsyBlock) {
+      return jsonError({
+        error: "hfsy_account_blocked",
+        message: "HFSY 上游 Fusion/SD 通道账号受限，当前无法创建 SD2Fast/SD2 任务。没有扣除站内积分。请先换用 HFSY KL3.0 / Kling O3 或其他模型，等上游账号恢复后再试。",
+        detail: {
+          last_failed_task_id: recentHfsyBlock.taskId,
+          last_error: recentHfsyBlock.error
+        }
       }, 503);
     }
     const activeFusionTask = await getActiveHfsyFusionTask(model);
