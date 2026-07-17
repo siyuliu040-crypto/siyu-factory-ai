@@ -76,9 +76,9 @@
       "name": "LYB",
       "passwordHash": "be74a5320d8effba4a36c7eba93e5267:3360b6905c609fd00b239e1e6b389c34762d748171e21492ace5dfd6c8b435e6a0f20464a8de07bfc753331a8f1126720a9b34ba620445bcfb4f3beff3e73b6b",
       "role": "user",
-      "credits": 9939700000,
+      "credits": 9940150000,
       "createdAt": "2026-07-16T09:10:01.615Z",
-      "updatedAt": "2026-07-17T03:53:53.960Z"
+      "updatedAt": "2026-07-17T03:54:49.207Z"
     },
     {
       "id": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "31efdc26-25af-4aff-8f3c-72dbdb62cf70",
+      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
+      "amount": 450000,
+      "balanceAfter": 9940150000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T03:54:49.207Z",
+      "metadata": {
+        "taskId": "db3d0cd71ceb4c638e1c25b50662f2af",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "22c67402-5786-4016-8a43-d0e005026a8e",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
@@ -5618,10 +5630,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T03:53:56.425Z",
-      "updatedAt": "2026-07-17T03:53:56.425Z"
+      "updatedAt": "2026-07-17T03:54:49.207Z"
     },
     {
       "id": "c29a52393d0f4cc389a64cfdf3bd26a0",
@@ -7843,9 +7855,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a 15-second realistic beach video from this image.\nA confident adult woman stands on the beach in a bikini, filmed from a low-angle perspective against a bright blue sky with soft clouds.\nShe looks relaxed, confident, and natural, not overly posed.\nAt the beginning, she gently adjusts both sides of her bikini bottom with subtle, natural hand movement.\nShe shifts her body weight slightly from one side to the other, naturally highlighting her waist, hips, and legs.\nHer head slowly turns upward and to the side, looking into the distance with a calm, confident expression.\nA light breeze softly moves her hair and the edge of her cap.\nHer skin has a natural sunlit glow with a slightly wet beach look.\nMidway through the video, she slightly straightens her posture, relaxes her shoulders, and subtly engages her core, creating an elegant body line.\nNear the end, she briefly lowers her gaze toward the camera area, then looks away naturally.\nEnd with a relaxed standing pose.\nUse slow push-in camera movement, realistic handheld smartphone feel, natural body motion, soft golden sunlight, and a casual sensual summer vibe.\nAvoid exaggerated movement, avoid vulgar behavior, avoid distortion, keep it realistic and tasteful.",
       "taskId": "db3d0cd71ceb4c638e1c25b50662f2af",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"1180c1b8-2e24-4ee7-a405-cb4c10960317\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
       "createdAt": "2026-07-17T03:53:56.425Z",
-      "updatedAt": "2026-07-17T03:54:43.881Z"
+      "updatedAt": "2026-07-17T03:54:49.207Z"
     },
     {
       "id": "02c46a8a-4d9f-4573-a0c3-f86d46a13f8d",
