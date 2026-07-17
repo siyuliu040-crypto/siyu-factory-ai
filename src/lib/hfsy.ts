@@ -147,7 +147,7 @@ export const HFSY_MODELS: HfsyModel[] = [
 ];
 
 export function isHfsyModel(model: string) {
-  return model.toLowerCase().startsWith("hfsy:");
+  return Boolean(getHfsyModel(model));
 }
 
 export function toHfsyModel(model: string) {
