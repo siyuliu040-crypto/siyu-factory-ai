@@ -6242,10 +6242,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-17T09:02:06.953Z",
-      "updatedAt": "2026-07-17T09:02:06.953Z"
+      "updatedAt": "2026-07-17T09:05:13.330Z"
     },
     {
       "id": "78f4903973014cef9728dc48fcf95658",
@@ -8840,10 +8840,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Use image as exact reference.\n\nKeep same girl, face, hair, swimsuit and beach background.\n\nRealistic summer TikTok selfie video.\nGirl sits by the beach in warm sunlight.\n\nShe looks at the camera softly, slightly turns her head, hair moves gently in the wind, and she gives a natural small smile.\n\nSubtle movements:\nnatural breathing,\nskin light reflection,\nhair movement,\nsmall shoulder movement.\n\nCamera:\nhandheld phone selfie,\nvacation lifestyle vlog.\n\nMusic:\nsummer chill music, soft tropical melody.\n\nAvoid:\nAI face,\nover posing,\nbody change,\nchanging outfit,\nfake cinematic effects.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/e1874d9bf4df4d1c87579f819cbb8202.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784365492&Signature=h5VsJCD8gXxDVmM2513MuPF8nt8%3D",
       "taskId": "39118d43e9c54797932913e901c0730f",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-17T09:02:06.953Z",
-      "updatedAt": "2026-07-17T09:05:05.152Z"
+      "updatedAt": "2026-07-17T09:05:13.330Z"
     },
     {
       "id": "63623a32-5379-4d64-a246-3c84bc38ff82",
