@@ -8816,11 +8816,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Use image as exact reference.\r\n\r\nKeep same girl, face, hairstyle, clothes and bedroom.\r\n\r\nRealistic mirror selfie TikTok video.\r\nGirl sits on the bed and records a casual moment.\r\n\r\nShe slightly moves her phone, looks at the screen, blinks naturally, then gently changes her sitting posture.\r\n\r\nSubtle movements:\r\nnatural breathing,\r\nsoft skin movement,\r\nsmall hair movement,\r\nrealistic body posture.\r\n\r\nCamera:\r\nphone mirror selfie,\r\nreal home video feeling.\r\n\r\nMusic:\r\nsoft lofi bedroom music, relaxing vibe.\r\n\r\nAvoid:\r\nAI look,\r\nbeauty filter,\r\nface change,\r\nunnatural pose.",
+      "prompt": "Use image as exact reference.\n\nKeep same girl, face, hairstyle, clothes and bedroom.\n\nRealistic mirror selfie TikTok video.\nGirl sits on the bed and records a casual moment.\n\nShe slightly moves her phone, looks at the screen, blinks naturally, then gently changes her sitting posture.\n\nSubtle movements:\nnatural breathing,\nsoft skin movement,\nsmall hair movement,\nrealistic body posture.\n\nCamera:\nphone mirror selfie,\nreal home video feeling.\n\nMusic:\nsoft lofi bedroom music, relaxing vibe.\n\nAvoid:\nAI look,\nbeauty filter,\nface change,\nunnatural pose.",
       "taskId": "78f4903973014cef9728dc48fcf95658",
-      "status": "in_progress",
+      "status": "IN_PROGRESS",
       "createdAt": "2026-07-17T08:59:06.237Z",
-      "updatedAt": "2026-07-17T08:59:11.476Z"
+      "updatedAt": "2026-07-17T08:59:12.403Z"
     },
     {
       "id": "2ad90c23-c87f-46af-b7b3-73a5006ee0a7",
