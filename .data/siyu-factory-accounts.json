@@ -5481,6 +5481,17 @@
   ],
   "generationTasks": [
     {
+      "id": "85f430d9608642e8a1622e0a848ede4a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-17T03:36:14.752Z",
+      "updatedAt": "2026-07-17T03:36:14.752Z"
+    },
+    {
       "id": "1966e7ed26784ebabe4fd82d1a358f88",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "type": "video",
@@ -7627,6 +7638,17 @@
     }
   ],
   "history": [
+    {
+      "id": "b9fe184e-c37a-4cb0-b7a2-851d0db59d43",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Keep the same face, hairstyle, skin tone, body proportions, outfit and environment.\r\n\r\nCreate a realistic vertical smartphone selfie video with authentic TikTok lifestyle style.\r\n\r\nA beautiful adult woman is relaxing in a natural private environment, recording a casual selfie video with her phone. The video should feel like a real personal moment, not a professional photoshoot.\r\n\r\nAt the beginning, she looks directly into the camera with a calm natural expression. She slightly adjusts her position, blinks softly, and gives a subtle confident look as if she just noticed the camera recording.\r\n\r\nShe slowly changes her posture, gently moves her shoulder and adjusts her sitting or resting position. She briefly looks away from the camera, interacts naturally with the environment, then turns her eyes back to the lens with a small relaxed smile.\r\n\r\nThe movement should be realistic and connected:\r\nnatural breathing,\r\nsmall facial expressions,\r\nsoft blinking,\r\nslight head movement,\r\ngentle shoulder movement,\r\nnatural body weight shift,\r\nrealistic hair movement,\r\nsubtle clothing movement.\r\n\r\nHer body should not look frozen. Add realistic human motion caused by breathing, gravity and posture changes. Keep natural soft-body response and slight compression when changing position, but keep it subtle and realistic.\r\n\r\nCamera:\r\nvertical front phone camera,\r\nclose selfie framing,\r\nslight handheld shake,\r\nnatural imperfect smartphone angle,\r\nauthentic social media video quality.\r\n\r\nLighting:\r\nnatural everyday lighting,\r\nsoft shadows,\r\nrealistic skin tones,\r\nreal phone camera exposure.\r\n\r\nSkin:\r\nnatural texture,\r\nvisible realistic details,\r\nminimal beauty filter,\r\nno plastic skin,\r\nno excessive smoothing,\r\nno artificial shine.\r\n\r\nMusic:\r\nsoft chill R&B,\r\nrelaxed lifestyle beat,\r\nwarm emotional atmosphere,\r\nviral TikTok selfie background sound.\r\n\r\nStyle:\r\nreal girlfriend-style selfie,\r\ncasual daily life moment,\r\nhigh retention social media video.\r\n\r\nAvoid:\r\nstiff movements,\r\noveracting,\r\nrepeated hair touching,\r\nslow motion,\r\nfake facial expressions,\r\nAI beauty look,\r\nface change,\r\nbody distortion,\r\nextra fingers,\r\nwatermark,\r\nsubtitles.",
+      "taskId": "85f430d9608642e8a1622e0a848ede4a",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-17T03:36:14.753Z",
+      "updatedAt": "2026-07-17T03:36:14.753Z"
+    },
     {
       "id": "00707ef4-41cb-49a5-a9b8-4a758bb2f907",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
