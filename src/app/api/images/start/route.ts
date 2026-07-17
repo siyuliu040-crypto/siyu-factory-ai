@@ -10,6 +10,7 @@ import {
 import { accountErrorResponse } from "@/lib/account-api";
 import { getGenerationCost } from "@/lib/pricing";
 import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
+import { getHfsyImageModel, isHfsyImageModel } from "@/lib/hfsy";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,19 @@ export async function POST(request: Request) {
 
     if (!model || !prompt) {
       return jsonError({ error: "model and prompt are required" }, 400);
+    }
+    if (!isHfsyImageModel(model)) {
+      return jsonError({
+        error: "unsupported_image_model",
+        message: "Only HFSY image models are enabled on this site."
+      }, 400);
+    }
+    const hfsyImageModel = getHfsyImageModel(model);
+    if (body.references?.length && hfsyImageModel?.referenceMode === "text-only") {
+      return jsonError({
+        error: "reference_not_supported",
+        message: "This HFSY image model only supports prompt-only image generation. Use Nano Banana for reference-image generation."
+      }, 400);
     }
     if (isPromptTooLong(model, prompt, "image")) {
       return jsonError({
