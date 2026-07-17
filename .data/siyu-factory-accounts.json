@@ -96,9 +96,9 @@
       "name": "李",
       "passwordHash": "c41d988c95a41f4868a16ce29faccf8b:940797a8ed58a20571558d103f420664f85ce610f8e084ec7a1e366d9336f64762140b4a354e6065eb56e6bc64f2c0ea29886eba242b256d2daea8ee88590774",
       "role": "user",
-      "credits": 9972550000,
+      "credits": 9973000000,
       "createdAt": "2026-07-16T09:11:01.355Z",
-      "updatedAt": "2026-07-17T01:53:32.967Z"
+      "updatedAt": "2026-07-17T01:54:11.790Z"
     },
     {
       "id": "03ceeada-4ba5-4fd9-a573-26227e902d84",
@@ -316,6 +316,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "305a0951-3a7d-4c4c-8acf-47f47d1adf0d",
+      "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
+      "amount": 450000,
+      "balanceAfter": 9973000000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-17T01:54:11.790Z",
+      "metadata": {
+        "taskId": "2dfa0c6ff41448a0850f6bfb7a286655",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "74751397-def8-45e2-9ae2-20865842f47a",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -4838,10 +4850,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-17T01:53:36.103Z",
-      "updatedAt": "2026-07-17T01:53:36.103Z"
+      "updatedAt": "2026-07-17T01:54:11.789Z"
     },
     {
       "id": "0de673190c3e48249b69ae3f78db949a",
@@ -6634,9 +6646,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create an 8-second vertical 9:16 photorealistic emotional and heartwarming TikTok pet video.\n\nInside a warm cozy bedroom, a gentle Corgi wearing a short chestnut-brown curly wig carefully looks after its sick Beagle friend.\n\nThe Beagle rests comfortably in a small pet bed under a soft blanket. It looks tired but safe, with no visible injury or distress. The Corgi walks over on all four legs carrying a small plush toy gently in its mouth.\n\nThe Corgi places the toy beside the Beagle, nudges a small bowl of water closer with its nose, and then lies down beside its friend. It gently rests its head near the Beagle’s paw.\n\nThe Beagle slowly opens its eyes and softly touches noses with the Corgi. Their expressions feel calm, loving, and emotionally sincere.\n\nWarm home lighting, realistic animal behavior, detailed fur, subtle emotional storytelling, gentle movements, wholesome friendship, no medical procedures, no subtitles, no text, no watermark.",
       "taskId": "2dfa0c6ff41448a0850f6bfb7a286655",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"739018c3-7732-48fd-aebb-f7567bb144fc\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-17T01:53:36.104Z",
-      "updatedAt": "2026-07-17T01:54:03.548Z"
+      "updatedAt": "2026-07-17T01:54:11.790Z"
     },
     {
       "id": "11e41b56-f7ab-418b-8be7-07c1516a0868",
