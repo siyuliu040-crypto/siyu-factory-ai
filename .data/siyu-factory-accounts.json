@@ -7094,18 +7094,6 @@
   ],
   "history": [
     {
-      "id": "383d01d9-c13a-4630-957e-4e892057b02a",
-      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
-      "mode": "video",
-      "model": "hfsy:sd-2-fast",
-      "prompt": "A realistic cinematic TikTok video featuring a cute French bulldog wearing a stylish short brown human hair bob wig.\n\nScene starts in a luxury modern apartment with warm sunlight coming through the window.\n\nThe French bulldog sits on a soft velvet chair like a little fashion model. \nA stylish Black woman gently adjusts the dog's realistic human hair wig, carefully fixing the bangs and making the hairstyle look perfect.\n\nThe dog looks slightly confused at first, then slowly turns its head toward the camera with a confident and adorable expression.\n\nClose-up camera shots show the detailed hair strands, natural wig texture, smooth bangs, realistic hair movement, and the dog's expressive eyes.\n\nThe woman laughs happily and takes photos of the dog like a professional fashion photographer.\n\nFinal shot: the French bulldog proudly poses like a celebrity pet model.\n\nUltra realistic pet photography, luxury beauty lifestyle, natural emotions, cinematic lighting, shallow depth of field, high detail, viral TikTok pet transformation style.\n\nNo text, no subtitles, no watermark.",
-      "taskId": "6877cc68f9184f27a9d56a90fe871bbb",
-      "status": "failed",
-      "createdAt": "2026-07-17T02:16:41.793Z",
-      "updatedAt": "2026-07-17T02:17:05.712Z",
-      "error": "\"Fusion 提交失败 [ErrCode=10001]: account is blocked,exit\""
-    },
-    {
       "id": "641d5257-66bf-4521-bb2a-8aed525b4ea3",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
       "mode": "video",
@@ -7487,18 +7475,6 @@
       "createdAt": "2026-07-16T09:19:04.637Z",
       "updatedAt": "2026-07-16T09:22:25.954Z",
       "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/d23646d0dd15414ab9b16c519056af97.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280046&Signature=ksW%2F%2FY2%2FXNA335mmwzv5p3Ef7k0%3D"
-    },
-    {
-      "id": "54479266-a308-47ac-87a2-4a908bcd8309",
-      "userId": "03ceeada-4ba5-4fd9-a573-26227e902d84",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "A stylish Black woman getting ready in her bedroom before going out.\n\nShe is wearing a beautiful natural curly human hair wig.\n\nHer French bulldog sits on the makeup chair watching carefully.\n\nThe woman smiles and gives her dog a tiny matching curly wig.\n\nThe dog looks into the mirror and tilts its head proudly.\n\nThe woman and her dog look at themselves together in the mirror.\n\nShow realistic mirror reflections, natural emotions, beautiful wig texture, soft morning sunlight.\n\nCute Black beauty lifestyle, pet friendship, viral TikTok style.\n\nNo text, no subtitles, no watermark.",
-      "taskId": "333be2402cd14f58a0f8b2808d2cd88d",
-      "status": "completed",
-      "createdAt": "2026-07-16T09:18:29.569Z",
-      "updatedAt": "2026-07-16T09:21:38.570Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/3f81e0a394694da3bf296b875968aa44.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280041&Signature=ZIxRy28MfUNgb03sJRuh9LPvy3g%3D"
     },
     {
       "id": "8ff6e751-02a3-41af-99a4-b797739ec9e5",
