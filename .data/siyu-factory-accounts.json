@@ -7770,6 +7770,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_0jeekNeZsHqRC3PoDA7TgJFWOypHDluU",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T02:32:46.351Z",
+      "updatedAt": "2026-07-18T02:32:46.351Z"
+    },
+    {
       "id": "task_Hjv3uvzah1Mao74mgUxi3lEuX7REFKlS",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11104,6 +11115,17 @@
     }
   ],
   "history": [
+    {
+      "id": "6a09847c-77be-481d-a87e-9ae1416100df",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "Use the uploaded image as the exact character reference. Create a realistic vertical smartphone mirror selfie video in 9:16. A beautiful adult woman in a white cropped camisole and gray sweatpants is recording a casual mirror selfie in her bedroom. Keep the same face, hairstyle, skin tone, body proportions, clothing, phone, and background. She maintains the same identity, softly blinks, slightly shifts her seated posture, gently relaxes one shoulder, and makes a small natural expression change while looking at the phone screen and then the mirror. Add subtle breathing, light body weight shift, natural compression in the seated pose, realistic fabric folds, and soft natural movement from gravity. Slight handheld phone movement only. Natural room lighting, realistic skin texture, no beauty filter. Music: soft bedroom chill pop / R&B. No face morphing, no body distortion, no extra fingers, no subtitles, no watermark.",
+      "taskId": "task_0jeekNeZsHqRC3PoDA7TgJFWOypHDluU",
+      "status": "queued",
+      "createdAt": "2026-07-18T02:32:46.351Z",
+      "updatedAt": "2026-07-18T02:32:46.351Z"
+    },
     {
       "id": "ba73f251-c07a-4def-980e-afa093d4b0e3",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
