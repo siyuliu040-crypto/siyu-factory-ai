@@ -11018,9 +11018,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Create an ultra realistic smartphone mirror selfie video. Keep the same woman, outfit, hairstyle and bedroom environment from the reference image.\n\nA young woman is sitting casually in her bedroom in front of a mirror, holding her phone naturally. She keeps a relaxed everyday posture with one knee slightly raised. The video starts with a real phone camera feeling, slight handheld shake, natural autofocus adjustment and small framing changes.\n\nShe slowly looks at herself in the mirror, gently adjusts a few strands of hair, then looks toward the camera with a soft natural smile. Her expression is calm and confident, not posing like a model. Her shoulders and body move naturally with breathing. Her skin shows realistic pores, natural texture, soft highlights and real human details.\n\nWarm bedroom lighting creates realistic shadows. Hair moves slightly with her movement. The whole scene feels like a real TikTok lifestyle selfie recorded by a normal person.\n\nAdd soft bedroom pop music with a calm chill atmosphere.\n\nNo AI face, no plastic skin, no beauty filter, no unrealistic body movement, no exaggerated posing, no fake smile, no CGI appearance, no distorted hands, no extra fingers, realistic human motion only.\n\nDuration: 7 seconds.",
       "taskId": "task_HRWJK1LzrjoqaXdm6TOTW80of62ScOTu",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-07-18T02:21:44.613Z",
-      "updatedAt": "2026-07-18T02:22:14.247Z"
+      "updatedAt": "2026-07-18T02:22:22.277Z"
     },
     {
       "id": "74ad4cf2-fbd3-45d7-b25c-78acb1015ad8",
