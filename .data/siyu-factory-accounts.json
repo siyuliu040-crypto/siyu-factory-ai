@@ -11820,9 +11820,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a highly realistic TikTok tropical lifestyle video based on the reference image. Keep the same woman, same face features, same curly brown-black hair, same white crochet outfit, and the same natural body proportions.\n\nA beautiful woman is relaxing on a wooden balcony at a tropical resort surrounded by palm trees and warm sunlight. The video should feel like a real casual smartphone recording from a vacation day, natural and authentic.\n\nAt the beginning, she sits comfortably and looks into the camera. Her expression is calm and confident, with a subtle natural smile. She blinks slowly, slightly changes her gaze, and breathes naturally. Keep realistic facial details, natural skin texture, visible pores, and real sunlight reflecting on her skin.\n\nShe slowly lifts one hand and gently touches the curls beside her face. Her fingers naturally move through a few strands of hair. The curls have realistic volume, softness, and weight, moving slightly with the tropical breeze. She does not pose intentionally, just a relaxed everyday vacation moment.\n\nShe slightly tilts her head, lets her hair fall naturally over her shoulder, then looks back into the camera with a warm relaxed expression.\n\nUse realistic smartphone camera movement, small handheld shake, natural lighting changes, authentic human motion, peaceful tropical resort atmosphere.\n\nAdd soft tropical R&B music with a warm summer vacation feeling.\n\nNo AI appearance, no face modification, no plastic skin, no unrealistic body enhancement, no extreme beauty filter, no fake hair physics, no exaggerated movements, no artificial posing.",
       "taskId": "e7634244eb944e5786e86533b387c6ea",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-18T03:26:11.357Z",
-      "updatedAt": "2026-07-18T03:26:16.251Z"
+      "updatedAt": "2026-07-18T03:26:23.349Z"
     },
     {
       "id": "74850373-4cfa-4a19-bd72-6ade2aa7be4c",
