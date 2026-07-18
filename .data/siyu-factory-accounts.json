@@ -9385,9 +9385,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic outdoor cafe selfie video. Keep the same woman, outfit and hairstyle from the reference image.\n\nShe is sitting at a cafe table with a drink nearby. She casually picks up the coffee cup, takes a small sip, then looks at the camera and smiles naturally. She slightly fixes her hair with one hand and continues enjoying her drink.\n\nThe camera movement should feel like a real phone vlog, with small hand movements and natural framing changes. Background people move softly in the distance. Sunlight creates realistic shadows on her face and clothes.\n\nHer skin should look natural, with visible texture and realistic lighting. No over-smoothing, no artificial makeup effect. The whole video feels like a casual day shared on TikTok.\n\nMusic:\nFrench cafe style music, acoustic guitar, relaxed morning vibe.\n\nDuration:\n7-8 seconds",
       "taskId": "75742e7b866e4438bf355097e0ff0002",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-18T00:23:56.806Z",
-      "updatedAt": "2026-07-18T00:24:01.239Z"
+      "updatedAt": "2026-07-18T00:24:02.200Z"
     },
     {
       "id": "51d5951c-5b4e-412d-ac5a-74a25029e640",
