@@ -11864,11 +11864,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Create a realistic smartphone selfie video based on the reference image. Keep the same woman, same face, same curly black hair, same green bikini and white crochet cover-up, with natural body proportions.\r\n\r\nA beautiful woman is sitting on a tropical resort balcony surrounded by palm trees and greenery. The video feels like a real TikTok vacation selfie. She looks naturally confident and relaxed.\r\n\r\nShe slowly touches her curly hair with one hand, gently moving a few curls away from her face. Her hair softly moves with the tropical breeze. She slightly tilts her head, blinks naturally, and gives a subtle warm smile to the camera.\r\n\r\nThe camera has small realistic handheld movement like a real phone recording. Natural breathing, slight shoulder movement, realistic skin texture, visible skin pores, soft sunlight reflections on her face and body.\r\n\r\nLuxury tropical vacation atmosphere, calm summer mood, realistic human movement.\r\n\r\nAdd soft tropical R&B music with relaxing summer vibes.\r\n\r\nNo AI look, no plastic skin, no beauty filter, no exaggerated body shape, no unnatural movement, no face change.",
+      "prompt": "Create a realistic smartphone selfie video based on the reference image. Keep the same woman, same face, same curly black hair, same green bikini and white crochet cover-up, with natural body proportions.\n\nA beautiful woman is sitting on a tropical resort balcony surrounded by palm trees and greenery. The video feels like a real TikTok vacation selfie. She looks naturally confident and relaxed.\n\nShe slowly touches her curly hair with one hand, gently moving a few curls away from her face. Her hair softly moves with the tropical breeze. She slightly tilts her head, blinks naturally, and gives a subtle warm smile to the camera.\n\nThe camera has small realistic handheld movement like a real phone recording. Natural breathing, slight shoulder movement, realistic skin texture, visible skin pores, soft sunlight reflections on her face and body.\n\nLuxury tropical vacation atmosphere, calm summer mood, realistic human movement.\n\nAdd soft tropical R&B music with relaxing summer vibes.\n\nNo AI look, no plastic skin, no beauty filter, no exaggerated body shape, no unnatural movement, no face change.",
       "taskId": "008b0c7f784b436282f3b74b9106f9ce",
       "status": "IN_PROGRESS",
       "createdAt": "2026-07-18T03:32:28.088Z",
-      "updatedAt": "2026-07-18T03:32:28.088Z"
+      "updatedAt": "2026-07-18T03:32:32.544Z"
     },
     {
       "id": "efb44942-f898-4d7e-8ac1-1671f3a528f4",
