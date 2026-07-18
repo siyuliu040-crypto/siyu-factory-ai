@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988300000,
+      "credits": 9988750000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T03:09:39.947Z"
+      "updatedAt": "2026-07-18T03:10:11.051Z"
     }
   ],
   "sessions": [
@@ -280,6 +280,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "0742de1e-48b1-4fb8-94e5-1ac9170b3b17",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9988750000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T03:10:11.051Z",
+      "metadata": {
+        "taskId": "94b5cb6718ea4c019e68b8eda675e510",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "8778bc17-05f5-4dbf-abbd-9bf9af3c30cf",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -8027,10 +8039,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T03:09:42.045Z",
-      "updatedAt": "2026-07-18T03:09:42.045Z"
+      "updatedAt": "2026-07-18T03:10:11.051Z"
     },
     {
       "id": "task_Xi6wvTevnnrPnKDy5ApFEteUGN34oPgS",
@@ -11506,9 +11518,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a highly realistic TikTok tropical lifestyle video based on the reference image. Keep the same woman, same face features, same curly brown-black hair, same white crochet outfit, and the same natural body proportions.\n\nA beautiful woman is relaxing on a wooden balcony at a tropical resort surrounded by palm trees and warm sunlight. The video should feel like a real casual smartphone recording from a vacation day, natural and authentic.\n\nAt the beginning, she sits comfortably and looks into the camera. Her expression is calm and confident, with a subtle natural smile. She blinks slowly, slightly changes her gaze, and breathes naturally. Keep realistic facial details, natural skin texture, visible pores, and real sunlight reflecting on her skin.\n\nShe slowly lifts one hand and gently touches the curls beside her face. Her fingers naturally move through a few strands of hair. The curls have realistic volume, softness, and weight, moving slightly with the tropical breeze. She does not pose intentionally, just a relaxed everyday vacation moment.\n\nShe slightly tilts her head, lets her hair fall naturally over her shoulder, then looks back into the camera with a warm relaxed expression.\n\nUse realistic smartphone camera movement, small handheld shake, natural lighting changes, authentic human motion, peaceful tropical resort atmosphere.\n\nAdd soft tropical R&B music with a warm summer vacation feeling.\n\nNo AI appearance, no face modification, no plastic skin, no unrealistic body enhancement, no extreme beauty filter, no fake hair physics, no exaggerated movements, no artificial posing.",
       "taskId": "94b5cb6718ea4c019e68b8eda675e510",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"6c7e7d0f-df09-4206-982e-4d6cb8cd4de7\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 03:09:46 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-18T03:09:42.045Z",
-      "updatedAt": "2026-07-18T03:10:02.557Z"
+      "updatedAt": "2026-07-18T03:10:11.051Z"
     },
     {
       "id": "c26a5075-79b8-4ea6-b94e-5c8006fb0345",
