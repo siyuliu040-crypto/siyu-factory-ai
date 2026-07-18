@@ -7326,6 +7326,17 @@
   ],
   "generationTasks": [
     {
+      "id": "d8add0c152114ef09eaf1a1f734b3956",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T01:49:13.152Z",
+      "updatedAt": "2026-07-18T01:49:13.152Z"
+    },
+    {
       "id": "7906d6bcc8304049af1f8ff567afa787",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -10440,6 +10451,17 @@
     }
   ],
   "history": [
+    {
+      "id": "51f92921-98c1-42bc-bab2-7909190a5f56",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Create a realistic 9:16 smartphone selfie video. A beautiful adult woman in a black camisole records a casual bedroom selfie. Keep the same face, hairstyle, skin tone, body shape, outfit, jewelry, and bedroom background. She looks at the camera softly, blinks naturally, slightly tilts her head, makes a tiny posture adjustment, and breathes gently. Add subtle shoulder movement, slight chest rise from breathing, realistic skin texture, natural fabric tension, and very light soft-body response caused by normal movement and gravity. Keep the motion slow and natural, not exaggerated. Front phone camera, slight handheld shake, natural indoor sunlight, no beauty filter. Music: soft chill R&B, warm lifestyle mood. No face change, no body distortion, no outfit change, no extra accessories, no subtitles, no watermark.",
+      "taskId": "d8add0c152114ef09eaf1a1f734b3956",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-18T01:49:13.152Z",
+      "updatedAt": "2026-07-18T01:49:13.152Z"
+    },
     {
       "id": "e77de382-f905-464b-be77-b9d64be3213c",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
