@@ -7763,10 +7763,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 30000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-18T02:30:00.462Z",
-      "updatedAt": "2026-07-18T02:30:00.462Z"
+      "updatedAt": "2026-07-18T02:32:32.631Z"
     },
     {
       "id": "task_a6sXNZJdH8k6sPlQC1oUixWSxosC0qTZ",
@@ -11099,9 +11099,10 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Use the uploaded image as the exact character reference. Create a realistic 9:16 smartphone selfie video. A beautiful adult woman in a black camisole records a casual bedroom selfie. Keep the same face, hairstyle, skin tone, body shape, outfit, jewelry, and bedroom background. She looks at the camera softly, blinks naturally, slightly tilts her head, makes a tiny posture adjustment, and breathes gently. Add subtle shoulder movement, slight chest rise from breathing, realistic skin texture, natural fabric tension, and very light soft-body response caused by normal movement and gravity. Keep the motion slow and natural, not exaggerated. Front phone camera, slight handheld shake, natural indoor sunlight, no beauty filter. Music: soft chill R&B, warm lifestyle mood. No face change, no body distortion, no outfit change, no extra accessories, no subtitles, no watermark.",
       "taskId": "task_Hjv3uvzah1Mao74mgUxi3lEuX7REFKlS",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-18T02:30:00.462Z",
-      "updatedAt": "2026-07-18T02:32:24.712Z"
+      "updatedAt": "2026-07-18T02:32:32.631Z",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/afdb4ee6-624c-4502-a8a9-76f364758df7.mp4"
     },
     {
       "id": "541a793d-5452-4da4-ae8d-b7e6e2493b7f",
