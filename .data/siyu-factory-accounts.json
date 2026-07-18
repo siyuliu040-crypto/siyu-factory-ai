@@ -8313,10 +8313,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-18T04:03:28.024Z",
-      "updatedAt": "2026-07-18T04:03:28.024Z"
+      "updatedAt": "2026-07-18T04:06:30.812Z"
     },
     {
       "id": "5c7c8fd7abef411ca85e7682fdf6de21",
@@ -11934,10 +11934,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Keep the same woman, same face, same curly black hair, same outfit and natural body shape.\n\nRealistic TikTok selfie video. A woman sits on the bed in a cozy bedroom, holding the phone naturally. She looks into the camera with a relaxed confident expression, softly blinks and gives a small natural smile.\n\nShe gently touches her curly hair once, letting the curls move naturally with realistic bounce and texture. Her body stays relaxed with subtle breathing movement, slight shoulder movement and natural handheld camera shake.\n\nKeep realistic skin texture, natural pores, soft indoor lighting, no plastic skin, no beauty filter, no artificial smoothness.\n\nNatural everyday lifestyle feeling, like a real phone video posted on TikTok.\n\nAdd soft R&B chill music, warm bedroom atmosphere.\n\nNo face change, no exaggerated movement, no head tilt, no fake pose, no CGI look.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/18/a4000dedaad845b1bab7fe746891e975.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784433966&Signature=ruNH51%2BCItf3VLpBokSGg7ZOvm8%3D",
       "taskId": "64a3303b8ba24428b3707e6ba8b4882a",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-18T04:03:28.024Z",
-      "updatedAt": "2026-07-18T04:06:21.911Z"
+      "updatedAt": "2026-07-18T04:06:30.812Z"
     },
     {
       "id": "6f2f7a6a-701b-44bb-af3e-be97af522c4f",
