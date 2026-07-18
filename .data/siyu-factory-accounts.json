@@ -11238,9 +11238,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Create a highly realistic TikTok summer selfie video based on the reference image. Keep the same woman, same face features, same natural curly black hair, same orange and yellow sporty bikini top, and the same realistic body proportions.\n\nA confident young woman is sitting on warm rocks under bright summer sunlight near the ocean. The video should look like a real phone selfie captured during a beach vacation, not a staged photoshoot.\n\nAt the beginning, she looks into the camera naturally with a calm confident expression. Her eyes slightly move, she blinks softly, and her lips form a small relaxed smile. Her chest and shoulders move naturally with breathing. Keep realistic skin texture, visible natural pores, and real sunlight reflections on her skin.\n\nAfter a few seconds, she gently adjusts a few curls near the side of her face with her hand. The curly hair has realistic volume, weight, and movement, with some curls moving naturally from the ocean breeze. She slightly turns her face toward the sunlight, showing a relaxed vacation feeling.\n\nThe camera has subtle handheld movement like a real smartphone recording. Natural micro movements, realistic shadows, authentic beach atmosphere, warm summer lifestyle feeling.\n\nAdd a soft tropical R&B soundtrack with relaxing beach vibes.\n\nNo AI face, no face modification, no plastic skin, no beauty filter, no unrealistic smooth body, no exaggerated curves, no fake hair movement, no unnatural posing, no CGI look.",
       "taskId": "task_tjAJbmACQPfeaT6kevuokSTIbUVaMdvP",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-07-18T02:49:38.971Z",
-      "updatedAt": "2026-07-18T02:50:23.247Z"
+      "updatedAt": "2026-07-18T02:50:32.046Z"
     },
     {
       "id": "472d8ea7-8d81-4463-b7e3-e05fadfdba7b",
