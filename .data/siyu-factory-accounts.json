@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988450000,
+      "credits": 9988900000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T02:09:47.734Z"
+      "updatedAt": "2026-07-18T02:09:56.625Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "3bbfeaa9-d2e2-4d29-80d2-9394a60a320a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9988900000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T02:09:56.625Z",
+      "metadata": {
+        "taskId": "18336bbb99464c4ab5a6047481af6736",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "324b697b-0e82-4205-ae46-f048bd1aca65",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -7667,10 +7679,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T02:09:50.641Z",
-      "updatedAt": "2026-07-18T02:09:50.641Z"
+      "updatedAt": "2026-07-18T02:09:56.625Z"
     },
     {
       "id": "73ee3a0229394c6fa7d7fc40b800e28d",
@@ -10948,9 +10960,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Create a realistic 9:16 front-camera selfie video inside a car. A beautiful adult woman wearing a fitted white T-shirt records a casual car selfie. Keep the same face, curly hairstyle, skin tone, body shape, outfit, jewelry, and car interior. She looks into the camera naturally, blinks softly, slightly changes her expression, makes a tiny shoulder adjustment, and shifts her upper body a little in the seat. Add subtle breathing, light natural body movement, realistic shirt tension, soft hair movement, and gentle movement caused by posture and gravity. Keep it realistic and calm, like a real TikTok phone recording. Slight handheld shake, natural daylight through the car window, no heavy beauty effect. Music: relaxed chill R&B with light summer vibe. No face change, no body distortion, no background change, no subtitles, no watermark.",
       "taskId": "18336bbb99464c4ab5a6047481af6736",
-      "status": "IN_PROGRESS",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"242a03a4-031a-4194-9db3-3ebd96616b71\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 02:09:53 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-18T02:09:50.641Z",
-      "updatedAt": "2026-07-18T02:09:55.457Z"
+      "updatedAt": "2026-07-18T02:09:56.625Z"
     },
     {
       "id": "e2789c98-9919-4614-978c-93eb4af4d531",
