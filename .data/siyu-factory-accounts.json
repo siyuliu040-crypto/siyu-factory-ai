@@ -7751,10 +7751,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 30000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-18T02:26:33.872Z",
-      "updatedAt": "2026-07-18T02:26:33.872Z"
+      "updatedAt": "2026-07-18T02:29:54.406Z"
     },
     {
       "id": "task_yx52f2JTKLctjuCMOMHrr5yH3SQgGpix",
@@ -11075,10 +11075,11 @@
       "mode": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Create a realistic outdoor cafe selfie video. Keep the same woman, outfit and hairstyle from the reference image.\n\nShe is sitting at a cafe table with a drink nearby. She casually picks up the coffee cup, takes a small sip, then looks at the camera and smiles naturally. She slightly fixes her hair with one hand and continues enjoying her drink.\n\nThe camera movement should feel like a real phone vlog, with small hand movements and natural framing changes. Background people move softly in the distance. Sunlight creates realistic shadows on her face and clothes.\n\nHer skin should look natural, with visible texture and realistic lighting. No over-smoothing, no artificial makeup effect. The whole video feels like a casual day shared on TikTok.\n\nMusic:\nFrench cafe style music, acoustic guitar, relaxed morning vibe.\n\nDuration:\n7-8 seconds",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/3fa54f16-15f9-414f-b5a0-b47d715f0788.mp4",
       "taskId": "task_a6sXNZJdH8k6sPlQC1oUixWSxosC0qTZ",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-18T02:26:33.872Z",
-      "updatedAt": "2026-07-18T02:29:45.398Z"
+      "updatedAt": "2026-07-18T02:29:54.406Z"
     },
     {
       "id": "88fc9996-c981-400b-8c8f-082908dba9ca",
