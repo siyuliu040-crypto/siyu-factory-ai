@@ -10248,9 +10248,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Create a realistic 9:16 smartphone selfie video. A beautiful adult woman in a black camisole records a casual bedroom selfie. Keep the same face, hairstyle, skin tone, body shape, outfit, jewelry, and bedroom background. She looks at the camera softly, blinks naturally, slightly tilts her head, makes a tiny posture adjustment, and breathes gently. Add subtle shoulder movement, slight chest rise from breathing, realistic skin texture, natural fabric tension, and very light soft-body response caused by normal movement and gravity. Keep the motion slow and natural, not exaggerated. Front phone camera, slight handheld shake, natural indoor sunlight, no beauty filter. Music: soft chill R&B, warm lifestyle mood. No face change, no body distortion, no outfit change, no extra accessories, no subtitles, no watermark.",
       "taskId": "f491792cdc7b490eb76a3a14c6726ad4",
-      "status": "in_progress",
+      "status": "IN_PROGRESS",
       "createdAt": "2026-07-18T01:45:38.096Z",
-      "updatedAt": "2026-07-18T01:45:42.596Z"
+      "updatedAt": "2026-07-18T01:45:43.385Z"
     },
     {
       "id": "165e264a-f045-4cdc-83ac-3275fd515f8a",
