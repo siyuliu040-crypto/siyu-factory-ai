@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988450000,
+      "credits": 9988900000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T01:54:49.609Z"
+      "updatedAt": "2026-07-18T01:55:08.611Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "584d950f-6b36-474d-96fe-71ef4e9ce9f2",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9988900000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T01:55:08.611Z",
+      "metadata": {
+        "taskId": "3320f1eb835e4ffa8e5da4e1044dbcdd",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "c7dd7c7e-2ecd-4614-996e-84ac4d2a152b",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -7475,10 +7487,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T01:54:52.381Z",
-      "updatedAt": "2026-07-18T01:54:52.381Z"
+      "updatedAt": "2026-07-18T01:55:08.611Z"
     },
     {
       "id": "bffd8f5c5a654f86bbe2c920bdc4eadc",
@@ -10668,9 +10680,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Create a realistic 9:16 smartphone selfie video. A beautiful adult woman in a black camisole records a casual bedroom selfie. Keep the same face, hairstyle, skin tone, body shape, outfit, jewelry, and bedroom background. She looks at the camera softly, blinks naturally, slightly tilts her head, makes a tiny posture adjustment, and breathes gently. Add subtle shoulder movement, slight chest rise from breathing, realistic skin texture, natural fabric tension, and very light soft-body response caused by normal movement and gravity. Keep the motion slow and natural, not exaggerated. Front phone camera, slight handheld shake, natural indoor sunlight, no beauty filter. Music: soft chill R&B, warm lifestyle mood. No face change, no body distortion, no outfit change, no extra accessories, no subtitles, no watermark.",
       "taskId": "3320f1eb835e4ffa8e5da4e1044dbcdd",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-18T01:54:52.381Z",
-      "updatedAt": "2026-07-18T01:54:59.169Z"
+      "updatedAt": "2026-07-18T01:55:08.611Z",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"fefc496b-be60-456f-82b6-b496503fe980\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 01:54:55 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\""
     },
     {
       "id": "dfca8697-9998-4e5f-aa50-0830ff6e0b05",
