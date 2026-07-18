@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988450000,
+      "credits": 9988900000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T01:47:57.173Z"
+      "updatedAt": "2026-07-18T01:48:25.668Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "279d9fc4-c828-453e-8d4d-cad73b41b86b",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9988900000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T01:48:25.668Z",
+      "metadata": {
+        "taskId": "00a083a550af4396bd30c5911636827a",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "131a02d4-dd85-4177-bfc9-b52c6aa48837",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -7259,10 +7271,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T01:48:00.091Z",
-      "updatedAt": "2026-07-18T01:48:00.091Z"
+      "updatedAt": "2026-07-18T01:48:25.667Z"
     },
     {
       "id": "dd3aaee501cf405a8d7fee16cd7d7d8f",
@@ -10353,9 +10365,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create an ultra realistic smartphone mirror selfie video. Keep the same woman, outfit, hairstyle and bedroom environment from the reference image.\n\nA young woman is sitting casually in her bedroom in front of a mirror, holding her phone naturally. She keeps a relaxed everyday posture with one knee slightly raised. The video starts with a real phone camera feeling, slight handheld shake, natural autofocus adjustment and small framing changes.\n\nShe slowly looks at herself in the mirror, gently adjusts a few strands of hair, then looks toward the camera with a soft natural smile. Her expression is calm and confident, not posing like a model. Her shoulders and body move naturally with breathing. Her skin shows realistic pores, natural texture, soft highlights and real human details.\n\nWarm bedroom lighting creates realistic shadows. Hair moves slightly with her movement. The whole scene feels like a real TikTok lifestyle selfie recorded by a normal person.\n\nAdd soft bedroom pop music with a calm chill atmosphere.\n\nNo AI face, no plastic skin, no beauty filter, no unrealistic body movement, no exaggerated posing, no fake smile, no CGI appearance, no distorted hands, no extra fingers, realistic human motion only.\n\nDuration: 7 seconds.",
       "taskId": "00a083a550af4396bd30c5911636827a",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-18T01:48:05.087Z",
-      "updatedAt": "2026-07-18T01:48:16.719Z"
+      "updatedAt": "2026-07-18T01:48:25.668Z",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"c24ef162-0ed3-4f13-8cf9-9f39d47d127b\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 01:48:07 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\""
     },
     {
       "id": "74ad4cf2-fbd3-45d7-b25c-78acb1015ad8",
