@@ -7998,6 +7998,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_Xi6wvTevnnrPnKDy5ApFEteUGN34oPgS",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T03:04:45.251Z",
+      "updatedAt": "2026-07-18T03:04:45.251Z"
+    },
+    {
       "id": "task_oDr88acmPWbm8GUWFttTE7FL0S6IFC0i",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11453,6 +11464,17 @@
     }
   ],
   "history": [
+    {
+      "id": "c26a5075-79b8-4ea6-b94e-5c8006fb0345",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "Create a realistic smartphone selfie video based on the reference image. Keep the same woman, same face, same curly black hair, same green bikini and white crochet cover-up, with natural body proportions.\r\n\r\nA beautiful woman is sitting on a tropical resort balcony surrounded by palm trees and greenery. The video feels like a real TikTok vacation selfie. She looks naturally confident and relaxed.\r\n\r\nShe slowly touches her curly hair with one hand, gently moving a few curls away from her face. Her hair softly moves with the tropical breeze. She slightly tilts her head, blinks naturally, and gives a subtle warm smile to the camera.\r\n\r\nThe camera has small realistic handheld movement like a real phone recording. Natural breathing, slight shoulder movement, realistic skin texture, visible skin pores, soft sunlight reflections on her face and body.\r\n\r\nLuxury tropical vacation atmosphere, calm summer mood, realistic human movement.\r\n\r\nAdd soft tropical R&B music with relaxing summer vibes.\r\n\r\nNo AI look, no plastic skin, no beauty filter, no exaggerated body shape, no unnatural movement, no face change.",
+      "taskId": "task_Xi6wvTevnnrPnKDy5ApFEteUGN34oPgS",
+      "status": "queued",
+      "createdAt": "2026-07-18T03:04:45.251Z",
+      "updatedAt": "2026-07-18T03:04:45.251Z"
+    },
     {
       "id": "8082e46b-ea95-4c34-a704-4591560f0d05",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
