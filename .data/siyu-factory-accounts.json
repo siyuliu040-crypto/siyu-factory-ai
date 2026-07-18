@@ -7775,10 +7775,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 30000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-18T02:32:46.351Z",
-      "updatedAt": "2026-07-18T02:32:46.351Z"
+      "updatedAt": "2026-07-18T02:36:12.329Z"
     },
     {
       "id": "task_Hjv3uvzah1Mao74mgUxi3lEuX7REFKlS",
@@ -11121,10 +11121,11 @@
       "mode": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Use the uploaded image as the exact character reference. Create a realistic vertical smartphone mirror selfie video in 9:16. A beautiful adult woman in a white cropped camisole and gray sweatpants is recording a casual mirror selfie in her bedroom. Keep the same face, hairstyle, skin tone, body proportions, clothing, phone, and background. She maintains the same identity, softly blinks, slightly shifts her seated posture, gently relaxes one shoulder, and makes a small natural expression change while looking at the phone screen and then the mirror. Add subtle breathing, light body weight shift, natural compression in the seated pose, realistic fabric folds, and soft natural movement from gravity. Slight handheld phone movement only. Natural room lighting, realistic skin texture, no beauty filter. Music: soft bedroom chill pop / R&B. No face morphing, no body distortion, no extra fingers, no subtitles, no watermark.",
+      "previewUrl": "https://file.bandianwa.com/ziyou1/video/aa103067-3525-444b-8eec-e46dbbdfb27d.mp4",
       "taskId": "task_0jeekNeZsHqRC3PoDA7TgJFWOypHDluU",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-18T02:32:46.351Z",
-      "updatedAt": "2026-07-18T02:36:03.359Z"
+      "updatedAt": "2026-07-18T02:36:12.329Z"
     },
     {
       "id": "ba73f251-c07a-4def-980e-afa093d4b0e3",
