@@ -6786,6 +6786,17 @@
   ],
   "generationTasks": [
     {
+      "id": "9a59f5dd01774a8db175060d6986d304",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T00:42:04.350Z",
+      "updatedAt": "2026-07-18T00:42:04.350Z"
+    },
+    {
       "id": "ead325dbd7164874b8591d0d4ddfedfa",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -9647,6 +9658,17 @@
     }
   ],
   "history": [
+    {
+      "id": "b52fc638-184c-440b-8a51-b75889bde5d2",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Create a realistic vertical smartphone mirror selfie video in 9:16. A beautiful adult woman in a white cropped camisole and gray sweatpants is recording a casual mirror selfie in her bedroom. Keep the same face, hairstyle, skin tone, body proportions, clothing, phone, and background. She maintains the same identity, softly blinks, slightly shifts her seated posture, gently relaxes one shoulder, and makes a small natural expression change while looking at the phone screen and then the mirror. Add subtle breathing, light body weight shift, natural compression in the seated pose, realistic fabric folds, and soft natural movement from gravity. Slight handheld phone movement only. Natural room lighting, realistic skin texture, no beauty filter. Music: soft bedroom chill pop / R&B. No face morphing, no body distortion, no extra fingers, no subtitles, no watermark.",
+      "taskId": "9a59f5dd01774a8db175060d6986d304",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-18T00:42:04.350Z",
+      "updatedAt": "2026-07-18T00:42:04.350Z"
+    },
     {
       "id": "14a95d96-614a-4bb5-9bd3-914c27a11081",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
