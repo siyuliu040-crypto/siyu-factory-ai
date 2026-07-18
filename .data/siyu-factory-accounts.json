@@ -6474,6 +6474,17 @@
   ],
   "generationTasks": [
     {
+      "id": "c53f3b8ee412488694ac9543d3db5c14",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T00:20:25.199Z",
+      "updatedAt": "2026-07-18T00:20:25.199Z"
+    },
+    {
       "id": "4721d743b0e04f9d9db1685f150757a2",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -9192,6 +9203,17 @@
     }
   ],
   "history": [
+    {
+      "id": "f0974f82-b327-4c1a-8b78-4b76c4506e98",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Create an ultra realistic smartphone mirror selfie video. Keep the same woman, outfit, hairstyle and bedroom environment from the reference image.\r\n\r\nA young woman is sitting casually in her bedroom in front of a mirror, holding her phone naturally. She keeps a relaxed everyday posture with one knee slightly raised. The video starts with a real phone camera feeling, slight handheld shake, natural autofocus adjustment and small framing changes.\r\n\r\nShe slowly looks at herself in the mirror, gently adjusts a few strands of hair, then looks toward the camera with a soft natural smile. Her expression is calm and confident, not posing like a model. Her shoulders and body move naturally with breathing. Her skin shows realistic pores, natural texture, soft highlights and real human details.\r\n\r\nWarm bedroom lighting creates realistic shadows. Hair moves slightly with her movement. The whole scene feels like a real TikTok lifestyle selfie recorded by a normal person.\r\n\r\nAdd soft bedroom pop music with a calm chill atmosphere.\r\n\r\nNo AI face, no plastic skin, no beauty filter, no unrealistic body movement, no exaggerated posing, no fake smile, no CGI appearance, no distorted hands, no extra fingers, realistic human motion only.\r\n\r\nDuration: 7 seconds.",
+      "taskId": "c53f3b8ee412488694ac9543d3db5c14",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-18T00:20:25.199Z",
+      "updatedAt": "2026-07-18T00:20:25.199Z"
+    },
     {
       "id": "3f6b6caf-b86d-4b14-96b5-b904e3bfaac1",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
