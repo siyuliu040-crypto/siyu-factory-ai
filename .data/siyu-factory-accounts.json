@@ -7950,6 +7950,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_3JcQ7INSMe1bBsde1N7hql2TIO6kMnBd",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T03:02:06.896Z",
+      "updatedAt": "2026-07-18T03:02:06.896Z"
+    },
+    {
       "id": "task_hNeHEXKVsnXdUyH7RP43sT76z6Ig6YXt",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11383,6 +11394,17 @@
     }
   ],
   "history": [
+    {
+      "id": "a18bf5d1-96fc-4a9b-b3fe-98c4148cb46d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "Create a highly realistic TikTok tropical lifestyle video based on the reference image. Keep the same woman, same face features, same curly brown-black hair, same white crochet outfit, and the same natural body proportions.\r\n\r\nA beautiful woman is relaxing on a wooden balcony at a tropical resort surrounded by palm trees and warm sunlight. The video should feel like a real casual smartphone recording from a vacation day, natural and authentic.\r\n\r\nAt the beginning, she sits comfortably and looks into the camera. Her expression is calm and confident, with a subtle natural smile. She blinks slowly, slightly changes her gaze, and breathes naturally. Keep realistic facial details, natural skin texture, visible pores, and real sunlight reflecting on her skin.\r\n\r\nShe slowly lifts one hand and gently touches the curls beside her face. Her fingers naturally move through a few strands of hair. The curls have realistic volume, softness, and weight, moving slightly with the tropical breeze. She does not pose intentionally, just a relaxed everyday vacation moment.\r\n\r\nShe slightly tilts her head, lets her hair fall naturally over her shoulder, then looks back into the camera with a warm relaxed expression.\r\n\r\nUse realistic smartphone camera movement, small handheld shake, natural lighting changes, authentic human motion, peaceful tropical resort atmosphere.\r\n\r\nAdd soft tropical R&B music with a warm summer vacation feeling.\r\n\r\nNo AI appearance, no face modification, no plastic skin, no unrealistic body enhancement, no extreme beauty filter, no fake hair physics, no exaggerated movements, no artificial posing.",
+      "taskId": "task_3JcQ7INSMe1bBsde1N7hql2TIO6kMnBd",
+      "status": "queued",
+      "createdAt": "2026-07-18T03:02:06.896Z",
+      "updatedAt": "2026-07-18T03:02:06.896Z"
+    },
     {
       "id": "862a9dbb-e8cc-406c-8506-5266c54b5c46",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
