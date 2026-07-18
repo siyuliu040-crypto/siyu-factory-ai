@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988900000,
+      "credits": 9989350000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T00:41:01.644Z"
+      "updatedAt": "2026-07-18T00:41:28.549Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "d76b8f2c-66bb-40ab-be0c-3b74e00b2259",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9989350000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T00:41:28.549Z",
+      "metadata": {
+        "taskId": "abd9bd3101094ecda144a5e1add680c5",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "34d1ed7e-fa61-4fb3-934d-4c3e9d3a322e",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6743,10 +6755,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T00:41:04.591Z",
-      "updatedAt": "2026-07-18T00:41:04.591Z"
+      "updatedAt": "2026-07-18T00:41:28.549Z"
     },
     {
       "id": "a79da11f770843b3b4b92bc6e0a50150",
@@ -9595,9 +9607,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic outdoor cafe selfie video. Keep the same woman, outfit and hairstyle from the reference image.\n\nShe is sitting at a cafe table with a drink nearby. She casually picks up the coffee cup, takes a small sip, then looks at the camera and smiles naturally. She slightly fixes her hair with one hand and continues enjoying her drink.\n\nThe camera movement should feel like a real phone vlog, with small hand movements and natural framing changes. Background people move softly in the distance. Sunlight creates realistic shadows on her face and clothes.\n\nHer skin should look natural, with visible texture and realistic lighting. No over-smoothing, no artificial makeup effect. The whole video feels like a casual day shared on TikTok.\n\nMusic:\nFrench cafe style music, acoustic guitar, relaxed morning vibe.\n\nDuration:\n7-8 seconds",
       "taskId": "abd9bd3101094ecda144a5e1add680c5",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"3229ff71-d848-4e8d-bf0e-9b232a99851e\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 00:41:08 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-18T00:41:04.591Z",
-      "updatedAt": "2026-07-18T00:41:19.541Z"
+      "updatedAt": "2026-07-18T00:41:28.549Z"
     },
     {
       "id": "8d9956b4-f251-4adb-8533-17a52605c02e",
