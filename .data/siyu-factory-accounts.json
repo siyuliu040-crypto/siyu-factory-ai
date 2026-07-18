@@ -10596,11 +10596,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Create an ultra realistic beach vacation selfie video. Keep the same woman, black swimsuit, hairstyle and beach environment from the reference image.\r\n\r\nThe woman is sitting near the beach during golden hour, holding her phone naturally. Ocean wind gently moves her hair. The video feels like a real vacation moment recorded on a smartphone.\r\n\r\nShe slowly turns her head toward the ocean, enjoys the sunset for a moment, then looks back at the camera with a soft natural smile. Her movement is relaxed and effortless.\r\n\r\nGolden sunlight reflects naturally on her skin. Her skin has realistic texture, natural pores and soft highlights. Her shoulders and body move slightly with breathing. Hair moves naturally with the ocean breeze.\r\n\r\nThe camera has realistic handheld movement, small shakes and natural phone exposure changes. The scene should feel like an authentic TikTok travel vlog.\r\n\r\nAdd slow summer pop music with ocean wave sounds and relaxing sunset atmosphere.\r\n\r\nNo AI face, no artificial skin, no beauty filter, no unrealistic body movement, no exaggerated posing, no fake smile, no CGI look, no distorted body, realistic human motion only.\r\n\r\nDuration: 8 seconds.",
+      "prompt": "Create an ultra realistic beach vacation selfie video. Keep the same woman, black swimsuit, hairstyle and beach environment from the reference image.\n\nThe woman is sitting near the beach during golden hour, holding her phone naturally. Ocean wind gently moves her hair. The video feels like a real vacation moment recorded on a smartphone.\n\nShe slowly turns her head toward the ocean, enjoys the sunset for a moment, then looks back at the camera with a soft natural smile. Her movement is relaxed and effortless.\n\nGolden sunlight reflects naturally on her skin. Her skin has realistic texture, natural pores and soft highlights. Her shoulders and body move slightly with breathing. Hair moves naturally with the ocean breeze.\n\nThe camera has realistic handheld movement, small shakes and natural phone exposure changes. The scene should feel like an authentic TikTok travel vlog.\n\nAdd slow summer pop music with ocean wave sounds and relaxing sunset atmosphere.\n\nNo AI face, no artificial skin, no beauty filter, no unrealistic body movement, no exaggerated posing, no fake smile, no CGI look, no distorted body, realistic human motion only.\n\nDuration: 8 seconds.",
       "taskId": "814800108f5f43fb9c65706429d67473",
-      "status": "in_progress",
+      "status": "IN_PROGRESS",
       "createdAt": "2026-07-18T01:53:43.757Z",
-      "updatedAt": "2026-07-18T01:53:48.037Z"
+      "updatedAt": "2026-07-18T01:53:48.982Z"
     },
     {
       "id": "114fa428-ddba-4438-80bf-563c733ed264",
