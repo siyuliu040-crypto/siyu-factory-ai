@@ -7746,6 +7746,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_a6sXNZJdH8k6sPlQC1oUixWSxosC0qTZ",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T02:26:33.872Z",
+      "updatedAt": "2026-07-18T02:26:33.872Z"
+    },
+    {
       "id": "task_yx52f2JTKLctjuCMOMHrr5yH3SQgGpix",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11058,6 +11069,17 @@
     }
   ],
   "history": [
+    {
+      "id": "541a793d-5452-4da4-ae8d-b7e6e2493b7f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "Create a realistic outdoor cafe selfie video. Keep the same woman, outfit and hairstyle from the reference image.\r\n\r\nShe is sitting at a cafe table with a drink nearby. She casually picks up the coffee cup, takes a small sip, then looks at the camera and smiles naturally. She slightly fixes her hair with one hand and continues enjoying her drink.\r\n\r\nThe camera movement should feel like a real phone vlog, with small hand movements and natural framing changes. Background people move softly in the distance. Sunlight creates realistic shadows on her face and clothes.\r\n\r\nHer skin should look natural, with visible texture and realistic lighting. No over-smoothing, no artificial makeup effect. The whole video feels like a casual day shared on TikTok.\r\n\r\nMusic:\r\nFrench cafe style music, acoustic guitar, relaxed morning vibe.\r\n\r\nDuration:\r\n7-8 seconds",
+      "taskId": "task_a6sXNZJdH8k6sPlQC1oUixWSxosC0qTZ",
+      "status": "queued",
+      "createdAt": "2026-07-18T02:26:33.872Z",
+      "updatedAt": "2026-07-18T02:26:33.872Z"
+    },
     {
       "id": "88fc9996-c981-400b-8c8f-082908dba9ca",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
