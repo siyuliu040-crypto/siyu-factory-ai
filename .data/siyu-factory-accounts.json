@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988900000,
+      "credits": 9989350000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T00:23:33.703Z"
+      "updatedAt": "2026-07-18T00:23:50.113Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "48abf604-adf8-4b08-b847-fb9a097f122e",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9989350000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T00:23:50.113Z",
+      "metadata": {
+        "taskId": "f388315cf5ed4a289f3d4c167f76df11",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "5ce8ef97-4b30-4c31-8a35-2a6f4d152108",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -6575,10 +6587,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T00:23:36.531Z",
-      "updatedAt": "2026-07-18T00:23:36.531Z"
+      "updatedAt": "2026-07-18T00:23:50.113Z"
     },
     {
       "id": "ffe7156472894eb7860993f7d3a306ae",
@@ -9350,9 +9362,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create an ultra realistic beach vacation selfie video. Keep the same woman, black swimsuit, hairstyle and beach environment from the reference image.\n\nThe woman is sitting near the beach during golden hour, holding her phone naturally. Ocean wind gently moves her hair. The video feels like a real vacation moment recorded on a smartphone.\n\nShe slowly turns her head toward the ocean, enjoys the sunset for a moment, then looks back at the camera with a soft natural smile. Her movement is relaxed and effortless.\n\nGolden sunlight reflects naturally on her skin. Her skin has realistic texture, natural pores and soft highlights. Her shoulders and body move slightly with breathing. Hair moves naturally with the ocean breeze.\n\nThe camera has realistic handheld movement, small shakes and natural phone exposure changes. The scene should feel like an authentic TikTok travel vlog.\n\nAdd slow summer pop music with ocean wave sounds and relaxing sunset atmosphere.\n\nNo AI face, no artificial skin, no beauty filter, no unrealistic body movement, no exaggerated posing, no fake smile, no CGI look, no distorted body, realistic human motion only.\n\nDuration: 8 seconds.",
       "taskId": "f388315cf5ed4a289f3d4c167f76df11",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"3e495028-dcc4-4166-8883-fc0da8433ceb\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 00:23:39 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-18T00:23:36.531Z",
-      "updatedAt": "2026-07-18T00:23:42.012Z"
+      "updatedAt": "2026-07-18T00:23:50.113Z"
     },
     {
       "id": "293ff5fe-9d30-45c9-b558-677f99587bc1",
