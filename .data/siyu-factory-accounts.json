@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988300000,
+      "credits": 9988750000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T03:10:14.261Z"
+      "updatedAt": "2026-07-18T03:10:32.605Z"
     }
   ],
   "sessions": [
@@ -280,6 +280,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "0c462af3-6133-41d1-9e9b-49b2cef3c096",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9988750000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T03:10:32.605Z",
+      "metadata": {
+        "taskId": "2d0c681809b34555b7168fefd50d5b80",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "f399c36b-7e70-447b-8f1d-c683d35776d6",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -8051,10 +8063,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T03:10:18.057Z",
-      "updatedAt": "2026-07-18T03:10:18.057Z"
+      "updatedAt": "2026-07-18T03:10:32.605Z"
     },
     {
       "id": "94b5cb6718ea4c019e68b8eda675e510",
@@ -11541,9 +11553,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a highly realistic TikTok summer selfie video based on the reference image. Keep the same woman, same face features, same natural curly black hair, same orange and yellow sporty bikini top, and the same realistic body proportions.\n\nA confident young woman is sitting on warm rocks under bright summer sunlight near the ocean. The video should look like a real phone selfie captured during a beach vacation, not a staged photoshoot.\n\nAt the beginning, she looks into the camera naturally with a calm confident expression. Her eyes slightly move, she blinks softly, and her lips form a small relaxed smile. Her chest and shoulders move naturally with breathing. Keep realistic skin texture, visible natural pores, and real sunlight reflections on her skin.\n\nAfter a few seconds, she gently adjusts a few curls near the side of her face with her hand. The curly hair has realistic volume, weight, and movement, with some curls moving naturally from the ocean breeze. She slightly turns her face toward the sunlight, showing a relaxed vacation feeling.\n\nThe camera has subtle handheld movement like a real smartphone recording. Natural micro movements, realistic shadows, authentic beach atmosphere, warm summer lifestyle feeling.\n\nAdd a soft tropical R&B soundtrack with relaxing beach vibes.\n\nNo AI face, no face modification, no plastic skin, no beauty filter, no unrealistic smooth body, no exaggerated curves, no fake hair movement, no unnatural posing, no CGI look.",
       "taskId": "2d0c681809b34555b7168fefd50d5b80",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"734d9ffc-1649-4837-8eb9-db0f62a60477\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 03:10:20 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-18T03:10:18.057Z",
-      "updatedAt": "2026-07-18T03:10:24.613Z"
+      "updatedAt": "2026-07-18T03:10:32.605Z"
     },
     {
       "id": "204742a5-20f4-403d-b23b-a72e8da15627",
