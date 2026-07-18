@@ -8284,6 +8284,17 @@
   ],
   "generationTasks": [
     {
+      "id": "1836f3ea1fb94a72974fa25075058e31",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T03:51:11.715Z",
+      "updatedAt": "2026-07-18T03:51:11.715Z"
+    },
+    {
       "id": "008b0c7f784b436282f3b74b9106f9ce",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11871,6 +11882,17 @@
     }
   ],
   "history": [
+    {
+      "id": "cda4656f-f6fa-43c4-b413-7dd261207b67",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Realistic TikTok selfie video based on the reference image. Keep the same woman, same face, same short curly black hair, same green off-shoulder top, and the same natural body proportions.\r\n\r\nA beautiful woman is sitting casually on a bed in a cozy bedroom, filming a real smartphone selfie video. The atmosphere feels like a normal day at home, natural and personal, not a staged photoshoot.\r\n\r\nShe looks directly into the camera with a calm and confident expression. Her eyes move naturally, she blinks softly, and a small relaxed smile appears. Her shoulders and body have subtle natural breathing movement.\r\n\r\nShe slowly raises one hand and gently touches the curls beside her face. Her fingers lightly move through a few strands of hair. The curly hair has realistic volume, texture, and weight, with natural bounce and slight movement. She slightly tilts her head, letting the curls frame her face naturally.\r\n\r\nThe phone camera has subtle handheld movement, small framing changes, and realistic selfie perspective. Keep natural indoor lighting, realistic skin texture, visible pores, soft highlights and natural shadows.\r\n\r\nThe final feeling should be a confident girl sharing a simple cozy moment at home.\r\n\r\nAdd soft R&B music with a warm bedroom chill vibe.\r\n\r\nNegative prompt:\r\nAI face, face changing, plastic skin, over smooth skin, beauty filter, unrealistic body, exaggerated curves, fake hair movement, unnatural posing, CGI style, distorted hands, extra fingers.",
+      "taskId": "1836f3ea1fb94a72974fa25075058e31",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-18T03:51:11.715Z",
+      "updatedAt": "2026-07-18T03:51:11.715Z"
+    },
     {
       "id": "e6c19e9c-a945-486f-88c6-a2373f56a23e",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
