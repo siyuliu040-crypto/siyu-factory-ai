@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9989200000,
+      "credits": 9988900000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T03:11:11.752Z"
+      "updatedAt": "2026-07-18T03:13:03.674Z"
     }
   ],
   "sessions": [
@@ -280,6 +280,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "5a98537c-05ef-449b-98ff-dc0d501c8a6d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": -300000,
+      "balanceAfter": 9988900000,
+      "reason": "video generation",
+      "createdAt": "2026-07-18T03:13:03.674Z",
+      "metadata": {
+        "model": "hfsy:sd-2-fast",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "f412dd50-4a62-469e-a16a-488f3a0700bf",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
