@@ -8224,6 +8224,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_FpjtqgmLmKchGuv9eMWJr5q2e7OwJF6q",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T03:20:47.751Z",
+      "updatedAt": "2026-07-18T03:20:47.751Z"
+    },
+    {
       "id": "task_gnHvl3t9TgpQ6ZezvtM7TSM42zzjIntv",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11767,6 +11778,17 @@
     }
   ],
   "history": [
+    {
+      "id": "74850373-4cfa-4a19-bd72-6ade2aa7be4c",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "Create a highly realistic TikTok summer selfie video based on the reference image. Keep the same woman, same face features, same natural curly black hair, same orange and yellow sporty bikini top, and the same realistic body proportions.\r\n\r\nA confident young woman is sitting on warm rocks under bright summer sunlight near the ocean. The video should look like a real phone selfie captured during a beach vacation, not a staged photoshoot.\r\n\r\nAt the beginning, she looks into the camera naturally with a calm confident expression. Her eyes slightly move, she blinks softly, and her lips form a small relaxed smile. Her chest and shoulders move naturally with breathing. Keep realistic skin texture, visible natural pores, and real sunlight reflections on her skin.\r\n\r\nAfter a few seconds, she gently adjusts a few curls near the side of her face with her hand. The curly hair has realistic volume, weight, and movement, with some curls moving naturally from the ocean breeze. She slightly turns her face toward the sunlight, showing a relaxed vacation feeling.\r\n\r\nThe camera has subtle handheld movement like a real smartphone recording. Natural micro movements, realistic shadows, authentic beach atmosphere, warm summer lifestyle feeling.\r\n\r\nAdd a soft tropical R&B soundtrack with relaxing beach vibes.\r\n\r\nNo AI face, no face modification, no plastic skin, no beauty filter, no unrealistic smooth body, no exaggerated curves, no fake hair movement, no unnatural posing, no CGI look.",
+      "taskId": "task_FpjtqgmLmKchGuv9eMWJr5q2e7OwJF6q",
+      "status": "queued",
+      "createdAt": "2026-07-18T03:20:47.751Z",
+      "updatedAt": "2026-07-18T03:20:47.751Z"
+    },
     {
       "id": "4780f0df-bcf4-4e80-a688-05e3b5e0f51f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
