@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988750000,
+      "credits": 9989200000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T03:10:32.605Z"
+      "updatedAt": "2026-07-18T03:11:11.752Z"
     }
   ],
   "sessions": [
@@ -280,6 +280,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "f412dd50-4a62-469e-a16a-488f3a0700bf",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9989200000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T03:11:11.752Z",
+      "metadata": {
+        "taskId": "be00e1cc967a4202bf572280d788afa2",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "0c462af3-6133-41d1-9e9b-49b2cef3c096",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -8063,10 +8075,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T03:10:40.193Z",
-      "updatedAt": "2026-07-18T03:10:40.193Z"
+      "updatedAt": "2026-07-18T03:11:11.752Z"
     },
     {
       "id": "2d0c681809b34555b7168fefd50d5b80",
@@ -11564,9 +11576,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic smartphone selfie video based on the reference image. Keep the same woman, same face, same curly black hair, same green bikini and white crochet cover-up, with natural body proportions.\n\nA beautiful woman is sitting on a tropical resort balcony surrounded by palm trees and greenery. The video feels like a real TikTok vacation selfie. She looks naturally confident and relaxed.\n\nShe slowly touches her curly hair with one hand, gently moving a few curls away from her face. Her hair softly moves with the tropical breeze. She slightly tilts her head, blinks naturally, and gives a subtle warm smile to the camera.\n\nThe camera has small realistic handheld movement like a real phone recording. Natural breathing, slight shoulder movement, realistic skin texture, visible skin pores, soft sunlight reflections on her face and body.\n\nLuxury tropical vacation atmosphere, calm summer mood, realistic human movement.\n\nAdd soft tropical R&B music with relaxing summer vibes.\n\nNo AI look, no plastic skin, no beauty filter, no exaggerated body shape, no unnatural movement, no face change.",
       "taskId": "be00e1cc967a4202bf572280d788afa2",
-      "status": "in_progress",
+      "status": "failed",
       "createdAt": "2026-07-18T03:10:40.193Z",
-      "updatedAt": "2026-07-18T03:11:02.455Z"
+      "updatedAt": "2026-07-18T03:11:11.752Z",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"71d31c2d-9fdb-4a89-939a-422694e485da\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 03:10:42 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\""
     },
     {
       "id": "7314fe96-d151-4f03-82d2-47b4541d2f7b",
