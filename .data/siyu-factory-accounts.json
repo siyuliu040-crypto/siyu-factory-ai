@@ -6942,6 +6942,17 @@
   ],
   "generationTasks": [
     {
+      "id": "500d04a0b5f84f58aaa92e7d51d065ea",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T00:45:31.414Z",
+      "updatedAt": "2026-07-18T00:45:31.414Z"
+    },
+    {
       "id": "d4c9feb0f9da4286a0b0cb626c2e809f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -9880,6 +9891,17 @@
     }
   ],
   "history": [
+    {
+      "id": "b151296c-33ae-4f7f-90ab-84ed2b19404c",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Create a realistic 9:16 front-camera selfie video inside a car. A beautiful adult woman wearing a fitted white T-shirt records a casual car selfie. Keep the same face, curly hairstyle, skin tone, body shape, outfit, jewelry, and car interior. She looks into the camera naturally, blinks softly, slightly changes her expression, makes a tiny shoulder adjustment, and shifts her upper body a little in the seat. Add subtle breathing, light natural body movement, realistic shirt tension, soft hair movement, and gentle movement caused by posture and gravity. Keep it realistic and calm, like a real TikTok phone recording. Slight handheld shake, natural daylight through the car window, no heavy beauty effect. Music: relaxed chill R&B with light summer vibe. No face change, no body distortion, no background change, no subtitles, no watermark.",
+      "taskId": "500d04a0b5f84f58aaa92e7d51d065ea",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-18T00:45:31.414Z",
+      "updatedAt": "2026-07-18T00:45:31.414Z"
+    },
     {
       "id": "cf67a0db-3d12-459a-bdfb-f6f7a1b3aab0",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
