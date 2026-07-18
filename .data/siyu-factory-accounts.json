@@ -153,18 +153,6 @@
   ],
   "sessions": [
     {
-      "token": "595c68bc39087230971c87109bec521950a9f90764e1d9230567c0af2745aa1b",
-      "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
-      "expiresAt": "2026-07-18T02:50:05.514Z",
-      "createdAt": "2026-07-11T02:50:05.514Z"
-    },
-    {
-      "token": "9540d0f10c37daa377d429ee9952072a6f9df4ff789e0c7d9d710fa0ef96a20a",
-      "userId": "7ce95cd6-3107-40c0-bb82-c99b96564fbc",
-      "expiresAt": "2026-07-18T02:50:07.012Z",
-      "createdAt": "2026-07-11T02:50:07.012Z"
-    },
-    {
       "token": "4694ecce6197057b3d432e13757d96df8bf808b601b1393bb979dac067e678bd",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
       "expiresAt": "2026-07-22T01:09:13.705Z",
