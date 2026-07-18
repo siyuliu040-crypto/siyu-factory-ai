@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988720000,
+      "credits": 9988750000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T02:51:00.565Z"
+      "updatedAt": "2026-07-18T02:52:15.192Z"
     }
   ],
   "sessions": [
@@ -280,6 +280,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "dbf4009e-29a0-4391-8246-3701a32755d1",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 30000,
+      "balanceAfter": 9988750000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T02:52:15.192Z",
+      "metadata": {
+        "taskId": "task_6LB2Cmx2hJ2oUVJ54cGAF5JpvZYcfSh0",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "094cc10f-724f-4092-b641-f848ef04a899",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -7859,10 +7871,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 30000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T02:51:03.409Z",
-      "updatedAt": "2026-07-18T02:51:03.409Z"
+      "updatedAt": "2026-07-18T02:52:15.192Z"
     },
     {
       "id": "task_tjAJbmACQPfeaT6kevuokSTIbUVaMdvP",
@@ -11261,9 +11273,10 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Create a realistic smartphone selfie video based on the reference image. Keep the same woman, same face, same curly black hair, same green bikini and white crochet cover-up, with natural body proportions.\n\nA beautiful woman is sitting on a tropical resort balcony surrounded by palm trees and greenery. The video feels like a real TikTok vacation selfie. She looks naturally confident and relaxed.\n\nShe slowly touches her curly hair with one hand, gently moving a few curls away from her face. Her hair softly moves with the tropical breeze. She slightly tilts her head, blinks naturally, and gives a subtle warm smile to the camera.\n\nThe camera has small realistic handheld movement like a real phone recording. Natural breathing, slight shoulder movement, realistic skin texture, visible skin pores, soft sunlight reflections on her face and body.\n\nLuxury tropical vacation atmosphere, calm summer mood, realistic human movement.\n\nAdd soft tropical R&B music with relaxing summer vibes.\n\nNo AI look, no plastic skin, no beauty filter, no exaggerated body shape, no unnatural movement, no face change.",
       "taskId": "task_6LB2Cmx2hJ2oUVJ54cGAF5JpvZYcfSh0",
-      "status": "queued",
+      "status": "failed",
+      "error": "{\"message\":\"PUBLIC_ERROR_PROMINENT_PEOPLE_FILTER_FAILED\"}",
       "createdAt": "2026-07-18T02:51:03.409Z",
-      "updatedAt": "2026-07-18T02:52:07.031Z"
+      "updatedAt": "2026-07-18T02:52:15.192Z"
     },
     {
       "id": "e2352c41-b8e6-4ac9-be32-a029b779b09e",
