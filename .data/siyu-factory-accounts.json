@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988870000,
+      "credits": 9988900000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T02:18:51.006Z"
+      "updatedAt": "2026-07-18T02:20:20.467Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "4a124d5a-d776-400b-b96b-8705e51032bb",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 30000,
+      "balanceAfter": 9988900000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T02:20:20.467Z",
+      "metadata": {
+        "taskId": "task_ajTfFMBNX0u9fhNDKqjF6WI16XF61nD3",
+        "model": "veo_3_1-fast-portrait-fl-hd"
+      }
+    },
     {
       "id": "58f97da5-f110-4e6e-bea7-e2d6fe3c8421",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -7691,10 +7703,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 30000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T02:18:54.088Z",
-      "updatedAt": "2026-07-18T02:18:54.088Z"
+      "updatedAt": "2026-07-18T02:20:20.467Z"
     },
     {
       "id": "18336bbb99464c4ab5a6047481af6736",
