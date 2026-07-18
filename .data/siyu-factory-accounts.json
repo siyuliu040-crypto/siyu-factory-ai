@@ -8308,6 +8308,17 @@
   ],
   "generationTasks": [
     {
+      "id": "64a3303b8ba24428b3707e6ba8b4882a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T04:03:28.024Z",
+      "updatedAt": "2026-07-18T04:03:28.024Z"
+    },
+    {
       "id": "5c7c8fd7abef411ca85e7682fdf6de21",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11917,6 +11928,17 @@
     }
   ],
   "history": [
+    {
+      "id": "f47d231c-2a6e-4a6a-8e63-175e4f715fc8",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Keep the same woman, same face, same curly black hair, same outfit and natural body shape.\r\n\r\nRealistic TikTok selfie video. A woman sits on the bed in a cozy bedroom, holding the phone naturally. She looks into the camera with a relaxed confident expression, softly blinks and gives a small natural smile.\r\n\r\nShe gently touches her curly hair once, letting the curls move naturally with realistic bounce and texture. Her body stays relaxed with subtle breathing movement, slight shoulder movement and natural handheld camera shake.\r\n\r\nKeep realistic skin texture, natural pores, soft indoor lighting, no plastic skin, no beauty filter, no artificial smoothness.\r\n\r\nNatural everyday lifestyle feeling, like a real phone video posted on TikTok.\r\n\r\nAdd soft R&B chill music, warm bedroom atmosphere.\r\n\r\nNo face change, no exaggerated movement, no head tilt, no fake pose, no CGI look.",
+      "taskId": "64a3303b8ba24428b3707e6ba8b4882a",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-18T04:03:28.024Z",
+      "updatedAt": "2026-07-18T04:03:28.024Z"
+    },
     {
       "id": "6f2f7a6a-701b-44bb-af3e-be97af522c4f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
