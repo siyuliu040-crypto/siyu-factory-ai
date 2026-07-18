@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9988450000,
+      "credits": 9988900000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-18T01:26:31.700Z"
+      "updatedAt": "2026-07-18T01:26:58.442Z"
     }
   ],
   "sessions": [
@@ -292,6 +292,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "250c6f35-3f58-49dd-85b9-e8889e1acc3a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9988900000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-18T01:26:58.442Z",
+      "metadata": {
+        "taskId": "cd7ead2850bc452f91377938ad84ddfd",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "4d69e157-218a-4f43-b9e8-14b74eb6e816",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -7067,10 +7079,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-18T01:26:35.716Z",
-      "updatedAt": "2026-07-18T01:26:35.716Z"
+      "updatedAt": "2026-07-18T01:26:58.442Z"
     },
     {
       "id": "c7a67898cb4b485c872c200e7db800b5",
@@ -10073,9 +10085,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the uploaded image as the exact character reference. Create a realistic vertical smartphone mirror selfie video in 9:16. A beautiful adult woman in a white cropped camisole and gray sweatpants is recording a casual mirror selfie in her bedroom. Keep the same face, hairstyle, skin tone, body proportions, clothing, phone, and background. She maintains the same identity, softly blinks, slightly shifts her seated posture, gently relaxes one shoulder, and makes a small natural expression change while looking at the phone screen and then the mirror. Add subtle breathing, light body weight shift, natural compression in the seated pose, realistic fabric folds, and soft natural movement from gravity. Slight handheld phone movement only. Natural room lighting, realistic skin texture, no beauty filter. Music: soft bedroom chill pop / R&B. No face morphing, no body distortion, no extra fingers, no subtitles, no watermark.",
       "taskId": "cd7ead2850bc452f91377938ad84ddfd",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"9440d81d-7c6a-4db4-bc8b-eeec00e08c05\\\",\\n  \\\"date\\\": \\\"Sat, 18 Jul 2026 01:26:38 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-18T01:26:35.716Z",
-      "updatedAt": "2026-07-18T01:26:49.263Z"
+      "updatedAt": "2026-07-18T01:26:58.442Z"
     },
     {
       "id": "4b7b7dc3-4e4d-4d52-8aec-ebb3c3bbcf4b",
