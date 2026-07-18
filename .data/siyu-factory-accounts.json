@@ -8289,10 +8289,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-18T03:51:11.715Z",
-      "updatedAt": "2026-07-18T03:51:11.715Z"
+      "updatedAt": "2026-07-18T03:54:05.073Z"
     },
     {
       "id": "008b0c7f784b436282f3b74b9106f9ce",
@@ -11888,10 +11888,11 @@
       "mode": "video",
       "model": "hfsy:kling-o3",
       "prompt": "Realistic TikTok selfie video based on the reference image. Keep the same woman, same face, same short curly black hair, same green off-shoulder top, and the same natural body proportions.\n\nA beautiful woman is sitting casually on a bed in a cozy bedroom, filming a real smartphone selfie video. The atmosphere feels like a normal day at home, natural and personal, not a staged photoshoot.\n\nShe looks directly into the camera with a calm and confident expression. Her eyes move naturally, she blinks softly, and a small relaxed smile appears. Her shoulders and body have subtle natural breathing movement.\n\nShe slowly raises one hand and gently touches the curls beside her face. Her fingers lightly move through a few strands of hair. The curly hair has realistic volume, texture, and weight, with natural bounce and slight movement. She slightly tilts her head, letting the curls frame her face naturally.\n\nThe phone camera has subtle handheld movement, small framing changes, and realistic selfie perspective. Keep natural indoor lighting, realistic skin texture, visible pores, soft highlights and natural shadows.\n\nThe final feeling should be a confident girl sharing a simple cozy moment at home.\n\nAdd soft R&B music with a warm bedroom chill vibe.\n\nNegative prompt:\nAI face, face changing, plastic skin, over smooth skin, beauty filter, unrealistic body, exaggerated curves, fake hair movement, unnatural posing, CGI style, distorted hands, extra fingers.",
+      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/18/885646e962b341bbba02df95100a022d.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784433237&Signature=VWjDqKvf%2F2PTg8nlwbZpqalI%2Flk%3D",
       "taskId": "1836f3ea1fb94a72974fa25075058e31",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-18T03:51:11.715Z",
-      "updatedAt": "2026-07-18T03:53:56.767Z"
+      "updatedAt": "2026-07-18T03:54:05.073Z"
     },
     {
       "id": "e6c19e9c-a945-486f-88c6-a2373f56a23e",
