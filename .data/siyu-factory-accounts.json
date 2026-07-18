@@ -7722,6 +7722,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_yx52f2JTKLctjuCMOMHrr5yH3SQgGpix",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-18T02:25:17.178Z",
+      "updatedAt": "2026-07-18T02:25:17.178Z"
+    },
+    {
       "id": "task_HRWJK1LzrjoqaXdm6TOTW80of62ScOTu",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11023,6 +11034,17 @@
     }
   ],
   "history": [
+    {
+      "id": "88fc9996-c981-400b-8c8f-082908dba9ca",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "Create an ultra realistic beach vacation selfie video. Keep the same woman, black swimsuit, hairstyle and beach environment from the reference image.\r\n\r\nThe woman is sitting near the beach during golden hour, holding her phone naturally. Ocean wind gently moves her hair. The video feels like a real vacation moment recorded on a smartphone.\r\n\r\nShe slowly turns her head toward the ocean, enjoys the sunset for a moment, then looks back at the camera with a soft natural smile. Her movement is relaxed and effortless.\r\n\r\nGolden sunlight reflects naturally on her skin. Her skin has realistic texture, natural pores and soft highlights. Her shoulders and body move slightly with breathing. Hair moves naturally with the ocean breeze.\r\n\r\nThe camera has realistic handheld movement, small shakes and natural phone exposure changes. The scene should feel like an authentic TikTok travel vlog.\r\n\r\nAdd slow summer pop music with ocean wave sounds and relaxing sunset atmosphere.\r\n\r\nNo AI face, no artificial skin, no beauty filter, no unrealistic body movement, no exaggerated posing, no fake smile, no CGI look, no distorted body, realistic human motion only.\r\n\r\nDuration: 8 seconds.",
+      "taskId": "task_yx52f2JTKLctjuCMOMHrr5yH3SQgGpix",
+      "status": "queued",
+      "createdAt": "2026-07-18T02:25:17.178Z",
+      "updatedAt": "2026-07-18T02:25:17.178Z"
+    },
     {
       "id": "ed94bb24-bfee-418b-a271-4b0266e6a066",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
