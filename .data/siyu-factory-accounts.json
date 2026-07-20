@@ -6,9 +6,9 @@
       "name": "siyu",
       "passwordHash": "13484001e2e96020166b6203c9c329d0:1314652e149ef77d34478953d3c09267c75bd3255c1b615bd065ef07c12b2f560f99ac21dbfc2c9caf9ecc199397645b8ce8fba104ecbc4e0d64515349f726ea",
       "role": "admin",
-      "credits": 2000019740547680,
+      "credits": 2000019740557680,
       "createdAt": "2026-06-03T00:39:56.017Z",
-      "updatedAt": "2026-07-20T01:22:52.398Z"
+      "updatedAt": "2026-07-20T01:23:18.246Z"
     },
     {
       "id": "2598aea2-8d49-47e8-a1c9-dcc335713fd5",
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "8ce73cc0-ba84-454e-b6ec-3d207c14872a",
+      "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
+      "amount": 10000,
+      "balanceAfter": 2000019740557680,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-20T01:23:18.246Z",
+      "metadata": {
+        "taskId": "img_1784510179536_5a9f0d32bc838",
+        "model": "hfsy:nano-banana-2"
+      }
+    },
     {
       "id": "7cadd043-a0eb-41e5-b852-53f1b539b5f2",
       "userId": "d86d7cbc-dc08-483c-a2f1-11dce454c7b8",
@@ -8810,10 +8822,10 @@
       "type": "image",
       "model": "hfsy:nano-banana-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T01:17:56.996Z",
-      "updatedAt": "2026-07-20T01:17:56.996Z"
+      "updatedAt": "2026-07-20T01:23:18.246Z"
     },
     {
       "id": "97320dd945ce483ead7b84b9940cc3b2",
@@ -12509,9 +12521,10 @@
       "model": "hfsy:nano-banana-2",
       "prompt": "以第一张图片为背景和构图基础，将第二张图片的发型精准替换到第一张对应位置，保留第一张的光影、色调、分辨率和整体氛围，只替换目标内容，无缝融合，真实自然，不扭曲变形。\r\n人像照片修复得更真实。要求：提升清晰度，保留原本人脸特征，不改变长相；皮肤保留真实纹理、毛孔和轻微瑕疵，不要过度磨皮，不要塑料感；光线自然，肤色真实，发丝细节清晰，整体像高清实拍照片",
       "taskId": "img_1784510179536_5a9f0d32bc838",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-07-20T01:17:56.996Z",
-      "updatedAt": "2026-07-20T01:17:56.996Z"
+      "updatedAt": "2026-07-20T01:23:18.246Z",
+      "error": "{\"error\":{\"message\":\"Upstream is temporarily unavailable. Please retry later.\",\"type\":\"server_error\",\"param\":\"\",\"code\":\"ERR-B474A7D896\"}}"
     },
     {
       "id": "bf891b93-6fae-41a9-913b-ebcb03b8a9d5",
