@@ -13868,9 +13868,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same facial identity, same curly hair volume, same skin tone and natural body shape.\n\nCreate a casual bedroom lifestyle moment.\n\nThe woman is getting ready at home. She is sitting near a mirror, casually fixing her hair while looking at herself. She notices the camera, smiles naturally, then continues adjusting her curls.\n\nHer movements should be small and realistic:\n- touching a few curls\n- adjusting her necklace\n- changing her sitting posture\n- slight shoulder movement\n\nDo not make her intentionally show her hair. It should feel like a normal daily moment.\n\nHer curly hair should have realistic weight and bounce. Individual curls should separate naturally when she moves.\n\nUse natural indoor lighting and realistic smartphone camera quality.\n\nKeep skin texture natural with visible details, soft shadows and realistic imperfections.\n\nNo beauty filter, no plastic skin, no fashion photoshoot feeling, no AI-generated appearance.\n\nVertical 9:16 realistic social media video.",
       "taskId": "905410119b74498eaca025dcc5288d57",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T02:33:11.609Z",
-      "updatedAt": "2026-07-20T02:33:23.210Z"
+      "updatedAt": "2026-07-20T02:33:25.320Z"
     },
     {
       "id": "06ab312a-8b16-42c7-910b-c8d7729b6de5",
