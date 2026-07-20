@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9986050000,
+      "credits": 9986500000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T01:55:34.761Z"
+      "updatedAt": "2026-07-20T01:56:11.313Z"
     }
   ],
   "sessions": [
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "ae015f06-3fc2-439e-8d0a-23de2cc4ca3d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986500000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T01:56:11.313Z",
+      "metadata": {
+        "taskId": "5abb7e21a6e84b2d9245d14499f99d9f",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "3dedb9c5-0f2e-4373-a1fb-775ef7cb4a67",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -9098,10 +9110,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T01:55:41.650Z",
-      "updatedAt": "2026-07-20T01:55:41.650Z"
+      "updatedAt": "2026-07-20T01:56:11.312Z"
     },
     {
       "id": "7aa1c67ea5ab4d9f9ae84242aa4c9db6",
@@ -12929,9 +12941,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair pattern, same skin tone and same body shape.\n\nCreate a realistic getting-ready-at-home moment.\n\nThe woman is standing in her bedroom before going out. She looks at herself briefly in the mirror, adjusts her hair naturally, fixes her shirt slightly, then turns toward the camera with a relaxed expression.\n\nShe does not pose like a model. Her movements should feel spontaneous and casual.\n\nHer curls should move naturally with her body movement. Some curls bounce slightly, some loose strands fall across her face, creating realistic hair behavior.\n\nShe slightly changes her weight from one foot to another, showing natural posture and balance.\n\nHer expression changes naturally from focused to a small confident smile.\n\nCamera style: handheld smartphone video, natural indoor lighting, realistic home environment.\n\nMaintain real skin texture, natural imperfections, realistic body gravity and authentic human movement.\n\nAvoid perfect beauty look, avoid artificial smooth skin, avoid stiff movements, avoid exaggerated poses.\n\nVertical 9:16.",
       "taskId": "5abb7e21a6e84b2d9245d14499f99d9f",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"59a03714-63c6-426f-892c-1472041e36c1\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 01:55:42 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T01:55:41.650Z",
-      "updatedAt": "2026-07-20T01:55:52.673Z"
+      "updatedAt": "2026-07-20T01:56:11.313Z"
     },
     {
       "id": "48e98bd5-07d6-450b-8c9f-0d2ff8d96529",
