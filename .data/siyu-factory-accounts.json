@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9986500000,
+      "credits": 9986050000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T01:26:47.978Z"
+      "updatedAt": "2026-07-20T01:27:02.000Z"
     }
   ],
   "sessions": [
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "0d49729e-0ff9-4b55-8e83-d3befd6017fc",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": -450000,
+      "balanceAfter": 9986050000,
+      "reason": "video generation",
+      "createdAt": "2026-07-20T01:27:02.000Z",
+      "metadata": {
+        "model": "hfsy:kling-o3",
+        "size": "720x1280"
+      }
+    },
     {
       "id": "78eab318-76b9-45e1-983c-90b5c1b197fb",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
