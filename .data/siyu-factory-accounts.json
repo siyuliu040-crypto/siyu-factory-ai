@@ -8937,6 +8937,17 @@
   ],
   "generationTasks": [
     {
+      "id": "img_1784511686613_85f1f00aaaba5",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "image",
+      "model": "hfsy:nano-banana-2",
+      "amount": 10000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T01:41:26.615Z",
+      "updatedAt": "2026-07-20T01:41:26.615Z"
+    },
+    {
       "id": "img_1784511622070_da3be077d0511",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "image",
@@ -12689,6 +12700,17 @@
     }
   ],
   "history": [
+    {
+      "id": "8627d5f0-0b54-4b48-b59b-5492050b7cde",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "image",
+      "model": "hfsy:nano-banana-2",
+      "prompt": "Edit the original image while keeping the exact same woman. Preserve her face identity, facial features, skin tone, curly hair style, hair texture, and natural body proportions.\r\n\r\nReplace the tropical resort balcony background with a completely different realistic environment. Create a modern apartment living room with a large window, soft daylight, comfortable sofa, and minimal elegant decoration.\r\n\r\nChange her clothing completely. Remove the green bikini and white crochet cover-up. Replace them with a stylish everyday outfit, such as a fitted knit top with a high-waisted skirt or casual elegant dress. Keep the outfit realistic and natural, not like a fashion photoshoot.\r\n\r\nChange her body position and expression. Do not keep the original sitting pose. Create a relaxed natural moment where she is sitting casually on a sofa or chair, slightly turned sideways. One hand rests naturally on her leg, the other lightly touches her necklace, hair, or clothing.\r\n\r\nHer expression should feel authentic: relaxed eyes, a subtle confident smile, natural emotion. Avoid a model-like pose.\r\n\r\nMake the image look like a real lifestyle photo taken with a smartphone camera. Add natural lighting changes, realistic shadows, and small imperfections.\r\n\r\nKeep natural skin texture, visible pores, realistic body weight distribution, and authentic hair strands. Her curls should have natural volume, random curl patterns, and realistic movement.\r\n\r\nNo plastic skin, no fake body shape, no over-retouched beauty look, no AI face, no unnatural hands.\r\n\r\nVertical 9:16, single usable image.",
+      "taskId": "img_1784511686613_85f1f00aaaba5",
+      "status": "queued",
+      "createdAt": "2026-07-20T01:41:26.615Z",
+      "updatedAt": "2026-07-20T01:41:26.615Z"
+    },
     {
       "id": "4a61b7d1-333c-4467-8368-c0bf635e8c29",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
