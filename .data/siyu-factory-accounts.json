@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:08:01.346Z"
+      "updatedAt": "2026-07-20T03:08:22.382Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "6e1f3bff-13fc-4f4f-b624-5054606e634a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:08:22.382Z",
+      "metadata": {
+        "taskId": "03277f63067f493b922ddf6e5ca1277c",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "c44dfa82-372e-4ed2-8840-ac884cc07904",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11053,10 +11065,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:08:05.284Z",
-      "updatedAt": "2026-07-20T03:08:05.284Z"
+      "updatedAt": "2026-07-20T03:08:22.382Z"
     },
     {
       "id": "80e0958ac6794e56a628b65abfb8e71b",
@@ -15280,9 +15292,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same face identity, same facial features, same skin tone, same curly hairstyle, same body proportions, same outfit, and the same indoor environment.\n\nCreate a realistic 8-second vertical 9:16 TikTok selfie video.\n\nThe woman remains in the same position and keeps the same camera angle. She looks naturally into the camera with a relaxed and confident expression.\n\nHer movements are subtle and realistic:\nshe blinks naturally, breathes softly, slightly adjusts her shoulders, and makes a small natural head movement.\n\nAdd realistic human body physics:\nher upper body moves naturally with breathing, with subtle torso movement, gentle shoulder motion, and realistic soft body response caused by natural posture changes and gravity. The movement should feel like a real person recorded on a phone, not an animation.\n\nHer curly hair has realistic weight and volume. A few curls move slightly with her breathing and small head movement.\n\nHer expression changes naturally from calm to a soft smile. Include small eye movements and natural facial details.\n\nCamera:\nreal smartphone front camera,\nslight handheld movement,\nnatural focus adjustment,\nrealistic indoor lighting,\ncasual TikTok selfie style.\n\nBackground music:\nAdd a soft trending R&B / chill soul style TikTok background track.\nThe music should feel relaxed, feminine, and confident, matching a lifestyle beauty video.\nLow volume background music, not overpowering the natural feeling.\n\nSuggested music style:\n- smooth R&B beat\n- soft female vocal\n- chill summer vibe\n- confident but relaxed mood\n\nAvoid:\nplastic skin,\nbeauty filter,\nAI face,\nstiff movements,\nexaggerated body motion,\nunnatural shaking,\nover-edited appearance,\nchanging clothes,\nchanging background,\nchanging identity.\n\nFinal result:\nA realistic TikTok selfie clip of a confident woman with natural breathing, subtle body movement, realistic hair physics, and a soft R&B background sound.\n\nVertical 9:16.",
       "taskId": "03277f63067f493b922ddf6e5ca1277c",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"080996fc-68c8-4897-b37f-953437195777\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:08:07 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:08:05.285Z",
-      "updatedAt": "2026-07-20T03:08:13.318Z"
+      "updatedAt": "2026-07-20T03:08:22.382Z"
     },
     {
       "id": "207b8aa4-3fd5-424e-b438-97b97ced7315",
