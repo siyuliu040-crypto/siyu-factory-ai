@@ -13588,9 +13588,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same face, same hairstyle, same skin tone and same body proportions.\n\nCreate a realistic 8-second vertical smartphone video.\n\nThe woman remains in the same indoor environment and keeps a similar pose from the original image.\n\nShe makes only subtle natural movements:\nshe blinks naturally, breathes softly, slightly adjusts her shoulders, and gently moves her head a little while looking at the camera.\n\nHer curly hair moves slightly with natural gravity. A few strands shift naturally around her face.\n\nHer expression stays relaxed and confident with a small natural smile.\n\nThe body movement should be realistic:\nsmall breathing motion, natural shoulder movement, slight body weight adjustment.\n\nNo large movements, no walking, no changing pose, no exaggerated gestures.\n\nKeep realistic skin texture, natural pores, real lighting, authentic smartphone camera feeling.\n\nAvoid plastic skin, AI face, over-smoothing, unnatural body movement.\n\nVertical 9:16 realistic video.",
       "taskId": "947e70077ba64cf48b10b01e222e6de7",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T02:28:42.869Z",
-      "updatedAt": "2026-07-20T02:28:47.206Z"
+      "updatedAt": "2026-07-20T02:28:48.388Z"
     },
     {
       "id": "96a3e3b5-e350-4b26-bc0a-985d039e5941",
