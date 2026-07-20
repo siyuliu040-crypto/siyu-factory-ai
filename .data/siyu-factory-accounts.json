@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T02:28:40.284Z"
+      "updatedAt": "2026-07-20T02:29:14.854Z"
     }
   ],
   "sessions": [
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "683f72e8-6991-4ca0-8b35-7657bc7984e5",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T02:29:14.854Z",
+      "metadata": {
+        "taskId": "947e70077ba64cf48b10b01e222e6de7",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "7ff04860-b9fc-403f-a1bb-16e6fa6ac8fd",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -9636,10 +9648,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T02:28:42.869Z",
-      "updatedAt": "2026-07-20T02:28:42.869Z"
+      "updatedAt": "2026-07-20T02:29:14.854Z"
     },
     {
       "id": "task_1klvHrLVF7cknUEiVw63X0Puy4k5HaGF",
@@ -13588,9 +13600,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same face, same hairstyle, same skin tone and same body proportions.\n\nCreate a realistic 8-second vertical smartphone video.\n\nThe woman remains in the same indoor environment and keeps a similar pose from the original image.\n\nShe makes only subtle natural movements:\nshe blinks naturally, breathes softly, slightly adjusts her shoulders, and gently moves her head a little while looking at the camera.\n\nHer curly hair moves slightly with natural gravity. A few strands shift naturally around her face.\n\nHer expression stays relaxed and confident with a small natural smile.\n\nThe body movement should be realistic:\nsmall breathing motion, natural shoulder movement, slight body weight adjustment.\n\nNo large movements, no walking, no changing pose, no exaggerated gestures.\n\nKeep realistic skin texture, natural pores, real lighting, authentic smartphone camera feeling.\n\nAvoid plastic skin, AI face, over-smoothing, unnatural body movement.\n\nVertical 9:16 realistic video.",
       "taskId": "947e70077ba64cf48b10b01e222e6de7",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"3ab786f4-3eb9-45ec-a346-0bf4256f9822\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 02:28:46 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T02:28:42.869Z",
-      "updatedAt": "2026-07-20T02:29:06.058Z"
+      "updatedAt": "2026-07-20T02:29:14.854Z"
     },
     {
       "id": "96a3e3b5-e350-4b26-bc0a-985d039e5941",
