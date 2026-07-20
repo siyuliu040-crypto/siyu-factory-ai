@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:14:28.667Z"
+      "updatedAt": "2026-07-20T03:14:50.419Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "025ba1e6-1a09-4e7b-8c32-481cc0afce69",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:14:50.419Z",
+      "metadata": {
+        "taskId": "c334762e62644ae483c15369ccc2d212",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "c00640af-13a0-4688-9584-9317b61746ff",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11293,10 +11305,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:14:33.484Z",
-      "updatedAt": "2026-07-20T03:14:33.484Z"
+      "updatedAt": "2026-07-20T03:14:50.419Z"
     },
     {
       "id": "07de40aa64b949c4b39fd2aea697cc30",
@@ -15630,9 +15642,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair, same skin tone and same body proportions.\n\nCreate a realistic relaxing evening moment.\n\nThe woman is sitting comfortably at home. Instead of posing, she is casually listening to music or checking her phone. She lowers the phone, looks at the camera naturally, and gives a small relaxed smile.\n\nShe changes her posture slightly, moves her hand away from her face, and gently adjusts her hair.\n\nHer movements should follow realistic human behavior:\nnatural breathing, slight shoulder movement, small hand movements, realistic body weight.\n\nHer curls should move naturally with gravity, with a few strands falling forward.\n\nThe video should look like a real friend recorded a casual moment.\n\nNo model pose, no exaggerated expression, no perfect symmetry, no AI beauty effect.\n\nKeep realistic skin texture, natural lighting, realistic details.\n\nVertical 9:16 smartphone lifestyle video.",
       "taskId": "c334762e62644ae483c15369ccc2d212",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"fb8b26ae-4c26-4a06-9419-63305c0b3629\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:14:35 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:14:33.484Z",
-      "updatedAt": "2026-07-20T03:14:41.566Z"
+      "updatedAt": "2026-07-20T03:14:50.419Z"
     },
     {
       "id": "1bf7fc44-6e83-4d33-804e-8f193c692a0a",
