@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T02:29:18.809Z"
+      "updatedAt": "2026-07-20T02:29:47.413Z"
     }
   ],
   "sessions": [
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "1d61164c-d057-420f-aeba-588de4bc51dc",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T02:29:47.413Z",
+      "metadata": {
+        "taskId": "f5edd8561f5842edb09a4510bae0f158",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "339e2d3e-cf85-4349-8f9c-127a3cd48835",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -9660,10 +9672,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T02:29:22.150Z",
-      "updatedAt": "2026-07-20T02:29:22.150Z"
+      "updatedAt": "2026-07-20T02:29:47.413Z"
     },
     {
       "id": "947e70077ba64cf48b10b01e222e6de7",
@@ -13623,9 +13635,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Keep the same woman, same face, same curly hairstyle and natural proportions.\n\nCreate a realistic 9:16 vertical video. She is indoors near natural window light, wearing a casual outfit. She looks at the camera with a relaxed expression.\n\nShe gently touches the side of her curls, slightly moves her shoulders, and naturally changes her posture. Her hair softly bounces with realistic curl movement.\n\nHer breathing is visible through subtle body movement. The camera feels like a real phone recording with small natural shake.\n\nMaintain realistic skin texture, visible pores, natural shadows and authentic details.\n\nNo over smoothing, no plastic skin, no fake beauty effect.\n\nBackground music: soft female R&B, cozy lifestyle atmosphere.\n\nNo head tilt, no exaggerated posing, no artificial movement.",
       "taskId": "f5edd8561f5842edb09a4510bae0f158",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"96c7eea1-3fef-40f4-a737-80f52dc8414b\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 02:29:24 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T02:29:22.150Z",
-      "updatedAt": "2026-07-20T02:29:38.589Z"
+      "updatedAt": "2026-07-20T02:29:47.413Z"
     },
     {
       "id": "b03ca2e8-899e-475e-877c-cf683c481d69",
