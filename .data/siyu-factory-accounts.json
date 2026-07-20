@@ -9021,6 +9021,17 @@
   ],
   "generationTasks": [
     {
+      "id": "0a62b426db9647b29cb69d378b63028a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T01:54:06.348Z",
+      "updatedAt": "2026-07-20T01:54:06.348Z"
+    },
+    {
       "id": "429af2db21384d0faa93b9885fa29273",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -12806,6 +12817,17 @@
     }
   ],
   "history": [
+    {
+      "id": "1f3c4143-a96a-4e7d-a06d-05ba33fa1e98",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Keep the same woman, same face, same curly hair and same body proportions.\r\n\r\nCreate a realistic 9:16 smartphone lifestyle video. The woman stands near a window with natural sunlight. She wears a white fitted top and casually looks into the camera.\r\n\r\nShe slowly changes her posture, relaxes her shoulders, and lightly moves her hair away from her face. She briefly looks away from the camera and then looks back naturally.\r\n\r\nHer curly hair has realistic strands, volume and natural bounce. Her skin keeps real texture with natural light reflection. Her body has subtle breathing movement and realistic gravity.\r\n\r\nThe camera stays handheld and natural, like a real phone video.\r\n\r\nBackground music: smooth R&B chill song, warm sunlight mood.\r\n\r\nNo plastic skin, no AI face, no unrealistic body, no excessive movements.",
+      "taskId": "0a62b426db9647b29cb69d378b63028a",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T01:54:06.348Z",
+      "updatedAt": "2026-07-20T01:54:06.348Z"
+    },
     {
       "id": "4bf135c2-b5b8-44b8-9ef8-d14a29d9e6f2",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
