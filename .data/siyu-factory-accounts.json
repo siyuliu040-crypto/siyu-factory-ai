@@ -11642,6 +11642,17 @@
   ],
   "generationTasks": [
     {
+      "id": "57b09352367d4d4c921327d3bc0a227b",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T05:23:28.110Z",
+      "updatedAt": "2026-07-20T05:23:28.110Z"
+    },
+    {
       "id": "1804075e0fe347e5b1958f8dd71b2e9d",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -16065,6 +16076,17 @@
     }
   ],
   "history": [
+    {
+      "id": "1626bdbc-7181-46f0-aaca-57a243c4e936",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the reference image as the exact character reference. Keep the same person, same face, same hairstyle, same body shape and same clothing.\r\n\r\nCreate a realistic 9:16 vertical TikTok selfie video inside a car.\r\n\r\nThe woman is sitting naturally in the passenger seat and recording herself with a phone.\r\n\r\nShe looks at the camera with a relaxed expression.\r\n\r\nSimple natural movements:\r\nshe slightly adjusts her sitting position,\r\nmoves her head a little,\r\nblinks naturally,\r\ntakes a soft breath,\r\nand gently moves her hair with one hand.\r\n\r\nHer hair should react naturally with gravity and slowly settle back.\r\n\r\nThe body should have realistic subtle movement:\r\nnatural breathing,\r\nsmall shoulder movement,\r\nslight posture change,\r\nrealistic human balance.\r\n\r\nCamera:\r\nreal smartphone front camera,\r\nslight hand shake,\r\ncasual everyday TikTok video style.\r\n\r\nKeep realistic:\r\nnatural skin texture,\r\nsmall facial details,\r\nnormal phone camera quality,\r\nno heavy editing.\r\n\r\nBackground music:\r\nBrent Faiyaz - All Mine (slowed version)\r\n\r\nNegative:\r\nno face distortion,\r\nno body modification,\r\nno unrealistic shaking,\r\nno exaggerated movements,\r\nno fake smooth skin,\r\nno AI appearance.",
+      "taskId": "57b09352367d4d4c921327d3bc0a227b",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T05:23:28.110Z",
+      "updatedAt": "2026-07-20T05:23:28.110Z"
+    },
     {
       "id": "093851f2-fd4e-4281-bdf6-015b47a277ca",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
