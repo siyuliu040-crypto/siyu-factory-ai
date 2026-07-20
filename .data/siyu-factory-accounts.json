@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:42:09.296Z"
+      "updatedAt": "2026-07-20T03:42:42.919Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "c4d9b091-a2dd-4678-b73c-0066d0d2d587",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:42:42.919Z",
+      "metadata": {
+        "taskId": "8331d652033942c8bf537f9b8ced6db3",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "8f18275c-e384-4221-8ddd-ca7b9af1e74f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11437,10 +11449,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:42:14.593Z",
-      "updatedAt": "2026-07-20T03:42:14.593Z"
+      "updatedAt": "2026-07-20T03:42:42.919Z"
     },
     {
       "id": "f1c8f0d5db674742966af17feda85924",
@@ -15840,9 +15852,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the reference image as the exact character reference. Keep the same person, same face, same hairstyle, same body shape and same clothing.\n\nCreate a realistic 9:16 vertical TikTok selfie video inside a car.\n\nThe woman is sitting naturally in the passenger seat and recording herself with a phone.\n\nShe looks at the camera with a relaxed expression.\n\nSimple natural movements:\nshe slightly adjusts her sitting position,\nmoves her head a little,\nblinks naturally,\ntakes a soft breath,\nand gently moves her hair with one hand.\n\nHer hair should react naturally with gravity and slowly settle back.\n\nThe body should have realistic subtle movement:\nnatural breathing,\nsmall shoulder movement,\nslight posture change,\nrealistic human balance.\n\nCamera:\nreal smartphone front camera,\nslight hand shake,\ncasual everyday TikTok video style.\n\nKeep realistic:\nnatural skin texture,\nsmall facial details,\nnormal phone camera quality,\nno heavy editing.\n\nBackground music:\nBrent Faiyaz - All Mine (slowed version)\n\nNegative:\nno face distortion,\nno body modification,\nno unrealistic shaking,\nno exaggerated movements,\nno fake smooth skin,\nno AI appearance.",
       "taskId": "8331d652033942c8bf537f9b8ced6db3",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"7a4ff7c3-1c35-4537-935f-6b262e8830cb\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:42:17 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:42:14.593Z",
-      "updatedAt": "2026-07-20T03:42:32.993Z"
+      "updatedAt": "2026-07-20T03:42:42.919Z"
     },
     {
       "id": "a0a6cac9-e049-4e00-9f44-2c8a2b4dc066",
