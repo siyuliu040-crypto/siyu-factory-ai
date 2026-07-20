@@ -13160,11 +13160,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
-      "prompt": "Keep the same woman, same face, same curly hair and same body proportions.\r\n\r\nCreate a realistic 9:16 smartphone lifestyle video. The woman stands near a window with natural sunlight. She wears a white fitted top and casually looks into the camera.\r\n\r\nShe slowly changes her posture, relaxes her shoulders, and lightly moves her hair away from her face. She briefly looks away from the camera and then looks back naturally.\r\n\r\nHer curly hair has realistic strands, volume and natural bounce. Her skin keeps real texture with natural light reflection. Her body has subtle breathing movement and realistic gravity.\r\n\r\nThe camera stays handheld and natural, like a real phone video.\r\n\r\nBackground music: smooth R&B chill song, warm sunlight mood.\r\n\r\nNo plastic skin, no AI face, no unrealistic body, no excessive movements.",
+      "prompt": "Keep the same woman, same face, same curly hair and same body proportions.\n\nCreate a realistic 9:16 smartphone lifestyle video. The woman stands near a window with natural sunlight. She wears a white fitted top and casually looks into the camera.\n\nShe slowly changes her posture, relaxes her shoulders, and lightly moves her hair away from her face. She briefly looks away from the camera and then looks back naturally.\n\nHer curly hair has realistic strands, volume and natural bounce. Her skin keeps real texture with natural light reflection. Her body has subtle breathing movement and realistic gravity.\n\nThe camera stays handheld and natural, like a real phone video.\n\nBackground music: smooth R&B chill song, warm sunlight mood.\n\nNo plastic skin, no AI face, no unrealistic body, no excessive movements.",
       "taskId": "task_p23beKoiJaQIaox1tUd5GnYt3rZOsVGl",
       "status": "queued",
       "createdAt": "2026-07-20T02:05:01.927Z",
-      "updatedAt": "2026-07-20T02:05:01.927Z"
+      "updatedAt": "2026-07-20T02:05:08.021Z"
     },
     {
       "id": "9848b209-ff16-4b91-a314-7eae1e0abc4a",
