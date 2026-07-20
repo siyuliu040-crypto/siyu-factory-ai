@@ -9225,6 +9225,17 @@
   ],
   "generationTasks": [
     {
+      "id": "task_RW20NMEbiCTyqPEig9OSnrtrljeuHAUI",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "amount": 30000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T02:03:23.558Z",
+      "updatedAt": "2026-07-20T02:03:23.558Z"
+    },
+    {
       "id": "task_cAmAJJLZgtz4pI5RJJoKDwLYAMIEGW4e",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -13109,6 +13120,17 @@
     }
   ],
   "history": [
+    {
+      "id": "9848b209-ff16-4b91-a314-7eae1e0abc4a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "veo_3_1-fast-portrait-fl-hd",
+      "prompt": "Keep the same woman, same face, same curly hairstyle and natural proportions.\r\n\r\nCreate a realistic 9:16 vertical video. She is indoors near natural window light, wearing a casual outfit. She looks at the camera with a relaxed expression.\r\n\r\nShe gently touches the side of her curls, slightly moves her shoulders, and naturally changes her posture. Her hair softly bounces with realistic curl movement.\r\n\r\nHer breathing is visible through subtle body movement. The camera feels like a real phone recording with small natural shake.\r\n\r\nMaintain realistic skin texture, visible pores, natural shadows and authentic details.\r\n\r\nNo over smoothing, no plastic skin, no fake beauty effect.\r\n\r\nBackground music: soft female R&B, cozy lifestyle atmosphere.\r\n\r\nNo head tilt, no exaggerated posing, no artificial movement.",
+      "taskId": "task_RW20NMEbiCTyqPEig9OSnrtrljeuHAUI",
+      "status": "queued",
+      "createdAt": "2026-07-20T02:03:23.558Z",
+      "updatedAt": "2026-07-20T02:03:23.558Z"
+    },
     {
       "id": "a26da406-4992-4f13-8d89-fd2e61384f44",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
