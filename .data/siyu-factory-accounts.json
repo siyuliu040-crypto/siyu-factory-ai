@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T02:58:45.672Z"
+      "updatedAt": "2026-07-20T02:59:14.596Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "9a4a09a8-36d9-4813-ba11-95c736784b2f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T02:59:14.596Z",
+      "metadata": {
+        "taskId": "3cc37be26851486589b113869d8be210",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "9200120c-fc0c-4dd8-b03e-ab117f580945",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -10305,10 +10317,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T02:58:49.222Z",
-      "updatedAt": "2026-07-20T02:58:49.222Z"
+      "updatedAt": "2026-07-20T02:59:14.596Z"
     },
     {
       "id": "e4653c6e850b4fa48904b5f96c75c28b",
@@ -14400,9 +14412,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Keep the same woman, same face, same curly hair and same natural body shape.\n\nCreate a realistic 9:16 vertical selfie video. She is sitting indoors with warm sunlight coming through the window. She wears a green top and looks relaxed and confident.\n\nShe looks at the camera, softly blinks, slightly smiles, and gently moves her hair with one hand. She makes a small natural posture adjustment while sitting.\n\nHer curly hair moves naturally with realistic weight. Her shoulders, arms and upper body have subtle natural movement from breathing and gravity.\n\nKeep realistic skin texture, natural pores, soft sunlight, and authentic smartphone camera quality.\n\nBackground music: warm chill R&B, soft summer vibe.\n\nNo beauty filter, no plastic skin, no fake body movement, no AI generated feeling.",
       "taskId": "3cc37be26851486589b113869d8be210",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"f94169a3-9e31-457b-8457-d35b5d6fa078\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 02:58:51 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T02:58:49.222Z",
-      "updatedAt": "2026-07-20T02:59:05.581Z"
+      "updatedAt": "2026-07-20T02:59:14.596Z"
     },
     {
       "id": "b04a01cf-0ae3-4581-bc0d-0a905a72cb94",
