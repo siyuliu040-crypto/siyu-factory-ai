@@ -9141,6 +9141,17 @@
   ],
   "generationTasks": [
     {
+      "id": "e177d1ff892f4b1b959b8be8071c62fd",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T01:57:15.120Z",
+      "updatedAt": "2026-07-20T01:57:15.120Z"
+    },
+    {
       "id": "cbaa222686924361ade88a1c661ef06a",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -12981,6 +12992,17 @@
     }
   ],
   "history": [
+    {
+      "id": "a4272ad8-d957-447f-9fc3-5e048b1f1f99",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the original image as the exact character reference. Keep the same woman, same face identity, same hairstyle, same skin tone and same body proportions.\r\n\r\nCreate a realistic car lifestyle video.\r\n\r\nThe woman is sitting naturally inside her car before going somewhere. She adjusts the air conditioning, briefly looks outside the window, smiles slightly, then looks back at the phone camera.\r\n\r\nShe casually fixes a few curls near her face and adjusts her seat position.\r\n\r\nThe movement should feel like a real person recording a quick moment, not a planned video.\r\n\r\nInclude realistic details:\r\n- sunlight changing through the car window\r\n- slight reflections on the glass\r\n- natural shadows inside the car\r\n- small breathing and shoulder movement\r\n- realistic hair movement\r\n\r\nHer expression should be relaxed, confident and natural.\r\n\r\nNo influencer posing, no exaggerated facial expressions, no fake smile.\r\n\r\nKeep realistic skin texture, natural lighting, authentic smartphone quality.\r\n\r\nAvoid plastic skin, AI appearance, unrealistic hands or body movement.\r\n\r\nVertical 9:16.",
+      "taskId": "e177d1ff892f4b1b959b8be8071c62fd",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T01:57:15.120Z",
+      "updatedAt": "2026-07-20T01:57:15.120Z"
+    },
     {
       "id": "aed98caf-4b5c-4ac3-ba57-459dc977856f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
