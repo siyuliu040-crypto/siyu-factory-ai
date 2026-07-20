@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9986050000,
+      "credits": 9986500000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T01:54:00.504Z"
+      "updatedAt": "2026-07-20T01:54:16.732Z"
     }
   ],
   "sessions": [
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "4da7bf08-36c1-45c9-9853-3a1ac1cd928f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986500000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T01:54:16.732Z",
+      "metadata": {
+        "taskId": "0a62b426db9647b29cb69d378b63028a",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "3e8b5a03-4a40-4f05-88ec-5d9cba1360a9",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -9026,10 +9038,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T01:54:06.348Z",
-      "updatedAt": "2026-07-20T01:54:06.348Z"
+      "updatedAt": "2026-07-20T01:54:16.732Z"
     },
     {
       "id": "429af2db21384d0faa93b9885fa29273",
@@ -12824,9 +12836,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Keep the same woman, same face, same curly hair and same body proportions.\n\nCreate a realistic 9:16 smartphone lifestyle video. The woman stands near a window with natural sunlight. She wears a white fitted top and casually looks into the camera.\n\nShe slowly changes her posture, relaxes her shoulders, and lightly moves her hair away from her face. She briefly looks away from the camera and then looks back naturally.\n\nHer curly hair has realistic strands, volume and natural bounce. Her skin keeps real texture with natural light reflection. Her body has subtle breathing movement and realistic gravity.\n\nThe camera stays handheld and natural, like a real phone video.\n\nBackground music: smooth R&B chill song, warm sunlight mood.\n\nNo plastic skin, no AI face, no unrealistic body, no excessive movements.",
       "taskId": "0a62b426db9647b29cb69d378b63028a",
-      "status": "IN_PROGRESS",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"def4ecd5-7d4c-4025-a1f2-59b0b0bff0c7\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 01:54:13 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T01:54:06.348Z",
-      "updatedAt": "2026-07-20T01:54:14.945Z"
+      "updatedAt": "2026-07-20T01:54:16.732Z"
     },
     {
       "id": "4bf135c2-b5b8-44b8-9ef8-d14a29d9e6f2",
