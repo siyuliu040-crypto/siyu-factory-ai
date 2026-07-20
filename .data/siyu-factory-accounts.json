@@ -8638,6 +8638,17 @@
   ],
   "generationTasks": [
     {
+      "id": "ddfa862f1cfc4ac1a846b1a684a61f16",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T01:05:25.304Z",
+      "updatedAt": "2026-07-20T01:05:25.304Z"
+    },
+    {
       "id": "img_1784508434603_5b634b1643c8d",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "image",
@@ -12269,6 +12280,17 @@
     }
   ],
   "history": [
+    {
+      "id": "87914b88-f96c-44a0-b947-0c8f12de060a",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Keep the same woman, same face, same curly black hair, same outfit and same natural body shape from the reference image.\r\n\r\nCreate a realistic 9:16 vertical smartphone video. The woman is sitting inside a luxury car, recording a casual selfie video. She looks into the camera naturally with a calm confident expression. She slowly moves her eyes, blinks softly, and slightly adjusts her curly hair with one hand.\r\n\r\nHer curls move naturally with realistic texture, volume and weight. Her shoulders and upper body have subtle breathing movement and natural gravity response. The phone camera has slight handheld movement like a real selfie.\r\n\r\nKeep realistic skin texture, natural pores, soft lighting, and real human details. No plastic skin, no beauty filter, no artificial smoothness.\r\n\r\nThe video should feel like a real TikTok lifestyle clip.\r\n\r\nBackground music: soft R&B chill beat, relaxed summer vibe.\r\n\r\nNo face change, no exaggerated movement, no fake hair physics, no AI look.",
+      "taskId": "ddfa862f1cfc4ac1a846b1a684a61f16",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T01:05:25.304Z",
+      "updatedAt": "2026-07-20T01:05:25.304Z"
+    },
     {
       "id": "af35a480-2191-4822-a93e-bcb430d664a6",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
