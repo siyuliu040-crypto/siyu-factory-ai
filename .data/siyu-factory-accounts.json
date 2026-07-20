@@ -12390,11 +12390,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Keep the same woman, same face, same curly hair and same body proportions.\r\n\r\nCreate a realistic 9:16 smartphone lifestyle video. The woman stands near a window with natural sunlight. She wears a white fitted top and casually looks into the camera.\r\n\r\nShe slowly changes her posture, relaxes her shoulders, and lightly moves her hair away from her face. She briefly looks away from the camera and then looks back naturally.\r\n\r\nHer curly hair has realistic strands, volume and natural bounce. Her skin keeps real texture with natural light reflection. Her body has subtle breathing movement and realistic gravity.\r\n\r\nThe camera stays handheld and natural, like a real phone video.\r\n\r\nBackground music: smooth R&B chill song, warm sunlight mood.\r\n\r\nNo plastic skin, no AI face, no unrealistic body, no excessive movements.",
+      "prompt": "Keep the same woman, same face, same curly hair and same body proportions.\n\nCreate a realistic 9:16 smartphone lifestyle video. The woman stands near a window with natural sunlight. She wears a white fitted top and casually looks into the camera.\n\nShe slowly changes her posture, relaxes her shoulders, and lightly moves her hair away from her face. She briefly looks away from the camera and then looks back naturally.\n\nHer curly hair has realistic strands, volume and natural bounce. Her skin keeps real texture with natural light reflection. Her body has subtle breathing movement and realistic gravity.\n\nThe camera stays handheld and natural, like a real phone video.\n\nBackground music: smooth R&B chill song, warm sunlight mood.\n\nNo plastic skin, no AI face, no unrealistic body, no excessive movements.",
       "taskId": "8416378bcc5447549563aa0f9850d555",
-      "status": "failed",
+      "status": "IN_PROGRESS",
       "createdAt": "2026-07-20T01:10:02.395Z",
-      "updatedAt": "2026-07-20T01:12:15.377Z",
+      "updatedAt": "2026-07-20T01:12:22.002Z",
       "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"cb2cb47e-4c34-4dcd-a6e6-dd05b0480d2f\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 01:09:09 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\""
     },
     {
