@@ -11360,6 +11360,17 @@
   ],
   "generationTasks": [
     {
+      "id": "img_1784518069495_c8ceb2bdd214b",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "type": "image",
+      "model": "hfsy:nano-banana-2",
+      "amount": 10000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T03:27:49.497Z",
+      "updatedAt": "2026-07-20T03:27:49.497Z"
+    },
+    {
       "id": "7f690ba4013944b19d0270d97574966b",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -15717,6 +15728,17 @@
     }
   ],
   "history": [
+    {
+      "id": "6bf317bf-8851-49ce-8ffd-df7e27eb4371",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "mode": "image",
+      "model": "hfsy:nano-banana-2",
+      "prompt": "Ultra realistic winter biblical scene.\n\nJesus walks through a snowy landscape carrying a basket of bread.\n\nHe gives food to cold travelers.\n\nHis white robe contrasts with the snow.\n\nSoft light from the cloudy sky.\n\nTheme:\nhope and kindness in hardship.",
+      "taskId": "img_1784518069495_c8ceb2bdd214b",
+      "status": "queued",
+      "createdAt": "2026-07-20T03:27:49.497Z",
+      "updatedAt": "2026-07-20T03:27:49.497Z"
+    },
     {
       "id": "8120657b-52d0-4981-97c7-871740fc4376",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
