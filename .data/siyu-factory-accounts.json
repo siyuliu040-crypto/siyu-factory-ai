@@ -8320,6 +8320,17 @@
   ],
   "generationTasks": [
     {
+      "id": "img_1784508434603_5b634b1643c8d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "image",
+      "model": "hfsy:nano-banana-2",
+      "amount": 10000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T00:47:14.606Z",
+      "updatedAt": "2026-07-20T00:47:14.606Z"
+    },
+    {
       "id": "64a3303b8ba24428b3707e6ba8b4882a",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -11940,6 +11951,17 @@
     }
   ],
   "history": [
+    {
+      "id": "af35a480-2191-4822-a93e-bcb430d664a6",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "image",
+      "model": "hfsy:nano-banana-2",
+      "prompt": "A realistic 9:16 vertical smartphone selfie photo of a beautiful Black woman with natural curly hair, sitting casually on a cozy bedroom bed. She wears a simple fitted tank top and comfortable shorts. Her curly hair has realistic volume and natural texture, slightly messy and authentic.\n\nShe is holding a phone with one hand, looking at the camera with a relaxed confident expression, soft smile, natural eyes. One hand gently touches her curls. Natural sitting posture, realistic body proportions.\n\nWarm morning window light, cozy bedroom background, real lifestyle photo style. Natural skin texture, visible pores, slight imperfections, realistic shadows, no heavy makeup, no beauty filter.\n\nShot on smartphone camera, casual TikTok lifestyle content, authentic human feeling.\n\nNo plastic skin, no unrealistic body, no AI face, no exaggerated pose.",
+      "taskId": "img_1784508434603_5b634b1643c8d",
+      "status": "queued",
+      "createdAt": "2026-07-20T00:47:14.606Z",
+      "updatedAt": "2026-07-20T00:47:14.606Z"
+    },
     {
       "id": "f47d231c-2a6e-4a6a-8e63-175e4f715fc8",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
