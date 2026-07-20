@@ -13104,9 +13104,9 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Keep the same woman, same face, same curly black hair, same outfit and same natural body shape from the reference image.\n\nCreate a realistic 9:16 vertical smartphone video. The woman is sitting inside a luxury car, recording a casual selfie video. She looks into the camera naturally with a calm confident expression. She slowly moves her eyes, blinks softly, and slightly adjusts her curly hair with one hand.\n\nHer curls move naturally with realistic texture, volume and weight. Her shoulders and upper body have subtle breathing movement and natural gravity response. The phone camera has slight handheld movement like a real selfie.\n\nKeep realistic skin texture, natural pores, soft lighting, and real human details. No plastic skin, no beauty filter, no artificial smoothness.\n\nThe video should feel like a real TikTok lifestyle clip.\n\nBackground music: soft R&B chill beat, relaxed summer vibe.\n\nNo face change, no exaggerated movement, no fake hair physics, no AI look.",
       "taskId": "task_cAmAJJLZgtz4pI5RJJoKDwLYAMIEGW4e",
-      "status": "queued",
+      "status": "in_progress",
       "createdAt": "2026-07-20T02:00:28.237Z",
-      "updatedAt": "2026-07-20T02:01:12.020Z"
+      "updatedAt": "2026-07-20T02:01:20.862Z"
     },
     {
       "id": "be0024b7-3044-4849-902f-7a48c6ae706f",
