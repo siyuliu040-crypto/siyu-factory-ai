@@ -1,9 +1,19 @@
 import { jsonError } from "@/lib/hellobabygo";
+import { HFSY_BASE_URL, hfsyHeaders } from "@/lib/hfsy";
 
 export const dynamic = "force-dynamic";
 
 const ALLOWED_PROTOCOLS = new Set(["http:", "https:"]);
 const MAX_IMAGE_BYTES = 20 * 1024 * 1024;
+
+function shouldAttachHfsyAuth(target: URL) {
+  try {
+    const hfsy = new URL(HFSY_BASE_URL);
+    return target.hostname === hfsy.hostname || target.hostname.endsWith(`.${hfsy.hostname}`);
+  } catch {
+    return target.hostname.includes("hfsyapi.cn");
+  }
+}
 
 export async function GET(request: Request) {
   const rawUrl = new URL(request.url).searchParams.get("url") || "";
@@ -20,8 +30,12 @@ export async function GET(request: Request) {
     return jsonError({ error: "unsupported image url protocol" }, 400);
   }
 
+  const headers = shouldAttachHfsyAuth(target)
+    ? hfsyHeaders({ Accept: "image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.8" })
+    : { Accept: "image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.8" };
+
   const response = await fetch(target.toString(), {
-    headers: { Accept: "image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.8" },
+    headers,
     cache: "no-store"
   });
   if (!response.ok) {
