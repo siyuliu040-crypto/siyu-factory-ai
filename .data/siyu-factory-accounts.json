@@ -11594,6 +11594,17 @@
   ],
   "generationTasks": [
     {
+      "id": "36f710f2e83249ca80cc332d7dfd0d34",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T05:22:35.862Z",
+      "updatedAt": "2026-07-20T05:22:35.862Z"
+    },
+    {
       "id": "8331d652033942c8bf537f9b8ced6db3",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -15995,6 +16006,17 @@
     }
   ],
   "history": [
+    {
+      "id": "b50f3ab7-20f1-46de-91ad-9af1cbc138ec",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the reference image as the exact character reference. Keep the same face, same hairstyle, same skin tone, same body shape and same outfit.\r\n\r\nCreate a realistic 9:16 vertical TikTok selfie video.\r\n\r\nThe woman is lying naturally on a bed while holding the phone above her. She looks directly into the camera with a calm and confident expression.\r\n\r\nKeep the movement simple and realistic:\r\nshe slowly blinks,\r\nslightly moves her head,\r\ngently adjusts her hand near her chest,\r\ntakes a natural breath,\r\nand makes a small relaxed body adjustment on the bed.\r\n\r\nHer curly hair softly moves against the pillow with natural gravity. Some curls slightly bounce when she moves her head.\r\n\r\nAdd realistic human details:\r\nnatural breathing,\r\nsmall shoulder movement,\r\nsubtle body movement caused by shifting position,\r\nnatural facial expression changes,\r\nrealistic skin texture.\r\n\r\nCamera:\r\nreal smartphone front camera,\r\nslight handheld movement,\r\ncasual TikTok selfie style,\r\nnatural distance.\r\n\r\nLighting:\r\nsoft indoor lighting,\r\nreal bedroom atmosphere,\r\nno beauty filter,\r\nkeep natural skin details.\r\n\r\nBackground music:\r\nSZA - Snooze (slowed + soft version)\r\n\r\nNegative:\r\nno face change,\r\nno body change,\r\nno extra fingers,\r\nno exaggerated movement,\r\nno dancing,\r\nno unnatural posing,\r\nno plastic skin,\r\nno AI generated look,\r\nno unrealistic hair movement.",
+      "taskId": "36f710f2e83249ca80cc332d7dfd0d34",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T05:22:35.862Z",
+      "updatedAt": "2026-07-20T05:22:35.862Z"
+    },
     {
       "id": "0e476608-ebe3-441e-9c71-e7340b6a2748",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
