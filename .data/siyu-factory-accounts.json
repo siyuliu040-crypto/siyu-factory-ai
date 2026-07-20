@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T08:36:36.640Z"
+      "updatedAt": "2026-07-20T08:37:13.057Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "582ca50b-562a-4357-9e9d-04c08305b735",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T08:37:13.057Z",
+      "metadata": {
+        "taskId": "cf8fcacbad3949e6aed4cb15c805e453",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "f0c37ed9-68ea-4f21-8b20-fb9f6e675e47",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11741,10 +11753,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T08:36:39.987Z",
-      "updatedAt": "2026-07-20T08:36:39.987Z"
+      "updatedAt": "2026-07-20T08:37:13.057Z"
     },
     {
       "id": "f7eb0603fff54a44ab410097d408c7d9",
@@ -16199,9 +16211,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic vertical 9:16 TikTok selfie video based on the reference image.\n\nKeep the exact same woman, same face, same long curly black hair, same white tank top, same necklace, same car interior, same selfie angle and same body shape.\n\nDo not change her identity, clothing, hairstyle, accessories, or environment.\n\nThe video should feel like a real casual car selfie recorded on a smartphone.\n\nShe remains in the same seated position inside the car.\n\nAdd only subtle realistic movements:\n- natural blinking\n- tiny eye focus changes toward the camera\n- a soft relaxed smile\n- slight head movement\n- gentle breathing motion\n- small shoulder adjustment\n\nHer eyes must look completely human:\nnatural blinking rhythm,\nsmall gaze changes,\nrealistic eye moisture,\nno glowing eyes,\nno oversized eyes,\nno frozen staring.\n\nMaintain realistic skin:\nnatural pores,\nsoft skin texture,\nslight imperfections,\nnatural tone.\n\nAvoid:\nplastic skin,\nbeauty filter,\nover smoothing,\nstrong reflections.\n\nKeep skin matte and realistic.\n\nHer body movement should follow natural physics:\nsoft breathing,\nsmall upper body movement,\nnatural posture adjustment.\nAny movement around the chest area should only come from breathing and relaxed sitting posture, subtle and realistic.\n\nHair:\nkeep the same curly volume,\nnatural curl movement,\nrealistic hair weight.\n\nCamera:\nreal smartphone front camera,\nslight handheld movement,\nnormal phone quality,\nnatural daylight.\n\nAvoid:\nlarge movements,\nchanging face,\nchanging clothes,\nbody distortion,\nAI artifacts.\n\nBackground music:\nsoft trending TikTok R&B lifestyle music,\nlow volume,\nwarm casual mood.",
       "taskId": "cf8fcacbad3949e6aed4cb15c805e453",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"1feb0948-c8bc-4e66-b62b-4b50a3b91eff\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 08:36:43 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T08:36:39.987Z",
-      "updatedAt": "2026-07-20T08:37:04.557Z"
+      "updatedAt": "2026-07-20T08:37:13.057Z"
     },
     {
       "id": "6bf317bf-8851-49ce-8ffd-df7e27eb4371",
