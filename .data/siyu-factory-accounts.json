@@ -11072,6 +11072,17 @@
   ],
   "generationTasks": [
     {
+      "id": "0d0009ff25f241f8970037d648e9de3d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T03:08:30.633Z",
+      "updatedAt": "2026-07-20T03:08:30.633Z"
+    },
+    {
       "id": "03277f63067f493b922ddf6e5ca1277c",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -15297,6 +15308,17 @@
     }
   ],
   "history": [
+    {
+      "id": "705b3f5d-0c03-4c10-b30d-0dd031f2e955",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair, same skin tone and same body proportions.\r\n\r\nCreate a realistic relaxing evening moment.\r\n\r\nThe woman is sitting comfortably at home. Instead of posing, she is casually listening to music or checking her phone. She lowers the phone, looks at the camera naturally, and gives a small relaxed smile.\r\n\r\nShe changes her posture slightly, moves her hand away from her face, and gently adjusts her hair.\r\n\r\nHer movements should follow realistic human behavior:\r\nnatural breathing, slight shoulder movement, small hand movements, realistic body weight.\r\n\r\nHer curls should move naturally with gravity, with a few strands falling forward.\r\n\r\nThe video should look like a real friend recorded a casual moment.\r\n\r\nNo model pose, no exaggerated expression, no perfect symmetry, no AI beauty effect.\r\n\r\nKeep realistic skin texture, natural lighting, realistic details.\r\n\r\nVertical 9:16 smartphone lifestyle video.",
+      "taskId": "0d0009ff25f241f8970037d648e9de3d",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T03:08:30.633Z",
+      "updatedAt": "2026-07-20T03:08:30.633Z"
+    },
     {
       "id": "e59f321e-df87-4cf0-a1bb-8b54aae05260",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
