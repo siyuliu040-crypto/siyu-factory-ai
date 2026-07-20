@@ -16234,9 +16234,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Create a realistic vertical 9:16 TikTok selfie video based on the reference image.\n\nKeep the exact same woman, same face, same long curly black hair, same white tank top, same necklace, same car interior, same selfie angle and same body shape.\n\nDo not change her identity, clothing, hairstyle, accessories, or environment.\n\nThe video should feel like a real casual car selfie recorded on a smartphone.\n\nShe remains in the same seated position inside the car.\n\nAdd only subtle realistic movements:\n- natural blinking\n- tiny eye focus changes toward the camera\n- a soft relaxed smile\n- slight head movement\n- gentle breathing motion\n- small shoulder adjustment\n\nHer eyes must look completely human:\nnatural blinking rhythm,\nsmall gaze changes,\nrealistic eye moisture,\nno glowing eyes,\nno oversized eyes,\nno frozen staring.\n\nMaintain realistic skin:\nnatural pores,\nsoft skin texture,\nslight imperfections,\nnatural tone.\n\nAvoid:\nplastic skin,\nbeauty filter,\nover smoothing,\nstrong reflections.\n\nKeep skin matte and realistic.\n\nHer body movement should follow natural physics:\nsoft breathing,\nsmall upper body movement,\nnatural posture adjustment.\nAny movement around the chest area should only come from breathing and relaxed sitting posture, subtle and realistic.\n\nHair:\nkeep the same curly volume,\nnatural curl movement,\nrealistic hair weight.\n\nCamera:\nreal smartphone front camera,\nslight handheld movement,\nnormal phone quality,\nnatural daylight.\n\nAvoid:\nlarge movements,\nchanging face,\nchanging clothes,\nbody distortion,\nAI artifacts.\n\nBackground music:\nsoft trending TikTok R&B lifestyle music,\nlow volume,\nwarm casual mood.",
       "taskId": "270cc84550644fc5bc8a042cd58b624f",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T08:45:52.102Z",
-      "updatedAt": "2026-07-20T08:45:56.256Z"
+      "updatedAt": "2026-07-20T08:45:57.602Z"
     },
     {
       "id": "4206288c-76c5-4851-ba70-37e3283febb5",
