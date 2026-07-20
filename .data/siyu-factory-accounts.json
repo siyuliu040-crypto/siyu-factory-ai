@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9986380000,
+      "credits": 9986350000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:42:42.919Z"
+      "updatedAt": "2026-07-20T03:43:27.516Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "1deaa7bf-61c6-4300-959f-00536e614f16",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": -30000,
+      "balanceAfter": 9986350000,
+      "reason": "video generation",
+      "createdAt": "2026-07-20T03:43:27.516Z",
+      "metadata": {
+        "model": "veo_3_1-fast-portrait-fl-hd",
+        "size": "1080x1920"
+      }
+    },
     {
       "id": "c4d9b091-a2dd-4678-b73c-0066d0d2d587",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
