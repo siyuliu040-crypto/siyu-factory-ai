@@ -12929,9 +12929,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair pattern, same skin tone and same body shape.\n\nCreate a realistic getting-ready-at-home moment.\n\nThe woman is standing in her bedroom before going out. She looks at herself briefly in the mirror, adjusts her hair naturally, fixes her shirt slightly, then turns toward the camera with a relaxed expression.\n\nShe does not pose like a model. Her movements should feel spontaneous and casual.\n\nHer curls should move naturally with her body movement. Some curls bounce slightly, some loose strands fall across her face, creating realistic hair behavior.\n\nShe slightly changes her weight from one foot to another, showing natural posture and balance.\n\nHer expression changes naturally from focused to a small confident smile.\n\nCamera style: handheld smartphone video, natural indoor lighting, realistic home environment.\n\nMaintain real skin texture, natural imperfections, realistic body gravity and authentic human movement.\n\nAvoid perfect beauty look, avoid artificial smooth skin, avoid stiff movements, avoid exaggerated poses.\n\nVertical 9:16.",
       "taskId": "5abb7e21a6e84b2d9245d14499f99d9f",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T01:55:41.650Z",
-      "updatedAt": "2026-07-20T01:55:50.746Z"
+      "updatedAt": "2026-07-20T01:55:52.673Z"
     },
     {
       "id": "48e98bd5-07d6-450b-8c9f-0d2ff8d96529",
