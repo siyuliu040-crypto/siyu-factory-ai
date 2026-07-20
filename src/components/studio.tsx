@@ -1517,6 +1517,7 @@ export default function Studio() {
   const [isLoading, setIsLoading] = useState(false);
   const [isPolling, setIsPolling] = useState(false);
   const [imageResult, setImageResult] = useState<ImageResult | null>(null);
+  const [rawImagePreviewUrl, setRawImagePreviewUrl] = useState("");
   const [videoResult, setVideoResult] = useState<VideoResult | null>(null);
   const [imageTasks, setImageTasks] = useState<ImageTask[]>(readStoredImageTasks);
   const [batchJobs, setBatchJobs] = useState<BatchJob[]>([]);
@@ -1605,7 +1606,8 @@ export default function Studio() {
   }, [models]);
 
   const activeImageUrl = extractImageUrl(imageResult);
-  const activeImageViewUrl = getViewableImageUrl(activeImageUrl);
+  const activeImageViewUrl = rawImagePreviewUrl && rawImagePreviewUrl === activeImageUrl ? activeImageUrl : getViewableImageUrl(activeImageUrl);
+
   const videoId = getVideoTaskId(videoResult);
   const videoSrc = isVideoDone(videoResult?.status, videoResult) ? getVideoUrl(videoResult) || (videoId ? `/api/videos/${videoId}/content` : "") : "";
   const downloadUrl = activeImageViewUrl || videoSrc;
@@ -2343,6 +2345,16 @@ export default function Studio() {
   function openAsset(url?: string) {
     if (!url) return;
     window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  function handleImagePreviewError() {
+    if (!activeImageUrl) return;
+    if (rawImagePreviewUrl !== activeImageUrl && activeImageViewUrl !== activeImageUrl) {
+      setRawImagePreviewUrl(activeImageUrl);
+      setError(tx("imageProxyFallback", "图片代理预览失败，已尝试切换到上游原始链接。"));
+      return;
+    }
+    setError(tx("imagePreviewFailed", "图片链接暂时无法打开，可能是上游临时链接已过期或需要重新生成。"));
   }
 
   async function generateImage() {
@@ -3697,7 +3709,7 @@ export default function Studio() {
               </div>
             ) : activeImageViewUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img alt="Generated result" src={activeImageViewUrl} />
+              <img alt="Generated result" onError={handleImagePreviewError} src={activeImageViewUrl} />
             ) : videoSrc ? (
               <video controls src={videoSrc} />
             ) : videoResult && !isVideoDone(videoResult.status, videoResult) ? (
