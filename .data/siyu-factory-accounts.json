@@ -11736,6 +11736,17 @@
   ],
   "generationTasks": [
     {
+      "id": "cf8fcacbad3949e6aed4cb15c805e453",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T08:36:39.987Z",
+      "updatedAt": "2026-07-20T08:36:39.987Z"
+    },
+    {
       "id": "f7eb0603fff54a44ab410097d408c7d9",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -16181,6 +16192,17 @@
     }
   ],
   "history": [
+    {
+      "id": "4206288c-76c5-4851-ba70-37e3283febb5",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Create a realistic vertical 9:16 TikTok selfie video based on the reference image.\r\n\r\nKeep the exact same woman, same face, same long curly black hair, same white tank top, same necklace, same car interior, same selfie angle and same body shape.\r\n\r\nDo not change her identity, clothing, hairstyle, accessories, or environment.\r\n\r\nThe video should feel like a real casual car selfie recorded on a smartphone.\r\n\r\nShe remains in the same seated position inside the car.\r\n\r\nAdd only subtle realistic movements:\r\n- natural blinking\r\n- tiny eye focus changes toward the camera\r\n- a soft relaxed smile\r\n- slight head movement\r\n- gentle breathing motion\r\n- small shoulder adjustment\r\n\r\nHer eyes must look completely human:\r\nnatural blinking rhythm,\r\nsmall gaze changes,\r\nrealistic eye moisture,\r\nno glowing eyes,\r\nno oversized eyes,\r\nno frozen staring.\r\n\r\nMaintain realistic skin:\r\nnatural pores,\r\nsoft skin texture,\r\nslight imperfections,\r\nnatural tone.\r\n\r\nAvoid:\r\nplastic skin,\r\nbeauty filter,\r\nover smoothing,\r\nstrong reflections.\r\n\r\nKeep skin matte and realistic.\r\n\r\nHer body movement should follow natural physics:\r\nsoft breathing,\r\nsmall upper body movement,\r\nnatural posture adjustment.\r\nAny movement around the chest area should only come from breathing and relaxed sitting posture, subtle and realistic.\r\n\r\nHair:\r\nkeep the same curly volume,\r\nnatural curl movement,\r\nrealistic hair weight.\r\n\r\nCamera:\r\nreal smartphone front camera,\r\nslight handheld movement,\r\nnormal phone quality,\r\nnatural daylight.\r\n\r\nAvoid:\r\nlarge movements,\r\nchanging face,\r\nchanging clothes,\r\nbody distortion,\r\nAI artifacts.\r\n\r\nBackground music:\r\nsoft trending TikTok R&B lifestyle music,\r\nlow volume,\r\nwarm casual mood.",
+      "taskId": "cf8fcacbad3949e6aed4cb15c805e453",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T08:36:39.987Z",
+      "updatedAt": "2026-07-20T08:36:39.987Z"
+    },
     {
       "id": "6bf317bf-8851-49ce-8ffd-df7e27eb4371",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
