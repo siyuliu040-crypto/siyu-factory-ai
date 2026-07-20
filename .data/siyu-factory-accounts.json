@@ -13728,9 +13728,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same face identity, same facial features, same skin tone, same curly black hair texture, and the same natural body proportions.\n\nCreate a realistic everyday morning moment, not a beauty photoshoot.\n\nThe woman is relaxing on her bed in a cozy bedroom. The video starts with her casually checking her phone while lying down. She notices something on the screen, gives a small natural smile, then puts the phone aside and looks toward the camera.\n\nShe slowly adjusts her sitting position, her body naturally shifts with gravity, her shoulders move slightly, and her curly hair falls naturally around her face. She gently fixes a few curls near her forehead, not posing for the camera.\n\nHer expression should feel real: relaxed eyes, small genuine smile, calm and comfortable mood.\n\nThe camera should feel like a real smartphone recording from her hand, with slight natural movement and imperfect framing.\n\nKeep realistic skin texture, natural pores, soft shadows, realistic hair strands and natural curl movement.\n\nNo model posing, no beauty filter, no plastic skin, no excessive smoothing, no AI face, no unnatural hands.\n\nVertical 9:16, realistic TikTok lifestyle video.",
       "taskId": "179512d1bb5a4520976b40759c4fc652",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T02:30:56.809Z",
-      "updatedAt": "2026-07-20T02:31:02.636Z"
+      "updatedAt": "2026-07-20T02:31:03.662Z"
     },
     {
       "id": "9bb4c343-bdbe-410f-b169-44cfde3a0d03",
