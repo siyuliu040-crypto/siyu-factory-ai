@@ -9703,6 +9703,17 @@
   ],
   "generationTasks": [
     {
+      "id": "c6b2cf9cdbff42e39a3ca590fa02d4ce",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T02:30:31.560Z",
+      "updatedAt": "2026-07-20T02:30:31.560Z"
+    },
+    {
       "id": "a4e58aa772d04d9e9049494ae2fd4bfc",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -13675,6 +13686,17 @@
     }
   ],
   "history": [
+    {
+      "id": "9bb4c343-bdbe-410f-b169-44cfde3a0d03",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Keep the same woman, same face, same curly hair and same natural body shape.\r\n\r\nCreate a realistic 9:16 vertical selfie video. She is sitting indoors with warm sunlight coming through the window. She wears a green top and looks relaxed and confident.\r\n\r\nShe looks at the camera, softly blinks, slightly smiles, and gently moves her hair with one hand. She makes a small natural posture adjustment while sitting.\r\n\r\nHer curly hair moves naturally with realistic weight. Her shoulders, arms and upper body have subtle natural movement from breathing and gravity.\r\n\r\nKeep realistic skin texture, natural pores, soft sunlight, and authentic smartphone camera quality.\r\n\r\nBackground music: warm chill R&B, soft summer vibe.\r\n\r\nNo beauty filter, no plastic skin, no fake body movement, no AI generated feeling.",
+      "taskId": "c6b2cf9cdbff42e39a3ca590fa02d4ce",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-20T02:30:31.560Z",
+      "updatedAt": "2026-07-20T02:30:31.560Z"
+    },
     {
       "id": "24c04431-5201-4a7e-bfe1-60384a5722ae",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
