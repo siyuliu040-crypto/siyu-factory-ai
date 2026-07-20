@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9986050000,
+      "credits": 9986500000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T01:57:08.974Z"
+      "updatedAt": "2026-07-20T01:57:35.933Z"
     }
   ],
   "sessions": [
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "7d7df152-12cf-4c8b-9fac-da5e28f9a2ed",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986500000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T01:57:35.933Z",
+      "metadata": {
+        "taskId": "e177d1ff892f4b1b959b8be8071c62fd",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "a7ec7aeb-c283-4c53-9774-d9bfd807abe6",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -9146,10 +9158,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T01:57:15.120Z",
-      "updatedAt": "2026-07-20T01:57:15.120Z"
+      "updatedAt": "2026-07-20T01:57:35.933Z"
     },
     {
       "id": "cbaa222686924361ade88a1c661ef06a",
@@ -12999,9 +13011,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same face identity, same hairstyle, same skin tone and same body proportions.\n\nCreate a realistic car lifestyle video.\n\nThe woman is sitting naturally inside her car before going somewhere. She adjusts the air conditioning, briefly looks outside the window, smiles slightly, then looks back at the phone camera.\n\nShe casually fixes a few curls near her face and adjusts her seat position.\n\nThe movement should feel like a real person recording a quick moment, not a planned video.\n\nInclude realistic details:\n- sunlight changing through the car window\n- slight reflections on the glass\n- natural shadows inside the car\n- small breathing and shoulder movement\n- realistic hair movement\n\nHer expression should be relaxed, confident and natural.\n\nNo influencer posing, no exaggerated facial expressions, no fake smile.\n\nKeep realistic skin texture, natural lighting, authentic smartphone quality.\n\nAvoid plastic skin, AI appearance, unrealistic hands or body movement.\n\nVertical 9:16.",
       "taskId": "e177d1ff892f4b1b959b8be8071c62fd",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"6ba8008e-efef-40ef-96f1-2bd201ad0ca4\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 01:57:16 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T01:57:15.120Z",
-      "updatedAt": "2026-07-20T01:57:26.175Z"
+      "updatedAt": "2026-07-20T01:57:35.933Z"
     },
     {
       "id": "aed98caf-4b5c-4ac3-ba57-459dc977856f",
