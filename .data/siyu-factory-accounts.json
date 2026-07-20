@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:41:03.048Z"
+      "updatedAt": "2026-07-20T03:42:04.082Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "a666f526-1af6-42aa-8b2f-928b151ec2a0",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:42:04.082Z",
+      "metadata": {
+        "taskId": "f1c8f0d5db674742966af17feda85924",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "4a0cba78-9d44-407d-aa9c-2e0020fd992d",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11413,10 +11425,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:41:12.725Z",
-      "updatedAt": "2026-07-20T03:41:12.725Z"
+      "updatedAt": "2026-07-20T03:42:04.081Z"
     },
     {
       "id": "1aefe4213c4141b99e095b3a622cafef",
@@ -15805,9 +15817,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the reference image as the exact character reference. Preserve the woman's original face, curly hairstyle, body proportions, and clothing.\n\nCreate a realistic 9:16 vertical TikTok lifestyle selfie video.\n\nThe woman is indoors taking a casual selfie video. She looks into the camera naturally.\n\nHer movement is minimal and realistic:\nshe slightly tilts her head,\nslowly moves one curl away from her face,\nblinks naturally,\nbreathes softly,\nand slightly changes her posture.\n\nThe curly hair should have realistic weight and movement. When she touches her hair, the curls should slowly return naturally instead of floating.\n\nThe body movement should feel human:\nsmall shoulder movement,\nnatural breathing,\nsubtle posture adjustment,\nrealistic gravity behavior.\n\nCamera:\nsmartphone selfie camera,\nslight handheld shake,\nnormal phone quality,\nnot cinematic.\n\nKeep:\nnatural pores,\nreal skin texture,\nsoft shadows,\nauthentic home environment.\n\nBackground music:\nSZA - Good Days (soft version)\n\nNegative:\nno artificial beauty filter,\nno perfect smooth skin,\nno exaggerated hair flip,\nno fast movement,\nno unnatural body physics,\nno robotic animation.",
       "taskId": "f1c8f0d5db674742966af17feda85924",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"73b8b3e0-490d-4f5e-9113-6a0fc1651d21\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:41:09 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:41:12.725Z",
-      "updatedAt": "2026-07-20T03:41:53.492Z"
+      "updatedAt": "2026-07-20T03:42:04.082Z"
     },
     {
       "id": "e38b91ac-9bf8-42ce-bc0c-a28d66f45e4e",
