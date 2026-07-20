@@ -14398,11 +14398,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Keep the same woman, same face, same curly hair and same natural body shape.\r\n\r\nCreate a realistic 9:16 vertical selfie video. She is sitting indoors with warm sunlight coming through the window. She wears a green top and looks relaxed and confident.\r\n\r\nShe looks at the camera, softly blinks, slightly smiles, and gently moves her hair with one hand. She makes a small natural posture adjustment while sitting.\r\n\r\nHer curly hair moves naturally with realistic weight. Her shoulders, arms and upper body have subtle natural movement from breathing and gravity.\r\n\r\nKeep realistic skin texture, natural pores, soft sunlight, and authentic smartphone camera quality.\r\n\r\nBackground music: warm chill R&B, soft summer vibe.\r\n\r\nNo beauty filter, no plastic skin, no fake body movement, no AI generated feeling.",
+      "prompt": "Keep the same woman, same face, same curly hair and same natural body shape.\n\nCreate a realistic 9:16 vertical selfie video. She is sitting indoors with warm sunlight coming through the window. She wears a green top and looks relaxed and confident.\n\nShe looks at the camera, softly blinks, slightly smiles, and gently moves her hair with one hand. She makes a small natural posture adjustment while sitting.\n\nHer curly hair moves naturally with realistic weight. Her shoulders, arms and upper body have subtle natural movement from breathing and gravity.\n\nKeep realistic skin texture, natural pores, soft sunlight, and authentic smartphone camera quality.\n\nBackground music: warm chill R&B, soft summer vibe.\n\nNo beauty filter, no plastic skin, no fake body movement, no AI generated feeling.",
       "taskId": "3cc37be26851486589b113869d8be210",
       "status": "IN_PROGRESS",
       "createdAt": "2026-07-20T02:58:49.222Z",
-      "updatedAt": "2026-07-20T02:58:49.222Z"
+      "updatedAt": "2026-07-20T02:58:54.784Z"
     },
     {
       "id": "b04a01cf-0ae3-4581-bc0d-0a905a72cb94",
