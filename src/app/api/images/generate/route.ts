@@ -131,7 +131,7 @@ function findGeminiInlineImage(value: unknown, seen = new Set<unknown>()): strin
 function findImageUrl(value: unknown, seen = new Set<unknown>()): string {
   if (!value) return "";
   if (typeof value === "string") {
-    if (/^https?:\/\/.+\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(value)) return value;
+    if (/^https?:\/\//i.test(value)) return value;
     if (/^data:image\//i.test(value)) return value;
     return "";
   }
@@ -140,7 +140,20 @@ function findImageUrl(value: unknown, seen = new Set<unknown>()): string {
   seen.add(value);
 
   const record = value as Record<string, unknown>;
-  for (const key of ["url", "image_url", "output_url", "result_url", "previewUrl"]) {
+  for (const key of [
+    "url",
+    "image_url",
+    "imageUrl",
+    "output_url",
+    "outputUrl",
+    "result_url",
+    "resultUrl",
+    "previewUrl",
+    "download_url",
+    "downloadUrl",
+    "signed_url",
+    "signedUrl"
+  ]) {
     const found = findImageUrl(record[key], seen);
     if (found) return found;
   }
