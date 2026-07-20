@@ -9302,10 +9302,10 @@
       "type": "video",
       "model": "veo_3_1-fast-portrait-fl-hd",
       "amount": 30000,
-      "status": "queued",
+      "status": "completed",
       "refunded": false,
       "createdAt": "2026-07-20T02:13:51.916Z",
-      "updatedAt": "2026-07-20T02:13:51.916Z"
+      "updatedAt": "2026-07-20T02:16:23.225Z"
     },
     {
       "id": "task_eheJ7HfSWf1mJyGyBQRqcRE5UkGlIsaj",
@@ -13243,9 +13243,10 @@
       "model": "veo_3_1-fast-portrait-fl-hd",
       "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair pattern, same skin tone and same body shape.\n\nCreate a realistic getting-ready-at-home moment.\n\nThe woman is standing in her bedroom before going out. She looks at herself briefly in the mirror, adjusts her hair naturally, fixes her shirt slightly, then turns toward the camera with a relaxed expression.\n\nShe does not pose like a model. Her movements should feel spontaneous and casual.\n\nHer curls should move naturally with her body movement. Some curls bounce slightly, some loose strands fall across her face, creating realistic hair behavior.\n\nShe slightly changes her weight from one foot to another, showing natural posture and balance.\n\nHer expression changes naturally from focused to a small confident smile.\n\nCamera style: handheld smartphone video, natural indoor lighting, realistic home environment.\n\nMaintain real skin texture, natural imperfections, realistic body gravity and authentic human movement.\n\nAvoid perfect beauty look, avoid artificial smooth skin, avoid stiff movements, avoid exaggerated poses.\n\nVertical 9:16.",
       "taskId": "task_1klvHrLVF7cknUEiVw63X0Puy4k5HaGF",
-      "status": "in_progress",
+      "status": "completed",
       "createdAt": "2026-07-20T02:13:51.916Z",
-      "updatedAt": "2026-07-20T02:16:14.970Z"
+      "updatedAt": "2026-07-20T02:16:23.225Z",
+      "previewUrl": "https://file.bandianwa.com/ziyou2/video/9379f895-12b4-44a7-99d7-e2751a0d0fff.mp4"
     },
     {
       "id": "bed552ea-69db-4afd-8091-9693d6d1a113",
