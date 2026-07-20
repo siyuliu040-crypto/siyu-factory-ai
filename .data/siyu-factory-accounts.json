@@ -12859,9 +12859,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Keep the same woman, same face, same curly hair and same natural body shape.\n\nCreate a realistic 9:16 vertical selfie video. She is sitting indoors with warm sunlight coming through the window. She wears a green top and looks relaxed and confident.\n\nShe looks at the camera, softly blinks, slightly smiles, and gently moves her hair with one hand. She makes a small natural posture adjustment while sitting.\n\nHer curly hair moves naturally with realistic weight. Her shoulders, arms and upper body have subtle natural movement from breathing and gravity.\n\nKeep realistic skin texture, natural pores, soft sunlight, and authentic smartphone camera quality.\n\nBackground music: warm chill R&B, soft summer vibe.\n\nNo beauty filter, no plastic skin, no fake body movement, no AI generated feeling.",
       "taskId": "6e4eb80960204b2fba3ade781b7b4967",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T01:54:31.619Z",
-      "updatedAt": "2026-07-20T01:54:39.790Z"
+      "updatedAt": "2026-07-20T01:54:41.190Z"
     },
     {
       "id": "1f3c4143-a96a-4e7d-a06d-05ba33fa1e98",
