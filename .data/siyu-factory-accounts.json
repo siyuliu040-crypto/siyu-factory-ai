@@ -15700,9 +15700,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "original image as the exact character reference. Keep the same woman, the same face identity, same facial features, same skin tone, same body shape, and the same medium-length soft wavy hair. Keep the same light green bikini top and the same close selfie composition.\n\nCreate a realistic, natural-looking vertical 9:16 lifestyle video. The scene should feel like a casual phone selfie video, not a photoshoot and not overly posed.\n\nThe woman is leaning slightly toward the camera in a relaxed way. She keeps a calm and soft expression, then makes small natural movements: subtle blinking, gentle breathing, a slight shoulder shift, a tiny posture adjustment, and a soft change in gaze. She briefly looks into the camera, then glances slightly downward and back, with a faint natural smile forming at the end.\n\nHer hair should move naturally with gravity. A few loose strands near the face should shift slightly as she moves. Add a small natural hand movement near the hair or collarbone area, very soft and realistic, without exaggerated gestures.\n\nCamera style should feel like a real smartphone front-camera clip with slight handheld micro-shake, natural framing, and realistic social media quality. Lighting should stay soft and flattering, while keeping real skin texture, natural pores, and subtle body movement. Do not make the skin overly smooth, glossy, or plastic.\n\nAvoid stiff posing, dramatic motion, fake facial expressions, beauty-filter look, AI-looking skin, or slow-motion effects.\n\nBackground music: soft trendy chill R&B instrumental, light and feminine, suitable for TikTok.",
       "taskId": "7f690ba4013944b19d0270d97574966b",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T03:15:20.274Z",
-      "updatedAt": "2026-07-20T03:15:27.294Z"
+      "updatedAt": "2026-07-20T03:15:34.855Z"
     },
     {
       "id": "66639e3d-2ec0-4234-bc6c-daef7bf84101",
