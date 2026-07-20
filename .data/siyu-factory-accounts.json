@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9986490000,
+      "credits": 9986500000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T00:47:06.608Z"
+      "updatedAt": "2026-07-20T00:58:06.543Z"
     }
   ],
   "sessions": [
@@ -574,6 +574,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "823d7e2c-8454-4985-b1ba-2466e26b9765",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 10000,
+      "balanceAfter": 9986500000,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-20T00:58:06.544Z",
+      "metadata": {
+        "taskId": "img_1784508434603_5b634b1643c8d",
+        "model": "hfsy:nano-banana-2"
+      }
+    },
     {
       "id": "5ddf0cb6-ccb0-48a3-b95f-75702a769882",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -8619,10 +8631,10 @@
       "type": "image",
       "model": "hfsy:nano-banana-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T00:47:14.606Z",
-      "updatedAt": "2026-07-20T00:47:14.606Z"
+      "updatedAt": "2026-07-20T00:58:06.543Z"
     },
     {
       "id": "64a3303b8ba24428b3707e6ba8b4882a",
@@ -12252,9 +12264,10 @@
       "model": "hfsy:nano-banana-2",
       "prompt": "A realistic 9:16 vertical smartphone selfie photo of a beautiful Black woman with natural curly hair, sitting casually on a cozy bedroom bed. She wears a simple fitted tank top and comfortable shorts. Her curly hair has realistic volume and natural texture, slightly messy and authentic.\n\nShe is holding a phone with one hand, looking at the camera with a relaxed confident expression, soft smile, natural eyes. One hand gently touches her curls. Natural sitting posture, realistic body proportions.\n\nWarm morning window light, cozy bedroom background, real lifestyle photo style. Natural skin texture, visible pores, slight imperfections, realistic shadows, no heavy makeup, no beauty filter.\n\nShot on smartphone camera, casual TikTok lifestyle content, authentic human feeling.\n\nNo plastic skin, no unrealistic body, no AI face, no exaggerated pose.",
       "taskId": "img_1784508434603_5b634b1643c8d",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-07-20T00:47:14.606Z",
-      "updatedAt": "2026-07-20T00:47:14.606Z"
+      "updatedAt": "2026-07-20T00:58:06.544Z",
+      "error": "{\"error\":{\"message\":\"Upstream is temporarily unavailable. Please retry later.\",\"type\":\"server_error\",\"param\":\"\",\"code\":\"ERR-34B45073DC\"}}"
     },
     {
       "id": "f47d231c-2a6e-4a6a-8e63-175e4f715fc8",
