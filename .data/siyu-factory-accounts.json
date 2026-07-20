@@ -15840,9 +15840,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the reference image as the exact character reference. Keep the same person, same face, same hairstyle, same body shape and same clothing.\n\nCreate a realistic 9:16 vertical TikTok selfie video inside a car.\n\nThe woman is sitting naturally in the passenger seat and recording herself with a phone.\n\nShe looks at the camera with a relaxed expression.\n\nSimple natural movements:\nshe slightly adjusts her sitting position,\nmoves her head a little,\nblinks naturally,\ntakes a soft breath,\nand gently moves her hair with one hand.\n\nHer hair should react naturally with gravity and slowly settle back.\n\nThe body should have realistic subtle movement:\nnatural breathing,\nsmall shoulder movement,\nslight posture change,\nrealistic human balance.\n\nCamera:\nreal smartphone front camera,\nslight hand shake,\ncasual everyday TikTok video style.\n\nKeep realistic:\nnatural skin texture,\nsmall facial details,\nnormal phone camera quality,\nno heavy editing.\n\nBackground music:\nBrent Faiyaz - All Mine (slowed version)\n\nNegative:\nno face distortion,\nno body modification,\nno unrealistic shaking,\nno exaggerated movements,\nno fake smooth skin,\nno AI appearance.",
       "taskId": "8331d652033942c8bf537f9b8ced6db3",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T03:42:14.593Z",
-      "updatedAt": "2026-07-20T03:42:21.619Z"
+      "updatedAt": "2026-07-20T03:42:23.062Z"
     },
     {
       "id": "a0a6cac9-e049-4e00-9f44-2c8a2b4dc066",
