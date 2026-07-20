@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:09:19.837Z"
+      "updatedAt": "2026-07-20T03:09:51.193Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "70b37f1b-753e-4b7b-91bc-acdc8e1a172f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:09:51.193Z",
+      "metadata": {
+        "taskId": "1cf9adb6a66f4c1c9e1c1147aee88526",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "028b7b42-a439-4d3b-b45b-9e5a7eda9789",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11125,10 +11137,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:09:23.758Z",
-      "updatedAt": "2026-07-20T03:09:23.758Z"
+      "updatedAt": "2026-07-20T03:09:51.193Z"
     },
     {
       "id": "fc71fd252a2e4e68b97120efffabaf54",
@@ -15385,9 +15397,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same facial identity, same curly hair volume, same skin tone and natural body shape.\n\nCreate a casual bedroom lifestyle moment.\n\nThe woman is getting ready at home. She is sitting near a mirror, casually fixing her hair while looking at herself. She notices the camera, smiles naturally, then continues adjusting her curls.\n\nHer movements should be small and realistic:\n- touching a few curls\n- adjusting her necklace\n- changing her sitting posture\n- slight shoulder movement\n\nDo not make her intentionally show her hair. It should feel like a normal daily moment.\n\nHer curly hair should have realistic weight and bounce. Individual curls should separate naturally when she moves.\n\nUse natural indoor lighting and realistic smartphone camera quality.\n\nKeep skin texture natural with visible details, soft shadows and realistic imperfections.\n\nNo beauty filter, no plastic skin, no fashion photoshoot feeling, no AI-generated appearance.\n\nVertical 9:16 realistic social media video.",
       "taskId": "1cf9adb6a66f4c1c9e1c1147aee88526",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"6065b7c3-8e45-4545-922d-6b3cad2635eb\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:09:26 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:09:23.758Z",
-      "updatedAt": "2026-07-20T03:09:40.548Z"
+      "updatedAt": "2026-07-20T03:09:51.193Z"
     },
     {
       "id": "322a2745-10d0-4267-9315-ea210c99470c",
