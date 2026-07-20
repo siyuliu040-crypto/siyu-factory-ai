@@ -15500,12 +15500,12 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Keep the same woman, same face, same curly hairstyle and natural proportions.\r\n\r\nCreate a realistic 9:16 vertical video. She is indoors near natural window light, wearing a casual outfit. She looks at the camera with a relaxed expression.\r\n\r\nShe gently touches the side of her curls, slightly moves her shoulders, and naturally changes her posture. Her hair softly bounces with realistic curl movement.\r\n\r\nHer breathing is visible through subtle body movement. The camera feels like a real phone recording with small natural shake.\r\n\r\nMaintain realistic skin texture, visible pores, natural shadows and authentic details.\r\n\r\nNo over smoothing, no plastic skin, no fake beauty effect.\r\n\r\nBackground music: soft female R&B, cozy lifestyle atmosphere.\r\n\r\nNo head tilt, no exaggerated posing, no artificial movement.",
+      "prompt": "Keep the same woman, same face, same curly hairstyle and natural proportions.\n\nCreate a realistic 9:16 vertical video. She is indoors near natural window light, wearing a casual outfit. She looks at the camera with a relaxed expression.\n\nShe gently touches the side of her curls, slightly moves her shoulders, and naturally changes her posture. Her hair softly bounces with realistic curl movement.\n\nHer breathing is visible through subtle body movement. The camera feels like a real phone recording with small natural shake.\n\nMaintain realistic skin texture, visible pores, natural shadows and authentic details.\n\nNo over smoothing, no plastic skin, no fake beauty effect.\n\nBackground music: soft female R&B, cozy lifestyle atmosphere.\n\nNo head tilt, no exaggerated posing, no artificial movement.",
       "taskId": "9ee4360cf89045b985a1a3d0348bcb1b",
-      "status": "failed",
+      "status": "IN_PROGRESS",
       "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"0f23c658-b2d6-42d4-8ee5-e03e21442a1c\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:13:09 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:13:06.100Z",
-      "updatedAt": "2026-07-20T03:13:12.542Z"
+      "updatedAt": "2026-07-20T03:13:14.149Z"
     },
     {
       "id": "48f71e18-45c4-4c6e-9ba9-104ac5308665",
