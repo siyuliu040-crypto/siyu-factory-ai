@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T02:33:46.465Z"
+      "updatedAt": "2026-07-20T02:34:20.732Z"
     }
   ],
   "sessions": [
@@ -598,6 +598,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "00e4dee5-bc85-4db1-b4c5-82cc113ae7d7",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T02:34:20.732Z",
+      "metadata": {
+        "taskId": "d8b9a6a4cb89435a9e330cffe6b7db73",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "4882fd32-1568-4f8e-a5da-de85ece5723e",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -9852,10 +9864,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T02:33:51.695Z",
-      "updatedAt": "2026-07-20T02:33:51.695Z"
+      "updatedAt": "2026-07-20T02:34:20.732Z"
     },
     {
       "id": "905410119b74498eaca025dcc5288d57",
@@ -13903,9 +13915,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, the same face identity, same facial features, same skin tone, same body shape, and the same medium-length soft wavy hair. Keep the same light green bikini top and the same close selfie composition.\n\nCreate a realistic, natural-looking vertical 9:16 lifestyle video. The scene should feel like a casual phone selfie video, not a photoshoot and not overly posed.\n\nThe woman is leaning slightly toward the camera in a relaxed way. She keeps a calm and soft expression, then makes small natural movements: subtle blinking, gentle breathing, a slight shoulder shift, a tiny posture adjustment, and a soft change in gaze. She briefly looks into the camera, then glances slightly downward and back, with a faint natural smile forming at the end.\n\nHer hair should move naturally with gravity. A few loose strands near the face should shift slightly as she moves. Add a small natural hand movement near the hair or collarbone area, very soft and realistic, without exaggerated gestures.\n\nCamera style should feel like a real smartphone front-camera clip with slight handheld micro-shake, natural framing, and realistic social media quality. Lighting should stay soft and flattering, while keeping real skin texture, natural pores, and subtle body movement. Do not make the skin overly smooth, glossy, or plastic.\n\nAvoid stiff posing, dramatic motion, fake facial expressions, beauty-filter look, AI-looking skin, or slow-motion effects.\n\nBackground music: soft trendy chill R&B instrumental, light and feminine, suitable for TikTok.",
       "taskId": "d8b9a6a4cb89435a9e330cffe6b7db73",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"21c85681-9ba1-4849-88d5-d338b62367a9\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 02:33:53 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T02:33:51.695Z",
-      "updatedAt": "2026-07-20T02:34:12.643Z"
+      "updatedAt": "2026-07-20T02:34:20.732Z"
     },
     {
       "id": "6eeeaa12-5af8-470d-b307-0c26f806f037",
