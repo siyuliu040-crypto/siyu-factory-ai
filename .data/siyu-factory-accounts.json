@@ -86,9 +86,9 @@
       "name": "阎重谋",
       "passwordHash": "0e30990e4f959a54184bd9246f792997:f3f916313ffd31235fd3edb32eca97bae6fa80cfeb300f5baf34e1c28dab837b08bcae9468991094cfeeed82644fd0400d70571f8d748892f39dda40e816d81b",
       "role": "user",
-      "credits": 9970870000,
+      "credits": 9970880000,
       "createdAt": "2026-07-16T09:10:25.215Z",
-      "updatedAt": "2026-07-20T03:27:48.005Z"
+      "updatedAt": "2026-07-20T03:32:06.326Z"
     },
     {
       "id": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "7f162910-5a57-49e5-81d9-10df7dae5c22",
+      "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
+      "amount": 10000,
+      "balanceAfter": 9970880000,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-20T03:32:06.326Z",
+      "metadata": {
+        "taskId": "img_1784518069495_c8ceb2bdd214b",
+        "model": "hfsy:nano-banana-2"
+      }
+    },
     {
       "id": "95162f9a-f07c-4a8c-9d54-552923c72b50",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -11365,10 +11377,10 @@
       "type": "image",
       "model": "hfsy:nano-banana-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:27:49.497Z",
-      "updatedAt": "2026-07-20T03:27:49.497Z"
+      "updatedAt": "2026-07-20T03:32:06.326Z"
     },
     {
       "id": "7f690ba4013944b19d0270d97574966b",
@@ -15735,9 +15747,10 @@
       "model": "hfsy:nano-banana-2",
       "prompt": "Ultra realistic winter biblical scene.\n\nJesus walks through a snowy landscape carrying a basket of bread.\n\nHe gives food to cold travelers.\n\nHis white robe contrasts with the snow.\n\nSoft light from the cloudy sky.\n\nTheme:\nhope and kindness in hardship.",
       "taskId": "img_1784518069495_c8ceb2bdd214b",
-      "status": "queued",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"Upstream is temporarily unavailable. Please retry later.\",\"type\":\"server_error\",\"param\":\"\",\"code\":\"ERR-049D87D16A\"}}",
       "createdAt": "2026-07-20T03:27:49.497Z",
-      "updatedAt": "2026-07-20T03:27:49.497Z"
+      "updatedAt": "2026-07-20T03:32:06.326Z"
     },
     {
       "id": "8120657b-52d0-4981-97c7-871740fc4376",
