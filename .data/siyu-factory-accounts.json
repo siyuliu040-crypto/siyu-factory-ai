@@ -12999,9 +12999,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, same face identity, same hairstyle, same skin tone and same body proportions.\n\nCreate a realistic car lifestyle video.\n\nThe woman is sitting naturally inside her car before going somewhere. She adjusts the air conditioning, briefly looks outside the window, smiles slightly, then looks back at the phone camera.\n\nShe casually fixes a few curls near her face and adjusts her seat position.\n\nThe movement should feel like a real person recording a quick moment, not a planned video.\n\nInclude realistic details:\n- sunlight changing through the car window\n- slight reflections on the glass\n- natural shadows inside the car\n- small breathing and shoulder movement\n- realistic hair movement\n\nHer expression should be relaxed, confident and natural.\n\nNo influencer posing, no exaggerated facial expressions, no fake smile.\n\nKeep realistic skin texture, natural lighting, authentic smartphone quality.\n\nAvoid plastic skin, AI appearance, unrealistic hands or body movement.\n\nVertical 9:16.",
       "taskId": "e177d1ff892f4b1b959b8be8071c62fd",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T01:57:15.120Z",
-      "updatedAt": "2026-07-20T01:57:24.034Z"
+      "updatedAt": "2026-07-20T01:57:26.175Z"
     },
     {
       "id": "aed98caf-4b5c-4ac3-ba57-459dc977856f",
