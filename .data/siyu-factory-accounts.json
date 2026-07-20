@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9981220000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:05:28.326Z"
+      "updatedAt": "2026-07-20T03:05:30.495Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,17 @@
     }
   ],
   "ledger": [
+    {
+      "id": "79446463-6902-405c-add0-3c4e3704fa54",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 5160000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:05:30.495Z",
+      "metadata": {
+        "model": "vidu:viduq3-turbo"
+      }
+    },
     {
       "id": "a41e43d9-c3a6-47f5-a6d4-4e17d3f9bbb7",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
