@@ -13796,11 +13796,11 @@
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
       "model": "hfsy:kling-o3",
-      "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair, same skin tone and same body proportions.\r\n\r\nCreate a realistic relaxing evening moment.\r\n\r\nThe woman is sitting comfortably at home. Instead of posing, she is casually listening to music or checking her phone. She lowers the phone, looks at the camera naturally, and gives a small relaxed smile.\r\n\r\nShe changes her posture slightly, moves her hand away from her face, and gently adjusts her hair.\r\n\r\nHer movements should follow realistic human behavior:\r\nnatural breathing, slight shoulder movement, small hand movements, realistic body weight.\r\n\r\nHer curls should move naturally with gravity, with a few strands falling forward.\r\n\r\nThe video should look like a real friend recorded a casual moment.\r\n\r\nNo model pose, no exaggerated expression, no perfect symmetry, no AI beauty effect.\r\n\r\nKeep realistic skin texture, natural lighting, realistic details.\r\n\r\nVertical 9:16 smartphone lifestyle video.",
+      "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair, same skin tone and same body proportions.\n\nCreate a realistic relaxing evening moment.\n\nThe woman is sitting comfortably at home. Instead of posing, she is casually listening to music or checking her phone. She lowers the phone, looks at the camera naturally, and gives a small relaxed smile.\n\nShe changes her posture slightly, moves her hand away from her face, and gently adjusts her hair.\n\nHer movements should follow realistic human behavior:\nnatural breathing, slight shoulder movement, small hand movements, realistic body weight.\n\nHer curls should move naturally with gravity, with a few strands falling forward.\n\nThe video should look like a real friend recorded a casual moment.\n\nNo model pose, no exaggerated expression, no perfect symmetry, no AI beauty effect.\n\nKeep realistic skin texture, natural lighting, realistic details.\n\nVertical 9:16 smartphone lifestyle video.",
       "taskId": "541abbe418884590a811b9cfa73e03e1",
       "status": "IN_PROGRESS",
       "createdAt": "2026-07-20T02:31:55.561Z",
-      "updatedAt": "2026-07-20T02:31:55.561Z"
+      "updatedAt": "2026-07-20T02:32:00.693Z"
     },
     {
       "id": "24123134-b468-4b0f-b3f4-611147be50af",
