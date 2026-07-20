@@ -136,9 +136,9 @@
       "name": "我是王晨",
       "passwordHash": "98f6d182dd95ad1a8df0bd7b2f404526:e77d04ef7bae0725ece521dd755470148e730fd14c316b0db1f9ad0b5e87ebbb6fb891087493447537ccd2e5b0dce16be0ef79c126882280f33f29455cd26a60",
       "role": "user",
-      "credits": 9986490000,
+      "credits": 9986500000,
       "createdAt": "2026-07-16T09:12:09.707Z",
-      "updatedAt": "2026-07-20T01:08:23.960Z"
+      "updatedAt": "2026-07-20T01:15:04.391Z"
     },
     {
       "id": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -586,6 +586,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "5a39b043-e19b-44c0-a41d-156a9f6b62bf",
+      "userId": "d689bf01-ba46-4e9b-9bed-d3c07454e88e",
+      "amount": 10000,
+      "balanceAfter": 9986500000,
+      "reason": "image generation failed refund",
+      "createdAt": "2026-07-20T01:15:04.391Z",
+      "metadata": {
+        "taskId": "img_1784509710283_788d980e2c39c",
+        "model": "hfsy:nano-banana-2"
+      }
+    },
     {
       "id": "afcbd30b-5052-48c4-ac8c-acd61eee4be3",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -8761,10 +8773,10 @@
       "type": "image",
       "model": "hfsy:nano-banana-2",
       "amount": 10000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T01:09:04.505Z",
-      "updatedAt": "2026-07-20T01:09:04.505Z"
+      "updatedAt": "2026-07-20T01:15:04.391Z"
     },
     {
       "id": "0fe980299a11407596705d9f1c2b6c75",
@@ -12450,9 +12462,10 @@
       "model": "hfsy:nano-banana-2",
       "prompt": "麦加大清真寺夜晚，电影感超写实摄影，低角度近距离特写克尔白一角，黑色帷幕在夜色中呈现深沉厚重的丝绸质感，金色书法刺绣在高位灯光下散发克制而神圣的光泽，背景中的白色拱廊与灯光轻微虚化，形成层次分明的空间纵深，空气中带有微弱夜间薄雾，使光线更加柔和，画面庄严、肃穆、宏伟，电影级构图，真实材质，高动态范围，85mm镜头，浅景深，8K超清细节。",
       "taskId": "img_1784509710283_788d980e2c39c",
-      "status": "queued",
+      "status": "failed",
       "createdAt": "2026-07-20T01:09:04.505Z",
-      "updatedAt": "2026-07-20T01:09:04.505Z"
+      "updatedAt": "2026-07-20T01:15:04.391Z",
+      "error": "{\"error\":{\"message\":\"Upstream is temporarily unavailable. Please retry later.\",\"type\":\"server_error\",\"param\":\"\",\"code\":\"ERR-916F1C778F\"}}"
     },
     {
       "id": "9e3ca583-88de-42c2-bc24-997599b552ba",
