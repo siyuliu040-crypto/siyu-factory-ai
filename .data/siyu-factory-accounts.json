@@ -12964,9 +12964,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Preserve the same woman, same face, same curly hair, same skin tone and same body proportions.\n\nCreate a realistic relaxing evening moment.\n\nThe woman is sitting comfortably at home. Instead of posing, she is casually listening to music or checking her phone. She lowers the phone, looks at the camera naturally, and gives a small relaxed smile.\n\nShe changes her posture slightly, moves her hand away from her face, and gently adjusts her hair.\n\nHer movements should follow realistic human behavior:\nnatural breathing, slight shoulder movement, small hand movements, realistic body weight.\n\nHer curls should move naturally with gravity, with a few strands falling forward.\n\nThe video should look like a real friend recorded a casual moment.\n\nNo model pose, no exaggerated expression, no perfect symmetry, no AI beauty effect.\n\nKeep realistic skin texture, natural lighting, realistic details.\n\nVertical 9:16 smartphone lifestyle video.",
       "taskId": "cbaa222686924361ade88a1c661ef06a",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T01:56:26.844Z",
-      "updatedAt": "2026-07-20T01:56:42.002Z"
+      "updatedAt": "2026-07-20T01:56:44.626Z"
     },
     {
       "id": "a00fd710-70be-46e8-a931-4895dc0749f4",
