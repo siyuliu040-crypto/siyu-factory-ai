@@ -8925,6 +8925,17 @@
   ],
   "generationTasks": [
     {
+      "id": "img_1784511622070_da3be077d0511",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "image",
+      "model": "hfsy:nano-banana-2",
+      "amount": 10000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-20T01:40:22.072Z",
+      "updatedAt": "2026-07-20T01:40:22.072Z"
+    },
+    {
       "id": "1cf6b0d2c3244612ada81324f136bb39",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -12666,6 +12677,17 @@
     }
   ],
   "history": [
+    {
+      "id": "4a61b7d1-333c-4467-8368-c0bf635e8c29",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "image",
+      "model": "hfsy:nano-banana-2",
+      "prompt": "Edit the original image. Keep the exact same person from the reference image. Preserve her facial identity, face shape, eyes, nose, lips, skin tone, natural curly black hair texture, and body proportions. Do not change her identity.\r\n\r\nReplace the original beach rocks background with a realistic modern bedroom environment. Create a warm natural lifestyle atmosphere with soft window light, a clean bed, curtains, and subtle home details.\r\n\r\nChange her outfit completely. Do not keep the orange sports top or black bikini bottom. Dress her in a different casual feminine outfit, such as a fitted neutral tank top with high-waisted lounge shorts. Keep the outfit realistic and natural.\r\n\r\nChange the pose completely. Do not keep the original selfie pose. Do not tilt her head. Create a natural relaxed sitting pose on the edge of a bed. Her body is slightly turned toward the camera, one hand resting naturally on her leg, the other hand gently touching her hair. Her expression should be calm, confident, and natural with a soft relaxed smile.\r\n\r\nMake the image look like a real smartphone lifestyle photo. Use natural camera perspective, realistic lighting, subtle imperfections, and authentic human details.\r\n\r\nKeep realistic skin texture, natural pores, soft shadows, and real body structure. Maintain realistic gravity, natural body compression, and normal proportions.\r\n\r\nNo plastic skin, no excessive smoothing, no unrealistic curves, no artificial beauty filter, no AI-looking face, no exaggerated posing.\r\n\r\nVertical 9:16 portrait, single image only, realistic lifestyle photo.",
+      "taskId": "img_1784511622070_da3be077d0511",
+      "status": "queued",
+      "createdAt": "2026-07-20T01:40:22.072Z",
+      "updatedAt": "2026-07-20T01:40:22.072Z"
+    },
     {
       "id": "076c3093-8734-41cf-80ce-0d7f9732ac36",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
