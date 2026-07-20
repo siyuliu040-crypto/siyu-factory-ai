@@ -16048,9 +16048,9 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the reference image as the exact character reference. Preserve the woman's original face, curly hairstyle, body proportions, and clothing.\n\nCreate a realistic 9:16 vertical TikTok lifestyle selfie video.\n\nThe woman is indoors taking a casual selfie video. She looks into the camera naturally.\n\nHer movement is minimal and realistic:\nshe slightly tilts her head,\nslowly moves one curl away from her face,\nblinks naturally,\nbreathes softly,\nand slightly changes her posture.\n\nThe curly hair should have realistic weight and movement. When she touches her hair, the curls should slowly return naturally instead of floating.\n\nThe body movement should feel human:\nsmall shoulder movement,\nnatural breathing,\nsubtle posture adjustment,\nrealistic gravity behavior.\n\nCamera:\nsmartphone selfie camera,\nslight handheld shake,\nnormal phone quality,\nnot cinematic.\n\nKeep:\nnatural pores,\nreal skin texture,\nsoft shadows,\nauthentic home environment.\n\nBackground music:\nSZA - Good Days (soft version)\n\nNegative:\nno artificial beauty filter,\nno perfect smooth skin,\nno exaggerated hair flip,\nno fast movement,\nno unnatural body physics,\nno robotic animation.",
       "taskId": "1804075e0fe347e5b1958f8dd71b2e9d",
-      "status": "IN_PROGRESS",
+      "status": "in_progress",
       "createdAt": "2026-07-20T05:23:01.839Z",
-      "updatedAt": "2026-07-20T05:23:07.955Z"
+      "updatedAt": "2026-07-20T05:23:09.475Z"
     },
     {
       "id": "b50f3ab7-20f1-46de-91ad-9af1cbc138ec",
