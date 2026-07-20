@@ -11433,7 +11433,7 @@
       "status": "failed",
       "refunded": true,
       "createdAt": "2026-07-20T03:12:42.614Z",
-      "updatedAt": "2026-07-20T03:12:57.868Z"
+      "updatedAt": "2026-07-20T03:22:02.361Z"
     },
     {
       "id": "a3718aa33ee54f468202f64d3cdb1974",
@@ -15799,7 +15799,7 @@
       "status": "failed",
       "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"dd9b171c-e390-42c5-ab08-b79708ed4084\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:12:46 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:12:42.614Z",
-      "updatedAt": "2026-07-20T03:12:57.868Z"
+      "updatedAt": "2026-07-20T03:22:02.361Z"
     },
     {
       "id": "74e01fd2-6b0b-4155-ac87-9e4fb1c6f93a",
