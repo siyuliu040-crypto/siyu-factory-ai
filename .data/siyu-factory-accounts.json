@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:40:18.834Z"
+      "updatedAt": "2026-07-20T03:40:53.997Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "815c257e-1c13-411c-aa37-03ade2334d64",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:40:53.997Z",
+      "metadata": {
+        "taskId": "1aefe4213c4141b99e095b3a622cafef",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "6e509bee-fe46-406d-bb31-0e368818bfc1",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11389,10 +11401,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:40:21.215Z",
-      "updatedAt": "2026-07-20T03:40:21.215Z"
+      "updatedAt": "2026-07-20T03:40:53.997Z"
     },
     {
       "id": "img_1784518069495_c8ceb2bdd214b",
@@ -15770,9 +15782,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the reference image as the exact character reference. Keep the same face, same hairstyle, same skin tone, same body shape and same outfit.\n\nCreate a realistic 9:16 vertical TikTok selfie video.\n\nThe woman is lying naturally on a bed while holding the phone above her. She looks directly into the camera with a calm and confident expression.\n\nKeep the movement simple and realistic:\nshe slowly blinks,\nslightly moves her head,\ngently adjusts her hand near her chest,\ntakes a natural breath,\nand makes a small relaxed body adjustment on the bed.\n\nHer curly hair softly moves against the pillow with natural gravity. Some curls slightly bounce when she moves her head.\n\nAdd realistic human details:\nnatural breathing,\nsmall shoulder movement,\nsubtle body movement caused by shifting position,\nnatural facial expression changes,\nrealistic skin texture.\n\nCamera:\nreal smartphone front camera,\nslight handheld movement,\ncasual TikTok selfie style,\nnatural distance.\n\nLighting:\nsoft indoor lighting,\nreal bedroom atmosphere,\nno beauty filter,\nkeep natural skin details.\n\nBackground music:\nSZA - Snooze (slowed + soft version)\n\nNegative:\nno face change,\nno body change,\nno extra fingers,\nno exaggerated movement,\nno dancing,\nno unnatural posing,\nno plastic skin,\nno AI generated look,\nno unrealistic hair movement.",
       "taskId": "1aefe4213c4141b99e095b3a622cafef",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"9ea95b21-15f0-4341-8b89-c5d478664aa8\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:40:25 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:40:21.215Z",
-      "updatedAt": "2026-07-20T03:40:43.876Z"
+      "updatedAt": "2026-07-20T03:40:53.997Z"
     },
     {
       "id": "6bf317bf-8851-49ce-8ffd-df7e27eb4371",
