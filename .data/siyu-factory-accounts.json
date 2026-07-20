@@ -146,9 +146,9 @@
       "name": "于",
       "passwordHash": "0903678422d4fd36fccd1f36b0462c2f:acc84e87544ef72699102e2eb05c9950e3e9098b40a4882787b7b4ec23e3dd927bf0679cdbed45ecc68768c9be4bf4c6156690733896203499df2617c27afa94",
       "role": "user",
-      "credits": 9985930000,
+      "credits": 9986380000,
       "createdAt": "2026-07-16T09:32:44.535Z",
-      "updatedAt": "2026-07-20T03:08:53.119Z"
+      "updatedAt": "2026-07-20T03:09:15.075Z"
     }
   ],
   "sessions": [
@@ -610,6 +610,18 @@
     }
   ],
   "ledger": [
+    {
+      "id": "cc396545-9ba1-4612-85cd-481075d7686d",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "amount": 450000,
+      "balanceAfter": 9986380000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-20T03:09:15.075Z",
+      "metadata": {
+        "taskId": "fc71fd252a2e4e68b97120efffabaf54",
+        "model": "hfsy:kling-o3"
+      }
+    },
     {
       "id": "a435614c-e443-4e0e-bbd5-745d8aa7788c",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
@@ -11101,10 +11113,10 @@
       "type": "video",
       "model": "hfsy:kling-o3",
       "amount": 450000,
-      "status": "queued",
-      "refunded": false,
+      "status": "failed",
+      "refunded": true,
       "createdAt": "2026-07-20T03:08:56.974Z",
-      "updatedAt": "2026-07-20T03:08:56.974Z"
+      "updatedAt": "2026-07-20T03:09:15.075Z"
     },
     {
       "id": "0d0009ff25f241f8970037d648e9de3d",
@@ -15350,9 +15362,10 @@
       "model": "hfsy:kling-o3",
       "prompt": "Use the original image as the exact character reference. Keep the same woman, the same face, the same hairstyle, the same body shape, the same outfit, and the same indoor background.\n\nCreate a realistic 8-second vertical 9:16 selfie video in a natural TikTok style.\n\nThe woman stands in place and looks directly into the camera with a calm, confident, slightly soft expression. Her movement should be minimal and natural, not exaggerated. She makes a very small shift of posture, a gentle shoulder adjustment, a slight natural head movement, and a subtle hand movement near her hair. She blinks naturally and breathes softly.\n\nHer body movement must feel realistic with natural gravity. Add subtle full-body micro-motion from breathing and posture changes. Her chest should have a visible but natural soft bounce caused by breathing and slight body movement, not exaggerated, not artificial, and not stiff. The movement should feel like real human soft body physics. Keep the motion smooth, light, and believable.\n\nHer curly hair should move slightly and naturally with her small head movement and breathing. Keep realistic hair texture and volume.\n\nSkin must look natural and real, with normal texture, not overly smooth, not plastic, not shiny in an artificial way, and not over-retouched. The overall video should feel like a real smartphone front-camera recording.\n\nCamera style: handheld phone selfie, subtle natural hand shake, realistic focus, casual framing, soft natural indoor lighting.\n\nBackground music: add a soft trending R&B / chill Afrobeat / feminine TikTok vibe track. The music should feel relaxed, attractive, confident, and smooth. Keep the music as background only, not too loud.\n\nAvoid: stiff pose, exaggerated dancing, large body motion, unnatural bouncing, plastic skin, AI-looking face, over-smoothing, overexposed lighting, or dramatic camera movement.\n\nFinal result: a realistic, attractive, natural-looking short selfie video with subtle body motion, soft chest movement, slight hair movement, and relaxed background music, suitable for TikTok.",
       "taskId": "fc71fd252a2e4e68b97120efffabaf54",
-      "status": "in_progress",
+      "status": "failed",
+      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"aeec87fe-f850-4557-a8aa-98c7c55578f1\\\",\\n  \\\"date\\\": \\\"Mon, 20 Jul 2026 03:08:59 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
       "createdAt": "2026-07-20T03:08:56.974Z",
-      "updatedAt": "2026-07-20T03:09:05.464Z"
+      "updatedAt": "2026-07-20T03:09:15.075Z"
     },
     {
       "id": "705b3f5d-0c03-4c10-b30d-0dd031f2e955",
