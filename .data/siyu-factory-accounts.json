@@ -76,9 +76,9 @@
       "name": "LYB",
       "passwordHash": "be74a5320d8effba4a36c7eba93e5267:3360b6905c609fd00b239e1e6b389c34762d748171e21492ace5dfd6c8b435e6a0f20464a8de07bfc753331a8f1126720a9b34ba620445bcfb4f3beff3e73b6b",
       "role": "user",
-      "credits": 9934990000,
+      "credits": 9940150000,
       "createdAt": "2026-07-16T09:10:01.615Z",
-      "updatedAt": "2026-07-21T09:32:41.752Z"
+      "updatedAt": "2026-07-21T09:32:49.506Z"
     },
     {
       "id": "e2acda90-b07e-4701-9233-24e576ff6e37",
@@ -610,6 +610,17 @@
     }
   ],
   "ledger": [
+    {
+      "id": "831608f7-f200-47be-ad3b-724d0e30c3f9",
+      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
+      "amount": 5160000,
+      "balanceAfter": 9940150000,
+      "reason": "video generation failed refund",
+      "createdAt": "2026-07-21T09:32:49.506Z",
+      "metadata": {
+        "model": "vidu:viduq3-turbo"
+      }
+    },
     {
       "id": "04359715-f6f5-4b9f-9010-06b37fbd739f",
       "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
