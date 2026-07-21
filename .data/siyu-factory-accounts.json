@@ -11784,6 +11784,17 @@
   ],
   "generationTasks": [
     {
+      "id": "21164ac942bd449f862ac0c9be3e5d7f",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "type": "video",
+      "model": "hfsy:kling-o3",
+      "amount": 450000,
+      "status": "queued",
+      "refunded": false,
+      "createdAt": "2026-07-21T07:08:52.543Z",
+      "updatedAt": "2026-07-21T07:08:52.543Z"
+    },
+    {
       "id": "270cc84550644fc5bc8a042cd58b624f",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "type": "video",
@@ -16251,6 +16262,17 @@
     }
   ],
   "history": [
+    {
+      "id": "5ce1ad8a-8401-49fa-8903-909d254ee896",
+      "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
+      "mode": "video",
+      "model": "hfsy:kling-o3",
+      "prompt": "Use the uploaded image as the exact character reference. Keep the same woman, same face, same curly hairstyle, same outfit, same accessories, and same bathroom background.\r\n\r\nCreate a realistic casual smartphone selfie video. Do not change her appearance or improve the image quality. Keep natural skin texture, visible pores, slight skin details, and the original lighting conditions. No beauty filter, no skin smoothing, no extra glow, no cinematic effects.\r\n\r\nThe woman stays in the same position and records a natural selfie video. She makes only small realistic movements: slight blinking, subtle breathing, a tiny change in facial expression, a gentle head adjustment, and a small shift of her shoulders.\r\n\r\nHer hand slowly relaxes from her hair and she casually adjusts a few curls near the side of her face. The curly hair moves slightly with the small head movement, with realistic gravity and natural settling. She briefly changes her gaze away from the camera, then looks back naturally.\r\n\r\nHer body movement should come from normal human posture changes: slight weight shifting, natural breathing, relaxed shoulders, and small upper-body movement. Clothing and hair should react naturally to movement without exaggerated motion.\r\n\r\nThe final result should look like a real person accidentally recording a few seconds of a TikTok selfie, not a planned performance.\r\n\r\nCamera style:\r\nOriginal smartphone selfie quality, handheld phone camera, slight natural hand shake, imperfect framing, normal phone exposure, realistic everyday indoor environment.\r\n\r\nBackground music:\r\nSoft trending TikTok R&B / lifestyle music, low volume, natural vlog atmosphere.\r\n\r\nNegative prompt:\r\n\r\nDo not add makeup, do not smooth skin, do not brighten face, do not change lighting, do not enhance beauty, do not create perfect skin, do not exaggerate body movement, do not make dancing movements, do not make unnatural poses, do not create AI-style animation, do not use cinematic effects.",
+      "taskId": "21164ac942bd449f862ac0c9be3e5d7f",
+      "status": "IN_PROGRESS",
+      "createdAt": "2026-07-21T07:08:52.544Z",
+      "updatedAt": "2026-07-21T07:08:52.544Z"
+    },
     {
       "id": "69f5cb3e-1848-4905-8791-c88c3b88f6a9",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
