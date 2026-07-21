@@ -16333,29 +16333,6 @@
   ],
   "history": [
     {
-      "id": "6987cdd6-ca14-4519-9f7c-891d4c60a8dc",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "保持原图成年女性的脸部、棕色长卷发、黄色短款上衣、绿色短裤、身材比例和木门背景完全一致。9:16竖屏，全身固定机位，人物双脚略微分开、膝盖放松，眼神自信直视镜头。\r\n0—2秒：\r\n音乐重拍响起，人物身体重心迅速压向右侧，右胯短促点出，停顿半拍；紧接着左胯点出。双肩与胯部反方向配合，每一下都干净、有重量，卷发随动作自然弹动。\r\n2—4秒：\r\n连续完成“右胯点—左胯点—胸腔向前卡点”，膝盖随着鼓点小幅下沉回弹。双手自然放在身体两侧，手腕放松，不遮挡腰部动作。\r\n4—6秒：\r\n身体进入龙须摇的慢摇段：腰胯从左向右画一个紧凑弧线，肩膀反向压动，动作沉稳而有控制力；随后突然回正，在重鼓点处明显停顿一下。\r\n6—8秒：\r\n向前踏出半步，快速完成两次有力点胯，接一次胸腔卡点。最后身体侧转约四分之一角度，一只手落在腰侧，抬起下巴，眼神直视镜头定格结束。\r\n生成要求：\r\n动作按抖音卡点舞的真实速度完成，重拍明显，力度集中在膝盖下沉、重心切换、点胯和肩胸卡点；不要做成柔软轻飘的普通摇摆。头发、衣服和身体惯性符合真实人体物理效果，镜头轻微手持震动，不使用慢动作。\r\n负面提示词：\r\n不要大幅扭臀，不要连续抖臀，不要夸张甩胸，不要动作软弱轻飘，不要手脚错位，不要身体变形，不要卷发穿模，不要改变脸部、服装和背景，不要慢动作，不要镜头乱晃。",
-      "taskId": "a8580768ec9a4d98926af3ad58b14f27",
-      "status": "IN_PROGRESS",
-      "createdAt": "2026-07-21T09:30:42.618Z",
-      "updatedAt": "2026-07-21T09:30:42.618Z"
-    },
-    {
-      "id": "cb284c6b-255a-411e-bf39-79cd325f722b",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "保持原图成年女性的脸部、棕色长卷发、黄色短款上衣、绿色短裤、身材比例和木门背景完全一致。9:16竖屏，全身固定机位，人物双脚略微分开、膝盖放松，眼神自信直视镜头。\n\n0—2秒：\n音乐重拍响起，人物身体重心迅速压向右侧，右胯短促点出，停顿半拍；紧接着左胯点出。双肩与胯部反方向配合，每一下都干净、有重量，卷发随动作自然弹动。\n\n2—4秒：\n连续完成“右胯点—左胯点—胸腔向前卡点”，膝盖随着鼓点小幅下沉回弹。双手自然放在身体两侧，手腕放松，不遮挡腰部动作。\n\n4—6秒：\n身体进入龙须摇的慢摇段：腰胯从左向右画一个紧凑弧线，肩膀反向压动，动作沉稳而有控制力；随后突然回正，在重鼓点处明显停顿一下。\n\n6—8秒：\n向前踏出半步，快速完成两次有力点胯，接一次胸腔卡点。最后身体侧转约四分之一角度，一只手落在腰侧，抬起下巴，眼神直视镜头定格结束。\n\n生成要求：\n动作按抖音卡点舞的真实速度完成，重拍明显，力度集中在膝盖下沉、重心切换、点胯和肩胸卡点；不要做成柔软轻飘的普通摇摆。头发、衣服和身体惯性符合真实人体物理效果，镜头轻微手持震动，不使用慢动作。\n负面提示词：\n\n不要大幅扭臀，不要连续抖臀，不要夸张甩胸，不要动作软弱轻飘，不要手脚错位，不要身体变形，不要卷发穿模，不要改变脸部、服装和背景，不要慢动作，不要镜头乱晃。",
-      "taskId": "47a16f604b254f9b80804ff43c208cc1",
-      "status": "failed",
-      "error": "\"video submit failed: upstream HTTP 408\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"fd4cf480-6793-4228-a008-cbd29e9e7d65\\\",\\n  \\\"date\\\": \\\"Tue, 21 Jul 2026 09:27:46 GMT\\\",\\n  \\\"server\\\": \\\"adobe\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"timeout_error\\\",\\n  \\\"message\\\": \\\"system under load\\\"\\n}\"",
-      "createdAt": "2026-07-21T09:27:41.776Z",
-      "updatedAt": "2026-07-21T09:30:52.692Z"
-    },
-    {
       "id": "5ce1ad8a-8401-49fa-8903-909d254ee896",
       "userId": "f77987db-f569-4f8a-9623-4d4679caf55e",
       "mode": "video",
@@ -16500,30 +16477,6 @@
       "updatedAt": "2026-07-17T04:03:08.447Z"
     },
     {
-      "id": "bb9f9c3a-9d99-46c6-b63e-8bb6d0979baf",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Create a 15-second realistic beach video from this image.\nA confident adult woman stands on the beach in a bikini, filmed from a low-angle perspective against a bright blue sky with soft clouds.\nShe looks relaxed, confident, and natural, not overly posed.\nAt the beginning, she gently adjusts both sides of her bikini bottom with subtle, natural hand movement.\nShe shifts her body weight slightly from one side to the other, naturally highlighting her waist, hips, and legs.\nHer head slowly turns upward and to the side, looking into the distance with a calm, confident expression.\nA light breeze softly moves her hair and the edge of her cap.\nHer skin has a natural sunlit glow with a slightly wet beach look.\nMidway through the video, she slightly straightens her posture, relaxes her shoulders, and subtly engages her core, creating an elegant body line.\nNear the end, she briefly lowers her gaze toward the camera area, then looks away naturally.\nEnd with a relaxed standing pose.\nUse slow push-in camera movement, realistic handheld smartphone feel, natural body motion, soft golden sunlight, and a casual sensual summer vibe.\nAvoid exaggerated movement, avoid vulgar behavior, avoid distortion, keep it realistic and tasteful.",
-      "taskId": "db3d0cd71ceb4c638e1c25b50662f2af",
-      "status": "failed",
-      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"1180c1b8-2e24-4ee7-a405-cb4c10960317\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
-      "createdAt": "2026-07-17T03:53:56.425Z",
-      "updatedAt": "2026-07-17T03:55:39.276Z"
-    },
-    {
-      "id": "02c46a8a-4d9f-4573-a0c3-f86d46a13f8d",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Create a 15-second realistic beach video from this image.\nA confident adult woman stands on the beach in a bikini, filmed from a low-angle perspective against a bright blue sky with soft clouds.\nShe looks relaxed, confident, and natural, not overly posed.\nAt the beginning, she gently adjusts both sides of her bikini bottom with subtle, natural hand movement.\nShe shifts her body weight slightly from one side to the other, naturally highlighting her waist, hips, and legs.\nHer head slowly turns upward and to the side, looking into the distance with a calm, confident expression.\nA light breeze softly moves her hair and the edge of her cap.\nHer skin has a natural sunlit glow with a slightly wet beach look.\nMidway through the video, she slightly straightens her posture, relaxes her shoulders, and subtly engages her core, creating an elegant body line.\nNear the end, she briefly lowers her gaze toward the camera area, then looks away naturally.\nEnd with a relaxed standing pose.\nUse slow push-in camera movement, realistic handheld smartphone feel, natural body motion, soft golden sunlight, and a casual sensual summer vibe.\nAvoid exaggerated movement, avoid vulgar behavior, avoid distortion, keep it realistic and tasteful.",
-      "taskId": "c29a52393d0f4cc389a64cfdf3bd26a0",
-      "status": "failed",
-      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"34c61643-a8a8-4dde-b1e4-f995325b3b97\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
-      "createdAt": "2026-07-17T03:46:12.696Z",
-      "updatedAt": "2026-07-17T03:47:05.108Z"
-    },
-    {
       "id": "00707ef4-41cb-49a5-a9b8-4a758bb2f907",
       "userId": "72007ba8-6659-4160-b9d2-5c89aa4f9ee0",
       "mode": "video",
@@ -16548,18 +16501,6 @@
       "updatedAt": "2026-07-17T02:44:29.167Z"
     },
     {
-      "id": "5af7df78-3d88-4a92-9566-f597818194bd",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "保持相同的面部五官、长卷发、胡须、米白色长袍和木制十字架，不改变人物身份与服装主体。\n9:16竖版、照片级写实的电影感TikTok短视频。\n场景位于夕阳照耀的荒野山谷。耶稣双手轻轻抱着木制十字架，眼神温柔而坚定，脸上带着对世人的怜悯与关怀。金色阳光从他的背后照射，在头发和肩膀周围形成柔和的神圣光晕。\n镜头从胸部中近景缓慢向前推进。耶稣安静地看向远方，随后转头看向镜头，眼睛中带着悲悯、安慰和希望。微风轻轻吹动他的长发与长袍。\n他缓慢放下一只手，向镜头前方伸出，像是在邀请一个疲惫、受伤的人来到身边。背后的金色光芒逐渐增强，柔和的白金色光粒从肩膀周围升起。光芒在他的背后凝聚成一双半透明、洁白而宽大的天使翅膀，翅膀自然展开，动作庄重而温柔，不夸张，不刺眼。\n画面背景中出现几位需要帮助的人，有疲惫的老人、饥饿的家庭和受伤后虚弱休息的人。化作天使形态的耶稣缓慢走向他们，轻轻扶起一位老人，并把面包递给一个需要帮助的人。众人的表情从悲伤逐渐变得安心和充满希望。\n耶稣看向众人，用温柔、平静、有感情的中文说道：\n“不要害怕，我看见你们的痛苦。用爱彼此帮助，希望就不会离开。”\n人物嘴型与中文台词自然同步，声音温暖、沉稳、充满慈爱。真实皮肤纹理，真实手部动作，真实布料与头发运动，电影级夕阳光线，柔和散景，镜头稳定，情感自然，神圣但不过度夸张。\n禁止：人物变脸、五官漂移、翅膀穿过身体、翅膀突然闪烁、手指错误、额外肢体、暴力场面、恐怖表情、过度曝光、夸张魔法特效、卡通风格、字幕、文字、标志、水印。",
-      "taskId": "6cc740ef170c4718bf9d777fc88419ca",
-      "status": "failed",
-      "createdAt": "2026-07-17T02:42:32.648Z",
-      "updatedAt": "2026-07-17T02:43:24.360Z",
-      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"9882ad88-16de-4bd0-9233-f2bbf83006a8\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\""
-    },
-    {
       "id": "a132d0ef-fd9a-4805-b4b5-f147093b5adf",
       "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
       "mode": "image",
@@ -16582,18 +16523,6 @@
       "createdAt": "2026-07-17T02:39:22.593Z",
       "updatedAt": "2026-07-17T02:40:36.057Z",
       "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"bd438052-72cc-4c44-a393-286ff1228b19\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\""
-    },
-    {
-      "id": "b3837382-9433-420f-a576-753c238fe9fb",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "保持相同的面部五官、长卷发、胡须、米白色长袍和木制十字架，不改变人物身份与服装主体。\n9:16竖版、照片级写实的电影感TikTok短视频。\n场景位于夕阳照耀的荒野山谷。耶稣双手轻轻抱着木制十字架，眼神温柔而坚定，脸上带着对世人的怜悯与关怀。金色阳光从他的背后照射，在头发和肩膀周围形成柔和的神圣光晕。\n镜头从胸部中近景缓慢向前推进。耶稣安静地看向远方，随后转头看向镜头，眼睛中带着悲悯、安慰和希望。微风轻轻吹动他的长发与长袍。\n他缓慢放下一只手，向镜头前方伸出，像是在邀请一个疲惫、受伤的人来到身边。背后的金色光芒逐渐增强，柔和的白金色光粒从肩膀周围升起。光芒在他的背后凝聚成一双半透明、洁白而宽大的天使翅膀，翅膀自然展开，动作庄重而温柔，不夸张，不刺眼。\n画面背景中出现几位需要帮助的人，有疲惫的老人、饥饿的家庭和受伤后虚弱休息的人。化作天使形态的耶稣缓慢走向他们，轻轻扶起一位老人，并把面包递给一个需要帮助的人。众人的表情从悲伤逐渐变得安心和充满希望。\n耶稣看向众人，用温柔、平静、有感情的中文说道：\n“不要害怕，我看见你们的痛苦。用爱彼此帮助，希望就不会离开。”\n人物嘴型与中文台词自然同步，声音温暖、沉稳、充满慈爱。真实皮肤纹理，真实手部动作，真实布料与头发运动，电影级夕阳光线，柔和散景，镜头稳定，情感自然，神圣但不过度夸张。\n禁止：人物变脸、五官漂移、翅膀穿过身体、翅膀突然闪烁、手指错误、额外肢体、暴力场面、恐怖表情、过度曝光、夸张魔法特效、卡通风格、字幕、文字、标志、水印。",
-      "taskId": "cb47d1a5f4284dc49876aae513f44d13",
-      "status": "failed",
-      "error": "\"video poll failed: upstream HTTP 451\\n\\nupstream response headers:\\n{\\n  \\\"x-request-id\\\": \\\"11bc4044-a230-4a09-a18b-6c3b5d28ebbb\\\"\\n}\\n\\nupstream response body:\\n{\\n  \\\"error_code\\\": \\\"prompt_unsafe\\\",\\n  \\\"message\\\": \\\"The provided prompt is considered unsafe and it cannot be used to generate content.\\\"\\n}\"",
-      "createdAt": "2026-07-17T02:38:18.851Z",
-      "updatedAt": "2026-07-17T02:38:49.363Z"
     },
     {
       "id": "f37c01a5-d01b-498d-bd57-ead8cea4dfe0",
@@ -16692,18 +16621,6 @@
       "updatedAt": "2026-07-17T02:24:07.555Z"
     },
     {
-      "id": "641d5257-66bf-4521-bb2a-8aed525b4ea3",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "1.让图片中的人物动起来，动作根据图片中人物的状态自由发挥。人物始终面向镜头正前方，身体重心稳定，上半身与四肢自然配合动作，手臂、肩膀、腰部和腿部的动作连贯柔和。\n表情放松自然，带有轻微的情绪变化，不刻意、不夸张，整体给人真实、生活化的感觉。所有动作流畅、不僵硬，不过度表演。\n画质清晰、细节自然，光影真实。加入轻微且平稳的运镜，增强画面层次感和沉浸感。\t\n\n2.把视频中的女孩像是跟随音乐有节奏地扭动，动作根据人物状态自由发挥，节奏较缓，整个人物保持面向前面，表情自然放松，所有的动作自然，四肢跟随动作很自然的展示，不要太僵硬和太夸张、给人真实的感觉，画质清晰且风格与原图一致，加上适当的运镜。\n3.让图片中的人物自然的跳舞，舞蹈根据图片中人物的状态自由发挥。人物的动作自然，面部表情也自然。胸部根据舞蹈动作而匀速的抖动\n",
-      "taskId": "3d14efbf1c384d1bb3dae5b1f7664222",
-      "status": "completed",
-      "createdAt": "2026-07-17T02:15:35.056Z",
-      "updatedAt": "2026-07-17T02:18:38.700Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/17/5c39fa3503904d1a88f5d14be86fb89f.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784341113&Signature=1erAvV9ZqM66YgaHynsU%2BYgCt5w%3D"
-    },
-    {
       "id": "e505c99f-42cc-4dfe-b81f-ab8c031b4997",
       "userId": "e2acda90-b07e-4701-9233-24e576ff6e37",
       "mode": "video",
@@ -16751,18 +16668,6 @@
       "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/02ffb3a7c0e849c5ac565f8483f989e6.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280460&Signature=%2F%2BAzPsUvzB0%2F6G%2Ffk4j2%2B8NBIVM%3D"
     },
     {
-      "id": "63185022-e575-4fb9-80ea-ef22ca5d5871",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Create a 5-second natural cinematic animation from this image.\nThe woman should keep a calm, gentle, graceful presence, with her gaze softly lowered toward the basket of bread and fruit.\nHer movements should be subtle and realistic:\n\na slight downward head movement\nher eyes gently shift down and rest on the food in the basket\nthe hand placed on her chest shows subtle breathing movement, with tiny natural finger motion\nthe other hand near the basket remains relaxed, with slight natural wrist and finger adjustment\nher veil softly moves in a gentle breeze\na few loose strands of hair move slightly\nthe surrounding flowers and plants sway naturally in the wind\nthe halo behind her head glows softly with a very subtle shimmer\nthe grapes and bread remain stable and realistic, with soft sunlight reflections only\n\nCamera movement: a slow cinematic push-in toward her upper body and face.\nLighting should stay warm, soft, and golden, enhancing the peaceful emotional mood.\nStyle should be realistic, elegant, serene, and emotionally rich.\nAvoid exaggerated motion, dramatic expression changes, cartoon effects, or sudden scene changes.",
-      "taskId": "e4f3e1a7c3e541cca3b0121f05c4c52b",
-      "status": "completed",
-      "createdAt": "2026-07-16T09:24:27.452Z",
-      "updatedAt": "2026-07-16T09:27:12.104Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/5fc0a280ba994e47bd9589c16e3927af.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280411&Signature=uWNHuA2pPs1VO38%2Bjxa%2FQ8w9hA4%3D"
-    },
-    {
       "id": "ca7529ab-ddc3-4da4-9bbc-f64399765a09",
       "userId": "7c17d995-bacf-4e2c-870f-039c3fa88b1a",
       "mode": "video",
@@ -16773,18 +16678,6 @@
       "createdAt": "2026-07-16T09:23:37.992Z",
       "updatedAt": "2026-07-16T09:25:27.979Z",
       "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/03fb0a690c4f4858a21aeaf6796fc8fd.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280316&Signature=sylyWFEMu55WxDlaq2d0zsDf0vI%3D"
-    },
-    {
-      "id": "f8d1b6ec-c484-431b-8287-45f6777e4252",
-      "userId": "2b9d7800-6200-45c5-b6e8-5c5a03e08b98",
-      "mode": "video",
-      "model": "hfsy:kling-o3",
-      "prompt": "Create a 5-second natural cinematic animation from this image.\r\nThe woman should keep a calm, gentle, graceful presence, with her gaze softly lowered toward the basket of bread and fruit.\r\nHer movements should be subtle and realistic:\r\n\r\na slight downward head movement\r\nher eyes gently shift down and rest on the food in the basket\r\nthe hand placed on her chest shows subtle breathing movement, with tiny natural finger motion\r\nthe other hand near the basket remains relaxed, with slight natural wrist and finger adjustment\r\nher veil softly moves in a gentle breeze\r\na few loose strands of hair move slightly\r\nthe surrounding flowers and plants sway naturally in the wind\r\nthe halo behind her head glows softly with a very subtle shimmer\r\nthe grapes and bread remain stable and realistic, with soft sunlight reflections only\r\n\r\nCamera movement: a slow cinematic push-in toward her upper body and face.\r\nLighting should stay warm, soft, and golden, enhancing the peaceful emotional mood.\r\nStyle should be realistic, elegant, serene, and emotionally rich.\r\nAvoid exaggerated motion, dramatic expression changes, cartoon effects, or sudden scene changes.",
-      "taskId": "e70671ae481e4e3fbcfdd479d8af9e46",
-      "status": "completed",
-      "createdAt": "2026-07-16T09:22:26.891Z",
-      "updatedAt": "2026-07-16T09:29:28.261Z",
-      "previewUrl": "https://sd2oss-american.oss-us-west-1.aliyuncs.com/reelmind/2026/07/16/04bf9cb779924e2493cdda9f4aec3ff6.mp4?OSSAccessKeyId=LTAI5tP5SssDNTaErcr5wcHL&Expires=1784280311&Signature=zWQ6HbMnk8ZhOCxSBonB4FMoDhI%3D"
     },
     {
       "id": "79544265-62a2-4b77-bec0-e14bed705b61",
