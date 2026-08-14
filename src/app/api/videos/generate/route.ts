@@ -42,6 +42,8 @@ const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
   "1080x1920": "1080p"
 };
 const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
+const MAX_VIDEO_REFERENCES = 6;
+const MAX_REFERENCE_BYTES = 12 * 1024 * 1024;
 const VERIFIED_VIDEO_MODELS = new Set([
   "veo_3_1-fast-portrait-fl-hd",
   "sora-2-4s-9x16",
@@ -809,7 +811,16 @@ export async function POST(request: Request) {
     const origin = getPublicOrigin(request);
     const references = incoming
       .getAll("input_reference")
-      .filter((value): value is File => value instanceof File && value.size > 0);
+      .filter((value): value is File => value instanceof File && value.size > 0)
+      .slice(0, MAX_VIDEO_REFERENCES);
+    for (const reference of references) {
+      if (reference.size > MAX_REFERENCE_BYTES) {
+        return jsonError({
+          error: "reference_too_large",
+          message: `Reference image ${reference.name || "file"} is too large. Use images under 12MB.`
+        }, 413);
+      }
+    }
     const uploadedReferenceLabels = incoming
       .getAll("reference_label")
       .map((value, index) => cleanReferenceLabel(String(value), index))
