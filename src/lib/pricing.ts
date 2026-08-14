@@ -9,9 +9,9 @@ function siteCredits(value: number) {
 
 export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "hfsy:nano-banana-2": siteCredits(1),
-  "hfsy:nano-banana-pro": siteCredits(2),
+  "hfsy:nano-banana-pro": siteCredits(1),
   "hfsy:gpt-image-2": siteCredits(1),
-  "hfsy:gpt-image-2pro": siteCredits(2),
+  "hfsy:gpt-image-2pro": siteCredits(1),
   "firefly-veo31-fast-8s-9x16-1080p": siteCredits(12),
   "firefly-veo31-ref-8s-9x16-1080p": siteCredits(15),
   "veo_3_1-fast-portrait-fl-hd": siteCredits(3),
@@ -30,6 +30,9 @@ export const MODEL_CREDIT_COSTS: Record<string, number> = {
   "hfsy:sd-2": siteCredits(45),
   "hfsy:sd-2-vip": siteCredits(45),
   "hfsy:kling-o3": siteCredits(45),
+  "hfsy:grok-imagine-video-1.5": siteCredits(10),
+  "hfsy:sd-2.5-480": siteCredits(3),
+  "hfsy:sd-2.5-720": siteCredits(4),
   "deepseek-v4-flash": siteCredits(1),
   "deepseek-v4-pro": siteCredits(2),
   "omni_flash": siteCredits(2)
@@ -109,7 +112,12 @@ export function getVideoGenerationCost(model: string, duration?: string | number
   const syModel = getSyModel(model);
   if (syModel) return siteCredits(syModel.credits);
   const hfsyModel = getHfsyModel(model);
-  if (hfsyModel) return siteCredits(hfsyModel.credits);
+  if (hfsyModel) {
+    const seconds = Math.max(1, Number(duration || hfsyModel.durationOptions[0] || 1));
+    return hfsyModel.pricePerSecond
+      ? siteCredits(hfsyModel.upstreamPrice * seconds * 10)
+      : siteCredits(hfsyModel.credits);
+  }
   if (lower.startsWith("vidu:")) {
     return Math.round(getViduDisplayCreditCost(model, duration, resolution) * INTERNAL_CREDIT_SCALE);
   }
