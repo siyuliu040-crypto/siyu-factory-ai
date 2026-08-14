@@ -265,6 +265,9 @@ const stableVideoModels = [
   "hfsy:sd-2",
   "hfsy:sd-2-vip",
   "hfsy:kling-o3",
+  "hfsy:grok-imagine-video-1.5",
+  "hfsy:sd-2.5-720",
+  "hfsy:sd-2.5-480",
   "sora-2-4s-9x16",
   "sora-2-8s-9x16",
   "vidu:viduq3-pro-fast",
@@ -750,7 +753,8 @@ function isHellobabyGoVeoFrameModel(model: string) {
 
 function modelRequiresReference(model: string) {
   const lower = model.toLowerCase();
-  return Boolean(getSyModel(model)) || isViduModelId(model) || isHellobabyGoVeoFrameModel(model) || lower.includes("-ref-") || lower.includes("_ref_") || lower.includes("fl-hd");
+  const hfsyModel = getHfsyModel(model);
+  return Boolean(getSyModel(model)) || hfsyModel?.referenceMode === "required" || isViduModelId(model) || isHellobabyGoVeoFrameModel(model) || lower.includes("-ref-") || lower.includes("_ref_") || lower.includes("fl-hd");
 }
 
 function modelRequiresFirstFrame(model: string) {
@@ -863,10 +867,12 @@ function getModelDescription(model: string, language: Language) {
     const audioHint = hfsyModel.upstreamModel === "sora-2"
       ? language === "zh" ? "含口播时启用音频" : "audio when speech is requested"
       : "";
-    const siteCredits = Math.round(hfsyModel.upstreamPrice * 10);
+    const siteCredits = hfsyModel.pricePerSecond
+      ? `${Math.round(hfsyModel.upstreamPrice * 10)}/秒`
+      : String(Math.round(hfsyModel.upstreamPrice * 10));
     return language === "zh"
-      ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY 上游 · 上游价 ¥${hfsyModel.upstreamPrice} · ${siteCredits} 积分`
-      : `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY upstream · upstream ¥${hfsyModel.upstreamPrice} · ${siteCredits} credits`;
+      ? `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY 上游 · 上游价 ¥${hfsyModel.upstreamPrice}${hfsyModel.pricePerSecond ? "/秒" : ""} · ${siteCredits} 积分`
+      : `${aspect} · ${durationText} · ${hfsyModel.resolution} · ${mode}${audioHint ? ` · ${audioHint}` : ""} · HFSY upstream · upstream ¥${hfsyModel.upstreamPrice}${hfsyModel.pricePerSecond ? "/s" : ""} · ${siteCredits} credits`;
   }
   if (lower.startsWith("vidu:")) {
     const family = lower.includes("q2") ? "Q2" : "Q3";
