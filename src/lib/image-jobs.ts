@@ -489,8 +489,11 @@ export function startImageJob(
     billing
   };
   jobs.set(id, record);
-  void runImageJob(id);
   return record;
+}
+
+export function runStartedImageJob(id: string) {
+  void runImageJob(id);
 }
 
 export function getImageJob(id: string) {
