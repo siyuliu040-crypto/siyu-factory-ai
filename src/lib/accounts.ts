@@ -127,7 +127,7 @@ type HistoryPatch = {
 };
 
 const SESSION_DAYS = 7;
-const LOCAL_DATA_FILE = path.join(/*turbopackIgnore: true*/ process.cwd(), ".data", "siyu-factory-accounts.json");
+const LOCAL_DATA_FILE = path.join(".data", "siyu-factory-accounts.json");
 const RENDER_DISK_DATA_FILE = "/var/data/siyu-factory-accounts.json";
 const INITIAL_ADMIN_CREDITS = Number(process.env.SIYU_INITIAL_ADMIN_CREDITS || 20000000);
 const GITHUB_STORAGE_REPO = process.env.SIYU_GITHUB_STORAGE_REPO || "siyuliu040-crypto/siyu-factory-ai";
