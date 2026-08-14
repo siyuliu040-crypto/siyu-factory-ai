@@ -9,6 +9,7 @@ export type HfsyModel = {
   media: "video";
   credits: number;
   upstreamPrice: number;
+  pricePerSecond?: boolean;
   durationOptions: number[];
   resolution: "480P" | "720P" | "1080P";
   referenceMode: "optional" | "required";
@@ -35,7 +36,7 @@ export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
     media: "image",
     endpoint: "gemini",
     credits: 1,
-    upstreamPrice: 0.06,
+    upstreamPrice: 0.07,
     referenceMode: "optional",
     description:
       "HFSY light image model. Supports text-to-image and image-to-image with up to 6 reference images; best for fast product images and high-frequency drafts."
@@ -46,8 +47,8 @@ export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
     label: "HFSY Nano Banana Pro",
     media: "image",
     endpoint: "gemini",
-    credits: 2,
-    upstreamPrice: 0.12,
+    credits: 1,
+    upstreamPrice: 0.09,
     referenceMode: "optional",
     description:
       "HFSY flagship Nano Banana image model. Higher detail, richer color and commercial-grade reference-image fusion."
@@ -70,8 +71,8 @@ export const HFSY_IMAGE_MODELS: HfsyImageModel[] = [
     label: "HFSY GPT Image 2 Pro",
     media: "image",
     endpoint: "image-generation",
-    credits: 2,
-    upstreamPrice: 0.2,
+    credits: 1,
+    upstreamPrice: 0.08,
     referenceMode: "text-only",
     description:
       "HFSY GPT Image 2 Pro image-generation model. Supports native high-resolution image creation with stronger detail and scene consistency."
@@ -94,7 +95,7 @@ export const HFSY_MODELS: HfsyModel[] = [
   },
   {
     id: "hfsy:sd-2-fast",
-    upstreamModel: "sd-2-fast",
+    upstreamModel: "sd-2.0-fast",
     label: "HFSY SD 2 Fast",
     media: "video",
     credits: 30,
@@ -107,7 +108,7 @@ export const HFSY_MODELS: HfsyModel[] = [
   },
   {
     id: "hfsy:sd-2",
-    upstreamModel: "sd-2",
+    upstreamModel: "sd-2.0",
     label: "HFSY SD 2",
     media: "video",
     credits: 45,
@@ -120,7 +121,7 @@ export const HFSY_MODELS: HfsyModel[] = [
   },
   {
     id: "hfsy:sd-2-vip",
-    upstreamModel: "sd-2-vip",
+    upstreamModel: "sd-2.0",
     label: "HFSY SD 2 VIP",
     media: "video",
     credits: 45,
@@ -143,6 +144,47 @@ export const HFSY_MODELS: HfsyModel[] = [
     referenceMode: "required",
     description:
       "HFSY KL3.0 / Kling O3 video model. Supports 5-15 second 9:16 reference-image video generation at 720P. A reference image is required. Recent failures can indicate upstream account access restrictions."
+  },
+  {
+    id: "hfsy:grok-imagine-video-1.5",
+    upstreamModel: "grok-imagine-video-1.5",
+    label: "HFSY Grok Imagine 1.5",
+    media: "video",
+    credits: 10,
+    upstreamPrice: 1,
+    durationOptions: [6, 10, 15],
+    resolution: "720P",
+    referenceMode: "required",
+    description:
+      "HFSY Grok Imagine Video 1.5. Supports 9:16 reference-image video generation with 2-7 reference images and 6/10/15 second durations."
+  },
+  {
+    id: "hfsy:sd-2.5-480",
+    upstreamModel: "sd-2.5-480",
+    label: "HFSY Seedance 2.5 480P",
+    media: "video",
+    credits: 3,
+    upstreamPrice: 0.25,
+    pricePerSecond: true,
+    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+    resolution: "480P",
+    referenceMode: "optional",
+    description:
+      "HFSY Seedance/SD 2.5 480P. Supports 9:16 text-to-video and image-to-video, up to 30 seconds, charged per second by upstream."
+  },
+  {
+    id: "hfsy:sd-2.5-720",
+    upstreamModel: "sd-2.5-720",
+    label: "HFSY Seedance 2.5 720P",
+    media: "video",
+    credits: 4,
+    upstreamPrice: 0.35,
+    pricePerSecond: true,
+    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+    resolution: "720P",
+    referenceMode: "optional",
+    description:
+      "HFSY Seedance/SD 2.5 720P. Supports 9:16 text-to-video and image-to-video, up to 30 seconds, charged per second by upstream."
   }
 ];
 
