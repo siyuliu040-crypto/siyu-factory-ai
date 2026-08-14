@@ -1,5 +1,5 @@
 import { jsonError } from "@/lib/hellobabygo";
-import { startImageJob, type ImageJobRequest } from "@/lib/image-jobs";
+import { runStartedImageJob, startImageJob, type ImageJobRequest } from "@/lib/image-jobs";
 import {
   AccountError,
   chargeUserCredits,
@@ -13,6 +13,8 @@ import { getPromptLimit, isPromptTooLong } from "@/lib/prompt-limits";
 import { getHfsyImageModel, isHfsyImageModel } from "@/lib/hfsy";
 
 export const dynamic = "force-dynamic";
+const MAX_IMAGE_REFERENCES = 6;
+const MAX_REFERENCE_BYTES = 12 * 1024 * 1024;
 
 export async function POST(request: Request) {
   try {
@@ -77,6 +79,7 @@ export async function POST(request: Request) {
         status: "queued"
       });
     });
+    runStartedImageJob(job.id);
 
     return Response.json(
       { id: job.id, status: job.status, progress: job.progress, charged: amount, balance: charge.user.credits },
@@ -93,10 +96,17 @@ export async function POST(request: Request) {
 
 async function readMultipartImageRequest(request: Request): Promise<Partial<ImageJobRequest>> {
   const incoming = await request.formData();
+  const files = incoming
+    .getAll("image")
+    .filter((value): value is File => value instanceof File && value.size > 0)
+    .slice(0, MAX_IMAGE_REFERENCES);
+  for (const file of files) {
+    if (file.size > MAX_REFERENCE_BYTES) {
+      throw new Error(`Reference image ${file.name || "file"} is too large. Use images under 12MB.`);
+    }
+  }
   const references = await Promise.all(
-    incoming
-      .getAll("image")
-      .filter((value): value is File => value instanceof File && value.size > 0)
+    files
       .map(async (file, index) => ({
         name: file.name || `reference-${index + 1}.png`,
         type: file.type || "image/png",
