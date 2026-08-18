@@ -1,4 +1,4 @@
-import { getHfsyImageModel, HFSY_BASE_URL, hfsyHeaders } from "@/lib/hfsy";
+﻿import { getHfsyImageModel, HFSY_BASE_URL, hfsyHeaders } from "@/lib/hfsy";
 import {
   recordGenerationHistory,
   refundCreditsForUser,
@@ -447,8 +447,14 @@ function postGeminiImageGeneration(
   references: NonNullable<ImageJobRequest["references"]> = []
 ) {
   const upstream = normalizeImageRequestForUpstream(record.request);
+  const hfsyImageModel = getHfsyImageModel(record.request.model);
+  const referenceLimit = hfsyImageModel?.upstreamModel === "nano-banana-pro"
+    ? 7
+    : hfsyImageModel?.upstreamModel === "nano-banana-2"
+      ? 4
+      : 6;
   const parts: Array<Record<string, unknown>> = [{ text: record.request.prompt.trim() }];
-  for (const reference of references.slice(0, 6)) {
+  for (const reference of references.slice(0, referenceLimit)) {
     parts.push({
       inline_data: {
         mime_type: reference.type || "image/png",
