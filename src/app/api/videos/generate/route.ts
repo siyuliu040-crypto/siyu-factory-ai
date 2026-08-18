@@ -72,6 +72,9 @@ function getVideoReferenceRules(model: string) {
   if (hfsyModel?.upstreamModel.startsWith("sd-2.5")) {
     return { min: 0, max: 30, maxBytes: HFSY_REFERENCE_BYTES, label: "up to 30 reference images" };
   }
+  if (hfsyModel?.upstreamModel.startsWith("sd-2-vip")) {
+    return { min: 0, max: 9, maxBytes: HFSY_REFERENCE_BYTES, label: "up to 9 reference images" };
+  }
   if (hfsyModel?.upstreamModel.startsWith("sd-2.0")) {
     return { min: 0, max: 4, maxBytes: HFSY_REFERENCE_BYTES, label: "up to 4 reference images" };
   }
