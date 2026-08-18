@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   Activity,
@@ -217,7 +217,7 @@ type TiktokInventoryRow = {
 type TiktokInventory = Record<TiktokCategory, TiktokInventoryRow[]>;
 
 const TOPUP_URL = "https://api.hellobabygo.com/console/topup";
-const MAX_REFERENCE_IMAGES = 6;
+const MAX_REFERENCE_IMAGES = 30;
 const MAX_REFERENCE_SIDE = 1280;
 const REFERENCE_IMAGE_QUALITY = 0.82;
 const HISTORY_LIMIT = 40;
