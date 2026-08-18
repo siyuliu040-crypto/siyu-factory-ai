@@ -1,4 +1,4 @@
-import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
+﻿import { HELLOBABYGO_BASE_URL, authHeaders, jsonError, parseUpstreamResponse } from "@/lib/hellobabygo";
 import {
   AccountError,
   chargeUserCredits,
@@ -44,6 +44,7 @@ const VIDU_SIZE_TO_RESOLUTION: Record<string, string> = {
 const UPLOAD_DIR = "/tmp/siyu-factory-uploads";
 const MAX_VIDEO_REFERENCES = 6;
 const MAX_REFERENCE_BYTES = 12 * 1024 * 1024;
+const HFSY_REFERENCE_BYTES = 30 * 1024 * 1024;
 const VERIFIED_VIDEO_MODELS = new Set([
   "veo_3_1-fast-portrait-fl-hd",
   "sora-2-4s-9x16",
@@ -62,6 +63,23 @@ const IMAGE_EXTENSION_BY_TYPE: Record<string, string> = {
   "image/webp": "webp"
 };
 type VideoBilling = { userId: string; amount: number; model: string; originalPrompt?: string };
+
+function getVideoReferenceRules(model: string) {
+  const hfsyModel = getHfsyModel(model);
+  if (hfsyModel?.upstreamModel === "grok-imagine-video-1.5") {
+    return { min: 2, max: 7, maxBytes: HFSY_REFERENCE_BYTES, label: "2-7 reference images" };
+  }
+  if (hfsyModel?.upstreamModel.startsWith("sd-2.5")) {
+    return { min: 0, max: 30, maxBytes: HFSY_REFERENCE_BYTES, label: "up to 30 reference images" };
+  }
+  if (hfsyModel?.upstreamModel.startsWith("sd-2.0")) {
+    return { min: 0, max: 4, maxBytes: HFSY_REFERENCE_BYTES, label: "up to 4 reference images" };
+  }
+  if (hfsyModel?.upstreamModel === "kling-o3") {
+    return { min: 1, max: 6, maxBytes: HFSY_REFERENCE_BYTES, label: "at least 1 reference image" };
+  }
+  return { min: 0, max: MAX_VIDEO_REFERENCES, maxBytes: MAX_REFERENCE_BYTES, label: `up to ${MAX_VIDEO_REFERENCES} reference images` };
+}
 
 function getImageExtension(file: File) {
   const extensionFromType = IMAGE_EXTENSION_BY_TYPE[file.type];
@@ -809,15 +827,24 @@ export async function POST(request: Request) {
     const size = incoming.get("size");
     const imageUrl = incoming.get("image_url");
     const origin = getPublicOrigin(request);
-    const references = incoming
+    const hfsyModel = getHfsyModel(model);
+    const referenceRules = getVideoReferenceRules(model);
+    const uploadedReferences = incoming
       .getAll("input_reference")
-      .filter((value): value is File => value instanceof File && value.size > 0)
-      .slice(0, MAX_VIDEO_REFERENCES);
+      .filter((value): value is File => value instanceof File && value.size > 0);
+    const totalReferenceCount = (imageUrl ? 1 : 0) + uploadedReferences.length;
+    if (totalReferenceCount > referenceRules.max) {
+      return jsonError({
+        error: "too_many_reference_images",
+        message: `This model supports ${referenceRules.label}. Remove extra reference images and submit again.`
+      }, 400);
+    }
+    const references = uploadedReferences.slice(0, referenceRules.max);
     for (const reference of references) {
-      if (reference.size > MAX_REFERENCE_BYTES) {
+      if (reference.size > referenceRules.maxBytes) {
         return jsonError({
           error: "reference_too_large",
-          message: `Reference image ${reference.name || "file"} is too large. Use images under 12MB.`
+          message: `Reference image ${reference.name || "file"} is too large. Use images under ${Math.floor(referenceRules.maxBytes / 1024 / 1024)}MB.`
         }, 413);
       }
     }
@@ -838,7 +865,6 @@ export async function POST(request: Request) {
       ...(imageUrl ? ["Image URL"] : []),
       ...uploadedReferenceInputs.map((_, index) => uploadedReferenceLabels[index] || `Image ${index + 1}`)
     ];
-    const hfsyModel = getHfsyModel(model);
     const enhancedPrompt = hfsyModel
       ? buildCompactReferencePrompt(prompt, referenceLabels)
       : buildReferenceImagePrompt(prompt, referenceLabels);
@@ -858,6 +884,12 @@ export async function POST(request: Request) {
     }
     if (hfsyModel?.referenceMode === "required" && publicReferenceUrls.length === 0) {
       return jsonError({ error: "This HFSY model requires one reference image." }, 400);
+    }
+    if (referenceRules.min > 0 && publicReferenceUrls.length < referenceRules.min) {
+      return jsonError({
+        error: "reference_required",
+        message: `This model requires at least ${referenceRules.min} reference image${referenceRules.min > 1 ? "s" : ""}. Upload enough references and submit again.`
+      }, 400);
     }
     if (isHfsyModel(model) && !process.env.HFSY_API_KEY) {
       return jsonError({
