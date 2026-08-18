@@ -2,10 +2,10 @@ const DEFAULT_IMAGE_PROMPT_LIMIT = 2000;
 const DEFAULT_VIDEO_PROMPT_LIMIT = 2500;
 
 export const MODEL_PROMPT_LIMITS: Record<string, number> = {
-  "hfsy:nano-banana-2": 2000,
-  "hfsy:nano-banana-pro": 2000,
-  "hfsy:gpt-image-2": 2000,
-  "hfsy:gpt-image-2pro": 2000,
+  "hfsy:nano-banana-2": 5000,
+  "hfsy:nano-banana-pro": 5000,
+  "hfsy:gpt-image-2": 5000,
+  "hfsy:gpt-image-2pro": 5000,
   "sora-2-4s-9x16": 1500,
   "sora-2-8s-9x16": 1500,
   "veo_3_1-fast-portrait-fl-hd": 5000,
