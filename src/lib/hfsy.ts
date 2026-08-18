@@ -111,8 +111,8 @@ export const HFSY_MODELS: HfsyModel[] = [
     upstreamModel: "sd-2.0",
     label: "HFSY SD 2",
     media: "video",
-    credits: 45,
-    upstreamPrice: 4.5,
+    credits: 40,
+    upstreamPrice: 4,
     durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
     resolution: "1080P",
     referenceMode: "optional",
@@ -121,16 +121,17 @@ export const HFSY_MODELS: HfsyModel[] = [
   },
   {
     id: "hfsy:sd-2-vip",
-    upstreamModel: "sd-2.0",
+    upstreamModel: "sd-2-vip-720",
     label: "HFSY SD 2 VIP",
     media: "video",
-    credits: 45,
-    upstreamPrice: 4.5,
-    durationOptions: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-    resolution: "1080P",
+    credits: 23,
+    upstreamPrice: 0.45,
+    pricePerSecond: true,
+    durationOptions: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    resolution: "720P",
     referenceMode: "optional",
     description:
-      "Stable Diffusion 2.0 VIP video model. Supports 4-15 second text-to-video and image-to-video generation."
+      "Stable Diffusion 2 VIP 720P model. Supports 5-15 second text-to-video and image-to-video generation with up to 9 image references, charged per second by upstream."
   },
   {
     id: "hfsy:kling-o3",
