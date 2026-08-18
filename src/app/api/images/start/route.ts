@@ -14,7 +14,14 @@ import { getHfsyImageModel, isHfsyImageModel } from "@/lib/hfsy";
 
 export const dynamic = "force-dynamic";
 const MAX_IMAGE_REFERENCES = 6;
-const MAX_REFERENCE_BYTES = 12 * 1024 * 1024;
+const MAX_IMAGE_REFERENCE_BYTES = 5 * 1024 * 1024;
+
+function getImageReferenceLimit(model: string) {
+  const hfsyImageModel = getHfsyImageModel(model);
+  if (hfsyImageModel?.upstreamModel === "nano-banana-pro") return 7;
+  if (hfsyImageModel?.upstreamModel === "nano-banana-2") return 4;
+  return MAX_IMAGE_REFERENCES;
+}
 
 export async function POST(request: Request) {
   try {
@@ -96,13 +103,15 @@ export async function POST(request: Request) {
 
 async function readMultipartImageRequest(request: Request): Promise<Partial<ImageJobRequest>> {
   const incoming = await request.formData();
+  const model = String(incoming.get("model") || "");
+  const maxReferences = getImageReferenceLimit(model);
   const files = incoming
     .getAll("image")
     .filter((value): value is File => value instanceof File && value.size > 0)
-    .slice(0, MAX_IMAGE_REFERENCES);
+    .slice(0, maxReferences);
   for (const file of files) {
-    if (file.size > MAX_REFERENCE_BYTES) {
-      throw new Error(`Reference image ${file.name || "file"} is too large. Use images under 12MB.`);
+    if (file.size > MAX_IMAGE_REFERENCE_BYTES) {
+      throw new Error(`Reference image ${file.name || "file"} is too large. Use images under 5MB.`);
     }
   }
   const references = await Promise.all(
@@ -115,7 +124,7 @@ async function readMultipartImageRequest(request: Request): Promise<Partial<Imag
   );
 
   return {
-    model: String(incoming.get("model") || ""),
+    model,
     prompt: String(incoming.get("prompt") || ""),
     n: Number(incoming.get("n") || 1),
     size: String(incoming.get("size") || "1024x1024"),
